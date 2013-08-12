@@ -1,0 +1,6 @@
+Requisitos
+
+- Caso esteja organizado em varios tutoriais, (tipo hands-on approach), cada tutorial deve ter uma estimativa de duracao.
+- Deve abordar a adaptacao de transformacoes existentes e prototipagem das mesmas.
+- Deve ter de alguma forma anexada os exemplos usados.
+- Se houver formalizacao teorica das operacoes do dsltrans, usar o trabalho de Bruno.

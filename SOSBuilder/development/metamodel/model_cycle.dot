@@ -1,0 +1,5 @@
+digraph model_cycle {
+	node0[label="marking(p(id8,suc(zero)),e)"];
+	node0 -> node0[label="str(at,str(n1,end))"];
+
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<petrinet:PetriNet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:petrinet="petrinet" xsi:schemaLocation="petrinet PetriNet.ecore">
+  <places name="a" token="1"/>
+  <places name="b"/>
+  <places name="c"/>
+  <transitions name="t1">
+    <inArc targetPlace="//@places.1"/>
+    <outArc sourcePlace="//@places.0"/>
+  </transitions>
+  <transitions name="t2">
+    <inArc targetPlace="//@places.2"/>
+    <outArc sourcePlace="//@places.1"/>
+  </transitions>
+</petrinet:PetriNet>

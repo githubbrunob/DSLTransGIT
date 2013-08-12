@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax.ui">
+		<metaInformationProvider class="SOS.resource.SOS.ui.SOSUIMetaInformation" id="SOS.resource.SOS.ui.SOSUIMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors">
+		<editor class="SOS.resource.SOS.ui.SOSEditor" contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor" extensions="SOS" icon="icons/editor_icon.gif" id="SOS.resource.SOS.ui.SOSEditor" name="EMFText SOS Editor">
+			<contentTypeBinding contentTypeId="SOS.resource.SOS">
+			</contentTypeBinding>
+		</editor>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.preferences">
+		<initializer class="SOS.resource.SOS.ui.SOSPreferenceInitializer">
+		</initializer>
+	</extension>
+	
+	<extension point="org.eclipse.ui.preferencePages">
+		<page name="SOS Text Editor" id="SOS.resource.SOS.ui.SOSPreferencePage" class="SOS.resource.SOS.ui.SOSPreferencePage" category="org.eclipse.ui.preferencePages.GeneralTextEditor">
+		</page>
+		<page name="Syntax Coloring" id="SOS.resource.SOS.ui.SOSSyntaxColoringPreferencePage" class="SOS.resource.SOS.ui.SOSSyntaxColoringPreferencePage" category="SOS.resource.SOS.ui.SOSPreferencePage">
+		</page>
+		<page name="Brackets" id="SOS.resource.SOS.ui.SOSBracketPreferencePage" class="SOS.resource.SOS.ui.SOSBracketPreferencePage" category="SOS.resource.SOS.ui.SOSPreferencePage">
+		</page>
+	</extension>
+	
+	<extension point="org.eclipse.ui.newWizards">
+		<category id="org.emftext.runtime.ui.EMFTextFileCategory" name="EMFText File">
+		</category>
+		<wizard category="org.emftext.runtime.ui.EMFTextFileCategory" icon="/icons/default_new_icon.gif" class="SOS.resource.SOS.ui.SOSNewFileWizard" id="SOS.resource.SOS.ui.SOSNewFileWizard" name="EMFText .SOS file">
+		</wizard>
+		<category id="org.emftext.runtime.ui.EMFTextProjectCategory" name="EMFText Project">
+		</category>
+		<wizard category="org.emftext.runtime.ui.EMFTextProjectCategory" icon="/icons/default_new_icon.gif" class="SOS.resource.SOS.ui.SOSNewProjectWizard" id="SOS.resource.SOS.ui.SOSNewProjectWizard" name="EMFText SOS project" project="true">
+		</wizard>
+	</extension>
+	
+	<extension point="org.eclipse.ui.ide.markerResolution">
+		<markerResolutionGenerator class="SOS.resource.SOS.ui.SOSMarkerResolutionGenerator" markerType="SOS.resource.SOS.problem">
+		</markerResolutionGenerator>
+	</extension>
+	
+	<extension point="org.eclipse.core.filebuffers.annotationModelCreation">
+		<factory class="SOS.resource.SOS.ui.SOSAnnotationModelFactory" extensions="SOS">
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type id="SOS.resource.SOS" name=".SOS File" base-type="org.eclipse.core.runtime.text" file-extensions="SOS">
+		</content-type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.documentProviders">
+		<provider class="org.eclipse.ui.editors.text.TextFileDocumentProvider" extensions="SOS" id="SOS.resource.SOS.ui.provider">
+		</provider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="SOS.resource.SOS.ui.occurences">
+		</type>
+		<type name="SOS.resource.SOS.ui.occurences.declaration" super="SOS.resource.SOS.ui.occurences">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="SOS.resource.SOS.ui.occurences" label="Occurrences (in .SOS files)" icon="/icons/occurrence_icon.gif" textPreferenceKey="SOS.occurrenceIndication" textPreferenceValue="false" highlightPreferenceKey="SOS.occurrenceHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="SOS.occurrenceIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="SOS.occurrenceIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="SOS.occurrenceIndicationColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="SOS.showOccurrenceInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="SOS.isOccurrenceGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="SOS.isOccurrenceGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="SOS.occurrenceTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+		<specification annotationType="SOS.resource.SOS.ui.occurences.declaration" label="Declarations (in .SOS files)" textPreferenceKey="SOS.declarationIndication" textPreferenceValue="false" highlightPreferenceKey="SOS.declarationHighlighting" highlightPreferenceValue="true" overviewRulerPreferenceKey="SOS.declarationIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="SOS.declarationIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="SOS.declarationIndicationColor" colorPreferenceValue="240,216,168" presentationLayer="4" textStylePreferenceKey="SOS.declarationTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+		<launchConfigurationTypeImage icon="/icons/launch_type_icon.gif" configTypeID="SOS.resource.SOS.ui.launchConfigurationType" id="SOS.launchImage">
+		</launchConfigurationTypeImage>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+		<launchConfigurationTabGroup type="SOS.resource.SOS.ui.launchConfigurationType" class="SOS.resource.SOS.ui.launch.SOSLaunchConfigurationTabGroup" id="SOS.launchConfigurationTabGroup" helpContextId="SOS.launchConfigHelpContext">
+			<launchMode mode="debug" perspective="org.eclipse.debug.ui.DebugPerspective" description="Debug SOS model.">
+			</launchMode>
+			<launchMode mode="run" description="Run SOS model.">
+			</launchMode>
+		</launchConfigurationTabGroup>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.launchShortcuts">
+		<shortcut label="SOS Application" icon="/icons/launch_shortcut_icon.gif" helpContextId="SOS.launch" modes="run,debug" class="SOS.resource.SOS.ui.launch.SOSLaunchShortcut" description="Launch a SOS model" id="SOS.launchShortcut">
+			<description description="Run SOS model" mode="run">
+			</description>
+			<description description="Debug SOS model" mode="debug">
+			</description>
+			<contextualLaunch>
+				<enablement>
+					<with variable="selection">
+						<count value="1">
+						</count>
+						<iterate>
+							<test property="SOS.isLaunchable">
+							</test>
+						</iterate>
+					</with>
+				</enablement>
+			</contextualLaunch>
+			<configurationType id="SOS.resource.SOS.ui.launchConfigurationType">
+			</configurationType>
+		</shortcut>
+	</extension>
+	
+	<extension point="org.eclipse.core.expressions.propertyTesters">
+		<propertyTester id="SOS.PropertyTester" type="java.lang.Object" namespace="SOS" properties="isLaunchable" class="SOS.resource.SOS.ui.SOSPropertyTester">
+		</propertyTester>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="SOS.resource.SOS.ui.debug.lineBreakpoint" markerType="SOS.resource.SOS.debug.lineBreakpoint.marker" super="org.eclipse.debug.core.breakpoint">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="SOS.resource.SOS.ui.debug.lineBreakpoint" label="Breakpoints (in .SOS files)" icon="/icons/breakpoint_icon.gif" textPreferenceKey="SOS.resource.SOS.ui.lineBreakpoint" textPreferenceValue="false" highlightPreferenceKey="SOS.resource.SOS.ui.lineBreakpointHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="SOS.resource.SOS.ui.lineBreakpointIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="SOS.resource.SOS.ui.lineBreakpointIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="SOS.resource.SOS.ui.lineBreakpointColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="SOS.resource.SOS.ui.showLineBreakpointInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="SOS.resource.SOS.ui.isLineBreakpointGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="SOS.resource.SOS.ui.isLineBreakpointGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="SOS.resource.SOS.ui.lineBreakpointTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.adapters">
+		<factory adaptableType="SOS.resource.SOS.ui.SOSEditor" class="SOS.resource.SOS.ui.debug.SOSAdapterFactory">
+			<adapter type="org.eclipse.debug.ui.actions.IToggleBreakpointsTarget">
+			</adapter>
+		</factory>
+		<factory adaptableType="SOS.resource.SOS.debug.SOSDebugVariable" class="SOS.resource.SOS.ui.debug.SOSAdapterFactory">
+			<adapter type="org.eclipse.debug.internal.ui.viewers.model.provisional.IElementLabelProvider">
+			</adapter>
+		</factory>
+		<factory adaptableType="SOS.resource.SOS.debug.SOSDebugVariable" class="SOS.resource.SOS.ui.debug.SOSAdapterFactory">
+			<adapter type="org.eclipse.debug.internal.ui.viewers.model.provisional.IElementContentProvider">
+			</adapter>
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.ui.popupMenus">
+		<viewerContribution id="SOS.resource.SOS.ui.RulerPopupActions" targetID="SOS.resource.SOS.EditorRuler">
+			<action id="SOS.resource.SOS.ui.toggleBreakpointAction" icon="icons/breakpoint_icon.gif" label="Toggle Breakpoint" class="org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate" menubarPath="debug">
+			</action>
+		</viewerContribution>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editorActions">
+		<editorContribution targetID="SOS.resource.SOS.ui.SOSEditor" id="SOS.resource.SOS.ui.BreakpointRulerActions">
+			<action id="SOS.resource.SOS.ui.debug.RulerToggleBreakpointAction" label="Add breakpoint" class="org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate" actionID="RulerDoubleClick">
+			</action>
+		</editorContribution>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.debugModelPresentations">
+		<debugModelPresentation id="SOS.resource.SOS.debugModel" class="SOS.resource.SOS.ui.debug.SOSDebugModelPresentation">
+		</debugModelPresentation>
+	</extension>
+	
+</plugin>

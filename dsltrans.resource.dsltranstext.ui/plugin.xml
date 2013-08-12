@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax.ui">
+		<metaInformationProvider class="dsltrans.resource.dsltranstext.ui.DsltranstextUIMetaInformation" id="dsltrans.resource.dsltranstext.ui.DsltranstextUIMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors">
+		<editor class="dsltrans.resource.dsltranstext.ui.DsltranstextEditor" contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor" extensions="dsltranstext" icon="icons/editor_icon.gif" id="dsltrans.resource.dsltranstext.ui.DsltranstextEditor" name="EMFText dsltranstext Editor">
+			<contentTypeBinding contentTypeId="dsltrans.resource.dsltranstext">
+			</contentTypeBinding>
+		</editor>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.preferences">
+		<initializer class="dsltrans.resource.dsltranstext.ui.DsltranstextPreferenceInitializer">
+		</initializer>
+	</extension>
+	
+	<extension point="org.eclipse.ui.preferencePages">
+		<page name="Dsltranstext Text Editor" id="dsltrans.resource.dsltranstext.ui.DsltranstextPreferencePage" class="dsltrans.resource.dsltranstext.ui.DsltranstextPreferencePage" category="org.eclipse.ui.preferencePages.GeneralTextEditor">
+		</page>
+		<page name="Syntax Coloring" id="dsltrans.resource.dsltranstext.ui.DsltranstextSyntaxColoringPreferencePage" class="dsltrans.resource.dsltranstext.ui.DsltranstextSyntaxColoringPreferencePage" category="dsltrans.resource.dsltranstext.ui.DsltranstextPreferencePage">
+		</page>
+		<page name="Brackets" id="dsltrans.resource.dsltranstext.ui.DsltranstextBracketPreferencePage" class="dsltrans.resource.dsltranstext.ui.DsltranstextBracketPreferencePage" category="dsltrans.resource.dsltranstext.ui.DsltranstextPreferencePage">
+		</page>
+	</extension>
+	
+	<extension point="org.eclipse.ui.newWizards">
+		<category id="org.emftext.runtime.ui.EMFTextFileCategory" name="EMFText File">
+		</category>
+		<wizard category="org.emftext.runtime.ui.EMFTextFileCategory" icon="/icons/default_new_icon.gif" class="dsltrans.resource.dsltranstext.ui.DsltranstextNewFileWizard" id="dsltrans.resource.dsltranstext.ui.DsltranstextNewFileWizard" name="EMFText .dsltranstext file">
+		</wizard>
+		<category id="org.emftext.runtime.ui.EMFTextProjectCategory" name="EMFText Project">
+		</category>
+		<wizard category="org.emftext.runtime.ui.EMFTextProjectCategory" icon="/icons/default_new_icon.gif" class="dsltrans.resource.dsltranstext.ui.DsltranstextNewProjectWizard" id="dsltrans.resource.dsltranstext.ui.DsltranstextNewProjectWizard" name="EMFText dsltranstext project" project="true">
+		</wizard>
+	</extension>
+	
+	<extension point="org.eclipse.ui.ide.markerResolution">
+		<markerResolutionGenerator class="dsltrans.resource.dsltranstext.ui.DsltranstextMarkerResolutionGenerator" markerType="dsltrans.resource.dsltranstext.problem">
+		</markerResolutionGenerator>
+	</extension>
+	
+	<extension point="org.eclipse.core.filebuffers.annotationModelCreation">
+		<factory class="dsltrans.resource.dsltranstext.ui.DsltranstextAnnotationModelFactory" extensions="dsltranstext">
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type id="dsltrans.resource.dsltranstext" name=".dsltranstext File" base-type="org.eclipse.core.runtime.text" file-extensions="dsltranstext">
+		</content-type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.documentProviders">
+		<provider class="org.eclipse.ui.editors.text.TextFileDocumentProvider" extensions="dsltranstext" id="dsltrans.resource.dsltranstext.ui.provider">
+		</provider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="dsltrans.resource.dsltranstext.ui.occurences">
+		</type>
+		<type name="dsltrans.resource.dsltranstext.ui.occurences.declaration" super="dsltrans.resource.dsltranstext.ui.occurences">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="dsltrans.resource.dsltranstext.ui.occurences" label="Occurrences (in .dsltranstext files)" icon="/icons/occurrence_icon.gif" textPreferenceKey="dsltranstext.occurrenceIndication" textPreferenceValue="false" highlightPreferenceKey="dsltranstext.occurrenceHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="dsltranstext.occurrenceIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="dsltranstext.occurrenceIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="dsltranstext.occurrenceIndicationColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="dsltranstext.showOccurrenceInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="dsltranstext.isOccurrenceGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="dsltranstext.isOccurrenceGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="dsltranstext.occurrenceTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+		<specification annotationType="dsltrans.resource.dsltranstext.ui.occurences.declaration" label="Declarations (in .dsltranstext files)" textPreferenceKey="dsltranstext.declarationIndication" textPreferenceValue="false" highlightPreferenceKey="dsltranstext.declarationHighlighting" highlightPreferenceValue="true" overviewRulerPreferenceKey="dsltranstext.declarationIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="dsltranstext.declarationIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="dsltranstext.declarationIndicationColor" colorPreferenceValue="240,216,168" presentationLayer="4" textStylePreferenceKey="dsltranstext.declarationTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+		<launchConfigurationTypeImage icon="/icons/launch_type_icon.gif" configTypeID="dsltrans.resource.dsltranstext.ui.launchConfigurationType" id="dsltranstext.launchImage">
+		</launchConfigurationTypeImage>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+		<launchConfigurationTabGroup type="dsltrans.resource.dsltranstext.ui.launchConfigurationType" class="dsltrans.resource.dsltranstext.ui.launch.DsltranstextLaunchConfigurationTabGroup" id="dsltranstext.launchConfigurationTabGroup" helpContextId="dsltranstext.launchConfigHelpContext">
+			<launchMode mode="debug" perspective="org.eclipse.debug.ui.DebugPerspective" description="Debug dsltranstext model.">
+			</launchMode>
+			<launchMode mode="run" description="Run dsltranstext model.">
+			</launchMode>
+		</launchConfigurationTabGroup>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.launchShortcuts">
+		<shortcut label="dsltranstext Application" icon="/icons/launch_shortcut_icon.gif" helpContextId="dsltranstext.launch" modes="run,debug" class="dsltrans.resource.dsltranstext.ui.launch.DsltranstextLaunchShortcut" description="Launch a dsltranstext model" id="dsltranstext.launchShortcut">
+			<description description="Run dsltranstext model" mode="run">
+			</description>
+			<description description="Debug dsltranstext model" mode="debug">
+			</description>
+			<contextualLaunch>
+				<enablement>
+					<with variable="selection">
+						<count value="1">
+						</count>
+						<iterate>
+							<test property="dsltranstext.isLaunchable">
+							</test>
+						</iterate>
+					</with>
+				</enablement>
+			</contextualLaunch>
+			<configurationType id="dsltrans.resource.dsltranstext.ui.launchConfigurationType">
+			</configurationType>
+		</shortcut>
+	</extension>
+	
+	<extension point="org.eclipse.core.expressions.propertyTesters">
+		<propertyTester id="dsltranstext.PropertyTester" type="java.lang.Object" namespace="dsltranstext" properties="isLaunchable" class="dsltrans.resource.dsltranstext.ui.DsltranstextPropertyTester">
+		</propertyTester>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="dsltrans.resource.dsltranstext.ui.debug.lineBreakpoint" markerType="dsltrans.resource.dsltranstext.debug.lineBreakpoint.marker" super="org.eclipse.debug.core.breakpoint">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="dsltrans.resource.dsltranstext.ui.debug.lineBreakpoint" label="Breakpoints (in .dsltranstext files)" icon="/icons/breakpoint_icon.gif" textPreferenceKey="dsltrans.resource.dsltranstext.ui.lineBreakpoint" textPreferenceValue="false" highlightPreferenceKey="dsltrans.resource.dsltranstext.ui.lineBreakpointHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="dsltrans.resource.dsltranstext.ui.lineBreakpointIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="dsltrans.resource.dsltranstext.ui.lineBreakpointIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="dsltrans.resource.dsltranstext.ui.lineBreakpointColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="dsltrans.resource.dsltranstext.ui.showLineBreakpointInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="dsltrans.resource.dsltranstext.ui.isLineBreakpointGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="dsltrans.resource.dsltranstext.ui.isLineBreakpointGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="dsltrans.resource.dsltranstext.ui.lineBreakpointTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.adapters">
+		<factory adaptableType="dsltrans.resource.dsltranstext.ui.DsltranstextEditor" class="dsltrans.resource.dsltranstext.ui.debug.DsltranstextAdapterFactory">
+			<adapter type="org.eclipse.debug.ui.actions.IToggleBreakpointsTarget">
+			</adapter>
+		</factory>
+		<factory adaptableType="dsltrans.resource.dsltranstext.debug.DsltranstextDebugVariable" class="dsltrans.resource.dsltranstext.ui.debug.DsltranstextAdapterFactory">
+			<adapter type="org.eclipse.debug.internal.ui.viewers.model.provisional.IElementLabelProvider">
+			</adapter>
+		</factory>
+		<factory adaptableType="dsltrans.resource.dsltranstext.debug.DsltranstextDebugVariable" class="dsltrans.resource.dsltranstext.ui.debug.DsltranstextAdapterFactory">
+			<adapter type="org.eclipse.debug.internal.ui.viewers.model.provisional.IElementContentProvider">
+			</adapter>
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.ui.popupMenus">
+		<viewerContribution id="dsltrans.resource.dsltranstext.ui.RulerPopupActions" targetID="dsltrans.resource.dsltranstext.EditorRuler">
+			<action id="dsltrans.resource.dsltranstext.ui.toggleBreakpointAction" icon="icons/breakpoint_icon.gif" label="Toggle Breakpoint" class="org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate" menubarPath="debug">
+			</action>
+		</viewerContribution>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editorActions">
+		<editorContribution targetID="dsltrans.resource.dsltranstext.ui.DsltranstextEditor" id="dsltrans.resource.dsltranstext.ui.BreakpointRulerActions">
+			<action id="dsltrans.resource.dsltranstext.ui.debug.RulerToggleBreakpointAction" label="Add breakpoint" class="org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate" actionID="RulerDoubleClick">
+			</action>
+		</editorContribution>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.debugModelPresentations">
+		<debugModelPresentation id="dsltrans.resource.dsltranstext.debugModel" class="dsltrans.resource.dsltranstext.ui.debug.DsltranstextDebugModelPresentation">
+		</debugModelPresentation>
+	</extension>
+	
+</plugin>

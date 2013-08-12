@@ -1,0 +1,1 @@
+Copy ctool16 and obj16 directories to DSLTransEditor2.0.edit/icons/full directory.

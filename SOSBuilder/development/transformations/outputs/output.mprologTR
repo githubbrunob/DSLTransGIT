@@ -1,0 +1,3151 @@
+<?xml version="1.0" encoding="ASCII" standalone="no"?>
+<mprologTermReference:Model xmlns:mprologTermReference="mprologTermReference" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="name_of_SOS_file" xmi:version="2.0" xsi:schemaLocation="mprologTermReference mprologTermReference.ecore">
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.35/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          <ownedTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.35/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.40/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <ownedTerm idReference="//@ownedClause.1/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          </nextTerm>
+          <ownedTerm idReference="//@ownedClause.41/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List">
+          <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+            <ownedTerm idReference="//@ownedClause.35/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+            </ownedTerm>
+          </ownedHeadTerms>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.35/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.41/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <ownedTerm idReference="//@ownedClause.2/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          </nextTerm>
+          <ownedTerm idReference="//@ownedClause.40/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List">
+          <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+            <ownedTerm idReference="//@ownedClause.35/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+            </ownedTerm>
+          </ownedHeadTerms>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.34/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          <ownedTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.34/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.110/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          <ownedTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm idReference="//@ownedClause.41/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+            </nextTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.34/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          <ownedTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm idReference="//@ownedClause.40/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+            </nextTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.34/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          <ownedTerm idReference="//@ownedClause.41/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+            <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.34/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.110/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          <ownedTerm idReference="//@ownedClause.40/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+            <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.34/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.8/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          <ownedTerm idReference="//@ownedClause.40/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm idReference="//@ownedClause.40/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <ownedTerm name="Xy" xsi:type="mprologTermReference:Variable"/>
+            </nextTerm>
+            <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List">
+          <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+            <ownedTerm idReference="//@ownedClause.34/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Xy" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </ownedTerm>
+          </ownedHeadTerms>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.34/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.9/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          <ownedTerm idReference="//@ownedClause.41/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm idReference="//@ownedClause.41/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <ownedTerm name="Xy" xsi:type="mprologTermReference:Variable"/>
+            </nextTerm>
+            <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List">
+          <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+            <ownedTerm idReference="//@ownedClause.34/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Xy" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </ownedTerm>
+          </ownedHeadTerms>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.34/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.110/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          <ownedTerm idReference="//@ownedClause.40/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm idReference="//@ownedClause.41/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <ownedTerm name="Xy" xsi:type="mprologTermReference:Variable"/>
+            </nextTerm>
+            <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.34/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          <ownedTerm idReference="//@ownedClause.41/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm idReference="//@ownedClause.40/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <ownedTerm name="Xy" xsi:type="mprologTermReference:Variable"/>
+            </nextTerm>
+            <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.32/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+          <ownedTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.32/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.13/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable">
+            <nextTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm xsi:type="mprologTermReference:Parenthesis">
+        <nextTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+          <ownedTerm xsi:type="mprologTermReference:List">
+            <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+              <ownedTerm idReference="//@ownedClause.32/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                <ownedTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                  <nextTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+                </ownedTerm>
+              </ownedTerm>
+            </ownedHeadTerms>
+          </ownedTerm>
+        </nextTerm>
+        <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+          <ownedTerm xsi:type="mprologTermReference:List">
+            <ownedHeadTerms text="not" xsi:type="mprologTermReference:Functor">
+              <ownedTerm text="equals" xsi:type="mprologTermReference:Functor">
+                <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable">
+                  <nextTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                </ownedTerm>
+              </ownedTerm>
+            </ownedHeadTerms>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.32/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.14/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          <ownedTerm idReference="//@ownedClause.40/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm idReference="//@ownedClause.41/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <ownedTerm name="Xy" xsi:type="mprologTermReference:Variable"/>
+            </nextTerm>
+            <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List">
+          <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+            <ownedTerm idReference="//@ownedClause.32/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Xy" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </ownedTerm>
+          </ownedHeadTerms>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.32/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.15/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          <ownedTerm idReference="//@ownedClause.41/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm idReference="//@ownedClause.40/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <ownedTerm name="Xy" xsi:type="mprologTermReference:Variable"/>
+            </nextTerm>
+            <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List">
+          <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+            <ownedTerm idReference="//@ownedClause.32/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm idReference="//@ownedClause.41/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                <nextTerm idReference="//@ownedClause.40/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                  <ownedTerm name="Xy" xsi:type="mprologTermReference:Variable"/>
+                </nextTerm>
+                <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </ownedTerm>
+          </ownedHeadTerms>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.32/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.40/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <ownedTerm idReference="//@ownedClause.40/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <ownedTerm idReference="//@ownedClause.16/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm idReference="//@ownedClause.40/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm idReference="//@ownedClause.40/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <ownedTerm name="Xy" xsi:type="mprologTermReference:Variable"/>
+            </nextTerm>
+            <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List">
+          <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+            <ownedTerm idReference="//@ownedClause.32/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Xy" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </ownedTerm>
+          </ownedHeadTerms>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.32/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.41/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <ownedTerm idReference="//@ownedClause.41/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <ownedTerm idReference="//@ownedClause.17/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm idReference="//@ownedClause.41/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm idReference="//@ownedClause.41/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <ownedTerm name="Xy" xsi:type="mprologTermReference:Variable"/>
+            </nextTerm>
+            <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List">
+          <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+            <ownedTerm idReference="//@ownedClause.32/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Xy" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </ownedTerm>
+          </ownedHeadTerms>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.33/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.18/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable">
+            <nextTerm name="Xy" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List">
+          <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+            <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+              <ownedTerm idReference="//@ownedClause.35/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                <ownedTerm name="Xy" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </nextTerm>
+            <ownedTerm idReference="//@ownedClause.32/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable">
+                <nextTerm idReference="//@ownedClause.18/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+              </ownedTerm>
+            </ownedTerm>
+          </ownedHeadTerms>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.36/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          <ownedTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.36/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.20/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          <ownedTerm idReference="//@ownedClause.40/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List">
+          <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+            <ownedTerm idReference="//@ownedClause.36/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+            </ownedTerm>
+          </ownedHeadTerms>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.36/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.41/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <ownedTerm idReference="//@ownedClause.21/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          </nextTerm>
+          <ownedTerm idReference="//@ownedClause.41/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List">
+          <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+            <ownedTerm idReference="//@ownedClause.36/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+            </ownedTerm>
+          </ownedHeadTerms>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.37/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          <ownedTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.37/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.23/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          <ownedTerm idReference="//@ownedClause.41/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List">
+          <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+            <ownedTerm idReference="//@ownedClause.37/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+            </ownedTerm>
+          </ownedHeadTerms>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.37/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.40/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <ownedTerm idReference="//@ownedClause.24/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          </nextTerm>
+          <ownedTerm idReference="//@ownedClause.40/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List">
+          <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+            <ownedTerm idReference="//@ownedClause.37/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+            </ownedTerm>
+          </ownedHeadTerms>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.38/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.25/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List">
+          <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+            <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+              <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                <ownedTerm idReference="//@ownedClause.36/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                  <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+                </ownedTerm>
+              </nextTerm>
+              <ownedTerm idReference="//@ownedClause.37/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </nextTerm>
+            <ownedTerm idReference="//@ownedClause.32/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm idReference="//@ownedClause.25/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                <nextTerm idReference="//@ownedClause.25/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+              </ownedTerm>
+            </ownedTerm>
+          </ownedHeadTerms>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.31/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.26/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable">
+            <nextTerm name="Xy" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List">
+          <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+            <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+              <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                <ownedTerm idReference="//@ownedClause.38/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                  <ownedTerm name="Xy" xsi:type="mprologTermReference:Variable"/>
+                </ownedTerm>
+              </nextTerm>
+              <ownedTerm idReference="//@ownedClause.38/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </nextTerm>
+            <ownedTerm idReference="//@ownedClause.34/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm idReference="//@ownedClause.26/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                <nextTerm idReference="//@ownedClause.26/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+              </ownedTerm>
+            </ownedTerm>
+          </ownedHeadTerms>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.29/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.27/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable">
+            <nextTerm name="Xy" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List">
+          <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+            <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+              <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                <ownedTerm idReference="//@ownedClause.38/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                  <ownedTerm name="Xy" xsi:type="mprologTermReference:Variable"/>
+                </ownedTerm>
+              </nextTerm>
+              <ownedTerm idReference="//@ownedClause.38/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </nextTerm>
+            <ownedTerm idReference="//@ownedClause.32/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm idReference="//@ownedClause.27/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                <nextTerm idReference="//@ownedClause.27/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+              </ownedTerm>
+            </ownedTerm>
+          </ownedHeadTerms>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.30/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.28/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable">
+            <nextTerm name="Xy" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List">
+          <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+            <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+              <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                <ownedTerm idReference="//@ownedClause.38/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                  <ownedTerm name="Xy" xsi:type="mprologTermReference:Variable"/>
+                </ownedTerm>
+              </nextTerm>
+              <ownedTerm idReference="//@ownedClause.38/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                <ownedTerm name="Xx" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </nextTerm>
+            <ownedTerm idReference="//@ownedClause.33/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm idReference="//@ownedClause.28/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                <nextTerm idReference="//@ownedClause.28/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+              </ownedTerm>
+            </ownedTerm>
+          </ownedHeadTerms>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="hplus" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="hminus" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="hleq" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="plus" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="minus" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="leq" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="flip" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="harmonypred" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="harmonysuc" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="harmony" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="zero" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="suc" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="pred" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aa" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ab" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ac" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ad" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ae" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="af" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ag" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ah" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ai" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aj" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ak" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="al" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="am" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="an" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ao" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ap" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aq" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ar" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="as" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="at" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="au" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="av" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aw" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ax" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ay" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="az" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aA" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aB" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aC" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aD" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aE" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aF" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aG" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aH" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aI" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aJ" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aK" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aL" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aM" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aN" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aO" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aP" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aQ" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aR" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aS" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aT" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aU" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aV" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aW" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aX" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aY" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aZ" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="n0" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="n1" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="n2" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="n3" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="n4" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="n5" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="n6" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="n7" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="n8" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="n9" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.106/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.108/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <ownedTerm name="Xc" xsi:type="mprologTermReference:Variable">
+              <nextTerm idReference="//@ownedClause.104/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm name="Xs1" xsi:type="mprologTermReference:Variable"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm xsi:type="mprologTermReference:Parenthesis">
+        <nextTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+          <ownedTerm xsi:type="mprologTermReference:List">
+            <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+              <ownedTerm idReference="//@ownedClause.106/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </ownedHeadTerms>
+          </ownedTerm>
+        </nextTerm>
+        <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+          <ownedTerm xsi:type="mprologTermReference:List">
+            <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+              <ownedTerm xsi:type="mprologTermReference:VariableReference">
+                <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+              </ownedTerm>
+            </ownedHeadTerms>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.106/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.107/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          <ownedTerm text="empty" xsi:type="mprologTermReference:Functor"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="buildString" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="end" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="str" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="true" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="false" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.115/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.111/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          <ownedTerm name="Xt" xsi:type="mprologTermReference:Variable"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="once" xsi:type="mprologTermReference:Functor">
+        <nextTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+          <ownedTerm xsi:type="mprologTermReference:List">
+            <ownedHeadTerms text="forall" xsi:type="mprologTermReference:Functor">
+              <ownedTerm xsi:type="mprologTermReference:Parenthesis">
+                <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                  <ownedTerm xsi:type="mprologTermReference:Parenthesis">
+                    <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                      <nextTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                        <ownedTerm xsi:type="mprologTermReference:List"/>
+                      </nextTerm>
+                      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                        <ownedTerm xsi:type="mprologTermReference:List">
+                          <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+                            <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                              <ownedTerm text="membergenModel" xsi:type="mprologTermReference:Functor">
+                                <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                <ownedTerm text="petrinet" xsi:type="mprologTermReference:QuotedAtom">
+                                  <nextTerm text="Place" xsi:type="mprologTermReference:QuotedAtom">
+                                    <nextTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                                      <nextTerm name="Att_Xp1" xsi:type="mprologTermReference:Variable">
+                                        <nextTerm name="Rel_Xp1" xsi:type="mprologTermReference:Variable"/>
+                                      </nextTerm>
+                                    </nextTerm>
+                                  </nextTerm>
+                                </ownedTerm>
+                              </ownedTerm>
+                            </nextTerm>
+                            <ownedTerm idReference="//@ownedClause.111/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@ownedTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                              <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                            </ownedTerm>
+                          </ownedHeadTerms>
+                        </ownedTerm>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                      <ownedTerm xsi:type="mprologTermReference:List">
+                        <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+                          <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                            <nextTerm text="forall" xsi:type="mprologTermReference:Functor">
+                              <ownedTerm xsi:type="mprologTermReference:Parenthesis">
+                                <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                </nextTerm>
+                                <ownedTerm idReference="//@ownedClause.119/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                                  <ownedTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                                    <nextTerm name="Xt" xsi:type="mprologTermReference:Variable"/>
+                                  </ownedTerm>
+                                </ownedTerm>
+                              </ownedTerm>
+                            </nextTerm>
+                          </nextTerm>
+                          <ownedTerm xsi:type="mprologTermReference:VariableReference">
+                            <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </ownedTerm>
+                </nextTerm>
+                <ownedTerm idReference="//@ownedClause.119/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                  <ownedTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                    <nextTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                  </ownedTerm>
+                </ownedTerm>
+              </ownedTerm>
+            </ownedHeadTerms>
+          </ownedTerm>
+        </nextTerm>
+        <ownedTerm text="class" xsi:type="mprologTermReference:Functor">
+          <ownedTerm text="petrinet" xsi:type="mprologTermReference:QuotedAtom">
+            <nextTerm text="Transition" xsi:type="mprologTermReference:QuotedAtom">
+              <nextTerm name="Xt" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Att_Xt" xsi:type="mprologTermReference:Variable">
+                  <nextTerm name="Rel_Xt" xsi:type="mprologTermReference:Variable"/>
+                </nextTerm>
+              </nextTerm>
+            </nextTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.116/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.112/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          <ownedTerm name="Xt" xsi:type="mprologTermReference:Variable"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="once" xsi:type="mprologTermReference:Functor">
+        <nextTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+          <ownedTerm xsi:type="mprologTermReference:List">
+            <ownedHeadTerms text="forall" xsi:type="mprologTermReference:Functor">
+              <ownedTerm xsi:type="mprologTermReference:Parenthesis">
+                <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                  <ownedTerm xsi:type="mprologTermReference:Parenthesis">
+                    <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                      <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                        <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                          <nextTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                            <ownedTerm xsi:type="mprologTermReference:List">
+                              <ownedHeadTerms text="iter" xsi:type="mprologTermReference:Functor">
+                                <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                  <ownedTerm text="memberattModel" xsi:type="mprologTermReference:Functor">
+                                    <ownedTerm name="Xoutarc" xsi:type="mprologTermReference:Variable">
+                                      <nextTerm text="weight" xsi:type="mprologTermReference:QuotedAtom"/>
+                                    </ownedTerm>
+                                  </ownedTerm>
+                                </nextTerm>
+                                <ownedTerm idReference="//@ownedClause.40/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                                  <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                                    <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                                      <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                      <ownedTerm idReference="//@ownedClause.112/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@ownedTerm/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                                    </nextTerm>
+                                    <ownedTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                                  </nextTerm>
+                                </ownedTerm>
+                              </ownedHeadTerms>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                            <ownedTerm xsi:type="mprologTermReference:List">
+                              <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+                                <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                                  <ownedTerm text="membergenModel" xsi:type="mprologTermReference:Functor">
+                                    <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                    <ownedTerm name="Xoutarc" xsi:type="mprologTermReference:Variable">
+                                      <nextTerm text="sourcePlace" xsi:type="mprologTermReference:QuotedAtom">
+                                        <nextTerm name="Xp1" xsi:type="mprologTermReference:Variable"/>
+                                      </nextTerm>
+                                    </ownedTerm>
+                                  </ownedTerm>
+                                </nextTerm>
+                                <ownedTerm idReference="//@ownedClause.112/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@ownedTerm/@nextTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                                  <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                                </ownedTerm>
+                              </ownedHeadTerms>
+                            </ownedTerm>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                          <ownedTerm xsi:type="mprologTermReference:List">
+                            <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+                              <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                                <ownedTerm text="membergenModel" xsi:type="mprologTermReference:Functor">
+                                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                  <ownedTerm name="Xt" xsi:type="mprologTermReference:Variable">
+                                    <nextTerm text="outArc" xsi:type="mprologTermReference:QuotedAtom">
+                                      <nextTerm name="Xoutarc" xsi:type="mprologTermReference:Variable"/>
+                                    </nextTerm>
+                                  </ownedTerm>
+                                </ownedTerm>
+                              </nextTerm>
+                              <ownedTerm idReference="//@ownedClause.112/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                                <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                              </ownedTerm>
+                            </ownedHeadTerms>
+                          </ownedTerm>
+                        </ownedTerm>
+                      </nextTerm>
+                      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                        <ownedTerm xsi:type="mprologTermReference:List">
+                          <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+                            <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                              <ownedTerm text="membergenModel" xsi:type="mprologTermReference:Functor">
+                                <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                <ownedTerm text="petrinet" xsi:type="mprologTermReference:QuotedAtom">
+                                  <nextTerm text="OutArc" xsi:type="mprologTermReference:QuotedAtom">
+                                    <nextTerm name="Xoutarc" xsi:type="mprologTermReference:Variable">
+                                      <nextTerm name="Att_Xoutarc" xsi:type="mprologTermReference:Variable">
+                                        <nextTerm name="Rel_Xoutarc" xsi:type="mprologTermReference:Variable"/>
+                                      </nextTerm>
+                                    </nextTerm>
+                                  </nextTerm>
+                                </ownedTerm>
+                              </ownedTerm>
+                            </nextTerm>
+                            <ownedTerm idReference="//@ownedClause.112/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@ownedTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                              <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                            </ownedTerm>
+                          </ownedHeadTerms>
+                        </ownedTerm>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                      <ownedTerm xsi:type="mprologTermReference:List">
+                        <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+                          <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                            <ownedTerm text="membergenModel" xsi:type="mprologTermReference:Functor">
+                              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                              <ownedTerm text="petrinet" xsi:type="mprologTermReference:QuotedAtom">
+                                <nextTerm text="Place" xsi:type="mprologTermReference:QuotedAtom">
+                                  <nextTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                                    <nextTerm name="Att_Xp1" xsi:type="mprologTermReference:Variable">
+                                      <nextTerm name="Rel_Xp1" xsi:type="mprologTermReference:Variable"/>
+                                    </nextTerm>
+                                  </nextTerm>
+                                </nextTerm>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm idReference="//@ownedClause.112/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                            <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </ownedTerm>
+                </nextTerm>
+                <ownedTerm idReference="//@ownedClause.119/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                  <ownedTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                    <nextTerm idReference="//@ownedClause.112/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@ownedTerm/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@nextTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                  </ownedTerm>
+                </ownedTerm>
+              </ownedTerm>
+            </ownedHeadTerms>
+          </ownedTerm>
+        </nextTerm>
+        <ownedTerm text="class" xsi:type="mprologTermReference:Functor">
+          <ownedTerm text="petrinet" xsi:type="mprologTermReference:QuotedAtom">
+            <nextTerm text="Transition" xsi:type="mprologTermReference:QuotedAtom">
+              <nextTerm name="Xt" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Att_Xt" xsi:type="mprologTermReference:Variable">
+                  <nextTerm name="Rel_Xt" xsi:type="mprologTermReference:Variable"/>
+                </nextTerm>
+              </nextTerm>
+            </nextTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.117/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.113/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          <ownedTerm name="Xt" xsi:type="mprologTermReference:Variable"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="once" xsi:type="mprologTermReference:Functor">
+        <nextTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+          <ownedTerm xsi:type="mprologTermReference:List">
+            <ownedHeadTerms text="forall" xsi:type="mprologTermReference:Functor">
+              <ownedTerm xsi:type="mprologTermReference:Parenthesis">
+                <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                  <ownedTerm xsi:type="mprologTermReference:Parenthesis">
+                    <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                      <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                        <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                          <nextTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                            <ownedTerm xsi:type="mprologTermReference:List">
+                              <ownedHeadTerms text="iter" xsi:type="mprologTermReference:Functor">
+                                <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                  <ownedTerm text="memberattModel" xsi:type="mprologTermReference:Functor">
+                                    <ownedTerm name="Xinarc" xsi:type="mprologTermReference:Variable">
+                                      <nextTerm text="weight" xsi:type="mprologTermReference:QuotedAtom"/>
+                                    </ownedTerm>
+                                  </ownedTerm>
+                                </nextTerm>
+                                <ownedTerm idReference="//@ownedClause.40/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                                  <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                                    <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                                      <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                      <ownedTerm idReference="//@ownedClause.113/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@ownedTerm/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                                    </nextTerm>
+                                    <ownedTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                                  </nextTerm>
+                                </ownedTerm>
+                              </ownedHeadTerms>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                            <ownedTerm xsi:type="mprologTermReference:List">
+                              <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+                                <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                                  <ownedTerm text="membergenModel" xsi:type="mprologTermReference:Functor">
+                                    <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                    <ownedTerm name="Xinarc" xsi:type="mprologTermReference:Variable">
+                                      <nextTerm text="targetPlace" xsi:type="mprologTermReference:QuotedAtom">
+                                        <nextTerm name="Xp1" xsi:type="mprologTermReference:Variable"/>
+                                      </nextTerm>
+                                    </ownedTerm>
+                                  </ownedTerm>
+                                </nextTerm>
+                                <ownedTerm idReference="//@ownedClause.113/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@ownedTerm/@nextTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                                  <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                                </ownedTerm>
+                              </ownedHeadTerms>
+                            </ownedTerm>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                          <ownedTerm xsi:type="mprologTermReference:List">
+                            <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+                              <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                                <ownedTerm text="membergenModel" xsi:type="mprologTermReference:Functor">
+                                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                  <ownedTerm name="Xt" xsi:type="mprologTermReference:Variable">
+                                    <nextTerm text="inArc" xsi:type="mprologTermReference:QuotedAtom">
+                                      <nextTerm name="Xinarc" xsi:type="mprologTermReference:Variable"/>
+                                    </nextTerm>
+                                  </ownedTerm>
+                                </ownedTerm>
+                              </nextTerm>
+                              <ownedTerm idReference="//@ownedClause.113/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                                <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                              </ownedTerm>
+                            </ownedHeadTerms>
+                          </ownedTerm>
+                        </ownedTerm>
+                      </nextTerm>
+                      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                        <ownedTerm xsi:type="mprologTermReference:List">
+                          <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+                            <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                              <ownedTerm text="membergenModel" xsi:type="mprologTermReference:Functor">
+                                <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                <ownedTerm text="petrinet" xsi:type="mprologTermReference:QuotedAtom">
+                                  <nextTerm text="InArc" xsi:type="mprologTermReference:QuotedAtom">
+                                    <nextTerm name="Xinarc" xsi:type="mprologTermReference:Variable">
+                                      <nextTerm name="Att_Xinarc" xsi:type="mprologTermReference:Variable">
+                                        <nextTerm name="Rel_Xinarc" xsi:type="mprologTermReference:Variable"/>
+                                      </nextTerm>
+                                    </nextTerm>
+                                  </nextTerm>
+                                </ownedTerm>
+                              </ownedTerm>
+                            </nextTerm>
+                            <ownedTerm idReference="//@ownedClause.113/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@ownedTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                              <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                            </ownedTerm>
+                          </ownedHeadTerms>
+                        </ownedTerm>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                      <ownedTerm xsi:type="mprologTermReference:List">
+                        <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+                          <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                            <ownedTerm text="membergenModel" xsi:type="mprologTermReference:Functor">
+                              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                              <ownedTerm text="petrinet" xsi:type="mprologTermReference:QuotedAtom">
+                                <nextTerm text="Place" xsi:type="mprologTermReference:QuotedAtom">
+                                  <nextTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                                    <nextTerm name="Att_Xp1" xsi:type="mprologTermReference:Variable">
+                                      <nextTerm name="Rel_Xp1" xsi:type="mprologTermReference:Variable"/>
+                                    </nextTerm>
+                                  </nextTerm>
+                                </nextTerm>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm idReference="//@ownedClause.113/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                            <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </ownedTerm>
+                </nextTerm>
+                <ownedTerm idReference="//@ownedClause.119/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                  <ownedTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                    <nextTerm idReference="//@ownedClause.113/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@ownedTerm/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@nextTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                  </ownedTerm>
+                </ownedTerm>
+              </ownedTerm>
+            </ownedHeadTerms>
+          </ownedTerm>
+        </nextTerm>
+        <ownedTerm text="class" xsi:type="mprologTermReference:Functor">
+          <ownedTerm text="petrinet" xsi:type="mprologTermReference:QuotedAtom">
+            <nextTerm text="Transition" xsi:type="mprologTermReference:QuotedAtom">
+              <nextTerm name="Xt" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Att_Xt" xsi:type="mprologTermReference:Variable">
+                  <nextTerm name="Rel_Xt" xsi:type="mprologTermReference:Variable"/>
+                </nextTerm>
+              </nextTerm>
+            </nextTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.118/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.114/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List">
+          <ownedHeadTerms text="forall" xsi:type="mprologTermReference:Functor">
+            <ownedTerm xsi:type="mprologTermReference:Parenthesis">
+              <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                <ownedTerm xsi:type="mprologTermReference:Parenthesis">
+                  <nextTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                    <ownedTerm xsi:type="mprologTermReference:List">
+                      <ownedHeadTerms text="iter" xsi:type="mprologTermReference:Functor">
+                        <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                          <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                          <ownedTerm text="memberattModel" xsi:type="mprologTermReference:Functor">
+                            <ownedTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                              <nextTerm text="token" xsi:type="mprologTermReference:QuotedAtom"/>
+                            </ownedTerm>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm idReference="//@ownedClause.40/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                          <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                            <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                              <ownedTerm idReference="//@ownedClause.114/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                            </nextTerm>
+                            <ownedTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                          </nextTerm>
+                        </ownedTerm>
+                      </ownedHeadTerms>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                    <ownedTerm xsi:type="mprologTermReference:List">
+                      <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+                        <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                          <ownedTerm text="membergenModel" xsi:type="mprologTermReference:Functor">
+                            <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                            <ownedTerm text="petrinet" xsi:type="mprologTermReference:QuotedAtom">
+                              <nextTerm text="Place" xsi:type="mprologTermReference:QuotedAtom">
+                                <nextTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                                  <nextTerm name="Att_Xp1" xsi:type="mprologTermReference:Variable">
+                                    <nextTerm name="Rel_Xp1" xsi:type="mprologTermReference:Variable"/>
+                                  </nextTerm>
+                                </nextTerm>
+                              </nextTerm>
+                            </ownedTerm>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm idReference="//@ownedClause.114/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                          <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                        </ownedTerm>
+                      </ownedHeadTerms>
+                    </ownedTerm>
+                  </ownedTerm>
+                </ownedTerm>
+              </nextTerm>
+              <ownedTerm idReference="//@ownedClause.119/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                <ownedTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                  <nextTerm idReference="//@ownedClause.114/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm/@nextTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                </ownedTerm>
+              </ownedTerm>
+            </ownedTerm>
+          </ownedHeadTerms>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="test" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="pre" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="pos" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="initial" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="p" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.140/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.148/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <ownedTerm name="Xm" xsi:type="mprologTermReference:Variable">
+              <nextTerm idReference="//@ownedClause.120/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm name="Xs" xsi:type="mprologTermReference:Variable"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm xsi:type="mprologTermReference:Parenthesis">
+        <nextTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+          <ownedTerm xsi:type="mprologTermReference:List">
+            <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+              <ownedTerm idReference="//@ownedClause.140/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </ownedHeadTerms>
+          </ownedTerm>
+        </nextTerm>
+        <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+          <ownedTerm xsi:type="mprologTermReference:List">
+            <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+              <ownedTerm xsi:type="mprologTermReference:VariableReference">
+                <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+              </ownedTerm>
+            </ownedHeadTerms>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.140/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.147/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          <ownedTerm text="empty" xsi:type="mprologTermReference:Functor"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.144/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.110/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          <ownedTerm name="Xm" xsi:type="mprologTermReference:Variable">
+            <nextTerm idReference="//@ownedClause.147/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.144/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          <ownedTerm name="Xm" xsi:type="mprologTermReference:Variable">
+            <nextTerm idReference="//@ownedClause.148/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <ownedTerm name="Xm" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Xmark1" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </nextTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.144/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.124/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          <ownedTerm name="Xm" xsi:type="mprologTermReference:Variable">
+            <nextTerm idReference="//@ownedClause.148/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <ownedTerm name="Xm1" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Xmark1" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </nextTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm xsi:type="mprologTermReference:Parenthesis">
+        <nextTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+          <ownedTerm xsi:type="mprologTermReference:List">
+            <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+              <ownedTerm idReference="//@ownedClause.144/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                <ownedTerm name="Xm" xsi:type="mprologTermReference:Variable">
+                  <nextTerm name="Xmark1" xsi:type="mprologTermReference:Variable"/>
+                </ownedTerm>
+              </ownedTerm>
+            </ownedHeadTerms>
+          </ownedTerm>
+        </nextTerm>
+        <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+          <ownedTerm xsi:type="mprologTermReference:List">
+            <ownedHeadTerms text="not" xsi:type="mprologTermReference:Functor">
+              <ownedTerm text="equals" xsi:type="mprologTermReference:Functor">
+                <ownedTerm name="Xm" xsi:type="mprologTermReference:Variable">
+                  <nextTerm name="Xm1" xsi:type="mprologTermReference:Variable"/>
+                </ownedTerm>
+              </ownedTerm>
+            </ownedHeadTerms>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.142/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.148/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <ownedTerm idReference="//@ownedClause.119/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm idReference="//@ownedClause.125/@ownedBody/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+              <ownedTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                <nextTerm idReference="//@ownedClause.125/@ownedBody/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+              </ownedTerm>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm idReference="//@ownedClause.148/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm name="Xmark2" xsi:type="mprologTermReference:Variable"/>
+            <ownedTerm idReference="//@ownedClause.119/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="Xmark1" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Xn1" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </ownedTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="once" xsi:type="mprologTermReference:Functor">
+        <nextTerm xsi:type="mprologTermReference:Parenthesis">
+          <nextTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+            <ownedTerm xsi:type="mprologTermReference:List">
+              <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+                <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                  <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                    <ownedTerm idReference="//@ownedClause.145/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                      <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                      <ownedTerm idReference="//@ownedClause.119/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                        <nextTerm name="Xmark2" xsi:type="mprologTermReference:Variable"/>
+                        <ownedTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                          <nextTerm name="Xn2" xsi:type="mprologTermReference:Variable"/>
+                        </ownedTerm>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm idReference="//@ownedClause.142/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                    <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                    <ownedTerm name="Xmark1" xsi:type="mprologTermReference:Variable">
+                      <nextTerm idReference="//@ownedClause.125/@ownedBody/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                    </ownedTerm>
+                  </ownedTerm>
+                </nextTerm>
+                <ownedTerm idReference="//@ownedClause.32/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                  <ownedTerm name="Xn1" xsi:type="mprologTermReference:Variable">
+                    <nextTerm name="Xn2" xsi:type="mprologTermReference:Variable"/>
+                  </ownedTerm>
+                </ownedTerm>
+              </ownedHeadTerms>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+            <ownedTerm xsi:type="mprologTermReference:List">
+              <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+                <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                  <ownedTerm idReference="//@ownedClause.144/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                    <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                    <ownedTerm idReference="//@ownedClause.119/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                      <nextTerm name="Xmark2" xsi:type="mprologTermReference:Variable"/>
+                      <ownedTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                        <nextTerm name="Xn2" xsi:type="mprologTermReference:Variable"/>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </ownedTerm>
+                </nextTerm>
+                <ownedTerm idReference="//@ownedClause.125/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                  <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                </ownedTerm>
+              </ownedHeadTerms>
+            </ownedTerm>
+          </ownedTerm>
+        </nextTerm>
+        <ownedTerm text="class" xsi:type="mprologTermReference:Functor">
+          <ownedTerm text="petrinet" xsi:type="mprologTermReference:QuotedAtom">
+            <nextTerm text="Place" xsi:type="mprologTermReference:QuotedAtom">
+              <nextTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Att_Xp1" xsi:type="mprologTermReference:Variable">
+                  <nextTerm name="Rel_Xp1" xsi:type="mprologTermReference:Variable"/>
+                </nextTerm>
+              </nextTerm>
+            </nextTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.142/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.148/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <ownedTerm idReference="//@ownedClause.119/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm idReference="//@ownedClause.126/@ownedBody/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+              <ownedTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Xn1" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm idReference="//@ownedClause.148/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm name="Xmark2" xsi:type="mprologTermReference:Variable"/>
+            <ownedTerm idReference="//@ownedClause.119/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="Xmark1" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Xn1" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </ownedTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="once" xsi:type="mprologTermReference:Functor">
+        <nextTerm xsi:type="mprologTermReference:Parenthesis">
+          <nextTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+            <ownedTerm xsi:type="mprologTermReference:List">
+              <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+                <ownedTerm idReference="//@ownedClause.142/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                  <ownedTerm name="Xmark1" xsi:type="mprologTermReference:Variable">
+                    <nextTerm name="Xmark2" xsi:type="mprologTermReference:Variable"/>
+                  </ownedTerm>
+                </ownedTerm>
+              </ownedHeadTerms>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+            <ownedTerm xsi:type="mprologTermReference:List">
+              <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+                <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                  <ownedTerm idReference="//@ownedClause.144/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                    <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                    <ownedTerm idReference="//@ownedClause.119/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                      <nextTerm name="Xmark2" xsi:type="mprologTermReference:Variable"/>
+                      <ownedTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                        <nextTerm name="Xn2" xsi:type="mprologTermReference:Variable"/>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </ownedTerm>
+                </nextTerm>
+                <ownedTerm idReference="//@ownedClause.126/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                  <nextTerm idReference="//@ownedClause.110/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                </ownedTerm>
+              </ownedHeadTerms>
+            </ownedTerm>
+          </ownedTerm>
+        </nextTerm>
+        <ownedTerm text="class" xsi:type="mprologTermReference:Functor">
+          <ownedTerm text="petrinet" xsi:type="mprologTermReference:QuotedAtom">
+            <nextTerm text="Place" xsi:type="mprologTermReference:QuotedAtom">
+              <nextTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Att_Xp1" xsi:type="mprologTermReference:Variable">
+                  <nextTerm name="Rel_Xp1" xsi:type="mprologTermReference:Variable"/>
+                </nextTerm>
+              </nextTerm>
+            </nextTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.142/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm name="Xmark1" xsi:type="mprologTermReference:Variable"/>
+          <ownedTerm idReference="//@ownedClause.147/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm name="Xmark1" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.141/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.148/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <ownedTerm idReference="//@ownedClause.119/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm idReference="//@ownedClause.128/@ownedBody/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+              <ownedTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                <nextTerm idReference="//@ownedClause.128/@ownedBody/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+              </ownedTerm>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm idReference="//@ownedClause.148/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm name="Xmark2" xsi:type="mprologTermReference:Variable"/>
+            <ownedTerm idReference="//@ownedClause.119/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="Xmark1" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Xn1" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </ownedTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="once" xsi:type="mprologTermReference:Functor">
+        <nextTerm xsi:type="mprologTermReference:Parenthesis">
+          <nextTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+            <ownedTerm xsi:type="mprologTermReference:List">
+              <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+                <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                  <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                    <ownedTerm idReference="//@ownedClause.145/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                      <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                      <ownedTerm idReference="//@ownedClause.119/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                        <nextTerm name="Xmark2" xsi:type="mprologTermReference:Variable"/>
+                        <ownedTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                          <nextTerm name="Xn2" xsi:type="mprologTermReference:Variable"/>
+                        </ownedTerm>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm idReference="//@ownedClause.141/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                    <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                    <ownedTerm name="Xmark1" xsi:type="mprologTermReference:Variable">
+                      <nextTerm idReference="//@ownedClause.128/@ownedBody/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                    </ownedTerm>
+                  </ownedTerm>
+                </nextTerm>
+                <ownedTerm idReference="//@ownedClause.33/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                  <ownedTerm name="Xn2" xsi:type="mprologTermReference:Variable">
+                    <nextTerm name="Xn1" xsi:type="mprologTermReference:Variable"/>
+                  </ownedTerm>
+                </ownedTerm>
+              </ownedHeadTerms>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+            <ownedTerm xsi:type="mprologTermReference:List">
+              <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+                <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                  <ownedTerm idReference="//@ownedClause.144/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                    <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                    <ownedTerm idReference="//@ownedClause.119/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                      <nextTerm name="Xmark2" xsi:type="mprologTermReference:Variable"/>
+                      <ownedTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                        <nextTerm name="Xn2" xsi:type="mprologTermReference:Variable"/>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </ownedTerm>
+                </nextTerm>
+                <ownedTerm idReference="//@ownedClause.128/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                  <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                </ownedTerm>
+              </ownedHeadTerms>
+            </ownedTerm>
+          </ownedTerm>
+        </nextTerm>
+        <ownedTerm text="class" xsi:type="mprologTermReference:Functor">
+          <ownedTerm text="petrinet" xsi:type="mprologTermReference:QuotedAtom">
+            <nextTerm text="Place" xsi:type="mprologTermReference:QuotedAtom">
+              <nextTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Att_Xp1" xsi:type="mprologTermReference:Variable">
+                  <nextTerm name="Rel_Xp1" xsi:type="mprologTermReference:Variable"/>
+                </nextTerm>
+              </nextTerm>
+            </nextTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.141/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.148/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <ownedTerm idReference="//@ownedClause.119/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm idReference="//@ownedClause.129/@ownedBody/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+              <ownedTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Xn1" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm idReference="//@ownedClause.148/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm name="Xmark2" xsi:type="mprologTermReference:Variable"/>
+            <ownedTerm idReference="//@ownedClause.119/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="Xmark1" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Xn1" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </ownedTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="once" xsi:type="mprologTermReference:Functor">
+        <nextTerm xsi:type="mprologTermReference:Parenthesis">
+          <nextTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+            <ownedTerm xsi:type="mprologTermReference:List">
+              <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+                <ownedTerm idReference="//@ownedClause.141/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                  <ownedTerm name="Xmark1" xsi:type="mprologTermReference:Variable">
+                    <nextTerm name="Xmark2" xsi:type="mprologTermReference:Variable"/>
+                  </ownedTerm>
+                </ownedTerm>
+              </ownedHeadTerms>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+            <ownedTerm xsi:type="mprologTermReference:List">
+              <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+                <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                  <ownedTerm idReference="//@ownedClause.144/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                    <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                    <ownedTerm idReference="//@ownedClause.119/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                      <nextTerm name="Xmark2" xsi:type="mprologTermReference:Variable"/>
+                      <ownedTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                        <nextTerm name="Xn2" xsi:type="mprologTermReference:Variable"/>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </ownedTerm>
+                </nextTerm>
+                <ownedTerm idReference="//@ownedClause.129/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                  <nextTerm idReference="//@ownedClause.110/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                </ownedTerm>
+              </ownedHeadTerms>
+            </ownedTerm>
+          </ownedTerm>
+        </nextTerm>
+        <ownedTerm text="class" xsi:type="mprologTermReference:Functor">
+          <ownedTerm text="petrinet" xsi:type="mprologTermReference:QuotedAtom">
+            <nextTerm text="Place" xsi:type="mprologTermReference:QuotedAtom">
+              <nextTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Att_Xp1" xsi:type="mprologTermReference:Variable">
+                  <nextTerm name="Rel_Xp1" xsi:type="mprologTermReference:Variable"/>
+                </nextTerm>
+              </nextTerm>
+            </nextTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.141/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm name="Xmark1" xsi:type="mprologTermReference:Variable"/>
+          <ownedTerm idReference="//@ownedClause.147/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm name="Xmark1" xsi:type="mprologTermReference:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.143/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          <ownedTerm idReference="//@ownedClause.147/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.143/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.132/@ownedBody/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          <ownedTerm idReference="//@ownedClause.148/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <ownedTerm idReference="//@ownedClause.119/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="Xmark1" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Xn1" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </ownedTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="once" xsi:type="mprologTermReference:Functor">
+        <nextTerm xsi:type="mprologTermReference:Parenthesis">
+          <nextTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+            <ownedTerm xsi:type="mprologTermReference:List">
+              <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+                <ownedTerm idReference="//@ownedClause.143/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                  <ownedTerm name="Xmark1" xsi:type="mprologTermReference:Variable"/>
+                </ownedTerm>
+              </ownedHeadTerms>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+            <ownedTerm xsi:type="mprologTermReference:List">
+              <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+                <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                  <ownedTerm idReference="//@ownedClause.34/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                    <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                    <ownedTerm name="Xn1" xsi:type="mprologTermReference:Variable">
+                      <nextTerm idReference="//@ownedClause.41/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                        <ownedTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                      </nextTerm>
+                    </ownedTerm>
+                  </ownedTerm>
+                </nextTerm>
+                <ownedTerm idReference="//@ownedClause.132/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                  <nextTerm idReference="//@ownedClause.110/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                </ownedTerm>
+              </ownedHeadTerms>
+            </ownedTerm>
+          </ownedTerm>
+        </nextTerm>
+        <ownedTerm text="class" xsi:type="mprologTermReference:Functor">
+          <ownedTerm text="petrinet" xsi:type="mprologTermReference:QuotedAtom">
+            <nextTerm text="Place" xsi:type="mprologTermReference:QuotedAtom">
+              <nextTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Att_Xp1" xsi:type="mprologTermReference:Variable">
+                  <nextTerm name="Rel_Xp1" xsi:type="mprologTermReference:Variable"/>
+                </nextTerm>
+              </nextTerm>
+            </nextTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.143/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.110/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          <ownedTerm idReference="//@ownedClause.148/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <ownedTerm idReference="//@ownedClause.119/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="Xmark1" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Xn1" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </ownedTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="once" xsi:type="mprologTermReference:Functor">
+        <nextTerm xsi:type="mprologTermReference:Parenthesis">
+          <nextTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+            <ownedTerm xsi:type="mprologTermReference:List"/>
+          </nextTerm>
+          <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+            <ownedTerm xsi:type="mprologTermReference:List">
+              <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+                <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                  <ownedTerm idReference="//@ownedClause.34/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                    <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                    <ownedTerm name="Xn1" xsi:type="mprologTermReference:Variable">
+                      <nextTerm idReference="//@ownedClause.41/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                        <ownedTerm idReference="//@ownedClause.39/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                      </nextTerm>
+                    </ownedTerm>
+                  </ownedTerm>
+                </nextTerm>
+                <ownedTerm idReference="//@ownedClause.133/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                  <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                </ownedTerm>
+              </ownedHeadTerms>
+            </ownedTerm>
+          </ownedTerm>
+        </nextTerm>
+        <ownedTerm text="class" xsi:type="mprologTermReference:Functor">
+          <ownedTerm text="petrinet" xsi:type="mprologTermReference:QuotedAtom">
+            <nextTerm text="Place" xsi:type="mprologTermReference:QuotedAtom">
+              <nextTerm name="Xp1" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Att_Xp1" xsi:type="mprologTermReference:Variable">
+                  <nextTerm name="Rel_Xp1" xsi:type="mprologTermReference:Variable"/>
+                </nextTerm>
+              </nextTerm>
+            </nextTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.145/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.147/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          <ownedTerm name="Xm" xsi:type="mprologTermReference:Variable">
+            <nextTerm idReference="//@ownedClause.147/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.145/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.135/@ownedBody/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          <ownedTerm name="Xm" xsi:type="mprologTermReference:Variable">
+            <nextTerm idReference="//@ownedClause.148/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <ownedTerm name="Xm" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Xmark1" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </nextTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List">
+          <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+            <ownedTerm idReference="//@ownedClause.145/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+              <ownedTerm name="Xm" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Xmark1" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </ownedTerm>
+          </ownedHeadTerms>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.145/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.148/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <ownedTerm name="Xm1" xsi:type="mprologTermReference:Variable">
+              <nextTerm idReference="//@ownedClause.136/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm name="Xm" xsi:type="mprologTermReference:Variable">
+            <nextTerm idReference="//@ownedClause.148/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+              <ownedTerm name="Xm1" xsi:type="mprologTermReference:Variable">
+                <nextTerm name="Xmark1" xsi:type="mprologTermReference:Variable"/>
+              </ownedTerm>
+            </nextTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm xsi:type="mprologTermReference:Parenthesis">
+        <nextTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+          <ownedTerm xsi:type="mprologTermReference:List">
+            <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+              <ownedTerm idReference="//@ownedClause.145/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                <ownedTerm name="Xm" xsi:type="mprologTermReference:Variable">
+                  <nextTerm name="Xmark1" xsi:type="mprologTermReference:Variable"/>
+                </ownedTerm>
+              </ownedTerm>
+            </ownedHeadTerms>
+          </ownedTerm>
+        </nextTerm>
+        <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+          <ownedTerm xsi:type="mprologTermReference:List">
+            <ownedHeadTerms text="not" xsi:type="mprologTermReference:Functor">
+              <ownedTerm text="equals" xsi:type="mprologTermReference:Functor">
+                <ownedTerm name="Xm" xsi:type="mprologTermReference:Variable">
+                  <nextTerm name="Xm1" xsi:type="mprologTermReference:Variable"/>
+                </ownedTerm>
+              </ownedTerm>
+            </ownedHeadTerms>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.146/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          <ownedTerm idReference="//@ownedClause.147/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm idReference="//@ownedClause.147/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+        <ownedTerm xsi:type="mprologTermReference:List"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.146/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.138/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+          <ownedTerm idReference="//@ownedClause.148/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm name="Xmark2" xsi:type="mprologTermReference:Variable"/>
+            <ownedTerm name="Xm" xsi:type="mprologTermReference:Variable">
+              <nextTerm name="Xmark1" xsi:type="mprologTermReference:Variable"/>
+            </ownedTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm xsi:type="mprologTermReference:Parenthesis">
+        <nextTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+          <ownedTerm xsi:type="mprologTermReference:List">
+            <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+              <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                <ownedTerm idReference="//@ownedClause.145/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                  <ownedTerm name="Xm" xsi:type="mprologTermReference:Variable">
+                    <nextTerm name="Xmark2" xsi:type="mprologTermReference:Variable"/>
+                  </ownedTerm>
+                </ownedTerm>
+              </nextTerm>
+              <ownedTerm idReference="//@ownedClause.146/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                <ownedTerm name="Xmark1" xsi:type="mprologTermReference:Variable">
+                  <nextTerm idReference="//@ownedClause.138/@ownedBody/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                </ownedTerm>
+              </ownedTerm>
+            </ownedHeadTerms>
+          </ownedTerm>
+        </nextTerm>
+        <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+          <ownedTerm xsi:type="mprologTermReference:List">
+            <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+              <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                <ownedTerm idReference="//@ownedClause.144/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                  <ownedTerm name="Xm" xsi:type="mprologTermReference:Variable">
+                    <nextTerm name="Xmark2" xsi:type="mprologTermReference:Variable"/>
+                  </ownedTerm>
+                </ownedTerm>
+              </nextTerm>
+              <ownedTerm idReference="//@ownedClause.138/@ownedBody/@ownedTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+              </ownedTerm>
+            </ownedHeadTerms>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm idReference="//@ownedClause.146/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+          <nextTerm idReference="//@ownedClause.110/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+          <ownedTerm idReference="//@ownedClause.148/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+            <nextTerm name="Xmark2" xsi:type="mprologTermReference:Variable"/>
+            <ownedTerm name="Xm" xsi:type="mprologTermReference:Variable">
+              <nextTerm name="Xmark1" xsi:type="mprologTermReference:Variable"/>
+            </ownedTerm>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm xsi:type="mprologTermReference:Parenthesis">
+        <nextTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+          <ownedTerm xsi:type="mprologTermReference:List"/>
+        </nextTerm>
+        <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+          <ownedTerm xsi:type="mprologTermReference:List">
+            <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+              <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                <ownedTerm idReference="//@ownedClause.144/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                  <ownedTerm name="Xm" xsi:type="mprologTermReference:Variable">
+                    <nextTerm name="Xmark2" xsi:type="mprologTermReference:Variable"/>
+                  </ownedTerm>
+                </ownedTerm>
+              </nextTerm>
+              <ownedTerm idReference="//@ownedClause.139/@ownedBody/@ownedTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                <nextTerm idReference="//@ownedClause.110/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+              </ownedTerm>
+            </ownedHeadTerms>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="build" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="subtract" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="add" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="positive" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="member" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="remove" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="equals" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="e" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="marking" xsi:type="mprologTermReference:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="rule">
+        <ownedTerm text="knowing" xsi:type="mprologTermReference:Functor">
+          <nextTerm text="pre" xsi:type="mprologTermReference:Functor">
+            <nextTerm text="pos" xsi:type="mprologTermReference:Functor">
+              <nextTerm text="know" xsi:type="mprologTermReference:Functor">
+                <ownedTerm text="ts" xsi:type="mprologTermReference:Functor">
+                  <ownedTerm idReference="//@ownedClause.149/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                    <nextTerm idReference="//@ownedClause.149/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                      <nextTerm idReference="//@ownedClause.149/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                    </nextTerm>
+                  </ownedTerm>
+                </ownedTerm>
+              </nextTerm>
+              <ownedTerm xsi:type="mprologTermReference:List">
+                <ownedHeadTerms xsi:type="mprologTermReference:Parenthesis">
+                  <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                    <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                        <ownedTerm xsi:type="mprologTermReference:List">
+                          <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+                            <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                              <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                                <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                                  <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                                    <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                                      <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                                        <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                                          <ownedTerm idReference="//@ownedClause.118/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                                            <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                          </ownedTerm>
+                                        </nextTerm>
+                                        <ownedTerm idReference="//@ownedClause.140/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                                          <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                          <ownedTerm idReference="//@ownedClause.149/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                                        </ownedTerm>
+                                      </nextTerm>
+                                      <ownedTerm idReference="//@ownedClause.116/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                                        <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                        <ownedTerm name="Xt" xsi:type="mprologTermReference:Variable"/>
+                                      </ownedTerm>
+                                    </nextTerm>
+                                    <ownedTerm idReference="//@ownedClause.140/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                                      <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                      <ownedTerm idReference="//@ownedClause.149/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                                    </ownedTerm>
+                                  </nextTerm>
+                                  <ownedTerm idReference="//@ownedClause.141/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                                    <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                    <ownedTerm idReference="//@ownedClause.149/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                                      <nextTerm idReference="//@ownedClause.149/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                                    </ownedTerm>
+                                  </ownedTerm>
+                                </nextTerm>
+                                <ownedTerm idReference="//@ownedClause.117/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                  <ownedTerm name="Xt" xsi:type="mprologTermReference:Variable"/>
+                                </ownedTerm>
+                              </nextTerm>
+                              <ownedTerm idReference="//@ownedClause.140/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                                <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                <ownedTerm idReference="//@ownedClause.149/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                              </ownedTerm>
+                            </nextTerm>
+                            <ownedTerm idReference="//@ownedClause.142/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                              <ownedTerm idReference="//@ownedClause.149/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                                <nextTerm idReference="//@ownedClause.149/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </ownedHeadTerms>
+                        </ownedTerm>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                      <ownedTerm xsi:type="mprologTermReference:List">
+                        <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+                          <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                            <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                            <ownedTerm text="memberattModel" xsi:type="mprologTermReference:Functor">
+                              <ownedTerm name="Xt" xsi:type="mprologTermReference:Variable">
+                                <nextTerm text="name" xsi:type="mprologTermReference:QuotedAtom"/>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm idReference="//@ownedClause.106/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                            <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                            <ownedTerm idReference="//@ownedClause.149/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                    <ownedTerm xsi:type="mprologTermReference:List">
+                      <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+                        <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                          <ownedTerm idReference="//@ownedClause.118/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                            <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm idReference="//@ownedClause.140/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                          <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                          <ownedTerm idReference="//@ownedClause.149/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                        </ownedTerm>
+                      </ownedHeadTerms>
+                    </ownedTerm>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </ownedTerm>
+            </nextTerm>
+            <ownedTerm xsi:type="mprologTermReference:List">
+              <ownedHeadTerms xsi:type="mprologTermReference:Parenthesis">
+                <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                  <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                    <ownedTerm xsi:type="mprologTermReference:List">
+                      <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+                        <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                          <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                            <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                              <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                                <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                                  <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                                    <ownedTerm idReference="//@ownedClause.118/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                                      <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                    </ownedTerm>
+                                  </nextTerm>
+                                  <ownedTerm idReference="//@ownedClause.140/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                                    <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                    <ownedTerm idReference="//@ownedClause.149/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                                  </ownedTerm>
+                                </nextTerm>
+                                <ownedTerm idReference="//@ownedClause.116/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                  <ownedTerm name="Xt" xsi:type="mprologTermReference:Variable"/>
+                                </ownedTerm>
+                              </nextTerm>
+                              <ownedTerm idReference="//@ownedClause.140/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                                <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                <ownedTerm idReference="//@ownedClause.149/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                              </ownedTerm>
+                            </nextTerm>
+                            <ownedTerm idReference="//@ownedClause.141/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                              <ownedTerm idReference="//@ownedClause.149/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                                <nextTerm idReference="//@ownedClause.149/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm idReference="//@ownedClause.143/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                            <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                            <ownedTerm idReference="//@ownedClause.149/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm idReference="//@ownedClause.149/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                          <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                        </ownedTerm>
+                      </ownedHeadTerms>
+                    </ownedTerm>
+                  </ownedTerm>
+                </nextTerm>
+                <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                  <ownedTerm xsi:type="mprologTermReference:List">
+                    <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+                      <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                        <ownedTerm text="membergenModel" xsi:type="mprologTermReference:Functor">
+                          <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                          <ownedTerm text="petrinet" xsi:type="mprologTermReference:QuotedAtom">
+                            <nextTerm text="Transition" xsi:type="mprologTermReference:QuotedAtom">
+                              <nextTerm name="Xt" xsi:type="mprologTermReference:Variable">
+                                <nextTerm name="Att_Xt" xsi:type="mprologTermReference:Variable">
+                                  <nextTerm name="Rel_Xt" xsi:type="mprologTermReference:Variable"/>
+                                </nextTerm>
+                              </nextTerm>
+                            </nextTerm>
+                          </ownedTerm>
+                        </ownedTerm>
+                      </nextTerm>
+                      <ownedTerm idReference="//@ownedClause.149/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                        <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                      </ownedTerm>
+                    </ownedHeadTerms>
+                  </ownedTerm>
+                </ownedTerm>
+              </ownedHeadTerms>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="rule">
+        <ownedTerm text="knowing" xsi:type="mprologTermReference:Functor">
+          <nextTerm text="pre" xsi:type="mprologTermReference:Functor">
+            <nextTerm text="pos" xsi:type="mprologTermReference:Functor">
+              <nextTerm text="know" xsi:type="mprologTermReference:Functor">
+                <ownedTerm text="ts" xsi:type="mprologTermReference:Functor">
+                  <ownedTerm name="Xnewmarking" xsi:type="mprologTermReference:Variable">
+                    <nextTerm idReference="//@ownedClause.150/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                      <nextTerm idReference="//@ownedClause.150/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                    </nextTerm>
+                  </ownedTerm>
+                </ownedTerm>
+              </nextTerm>
+              <ownedTerm xsi:type="mprologTermReference:List">
+                <ownedHeadTerms xsi:type="mprologTermReference:Parenthesis">
+                  <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                    <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                      <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                        <ownedTerm xsi:type="mprologTermReference:List">
+                          <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+                            <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                              <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                                <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                                  <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                                    <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                                      <ownedTerm idReference="//@ownedClause.116/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                                        <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                        <ownedTerm name="Xt" xsi:type="mprologTermReference:Variable"/>
+                                      </ownedTerm>
+                                    </nextTerm>
+                                    <ownedTerm idReference="//@ownedClause.140/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                                      <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                      <ownedTerm idReference="//@ownedClause.150/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                                    </ownedTerm>
+                                  </nextTerm>
+                                  <ownedTerm idReference="//@ownedClause.141/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                                    <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                    <ownedTerm idReference="//@ownedClause.150/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                                      <nextTerm name="Xnewmarking" xsi:type="mprologTermReference:Variable"/>
+                                    </ownedTerm>
+                                  </ownedTerm>
+                                </nextTerm>
+                                <ownedTerm idReference="//@ownedClause.117/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                  <ownedTerm name="Xt" xsi:type="mprologTermReference:Variable"/>
+                                </ownedTerm>
+                              </nextTerm>
+                              <ownedTerm idReference="//@ownedClause.140/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                                <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                <ownedTerm idReference="//@ownedClause.150/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                              </ownedTerm>
+                            </nextTerm>
+                            <ownedTerm idReference="//@ownedClause.142/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                              <ownedTerm idReference="//@ownedClause.150/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                                <nextTerm idReference="//@ownedClause.150/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </ownedHeadTerms>
+                        </ownedTerm>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                      <ownedTerm xsi:type="mprologTermReference:List">
+                        <ownedHeadTerms text="op" xsi:type="mprologTermReference:Functor">
+                          <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                            <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                            <ownedTerm text="memberattModel" xsi:type="mprologTermReference:Functor">
+                              <ownedTerm name="Xt" xsi:type="mprologTermReference:Variable">
+                                <nextTerm text="name" xsi:type="mprologTermReference:QuotedAtom"/>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm idReference="//@ownedClause.106/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                            <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                            <ownedTerm idReference="//@ownedClause.150/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                    <ownedTerm xsi:type="mprologTermReference:List"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </ownedTerm>
+            </nextTerm>
+            <ownedTerm xsi:type="mprologTermReference:List">
+              <ownedHeadTerms xsi:type="mprologTermReference:Parenthesis">
+                <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                  <nextTerm xsi:type="mprologTermReference:Parenthesis">
+                    <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                      <ownedTerm xsi:type="mprologTermReference:List">
+                        <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+                          <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                            <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                              <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                                <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                                  <ownedTerm idReference="//@ownedClause.116/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                                    <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                    <ownedTerm name="Xt" xsi:type="mprologTermReference:Variable"/>
+                                  </ownedTerm>
+                                </nextTerm>
+                                <ownedTerm idReference="//@ownedClause.140/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                                  <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                  <ownedTerm idReference="//@ownedClause.150/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                                </ownedTerm>
+                              </nextTerm>
+                              <ownedTerm idReference="//@ownedClause.141/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                                <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                                <ownedTerm idReference="//@ownedClause.150/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                                  <nextTerm name="Xnewmarking" xsi:type="mprologTermReference:Variable"/>
+                                </ownedTerm>
+                              </ownedTerm>
+                            </nextTerm>
+                            <ownedTerm idReference="//@ownedClause.143/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference">
+                              <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                              <ownedTerm idReference="//@ownedClause.150/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference"/>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm idReference="//@ownedClause.150/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                            <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm text="callReverseList" xsi:type="mprologTermReference:Functor">
+                    <ownedTerm xsi:type="mprologTermReference:List">
+                      <ownedHeadTerms text="equals" xsi:type="mprologTermReference:Functor">
+                        <nextTerm text="op" xsi:type="mprologTermReference:Functor">
+                          <ownedTerm text="membergenModel" xsi:type="mprologTermReference:Functor">
+                            <nextTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+                            <ownedTerm text="petrinet" xsi:type="mprologTermReference:QuotedAtom">
+                              <nextTerm text="Transition" xsi:type="mprologTermReference:QuotedAtom">
+                                <nextTerm name="Xt" xsi:type="mprologTermReference:Variable">
+                                  <nextTerm name="Att_Xt" xsi:type="mprologTermReference:Variable">
+                                    <nextTerm name="Rel_Xt" xsi:type="mprologTermReference:Variable"/>
+                                  </nextTerm>
+                                </nextTerm>
+                              </nextTerm>
+                            </ownedTerm>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm idReference="//@ownedClause.150/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@ownedTerm/@ownedHeadTerms/@nextTerm/@ownedTerm/@nextTerm" xsi:type="mprologTermReference:VariableReference">
+                          <nextTerm idReference="//@ownedClause.109/@ownedHead/@ownedFunctor/@ownedTerm" xsi:type="mprologTermReference:FunctorReference"/>
+                        </ownedTerm>
+                      </ownedHeadTerms>
+                    </ownedTerm>
+                  </ownedTerm>
+                </nextTerm>
+                <ownedTerm text="op" xsi:type="mprologTermReference:Functor">
+                  <ownedTerm text="membergen" xsi:type="mprologTermReference:Functor">
+                    <nextTerm text="true" xsi:type="mprologTermReference:Functor"/>
+                    <ownedTerm text="ts" xsi:type="mprologTermReference:Functor">
+                      <nextTerm idReference="//@ownedClause.150/@ownedHead/@ownedFunctor/@ownedTerm/@ownedTerm" xsi:type="mprologTermReference:VariableReference"/>
+                      <ownedTerm name="Xoldmarking" xsi:type="mprologTermReference:Variable">
+                        <nextTerm name="XnameX" xsi:type="mprologTermReference:Variable">
+                          <nextTerm name="Xnewmarking" xsi:type="mprologTermReference:Variable"/>
+                        </nextTerm>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </ownedTerm>
+                </ownedTerm>
+              </ownedHeadTerms>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm name="#OPRES#" xsi:type="mprologTermReference:Variable"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+</mprologTermReference:Model>

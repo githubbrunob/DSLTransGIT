@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mprolog:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mprolog="mprolog" name="Unnamed">
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="in">
+        <ownedTerm xsi:type="mprolog:List">
+          <nextTerm xsi:type="mprolog:QuotedAtom" text="TickIntention"/>
+          <ownedHeadTerms xsi:type="mprolog:Functor" text="hmlTop"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="in">
+        <ownedTerm xsi:type="mprolog:List">
+          <nextTerm xsi:type="mprolog:QuotedAtom" text="TickIntention"/>
+          <ownedHeadTerms xsi:type="mprolog:Variable" name="V1">
+            <nextTerm xsi:type="mprolog:Functor" text="hmlNext">
+              <ownedTerm xsi:type="mprolog:Functor" text="hmlEvent">
+                <nextTerm xsi:type="mprolog:Functor" text="hmlTop"/>
+                <ownedTerm xsi:type="mprolog:Functor" text="m_tick"/>
+              </ownedTerm>
+            </nextTerm>
+          </ownedHeadTerms>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm xsi:type="mprolog:Functor" text="in">
+        <nextTerm xsi:type="mprolog:Functor" text="boolLT">
+          <ownedTerm xsi:type="mprolog:Functor" text="nbEvents">
+            <nextTerm xsi:type="mprolog:Functor" text="6"/>
+            <ownedTerm xsi:type="mprolog:Variable" name="V1"/>
+          </ownedTerm>
+        </nextTerm>
+        <ownedTerm xsi:type="mprolog:List">
+          <nextTerm xsi:type="mprolog:QuotedAtom" text="TickIntention"/>
+          <ownedHeadTerms xsi:type="mprolog:Variable" name="V1"/>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="in">
+        <ownedTerm xsi:type="mprolog:List">
+          <nextTerm xsi:type="mprolog:QuotedAtom" text="MarkIntention"/>
+          <ownedHeadTerms xsi:type="mprolog:Variable" name="V0">
+            <nextTerm xsi:type="mprolog:Functor" text="hmlNext">
+              <ownedTerm xsi:type="mprolog:Functor" text="hmlEvent">
+                <nextTerm xsi:type="mprolog:Functor" text="hmlTop"/>
+                <ownedTerm xsi:type="mprolog:Functor" text="m_mark">
+                  <nextTerm xsi:type="mprolog:Functor" text="g_alarm"/>
+                </ownedTerm>
+              </ownedTerm>
+            </nextTerm>
+          </ownedHeadTerms>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm xsi:type="mprolog:InfixExpression">
+        <nextTerm xsi:type="mprolog:Functor" text="in">
+          <ownedTerm xsi:type="mprolog:List">
+            <nextTerm xsi:type="mprolog:QuotedAtom" text="TickIntention"/>
+            <ownedHeadTerms xsi:type="mprolog:Variable" name="V0"/>
+          </ownedTerm>
+        </nextTerm>
+        <ownedOperator symbol="="/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="nat">
+        <ownedTerm xsi:type="mprolog:Functor" text="zero"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="nat">
+        <ownedTerm xsi:type="mprolog:Functor" text="suc">
+          <ownedTerm xsi:type="mprolog:Variable" name="V6"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm xsi:type="mprolog:Functor" text="nat">
+        <ownedTerm xsi:type="mprolog:Variable" name="V6"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="sum">
+        <ownedTerm xsi:type="mprolog:Variable" name="X">
+          <nextTerm xsi:type="mprolog:Functor" text="zero">
+            <nextTerm xsi:type="mprolog:Functor" text="zero"/>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="sum">
+        <ownedTerm xsi:type="mprolog:Variable" name="X">
+          <nextTerm xsi:type="mprolog:Functor" text="suc">
+            <nextTerm xsi:type="mprolog:Functor" text="suc">
+              <ownedTerm xsi:type="mprolog:Variable" name="V9"/>
+            </nextTerm>
+            <ownedTerm xsi:type="mprolog:Variable" name="Y"/>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm xsi:type="mprolog:Functor" text="sum">
+        <ownedTerm xsi:type="mprolog:Variable" name="X">
+          <nextTerm xsi:type="mprolog:Variable" name="Y">
+            <nextTerm xsi:type="mprolog:Variable" name="V9"/>
+          </nextTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="eq">
+        <ownedTerm xsi:type="mprolog:Functor" text="zero">
+          <nextTerm xsi:type="mprolog:Functor" text="suc">
+            <nextTerm xsi:type="mprolog:Functor" text="false"/>
+            <ownedTerm xsi:type="mprolog:Variable" name="X"/>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="eq">
+        <ownedTerm xsi:type="mprolog:Functor" text="suc">
+          <nextTerm xsi:type="mprolog:Functor" text="zero">
+            <nextTerm xsi:type="mprolog:Functor" text="false"/>
+          </nextTerm>
+          <ownedTerm xsi:type="mprolog:Variable" name="Y"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="eq">
+        <ownedTerm xsi:type="mprolog:Functor" text="zero">
+          <nextTerm xsi:type="mprolog:Functor" text="zero">
+            <nextTerm xsi:type="mprolog:Functor" text="true"/>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="eq">
+        <ownedTerm xsi:type="mprolog:Functor" text="suc">
+          <nextTerm xsi:type="mprolog:Functor" text="suc">
+            <nextTerm xsi:type="mprolog:Variable" name="V14"/>
+            <ownedTerm xsi:type="mprolog:Variable" name="Y"/>
+          </nextTerm>
+          <ownedTerm xsi:type="mprolog:Variable" name="X"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm xsi:type="mprolog:Functor" text="eq">
+        <ownedTerm xsi:type="mprolog:Variable" name="X">
+          <nextTerm xsi:type="mprolog:Variable" name="Y">
+            <nextTerm xsi:type="mprolog:Variable" name="V14"/>
+          </nextTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="lt">
+        <ownedTerm xsi:type="mprolog:Functor" text="zero">
+          <nextTerm xsi:type="mprolog:Functor" text="suc">
+            <nextTerm xsi:type="mprolog:Functor" text="true"/>
+            <ownedTerm xsi:type="mprolog:Variable" name="X"/>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="lt">
+        <ownedTerm xsi:type="mprolog:Functor" text="suc">
+          <nextTerm xsi:type="mprolog:Functor" text="zero">
+            <nextTerm xsi:type="mprolog:Functor" text="false"/>
+          </nextTerm>
+          <ownedTerm xsi:type="mprolog:Variable" name="X"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="lt">
+        <ownedTerm xsi:type="mprolog:Functor" text="suc">
+          <nextTerm xsi:type="mprolog:Functor" text="suc">
+            <nextTerm xsi:type="mprolog:Variable" name="V18"/>
+            <ownedTerm xsi:type="mprolog:Variable" name="Y"/>
+          </nextTerm>
+          <ownedTerm xsi:type="mprolog:Variable" name="X"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm xsi:type="mprolog:Functor" text="lt">
+        <ownedTerm xsi:type="mprolog:Variable" name="X">
+          <nextTerm xsi:type="mprolog:Variable" name="Y">
+            <nextTerm xsi:type="mprolog:Variable" name="V18"/>
+          </nextTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="bool">
+        <ownedTerm xsi:type="mprolog:Functor" text="false"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="bool">
+        <ownedTerm xsi:type="mprolog:Functor" text="true"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="neg">
+        <ownedTerm xsi:type="mprolog:Functor" text="false">
+          <nextTerm xsi:type="mprolog:Functor" text="true"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="neg">
+        <ownedTerm xsi:type="mprolog:Functor" text="true">
+          <nextTerm xsi:type="mprolog:Functor" text="false"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="list">
+        <ownedTerm xsi:type="mprolog:Functor" text="nil"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="list">
+        <ownedTerm xsi:type="mprolog:Functor" text="cons">
+          <ownedTerm xsi:type="mprolog:Variable" name="V21">
+            <nextTerm xsi:type="mprolog:Variable" name="V22"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm xsi:type="mprolog:Functor" text="nat">
+        <nextTerm xsi:type="mprolog:Functor" text="list">
+          <ownedTerm xsi:type="mprolog:Variable" name="V22"/>
+        </nextTerm>
+        <ownedTerm xsi:type="mprolog:Variable" name="V21"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="nbOcurr">
+        <ownedTerm xsi:type="mprolog:Variable" name="E">
+          <nextTerm xsi:type="mprolog:Functor" text="cons">
+            <nextTerm xsi:type="mprolog:Functor" text="suc">
+              <ownedTerm xsi:type="mprolog:Variable" name="V24"/>
+            </nextTerm>
+            <ownedTerm xsi:type="mprolog:Variable" name="H">
+              <nextTerm xsi:type="mprolog:Variable" name="L"/>
+            </ownedTerm>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm xsi:type="mprolog:Functor" text="eq">
+        <nextTerm xsi:type="mprolog:Functor" text="nbOcurr">
+          <ownedTerm xsi:type="mprolog:Variable" name="E">
+            <nextTerm xsi:type="mprolog:Variable" name="L">
+              <nextTerm xsi:type="mprolog:Variable" name="V24"/>
+            </nextTerm>
+          </ownedTerm>
+        </nextTerm>
+        <ownedTerm xsi:type="mprolog:Variable" name="E">
+          <nextTerm xsi:type="mprolog:Variable" name="H">
+            <nextTerm xsi:type="mprolog:Functor" text="true"/>
+          </nextTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="nbOcurr">
+        <ownedTerm xsi:type="mprolog:Variable" name="E">
+          <nextTerm xsi:type="mprolog:Functor" text="cons">
+            <nextTerm xsi:type="mprolog:Variable" name="V27"/>
+            <ownedTerm xsi:type="mprolog:Variable" name="H">
+              <nextTerm xsi:type="mprolog:Variable" name="L"/>
+            </ownedTerm>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm xsi:type="mprolog:Functor" text="eq">
+        <nextTerm xsi:type="mprolog:Functor" text="nbOcurr">
+          <ownedTerm xsi:type="mprolog:Variable" name="E">
+            <nextTerm xsi:type="mprolog:Variable" name="L">
+              <nextTerm xsi:type="mprolog:Variable" name="V27"/>
+            </nextTerm>
+          </ownedTerm>
+        </nextTerm>
+        <ownedTerm xsi:type="mprolog:Variable" name="E">
+          <nextTerm xsi:type="mprolog:Variable" name="H">
+            <nextTerm xsi:type="mprolog:Functor" text="false"/>
+          </nextTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="size">
+        <ownedTerm xsi:type="mprolog:Functor" text="nil">
+          <nextTerm xsi:type="mprolog:Functor" text="zero"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="size">
+        <ownedTerm xsi:type="mprolog:Functor" text="cons">
+          <nextTerm xsi:type="mprolog:Functor" text="suc">
+            <ownedTerm xsi:type="mprolog:Variable" name="V31"/>
+          </nextTerm>
+          <ownedTerm xsi:type="mprolog:Variable" name="H">
+            <nextTerm xsi:type="mprolog:Variable" name="L"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm xsi:type="mprolog:Functor" text="size">
+        <ownedTerm xsi:type="mprolog:Variable" name="L">
+          <nextTerm xsi:type="mprolog:Variable" name="V31"/>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="nbOcurr">
+        <ownedTerm xsi:type="mprolog:Variable" name="E">
+          <nextTerm xsi:type="mprolog:Functor" text="nil">
+            <nextTerm xsi:type="mprolog:Functor" text="zero"/>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+</mprolog:Model>

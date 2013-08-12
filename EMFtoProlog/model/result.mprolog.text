@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="ASCII" standalone="no"?>
+<Text:Model xmlns:Text="http://www.eclipse.org/Text" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xsi:schemaLocation="http://www.eclipse.org/Text text.ecore">
+  <directory path=".">
+    <file path="Unnamed.pl">
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="in">
+            <content text="(">
+              <content>
+                <content text="[">
+                  <content>
+                    <content text="hmlTop"/>
+                  </content>
+                  <next text="]"/>
+                </content>
+                <next text=", ">
+                  <next>
+                    <content text="'TickIntention'"/>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </preLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="in">
+            <content text="(">
+              <content>
+                <content text="[">
+                  <content>
+                    <content text="V0">
+                      <next text=", ">
+                        <next text="hmlNext">
+                          <content text="(">
+                            <content text="hmlEvent">
+                              <content text="(">
+                                <content text="m_tick"/>
+                                <next text=")"/>
+                              </content>
+                              <next text=", ">
+                                <next text="hmlTop"/>
+                              </next>
+                            </content>
+                            <next text=")"/>
+                          </content>
+                        </next>
+                      </next>
+                    </content>
+                  </content>
+                  <next text="]"/>
+                </content>
+                <next text=", ">
+                  <next>
+                    <content text="'TickIntention'"/>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text=" :- "/>
+        </preLine>
+        <postLine text="    " xsi:type="Text:Content">
+          <content text="in">
+            <content text="(">
+              <content>
+                <content text="[">
+                  <content>
+                    <content text="V0"/>
+                  </content>
+                  <next text="]"/>
+                </content>
+                <next text=", ">
+                  <next>
+                    <content text="'TickIntention'"/>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+            <next text=", ">
+              <next text="boolLT">
+                <content text="(">
+                  <content text="nbEvents">
+                    <content text="(">
+                      <content text="V0"/>
+                      <next text=")"/>
+                    </content>
+                    <next text=", ">
+                      <next text="6"/>
+                    </next>
+                  </content>
+                  <next text=")"/>
+                </content>
+              </next>
+            </next>
+          </content>
+          <next text="."/>
+        </postLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="in">
+            <content text="(">
+              <content>
+                <content text="[">
+                  <content>
+                    <content text="V2">
+                      <next text=", ">
+                        <next text="hmlNext">
+                          <content text="(">
+                            <content text="hmlEvent">
+                              <content text="(">
+                                <content text="m_mark">
+                                  <next text=", ">
+                                    <next text="g_alarm"/>
+                                  </next>
+                                </content>
+                                <next text=")"/>
+                              </content>
+                              <next text=", ">
+                                <next text="hmlTop"/>
+                              </next>
+                            </content>
+                            <next text=")"/>
+                          </content>
+                        </next>
+                      </next>
+                    </content>
+                  </content>
+                  <next text="]"/>
+                </content>
+                <next text=", ">
+                  <next>
+                    <content text="'MarkIntention'"/>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text=" :- "/>
+        </preLine>
+        <postLine text="    " xsi:type="Text:Content">
+          <content>
+            <next text=", ">
+              <next text="in">
+                <content text="(">
+                  <content>
+                    <content text="[">
+                      <content>
+                        <content text="V2"/>
+                      </content>
+                      <next text="]"/>
+                    </content>
+                    <next text=", ">
+                      <next>
+                        <content text="'TickIntention'"/>
+                      </next>
+                    </next>
+                  </content>
+                  <next text=")"/>
+                </content>
+              </next>
+            </next>
+          </content>
+          <next text="."/>
+        </postLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="nat">
+            <content text="(">
+              <content text="zero"/>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </preLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="nat">
+            <content text="(">
+              <content text="suc">
+                <content text="(">
+                  <content text="V3"/>
+                  <next text=")"/>
+                </content>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text=" :- "/>
+        </preLine>
+        <postLine text="    " xsi:type="Text:Content">
+          <content text="nat">
+            <content text="(">
+              <content text="V3"/>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </postLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="sum">
+            <content text="(">
+              <content text="X">
+                <next text=", ">
+                  <next text="zero">
+                    <next text=", ">
+                      <next text="zero"/>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </preLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="sum">
+            <content text="(">
+              <content text="X">
+                <next text=", ">
+                  <next text="suc">
+                    <content text="(">
+                      <content text="Y"/>
+                      <next text=")"/>
+                    </content>
+                    <next text=", ">
+                      <next text="suc">
+                        <content text="(">
+                          <content text="V6"/>
+                          <next text=")"/>
+                        </content>
+                      </next>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text=" :- "/>
+        </preLine>
+        <postLine text="    " xsi:type="Text:Content">
+          <content text="sum">
+            <content text="(">
+              <content text="X">
+                <next text=", ">
+                  <next text="Y">
+                    <next text=", ">
+                      <next text="V6"/>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </postLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="eq">
+            <content text="(">
+              <content text="zero">
+                <next text=", ">
+                  <next text="suc">
+                    <content text="(">
+                      <content text="X"/>
+                      <next text=")"/>
+                    </content>
+                    <next text=", ">
+                      <next text="false"/>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </preLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="eq">
+            <content text="(">
+              <content text="suc">
+                <content text="(">
+                  <content text="Y"/>
+                  <next text=")"/>
+                </content>
+                <next text=", ">
+                  <next text="zero">
+                    <next text=", ">
+                      <next text="false"/>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </preLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="eq">
+            <content text="(">
+              <content text="zero">
+                <next text=", ">
+                  <next text="zero">
+                    <next text=", ">
+                      <next text="true"/>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </preLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="eq">
+            <content text="(">
+              <content text="suc">
+                <content text="(">
+                  <content text="X"/>
+                  <next text=")"/>
+                </content>
+                <next text=", ">
+                  <next text="suc">
+                    <content text="(">
+                      <content text="Y"/>
+                      <next text=")"/>
+                    </content>
+                    <next text=", ">
+                      <next text="V11"/>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text=" :- "/>
+        </preLine>
+        <postLine text="    " xsi:type="Text:Content">
+          <content text="eq">
+            <content text="(">
+              <content text="X">
+                <next text=", ">
+                  <next text="Y">
+                    <next text=", ">
+                      <next text="V11"/>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </postLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="lt">
+            <content text="(">
+              <content text="zero">
+                <next text=", ">
+                  <next text="suc">
+                    <content text="(">
+                      <content text="X"/>
+                      <next text=")"/>
+                    </content>
+                    <next text=", ">
+                      <next text="true"/>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </preLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="lt">
+            <content text="(">
+              <content text="suc">
+                <content text="(">
+                  <content text="X"/>
+                  <next text=")"/>
+                </content>
+                <next text=", ">
+                  <next text="zero">
+                    <next text=", ">
+                      <next text="false"/>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </preLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="lt">
+            <content text="(">
+              <content text="suc">
+                <content text="(">
+                  <content text="X"/>
+                  <next text=")"/>
+                </content>
+                <next text=", ">
+                  <next text="suc">
+                    <content text="(">
+                      <content text="Y"/>
+                      <next text=")"/>
+                    </content>
+                    <next text=", ">
+                      <next text="V15"/>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text=" :- "/>
+        </preLine>
+        <postLine text="    " xsi:type="Text:Content">
+          <content text="lt">
+            <content text="(">
+              <content text="X">
+                <next text=", ">
+                  <next text="Y">
+                    <next text=", ">
+                      <next text="V15"/>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </postLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="bool">
+            <content text="(">
+              <content text="false"/>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </preLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="bool">
+            <content text="(">
+              <content text="true"/>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </preLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="neg">
+            <content text="(">
+              <content text="false">
+                <next text=", ">
+                  <next text="true"/>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </preLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="neg">
+            <content text="(">
+              <content text="true">
+                <next text=", ">
+                  <next text="false"/>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </preLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="list">
+            <content text="(">
+              <content text="nil"/>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </preLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="list">
+            <content text="(">
+              <content text="cons">
+                <content text="(">
+                  <content text="V18">
+                    <next text=", ">
+                      <next text="V19"/>
+                    </next>
+                  </content>
+                  <next text=")"/>
+                </content>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text=" :- "/>
+        </preLine>
+        <postLine text="    " xsi:type="Text:Content">
+          <content text="nat">
+            <content text="(">
+              <content text="V18"/>
+              <next text=")"/>
+            </content>
+            <next text=", ">
+              <next text="list">
+                <content text="(">
+                  <content text="V19"/>
+                  <next text=")"/>
+                </content>
+              </next>
+            </next>
+          </content>
+          <next text="."/>
+        </postLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="nbOcurr">
+            <content text="(">
+              <content text="E">
+                <next text=", ">
+                  <next text="cons">
+                    <content text="(">
+                      <content text="H">
+                        <next text=", ">
+                          <next text="L"/>
+                        </next>
+                      </content>
+                      <next text=")"/>
+                    </content>
+                    <next text=", ">
+                      <next text="suc">
+                        <content text="(">
+                          <content text="V21"/>
+                          <next text=")"/>
+                        </content>
+                      </next>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text=" :- "/>
+        </preLine>
+        <postLine text="    " xsi:type="Text:Content">
+          <content text="eq">
+            <content text="(">
+              <content text="E">
+                <next text=", ">
+                  <next text="H">
+                    <next text=", ">
+                      <next text="true"/>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+            <next text=", ">
+              <next text="nbOcurr">
+                <content text="(">
+                  <content text="E">
+                    <next text=", ">
+                      <next text="L">
+                        <next text=", ">
+                          <next text="V21"/>
+                        </next>
+                      </next>
+                    </next>
+                  </content>
+                  <next text=")"/>
+                </content>
+              </next>
+            </next>
+          </content>
+          <next text="."/>
+        </postLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="nbOcurr">
+            <content text="(">
+              <content text="E">
+                <next text=", ">
+                  <next text="cons">
+                    <content text="(">
+                      <content text="H">
+                        <next text=", ">
+                          <next text="L"/>
+                        </next>
+                      </content>
+                      <next text=")"/>
+                    </content>
+                    <next text=", ">
+                      <next text="V24"/>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text=" :- "/>
+        </preLine>
+        <postLine text="    " xsi:type="Text:Content">
+          <content text="eq">
+            <content text="(">
+              <content text="E">
+                <next text=", ">
+                  <next text="H">
+                    <next text=", ">
+                      <next text="false"/>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+            <next text=", ">
+              <next text="nbOcurr">
+                <content text="(">
+                  <content text="E">
+                    <next text=", ">
+                      <next text="L">
+                        <next text=", ">
+                          <next text="V24"/>
+                        </next>
+                      </next>
+                    </next>
+                  </content>
+                  <next text=")"/>
+                </content>
+              </next>
+            </next>
+          </content>
+          <next text="."/>
+        </postLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="size">
+            <content text="(">
+              <content text="nil">
+                <next text=", ">
+                  <next text="zero"/>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </preLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="size">
+            <content text="(">
+              <content text="cons">
+                <content text="(">
+                  <content text="H">
+                    <next text=", ">
+                      <next text="L"/>
+                    </next>
+                  </content>
+                  <next text=")"/>
+                </content>
+                <next text=", ">
+                  <next text="suc">
+                    <content text="(">
+                      <content text="V28"/>
+                      <next text=")"/>
+                    </content>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text=" :- "/>
+        </preLine>
+        <postLine text="    " xsi:type="Text:Content">
+          <content text="size">
+            <content text="(">
+              <content text="L">
+                <next text=", ">
+                  <next text="V28"/>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </postLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="nbOcurr">
+            <content text="(">
+              <content text="E">
+                <next text=", ">
+                  <next text="nil">
+                    <next text=", ">
+                      <next text="zero"/>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </preLine>
+      </innerBlock>
+    </file>
+  </directory>
+</Text:Model>

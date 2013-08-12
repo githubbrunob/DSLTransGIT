@@ -1,0 +1,162 @@
+File
+	id = _
+	uri = 'model/input.xmi'
+	metamodel(
+				mmname = statemachine.Statemachine
+				uri = 'model/StateMachine.ecore'
+			)
+def 'Entities' : layer  'Entities'  
+	previous = ''
+	output = ''
+	metamodel(
+			mmname = petrinet.Petrinet
+			uri = 'model/PetriNet.ecore'
+		)
+	rule'Transition'
+		match with
+	cl0:
+			any  statemachine::Transition(  at0 :  name )
+		apply
+	cl1:
+			 petrinet::Transition(
+						name= sameAs(at0)
+						_= 'Transition'
+					)
+	end rule
+
+	rule'State'
+		match with
+	cl2:
+			any  statemachine::State(  at1 :  name )
+		apply
+	cl3:
+			 petrinet::Place(
+						name= sameAs(at1)
+						token= '0'
+						_= 'State'
+					)
+	end rule
+
+	rule'StateMachine'
+		match with
+	cl4:
+			any  statemachine::StateMachine
+		apply
+	cl5:
+			 petrinet::PetriNet(
+						_= 'PetriNet'
+					)
+	end rule
+
+	rule'State'
+		match with
+	cl6:
+			any  statemachine::Initial(  at2 :  name )
+		apply
+	cl7:
+			 petrinet::Place(
+						name= sameAs(at2)
+						token= '1'
+						_= 'Initial'
+					)
+	end rule
+
+end def
+def 'Associations' : layer  'Associations'  
+	previous = 'Entities'
+	output = 'model/output.xmi'
+	metamodel(
+			mmname = petrinet.Petrinet
+			uri = 'model/PetriNet.ecore'
+		)
+	rule'source'
+		match with
+	cl8:
+			any  statemachine::Transition
+	cl9:
+			any  statemachine::AbstractState
+			subject to
+				cl8 --(_source)-> cl9
+		apply
+	cl10:
+			 petrinet::Transition 
+	cl11: 
+			 petrinet::Place 
+	cl12: 
+			 petrinet::OutArc(
+						weight= '1'
+					)
+			subject to
+				cl10 --(outArc)-> cl12
+				cl12 --(sourcePlace)-> cl11
+		restrictions
+			cl10 derived from cl8
+			cl11 derived from cl9
+	end rule
+
+	rule'target'
+		match with
+	cl13:
+			any  statemachine::Transition
+	cl14:
+			any  statemachine::AbstractState
+			subject to
+				cl13 --(_target)-> cl14
+		apply
+	cl15:
+			 petrinet::Transition 
+	cl16: 
+			 petrinet::Place 
+	cl17: 
+			 petrinet::InArc(
+						weight= '1'
+					)
+			subject to
+				cl17 --(targetPlace)-> cl16
+				cl15 --(inArc)-> cl17
+		restrictions
+			cl15 derived from cl13
+			cl16 derived from cl14
+	end rule
+
+	rule'states'
+		match with
+	cl18:
+			any  statemachine::StateMachine
+	cl19:
+			any  statemachine::AbstractState
+			subject to
+				cl18 --(states)-> cl19
+		apply
+	cl20:
+			 petrinet::PetriNet 
+	cl21: 
+			 petrinet::Place
+			subject to
+				cl20 --(places)-> cl21
+		restrictions
+			cl20 derived from cl18
+			cl21 derived from cl19
+	end rule
+
+	rule'transitions'
+		match with
+	cl22:
+			any  statemachine::StateMachine
+	cl23:
+			any  statemachine::Transition
+			subject to
+				cl22 --(transitions)-> cl23
+		apply
+	cl24:
+			 petrinet::PetriNet 
+	cl25: 
+			 petrinet::Transition
+			subject to
+				cl24 --(transitions)-> cl25
+		restrictions
+			cl24 derived from cl22
+			cl25 derived from cl23
+	end rule
+
+end def

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="DSLTranslator.contribution1"
+            nameFilter="*.dsltrans"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               label="%menu.label"
+               path="additions"
+               id="DSLTranslator.menu1">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               label="%action.label"
+               class="dsltranslator.popup.actions.TransformAction"
+               menubarPath="DSLTranslator.menu1/group1"
+               enablesFor="1"
+               id="DSLTranslator.TransformAction">
+         </action>
+      </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="DSLTranslator.objectContribution1"
+            nameFilter="*.ecore"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="DSLTranslator.menu1"
+               label="%menu.label"
+               path="additions">
+            <separator
+                  name="group">
+            </separator>
+         </menu>
+         <action
+               class="dsltranslator.popup.actions.GenIdentityAction"
+               enablesFor="1"
+               id="DSLTranslator.GenIdentityAction"
+               label="%action.label"
+               menubarPath="DSLTranslator.menu1/group1">
+         </action>
+         <action
+               class="dsltranslator.popup.actions.GenIdentityLiftAction"
+               enablesFor="1"
+               id="DSLTranslator.GenIdentityLiftAction"
+               label="%action.labellift"
+               menubarPath="DSLTranslator.menu1/group1">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

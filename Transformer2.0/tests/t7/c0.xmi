@@ -1,0 +1,2632 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Java5:Model xmlns:Java5="http://www.eclipse.org/Java5" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="SimpleInterfaceGenV2" xmi:version="2.0" xsi:schemaLocation="http://www.eclipse.org/Java5 java5.ecore">
+  <ownedElements name="messages" proxy="true" qualifiedName="messages">
+    <ownedElements xsi:type="Java5:ClassDeclaration" name="Message" proxy="true" qualifiedName="messages.Message">
+      <modifiers visibility="public"/>
+      <modifiers inheritance="abstract"/>
+      <bodyDeclarations xsi:type="Java5:EnumDeclaration" name="messageDirection" proxy="true">
+        <modifiers visibility="public"/>
+        <modifiers static="true"/>
+        <enumConstants name="up" proxy="true"/>
+        <enumConstants name="down" proxy="true"/>
+        <enumConstants name="stop" proxy="true"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="Message" proxy="true" constructor="true">
+        <modifiers visibility="public"/>
+        <parameters name="source" proxy="true">
+          <type element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+        </parameters>
+        <parameters name="dir" proxy="true">
+          <type element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+        </parameters>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="setDirection" proxy="true">
+        <modifiers visibility="public"/>
+        <returnType element="//@orphanTypes.1"/>
+        <parameters name="m_direction" proxy="true">
+          <type element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+        </parameters>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="getDirection" proxy="true">
+        <modifiers visibility="public"/>
+        <returnType element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="clone" proxy="true">
+        <modifiers visibility="public"/>
+        <modifiers inheritance="abstract"/>
+        <returnType element="//@ownedElements.0/@ownedElements.0"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="getMessageSource" proxy="true">
+        <modifiers visibility="public"/>
+        <returnType element="//@ownedElements.0/@ownedElements.2"/>
+      </bodyDeclarations>
+      <superClass element="//@ownedElements.1/@ownedPackages.2/@ownedElements.0"/>
+    </ownedElements>
+    <ownedElements xsi:type="Java5:InterfaceDeclaration" name="ImplementationManager" proxy="true" qualifiedName="messages.ImplementationManager">
+      <modifiers visibility="public"/>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="attachChild" proxy="true">
+        <modifiers visibility="public"/>
+        <returnType element="//@orphanTypes.1"/>
+        <parameters name="child" proxy="true">
+          <type element="//@ownedElements.0/@ownedElements.1"/>
+        </parameters>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="getImplementation" proxy="true">
+        <modifiers visibility="public"/>
+        <returnType element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+      </bodyDeclarations>
+    </ownedElements>
+    <ownedElements xsi:type="Java5:ClassDeclaration" name="MessengerNode" proxy="true" qualifiedName="messages.MessengerNode">
+      <modifiers visibility="public"/>
+      <modifiers inheritance="abstract"/>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="MessengerNode" proxy="true" constructor="true">
+        <modifiers visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="MessengerNode" proxy="true" constructor="true">
+        <modifiers visibility="public"/>
+        <parameters name="implementationP">
+          <type element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+        </parameters>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="getRoot">
+        <modifiers visibility="public"/>
+        <returnType element="//@ownedElements.0/@ownedElements.2"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="getImplementation" proxy="true">
+        <modifiers visibility="public"/>
+        <returnType element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="setImplementation" proxy="true">
+        <modifiers visibility="protected"/>
+        <returnType element="//@orphanTypes.1"/>
+        <parameters name="object">
+          <type element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+        </parameters>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="addChild" proxy="true">
+        <modifiers inheritance="final"/>
+        <modifiers visibility="public"/>
+        <returnType element="//@orphanTypes.1"/>
+        <parameters name="child">
+          <type element="//@ownedElements.0/@ownedElements.2"/>
+        </parameters>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="attachChildImplementation" proxy="true">
+        <modifiers visibility="protected"/>
+        <modifiers inheritance="abstract"/>
+        <returnType element="//@orphanTypes.1"/>
+        <parameters name="child">
+          <type element="//@ownedElements.0/@ownedElements.2"/>
+        </parameters>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="init_transition" proxy="true">
+        <modifiers visibility="protected"/>
+        <modifiers inheritance="abstract"/>
+        <returnType element="//@orphanTypes.1"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="attachChild" proxy="true">
+        <modifiers visibility="protected"/>
+        <thrownExceptions element="//@ownedElements.0/@ownedElements.3"/>
+        <returnType element="//@orphanTypes.1"/>
+        <parameters name="child">
+          <modifiers inheritance="final"/>
+          <type element="//@ownedElements.0/@ownedElements.2"/>
+        </parameters>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="detachChild" proxy="true">
+        <modifiers visibility="public"/>
+        <thrownExceptions element="//@ownedElements.0/@ownedElements.3"/>
+        <returnType element="//@orphanTypes.1"/>
+        <parameters name="child">
+          <modifiers inheritance="final"/>
+          <type element="//@ownedElements.0/@ownedElements.2"/>
+        </parameters>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="getChildren" proxy="true">
+        <modifiers visibility="private"/>
+        <returnType element="//@orphanTypes.7"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="getParentNode" proxy="true">
+        <modifiers visibility="public"/>
+        <modifiers inheritance="final"/>
+        <returnType element="//@ownedElements.0/@ownedElements.2"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="setParentNode" proxy="true">
+        <modifiers visibility="public"/>
+        <modifiers inheritance="final"/>
+        <returnType element="//@orphanTypes.1"/>
+        <parameters name="node">
+          <type element="//@ownedElements.0/@ownedElements.2"/>
+        </parameters>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="propagateMessage" proxy="true">
+        <modifiers visibility="public"/>
+        <modifiers inheritance="final"/>
+        <returnType element="//@orphanTypes.1"/>
+        <parameters name="e">
+          <type element="//@ownedElements.0/@ownedElements.0"/>
+        </parameters>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="sendMessageUp" proxy="true">
+        <modifiers visibility="private"/>
+        <modifiers inheritance="final"/>
+        <returnType element="//@orphanTypes.1"/>
+        <parameters name="e">
+          <type element="//@ownedElements.0/@ownedElements.0"/>
+        </parameters>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="sendMessageDown" proxy="true">
+        <modifiers visibility="private"/>
+        <returnType element="//@orphanTypes.1"/>
+        <parameters name="e">
+          <type element="//@ownedElements.0/@ownedElements.0"/>
+        </parameters>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="feedHandlers" proxy="true">
+        <modifiers visibility="private"/>
+        <returnType element="//@orphanTypes.1"/>
+        <parameters name="m">
+          <type element="//@ownedElements.0/@ownedElements.0"/>
+        </parameters>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="receiveMessage" proxy="true">
+        <modifiers visibility="protected"/>
+        <returnType element="//@orphanTypes.1"/>
+        <parameters name="m">
+          <type element="//@ownedElements.0/@ownedElements.0"/>
+        </parameters>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="registerHandler" proxy="true">
+        <modifiers visibility="public"/>
+        <returnType element="//@orphanTypes.1"/>
+        <parameters name="handler">
+          <type element="//@ownedElements.0/@ownedElements.4"/>
+        </parameters>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="unregisterHandler" proxy="true">
+        <modifiers visibility="public"/>
+        <returnType element="//@orphanTypes.1"/>
+        <parameters name="handler">
+          <type element="//@ownedElements.0/@ownedElements.4"/>
+        </parameters>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="getThis" proxy="true">
+        <modifiers visibility="public"/>
+        <returnType element="//@ownedElements.0/@ownedElements.2"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="isChild" proxy="true">
+        <modifiers visibility="public"/>
+        <returnType element="//@orphanTypes.0"/>
+        <parameters name="aNode">
+          <type element="//@ownedElements.0/@ownedElements.2"/>
+        </parameters>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="getImplementationManager" proxy="true">
+        <modifiers visibility="public"/>
+        <returnType element="//@ownedElements.0/@ownedElements.1"/>
+      </bodyDeclarations>
+    </ownedElements>
+    <ownedElements xsi:type="Java5:ClassDeclaration" name="InvalidParentException" proxy="true" qualifiedName="messages.InvalidParentException">
+      <modifiers visibility="public"/>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="InvalidParentException" proxy="true" constructor="true">
+        <modifiers visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="InvalidParentException" proxy="true" constructor="true">
+        <modifiers visibility="public"/>
+        <parameters name="msg">
+          <type element="//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+        </parameters>
+      </bodyDeclarations>
+      <superClass element="//@ownedElements.1/@ownedPackages.0/@ownedElements.9"/>
+    </ownedElements>
+    <ownedElements xsi:type="Java5:InterfaceDeclaration" name="MessageHandler" proxy="true" qualifiedName="messages.MessageHandler">
+      <modifiers visibility="public"/>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="handleMessage">
+        <modifiers visibility="public"/>
+        <returnType element="//@orphanTypes.0"/>
+        <parameters name="m">
+          <type element="//@ownedElements.0/@ownedElements.0"/>
+        </parameters>
+      </bodyDeclarations>
+    </ownedElements>
+  </ownedElements>
+  <ownedElements name="java" proxy="true">
+    <ownedPackages name="lang" proxy="true">
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="Object" proxy="true">
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="getClass" proxy="true"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="System" proxy="true">
+        <bodyDeclarations xsi:type="Java5:FieldDeclaration" name="err" proxy="true"/>
+        <superClass element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:InterfaceDeclaration" name="Appendable" proxy="true"/>
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="String" proxy="true">
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.1/@ownedElements.5"/>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.0/@ownedElements.4"/>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.0/@ownedElements.5"/>
+        <superClass element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:InterfaceDeclaration" name="Comparable" proxy="true">
+        <typeParameters name="T" proxy="true"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:InterfaceDeclaration" name="CharSequence" proxy="true"/>
+      <ownedElements xsi:type="Java5:AnnotationTypeDeclaration" name="Override" proxy="true">
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:InterfaceDeclaration" name="Iterable" proxy="true">
+        <typeParameters name="T" proxy="true"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:InterfaceDeclaration" name="Cloneable" proxy="true"/>
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="RuntimeException" proxy="true">
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="RuntimeException" proxy="true"/>
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="RuntimeException" proxy="true">
+          <parameters>
+            <type element="//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+          </parameters>
+        </bodyDeclarations>
+        <superClass element="//@ownedElements.1/@ownedPackages.0/@ownedElements.10"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="Exception" proxy="true">
+        <superClass element="//@ownedElements.1/@ownedPackages.0/@ownedElements.11"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="Throwable" proxy="true">
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.1/@ownedElements.5"/>
+        <superClass element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="Class" proxy="true">
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="getName" proxy="true"/>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.1/@ownedElements.5"/>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.0/@ownedPackages.1/@ownedElements.0"/>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.0/@ownedPackages.1/@ownedElements.1"/>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.0/@ownedPackages.1/@ownedElements.2"/>
+        <typeParameters name="T" proxy="true"/>
+        <superClass element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+      </ownedElements>
+      <ownedPackages name="annotation" proxy="true">
+        <ownedElements xsi:type="Java5:InterfaceDeclaration" name="Annotation" proxy="true"/>
+      </ownedPackages>
+      <ownedPackages name="reflect" proxy="true">
+        <ownedElements xsi:type="Java5:InterfaceDeclaration" name="GenericDeclaration" proxy="true"/>
+        <ownedElements xsi:type="Java5:InterfaceDeclaration" name="Type" proxy="true"/>
+        <ownedElements xsi:type="Java5:InterfaceDeclaration" name="AnnotatedElement" proxy="true"/>
+      </ownedPackages>
+    </ownedPackages>
+    <ownedPackages name="io" proxy="true">
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="PrintStream" proxy="true">
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="println" proxy="true">
+          <parameters>
+            <type element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+          </parameters>
+        </bodyDeclarations>
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="println" proxy="true">
+          <parameters>
+            <type element="//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+          </parameters>
+        </bodyDeclarations>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.0/@ownedElements.2"/>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.1/@ownedElements.3"/>
+        <superClass element="//@ownedElements.1/@ownedPackages.1/@ownedElements.1"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="FilterOutputStream" proxy="true">
+        <superClass element="//@ownedElements.1/@ownedPackages.1/@ownedElements.2"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="OutputStream" proxy="true">
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.1/@ownedElements.3"/>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.1/@ownedElements.4"/>
+        <superClass element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:InterfaceDeclaration" name="Closeable" proxy="true"/>
+      <ownedElements xsi:type="Java5:InterfaceDeclaration" name="Flushable" proxy="true"/>
+      <ownedElements xsi:type="Java5:InterfaceDeclaration" name="Serializable" proxy="true"/>
+    </ownedPackages>
+    <ownedPackages name="util" proxy="true">
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="EventObject" proxy="true">
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="getSource" proxy="true"/>
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="EventObject" proxy="true">
+          <parameters>
+            <type element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+          </parameters>
+        </bodyDeclarations>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.1/@ownedElements.5"/>
+        <superClass element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:InterfaceDeclaration" name="Iterator" proxy="true">
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="hasNext" proxy="true"/>
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="next" proxy="true"/>
+        <typeParameters name="E" proxy="true"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="LinkedList" proxy="true">
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="LinkedList&lt;MessengerNode>" proxy="true"/>
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="LinkedList&lt;MessageHandler>" proxy="true"/>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.2/@ownedElements.7"/>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.2/@ownedElements.8"/>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.0/@ownedElements.8"/>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.1/@ownedElements.5"/>
+        <typeParameters name="E" proxy="true"/>
+        <superClass element="//@ownedElements.1/@ownedPackages.2/@ownedElements.3"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="AbstractSequentialList" proxy="true">
+        <typeParameters name="E" proxy="true"/>
+        <superClass element="//@ownedElements.1/@ownedPackages.2/@ownedElements.4"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="AbstractList" proxy="true">
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.2/@ownedElements.7"/>
+        <typeParameters name="E" proxy="true"/>
+        <superClass element="//@ownedElements.1/@ownedPackages.2/@ownedElements.5"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="AbstractCollection" proxy="true">
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.2/@ownedElements.6"/>
+        <typeParameters name="E" proxy="true"/>
+        <superClass element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:InterfaceDeclaration" name="Collection" proxy="true">
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.0/@ownedElements.7"/>
+        <typeParameters name="E" proxy="true"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:InterfaceDeclaration" name="List" proxy="true">
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="add" proxy="true">
+          <parameters>
+            <type element="//@ownedElements.0/@ownedElements.2"/>
+          </parameters>
+        </bodyDeclarations>
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="remove" proxy="true">
+          <parameters>
+            <type element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+          </parameters>
+        </bodyDeclarations>
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="iterator" proxy="true"/>
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="add" proxy="true">
+          <parameters>
+            <type element="//@ownedElements.0/@ownedElements.4"/>
+          </parameters>
+        </bodyDeclarations>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.2/@ownedElements.6"/>
+        <typeParameters name="E" proxy="true"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:InterfaceDeclaration" name="Deque" proxy="true">
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.2/@ownedElements.9"/>
+        <typeParameters name="E" proxy="true"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:InterfaceDeclaration" name="Queue" proxy="true">
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.2/@ownedElements.6"/>
+        <typeParameters name="E" proxy="true"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:InterfaceDeclaration" name="EventListener" proxy="true"/>
+    </ownedPackages>
+    <ownedPackages name="awt" proxy="true">
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="FlowLayout" proxy="true">
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="FlowLayout" proxy="true"/>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.3/@ownedElements.1"/>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.1/@ownedElements.5"/>
+        <superClass element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:InterfaceDeclaration" name="LayoutManager" proxy="true"/>
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="Frame" proxy="true">
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="setTitle" proxy="true">
+          <parameters>
+            <type element="//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+          </parameters>
+        </bodyDeclarations>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.3/@ownedElements.6"/>
+        <superClass element="//@ownedElements.1/@ownedPackages.3/@ownedElements.3"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="Window" proxy="true">
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="pack" proxy="true"/>
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="setVisible" proxy="true">
+          <parameters>
+            <type element="//@orphanTypes.0"/>
+          </parameters>
+        </bodyDeclarations>
+        <superInterfaces/>
+        <superClass element="//@ownedElements.1/@ownedPackages.3/@ownedElements.4"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="Container" proxy="true">
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="add" proxy="true">
+          <parameters>
+            <type element="//@ownedElements.1/@ownedPackages.3/@ownedElements.5"/>
+          </parameters>
+        </bodyDeclarations>
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="validate" proxy="true"/>
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="setLayout" proxy="true">
+          <parameters>
+            <type element="//@ownedElements.1/@ownedPackages.3/@ownedElements.1"/>
+          </parameters>
+        </bodyDeclarations>
+        <superClass element="//@ownedElements.1/@ownedPackages.3/@ownedElements.5"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="Component" proxy="true">
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.3/@ownedPackages.0/@ownedElements.0"/>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.3/@ownedElements.6"/>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.1/@ownedElements.5"/>
+        <superClass element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:InterfaceDeclaration" name="MenuContainer" proxy="true"/>
+      <ownedElements xsi:type="Java5:InterfaceDeclaration" name="ItemSelectable" proxy="true"/>
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="Color" proxy="true">
+        <bodyDeclarations xsi:type="Java5:FieldDeclaration" name="white" proxy="true"/>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.3/@ownedElements.9"/>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.1/@ownedElements.5"/>
+        <superClass element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:InterfaceDeclaration" name="Paint" proxy="true">
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.3/@ownedElements.10"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:InterfaceDeclaration" name="Transparency" proxy="true"/>
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="Dimension" proxy="true">
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="Dimension" proxy="true">
+          <parameters>
+            <type/>
+          </parameters>
+          <parameters>
+            <type/>
+          </parameters>
+        </bodyDeclarations>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.1/@ownedElements.5"/>
+        <superClass element="//@ownedElements.1/@ownedPackages.3/@ownedPackages.1/@ownedElements.0"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="Font" proxy="true">
+        <bodyDeclarations xsi:type="Java5:FieldDeclaration" name="PLAIN" proxy="true"/>
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="Font" proxy="true">
+          <parameters>
+            <type element="//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+          </parameters>
+          <parameters>
+            <type/>
+          </parameters>
+          <parameters>
+            <type/>
+          </parameters>
+        </bodyDeclarations>
+        <superInterfaces element="//@ownedElements.1/@ownedPackages.1/@ownedElements.5"/>
+        <superClass element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+      </ownedElements>
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="AWTEvent" proxy="true">
+        <superClass element="//@ownedElements.1/@ownedPackages.2/@ownedElements.0"/>
+      </ownedElements>
+      <ownedPackages name="image" proxy="true">
+        <ownedElements xsi:type="Java5:InterfaceDeclaration" name="ImageObserver" proxy="true"/>
+      </ownedPackages>
+      <ownedPackages name="geom" proxy="true">
+        <ownedElements xsi:type="Java5:ClassDeclaration" name="Dimension2D" proxy="true">
+          <superInterfaces element="//@ownedElements.1/@ownedPackages.0/@ownedElements.8"/>
+          <superClass element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+        </ownedElements>
+      </ownedPackages>
+      <ownedPackages name="event" proxy="true">
+        <ownedElements xsi:type="Java5:ClassDeclaration" name="ActionEvent" proxy="true">
+          <superClass element="//@ownedElements.1/@ownedPackages.3/@ownedElements.13"/>
+        </ownedElements>
+        <ownedElements xsi:type="Java5:InterfaceDeclaration" name="ActionListener" proxy="true">
+          <superInterfaces element="//@ownedElements.1/@ownedPackages.2/@ownedElements.10"/>
+        </ownedElements>
+      </ownedPackages>
+    </ownedPackages>
+  </ownedElements>
+  <ownedElements name="message_definitions" qualifiedName="message_definitions">
+    <ownedElements xsi:type="Java5:ClassDeclaration" name="MessageStartUpMessage">
+      <modifiers visibility="public"/>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="MessageStartUpMessage" constructor="true">
+        <modifiers visibility="public"/>
+        <body>
+          <statements xsi:type="Java5:SuperConstructorInvocation">
+            <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.2/@ownedElements.0/@bodyDeclarations.0/@parameters.0"/>
+            <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.2/@ownedElements.0/@bodyDeclarations.0/@parameters.1"/>
+            <method element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+          </statements>
+        </body>
+        <parameters name="source">
+          <type element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+        </parameters>
+        <parameters name="dir">
+          <type element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+        </parameters>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="clone">
+        <annotations>
+          <type element="//@ownedElements.1/@ownedPackages.0/@ownedElements.6"/>
+        </annotations>
+        <modifiers visibility="public"/>
+        <body>
+          <statements xsi:type="Java5:ReturnStatement">
+            <expression xsi:type="Java5:ClassInstanceCreation">
+              <arguments xsi:type="Java5:MethodInvocation">
+                <method element="//@ownedElements.1/@ownedPackages.2/@ownedElements.0/@bodyDeclarations.0"/>
+              </arguments>
+              <arguments xsi:type="Java5:MethodInvocation">
+                <method element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3"/>
+              </arguments>
+              <method element="//@ownedElements.2/@ownedElements.0/@bodyDeclarations.0"/>
+              <type element="//@ownedElements.2/@ownedElements.0"/>
+            </expression>
+          </statements>
+        </body>
+        <returnType element="//@ownedElements.0/@ownedElements.0"/>
+      </bodyDeclarations>
+      <imports>
+        <importedElement element="//@ownedElements.0/@ownedElements.0">
+          <qualifier element="//@ownedElements.0"/>
+        </importedElement>
+      </imports>
+      <superClass element="//@ownedElements.0/@ownedElements.0"/>
+    </ownedElements>
+    <ownedElements xsi:type="Java5:ClassDeclaration" name="MessageResetMessage">
+      <modifiers visibility="public"/>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="MessageResetMessage" constructor="true">
+        <modifiers visibility="public"/>
+        <body>
+          <statements xsi:type="Java5:SuperConstructorInvocation">
+            <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.2/@ownedElements.1/@bodyDeclarations.0/@parameters.0"/>
+            <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.2/@ownedElements.1/@bodyDeclarations.0/@parameters.1"/>
+            <method element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+          </statements>
+        </body>
+        <parameters name="source">
+          <type element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+        </parameters>
+        <parameters name="dir">
+          <type element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+        </parameters>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="clone">
+        <annotations>
+          <type element="//@ownedElements.1/@ownedPackages.0/@ownedElements.6"/>
+        </annotations>
+        <modifiers visibility="public"/>
+        <body>
+          <statements xsi:type="Java5:ReturnStatement">
+            <expression xsi:type="Java5:ClassInstanceCreation">
+              <arguments xsi:type="Java5:MethodInvocation">
+                <method element="//@ownedElements.1/@ownedPackages.2/@ownedElements.0/@bodyDeclarations.0"/>
+              </arguments>
+              <arguments xsi:type="Java5:MethodInvocation">
+                <method element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3"/>
+              </arguments>
+              <method element="//@ownedElements.2/@ownedElements.1/@bodyDeclarations.0"/>
+              <type element="//@ownedElements.2/@ownedElements.1"/>
+            </expression>
+          </statements>
+        </body>
+        <returnType element="//@ownedElements.0/@ownedElements.0"/>
+      </bodyDeclarations>
+      <imports>
+        <importedElement element="//@ownedElements.0/@ownedElements.0">
+          <qualifier element="//@ownedElements.0"/>
+        </importedElement>
+      </imports>
+      <superClass element="//@ownedElements.0/@ownedElements.0"/>
+    </ownedElements>
+    <ownedElements xsi:type="Java5:ClassDeclaration" name="MessageSlaveChangedMessage">
+      <modifiers visibility="public"/>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="MessageSlaveChangedMessage" constructor="true">
+        <modifiers visibility="public"/>
+        <body>
+          <statements xsi:type="Java5:SuperConstructorInvocation">
+            <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.2/@ownedElements.2/@bodyDeclarations.0/@parameters.0"/>
+            <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.2/@ownedElements.2/@bodyDeclarations.0/@parameters.1"/>
+            <method element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+          </statements>
+        </body>
+        <parameters name="source">
+          <type element="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+        </parameters>
+        <parameters name="dir">
+          <type element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+        </parameters>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="clone">
+        <annotations>
+          <type element="//@ownedElements.1/@ownedPackages.0/@ownedElements.6"/>
+        </annotations>
+        <modifiers visibility="public"/>
+        <body>
+          <statements xsi:type="Java5:ReturnStatement">
+            <expression xsi:type="Java5:ClassInstanceCreation">
+              <arguments xsi:type="Java5:MethodInvocation">
+                <method element="//@ownedElements.1/@ownedPackages.2/@ownedElements.0/@bodyDeclarations.0"/>
+              </arguments>
+              <arguments xsi:type="Java5:MethodInvocation">
+                <method element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3"/>
+              </arguments>
+              <method element="//@ownedElements.2/@ownedElements.2/@bodyDeclarations.0"/>
+              <type element="//@ownedElements.2/@ownedElements.2"/>
+            </expression>
+          </statements>
+        </body>
+        <returnType element="//@ownedElements.0/@ownedElements.0"/>
+      </bodyDeclarations>
+      <imports>
+        <importedElement element="//@ownedElements.0/@ownedElements.0">
+          <qualifier element="//@ownedElements.0"/>
+        </importedElement>
+      </imports>
+      <superClass element="//@ownedElements.0/@ownedElements.0"/>
+    </ownedElements>
+  </ownedElements>
+  <ownedElements name="profileRegularUser">
+    <ownedElements xsi:type="Java5:ClassDeclaration" name="Root">
+      <modifiers visibility="public"/>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="Root" constructor="true">
+        <modifiers visibility="public"/>
+        <body>
+          <statements xsi:type="Java5:ExpressionStatement">
+            <expression xsi:type="Java5:MethodInvocation">
+              <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.18"/>
+              <arguments xsi:type="Java5:ClassInstanceCreation">
+                <anonymousClassDeclaration>
+                  <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="handleMessage">
+                    <annotations>
+                      <type element="//@ownedElements.1/@ownedPackages.0/@ownedElements.6"/>
+                    </annotations>
+                    <modifiers visibility="public"/>
+                    <body>
+                      <statements xsi:type="Java5:VariableDeclarationStatement">
+                        <type element="//@ownedElements.0/@ownedElements.0"/>
+                        <fragments name="clone">
+                          <initializer xsi:type="Java5:MethodInvocation">
+                            <method element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.4"/>
+                            <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedElements.0/@bodyDeclarations.0/@body/@statements.0/@expression/@arguments.0/@anonymousClassDeclaration/@bodyDeclarations.0/@parameters.0"/>
+                          </initializer>
+                        </fragments>
+                      </statements>
+                      <statements xsi:type="Java5:ExpressionStatement">
+                        <expression xsi:type="Java5:MethodInvocation">
+                          <method element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2"/>
+                          <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@enumConstants.1">
+                            <qualifier element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+                          </arguments>
+                          <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedElements.0/@bodyDeclarations.0/@body/@statements.0/@expression/@arguments.0/@anonymousClassDeclaration/@bodyDeclarations.0/@body/@statements.0/@fragments.0"/>
+                        </expression>
+                      </statements>
+                      <statements xsi:type="Java5:ExpressionStatement">
+                        <expression xsi:type="Java5:MethodInvocation">
+                          <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.13"/>
+                          <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedElements.0/@bodyDeclarations.0/@body/@statements.0/@expression/@arguments.0/@anonymousClassDeclaration/@bodyDeclarations.0/@body/@statements.0/@fragments.0"/>
+                        </expression>
+                      </statements>
+                      <statements xsi:type="Java5:ReturnStatement">
+                        <expression xsi:type="Java5:BooleanLiteral" value="true"/>
+                      </statements>
+                    </body>
+                    <returnType element="//@orphanTypes.0"/>
+                    <parameters name="m">
+                      <type element="//@ownedElements.0/@ownedElements.0"/>
+                    </parameters>
+                  </bodyDeclarations>
+                </anonymousClassDeclaration>
+                <type element="//@ownedElements.0/@ownedElements.4"/>
+              </arguments>
+            </expression>
+          </statements>
+          <statements xsi:type="Java5:ExpressionStatement">
+            <expression xsi:type="Java5:MethodInvocation">
+              <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.5"/>
+              <arguments xsi:type="Java5:MethodInvocation">
+                <method element="//@ownedElements.3/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3"/>
+                <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedElements.0"/>
+              </arguments>
+            </expression>
+          </statements>
+        </body>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:FieldDeclaration" name="instance">
+        <modifiers visibility="private" static="true"/>
+        <type element="//@ownedElements.3/@ownedElements.0"/>
+        <fragments name="instance"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="getInstance">
+        <modifiers visibility="public" static="true"/>
+        <body>
+          <statements xsi:type="Java5:IfStatement">
+            <expression xsi:type="Java5:InfixExpression" operator="==">
+              <rightOperand xsi:type="Java5:NullLiteral"/>
+              <leftOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedElements.0/@bodyDeclarations.1/@fragments.0"/>
+            </expression>
+            <thenStatement xsi:type="Java5:Block">
+              <statements xsi:type="Java5:ExpressionStatement">
+                <expression xsi:type="Java5:Assignment" operator="=">
+                  <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedElements.0/@bodyDeclarations.1/@fragments.0"/>
+                  <rightHandSide xsi:type="Java5:ClassInstanceCreation">
+                    <method element="//@ownedElements.3/@ownedElements.0/@bodyDeclarations.0"/>
+                    <type element="//@ownedElements.3/@ownedElements.0"/>
+                  </rightHandSide>
+                </expression>
+              </statements>
+            </thenStatement>
+          </statements>
+          <statements xsi:type="Java5:ReturnStatement">
+            <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedElements.0/@bodyDeclarations.1/@fragments.0"/>
+          </statements>
+        </body>
+        <returnType element="//@ownedElements.3/@ownedElements.0"/>
+      </bodyDeclarations>
+      <imports>
+        <importedElement element="//@ownedElements.0/@ownedElements.0">
+          <qualifier element="//@ownedElements.0"/>
+        </importedElement>
+      </imports>
+      <imports>
+        <importedElement element="//@ownedElements.0/@ownedElements.4">
+          <qualifier element="//@ownedElements.0"/>
+        </importedElement>
+      </imports>
+      <imports>
+        <importedElement element="//@ownedElements.0/@ownedElements.2">
+          <qualifier element="//@ownedElements.0"/>
+        </importedElement>
+      </imports>
+      <imports>
+        <importedElement element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0">
+          <qualifier element="//@ownedElements.0/@ownedElements.0">
+            <qualifier element="//@ownedElements.0"/>
+          </qualifier>
+        </importedElement>
+      </imports>
+      <imports>
+        <importedElement element="//@ownedElements.3/@ownedPackages.0/@ownedElements.0">
+          <qualifier element="//@ownedElements.3/@ownedPackages.0">
+            <qualifier element="//@ownedElements.3"/>
+          </qualifier>
+        </importedElement>
+      </imports>
+      <superClass element="//@ownedElements.0/@ownedElements.2"/>
+    </ownedElements>
+    <ownedPackages name="sectionApp">
+      <ownedElements xsi:type="Java5:ClassDeclaration" name="VisualObjectApp">
+        <modifiers visibility="public"/>
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="VisualObjectApp" constructor="true">
+          <modifiers visibility="public"/>
+          <body>
+            <statements xsi:type="Java5:SuperConstructorInvocation">
+              <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.1"/>
+            </statements>
+            <statements xsi:type="Java5:ExpressionStatement">
+              <expression xsi:type="Java5:MethodInvocation">
+                <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.5"/>
+                <arguments xsi:type="Java5:MethodInvocation">
+                  <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.5"/>
+                  <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+                </arguments>
+              </expression>
+            </statements>
+          </body>
+        </bodyDeclarations>
+        <bodyDeclarations xsi:type="Java5:FieldDeclaration" name="title">
+          <modifiers visibility="public"/>
+          <type element="//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+          <fragments name="title">
+            <initializer xsi:type="Java5:StringLiteral" escapedValue="&quot;ControlPanel&quot;" value="ControlPanel"/>
+          </fragments>
+        </bodyDeclarations>
+        <bodyDeclarations xsi:type="Java5:FieldDeclaration" name="instance">
+          <modifiers visibility="private" static="true"/>
+          <type element="//@ownedElements.3/@ownedPackages.0/@ownedElements.0"/>
+          <fragments name="instance"/>
+        </bodyDeclarations>
+        <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="getInstance">
+          <modifiers visibility="public" static="true"/>
+          <body>
+            <statements xsi:type="Java5:IfStatement">
+              <expression xsi:type="Java5:InfixExpression" operator="==">
+                <rightOperand xsi:type="Java5:NullLiteral"/>
+                <leftOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@fragments.0"/>
+              </expression>
+              <thenStatement xsi:type="Java5:Block">
+                <statements xsi:type="Java5:ExpressionStatement">
+                  <expression xsi:type="Java5:Assignment" operator="=">
+                    <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@fragments.0"/>
+                    <rightHandSide xsi:type="Java5:ClassInstanceCreation">
+                      <method element="//@ownedElements.3/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0"/>
+                      <type element="//@ownedElements.3/@ownedPackages.0/@ownedElements.0"/>
+                    </rightHandSide>
+                  </expression>
+                </statements>
+              </thenStatement>
+            </statements>
+            <statements xsi:type="Java5:ReturnStatement">
+              <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2/@fragments.0"/>
+            </statements>
+          </body>
+          <returnType element="//@ownedElements.3/@ownedPackages.0/@ownedElements.0"/>
+        </bodyDeclarations>
+        <imports>
+          <importedElement element="//@ownedElements.0/@ownedElements.2">
+            <qualifier element="//@ownedElements.0"/>
+          </importedElement>
+        </imports>
+        <imports>
+          <importedElement element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0">
+            <qualifier element="//@ownedElements.0/@ownedElements.0">
+              <qualifier element="//@ownedElements.0"/>
+            </qualifier>
+          </importedElement>
+        </imports>
+        <imports>
+          <importedElement element="//@ownedElements.2"/>
+        </imports>
+        <imports>
+          <importedElement element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0">
+            <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0">
+              <qualifier element="//@ownedElements.3/@ownedPackages.0">
+                <qualifier element="//@ownedElements.3"/>
+              </qualifier>
+            </qualifier>
+          </importedElement>
+        </imports>
+        <superClass element="//@ownedElements.0/@ownedElements.2"/>
+      </ownedElements>
+      <ownedPackages name="sectionPanelMaster">
+        <ownedElements xsi:type="Java5:ClassDeclaration" name="VisualObjectPanelMaster">
+          <modifiers visibility="public"/>
+          <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="VisualObjectPanelMaster" constructor="true">
+            <modifiers visibility="public"/>
+            <body>
+              <statements xsi:type="Java5:SuperConstructorInvocation">
+                <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.1"/>
+              </statements>
+              <statements xsi:type="Java5:ExpressionStatement">
+                <expression xsi:type="Java5:MethodInvocation">
+                  <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.5"/>
+                  <arguments xsi:type="Java5:MethodInvocation">
+                    <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2"/>
+                    <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+                  </arguments>
+                </expression>
+              </statements>
+              <statements xsi:type="Java5:ExpressionStatement">
+                <expression xsi:type="Java5:MethodInvocation">
+                  <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.5"/>
+                  <arguments xsi:type="Java5:MethodInvocation">
+                    <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.4"/>
+                    <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0"/>
+                  </arguments>
+                </expression>
+              </statements>
+              <statements xsi:type="Java5:ExpressionStatement">
+                <expression xsi:type="Java5:MethodInvocation">
+                  <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.18"/>
+                  <arguments xsi:type="Java5:ClassInstanceCreation">
+                    <arguments xsi:type="Java5:ThisExpression"/>
+                    <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.1"/>
+                    <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.2"/>
+                  </arguments>
+                </expression>
+              </statements>
+              <statements xsi:type="Java5:ExpressionStatement">
+                <expression xsi:type="Java5:MethodInvocation">
+                  <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.18"/>
+                  <arguments xsi:type="Java5:ClassInstanceCreation">
+                    <arguments xsi:type="Java5:ThisExpression"/>
+                    <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.1"/>
+                    <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+                  </arguments>
+                </expression>
+              </statements>
+              <statements xsi:type="Java5:ExpressionStatement">
+                <expression xsi:type="Java5:MethodInvocation">
+                  <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.18"/>
+                  <arguments xsi:type="Java5:ClassInstanceCreation">
+                    <arguments xsi:type="Java5:ThisExpression"/>
+                    <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.1"/>
+                    <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.3"/>
+                  </arguments>
+                </expression>
+              </statements>
+              <statements xsi:type="Java5:ExpressionStatement">
+                <expression xsi:type="Java5:MethodInvocation">
+                  <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.8"/>
+                </expression>
+              </statements>
+            </body>
+          </bodyDeclarations>
+          <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="triggerResetMessage">
+            <modifiers visibility="public"/>
+            <body>
+              <statements xsi:type="Java5:IfStatement">
+                <expression xsi:type="Java5:MethodInvocation">
+                  <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.9"/>
+                </expression>
+                <thenStatement xsi:type="Java5:Block">
+                  <statements xsi:type="Java5:ReturnStatement"/>
+                </thenStatement>
+              </statements>
+            </body>
+            <returnType element="//@orphanTypes.1"/>
+          </bodyDeclarations>
+          <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="triggerStartUpMessage">
+            <modifiers visibility="public"/>
+            <body>
+              <statements xsi:type="Java5:IfStatement">
+                <expression xsi:type="Java5:MethodInvocation">
+                  <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.10"/>
+                </expression>
+                <thenStatement xsi:type="Java5:Block">
+                  <statements xsi:type="Java5:ReturnStatement"/>
+                </thenStatement>
+              </statements>
+            </body>
+            <returnType element="//@orphanTypes.1"/>
+          </bodyDeclarations>
+          <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="triggerSlaveChangedMessage">
+            <modifiers visibility="public"/>
+            <body>
+              <statements xsi:type="Java5:IfStatement">
+                <expression xsi:type="Java5:MethodInvocation">
+                  <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.11"/>
+                </expression>
+                <thenStatement xsi:type="Java5:Block">
+                  <statements xsi:type="Java5:ReturnStatement"/>
+                </thenStatement>
+              </statements>
+            </body>
+            <returnType element="//@orphanTypes.1"/>
+          </bodyDeclarations>
+          <bodyDeclarations xsi:type="Java5:FieldDeclaration" name="instance">
+            <modifiers visibility="private" static="true"/>
+            <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+            <fragments name="instance"/>
+          </bodyDeclarations>
+          <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="getInstance">
+            <modifiers visibility="public" static="true"/>
+            <body>
+              <statements xsi:type="Java5:IfStatement">
+                <expression xsi:type="Java5:InfixExpression" operator="==">
+                  <rightOperand xsi:type="Java5:NullLiteral"/>
+                  <leftOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@fragments.0"/>
+                </expression>
+                <thenStatement xsi:type="Java5:Block">
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:Assignment" operator="=">
+                      <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@fragments.0"/>
+                      <rightHandSide xsi:type="Java5:ClassInstanceCreation">
+                        <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0"/>
+                        <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+                      </rightHandSide>
+                    </expression>
+                  </statements>
+                </thenStatement>
+              </statements>
+              <statements xsi:type="Java5:ReturnStatement">
+                <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@fragments.0"/>
+              </statements>
+            </body>
+            <returnType element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+          </bodyDeclarations>
+          <bodyDeclarations xsi:type="Java5:EnumDeclaration" name="State">
+            <modifiers visibility="private"/>
+            <enumConstants name="Ready"/>
+          </bodyDeclarations>
+          <bodyDeclarations xsi:type="Java5:FieldDeclaration" name="state">
+            <modifiers visibility="private"/>
+            <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6"/>
+            <fragments name="state"/>
+          </bodyDeclarations>
+          <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="init_transition">
+            <modifiers visibility="public"/>
+            <body>
+              <statements xsi:type="Java5:ExpressionStatement">
+                <expression xsi:type="Java5:Assignment" operator="=">
+                  <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.7/@fragments.0"/>
+                  <rightHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6/@enumConstants.0">
+                    <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6"/>
+                  </rightHandSide>
+                </expression>
+              </statements>
+            </body>
+            <returnType element="//@orphanTypes.1"/>
+          </bodyDeclarations>
+          <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="Ready2ReadyforwardResetTransition">
+            <modifiers visibility="private"/>
+            <body>
+              <statements xsi:type="Java5:IfStatement">
+                <expression xsi:type="Java5:InfixExpression" operator="!=">
+                  <rightOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6/@enumConstants.0">
+                    <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6"/>
+                  </rightOperand>
+                  <leftOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.7/@fragments.0"/>
+                </expression>
+                <thenStatement xsi:type="Java5:Block">
+                  <statements xsi:type="Java5:ReturnStatement">
+                    <expression xsi:type="Java5:BooleanLiteral"/>
+                  </statements>
+                </thenStatement>
+              </statements>
+              <statements xsi:type="Java5:VariableDeclarationStatement">
+                <type element="//@ownedElements.2/@ownedElements.1"/>
+                <fragments name="message">
+                  <initializer xsi:type="Java5:ClassInstanceCreation">
+                    <arguments xsi:type="Java5:ThisExpression"/>
+                    <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@enumConstants.1">
+                      <qualifier element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+                    </arguments>
+                    <method element="//@ownedElements.2/@ownedElements.1/@bodyDeclarations.0"/>
+                    <type element="//@ownedElements.2/@ownedElements.1"/>
+                  </initializer>
+                </fragments>
+              </statements>
+              <statements xsi:type="Java5:ExpressionStatement">
+                <expression xsi:type="Java5:MethodInvocation">
+                  <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.13"/>
+                  <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.9/@body/@statements.1/@fragments.0"/>
+                </expression>
+              </statements>
+              <statements xsi:type="Java5:ExpressionStatement">
+                <expression xsi:type="Java5:Assignment" operator="=">
+                  <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.7/@fragments.0"/>
+                  <rightHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6/@enumConstants.0">
+                    <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6"/>
+                  </rightHandSide>
+                </expression>
+              </statements>
+              <statements xsi:type="Java5:ReturnStatement">
+                <expression xsi:type="Java5:BooleanLiteral" value="true"/>
+              </statements>
+            </body>
+            <returnType element="//@orphanTypes.0"/>
+          </bodyDeclarations>
+          <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="Ready2ReadyforwardStartupTransition">
+            <modifiers visibility="private"/>
+            <body>
+              <statements xsi:type="Java5:IfStatement">
+                <expression xsi:type="Java5:InfixExpression" operator="!=">
+                  <rightOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6/@enumConstants.0">
+                    <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6"/>
+                  </rightOperand>
+                  <leftOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.7/@fragments.0"/>
+                </expression>
+                <thenStatement xsi:type="Java5:Block">
+                  <statements xsi:type="Java5:ReturnStatement">
+                    <expression xsi:type="Java5:BooleanLiteral"/>
+                  </statements>
+                </thenStatement>
+              </statements>
+              <statements xsi:type="Java5:VariableDeclarationStatement">
+                <type element="//@ownedElements.2/@ownedElements.0"/>
+                <fragments name="message">
+                  <initializer xsi:type="Java5:ClassInstanceCreation">
+                    <arguments xsi:type="Java5:ThisExpression"/>
+                    <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@enumConstants.1">
+                      <qualifier element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+                    </arguments>
+                    <method element="//@ownedElements.2/@ownedElements.0/@bodyDeclarations.0"/>
+                    <type element="//@ownedElements.2/@ownedElements.0"/>
+                  </initializer>
+                </fragments>
+              </statements>
+              <statements xsi:type="Java5:ExpressionStatement">
+                <expression xsi:type="Java5:MethodInvocation">
+                  <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.13"/>
+                  <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.10/@body/@statements.1/@fragments.0"/>
+                </expression>
+              </statements>
+              <statements xsi:type="Java5:ExpressionStatement">
+                <expression xsi:type="Java5:Assignment" operator="=">
+                  <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.7/@fragments.0"/>
+                  <rightHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6/@enumConstants.0">
+                    <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6"/>
+                  </rightHandSide>
+                </expression>
+              </statements>
+              <statements xsi:type="Java5:ReturnStatement">
+                <expression xsi:type="Java5:BooleanLiteral" value="true"/>
+              </statements>
+            </body>
+            <returnType element="//@orphanTypes.0"/>
+          </bodyDeclarations>
+          <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="Ready2ReadyforwardSlaveTransition">
+            <modifiers visibility="private"/>
+            <body>
+              <statements xsi:type="Java5:IfStatement">
+                <expression xsi:type="Java5:InfixExpression" operator="!=">
+                  <rightOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6/@enumConstants.0">
+                    <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6"/>
+                  </rightOperand>
+                  <leftOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.7/@fragments.0"/>
+                </expression>
+                <thenStatement xsi:type="Java5:Block">
+                  <statements xsi:type="Java5:ReturnStatement">
+                    <expression xsi:type="Java5:BooleanLiteral"/>
+                  </statements>
+                </thenStatement>
+              </statements>
+              <statements xsi:type="Java5:VariableDeclarationStatement">
+                <type element="//@ownedElements.2/@ownedElements.2"/>
+                <fragments name="message">
+                  <initializer xsi:type="Java5:ClassInstanceCreation">
+                    <arguments xsi:type="Java5:ThisExpression"/>
+                    <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@enumConstants.1">
+                      <qualifier element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+                    </arguments>
+                    <method element="//@ownedElements.2/@ownedElements.2/@bodyDeclarations.0"/>
+                    <type element="//@ownedElements.2/@ownedElements.2"/>
+                  </initializer>
+                </fragments>
+              </statements>
+              <statements xsi:type="Java5:ExpressionStatement">
+                <expression xsi:type="Java5:MethodInvocation">
+                  <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.13"/>
+                  <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.11/@body/@statements.1/@fragments.0"/>
+                </expression>
+              </statements>
+              <statements xsi:type="Java5:ExpressionStatement">
+                <expression xsi:type="Java5:Assignment" operator="=">
+                  <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.7/@fragments.0"/>
+                  <rightHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6/@enumConstants.0">
+                    <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6"/>
+                  </rightHandSide>
+                </expression>
+              </statements>
+              <statements xsi:type="Java5:ReturnStatement">
+                <expression xsi:type="Java5:BooleanLiteral" value="true"/>
+              </statements>
+            </body>
+            <returnType element="//@orphanTypes.0"/>
+          </bodyDeclarations>
+          <imports>
+            <importedElement element="//@ownedElements.0/@ownedElements.2">
+              <qualifier element="//@ownedElements.0"/>
+            </importedElement>
+          </imports>
+          <imports>
+            <importedElement element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0">
+              <qualifier element="//@ownedElements.0/@ownedElements.0">
+                <qualifier element="//@ownedElements.0"/>
+              </qualifier>
+            </importedElement>
+          </imports>
+          <imports>
+            <importedElement element="//@ownedElements.2"/>
+          </imports>
+          <imports>
+            <importedElement element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0">
+              <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0">
+                <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0">
+                  <qualifier element="//@ownedElements.3/@ownedPackages.0">
+                    <qualifier element="//@ownedElements.3"/>
+                  </qualifier>
+                </qualifier>
+              </qualifier>
+            </importedElement>
+          </imports>
+          <imports>
+            <importedElement element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0">
+              <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1">
+                <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0">
+                  <qualifier element="//@ownedElements.3/@ownedPackages.0">
+                    <qualifier element="//@ownedElements.3"/>
+                  </qualifier>
+                </qualifier>
+              </qualifier>
+            </importedElement>
+          </imports>
+          <superClass element="//@ownedElements.0/@ownedElements.2"/>
+        </ownedElements>
+        <ownedElements xsi:type="Java5:ClassDeclaration" name="ResetMessageHandler">
+          <modifiers visibility="public"/>
+          <bodyDeclarations xsi:type="Java5:FieldDeclaration" name="_parent">
+            <modifiers visibility="private"/>
+            <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+            <fragments name="_parent"/>
+          </bodyDeclarations>
+          <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="ResetMessageHandler" constructor="true">
+            <modifiers visibility="public"/>
+            <body>
+              <statements xsi:type="Java5:ExpressionStatement">
+                <expression xsi:type="Java5:Assignment" operator="=">
+                  <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.0/@fragments.0"/>
+                  <rightHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.1/@parameters.0"/>
+                </expression>
+              </statements>
+            </body>
+            <parameters name="o">
+              <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+            </parameters>
+          </bodyDeclarations>
+          <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="handleMessage">
+            <modifiers visibility="public"/>
+            <body>
+              <statements xsi:type="Java5:IfStatement">
+                <expression xsi:type="Java5:InstanceofExpression">
+                  <rightOperand element="//@ownedElements.2/@ownedElements.1"/>
+                  <leftOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.2/@parameters.0"/>
+                </expression>
+                <thenStatement xsi:type="Java5:Block">
+                  <statements xsi:type="Java5:VariableDeclarationStatement">
+                    <type element="//@ownedElements.2/@ownedElements.1"/>
+                    <fragments name="message">
+                      <initializer xsi:type="Java5:CastExpression">
+                        <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.2/@parameters.0"/>
+                        <type element="//@ownedElements.2/@ownedElements.1"/>
+                      </initializer>
+                    </fragments>
+                  </statements>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1"/>
+                      <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.0/@fragments.0"/>
+                    </expression>
+                  </statements>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2"/>
+                      <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@enumConstants.2">
+                        <qualifier element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+                      </arguments>
+                      <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.2/@body/@statements.0/@thenStatement/@statements.0/@fragments.0"/>
+                    </expression>
+                  </statements>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.13"/>
+                      <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.2/@body/@statements.0/@thenStatement/@statements.0/@fragments.0"/>
+                      <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.0/@fragments.0"/>
+                    </expression>
+                  </statements>
+                  <statements xsi:type="Java5:ReturnStatement">
+                    <expression xsi:type="Java5:BooleanLiteral" value="true"/>
+                  </statements>
+                </thenStatement>
+              </statements>
+              <statements xsi:type="Java5:ReturnStatement">
+                <expression xsi:type="Java5:BooleanLiteral"/>
+              </statements>
+            </body>
+            <returnType element="//@orphanTypes.0"/>
+            <parameters name="m">
+              <type element="//@ownedElements.0/@ownedElements.0"/>
+            </parameters>
+          </bodyDeclarations>
+          <imports>
+            <importedElement element="//@ownedElements.2/@ownedElements.1">
+              <qualifier element="//@ownedElements.2"/>
+            </importedElement>
+          </imports>
+          <imports>
+            <importedElement element="//@ownedElements.0/@ownedElements.0">
+              <qualifier element="//@ownedElements.0"/>
+            </importedElement>
+          </imports>
+          <imports>
+            <importedElement element="//@ownedElements.0/@ownedElements.4">
+              <qualifier element="//@ownedElements.0"/>
+            </importedElement>
+          </imports>
+          <imports>
+            <importedElement element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0">
+              <qualifier element="//@ownedElements.0/@ownedElements.0">
+                <qualifier element="//@ownedElements.0"/>
+              </qualifier>
+            </importedElement>
+          </imports>
+          <superInterfaces element="//@ownedElements.0/@ownedElements.4"/>
+        </ownedElements>
+        <ownedElements xsi:type="Java5:ClassDeclaration" name="StartUpMessageHandler">
+          <modifiers visibility="public"/>
+          <bodyDeclarations xsi:type="Java5:FieldDeclaration" name="_parent">
+            <modifiers visibility="private"/>
+            <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+            <fragments name="_parent"/>
+          </bodyDeclarations>
+          <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="StartUpMessageHandler" constructor="true">
+            <modifiers visibility="public"/>
+            <body>
+              <statements xsi:type="Java5:ExpressionStatement">
+                <expression xsi:type="Java5:Assignment" operator="=">
+                  <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.0/@fragments.0"/>
+                  <rightHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.1/@parameters.0"/>
+                </expression>
+              </statements>
+            </body>
+            <parameters name="o">
+              <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+            </parameters>
+          </bodyDeclarations>
+          <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="handleMessage">
+            <modifiers visibility="public"/>
+            <body>
+              <statements xsi:type="Java5:IfStatement">
+                <expression xsi:type="Java5:InstanceofExpression">
+                  <rightOperand element="//@ownedElements.2/@ownedElements.0"/>
+                  <leftOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.2/@parameters.0"/>
+                </expression>
+                <thenStatement xsi:type="Java5:Block">
+                  <statements xsi:type="Java5:VariableDeclarationStatement">
+                    <type element="//@ownedElements.2/@ownedElements.0"/>
+                    <fragments name="message">
+                      <initializer xsi:type="Java5:CastExpression">
+                        <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.2/@parameters.0"/>
+                        <type element="//@ownedElements.2/@ownedElements.0"/>
+                      </initializer>
+                    </fragments>
+                  </statements>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2"/>
+                      <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.0/@fragments.0"/>
+                    </expression>
+                  </statements>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2"/>
+                      <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@enumConstants.2">
+                        <qualifier element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+                      </arguments>
+                      <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.2/@body/@statements.0/@thenStatement/@statements.0/@fragments.0"/>
+                    </expression>
+                  </statements>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.13"/>
+                      <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.2/@body/@statements.0/@thenStatement/@statements.0/@fragments.0"/>
+                      <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.0/@fragments.0"/>
+                    </expression>
+                  </statements>
+                  <statements xsi:type="Java5:ReturnStatement">
+                    <expression xsi:type="Java5:BooleanLiteral" value="true"/>
+                  </statements>
+                </thenStatement>
+              </statements>
+              <statements xsi:type="Java5:ReturnStatement">
+                <expression xsi:type="Java5:BooleanLiteral"/>
+              </statements>
+            </body>
+            <returnType element="//@orphanTypes.0"/>
+            <parameters name="m">
+              <type element="//@ownedElements.0/@ownedElements.0"/>
+            </parameters>
+          </bodyDeclarations>
+          <imports>
+            <importedElement element="//@ownedElements.2/@ownedElements.0">
+              <qualifier element="//@ownedElements.2"/>
+            </importedElement>
+          </imports>
+          <imports>
+            <importedElement element="//@ownedElements.0/@ownedElements.0">
+              <qualifier element="//@ownedElements.0"/>
+            </importedElement>
+          </imports>
+          <imports>
+            <importedElement element="//@ownedElements.0/@ownedElements.4">
+              <qualifier element="//@ownedElements.0"/>
+            </importedElement>
+          </imports>
+          <imports>
+            <importedElement element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0">
+              <qualifier element="//@ownedElements.0/@ownedElements.0">
+                <qualifier element="//@ownedElements.0"/>
+              </qualifier>
+            </importedElement>
+          </imports>
+          <superInterfaces element="//@ownedElements.0/@ownedElements.4"/>
+        </ownedElements>
+        <ownedElements xsi:type="Java5:ClassDeclaration" name="SlaveChangedMessageHandler">
+          <modifiers visibility="public"/>
+          <bodyDeclarations xsi:type="Java5:FieldDeclaration" name="_parent">
+            <modifiers visibility="private"/>
+            <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+            <fragments name="_parent"/>
+          </bodyDeclarations>
+          <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="SlaveChangedMessageHandler" constructor="true">
+            <modifiers visibility="public"/>
+            <body>
+              <statements xsi:type="Java5:ExpressionStatement">
+                <expression xsi:type="Java5:Assignment" operator="=">
+                  <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.0/@fragments.0"/>
+                  <rightHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.1/@parameters.0"/>
+                </expression>
+              </statements>
+            </body>
+            <parameters name="o">
+              <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+            </parameters>
+          </bodyDeclarations>
+          <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="handleMessage">
+            <modifiers visibility="public"/>
+            <body>
+              <statements xsi:type="Java5:IfStatement">
+                <expression xsi:type="Java5:InstanceofExpression">
+                  <rightOperand element="//@ownedElements.2/@ownedElements.2"/>
+                  <leftOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.2/@parameters.0"/>
+                </expression>
+                <thenStatement xsi:type="Java5:Block">
+                  <statements xsi:type="Java5:VariableDeclarationStatement">
+                    <type element="//@ownedElements.2/@ownedElements.2"/>
+                    <fragments name="message">
+                      <initializer xsi:type="Java5:CastExpression">
+                        <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.2/@parameters.0"/>
+                        <type element="//@ownedElements.2/@ownedElements.2"/>
+                      </initializer>
+                    </fragments>
+                  </statements>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3"/>
+                      <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.0/@fragments.0"/>
+                    </expression>
+                  </statements>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2"/>
+                      <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@enumConstants.2">
+                        <qualifier element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+                      </arguments>
+                      <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.2/@body/@statements.0/@thenStatement/@statements.0/@fragments.0"/>
+                    </expression>
+                  </statements>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.13"/>
+                      <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.2/@body/@statements.0/@thenStatement/@statements.0/@fragments.0"/>
+                      <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.0/@fragments.0"/>
+                    </expression>
+                  </statements>
+                  <statements xsi:type="Java5:ReturnStatement">
+                    <expression xsi:type="Java5:BooleanLiteral" value="true"/>
+                  </statements>
+                </thenStatement>
+              </statements>
+              <statements xsi:type="Java5:ReturnStatement">
+                <expression xsi:type="Java5:BooleanLiteral"/>
+              </statements>
+            </body>
+            <returnType element="//@orphanTypes.0"/>
+            <parameters name="m">
+              <type element="//@ownedElements.0/@ownedElements.0"/>
+            </parameters>
+          </bodyDeclarations>
+          <imports>
+            <importedElement element="//@ownedElements.2/@ownedElements.2">
+              <qualifier element="//@ownedElements.2"/>
+            </importedElement>
+          </imports>
+          <imports>
+            <importedElement element="//@ownedElements.0/@ownedElements.0">
+              <qualifier element="//@ownedElements.0"/>
+            </importedElement>
+          </imports>
+          <imports>
+            <importedElement element="//@ownedElements.0/@ownedElements.4">
+              <qualifier element="//@ownedElements.0"/>
+            </importedElement>
+          </imports>
+          <imports>
+            <importedElement element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0">
+              <qualifier element="//@ownedElements.0/@ownedElements.0">
+                <qualifier element="//@ownedElements.0"/>
+              </qualifier>
+            </importedElement>
+          </imports>
+          <superInterfaces element="//@ownedElements.0/@ownedElements.4"/>
+        </ownedElements>
+        <ownedElements xsi:type="Java5:ClassDeclaration" name="GuiServer" proxy="true">
+          <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="getInstance" proxy="true"/>
+        </ownedElements>
+        <ownedPackages name="sectionPanelSlave">
+          <ownedElements xsi:type="Java5:ClassDeclaration" name="VisualObjectPanelSlave">
+            <modifiers visibility="public"/>
+            <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="VisualObjectPanelSlave" constructor="true">
+              <modifiers visibility="public"/>
+              <body>
+                <statements xsi:type="Java5:SuperConstructorInvocation">
+                  <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.1"/>
+                </statements>
+                <statements xsi:type="Java5:ExpressionStatement">
+                  <expression xsi:type="Java5:MethodInvocation">
+                    <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.5"/>
+                    <arguments xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.5"/>
+                      <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+                    </arguments>
+                  </expression>
+                </statements>
+              </body>
+            </bodyDeclarations>
+            <bodyDeclarations xsi:type="Java5:FieldDeclaration" name="instance">
+              <modifiers visibility="private" static="true"/>
+              <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+              <fragments name="instance"/>
+            </bodyDeclarations>
+            <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="getInstance">
+              <modifiers visibility="public" static="true"/>
+              <body>
+                <statements xsi:type="Java5:IfStatement">
+                  <expression xsi:type="Java5:InfixExpression" operator="==">
+                    <rightOperand xsi:type="Java5:NullLiteral"/>
+                    <leftOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@fragments.0"/>
+                  </expression>
+                  <thenStatement xsi:type="Java5:Block">
+                    <statements xsi:type="Java5:ExpressionStatement">
+                      <expression xsi:type="Java5:Assignment" operator="=">
+                        <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@fragments.0"/>
+                        <rightHandSide xsi:type="Java5:ClassInstanceCreation">
+                          <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0"/>
+                          <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+                        </rightHandSide>
+                      </expression>
+                    </statements>
+                  </thenStatement>
+                </statements>
+                <statements xsi:type="Java5:ReturnStatement">
+                  <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@fragments.0"/>
+                </statements>
+              </body>
+              <returnType element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+            </bodyDeclarations>
+            <imports>
+              <importedElement element="//@ownedElements.0/@ownedElements.2">
+                <qualifier element="//@ownedElements.0"/>
+              </importedElement>
+            </imports>
+            <imports>
+              <importedElement element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0">
+                <qualifier element="//@ownedElements.0/@ownedElements.0">
+                  <qualifier element="//@ownedElements.0"/>
+                </qualifier>
+              </importedElement>
+            </imports>
+            <imports>
+              <importedElement element="//@ownedElements.2"/>
+            </imports>
+            <imports>
+              <importedElement element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0">
+                <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0">
+                  <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0">
+                    <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0">
+                      <qualifier element="//@ownedElements.3/@ownedPackages.0">
+                        <qualifier element="//@ownedElements.3"/>
+                      </qualifier>
+                    </qualifier>
+                  </qualifier>
+                </qualifier>
+              </importedElement>
+            </imports>
+            <superClass element="//@ownedElements.0/@ownedElements.2"/>
+          </ownedElements>
+          <ownedPackages name="sectionSlave1Button">
+            <ownedElements xsi:type="Java5:ClassDeclaration" name="VisualObjectSlave1Button">
+              <modifiers visibility="public"/>
+              <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="VisualObjectSlave1Button" constructor="true">
+                <modifiers visibility="public"/>
+                <body>
+                  <statements xsi:type="Java5:SuperConstructorInvocation">
+                    <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.1"/>
+                  </statements>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.18"/>
+                      <arguments xsi:type="Java5:ClassInstanceCreation">
+                        <arguments xsi:type="Java5:ThisExpression"/>
+                        <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.1"/>
+                        <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+                      </arguments>
+                    </expression>
+                  </statements>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.18"/>
+                      <arguments xsi:type="Java5:ClassInstanceCreation">
+                        <arguments xsi:type="Java5:ThisExpression"/>
+                        <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.1"/>
+                        <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2"/>
+                      </arguments>
+                    </expression>
+                  </statements>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.8"/>
+                    </expression>
+                  </statements>
+                </body>
+              </bodyDeclarations>
+              <bodyDeclarations xsi:type="Java5:FieldDeclaration" name="text">
+                <modifiers visibility="public"/>
+                <type element="//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+                <fragments name="text">
+                  <initializer xsi:type="Java5:StringLiteral" escapedValue="&quot;Ready&quot;" value="Ready"/>
+                </fragments>
+              </bodyDeclarations>
+              <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="triggerStartUpMessage">
+                <modifiers visibility="public"/>
+                <body>
+                  <statements xsi:type="Java5:IfStatement">
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.9"/>
+                    </expression>
+                    <thenStatement xsi:type="Java5:Block">
+                      <statements xsi:type="Java5:ReturnStatement"/>
+                    </thenStatement>
+                  </statements>
+                </body>
+                <returnType element="//@orphanTypes.1"/>
+              </bodyDeclarations>
+              <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="triggerResetMessage">
+                <modifiers visibility="public"/>
+                <body>
+                  <statements xsi:type="Java5:IfStatement">
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.11"/>
+                    </expression>
+                    <thenStatement xsi:type="Java5:Block">
+                      <statements xsi:type="Java5:ReturnStatement"/>
+                    </thenStatement>
+                  </statements>
+                </body>
+                <returnType element="//@orphanTypes.1"/>
+              </bodyDeclarations>
+              <bodyDeclarations xsi:type="Java5:FieldDeclaration" name="instance">
+                <modifiers visibility="private" static="true"/>
+                <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+                <fragments name="instance"/>
+              </bodyDeclarations>
+              <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="getInstance">
+                <modifiers visibility="public" static="true"/>
+                <body>
+                  <statements xsi:type="Java5:IfStatement">
+                    <expression xsi:type="Java5:InfixExpression" operator="==">
+                      <rightOperand xsi:type="Java5:NullLiteral"/>
+                      <leftOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@fragments.0"/>
+                    </expression>
+                    <thenStatement xsi:type="Java5:Block">
+                      <statements xsi:type="Java5:ExpressionStatement">
+                        <expression xsi:type="Java5:Assignment" operator="=">
+                          <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@fragments.0"/>
+                          <rightHandSide xsi:type="Java5:ClassInstanceCreation">
+                            <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0"/>
+                            <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+                          </rightHandSide>
+                        </expression>
+                      </statements>
+                    </thenStatement>
+                  </statements>
+                  <statements xsi:type="Java5:ReturnStatement">
+                    <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.4/@fragments.0"/>
+                  </statements>
+                </body>
+                <returnType element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+              </bodyDeclarations>
+              <bodyDeclarations xsi:type="Java5:EnumDeclaration" name="State">
+                <modifiers visibility="private"/>
+                <enumConstants name="Ready"/>
+                <enumConstants name="Running"/>
+                <enumConstants name="Error"/>
+              </bodyDeclarations>
+              <bodyDeclarations xsi:type="Java5:FieldDeclaration" name="state">
+                <modifiers visibility="private"/>
+                <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6"/>
+                <fragments name="state"/>
+              </bodyDeclarations>
+              <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="init_transition">
+                <modifiers visibility="public"/>
+                <body>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:Assignment" operator="=">
+                      <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.7/@fragments.0"/>
+                      <rightHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6/@enumConstants.0">
+                        <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6"/>
+                      </rightHandSide>
+                    </expression>
+                  </statements>
+                </body>
+                <returnType element="//@orphanTypes.1"/>
+              </bodyDeclarations>
+              <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="Ready2RunningStartUpTransition">
+                <modifiers visibility="private"/>
+                <body>
+                  <statements xsi:type="Java5:IfStatement">
+                    <expression xsi:type="Java5:InfixExpression" operator="!=">
+                      <rightOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6/@enumConstants.0">
+                        <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6"/>
+                      </rightOperand>
+                      <leftOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.7/@fragments.0"/>
+                    </expression>
+                    <thenStatement xsi:type="Java5:Block">
+                      <statements xsi:type="Java5:ReturnStatement">
+                        <expression xsi:type="Java5:BooleanLiteral"/>
+                      </statements>
+                    </thenStatement>
+                  </statements>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:Assignment" operator="=">
+                      <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@fragments.0"/>
+                      <rightHandSide xsi:type="Java5:StringLiteral" escapedValue="&quot;Running&quot;" value="Running"/>
+                    </expression>
+                  </statements>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.1"/>
+                      <arguments xsi:type="Java5:StringLiteral" escapedValue="&quot;Running&quot;" value="Running"/>
+                      <expression xsi:type="Java5:MethodInvocation">
+                        <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.0"/>
+                        <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.3"/>
+                      </expression>
+                    </expression>
+                  </statements>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:Assignment" operator="=">
+                      <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.7/@fragments.0"/>
+                      <rightHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6/@enumConstants.1">
+                        <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6"/>
+                      </rightHandSide>
+                    </expression>
+                  </statements>
+                  <statements xsi:type="Java5:ReturnStatement">
+                    <expression xsi:type="Java5:BooleanLiteral" value="true"/>
+                  </statements>
+                </body>
+                <returnType element="//@orphanTypes.0"/>
+              </bodyDeclarations>
+              <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="Running2ErrorErrorOccuredTransition">
+                <modifiers visibility="private"/>
+                <body>
+                  <statements xsi:type="Java5:IfStatement">
+                    <expression xsi:type="Java5:InfixExpression" operator="!=">
+                      <rightOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6/@enumConstants.1">
+                        <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6"/>
+                      </rightOperand>
+                      <leftOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.7/@fragments.0"/>
+                    </expression>
+                    <thenStatement xsi:type="Java5:Block">
+                      <statements xsi:type="Java5:ReturnStatement">
+                        <expression xsi:type="Java5:BooleanLiteral"/>
+                      </statements>
+                    </thenStatement>
+                  </statements>
+                  <statements xsi:type="Java5:VariableDeclarationStatement">
+                    <type element="//@ownedElements.2/@ownedElements.2"/>
+                    <fragments name="message">
+                      <initializer xsi:type="Java5:ClassInstanceCreation">
+                        <arguments xsi:type="Java5:ThisExpression"/>
+                        <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@enumConstants.0">
+                          <qualifier element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+                        </arguments>
+                        <method element="//@ownedElements.2/@ownedElements.2/@bodyDeclarations.0"/>
+                        <type element="//@ownedElements.2/@ownedElements.2"/>
+                      </initializer>
+                    </fragments>
+                  </statements>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.13"/>
+                      <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.10/@body/@statements.1/@fragments.0"/>
+                    </expression>
+                  </statements>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:Assignment" operator="=">
+                      <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@fragments.0"/>
+                      <rightHandSide xsi:type="Java5:StringLiteral" escapedValue="&quot;Error&quot;" value="Error"/>
+                    </expression>
+                  </statements>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.1"/>
+                      <arguments xsi:type="Java5:StringLiteral" escapedValue="&quot;Error&quot;" value="Error"/>
+                      <expression xsi:type="Java5:MethodInvocation">
+                        <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.0"/>
+                        <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.3"/>
+                      </expression>
+                    </expression>
+                  </statements>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:Assignment" operator="=">
+                      <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.7/@fragments.0"/>
+                      <rightHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6/@enumConstants.2">
+                        <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6"/>
+                      </rightHandSide>
+                    </expression>
+                  </statements>
+                  <statements xsi:type="Java5:ReturnStatement">
+                    <expression xsi:type="Java5:BooleanLiteral" value="true"/>
+                  </statements>
+                </body>
+                <returnType element="//@orphanTypes.0"/>
+              </bodyDeclarations>
+              <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="Error2ReadyResetTransition">
+                <modifiers visibility="private"/>
+                <body>
+                  <statements xsi:type="Java5:IfStatement">
+                    <expression xsi:type="Java5:InfixExpression" operator="!=">
+                      <rightOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6/@enumConstants.2">
+                        <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6"/>
+                      </rightOperand>
+                      <leftOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.7/@fragments.0"/>
+                    </expression>
+                    <thenStatement xsi:type="Java5:Block">
+                      <statements xsi:type="Java5:ReturnStatement">
+                        <expression xsi:type="Java5:BooleanLiteral"/>
+                      </statements>
+                    </thenStatement>
+                  </statements>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:Assignment" operator="=">
+                      <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@fragments.0"/>
+                      <rightHandSide xsi:type="Java5:StringLiteral" escapedValue="&quot;Ready&quot;" value="Ready"/>
+                    </expression>
+                  </statements>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.1"/>
+                      <arguments xsi:type="Java5:StringLiteral" escapedValue="&quot;Ready&quot;" value="Ready"/>
+                      <expression xsi:type="Java5:MethodInvocation">
+                        <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.0"/>
+                        <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.3"/>
+                      </expression>
+                    </expression>
+                  </statements>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:Assignment" operator="=">
+                      <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.7/@fragments.0"/>
+                      <rightHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6/@enumConstants.0">
+                        <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.6"/>
+                      </rightHandSide>
+                    </expression>
+                  </statements>
+                  <statements xsi:type="Java5:ReturnStatement">
+                    <expression xsi:type="Java5:BooleanLiteral" value="true"/>
+                  </statements>
+                </body>
+                <returnType element="//@orphanTypes.0"/>
+              </bodyDeclarations>
+              <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="DomainEventClickTrigger">
+                <modifiers visibility="public"/>
+                <body>
+                  <statements xsi:type="Java5:IfStatement">
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.10"/>
+                    </expression>
+                    <thenStatement xsi:type="Java5:Block">
+                      <statements xsi:type="Java5:ReturnStatement"/>
+                    </thenStatement>
+                  </statements>
+                </body>
+                <returnType element="//@orphanTypes.1"/>
+              </bodyDeclarations>
+              <imports>
+                <importedElement element="//@ownedElements.0/@ownedElements.2">
+                  <qualifier element="//@ownedElements.0"/>
+                </importedElement>
+              </imports>
+              <imports>
+                <importedElement element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0">
+                  <qualifier element="//@ownedElements.0/@ownedElements.0">
+                    <qualifier element="//@ownedElements.0"/>
+                  </qualifier>
+                </importedElement>
+              </imports>
+              <imports>
+                <importedElement element="//@ownedElements.2"/>
+              </imports>
+              <superClass element="//@ownedElements.0/@ownedElements.2"/>
+            </ownedElements>
+            <ownedElements xsi:type="Java5:ClassDeclaration" name="StartUpMessageHandler">
+              <modifiers visibility="public"/>
+              <bodyDeclarations xsi:type="Java5:FieldDeclaration" name="_parent">
+                <modifiers visibility="private"/>
+                <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+                <fragments name="_parent"/>
+              </bodyDeclarations>
+              <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="StartUpMessageHandler" constructor="true">
+                <modifiers visibility="public"/>
+                <body>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:Assignment" operator="=">
+                      <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.0/@fragments.0"/>
+                      <rightHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.1/@parameters.0"/>
+                    </expression>
+                  </statements>
+                </body>
+                <parameters name="o">
+                  <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+                </parameters>
+              </bodyDeclarations>
+              <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="handleMessage">
+                <modifiers visibility="public"/>
+                <body>
+                  <statements xsi:type="Java5:IfStatement">
+                    <expression xsi:type="Java5:InstanceofExpression">
+                      <rightOperand element="//@ownedElements.2/@ownedElements.0"/>
+                      <leftOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.2/@parameters.0"/>
+                    </expression>
+                    <thenStatement xsi:type="Java5:Block">
+                      <statements xsi:type="Java5:VariableDeclarationStatement">
+                        <type element="//@ownedElements.2/@ownedElements.0"/>
+                        <fragments name="message">
+                          <initializer xsi:type="Java5:CastExpression">
+                            <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.2/@parameters.0"/>
+                            <type element="//@ownedElements.2/@ownedElements.0"/>
+                          </initializer>
+                        </fragments>
+                      </statements>
+                      <statements xsi:type="Java5:ExpressionStatement">
+                        <expression xsi:type="Java5:MethodInvocation">
+                          <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.2"/>
+                          <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.0/@fragments.0"/>
+                        </expression>
+                      </statements>
+                      <statements xsi:type="Java5:ExpressionStatement">
+                        <expression xsi:type="Java5:MethodInvocation">
+                          <method element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2"/>
+                          <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@enumConstants.2">
+                            <qualifier element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+                          </arguments>
+                          <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.2/@body/@statements.0/@thenStatement/@statements.0/@fragments.0"/>
+                        </expression>
+                      </statements>
+                      <statements xsi:type="Java5:ExpressionStatement">
+                        <expression xsi:type="Java5:MethodInvocation">
+                          <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.13"/>
+                          <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.2/@body/@statements.0/@thenStatement/@statements.0/@fragments.0"/>
+                          <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.0/@fragments.0"/>
+                        </expression>
+                      </statements>
+                      <statements xsi:type="Java5:ReturnStatement">
+                        <expression xsi:type="Java5:BooleanLiteral" value="true"/>
+                      </statements>
+                    </thenStatement>
+                  </statements>
+                  <statements xsi:type="Java5:ReturnStatement">
+                    <expression xsi:type="Java5:BooleanLiteral"/>
+                  </statements>
+                </body>
+                <returnType element="//@orphanTypes.0"/>
+                <parameters name="m">
+                  <type element="//@ownedElements.0/@ownedElements.0"/>
+                </parameters>
+              </bodyDeclarations>
+              <imports>
+                <importedElement element="//@ownedElements.2/@ownedElements.0">
+                  <qualifier element="//@ownedElements.2"/>
+                </importedElement>
+              </imports>
+              <imports>
+                <importedElement element="//@ownedElements.0/@ownedElements.0">
+                  <qualifier element="//@ownedElements.0"/>
+                </importedElement>
+              </imports>
+              <imports>
+                <importedElement element="//@ownedElements.0/@ownedElements.4">
+                  <qualifier element="//@ownedElements.0"/>
+                </importedElement>
+              </imports>
+              <imports>
+                <importedElement element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0">
+                  <qualifier element="//@ownedElements.0/@ownedElements.0">
+                    <qualifier element="//@ownedElements.0"/>
+                  </qualifier>
+                </importedElement>
+              </imports>
+              <superInterfaces element="//@ownedElements.0/@ownedElements.4"/>
+            </ownedElements>
+            <ownedElements xsi:type="Java5:ClassDeclaration" name="ResetMessageHandler">
+              <modifiers visibility="public"/>
+              <bodyDeclarations xsi:type="Java5:FieldDeclaration" name="_parent">
+                <modifiers visibility="private"/>
+                <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+                <fragments name="_parent"/>
+              </bodyDeclarations>
+              <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="ResetMessageHandler" constructor="true">
+                <modifiers visibility="public"/>
+                <body>
+                  <statements xsi:type="Java5:ExpressionStatement">
+                    <expression xsi:type="Java5:Assignment" operator="=">
+                      <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.0/@fragments.0"/>
+                      <rightHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.1/@parameters.0"/>
+                    </expression>
+                  </statements>
+                </body>
+                <parameters name="o">
+                  <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+                </parameters>
+              </bodyDeclarations>
+              <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="handleMessage">
+                <modifiers visibility="public"/>
+                <body>
+                  <statements xsi:type="Java5:IfStatement">
+                    <expression xsi:type="Java5:InstanceofExpression">
+                      <rightOperand element="//@ownedElements.2/@ownedElements.1"/>
+                      <leftOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.2/@parameters.0"/>
+                    </expression>
+                    <thenStatement xsi:type="Java5:Block">
+                      <statements xsi:type="Java5:VariableDeclarationStatement">
+                        <type element="//@ownedElements.2/@ownedElements.1"/>
+                        <fragments name="message">
+                          <initializer xsi:type="Java5:CastExpression">
+                            <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.2/@parameters.0"/>
+                            <type element="//@ownedElements.2/@ownedElements.1"/>
+                          </initializer>
+                        </fragments>
+                      </statements>
+                      <statements xsi:type="Java5:ExpressionStatement">
+                        <expression xsi:type="Java5:MethodInvocation">
+                          <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.3"/>
+                          <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.0/@fragments.0"/>
+                        </expression>
+                      </statements>
+                      <statements xsi:type="Java5:ExpressionStatement">
+                        <expression xsi:type="Java5:MethodInvocation">
+                          <method element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2"/>
+                          <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@enumConstants.2">
+                            <qualifier element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+                          </arguments>
+                          <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.2/@body/@statements.0/@thenStatement/@statements.0/@fragments.0"/>
+                        </expression>
+                      </statements>
+                      <statements xsi:type="Java5:ExpressionStatement">
+                        <expression xsi:type="Java5:MethodInvocation">
+                          <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.13"/>
+                          <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.2/@body/@statements.0/@thenStatement/@statements.0/@fragments.0"/>
+                          <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.0/@fragments.0"/>
+                        </expression>
+                      </statements>
+                      <statements xsi:type="Java5:ReturnStatement">
+                        <expression xsi:type="Java5:BooleanLiteral" value="true"/>
+                      </statements>
+                    </thenStatement>
+                  </statements>
+                  <statements xsi:type="Java5:ReturnStatement">
+                    <expression xsi:type="Java5:BooleanLiteral"/>
+                  </statements>
+                </body>
+                <returnType element="//@orphanTypes.0"/>
+                <parameters name="m">
+                  <type element="//@ownedElements.0/@ownedElements.0"/>
+                </parameters>
+              </bodyDeclarations>
+              <imports>
+                <importedElement element="//@ownedElements.2/@ownedElements.1">
+                  <qualifier element="//@ownedElements.2"/>
+                </importedElement>
+              </imports>
+              <imports>
+                <importedElement element="//@ownedElements.0/@ownedElements.0">
+                  <qualifier element="//@ownedElements.0"/>
+                </importedElement>
+              </imports>
+              <imports>
+                <importedElement element="//@ownedElements.0/@ownedElements.4">
+                  <qualifier element="//@ownedElements.0"/>
+                </importedElement>
+              </imports>
+              <imports>
+                <importedElement element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0">
+                  <qualifier element="//@ownedElements.0/@ownedElements.0">
+                    <qualifier element="//@ownedElements.0"/>
+                  </qualifier>
+                </importedElement>
+              </imports>
+              <superInterfaces element="//@ownedElements.0/@ownedElements.4"/>
+            </ownedElements>
+            <ownedElements xsi:type="Java5:ClassDeclaration" name="GuiServer" proxy="true">
+              <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="getInstance" proxy="true"/>
+              <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="updatetext" proxy="true"/>
+            </ownedElements>
+          </ownedPackages>
+        </ownedPackages>
+        <ownedPackages name="sectionMasterButton">
+          <ownedElements xsi:type="Java5:ClassDeclaration" name="VisualObjectMasterButton">
+            <modifiers visibility="public"/>
+            <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="VisualObjectMasterButton" constructor="true">
+              <modifiers visibility="public"/>
+              <body>
+                <statements xsi:type="Java5:SuperConstructorInvocation">
+                  <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.1"/>
+                </statements>
+                <statements xsi:type="Java5:ExpressionStatement">
+                  <expression xsi:type="Java5:MethodInvocation">
+                    <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.18"/>
+                    <arguments xsi:type="Java5:ClassInstanceCreation">
+                      <arguments xsi:type="Java5:ThisExpression"/>
+                      <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.1/@bodyDeclarations.1"/>
+                      <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.1"/>
+                    </arguments>
+                  </expression>
+                </statements>
+                <statements xsi:type="Java5:ExpressionStatement">
+                  <expression xsi:type="Java5:MethodInvocation">
+                    <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.7"/>
+                  </expression>
+                </statements>
+              </body>
+            </bodyDeclarations>
+            <bodyDeclarations xsi:type="Java5:FieldDeclaration" name="text">
+              <modifiers visibility="public"/>
+              <type element="//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+              <fragments name="text">
+                <initializer xsi:type="Java5:StringLiteral" escapedValue="&quot;Ready&quot;" value="Ready"/>
+              </fragments>
+            </bodyDeclarations>
+            <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="triggerSlaveChangedMessage">
+              <modifiers visibility="public"/>
+              <body>
+                <statements xsi:type="Java5:IfStatement">
+                  <expression xsi:type="Java5:MethodInvocation">
+                    <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.10"/>
+                  </expression>
+                  <thenStatement xsi:type="Java5:Block">
+                    <statements xsi:type="Java5:ReturnStatement"/>
+                  </thenStatement>
+                </statements>
+              </body>
+              <returnType element="//@orphanTypes.1"/>
+            </bodyDeclarations>
+            <bodyDeclarations xsi:type="Java5:FieldDeclaration" name="instance">
+              <modifiers visibility="private" static="true"/>
+              <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0"/>
+              <fragments name="instance"/>
+            </bodyDeclarations>
+            <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="getInstance">
+              <modifiers visibility="public" static="true"/>
+              <body>
+                <statements xsi:type="Java5:IfStatement">
+                  <expression xsi:type="Java5:InfixExpression" operator="==">
+                    <rightOperand xsi:type="Java5:NullLiteral"/>
+                    <leftOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.3/@fragments.0"/>
+                  </expression>
+                  <thenStatement xsi:type="Java5:Block">
+                    <statements xsi:type="Java5:ExpressionStatement">
+                      <expression xsi:type="Java5:Assignment" operator="=">
+                        <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.3/@fragments.0"/>
+                        <rightHandSide xsi:type="Java5:ClassInstanceCreation">
+                          <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.0"/>
+                          <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0"/>
+                        </rightHandSide>
+                      </expression>
+                    </statements>
+                  </thenStatement>
+                </statements>
+                <statements xsi:type="Java5:ReturnStatement">
+                  <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.3/@fragments.0"/>
+                </statements>
+              </body>
+              <returnType element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0"/>
+            </bodyDeclarations>
+            <bodyDeclarations xsi:type="Java5:EnumDeclaration" name="State">
+              <modifiers visibility="private"/>
+              <enumConstants name="Ready"/>
+              <enumConstants name="Running"/>
+              <enumConstants name="Error"/>
+            </bodyDeclarations>
+            <bodyDeclarations xsi:type="Java5:FieldDeclaration" name="state">
+              <modifiers visibility="private"/>
+              <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.5"/>
+              <fragments name="state"/>
+            </bodyDeclarations>
+            <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="init_transition">
+              <modifiers visibility="public"/>
+              <body>
+                <statements xsi:type="Java5:ExpressionStatement">
+                  <expression xsi:type="Java5:Assignment" operator="=">
+                    <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.6/@fragments.0"/>
+                    <rightHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.5/@enumConstants.0">
+                      <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.5"/>
+                    </rightHandSide>
+                  </expression>
+                </statements>
+              </body>
+              <returnType element="//@orphanTypes.1"/>
+            </bodyDeclarations>
+            <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="Ready2RunningStartupTransition">
+              <modifiers visibility="private"/>
+              <body>
+                <statements xsi:type="Java5:IfStatement">
+                  <expression xsi:type="Java5:InfixExpression" operator="!=">
+                    <rightOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.5/@enumConstants.0">
+                      <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.5"/>
+                    </rightOperand>
+                    <leftOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.6/@fragments.0"/>
+                  </expression>
+                  <thenStatement xsi:type="Java5:Block">
+                    <statements xsi:type="Java5:ReturnStatement">
+                      <expression xsi:type="Java5:BooleanLiteral"/>
+                    </statements>
+                  </thenStatement>
+                </statements>
+                <statements xsi:type="Java5:VariableDeclarationStatement">
+                  <type element="//@ownedElements.2/@ownedElements.0"/>
+                  <fragments name="message">
+                    <initializer xsi:type="Java5:ClassInstanceCreation">
+                      <arguments xsi:type="Java5:ThisExpression"/>
+                      <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@enumConstants.0">
+                        <qualifier element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+                      </arguments>
+                      <method element="//@ownedElements.2/@ownedElements.0/@bodyDeclarations.0"/>
+                      <type element="//@ownedElements.2/@ownedElements.0"/>
+                    </initializer>
+                  </fragments>
+                </statements>
+                <statements xsi:type="Java5:ExpressionStatement">
+                  <expression xsi:type="Java5:MethodInvocation">
+                    <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.13"/>
+                    <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.8/@body/@statements.1/@fragments.0"/>
+                  </expression>
+                </statements>
+                <statements xsi:type="Java5:ExpressionStatement">
+                  <expression xsi:type="Java5:Assignment" operator="=">
+                    <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.1/@fragments.0"/>
+                    <rightHandSide xsi:type="Java5:StringLiteral" escapedValue="&quot;Running&quot;" value="Running"/>
+                  </expression>
+                </statements>
+                <statements xsi:type="Java5:ExpressionStatement">
+                  <expression xsi:type="Java5:MethodInvocation">
+                    <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.2/@bodyDeclarations.1"/>
+                    <arguments xsi:type="Java5:StringLiteral" escapedValue="&quot;Running&quot;" value="Running"/>
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.2/@bodyDeclarations.0"/>
+                      <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.2"/>
+                    </expression>
+                  </expression>
+                </statements>
+                <statements xsi:type="Java5:ExpressionStatement">
+                  <expression xsi:type="Java5:Assignment" operator="=">
+                    <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.6/@fragments.0"/>
+                    <rightHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.5/@enumConstants.1">
+                      <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.5"/>
+                    </rightHandSide>
+                  </expression>
+                </statements>
+                <statements xsi:type="Java5:ReturnStatement">
+                  <expression xsi:type="Java5:BooleanLiteral" value="true"/>
+                </statements>
+              </body>
+              <returnType element="//@orphanTypes.0"/>
+            </bodyDeclarations>
+            <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="Running2ReadyResetTransition">
+              <modifiers visibility="private"/>
+              <body>
+                <statements xsi:type="Java5:IfStatement">
+                  <expression xsi:type="Java5:InfixExpression" operator="!=">
+                    <rightOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.5/@enumConstants.1">
+                      <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.5"/>
+                    </rightOperand>
+                    <leftOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.6/@fragments.0"/>
+                  </expression>
+                  <thenStatement xsi:type="Java5:Block">
+                    <statements xsi:type="Java5:ReturnStatement">
+                      <expression xsi:type="Java5:BooleanLiteral"/>
+                    </statements>
+                  </thenStatement>
+                </statements>
+                <statements xsi:type="Java5:VariableDeclarationStatement">
+                  <type element="//@ownedElements.2/@ownedElements.1"/>
+                  <fragments name="message">
+                    <initializer xsi:type="Java5:ClassInstanceCreation">
+                      <arguments xsi:type="Java5:ThisExpression"/>
+                      <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@enumConstants.0">
+                        <qualifier element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+                      </arguments>
+                      <method element="//@ownedElements.2/@ownedElements.1/@bodyDeclarations.0"/>
+                      <type element="//@ownedElements.2/@ownedElements.1"/>
+                    </initializer>
+                  </fragments>
+                </statements>
+                <statements xsi:type="Java5:ExpressionStatement">
+                  <expression xsi:type="Java5:MethodInvocation">
+                    <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.13"/>
+                    <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.9/@body/@statements.1/@fragments.0"/>
+                  </expression>
+                </statements>
+                <statements xsi:type="Java5:ExpressionStatement">
+                  <expression xsi:type="Java5:Assignment" operator="=">
+                    <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.1/@fragments.0"/>
+                    <rightHandSide xsi:type="Java5:StringLiteral" escapedValue="&quot;Ready&quot;" value="Ready"/>
+                  </expression>
+                </statements>
+                <statements xsi:type="Java5:ExpressionStatement">
+                  <expression xsi:type="Java5:MethodInvocation">
+                    <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.2/@bodyDeclarations.1"/>
+                    <arguments xsi:type="Java5:StringLiteral" escapedValue="&quot;Ready&quot;" value="Ready"/>
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.2/@bodyDeclarations.0"/>
+                      <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.2"/>
+                    </expression>
+                  </expression>
+                </statements>
+                <statements xsi:type="Java5:ExpressionStatement">
+                  <expression xsi:type="Java5:Assignment" operator="=">
+                    <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.6/@fragments.0"/>
+                    <rightHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.5/@enumConstants.0">
+                      <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.5"/>
+                    </rightHandSide>
+                  </expression>
+                </statements>
+                <statements xsi:type="Java5:ReturnStatement">
+                  <expression xsi:type="Java5:BooleanLiteral" value="true"/>
+                </statements>
+              </body>
+              <returnType element="//@orphanTypes.0"/>
+            </bodyDeclarations>
+            <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="Running2ErrorGoErrorTransition">
+              <modifiers visibility="private"/>
+              <body>
+                <statements xsi:type="Java5:IfStatement">
+                  <expression xsi:type="Java5:InfixExpression" operator="!=">
+                    <rightOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.5/@enumConstants.1">
+                      <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.5"/>
+                    </rightOperand>
+                    <leftOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.6/@fragments.0"/>
+                  </expression>
+                  <thenStatement xsi:type="Java5:Block">
+                    <statements xsi:type="Java5:ReturnStatement">
+                      <expression xsi:type="Java5:BooleanLiteral"/>
+                    </statements>
+                  </thenStatement>
+                </statements>
+                <statements xsi:type="Java5:ExpressionStatement">
+                  <expression xsi:type="Java5:Assignment" operator="=">
+                    <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.1/@fragments.0"/>
+                    <rightHandSide xsi:type="Java5:StringLiteral" escapedValue="&quot;Error&quot;" value="Error"/>
+                  </expression>
+                </statements>
+                <statements xsi:type="Java5:ExpressionStatement">
+                  <expression xsi:type="Java5:MethodInvocation">
+                    <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.2/@bodyDeclarations.1"/>
+                    <arguments xsi:type="Java5:StringLiteral" escapedValue="&quot;Error&quot;" value="Error"/>
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.2/@bodyDeclarations.0"/>
+                      <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.2"/>
+                    </expression>
+                  </expression>
+                </statements>
+                <statements xsi:type="Java5:ExpressionStatement">
+                  <expression xsi:type="Java5:Assignment" operator="=">
+                    <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.6/@fragments.0"/>
+                    <rightHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.5/@enumConstants.2">
+                      <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.5"/>
+                    </rightHandSide>
+                  </expression>
+                </statements>
+                <statements xsi:type="Java5:ReturnStatement">
+                  <expression xsi:type="Java5:BooleanLiteral" value="true"/>
+                </statements>
+              </body>
+              <returnType element="//@orphanTypes.0"/>
+            </bodyDeclarations>
+            <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="Error2ReadyResetTransition">
+              <modifiers visibility="private"/>
+              <body>
+                <statements xsi:type="Java5:IfStatement">
+                  <expression xsi:type="Java5:InfixExpression" operator="!=">
+                    <rightOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.5/@enumConstants.2">
+                      <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.5"/>
+                    </rightOperand>
+                    <leftOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.6/@fragments.0"/>
+                  </expression>
+                  <thenStatement xsi:type="Java5:Block">
+                    <statements xsi:type="Java5:ReturnStatement">
+                      <expression xsi:type="Java5:BooleanLiteral"/>
+                    </statements>
+                  </thenStatement>
+                </statements>
+                <statements xsi:type="Java5:VariableDeclarationStatement">
+                  <type element="//@ownedElements.2/@ownedElements.1"/>
+                  <fragments name="message">
+                    <initializer xsi:type="Java5:ClassInstanceCreation">
+                      <arguments xsi:type="Java5:ThisExpression"/>
+                      <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@enumConstants.0">
+                        <qualifier element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+                      </arguments>
+                      <method element="//@ownedElements.2/@ownedElements.1/@bodyDeclarations.0"/>
+                      <type element="//@ownedElements.2/@ownedElements.1"/>
+                    </initializer>
+                  </fragments>
+                </statements>
+                <statements xsi:type="Java5:ExpressionStatement">
+                  <expression xsi:type="Java5:MethodInvocation">
+                    <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.13"/>
+                    <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.11/@body/@statements.1/@fragments.0"/>
+                  </expression>
+                </statements>
+                <statements xsi:type="Java5:ExpressionStatement">
+                  <expression xsi:type="Java5:Assignment" operator="=">
+                    <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.1/@fragments.0"/>
+                    <rightHandSide xsi:type="Java5:StringLiteral" escapedValue="&quot;Ready&quot;" value="Ready"/>
+                  </expression>
+                </statements>
+                <statements xsi:type="Java5:ExpressionStatement">
+                  <expression xsi:type="Java5:MethodInvocation">
+                    <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.2/@bodyDeclarations.1"/>
+                    <arguments xsi:type="Java5:StringLiteral" escapedValue="&quot;Ready&quot;" value="Ready"/>
+                    <expression xsi:type="Java5:MethodInvocation">
+                      <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.2/@bodyDeclarations.0"/>
+                      <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.2"/>
+                    </expression>
+                  </expression>
+                </statements>
+                <statements xsi:type="Java5:ExpressionStatement">
+                  <expression xsi:type="Java5:Assignment" operator="=">
+                    <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.6/@fragments.0"/>
+                    <rightHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.5/@enumConstants.0">
+                      <qualifier element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.5"/>
+                    </rightHandSide>
+                  </expression>
+                </statements>
+                <statements xsi:type="Java5:ReturnStatement">
+                  <expression xsi:type="Java5:BooleanLiteral" value="true"/>
+                </statements>
+              </body>
+              <returnType element="//@orphanTypes.0"/>
+            </bodyDeclarations>
+            <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="DomainEventClickTrigger">
+              <modifiers visibility="public"/>
+              <body>
+                <statements xsi:type="Java5:IfStatement">
+                  <expression xsi:type="Java5:MethodInvocation">
+                    <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.9"/>
+                  </expression>
+                  <thenStatement xsi:type="Java5:Block">
+                    <statements xsi:type="Java5:ReturnStatement"/>
+                  </thenStatement>
+                </statements>
+                <statements xsi:type="Java5:IfStatement">
+                  <expression xsi:type="Java5:MethodInvocation">
+                    <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.11"/>
+                  </expression>
+                  <thenStatement xsi:type="Java5:Block">
+                    <statements xsi:type="Java5:ReturnStatement"/>
+                  </thenStatement>
+                </statements>
+                <statements xsi:type="Java5:IfStatement">
+                  <expression xsi:type="Java5:MethodInvocation">
+                    <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.8"/>
+                  </expression>
+                  <thenStatement xsi:type="Java5:Block">
+                    <statements xsi:type="Java5:ReturnStatement"/>
+                  </thenStatement>
+                </statements>
+              </body>
+              <returnType element="//@orphanTypes.1"/>
+            </bodyDeclarations>
+            <imports>
+              <importedElement element="//@ownedElements.0/@ownedElements.2">
+                <qualifier element="//@ownedElements.0"/>
+              </importedElement>
+            </imports>
+            <imports>
+              <importedElement element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0">
+                <qualifier element="//@ownedElements.0/@ownedElements.0">
+                  <qualifier element="//@ownedElements.0"/>
+                </qualifier>
+              </importedElement>
+            </imports>
+            <imports>
+              <importedElement element="//@ownedElements.2"/>
+            </imports>
+            <superClass element="//@ownedElements.0/@ownedElements.2"/>
+          </ownedElements>
+          <ownedElements xsi:type="Java5:ClassDeclaration" name="SlaveChangedMessageHandler">
+            <modifiers visibility="public"/>
+            <bodyDeclarations xsi:type="Java5:FieldDeclaration" name="_parent">
+              <modifiers visibility="private"/>
+              <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0"/>
+              <fragments name="_parent"/>
+            </bodyDeclarations>
+            <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="SlaveChangedMessageHandler" constructor="true">
+              <modifiers visibility="public"/>
+              <body>
+                <statements xsi:type="Java5:ExpressionStatement">
+                  <expression xsi:type="Java5:Assignment" operator="=">
+                    <leftHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.1/@bodyDeclarations.0/@fragments.0"/>
+                    <rightHandSide xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.1/@bodyDeclarations.1/@parameters.0"/>
+                  </expression>
+                </statements>
+              </body>
+              <parameters name="o">
+                <type element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0"/>
+              </parameters>
+            </bodyDeclarations>
+            <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="handleMessage">
+              <modifiers visibility="public"/>
+              <body>
+                <statements xsi:type="Java5:IfStatement">
+                  <expression xsi:type="Java5:InstanceofExpression">
+                    <rightOperand element="//@ownedElements.2/@ownedElements.2"/>
+                    <leftOperand xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.1/@bodyDeclarations.2/@parameters.0"/>
+                  </expression>
+                  <thenStatement xsi:type="Java5:Block">
+                    <statements xsi:type="Java5:VariableDeclarationStatement">
+                      <type element="//@ownedElements.2/@ownedElements.2"/>
+                      <fragments name="message">
+                        <initializer xsi:type="Java5:CastExpression">
+                          <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.1/@bodyDeclarations.2/@parameters.0"/>
+                          <type element="//@ownedElements.2/@ownedElements.2"/>
+                        </initializer>
+                      </fragments>
+                    </statements>
+                    <statements xsi:type="Java5:ExpressionStatement">
+                      <expression xsi:type="Java5:MethodInvocation">
+                        <method element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.2"/>
+                        <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.1/@bodyDeclarations.0/@fragments.0"/>
+                      </expression>
+                    </statements>
+                    <statements xsi:type="Java5:ExpressionStatement">
+                      <expression xsi:type="Java5:MethodInvocation">
+                        <method element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2"/>
+                        <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@enumConstants.2">
+                          <qualifier element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+                        </arguments>
+                        <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.1/@bodyDeclarations.2/@body/@statements.0/@thenStatement/@statements.0/@fragments.0"/>
+                      </expression>
+                    </statements>
+                    <statements xsi:type="Java5:ExpressionStatement">
+                      <expression xsi:type="Java5:MethodInvocation">
+                        <method element="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.13"/>
+                        <arguments xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.1/@bodyDeclarations.2/@body/@statements.0/@thenStatement/@statements.0/@fragments.0"/>
+                        <expression xsi:type="Java5:NamedElementRef" element="//@ownedElements.3/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.1/@bodyDeclarations.0/@fragments.0"/>
+                      </expression>
+                    </statements>
+                    <statements xsi:type="Java5:ReturnStatement">
+                      <expression xsi:type="Java5:BooleanLiteral" value="true"/>
+                    </statements>
+                  </thenStatement>
+                </statements>
+                <statements xsi:type="Java5:ReturnStatement">
+                  <expression xsi:type="Java5:BooleanLiteral"/>
+                </statements>
+              </body>
+              <returnType element="//@orphanTypes.0"/>
+              <parameters name="m">
+                <type element="//@ownedElements.0/@ownedElements.0"/>
+              </parameters>
+            </bodyDeclarations>
+            <imports>
+              <importedElement element="//@ownedElements.2/@ownedElements.2">
+                <qualifier element="//@ownedElements.2"/>
+              </importedElement>
+            </imports>
+            <imports>
+              <importedElement element="//@ownedElements.0/@ownedElements.0">
+                <qualifier element="//@ownedElements.0"/>
+              </importedElement>
+            </imports>
+            <imports>
+              <importedElement element="//@ownedElements.0/@ownedElements.4">
+                <qualifier element="//@ownedElements.0"/>
+              </importedElement>
+            </imports>
+            <imports>
+              <importedElement element="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0">
+                <qualifier element="//@ownedElements.0/@ownedElements.0">
+                  <qualifier element="//@ownedElements.0"/>
+                </qualifier>
+              </importedElement>
+            </imports>
+            <superInterfaces element="//@ownedElements.0/@ownedElements.4"/>
+          </ownedElements>
+          <ownedElements xsi:type="Java5:ClassDeclaration" name="GuiServer" proxy="true">
+            <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="getInstance" proxy="true"/>
+            <bodyDeclarations xsi:type="Java5:MethodDeclaration" name="updatetext" proxy="true"/>
+          </ownedElements>
+        </ownedPackages>
+      </ownedPackages>
+    </ownedPackages>
+  </ownedElements>
+  <orphanTypes xsi:type="Java5:PrimitiveTypeBoolean" name="boolean"/>
+  <orphanTypes xsi:type="Java5:PrimitiveTypeVoid" name="void"/>
+  <orphanTypes xsi:type="Java5:PrimitiveTypeLong" name="long"/>
+  <orphanTypes xsi:type="Java5:ParameterizedType" name="List&lt;MessengerNode>">
+    <type element="//@ownedElements.1/@ownedPackages.2/@ownedElements.7"/>
+    <typeArguments element="//@ownedElements.0/@ownedElements.2"/>
+  </orphanTypes>
+  <orphanTypes xsi:type="Java5:ParameterizedType" name="List&lt;MessageHandler>">
+    <type element="//@ownedElements.1/@ownedPackages.2/@ownedElements.7"/>
+    <typeArguments element="//@ownedElements.0/@ownedElements.4"/>
+  </orphanTypes>
+  <orphanTypes xsi:type="Java5:ParameterizedType" name="LinkedList&lt;MessengerNode>">
+    <type element="//@ownedElements.1/@ownedPackages.2/@ownedElements.2"/>
+    <typeArguments element="//@ownedElements.0/@ownedElements.2"/>
+  </orphanTypes>
+  <orphanTypes xsi:type="Java5:ParameterizedType" name="LinkedList&lt;MessageHandler>">
+    <type element="//@ownedElements.1/@ownedPackages.2/@ownedElements.2"/>
+    <typeArguments element="//@ownedElements.0/@ownedElements.4"/>
+  </orphanTypes>
+  <orphanTypes xsi:type="Java5:ParameterizedType" name="Iterator&lt;MessengerNode>">
+    <type element="//@ownedElements.1/@ownedPackages.2/@ownedElements.1"/>
+    <typeArguments element="//@ownedElements.0/@ownedElements.2"/>
+  </orphanTypes>
+  <orphanTypes xsi:type="Java5:ParameterizedType" name="Iterator&lt;MessageHandler>">
+    <type element="//@ownedElements.1/@ownedPackages.2/@ownedElements.1"/>
+    <typeArguments element="//@ownedElements.0/@ownedElements.4"/>
+  </orphanTypes>
+  <orphanTypes xsi:type="Java5:ArrayType" name="String[]" proxy="true" dimensions="1">
+    <elementType element="//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+  </orphanTypes>
+  <orphanTypes xsi:type="Java5:PrimitiveTypeInt" name="int"/>
+</Java5:Model>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII" standalone="no"?>
+<automata:Automata xmlns:automata="http://automata/1.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xsi:schemaLocation="http://automata/1.0 Automata.ecore">
+  <current name="A" state="//@states.0"/>
+  <initial name="A" state="//@states.0"/>
+  <states name="A"/>
+  <states name="B"/>
+  <transitions name="A-&gt;A (0)" source="//@states.0" target="//@states.0" token="0"/>
+  <transitions name="B-&gt;B (0)" source="//@states.1" target="//@states.1" token="0"/>
+  <transitions name="A-&gt;B (1)" source="//@states.0" target="//@states.1" token="1"/>
+  <transitions name="B-&gt;A (1)" source="//@states.1" target="//@states.0" token="1"/>
+  <finals name="A" state="//@states.0"/>
+</automata:Automata>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ASCII" standalone="no"?>
+<formalmetamodel:FormalModel xmlns:formalmetamodel="http://formalmetamodel/1.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xsi:schemaLocation="http://formalmetamodel/1.0 FormalMetamodel.ecore">
+  <as name="aa" xsi:type="formalmetamodel:A"/>
+  <as name="aa"/>
+</formalmetamodel:FormalModel>

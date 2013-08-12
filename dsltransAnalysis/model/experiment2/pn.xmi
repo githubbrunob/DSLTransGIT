@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ASCII" standalone="no"?>
+<petrinet:PetriNet xmlns:petrinet="petrinet" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xsi:schemaLocation="petrinet PetriNet.ecore">
+  <places name="0,000" token="1"/>
+  <places name="0,101"/>
+  <places name="1,010"/>
+  <places name="1,111"/>
+  <places name="0,202"/>
+  <places name="2,020"/>
+  <places name="keyGoal"/>
+  <transitions name="keyGoal">
+    <inArc targetPlace="//@places.6"/>
+    <inArc targetPlace="//@places.5"/>
+    <outArc sourcePlace="//@places.5"/>
+  </transitions>
+  <transitions name="moveLeft">
+    <inArc targetPlace="//@places.0"/>
+    <outArc sourcePlace="//@places.2"/>
+  </transitions>
+  <transitions name="moveLeft">
+    <inArc targetPlace="//@places.2"/>
+    <outArc sourcePlace="//@places.5"/>
+  </transitions>
+  <transitions name="moveRight">
+    <inArc targetPlace="//@places.5"/>
+    <outArc sourcePlace="//@places.2"/>
+  </transitions>
+  <transitions name="moveRight">
+    <inArc targetPlace="//@places.2"/>
+    <outArc sourcePlace="//@places.0"/>
+  </transitions>
+  <transitions name="moveTop">
+    <inArc targetPlace="//@places.3"/>
+    <outArc sourcePlace="//@places.2"/>
+  </transitions>
+  <transitions name="moveTop">
+    <inArc targetPlace="//@places.4"/>
+    <outArc sourcePlace="//@places.1"/>
+  </transitions>
+  <transitions name="moveBottom">
+    <inArc targetPlace="//@places.0"/>
+    <outArc sourcePlace="//@places.1"/>
+  </transitions>
+  <transitions name="moveBottom">
+    <inArc targetPlace="//@places.2"/>
+    <outArc sourcePlace="//@places.3"/>
+  </transitions>
+</petrinet:PetriNet>

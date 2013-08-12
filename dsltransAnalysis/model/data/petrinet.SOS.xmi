@@ -1,0 +1,1530 @@
+<?xml version="1.0" encoding="ASCII"?>
+<SOS:Semantics xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOS="http://www.emftext.org/language/SOS" xmlns:adtmm="SOS.adtmm" xmlns:set="SOS.set">
+  <rules>
+    <assumes>
+      <has xsi:type="SOS:AlgebraicCondition">
+        <ownedConditions xsi:type="adtmm:Equation">
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+          <ownedLeftTerm xsi:type="set:ForAllIn">
+            <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.0/@ownedVariables.0"/>
+            <rightHandSide xsi:type="set:ModelSet"/>
+          </ownedLeftTerm>
+        </ownedConditions>
+      </has>
+      <next>
+        <has xsi:type="SOS:AlgebraicCondition">
+          <ownedConditions xsi:type="adtmm:Equation">
+            <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+            <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.3">
+              <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.1">
+                <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.0">
+                  <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedOperations.1">
+                    <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.0/@ownedVariables.0"/>
+                  </ownedTerms>
+                </ownedTerms>
+                <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.0">
+                  <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedOperations.3"/>
+                </ownedTerms>
+              </ownedTerms>
+            </ownedLeftTerm>
+          </ownedConditions>
+        </has>
+      </next>
+    </assumes>
+    <concludes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:CTerm" op="//@signature.2/@ownedOperations.0">
+          <ownedTerms xsi:type="set:ModelClassAttribute" attributeName="name">
+            <selector variable="//@rules.0/@ownedVariables.0"/>
+          </ownedTerms>
+        </label>
+        <preState xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.0">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedOperations.3"/>
+        </preState>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.2">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.0">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedOperations.2">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.0/@ownedVariables.0"/>
+            </ownedTerms>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.1">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.0">
+              <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedOperations.1">
+                <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.0/@ownedVariables.0"/>
+              </ownedTerms>
+            </ownedTerms>
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.0">
+              <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedOperations.3"/>
+            </ownedTerms>
+          </ownedTerms>
+        </posState>
+      </has>
+    </concludes>
+    <ownedVariables name="t">
+      <variableSort xsi:type="set:ModelSort" className="Transition" packageName="petrinet"/>
+    </ownedVariables>
+  </rules>
+  <rules>
+    <assumes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:VariableRef" variable="//@rules.1/@ownedVariables.3"/>
+        <preState xsi:type="adtmm:VariableRef" variable="//@rules.1/@ownedVariables.1"/>
+        <posState xsi:type="adtmm:VariableRef" variable="//@rules.1/@ownedVariables.0"/>
+      </has>
+      <next>
+        <has xsi:type="SOS:AlgebraicCondition">
+          <ownedConditions xsi:type="adtmm:Equation">
+            <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+            <ownedLeftTerm xsi:type="set:ForAllIn">
+              <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.1/@ownedVariables.2"/>
+              <rightHandSide xsi:type="set:ModelSet"/>
+            </ownedLeftTerm>
+          </ownedConditions>
+        </has>
+        <next>
+          <has xsi:type="SOS:AlgebraicCondition">
+            <ownedConditions xsi:type="adtmm:Equation">
+              <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+              <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.3">
+                <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.1">
+                  <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.0">
+                    <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedOperations.1">
+                      <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.1/@ownedVariables.2"/>
+                    </ownedTerms>
+                  </ownedTerms>
+                  <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.1/@ownedVariables.0"/>
+                </ownedTerms>
+              </ownedLeftTerm>
+            </ownedConditions>
+          </has>
+        </next>
+      </next>
+    </assumes>
+    <concludes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:CTerm" op="//@signature.2/@ownedOperations.0">
+          <ownedTerms xsi:type="set:ModelClassAttribute" attributeName="name">
+            <selector variable="//@rules.1/@ownedVariables.2"/>
+          </ownedTerms>
+        </label>
+        <preState xsi:type="adtmm:VariableRef" variable="//@rules.1/@ownedVariables.0"/>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.2">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.0">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedOperations.2">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.1/@ownedVariables.2"/>
+            </ownedTerms>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.1">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.0">
+              <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedOperations.1">
+                <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.1/@ownedVariables.2"/>
+              </ownedTerms>
+            </ownedTerms>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.1/@ownedVariables.0"/>
+          </ownedTerms>
+        </posState>
+      </has>
+    </concludes>
+    <ownedVariables name="newmarking">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.5/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="oldmarking">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.5/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="t">
+      <variableSort xsi:type="set:ModelSort" className="Transition" packageName="petrinet"/>
+    </ownedVariables>
+    <ownedVariables name="nameX">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.2/@ownedSorts.0"/>
+    </ownedVariables>
+  </rules>
+  <signature name="Relatives">
+    <ownedSorts name="rel"/>
+    <ownedOperations name="hplus">
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+    </ownedOperations>
+    <ownedOperations name="hminus">
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+    </ownedOperations>
+    <ownedOperations name="hleq">
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.3/@ownedSorts.0"/>
+    </ownedOperations>
+    <ownedOperations name="plus">
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+    </ownedOperations>
+    <ownedOperations name="minus">
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+    </ownedOperations>
+    <ownedOperations name="leq">
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.3/@ownedSorts.0"/>
+    </ownedOperations>
+    <ownedOperations name="flip">
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+    </ownedOperations>
+    <ownedOperations name="harmonypred">
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+    </ownedOperations>
+    <ownedOperations name="harmonysuc">
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+    </ownedOperations>
+    <ownedOperations name="harmony">
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+    </ownedOperations>
+    <ownedGenerators name="zero">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="suc">
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="pred">
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedVariables name="x">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="y">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.6">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.6">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.6">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.2">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.2">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.6">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.6">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.5">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.1"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.5">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.2">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.5">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.5">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.2">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.1"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.5">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.5">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.1"/>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.5">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.1"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.5">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.1"/>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.5">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.2">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.2">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.1"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.1"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.5">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.2">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.1"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.5">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.2">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.1"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.3">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedConditions xsi:type="adtmm:Inequation">
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+        <ownedLeftTerm xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+      </ownedConditions>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.3">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.3">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.3">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.1"/>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.3">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.2">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.1"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.3">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.2">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.1"/>
+          </ownedTerms>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.3">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.2">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.1"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.3">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.1"/>
+            </ownedTerms>
+          </ownedTerms>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.3">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.1"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.2">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.2">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.3">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.1"/>
+            </ownedTerms>
+          </ownedTerms>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.3">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.2">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.2">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.1"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.3">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.6">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.1"/>
+          </ownedTerms>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.4">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.1"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.7">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.7">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.7">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.2">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.7">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.7">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.2">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.8">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.8">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.8">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.2">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.8">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.8">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.3">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.8">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.7">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.9">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.5">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.9">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.9">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.1"/>
+          </ownedTerms>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.2">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.1"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.3">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.9">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.9">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.1"/>
+          </ownedTerms>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.1"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.4">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.9">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.9">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.1"/>
+          </ownedTerms>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.1">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.0"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.0/@ownedVariables.1"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+  </signature>
+  <signature name="Char">
+    <ownedSorts name="char"/>
+    <ownedGenerators name="aa">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ab">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ac">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ad">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ae">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="af">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ag">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ah">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ai">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aj">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ak">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="al">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="am">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="an">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ao">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ap">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aq">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ar">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="as">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="at">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="au">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="av">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aw">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ax">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ay">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="az">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aA">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aB">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aC">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aD">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aE">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aF">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aG">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aH">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aI">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aJ">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aK">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aL">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aM">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aN">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aO">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aP">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aQ">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aR">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aS">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aT">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aU">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aV">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aW">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aX">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aY">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aZ">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="n0">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="n1">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="n2">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="n3">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="n4">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="n5">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="n6">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="n7">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="n8">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="n9">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+  </signature>
+  <signature name="String">
+    <ownedSorts name="string"/>
+    <ownedOperations name="buildString">
+      <operationSorts xsi:type="set:Set">
+        <sort xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+      </operationSorts>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.2/@ownedSorts.0"/>
+    </ownedOperations>
+    <ownedGenerators name="end">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.2/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="str">
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.2/@ownedSorts.0"/>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.2/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedVariables name="c">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="s1">
+      <variableSort xsi:type="set:Set">
+        <sort xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+      </variableSort>
+    </ownedVariables>
+    <ownedAxioms>
+      <ownedConditions xsi:type="adtmm:Equation">
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+        <ownedLeftTerm xsi:type="set:ExistsIn">
+          <leftHandSide xsi:type="adtmm:VariableRef" variable="//@signature.2/@ownedVariables.0"/>
+          <rightHandSide xsi:type="adtmm:VariableRef" variable="//@signature.2/@ownedVariables.1"/>
+        </ownedLeftTerm>
+      </ownedConditions>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.1">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.2/@ownedVariables.0"/>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.2/@ownedOperations.0">
+            <ownedTerms xsi:type="set:Excluding">
+              <leftHandSide xsi:type="adtmm:VariableRef" variable="//@signature.2/@ownedVariables.1"/>
+              <rightHandSide xsi:type="adtmm:VariableRef" variable="//@signature.2/@ownedVariables.0"/>
+            </ownedTerms>
+          </ownedTerms>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.2/@ownedOperations.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.2/@ownedVariables.1"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.2/@ownedOperations.0">
+          <ownedTerms xsi:type="set:SetConstructor"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+  </signature>
+  <signature name="Boolean">
+    <ownedSorts name="bool"/>
+    <ownedGenerators name="true">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.3/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="false">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.3/@ownedSorts.0"/>
+    </ownedGenerators>
+  </signature>
+  <signature name="Tokens">
+    <ownedSorts name="token"/>
+    <ownedOperations name="test">
+      <operationSorts xsi:type="set:ModelSort" className="Transition" packageName="petrinet"/>
+      <result xsi:type="set:Set">
+        <sort xsi:type="adtmm:AtomicSort" declaration="//@signature.4/@ownedSorts.0"/>
+      </result>
+    </ownedOperations>
+    <ownedOperations name="pre">
+      <operationSorts xsi:type="set:ModelSort" className="Transition" packageName="petrinet"/>
+      <result xsi:type="set:Set">
+        <sort xsi:type="adtmm:AtomicSort" declaration="//@signature.4/@ownedSorts.0"/>
+      </result>
+    </ownedOperations>
+    <ownedOperations name="pos">
+      <operationSorts xsi:type="set:ModelSort" className="Transition" packageName="petrinet"/>
+      <result xsi:type="set:Set">
+        <sort xsi:type="adtmm:AtomicSort" declaration="//@signature.4/@ownedSorts.0"/>
+      </result>
+    </ownedOperations>
+    <ownedOperations name="initial">
+      <result xsi:type="set:Set">
+        <sort xsi:type="adtmm:AtomicSort" declaration="//@signature.4/@ownedSorts.0"/>
+      </result>
+    </ownedOperations>
+    <ownedGenerators name="p">
+      <operationSorts xsi:type="set:ModelSort" className="Place" packageName="petrinet"/>
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.4/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedVariables name="t">
+      <variableSort xsi:type="set:ModelSort" className="Transition" packageName="petrinet"/>
+    </ownedVariables>
+    <ownedVariables name="outarc">
+      <variableSort xsi:type="set:ModelSort" className="OutArc" packageName="petrinet"/>
+    </ownedVariables>
+    <ownedVariables name="inarc">
+      <variableSort xsi:type="set:ModelSort" className="InArc" packageName="petrinet"/>
+    </ownedVariables>
+    <ownedVariables name="p1">
+      <variableSort xsi:type="set:ModelSort" className="Place" packageName="petrinet"/>
+    </ownedVariables>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="set:SetConstructor">
+          <suchThat>
+            <has>
+              <ownedConditions xsi:type="adtmm:Equation">
+                <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+                <ownedLeftTerm xsi:type="set:ForAllIn">
+                  <leftHandSide xsi:type="adtmm:VariableRef" variable="//@signature.4/@ownedVariables.3"/>
+                  <rightHandSide xsi:type="set:ModelSet"/>
+                </ownedLeftTerm>
+              </ownedConditions>
+            </has>
+            <next>
+              <has>
+                <ownedConditions xsi:type="adtmm:Equation">
+                  <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+                  <ownedLeftTerm xsi:type="set:ForAllIn">
+                    <leftHandSide xsi:type="adtmm:VariableRef" variable="//@signature.4/@ownedVariables.1"/>
+                    <rightHandSide xsi:type="set:ModelSet"/>
+                  </ownedLeftTerm>
+                </ownedConditions>
+              </has>
+              <next>
+                <has>
+                  <ownedConditions xsi:type="adtmm:Equation">
+                    <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+                    <ownedLeftTerm xsi:type="set:ForAllIn">
+                      <leftHandSide xsi:type="set:ModelRelation" referenceName="outArc">
+                        <source variable="//@signature.4/@ownedVariables.0"/>
+                        <target variable="//@signature.4/@ownedVariables.1"/>
+                      </leftHandSide>
+                      <rightHandSide xsi:type="set:ModelSet"/>
+                    </ownedLeftTerm>
+                  </ownedConditions>
+                </has>
+                <next>
+                  <has>
+                    <ownedConditions xsi:type="adtmm:Equation">
+                      <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+                      <ownedLeftTerm xsi:type="set:ForAllIn">
+                        <leftHandSide xsi:type="set:ModelRelation" referenceName="sourcePlace">
+                          <source variable="//@signature.4/@ownedVariables.1"/>
+                          <target variable="//@signature.4/@ownedVariables.3"/>
+                        </leftHandSide>
+                        <rightHandSide xsi:type="set:ModelSet"/>
+                      </ownedLeftTerm>
+                    </ownedConditions>
+                  </has>
+                </next>
+              </next>
+            </next>
+          </suchThat>
+          <member xsi:type="adtmm:CTerm" op="//@signature.4/@ownedGenerators.0">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.4/@ownedVariables.3"/>
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1">
+              <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+              <iterTerm xsi:type="set:ModelClassAttribute" attributeName="weight">
+                <selector variable="//@signature.4/@ownedVariables.1"/>
+              </iterTerm>
+            </ownedTerms>
+          </member>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.4/@ownedOperations.1">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.4/@ownedVariables.0"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="set:SetConstructor">
+          <suchThat>
+            <has>
+              <ownedConditions xsi:type="adtmm:Equation">
+                <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+                <ownedLeftTerm xsi:type="set:ForAllIn">
+                  <leftHandSide xsi:type="adtmm:VariableRef" variable="//@signature.4/@ownedVariables.3"/>
+                  <rightHandSide xsi:type="set:ModelSet"/>
+                </ownedLeftTerm>
+              </ownedConditions>
+            </has>
+            <next>
+              <has>
+                <ownedConditions xsi:type="adtmm:Equation">
+                  <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+                  <ownedLeftTerm xsi:type="set:ForAllIn">
+                    <leftHandSide xsi:type="adtmm:VariableRef" variable="//@signature.4/@ownedVariables.2"/>
+                    <rightHandSide xsi:type="set:ModelSet"/>
+                  </ownedLeftTerm>
+                </ownedConditions>
+              </has>
+              <next>
+                <has>
+                  <ownedConditions xsi:type="adtmm:Equation">
+                    <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+                    <ownedLeftTerm xsi:type="set:ForAllIn">
+                      <leftHandSide xsi:type="set:ModelRelation" referenceName="inArc">
+                        <source variable="//@signature.4/@ownedVariables.0"/>
+                        <target variable="//@signature.4/@ownedVariables.2"/>
+                      </leftHandSide>
+                      <rightHandSide xsi:type="set:ModelSet"/>
+                    </ownedLeftTerm>
+                  </ownedConditions>
+                </has>
+                <next>
+                  <has>
+                    <ownedConditions xsi:type="adtmm:Equation">
+                      <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+                      <ownedLeftTerm xsi:type="set:ForAllIn">
+                        <leftHandSide xsi:type="set:ModelRelation" referenceName="targetPlace">
+                          <source variable="//@signature.4/@ownedVariables.2"/>
+                          <target variable="//@signature.4/@ownedVariables.3"/>
+                        </leftHandSide>
+                        <rightHandSide xsi:type="set:ModelSet"/>
+                      </ownedLeftTerm>
+                    </ownedConditions>
+                  </has>
+                </next>
+              </next>
+            </next>
+          </suchThat>
+          <member xsi:type="adtmm:CTerm" op="//@signature.4/@ownedGenerators.0">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.4/@ownedVariables.3"/>
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1">
+              <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+              <iterTerm xsi:type="set:ModelClassAttribute" attributeName="weight">
+                <selector variable="//@signature.4/@ownedVariables.2"/>
+              </iterTerm>
+            </ownedTerms>
+          </member>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.4/@ownedOperations.2">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.4/@ownedVariables.0"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="set:SetConstructor">
+          <suchThat>
+            <has>
+              <ownedConditions xsi:type="adtmm:Equation">
+                <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+                <ownedLeftTerm xsi:type="set:ForAllIn">
+                  <leftHandSide xsi:type="adtmm:VariableRef" variable="//@signature.4/@ownedVariables.3"/>
+                  <rightHandSide xsi:type="set:ModelSet"/>
+                </ownedLeftTerm>
+              </ownedConditions>
+            </has>
+          </suchThat>
+          <member xsi:type="adtmm:CTerm" op="//@signature.4/@ownedGenerators.0">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.4/@ownedVariables.3"/>
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1">
+              <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+              <iterTerm xsi:type="set:ModelClassAttribute" attributeName="token">
+                <selector variable="//@signature.4/@ownedVariables.3"/>
+              </iterTerm>
+            </ownedTerms>
+          </member>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.4/@ownedOperations.3"/>
+      </ownedEquation>
+    </ownedAxioms>
+  </signature>
+  <signature name="Marking">
+    <ownedSorts name="markingsort"/>
+    <ownedOperations name="build">
+      <operationSorts xsi:type="set:Set">
+        <sort xsi:type="adtmm:AtomicSort" declaration="//@signature.4/@ownedSorts.0"/>
+      </operationSorts>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.5/@ownedSorts.0"/>
+    </ownedOperations>
+    <ownedOperations name="subtract">
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.5/@ownedSorts.0"/>
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.5/@ownedSorts.0"/>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.5/@ownedSorts.0"/>
+    </ownedOperations>
+    <ownedOperations name="add">
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.5/@ownedSorts.0"/>
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.5/@ownedSorts.0"/>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.5/@ownedSorts.0"/>
+    </ownedOperations>
+    <ownedOperations name="positive">
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.5/@ownedSorts.0"/>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.3/@ownedSorts.0"/>
+    </ownedOperations>
+    <ownedOperations name="member">
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.4/@ownedSorts.0"/>
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.5/@ownedSorts.0"/>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.3/@ownedSorts.0"/>
+    </ownedOperations>
+    <ownedOperations name="remove">
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.4/@ownedSorts.0"/>
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.5/@ownedSorts.0"/>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.5/@ownedSorts.0"/>
+    </ownedOperations>
+    <ownedOperations name="equals">
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.5/@ownedSorts.0"/>
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.5/@ownedSorts.0"/>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.3/@ownedSorts.0"/>
+    </ownedOperations>
+    <ownedGenerators name="e">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.5/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="marking">
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.4/@ownedSorts.0"/>
+      <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@signature.5/@ownedSorts.0"/>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.5/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedVariables name="m">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.4/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="m1">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.4/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="mark1">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.5/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="mark2">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.5/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="s">
+      <variableSort xsi:type="set:Set">
+        <sort xsi:type="adtmm:AtomicSort" declaration="//@signature.4/@ownedSorts.0"/>
+      </variableSort>
+    </ownedVariables>
+    <ownedVariables name="n1">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="n2">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="p1">
+      <variableSort xsi:type="set:ModelSort" className="Place" packageName="petrinet"/>
+    </ownedVariables>
+    <ownedAxioms>
+      <ownedConditions xsi:type="adtmm:Equation">
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+        <ownedLeftTerm xsi:type="set:ExistsIn">
+          <leftHandSide xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.0"/>
+          <rightHandSide xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.4"/>
+        </ownedLeftTerm>
+      </ownedConditions>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.1">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.0"/>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.0">
+            <ownedTerms xsi:type="set:Excluding">
+              <leftHandSide xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.4"/>
+              <rightHandSide xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.0"/>
+            </ownedTerms>
+          </ownedTerms>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.4"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.0"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.0">
+          <ownedTerms xsi:type="set:SetConstructor"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.1"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.4">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.0"/>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.0"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.4">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.0"/>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.0"/>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedConditions xsi:type="adtmm:Inequation">
+        <ownedRightTerm xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.1"/>
+        <ownedLeftTerm xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.0"/>
+      </ownedConditions>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.4">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.0"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.4">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.0"/>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.1"/>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedConditions xsi:type="adtmm:Equation">
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.4">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedGenerators.0">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.7"/>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.6"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.3"/>
+        </ownedLeftTerm>
+      </ownedConditions>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.1">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedGenerators.0">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.7"/>
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.3">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.5"/>
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.6"/>
+            </ownedTerms>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.2">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.5">
+              <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedGenerators.0">
+                <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.7"/>
+                <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.6"/>
+              </ownedTerms>
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.3"/>
+            </ownedTerms>
+          </ownedTerms>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.2">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedGenerators.0">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.7"/>
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.5"/>
+            </ownedTerms>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.3"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedConditions xsi:type="adtmm:Equation">
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.1"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.4">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedGenerators.0">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.7"/>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.6"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.3"/>
+        </ownedLeftTerm>
+      </ownedConditions>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.1">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedGenerators.0">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.7"/>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.5"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.2">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.3"/>
+          </ownedTerms>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.2">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedGenerators.0">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.7"/>
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.5"/>
+            </ownedTerms>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.3"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.2">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.0"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedConditions xsi:type="adtmm:Equation">
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.4">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedGenerators.0">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.7"/>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.6"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.3"/>
+        </ownedLeftTerm>
+      </ownedConditions>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.1">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedGenerators.0">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.7"/>
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.4">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.6"/>
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.5"/>
+            </ownedTerms>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.5">
+              <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedGenerators.0">
+                <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.7"/>
+                <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.6"/>
+              </ownedTerms>
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.3"/>
+            </ownedTerms>
+          </ownedTerms>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.1">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedGenerators.0">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.7"/>
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.5"/>
+            </ownedTerms>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.3"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedConditions xsi:type="adtmm:Equation">
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.1"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.4">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedGenerators.0">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.7"/>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.6"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.3"/>
+        </ownedLeftTerm>
+      </ownedConditions>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.1">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedGenerators.0">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.7"/>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.5"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.3"/>
+          </ownedTerms>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.1">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedGenerators.0">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.7"/>
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.5"/>
+            </ownedTerms>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.3"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.1">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.0"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.3">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.0"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedConditions xsi:type="adtmm:Equation">
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.1"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.5">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.5"/>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.2">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedConditions>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.3">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.3">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedGenerators.0">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.7"/>
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.5"/>
+            </ownedTerms>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedConditions xsi:type="adtmm:Equation">
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedOperations.5">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.5"/>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.2">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedConditions>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.1"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.3">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.4/@ownedGenerators.0">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.7"/>
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.5"/>
+            </ownedTerms>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.0"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.5">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.0"/>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.0"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.5">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.0"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.5">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.0"/>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.0"/>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedConditions xsi:type="adtmm:Inequation">
+        <ownedRightTerm xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.1"/>
+        <ownedLeftTerm xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.0"/>
+      </ownedConditions>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.1">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.1"/>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.5">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.0"/>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+          </ownedTerms>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.5">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.0"/>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.1"/>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+          </ownedTerms>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.6">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.0"/>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.0"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedConditions xsi:type="adtmm:Equation">
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.0"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.4">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.0"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.3"/>
+        </ownedLeftTerm>
+      </ownedConditions>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.6">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.5">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.0"/>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.3"/>
+          </ownedTerms>
+        </ownedRightTerm>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.6">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.0"/>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.3"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+    <ownedAxioms>
+      <ownedConditions xsi:type="adtmm:Equation">
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.1"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.4">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.0"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.3"/>
+        </ownedLeftTerm>
+      </ownedConditions>
+      <ownedEquation>
+        <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.3/@ownedGenerators.1"/>
+        <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@signature.5/@ownedOperations.6">
+          <ownedTerms xsi:type="adtmm:CTerm" op="//@signature.5/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.0"/>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.2"/>
+          </ownedTerms>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@signature.5/@ownedVariables.3"/>
+        </ownedLeftTerm>
+      </ownedEquation>
+    </ownedAxioms>
+  </signature>
+</SOS:Semantics>

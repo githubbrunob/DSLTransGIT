@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsltrans:TransformationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsltrans="http://dsltrans/2.0" xsi:schemaLocation="http://dsltrans/2.0 DSLTrans.ecore">
+  <source xsi:type="dsltrans:FilePort" name="inputModel" filePathURI="model\result.xmi">
+    <metaModelId metaModelURI="model\mprolog.ecore" metaModelName="mprolog.Mprolog"/>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="Entities" description="Entities" previousSource="//@source.0" outputFilePathURI="model\Model.text">
+    <metaModelId metaModelURI="model/text.ecore" metaModelName="text.Text"/>
+    <hasRule description="Fact">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Clause"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Head"/>
+        <class xsi:type="dsltrans:NegativeMatchClass" packageName="mprolog" className="Body"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ownedHead" source="//@source.1/@hasRule.0/@match.0/@class.0" target="//@source.1/@hasRule.0/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:NegativeMatchAssociation" associationName="ownedBody" source="//@source.1/@hasRule.0/@match.0/@class.0" target="//@source.1/@hasRule.0/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="Text" className="Block">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Clause"/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Head"/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="."/>
+          </attribute>
+        </class>
+        <association associationName="preLine" source="//@source.1/@hasRule.0/@apply/@class.0" target="//@source.1/@hasRule.0/@apply/@class.1"/>
+        <association associationName="next" source="//@source.1/@hasRule.0/@apply/@class.1" target="//@source.1/@hasRule.0/@apply/@class.2"/>
+      </apply>
+    </hasRule>
+    <hasRule description="List">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="List"/>
+      </match>
+      <apply>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Term"/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="["/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="CTerm"/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="]"/>
+          </attribute>
+        </class>
+        <association associationName="content" source="//@source.1/@hasRule.1/@apply/@class.0" target="//@source.1/@hasRule.1/@apply/@class.1"/>
+        <association associationName="content" source="//@source.1/@hasRule.1/@apply/@class.1" target="//@source.1/@hasRule.1/@apply/@class.2"/>
+        <association associationName="next" source="//@source.1/@hasRule.1/@apply/@class.1" target="//@source.1/@hasRule.1/@apply/@class.3"/>
+      </apply>
+    </hasRule>
+    <hasRule description="QuotedAtom">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="QuotedAtom">
+          <attribute attributeName="text"/>
+        </class>
+      </match>
+      <apply>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Term"/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:Atom" value="\'"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.2/@match.0/@class.0/@attribute.0"/>
+                <rightTerm xsi:type="dsltrans:Atom" value="\'"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+        </class>
+        <association associationName="content" source="//@source.1/@hasRule.2/@apply/@class.0" target="//@source.1/@hasRule.2/@apply/@class.1"/>
+      </apply>
+    </hasRule>
+    <hasRule description="Model">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Model">
+          <attribute attributeName="name"/>
+        </class>
+      </match>
+      <apply>
+        <class packageName="Text" className="Model"/>
+        <class packageName="Text" className="Directory">
+          <attribute attributeName="path" description="">
+            <attributeValue xsi:type="dsltrans:Atom" value="."/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="File">
+          <attribute attributeName="path">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.3/@match.0/@class.0/@attribute.0"/>
+              <rightTerm xsi:type="dsltrans:Atom" value=".pl"/>
+            </attributeValue>
+          </attribute>
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Model"/>
+          </attribute>
+        </class>
+        <association associationName="directory" source="//@source.1/@hasRule.3/@apply/@class.0" target="//@source.1/@hasRule.3/@apply/@class.1"/>
+        <association associationName="file" source="//@source.1/@hasRule.3/@apply/@class.1" target="//@source.1/@hasRule.3/@apply/@class.2"/>
+      </apply>
+    </hasRule>
+    <hasRule description="Clause">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Clause"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Head"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Body"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ownedHead" source="//@source.1/@hasRule.4/@match.0/@class.0" target="//@source.1/@hasRule.4/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ownedBody" source="//@source.1/@hasRule.4/@match.0/@class.0" target="//@source.1/@hasRule.4/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="Text" className="Block">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Clause"/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Head"/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value=" :- "/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Body"/>
+          </attribute>
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="    "/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="."/>
+          </attribute>
+        </class>
+        <association associationName="preLine" source="//@source.1/@hasRule.4/@apply/@class.0" target="//@source.1/@hasRule.4/@apply/@class.1"/>
+        <association associationName="next" source="//@source.1/@hasRule.4/@apply/@class.1" target="//@source.1/@hasRule.4/@apply/@class.2"/>
+        <association associationName="postLine" source="//@source.1/@hasRule.4/@apply/@class.0" target="//@source.1/@hasRule.4/@apply/@class.3"/>
+        <association associationName="next" source="//@source.1/@hasRule.4/@apply/@class.3" target="//@source.1/@hasRule.4/@apply/@class.4"/>
+      </apply>
+    </hasRule>
+    <hasRule description="Functor">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Functor">
+          <attribute attributeName="text"/>
+        </class>
+      </match>
+      <apply>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Term"/>
+          </attribute>
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.5/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="Variable">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Variable">
+          <attribute attributeName="name"/>
+        </class>
+      </match>
+      <apply>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Term"/>
+          </attribute>
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.6/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="InfixExpression">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="InfixExpression"/>
+      </match>
+      <apply>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Term"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="Operator">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Operator">
+          <attribute attributeName="symbol"/>
+        </class>
+      </match>
+      <apply>
+        <class packageName="Text" className="Content">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:Atom" value=" "/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.8/@match.0/@class.0/@attribute.0"/>
+                <rightTerm xsi:type="dsltrans:Atom" value=" "/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Term"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="Associations" description="Associations" previousSource="//@source.1" outputFilePathURI="model\Model.text">
+    <metaModelId metaModelURI="model/text.ecore" metaModelName="text.Text"/>
+    <hasRule description="ownedAtom">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Head"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Functor"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ownedFunctor" source="//@source.2/@hasRule.0/@match.0/@class.0" target="//@source.2/@hasRule.0/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Head"/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Term"/>
+          </attribute>
+        </class>
+        <association associationName="content" source="//@source.2/@hasRule.0/@apply/@class.0" target="//@source.2/@hasRule.0/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.0/@apply/@class.0" sourceClass="//@source.2/@hasRule.0/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.0/@apply/@class.1" sourceClass="//@source.2/@hasRule.0/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="nextTerm">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Term"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Term"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="nextTerm" source="//@source.2/@hasRule.1/@match.0/@class.0" target="//@source.2/@hasRule.1/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Term"/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Term"/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value=", "/>
+          </attribute>
+        </class>
+        <association associationName="next" source="//@source.2/@hasRule.1/@apply/@class.0" target="//@source.2/@hasRule.1/@apply/@class.2"/>
+        <association associationName="next" source="//@source.2/@hasRule.1/@apply/@class.2" target="//@source.2/@hasRule.1/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.1/@apply/@class.0" sourceClass="//@source.2/@hasRule.1/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.1/@apply/@class.1" sourceClass="//@source.2/@hasRule.1/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="ownedHeadTerm">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="List"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Term"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ownedHeadTerms" source="//@source.2/@hasRule.2/@match.0/@class.0" target="//@source.2/@hasRule.2/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="CTerm"/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Term"/>
+          </attribute>
+        </class>
+        <association associationName="content" source="//@source.2/@hasRule.2/@apply/@class.0" target="//@source.2/@hasRule.2/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.2/@apply/@class.0" sourceClass="//@source.2/@hasRule.2/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.2/@apply/@class.1" sourceClass="//@source.2/@hasRule.2/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="ownedTerm">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" description="" packageName="mprolog" className="Functor"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Term"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ownedTerm" source="//@source.2/@hasRule.3/@match.0/@class.0" target="//@source.2/@hasRule.3/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Term"/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Term"/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="("/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value=")"/>
+          </attribute>
+        </class>
+        <association associationName="content" source="//@source.2/@hasRule.3/@apply/@class.0" target="//@source.2/@hasRule.3/@apply/@class.2"/>
+        <association associationName="content" source="//@source.2/@hasRule.3/@apply/@class.2" target="//@source.2/@hasRule.3/@apply/@class.1"/>
+        <association associationName="next" source="//@source.2/@hasRule.3/@apply/@class.2" target="//@source.2/@hasRule.3/@apply/@class.3"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.3/@apply/@class.0" sourceClass="//@source.2/@hasRule.3/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.3/@apply/@class.1" sourceClass="//@source.2/@hasRule.3/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="ownedTerm">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Body"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Term"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ownedTerm" source="//@source.2/@hasRule.4/@match.0/@class.0" target="//@source.2/@hasRule.4/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Body"/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Term"/>
+          </attribute>
+        </class>
+        <association associationName="content" source="//@source.2/@hasRule.4/@apply/@class.0" target="//@source.2/@hasRule.4/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.4/@apply/@class.0" sourceClass="//@source.2/@hasRule.4/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.4/@apply/@class.1" sourceClass="//@source.2/@hasRule.4/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="ownedClause">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Model"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Clause"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ownedClause" source="//@source.2/@hasRule.5/@match.0/@class.0" target="//@source.2/@hasRule.5/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="Text" className="File">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Model"/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Block">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Clause"/>
+          </attribute>
+        </class>
+        <association associationName="innerBlock" source="//@source.2/@hasRule.5/@apply/@class.0" target="//@source.2/@hasRule.5/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.5/@apply/@class.0" sourceClass="//@source.2/@hasRule.5/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.5/@apply/@class.1" sourceClass="//@source.2/@hasRule.5/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="ownedTailTerm">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="List"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Term"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ownedTailTerms" source="//@source.2/@hasRule.6/@match.0/@class.0" target="//@source.2/@hasRule.6/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="CTerm"/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Term"/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="|"/>
+          </attribute>
+        </class>
+        <association associationName="next" source="//@source.2/@hasRule.6/@apply/@class.0" target="//@source.2/@hasRule.6/@apply/@class.2"/>
+        <association associationName="content" source="//@source.2/@hasRule.6/@apply/@class.2" target="//@source.2/@hasRule.6/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.6/@apply/@class.0" sourceClass="//@source.2/@hasRule.6/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.6/@apply/@class.1" sourceClass="//@source.2/@hasRule.6/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="leftright">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="InfixExpression"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Term"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Term"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="mprolog" className="Operator"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="leftTerm" source="//@source.2/@hasRule.7/@match.0/@class.0" target="//@source.2/@hasRule.7/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="rightTerm" source="//@source.2/@hasRule.7/@match.0/@class.0" target="//@source.2/@hasRule.7/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ownedOperator" source="//@source.2/@hasRule.7/@match.0/@class.0" target="//@source.2/@hasRule.7/@match.0/@class.3"/>
+      </match>
+      <apply>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Term"/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Term"/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Term"/>
+          </attribute>
+        </class>
+        <class packageName="Text" className="Content">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Term"/>
+          </attribute>
+        </class>
+        <association associationName="content" source="//@source.2/@hasRule.7/@apply/@class.0" target="//@source.2/@hasRule.7/@apply/@class.2"/>
+        <association associationName="next" source="//@source.2/@hasRule.7/@apply/@class.2" target="//@source.2/@hasRule.7/@apply/@class.3"/>
+        <association associationName="next" source="//@source.2/@hasRule.7/@apply/@class.3" target="//@source.2/@hasRule.7/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.7/@apply/@class.0" sourceClass="//@source.2/@hasRule.7/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.7/@apply/@class.2" sourceClass="//@source.2/@hasRule.7/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.7/@apply/@class.3" sourceClass="//@source.2/@hasRule.7/@match.0/@class.3"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.7/@apply/@class.1" sourceClass="//@source.2/@hasRule.7/@match.0/@class.2"/>
+    </hasRule>
+  </source>
+</dsltrans:TransformationModel>

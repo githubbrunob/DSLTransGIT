@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ASCII"?>
+<machine:TuringMachine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:machine="http://machine/1.0" xsi:schemaLocation="http://machine/1.0 TuringMachine.ecore">
+  <machine>
+    <initial name="0" state="//@machine/@states.0"/>
+    <finals name="0" state="//@machine/@states.0"/>
+    <current name="0" state="//@machine/@states.0"/>
+    <states name="0"/>
+    <states name="1"/>
+    <transitions name="0->0,1/1,R" read="1" write="1" moveTo="R" source="//@machine/@states.0" target="//@machine/@states.0"/>
+    <transitions name="0->1,B/B,L" read="B" write="B" moveTo="L" source="//@machine/@states.0" target="//@machine/@states.1"/>
+    <transitions name="1->0,0/1,R" read="0" write="1" moveTo="R" source="//@machine/@states.1" target="//@machine/@states.0"/>
+    <transitions name="1->0,B/1,R" read="B" write="1" moveTo="R" source="//@machine/@states.1" target="//@machine/@states.0"/>
+    <transitions name="1->1,1/0,L" read="1" write="0" moveTo="L" source="//@machine/@states.1" target="//@machine/@states.1"/>
+    <transitions name="0->0,0/0,R" read="0" write="0" moveTo="R" source="//@machine/@states.0" target="//@machine/@states.0"/>
+    <head symbol="//@tape/@symbols.0" name="0,1"/>
+  </machine>
+  <tape>
+    <symbols value="1" next="//@tape/@symbols.1" name="0,1" position="0"/>
+    <symbols value="0" next="//@tape/@symbols.2" name="1,0" position="1"/>
+    <symbols value="0" next="//@tape/@symbols.3" name="2,0" position="2"/>
+    <symbols value="B" name="3,B" position="3"/>
+  </tape>
+</machine:TuringMachine>

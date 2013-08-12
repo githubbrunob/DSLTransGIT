@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII" standalone="no"?>
+<formalmetamodel:FormalModel xmlns:formalmetamodel="http://formalmetamodel/1.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xsi:schemaLocation="http://formalmetamodel/1.0 FormalMetamodel.ecore">
+  <as id="id0" name="n1"/>
+  <as id="id0Suffix" name="n1"/>
+  <as id="id1" name="n2"/>
+  <as id="id1Suffix" name="n2"/>
+  <as id="id2" name="n3"/>
+  <as id="id2Suffix" name="n3"/>
+  <as id="id3" name="n4"/>
+  <as id="id3Suffix" name="n4"/>
+</formalmetamodel:FormalModel>

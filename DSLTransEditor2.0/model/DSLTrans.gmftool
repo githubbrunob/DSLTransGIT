@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmftool:ToolRegistry xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <palette
+      title="dsltransPalette">
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Objects"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="AnyMatchClass"
+          description="Match any class.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ApplyAttribute"
+          description="Create attribute in the apply pattern.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ApplyClass"
+          description="Generates a class in the apply pattern.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ApplyModel"
+          description="Apply pattern. Place inside Rule.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Atom"
+          description="Create a literal.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="AttributeRef"
+          description="Copy attribute value.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ClassRef"
+          description="Create new ClassRef">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Concat"
+          description="Concatenate expressions.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ExistsMatchClass"
+          description="Match at most one class.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="FilePort"
+          description="Specify input model.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Layer"
+          description="Create a new Layer.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="MatchAttribute"
+          description="Match an attribute.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="MatchModel"
+          description="Match pattern. Place inside Rule.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="MetaModelIdentifier"
+          description="Describe a metamodel.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="NegativeMatchClass"
+          description="Exclude class from pattern.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Rule"
+          description="Create Rule. Place inside Layer.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Sequencer"
+          description="Create a sequential number generator.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="TypeOf"
+          description="Copy attribute value.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Wildcard"
+          description="Match any literal.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="isNull"
+          description="Create new isNull">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Connections"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ApplyAssociation"
+          description="Create direct association in the apply pattern.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ApplyMayBeSameRelation"
+          description="Apply classes can have same binding.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="AttributeEquality"
+          description="Create an equality constrain between attributes.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="AttributeInequality"
+          description="Create an inequality constrain between attributes">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="AttributeRef"
+          description="Specify source attribute.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ClassRef"
+          description="Create new ClassRef">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ExplicitSource"
+          description="Create new ExplicitSource">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Import"
+          description="Copy full model elements.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="MatchMayBeSameRelation"
+          description="Match classes can have same binding.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="NegativeBackwardRestriction"
+          description="Avoid a generator-generated situation.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="NegativeIndirectAssociation"
+          description="Existing association across several containments.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="NegativeMatchAssociation"
+          description="Non-existing direct association.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="PositiveBackwardRestriction"
+          description="Create a generator-generated restriction.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="PositiveIndirectAssociation"
+          description="Existing association across several containments.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="PositiveMatchAssociation"
+          description="Existing direct association.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="PreviousSource"
+          description="Controls the flow of the transformation. Connects Layers/FilePorts.">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+    </tools>
+  </palette>
+</gmftool:ToolRegistry>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="word"
+    nsURI="http://word/1.0" nsPrefix="word">
+  <eClassifiers xsi:type="ecore:EClass" name="Word">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="symbols" upperBound="-1"
+        eType="#//Symbol" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="#//Next" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Symbol">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="next_symbol" eType="#//Symbol"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="token" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Next">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="symbol" eType="#//Symbol"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

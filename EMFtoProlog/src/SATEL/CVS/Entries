@@ -1,0 +1,23 @@
+D/APN////
+D/AlgebraicExpressions////
+/Axiom.java/1.1/Tue Sep 27 18:59:51 2011//
+/AxiomDeclaration.java/1.1/Tue Sep 27 18:59:51 2011//
+/Condition.java/1.1/Tue Sep 27 18:59:51 2011//
+/ConditionAtom.java/1.1/Tue Sep 27 18:59:51 2011//
+/ConditionBody.java/1.1/Tue Sep 27 18:59:51 2011//
+/DomainQuantifier.java/1.1/Tue Sep 27 18:59:51 2011//
+D/HMLFormula////
+/Inclusion.java/1.1/Tue Sep 27 18:59:51 2011//
+/IntentionDec.java/1.1/Tue Sep 27 18:59:51 2011//
+/Model.java/1.1/Tue Sep 27 18:59:51 2011//
+/NameList.java/1.1/Tue Sep 27 18:59:51 2011//
+/SATELFactory.java/1.1/Tue Sep 27 18:59:51 2011//
+/SATELPackage.java/1.1/Tue Sep 27 18:59:51 2011//
+/SubuniformityList.java/1.1/Tue Sep 27 18:59:51 2011//
+/TestIntentionBody.java/1.1/Tue Sep 27 18:59:51 2011//
+/TestIntentionInterface.java/1.1/Tue Sep 27 18:59:51 2011//
+/TestIntentionModule.java/1.1/Tue Sep 27 18:59:51 2011//
+/UniformityList.java/1.1/Tue Sep 27 18:59:51 2011//
+D/VariableDeclarations////
+D/impl////
+D/util////

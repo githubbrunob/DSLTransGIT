@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="dsltransAnalysis.contribution1"
+            nameFilter="*.dsltrans"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="DSLTranslator.menu1"
+               label="DSLTranslator"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="dsltransanalysis.popup.actions.DSLTransAnalyser"
+               enablesFor="1"
+               id="dsltransAnalysis.newAction"
+               label="Analyse"
+               menubarPath="DSLTranslator.menu1/group1">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

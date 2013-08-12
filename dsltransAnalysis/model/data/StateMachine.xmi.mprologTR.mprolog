@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="ASCII" standalone="no"?>
+<mprolog:Model xmlns:mprolog="mprolog" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="StateMachine.xmi" xmi:version="2.0" xsi:schemaLocation="mprolog mprolog.ecore">
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="class">
+        <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+          <nextTerm text="Transition" xsi:type="mprolog:QuotedAtom">
+            <nextTerm text="id0" xsi:type="mprolog:Functor">
+              <nextTerm xsi:type="mprolog:List">
+                <nextTerm xsi:type="mprolog:List">
+                  <ownedHeadTerms text="p" xsi:type="mprolog:Functor">
+                    <nextTerm text="p" xsi:type="mprolog:Functor">
+                      <ownedTerm text="target" xsi:type="mprolog:QuotedAtom">
+                        <nextTerm text="id3" xsi:type="mprolog:Functor"/>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="source" xsi:type="mprolog:QuotedAtom">
+                      <nextTerm text="id2" xsi:type="mprolog:Functor"/>
+                    </ownedTerm>
+                  </ownedHeadTerms>
+                </nextTerm>
+                <ownedHeadTerms text="p" xsi:type="mprolog:Functor">
+                  <ownedTerm text="name" xsi:type="mprolog:QuotedAtom">
+                    <nextTerm text="t1" xsi:type="mprolog:QuotedAtom"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </nextTerm>
+            </nextTerm>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="class">
+        <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+          <nextTerm text="Transition" xsi:type="mprolog:QuotedAtom">
+            <nextTerm text="id1" xsi:type="mprolog:Functor">
+              <nextTerm xsi:type="mprolog:List">
+                <nextTerm xsi:type="mprolog:List">
+                  <ownedHeadTerms text="p" xsi:type="mprolog:Functor">
+                    <nextTerm text="p" xsi:type="mprolog:Functor">
+                      <ownedTerm text="target" xsi:type="mprolog:QuotedAtom">
+                        <nextTerm text="id4" xsi:type="mprolog:Functor"/>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="source" xsi:type="mprolog:QuotedAtom">
+                      <nextTerm text="id3" xsi:type="mprolog:Functor"/>
+                    </ownedTerm>
+                  </ownedHeadTerms>
+                </nextTerm>
+                <ownedHeadTerms text="p" xsi:type="mprolog:Functor">
+                  <ownedTerm text="name" xsi:type="mprolog:QuotedAtom">
+                    <nextTerm text="t2" xsi:type="mprolog:QuotedAtom"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </nextTerm>
+            </nextTerm>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="class">
+        <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+          <nextTerm text="Initial" xsi:type="mprolog:QuotedAtom">
+            <nextTerm text="id2" xsi:type="mprolog:Functor">
+              <nextTerm xsi:type="mprolog:List">
+                <nextTerm xsi:type="mprolog:List"/>
+                <ownedHeadTerms text="p" xsi:type="mprolog:Functor">
+                  <ownedTerm text="name" xsi:type="mprolog:QuotedAtom">
+                    <nextTerm text="a" xsi:type="mprolog:QuotedAtom"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </nextTerm>
+            </nextTerm>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="class">
+        <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+          <nextTerm text="State" xsi:type="mprolog:QuotedAtom">
+            <nextTerm text="id3" xsi:type="mprolog:Functor">
+              <nextTerm xsi:type="mprolog:List">
+                <nextTerm xsi:type="mprolog:List"/>
+                <ownedHeadTerms text="p" xsi:type="mprolog:Functor">
+                  <ownedTerm text="name" xsi:type="mprolog:QuotedAtom">
+                    <nextTerm text="b" xsi:type="mprolog:QuotedAtom"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </nextTerm>
+            </nextTerm>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="class">
+        <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+          <nextTerm text="State" xsi:type="mprolog:QuotedAtom">
+            <nextTerm text="id4" xsi:type="mprolog:Functor">
+              <nextTerm xsi:type="mprolog:List">
+                <nextTerm xsi:type="mprolog:List"/>
+                <ownedHeadTerms text="p" xsi:type="mprolog:Functor">
+                  <ownedTerm text="name" xsi:type="mprolog:QuotedAtom">
+                    <nextTerm text="c" xsi:type="mprolog:QuotedAtom"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </nextTerm>
+            </nextTerm>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="class">
+        <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+          <nextTerm text="StateMachine" xsi:type="mprolog:QuotedAtom">
+            <nextTerm text="id5" xsi:type="mprolog:Functor">
+              <nextTerm xsi:type="mprolog:List">
+                <nextTerm xsi:type="mprolog:List">
+                  <ownedHeadTerms text="p" xsi:type="mprolog:Functor">
+                    <nextTerm text="p" xsi:type="mprolog:Functor">
+                      <nextTerm text="p" xsi:type="mprolog:Functor">
+                        <nextTerm text="p" xsi:type="mprolog:Functor">
+                          <nextTerm text="p" xsi:type="mprolog:Functor">
+                            <ownedTerm text="states" xsi:type="mprolog:QuotedAtom">
+                              <nextTerm text="id4" xsi:type="mprolog:Functor"/>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm text="states" xsi:type="mprolog:QuotedAtom">
+                            <nextTerm text="id3" xsi:type="mprolog:Functor"/>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm text="states" xsi:type="mprolog:QuotedAtom">
+                          <nextTerm text="id2" xsi:type="mprolog:Functor"/>
+                        </ownedTerm>
+                      </nextTerm>
+                      <ownedTerm text="transitions" xsi:type="mprolog:QuotedAtom">
+                        <nextTerm text="id1" xsi:type="mprolog:Functor"/>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="transitions" xsi:type="mprolog:QuotedAtom">
+                      <nextTerm text="id0" xsi:type="mprolog:Functor"/>
+                    </ownedTerm>
+                  </ownedHeadTerms>
+                </nextTerm>
+              </nextTerm>
+            </nextTerm>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+</mprolog:Model>

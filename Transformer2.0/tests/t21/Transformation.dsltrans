@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsltrans:TransformationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsltrans="http://dsltrans/2.0">
+  <source xsi:type="dsltrans:FilePort" name="Main Input" filePathURI="tests/t21/FormalModel.xmi">
+    <metaModelId metaModelURI="tests/t21/FormalMetamodel.ecore" metaModelName="formalmetamodel.Formalmetamodel"/>
+  </source>
+  <source xsi:type="dsltrans:Sequential" description="" previousSource="//@source.2" outputFilePathURI="tests/t21/o0.xmi">
+    <metaModelId metaModelURI="tests/t21/FormalMetamodel.ecore" metaModelName="formalmetamodel.Formalmetamodel"/>
+    <hasRule description="Conections">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="formalmetamodel" className="FormalModel"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="formalmetamodel" className="A"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="as" source="//@source.1/@hasRule.0/@match.0/@class.0" target="//@source.1/@hasRule.0/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="formalmetamodel" className="FormalModel">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="FormalModel"/>
+          </attribute>
+        </class>
+        <class packageName="formalmetamodel" className="A">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="A"/>
+          </attribute>
+        </class>
+        <association associationName="as" source="//@source.1/@hasRule.0/@apply/@class.0" target="//@source.1/@hasRule.0/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.1/@hasRule.0/@apply/@class.0" sourceClass="//@source.1/@hasRule.0/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.1/@hasRule.0/@apply/@class.1" sourceClass="//@source.1/@hasRule.0/@match.0/@class.1"/>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" description="" previousSource="//@source.0" outputFilePathURI="">
+    <metaModelId metaModelURI="tests/t21/FormalMetamodel.ecore" metaModelName="formalmetamodel.Formalmetamodel"/>
+    <hasRule description="Match Root">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="formalmetamodel" className="FormalModel"/>
+      </match>
+      <apply>
+        <class packageName="formalmetamodel" className="FormalModel">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="FormalModel"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="Match A">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="formalmetamodel" className="A">
+          <attribute attributeName="name"/>
+        </class>
+      </match>
+      <apply>
+        <class packageName="formalmetamodel" className="A">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="A"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.1/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="id">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:Sequencer"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value="j"/>
+                <rightTerm xsi:type="dsltrans:Sequencer"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+        </class>
+        <class packageName="formalmetamodel" className="A">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="A"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.1/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="id">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:Atom" value="id"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Sequencer"/>
+                <rightTerm xsi:type="dsltrans:Atom" value="Suffix"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+  </source>
+</dsltrans:TransformationModel>

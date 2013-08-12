@@ -1,0 +1,273 @@
+@gmf(foo="bar")
+@namespace(uri="http://dsltrans/2.0", prefix="dsltrans")
+package dsltrans;
+
+@gmf.diagram(foo="bar")
+class TransformationModel {
+  val AbstractSource[*] source;
+}
+
+@gmf.node(foo="bar")
+abstract class Layer extends AbstractSource {
+  attr String description = "Layer";
+
+  @gmf.link(source.decoration="arrow", width="2", tool.description="Controls the flow of the transformation. Connects Layers/FilePorts.")
+  ref AbstractSource[*] previousSource;
+  attr String outputFilePathURI;
+
+  @gmf.compartment(foo="bar")
+  val Rule[*] hasRule;
+  attr String groupName;
+}
+
+@gmf.node(foo="bar")
+abstract class MatchClass extends AbstractClass {
+
+  @gmf.compartment(foo="bar")
+  val MatchAttribute[*] attribute;
+}
+
+@gmf.node(border.color="204,255,153")
+abstract class PositiveMatchClass extends MatchClass {
+}
+
+@gmf.node(tool.description="Match any class.")
+class AnyMatchClass extends PositiveMatchClass {
+}
+
+@gmf.node(tool.description="Match at most one class.")
+class ExistsMatchClass extends PositiveMatchClass {
+}
+
+@gmf.node(border.color="255,61,100", tool.description="Exclude class from pattern.")
+class NegativeMatchClass extends MatchClass {
+}
+
+@gmf.node(foo="bar", tool.description="Match pattern. Place inside Rule.", label.readOnly="true")
+class MatchModel {
+
+  @gmf.compartment(foo="bar")
+  val MatchClass[*] ~class;
+  val MatchAssociation[*] association;
+
+  @gmf.link(foo="bar")
+  ref FilePort explicitSource;
+}
+
+@gmf.link(source="source", target="target", target.decoration="arrow", width="2")
+abstract class MatchAssociation extends Association {
+  ref MatchClass[1] source;
+  ref MatchClass[1] target;
+}
+
+@gmf.link(label="", style="dash", color="204,255,153", width="2", tool.description="Existing association across several containments.")
+class PositiveIndirectAssociation extends MatchAssociation {
+}
+
+@gmf.link(style="dash", color="255,61,100", width="2", tool.description="Existing association across several containments.")
+class NegativeIndirectAssociation extends MatchAssociation {
+}
+
+@gmf.link(tool.description="Existing direct association.")
+class PositiveMatchAssociation extends MatchAssociation {
+}
+
+@gmf.link(color="255,61,100", width="2", tool.description="Non-existing direct association.")
+class NegativeMatchAssociation extends MatchAssociation {
+}
+
+@gmf.node(foo="bar", tool.description="Generates a class in the apply pattern.")
+class ApplyClass extends AbstractClass {
+
+  @gmf.compartment(foo="bar")
+  val ApplyAttribute[*] attribute;
+  attr String groupName;
+}
+
+@gmf.node(color="255,255,163", tool.description="Apply pattern. Place inside Rule.", label.readOnly="true")
+class ApplyModel {
+
+  @gmf.compartment(foo="bar")
+  val ApplyClass[*] ~class;
+  val ApplyAssociation[*] association;
+}
+
+@gmf.link(label="associationName", source="source", target="target", target.decoration="arrow", tool.description="Create direct association in the apply pattern.")
+class ApplyAssociation extends Association {
+  ref ApplyClass[1] source;
+  ref ApplyClass[1] target;
+}
+
+@gmf.node(label="className")
+abstract class AbstractClass {
+  attr String description;
+  attr String packageName;
+  attr String className;
+  attr boolean allowInheritance = true;
+  id attr String ~id;
+}
+
+@gmf.link(label="associationName", width="2")
+abstract class Association {
+  attr String associationName;
+}
+
+@gmf.node(label="attributeName", tool.description="Match an attribute.")
+class MatchAttribute extends Attribute {
+
+  @gmf.compartment(foo="bar")
+  val MatchAttributeValue attributeValue;
+}
+
+@gmf.node(label="attributeName", tool.description="Create attribute in the apply pattern.")
+class ApplyAttribute extends Attribute {
+
+  @gmf.compartment(foo="bar")
+  val Term attributeValue;
+}
+
+@gmf.node(foo="bar")
+abstract class AbstractSource {
+
+  @gmf.compartment(foo="bar")
+  val MetaModelIdentifier[1] metaModelId;
+  attr String name = "";
+}
+
+@gmf.node(label="filePathURI", tool.small.bundle="Transformer", tool.description="Specify input model.")
+class FilePort extends AbstractSource {
+  attr String filePathURI;
+}
+
+@gmf.node(label="description", tool.description="Create Rule. Place inside Layer.")
+class Rule {
+  attr String description;
+
+  @gmf.compartment(foo="bar")
+  val MatchModel[+] match;
+
+  @gmf.compartment(foo="bar")
+  val ApplyModel[1] apply;
+  val AbstractTemporalRelation[*] backwards;
+  val Import[*] imports;
+  val AbstractAttributeRelation[*] attributeRelations;
+}
+
+@gmf.node(label="metaModelName", tool.description="Describe a metamodel.")
+class MetaModelIdentifier {
+  attr String metaModelURI;
+  attr String metaModelName;
+}
+
+@gmf.link(foo="bar", tool.description="Create a generator-generated restriction.")
+class PositiveBackwardRestriction extends AbstractTemporalRelation {
+}
+
+@gmf.link(color="255,61,100", tool.description="Avoid a generator-generated situation.")
+class NegativeBackwardRestriction extends AbstractTemporalRelation {
+}
+
+@gmf.link(target="target", source="source", target.decoration="arrow", color="85,64,45", width="2", tool.description="Copy full model elements.")
+class Import {
+  ref ApplyClass[1] target;
+  ref PositiveMatchClass[1] source;
+}
+
+@gmf.node(label="description", color="153,204,255", tool.name="Layer", tool.description="Create a new Layer.")
+class Sequential extends Layer {
+}
+
+@gmf.node(foo="bar")
+abstract class Term {
+}
+
+abstract class Operator extends Term {
+}
+
+@gmf.node(label="value", label.icon="false", tool.description="Create a literal.")
+class Atom extends Term, MatchAttributeValue {
+  attr String value;
+}
+
+abstract class Ref extends Term {
+}
+
+@gmf.node(tool.description="Copy attribute value.")
+class AttributeRef extends Ref {
+
+  @gmf.link(target.decoration="arrow", width="2", tool.description="Specify source attribute.")
+  ref Attribute[1] attributeRef;
+}
+
+@gmf.node(foo="bar")
+class ClassRef extends Ref {
+
+  @gmf.link(target.decoration="arrow", width="2")
+  ref AbstractClass[1] classRef;
+}
+
+@gmf.node(tool.description="Concatenate expressions.")
+class Concat extends Operator {
+
+  @gmf.compartment(foo="bar")
+  val Term[1] leftTerm;
+
+  @gmf.compartment(foo="bar")
+  val Term[1] rightTerm;
+}
+
+@gmf.node(foo="bar")
+class TypeOf extends Operator, AttributeRef {
+}
+
+@gmf.node(tool.description="Match any literal.")
+class Wildcard extends Term {
+}
+
+@gmf.node(label="attributeName")
+abstract class Attribute {
+  attr String attributeName;
+  attr String description;
+  id attr String ~id;
+}
+
+@gmf.node(label="value", label.icon="false")
+class isNull extends MatchAttributeValue {
+  attr boolean value = true;
+}
+
+abstract class MatchAttributeValue {
+}
+
+@gmf.link(target="targetClass", source="sourceClass", style="dot", width="2")
+abstract class AbstractTemporalRelation {
+  ref ApplyClass[1] targetClass;
+  ref PositiveMatchClass[1] sourceClass;
+}
+
+@gmf.node(label="Sequencer", label.readOnly="true", tool.description="Create a sequential number generator.")
+class Sequencer extends Term {
+}
+
+@gmf.link(target="targetAttribute", target.decoration="none", source="sourceAttribute", source.decoration="none", style="solid", width="2")
+abstract class AbstractAttributeRelation {
+  ref Attribute sourceAttribute;
+  ref Attribute targetAttribute;
+}
+
+@gmf.link(label="=", color="145,147,255", tool.description="Create an equality constrain between attributes.")
+class AttributeEquality extends AbstractAttributeRelation {
+}
+
+@gmf.link(color="255,61,100", label="!=", tool.description="Create an inequality constrain between attributes")
+class AttributeInequality extends AbstractAttributeRelation {
+}
+
+@gmf.link(label="",target.decoration="none", source.decoration="none", style="dash", color="181,215,255", width="2", tool.description="Match classes can have same binding.")
+class MatchMayBeSameRelation extends MatchAssociation {
+}
+
+@gmf.link(label="",target.decoration="none", source.decoration="none", style="dash", color="181,215,255", width="2", tool.description="Apply classes can have same binding.")
+class ApplyMayBeSameRelation extends ApplyAssociation {
+}
+

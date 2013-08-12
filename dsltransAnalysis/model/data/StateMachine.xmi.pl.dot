@@ -1,0 +1,8 @@
+digraph StateMachine {
+	node0[label="state(id4)"];
+	node1[label="initial(id2)"];
+	node2[label="state(id3)"];
+	node2 -> node0[label="p(str(at,str(n2,end)),[id1])"];
+	node1 -> node2[label="p(str(at,str(n1,end)),[id0])"];
+
+}

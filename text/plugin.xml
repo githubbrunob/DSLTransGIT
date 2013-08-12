@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.2 2011/07/17 20:10:59 bfb Exp $
+-->
+
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="text.contribution1"
+            nameFilter="*.text"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="text.menu1"
+               label="Text"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="Text.popup.actions.ToText"
+               enablesFor="1"
+               id="Text.WriteTextFiles"
+               label="Write Text Files"
+               menubarPath="text.menu1/group1">
+         </action>
+      </objectContribution>
+   </extension>
+
+
+</plugin>

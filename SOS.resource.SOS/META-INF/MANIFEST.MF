@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EMFText Parser Plugin: SOS
+Bundle-SymbolicName: SOS.resource.SOS;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: Software Technology Group - TU Dresden Germany
+Require-Bundle: org.eclipse.core.resources,
+  org.eclipse.emf,
+  org.eclipse.emf.codegen.ecore,
+  org.eclipse.emf.ecore,
+  org.eclipse.emf.ecore.edit,
+  org.eclipse.emf.validation,
+  org.eclipse.emf.workspace,
+  org.emftext.access;resolution:=optional,
+  org.eclipse.debug.core,
+  org.emftext.commons.antlr3_3_0,
+  org.emftext.language.SOS
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: SOS.resource.SOS,
+  SOS.resource.SOS.analysis,
+  SOS.resource.SOS.mopp,
+  SOS.resource.SOS.debug,
+  SOS.resource.SOS.launch,
+  SOS.resource.SOS.grammar,
+  SOS.resource.SOS.util
+Bundle-Activator: SOS.resource.SOS.mopp.SOSPlugin

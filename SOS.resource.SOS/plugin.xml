@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax">
+		<metaInformationProvider class="SOS.resource.SOS.mopp.SOSMetaInformation" id="SOS.resource.SOS.mopp.SOSMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension id="SOS.resource.SOS.problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="org.eclipse.core.resources.problemmarker">
+		</super>
+		<super type="org.eclipse.core.resources.textmarker">
+		</super>
+		<super type="org.eclipse.emf.ecore.diagnostic">
+		</super>
+	</extension>
+	
+	<extension id="SOS.resource.SOS.problem.syntax_error" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="SOS.resource.SOS.problem">
+		</super>
+	</extension>
+	
+	<extension id="SOS.resource.SOS.problem.print_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="SOS.resource.SOS.problem">
+		</super>
+	</extension>
+	
+	<extension id="SOS.resource.SOS.problem.unresolved_reference" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="SOS.resource.SOS.problem">
+		</super>
+	</extension>
+	
+	<extension id="SOS.resource.SOS.problem.analysis_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="SOS.resource.SOS.problem">
+		</super>
+	</extension>
+	
+	<extension id="SOS.resource.SOS.problem.builder_error" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="SOS.resource.SOS.problem">
+		</super>
+	</extension>
+	
+	<extension id="SOS.resource.SOS.nature" name="SOS nature" point="org.eclipse.core.resources.natures">
+		<runtime>
+			<run class="SOS.resource.SOS.mopp.SOSNature">
+			</run>
+		</runtime>
+		<builder id="SOS.resource.SOS.builder">
+		</builder>
+	</extension>
+	
+	<extension point="org.eclipse.core.resources.builders" id="SOS.resource.SOS.builder" name="SOS Builder">
+		<builder hasNature="true">
+			<run class="SOS.resource.SOS.mopp.SOSBuilderAdapter">
+			</run>
+		</builder>
+	</extension>
+	
+	<extension-point id="SOS.resource.SOS.default_load_options" name="Default Load Options" schema="schema/default_load_options.exsd">
+	</extension-point>
+	
+	<extension point="org.eclipse.emf.ecore.extension_parser">
+		<parser class="SOS.resource.SOS.mopp.SOSResourceFactoryDelegator" type="SOS">
+		</parser>
+	</extension>
+	
+	<extension-point id="SOS.resource.SOS.additional_extension_parser" name="Additional Extension Parser" schema="schema/additional_extension_parser.exsd">
+	</extension-point>
+	
+	<extension point="org.eclipse.debug.core.breakpoints">
+		<breakpoint class="SOS.resource.SOS.debug.SOSLineBreakpoint" id="SOS.resource.SOS.debug.breakpoint" markerType="SOS.resource.SOS.debug.lineBreakpoint.marker" name="SOS Breakpoint">
+		</breakpoint>
+	</extension>
+	
+	<extension id="SOS.resource.SOS.debug.lineBreakpoint.marker" point="org.eclipse.core.resources.markers">
+		<super type="org.eclipse.debug.core.lineBreakpointMarker">
+		</super>
+		<super type="org.eclipse.core.resources.textmarker">
+		</super>
+		<persistent value="true">
+		</persistent>
+	</extension>
+	
+	<extension point="org.eclipse.debug.core.launchConfigurationTypes">
+		<launchConfigurationType id="SOS.resource.SOS.ui.launchConfigurationType" delegate="SOS.resource.SOS.launch.SOSLaunchConfigurationDelegate" modes="run,debug" name="SOS Application" sourceLocatorId="SOS.resource.SOS.ui.sourceLocator" sourcePathComputerId="SOS.resource.SOS.ui.sourcePathComputer" delegateName="SOS Launch Tooling" delegateDescription="This will run or debug .SOS files.">
+		</launchConfigurationType>
+	</extension>
+	
+	<extension point="org.eclipse.debug.core.sourcePathComputers">
+		<sourcePathComputer class="SOS.resource.SOS.debug.SOSSourcePathComputerDelegate" id="SOS.resource.SOS.ui.sourcePathComputer">
+		</sourcePathComputer>
+	</extension>
+	
+	<extension point="org.eclipse.debug.core.sourceLocators">
+		<sourceLocator id="SOS.resource.SOS.ui.sourceLocator" class="SOS.resource.SOS.debug.SOSSourceLocator" name="SOS Source Locator">
+		</sourceLocator>
+	</extension>
+	
+</plugin>

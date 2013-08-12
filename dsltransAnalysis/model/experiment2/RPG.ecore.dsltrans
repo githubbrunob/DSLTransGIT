@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsltrans:TransformationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsltrans="http://dsltrans/2.0"  xsi:schemaLocation="http://dsltrans/2.0 DSLTrans.ecore">
+  <source xsi:type="dsltrans:FilePort" filePathURI="models\RPG.xmi">
+    <metaModelId metaModelURI="models\RPG.ecore" metaModelName="rpg.Rpg"/>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="Entities" description="Entities" previousSource="//@source.0" outputFilePathURI="">
+    <metaModelId metaModelURI="models\PetriNet.ecore" metaModelName="petrinet.Petrinet"/>
+    <hasRule description="Cell Free">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell">
+          <attribute attributeName="name"/>
+          <attribute attributeName="x"/>
+          <attribute attributeName="y"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Hero"/>
+        <association xsi:type="dsltrans:NegativeMatchAssociation" associationName="occupies" source="//@source.1/@hasRule.0/@match.0/@class.1" target="//@source.1/@hasRule.0/@match.0/@class.0"/>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="Place">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Cell"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.0/@match.0/@class.0/@attribute.0"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.0/@match.0/@class.0/@attribute.1"/>
+                <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.0/@match.0/@class.0/@attribute.2"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+          <attribute attributeName="token">
+            <attributeValue xsi:type="dsltrans:Atom" value="0"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="Key">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Key">
+          <attribute attributeName="name"/>
+        </class>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="Place">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Key"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.1/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="Transition">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Key"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.1/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="InArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <association associationName="targetPlace" source="//@source.1/@hasRule.1/@apply/@class.2" target="//@source.1/@hasRule.1/@apply/@class.0"/>
+        <association associationName="inArc" source="//@source.1/@hasRule.1/@apply/@class.1" target="//@source.1/@hasRule.1/@apply/@class.2"/>
+      </apply>
+    </hasRule>
+    <hasRule description="RPG">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="RPG"/>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="PetriNet">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="RPG"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="Cell Occupied">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell">
+          <attribute attributeName="name"/>
+          <attribute attributeName="x"/>
+          <attribute attributeName="y"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Hero"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="occupies" source="//@source.1/@hasRule.3/@match.0/@class.1" target="//@source.1/@hasRule.3/@match.0/@class.0"/>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="Place">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Cell"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.3/@match.0/@class.0/@attribute.0"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.3/@match.0/@class.0/@attribute.1"/>
+                <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.3/@match.0/@class.0/@attribute.2"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+          <attribute attributeName="token">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="Associations" description="Associations" previousSource="//@source.1" outputFilePathURI="models\pn.xmi">
+    <metaModelId metaModelURI="models\PetriNet.ecore" metaModelName="petrinet.Petrinet"/>
+    <hasRule description="hasCell">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="RPG"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="WorldMap"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Scene"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="hasWorldMap" source="//@source.2/@hasRule.0/@match.0/@class.0" target="//@source.2/@hasRule.0/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="hasScene" source="//@source.2/@hasRule.0/@match.0/@class.1" target="//@source.2/@hasRule.0/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="hasCell" source="//@source.2/@hasRule.0/@match.0/@class.2" target="//@source.2/@hasRule.0/@match.0/@class.3"/>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="PetriNet"/>
+        <class packageName="petrinet" className="Place"/>
+        <association associationName="places" source="//@source.2/@hasRule.0/@apply/@class.0" target="//@source.2/@hasRule.0/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.0/@apply/@class.0" sourceClass="//@source.2/@hasRule.0/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.0/@apply/@class.1" sourceClass="//@source.2/@hasRule.0/@match.0/@class.3"/>
+    </hasRule>
+    <hasRule description="hasObject">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="RPG"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Key"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="hasObject" source="//@source.2/@hasRule.1/@match.0/@class.0" target="//@source.2/@hasRule.1/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="PetriNet"/>
+        <class packageName="petrinet" className="Transition"/>
+        <class packageName="petrinet" className="Place"/>
+        <association associationName="transitions" source="//@source.2/@hasRule.1/@apply/@class.0" target="//@source.2/@hasRule.1/@apply/@class.1"/>
+        <association associationName="places" source="//@source.2/@hasRule.1/@apply/@class.0" target="//@source.2/@hasRule.1/@apply/@class.2"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.1/@apply/@class.0" sourceClass="//@source.2/@hasRule.1/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.1/@apply/@class.1" sourceClass="//@source.2/@hasRule.1/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.1/@apply/@class.2" sourceClass="//@source.2/@hasRule.1/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="left">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell"/>
+        <class xsi:type="dsltrans:NegativeMatchClass" packageName="rpg" className="Door"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="RPG"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="left" source="//@source.2/@hasRule.2/@match.0/@class.0" target="//@source.2/@hasRule.2/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:NegativeMatchAssociation" associationName="occupies" source="//@source.2/@hasRule.2/@match.0/@class.2" target="//@source.2/@hasRule.2/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="Transition">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Atom" value="moveLeft"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="InArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="OutArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="PetriNet"/>
+        <association associationName="sourcePlace" source="//@source.2/@hasRule.2/@apply/@class.4" target="//@source.2/@hasRule.2/@apply/@class.0"/>
+        <association associationName="targetPlace" source="//@source.2/@hasRule.2/@apply/@class.3" target="//@source.2/@hasRule.2/@apply/@class.1"/>
+        <association associationName="inArc" source="//@source.2/@hasRule.2/@apply/@class.2" target="//@source.2/@hasRule.2/@apply/@class.3"/>
+        <association associationName="outArc" source="//@source.2/@hasRule.2/@apply/@class.2" target="//@source.2/@hasRule.2/@apply/@class.4"/>
+        <association associationName="transitions" source="//@source.2/@hasRule.2/@apply/@class.5" target="//@source.2/@hasRule.2/@apply/@class.2"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.2/@apply/@class.0" sourceClass="//@source.2/@hasRule.2/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.2/@apply/@class.1" sourceClass="//@source.2/@hasRule.2/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.2/@apply/@class.5" sourceClass="//@source.2/@hasRule.2/@match.0/@class.3"/>
+    </hasRule>
+    <hasRule description="right">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell"/>
+        <class xsi:type="dsltrans:NegativeMatchClass" packageName="rpg" className="Door"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="RPG"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="right" source="//@source.2/@hasRule.3/@match.0/@class.0" target="//@source.2/@hasRule.3/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:NegativeMatchAssociation" associationName="occupies" source="//@source.2/@hasRule.3/@match.0/@class.2" target="//@source.2/@hasRule.3/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="Transition">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Atom" value="moveRight"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="InArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="OutArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="PetriNet"/>
+        <association associationName="sourcePlace" source="//@source.2/@hasRule.3/@apply/@class.4" target="//@source.2/@hasRule.3/@apply/@class.0"/>
+        <association associationName="targetPlace" source="//@source.2/@hasRule.3/@apply/@class.3" target="//@source.2/@hasRule.3/@apply/@class.1"/>
+        <association associationName="inArc" source="//@source.2/@hasRule.3/@apply/@class.2" target="//@source.2/@hasRule.3/@apply/@class.3"/>
+        <association associationName="outArc" source="//@source.2/@hasRule.3/@apply/@class.2" target="//@source.2/@hasRule.3/@apply/@class.4"/>
+        <association associationName="transitions" source="//@source.2/@hasRule.3/@apply/@class.5" target="//@source.2/@hasRule.3/@apply/@class.2"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.3/@apply/@class.0" sourceClass="//@source.2/@hasRule.3/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.3/@apply/@class.1" sourceClass="//@source.2/@hasRule.3/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.3/@apply/@class.5" sourceClass="//@source.2/@hasRule.3/@match.0/@class.3"/>
+    </hasRule>
+    <hasRule description="top">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell"/>
+        <class xsi:type="dsltrans:NegativeMatchClass" packageName="rpg" className="Door"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="RPG"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="top" source="//@source.2/@hasRule.4/@match.0/@class.0" target="//@source.2/@hasRule.4/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:NegativeMatchAssociation" associationName="occupies" source="//@source.2/@hasRule.4/@match.0/@class.2" target="//@source.2/@hasRule.4/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="Transition">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Atom" value="moveTop"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="InArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="OutArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="PetriNet"/>
+        <association associationName="sourcePlace" source="//@source.2/@hasRule.4/@apply/@class.4" target="//@source.2/@hasRule.4/@apply/@class.0"/>
+        <association associationName="targetPlace" source="//@source.2/@hasRule.4/@apply/@class.3" target="//@source.2/@hasRule.4/@apply/@class.1"/>
+        <association associationName="inArc" source="//@source.2/@hasRule.4/@apply/@class.2" target="//@source.2/@hasRule.4/@apply/@class.3"/>
+        <association associationName="outArc" source="//@source.2/@hasRule.4/@apply/@class.2" target="//@source.2/@hasRule.4/@apply/@class.4"/>
+        <association associationName="transitions" source="//@source.2/@hasRule.4/@apply/@class.5" target="//@source.2/@hasRule.4/@apply/@class.2"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.4/@apply/@class.0" sourceClass="//@source.2/@hasRule.4/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.4/@apply/@class.1" sourceClass="//@source.2/@hasRule.4/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.4/@apply/@class.5" sourceClass="//@source.2/@hasRule.4/@match.0/@class.3"/>
+    </hasRule>
+    <hasRule description="bottom">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell"/>
+        <class xsi:type="dsltrans:NegativeMatchClass" packageName="rpg" className="Door"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="RPG"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="bottom" source="//@source.2/@hasRule.5/@match.0/@class.0" target="//@source.2/@hasRule.5/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:NegativeMatchAssociation" associationName="occupies" source="//@source.2/@hasRule.5/@match.0/@class.2" target="//@source.2/@hasRule.5/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="Transition">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Atom" value="moveBottom"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="InArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="OutArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="PetriNet"/>
+        <association associationName="sourcePlace" source="//@source.2/@hasRule.5/@apply/@class.4" target="//@source.2/@hasRule.5/@apply/@class.0"/>
+        <association associationName="targetPlace" source="//@source.2/@hasRule.5/@apply/@class.3" target="//@source.2/@hasRule.5/@apply/@class.1"/>
+        <association associationName="inArc" source="//@source.2/@hasRule.5/@apply/@class.2" target="//@source.2/@hasRule.5/@apply/@class.3"/>
+        <association associationName="outArc" source="//@source.2/@hasRule.5/@apply/@class.2" target="//@source.2/@hasRule.5/@apply/@class.4"/>
+        <association associationName="transitions" source="//@source.2/@hasRule.5/@apply/@class.5" target="//@source.2/@hasRule.5/@apply/@class.2"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.5/@apply/@class.0" sourceClass="//@source.2/@hasRule.5/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.5/@apply/@class.1" sourceClass="//@source.2/@hasRule.5/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.5/@apply/@class.5" sourceClass="//@source.2/@hasRule.5/@match.0/@class.3"/>
+    </hasRule>
+    <hasRule description="leftDoor">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Door"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Key"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="RPG"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="left" source="//@source.2/@hasRule.6/@match.0/@class.0" target="//@source.2/@hasRule.6/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="occupies" source="//@source.2/@hasRule.6/@match.0/@class.2" target="//@source.2/@hasRule.6/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="exit" source="//@source.2/@hasRule.6/@match.0/@class.2" target="//@source.2/@hasRule.6/@match.0/@class.3"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="opens" source="//@source.2/@hasRule.6/@match.0/@class.4" target="//@source.2/@hasRule.6/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="Transition">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Atom" value="moveLeft"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="InArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="OutArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="OutArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="InArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="PetriNet"/>
+        <association associationName="sourcePlace" source="//@source.2/@hasRule.6/@apply/@class.4" target="//@source.2/@hasRule.6/@apply/@class.0"/>
+        <association associationName="targetPlace" source="//@source.2/@hasRule.6/@apply/@class.3" target="//@source.2/@hasRule.6/@apply/@class.1"/>
+        <association associationName="inArc" source="//@source.2/@hasRule.6/@apply/@class.2" target="//@source.2/@hasRule.6/@apply/@class.3"/>
+        <association associationName="outArc" source="//@source.2/@hasRule.6/@apply/@class.2" target="//@source.2/@hasRule.6/@apply/@class.4"/>
+        <association associationName="targetPlace" source="//@source.2/@hasRule.6/@apply/@class.7" target="//@source.2/@hasRule.6/@apply/@class.5"/>
+        <association associationName="sourcePlace" source="//@source.2/@hasRule.6/@apply/@class.6" target="//@source.2/@hasRule.6/@apply/@class.5"/>
+        <association associationName="inArc" source="//@source.2/@hasRule.6/@apply/@class.2" target="//@source.2/@hasRule.6/@apply/@class.7"/>
+        <association associationName="outArc" source="//@source.2/@hasRule.6/@apply/@class.2" target="//@source.2/@hasRule.6/@apply/@class.6"/>
+        <association associationName="transitions" source="//@source.2/@hasRule.6/@apply/@class.8" target="//@source.2/@hasRule.6/@apply/@class.2"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.6/@apply/@class.0" sourceClass="//@source.2/@hasRule.6/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.6/@apply/@class.1" sourceClass="//@source.2/@hasRule.6/@match.0/@class.3"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.6/@apply/@class.5" sourceClass="//@source.2/@hasRule.6/@match.0/@class.4"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.6/@apply/@class.8" sourceClass="//@source.2/@hasRule.6/@match.0/@class.5"/>
+    </hasRule>
+    <hasRule description="rightDoor">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Door"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Key"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="RPG"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="right" source="//@source.2/@hasRule.7/@match.0/@class.0" target="//@source.2/@hasRule.7/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="occupies" source="//@source.2/@hasRule.7/@match.0/@class.2" target="//@source.2/@hasRule.7/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="exit" source="//@source.2/@hasRule.7/@match.0/@class.2" target="//@source.2/@hasRule.7/@match.0/@class.3"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="opens" source="//@source.2/@hasRule.7/@match.0/@class.4" target="//@source.2/@hasRule.7/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="Transition">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Atom" value="moveRight"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="InArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="OutArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="OutArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="InArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="PetriNet"/>
+        <association associationName="sourcePlace" source="//@source.2/@hasRule.7/@apply/@class.4" target="//@source.2/@hasRule.7/@apply/@class.0"/>
+        <association associationName="targetPlace" source="//@source.2/@hasRule.7/@apply/@class.3" target="//@source.2/@hasRule.7/@apply/@class.1"/>
+        <association associationName="inArc" source="//@source.2/@hasRule.7/@apply/@class.2" target="//@source.2/@hasRule.7/@apply/@class.3"/>
+        <association associationName="outArc" source="//@source.2/@hasRule.7/@apply/@class.2" target="//@source.2/@hasRule.7/@apply/@class.4"/>
+        <association associationName="targetPlace" source="//@source.2/@hasRule.7/@apply/@class.7" target="//@source.2/@hasRule.7/@apply/@class.5"/>
+        <association associationName="sourcePlace" source="//@source.2/@hasRule.7/@apply/@class.6" target="//@source.2/@hasRule.7/@apply/@class.5"/>
+        <association associationName="inArc" source="//@source.2/@hasRule.7/@apply/@class.2" target="//@source.2/@hasRule.7/@apply/@class.7"/>
+        <association associationName="outArc" source="//@source.2/@hasRule.7/@apply/@class.2" target="//@source.2/@hasRule.7/@apply/@class.6"/>
+        <association associationName="transitions" source="//@source.2/@hasRule.7/@apply/@class.8" target="//@source.2/@hasRule.7/@apply/@class.2"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.7/@apply/@class.0" sourceClass="//@source.2/@hasRule.7/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.7/@apply/@class.1" sourceClass="//@source.2/@hasRule.7/@match.0/@class.3"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.7/@apply/@class.2" sourceClass="//@source.2/@hasRule.7/@match.0/@class.2"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.7/@apply/@class.5" sourceClass="//@source.2/@hasRule.7/@match.0/@class.4"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.7/@apply/@class.8" sourceClass="//@source.2/@hasRule.7/@match.0/@class.5"/>
+    </hasRule>
+    <hasRule description="topDoor">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Door"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Key"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="RPG"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="top" source="//@source.2/@hasRule.8/@match.0/@class.0" target="//@source.2/@hasRule.8/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="occupies" source="//@source.2/@hasRule.8/@match.0/@class.2" target="//@source.2/@hasRule.8/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="exit" source="//@source.2/@hasRule.8/@match.0/@class.2" target="//@source.2/@hasRule.8/@match.0/@class.3"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="opens" source="//@source.2/@hasRule.8/@match.0/@class.4" target="//@source.2/@hasRule.8/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="Transition">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Atom" value="moveTop"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="InArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="OutArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="OutArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="InArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="PetriNet"/>
+        <association associationName="sourcePlace" source="//@source.2/@hasRule.8/@apply/@class.4" target="//@source.2/@hasRule.8/@apply/@class.0"/>
+        <association associationName="targetPlace" source="//@source.2/@hasRule.8/@apply/@class.3" target="//@source.2/@hasRule.8/@apply/@class.1"/>
+        <association associationName="inArc" source="//@source.2/@hasRule.8/@apply/@class.2" target="//@source.2/@hasRule.8/@apply/@class.3"/>
+        <association associationName="outArc" source="//@source.2/@hasRule.8/@apply/@class.2" target="//@source.2/@hasRule.8/@apply/@class.4"/>
+        <association associationName="targetPlace" source="//@source.2/@hasRule.8/@apply/@class.7" target="//@source.2/@hasRule.8/@apply/@class.5"/>
+        <association associationName="sourcePlace" source="//@source.2/@hasRule.8/@apply/@class.6" target="//@source.2/@hasRule.8/@apply/@class.5"/>
+        <association associationName="inArc" source="//@source.2/@hasRule.8/@apply/@class.2" target="//@source.2/@hasRule.8/@apply/@class.7"/>
+        <association associationName="outArc" source="//@source.2/@hasRule.8/@apply/@class.2" target="//@source.2/@hasRule.8/@apply/@class.6"/>
+        <association associationName="transitions" source="//@source.2/@hasRule.8/@apply/@class.8" target="//@source.2/@hasRule.8/@apply/@class.2"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.8/@apply/@class.0" sourceClass="//@source.2/@hasRule.8/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.8/@apply/@class.1" sourceClass="//@source.2/@hasRule.8/@match.0/@class.3"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.8/@apply/@class.2" sourceClass="//@source.2/@hasRule.8/@match.0/@class.2"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.8/@apply/@class.5" sourceClass="//@source.2/@hasRule.8/@match.0/@class.4"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.8/@apply/@class.8" sourceClass="//@source.2/@hasRule.8/@match.0/@class.5"/>
+    </hasRule>
+    <hasRule description="bottomDoor">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Door"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Key"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="RPG"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="bottom" source="//@source.2/@hasRule.9/@match.0/@class.0" target="//@source.2/@hasRule.9/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="occupies" source="//@source.2/@hasRule.9/@match.0/@class.2" target="//@source.2/@hasRule.9/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="exit" source="//@source.2/@hasRule.9/@match.0/@class.2" target="//@source.2/@hasRule.9/@match.0/@class.3"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="opens" source="//@source.2/@hasRule.9/@match.0/@class.4" target="//@source.2/@hasRule.9/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="Transition">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Atom" value="moveBottom"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="InArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="OutArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="OutArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="InArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="PetriNet"/>
+        <association associationName="sourcePlace" source="//@source.2/@hasRule.9/@apply/@class.4" target="//@source.2/@hasRule.9/@apply/@class.0"/>
+        <association associationName="targetPlace" source="//@source.2/@hasRule.9/@apply/@class.3" target="//@source.2/@hasRule.9/@apply/@class.1"/>
+        <association associationName="inArc" source="//@source.2/@hasRule.9/@apply/@class.2" target="//@source.2/@hasRule.9/@apply/@class.3"/>
+        <association associationName="outArc" source="//@source.2/@hasRule.9/@apply/@class.2" target="//@source.2/@hasRule.9/@apply/@class.4"/>
+        <association associationName="targetPlace" source="//@source.2/@hasRule.9/@apply/@class.7" target="//@source.2/@hasRule.9/@apply/@class.5"/>
+        <association associationName="sourcePlace" source="//@source.2/@hasRule.9/@apply/@class.6" target="//@source.2/@hasRule.9/@apply/@class.5"/>
+        <association associationName="inArc" source="//@source.2/@hasRule.9/@apply/@class.2" target="//@source.2/@hasRule.9/@apply/@class.7"/>
+        <association associationName="outArc" source="//@source.2/@hasRule.9/@apply/@class.2" target="//@source.2/@hasRule.9/@apply/@class.6"/>
+        <association associationName="transitions" source="//@source.2/@hasRule.9/@apply/@class.8" target="//@source.2/@hasRule.9/@apply/@class.2"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.9/@apply/@class.0" sourceClass="//@source.2/@hasRule.9/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.9/@apply/@class.1" sourceClass="//@source.2/@hasRule.9/@match.0/@class.3"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.9/@apply/@class.5" sourceClass="//@source.2/@hasRule.9/@match.0/@class.4"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.9/@apply/@class.8" sourceClass="//@source.2/@hasRule.9/@match.0/@class.5"/>
+    </hasRule>
+    <hasRule description="getKey">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Cell"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="rpg" className="Key"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="occupies" source="//@source.2/@hasRule.10/@match.0/@class.1" target="//@source.2/@hasRule.10/@match.0/@class.0"/>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="Transition"/>
+        <class packageName="petrinet" className="InArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class packageName="petrinet" className="OutArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <association associationName="sourcePlace" source="//@source.2/@hasRule.10/@apply/@class.3" target="//@source.2/@hasRule.10/@apply/@class.0"/>
+        <association associationName="targetPlace" source="//@source.2/@hasRule.10/@apply/@class.2" target="//@source.2/@hasRule.10/@apply/@class.0"/>
+        <association associationName="inArc" source="//@source.2/@hasRule.10/@apply/@class.1" target="//@source.2/@hasRule.10/@apply/@class.2"/>
+        <association associationName="outArc" source="//@source.2/@hasRule.10/@apply/@class.1" target="//@source.2/@hasRule.10/@apply/@class.3"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.10/@apply/@class.0" sourceClass="//@source.2/@hasRule.10/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.10/@apply/@class.1" sourceClass="//@source.2/@hasRule.10/@match.0/@class.1"/>
+    </hasRule>
+  </source>
+</dsltrans:TransformationModel>

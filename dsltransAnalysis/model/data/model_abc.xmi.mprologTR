@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mprologTermReference:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mprologTermReference="mprologTermReference" name="model_abc.xmi">
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="class">
+        <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="petrinet">
+          <nextTerm xsi:type="mprologTermReference:QuotedAtom" text="OutArc">
+            <nextTerm xsi:type="mprologTermReference:Functor" text="id0">
+              <nextTerm xsi:type="mprologTermReference:List">
+                <nextTerm xsi:type="mprologTermReference:List">
+                  <ownedHeadTerms xsi:type="mprologTermReference:Functor" text="p">
+                    <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="sourcePlace">
+                      <nextTerm xsi:type="mprologTermReference:FunctorReference" idReference="//@ownedClause.2/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm"/>
+                    </ownedTerm>
+                  </ownedHeadTerms>
+                </nextTerm>
+                <ownedHeadTerms xsi:type="mprologTermReference:Functor" text="p">
+                  <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="weight">
+                    <nextTerm xsi:type="mprologTermReference:QuotedAtom" text="1"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </nextTerm>
+            </nextTerm>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="class">
+        <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="petrinet">
+          <nextTerm xsi:type="mprologTermReference:QuotedAtom" text="OutArc">
+            <nextTerm xsi:type="mprologTermReference:Functor" text="id1">
+              <nextTerm xsi:type="mprologTermReference:List">
+                <nextTerm xsi:type="mprologTermReference:List">
+                  <ownedHeadTerms xsi:type="mprologTermReference:Functor" text="p">
+                    <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="sourcePlace">
+                      <nextTerm xsi:type="mprologTermReference:FunctorReference" idReference="//@ownedClause.3/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm"/>
+                    </ownedTerm>
+                  </ownedHeadTerms>
+                </nextTerm>
+                <ownedHeadTerms xsi:type="mprologTermReference:Functor" text="p">
+                  <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="weight">
+                    <nextTerm xsi:type="mprologTermReference:QuotedAtom" text="1"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </nextTerm>
+            </nextTerm>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="class">
+        <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="petrinet">
+          <nextTerm xsi:type="mprologTermReference:QuotedAtom" text="Place">
+            <nextTerm xsi:type="mprologTermReference:Functor" text="id2">
+              <nextTerm xsi:type="mprologTermReference:List">
+                <nextTerm xsi:type="mprologTermReference:List"/>
+                <ownedHeadTerms xsi:type="mprologTermReference:Functor" text="p">
+                  <nextTerm xsi:type="mprologTermReference:Functor" text="p">
+                    <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="name">
+                      <nextTerm xsi:type="mprologTermReference:QuotedAtom" text="a"/>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="token">
+                    <nextTerm xsi:type="mprologTermReference:QuotedAtom" text="1"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </nextTerm>
+            </nextTerm>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="class">
+        <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="petrinet">
+          <nextTerm xsi:type="mprologTermReference:QuotedAtom" text="Place">
+            <nextTerm xsi:type="mprologTermReference:Functor" text="id3">
+              <nextTerm xsi:type="mprologTermReference:List">
+                <nextTerm xsi:type="mprologTermReference:List"/>
+                <ownedHeadTerms xsi:type="mprologTermReference:Functor" text="p">
+                  <nextTerm xsi:type="mprologTermReference:Functor" text="p">
+                    <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="name">
+                      <nextTerm xsi:type="mprologTermReference:QuotedAtom" text="b"/>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="token">
+                    <nextTerm xsi:type="mprologTermReference:QuotedAtom" text="0"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </nextTerm>
+            </nextTerm>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="class">
+        <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="petrinet">
+          <nextTerm xsi:type="mprologTermReference:QuotedAtom" text="Place">
+            <nextTerm xsi:type="mprologTermReference:Functor" text="id4">
+              <nextTerm xsi:type="mprologTermReference:List">
+                <nextTerm xsi:type="mprologTermReference:List"/>
+                <ownedHeadTerms xsi:type="mprologTermReference:Functor" text="p">
+                  <nextTerm xsi:type="mprologTermReference:Functor" text="p">
+                    <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="name">
+                      <nextTerm xsi:type="mprologTermReference:QuotedAtom" text="c"/>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="token">
+                    <nextTerm xsi:type="mprologTermReference:QuotedAtom" text="0"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </nextTerm>
+            </nextTerm>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="class">
+        <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="petrinet">
+          <nextTerm xsi:type="mprologTermReference:QuotedAtom" text="InArc">
+            <nextTerm xsi:type="mprologTermReference:Functor" text="id5">
+              <nextTerm xsi:type="mprologTermReference:List">
+                <nextTerm xsi:type="mprologTermReference:List">
+                  <ownedHeadTerms xsi:type="mprologTermReference:Functor" text="p">
+                    <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="targetPlace">
+                      <nextTerm xsi:type="mprologTermReference:FunctorReference" idReference="//@ownedClause.3/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm"/>
+                    </ownedTerm>
+                  </ownedHeadTerms>
+                </nextTerm>
+                <ownedHeadTerms xsi:type="mprologTermReference:Functor" text="p">
+                  <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="weight">
+                    <nextTerm xsi:type="mprologTermReference:QuotedAtom" text="1"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </nextTerm>
+            </nextTerm>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="class">
+        <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="petrinet">
+          <nextTerm xsi:type="mprologTermReference:QuotedAtom" text="InArc">
+            <nextTerm xsi:type="mprologTermReference:Functor" text="id6">
+              <nextTerm xsi:type="mprologTermReference:List">
+                <nextTerm xsi:type="mprologTermReference:List">
+                  <ownedHeadTerms xsi:type="mprologTermReference:Functor" text="p">
+                    <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="targetPlace">
+                      <nextTerm xsi:type="mprologTermReference:FunctorReference" idReference="//@ownedClause.4/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm"/>
+                    </ownedTerm>
+                  </ownedHeadTerms>
+                </nextTerm>
+                <ownedHeadTerms xsi:type="mprologTermReference:Functor" text="p">
+                  <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="weight">
+                    <nextTerm xsi:type="mprologTermReference:QuotedAtom" text="1"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </nextTerm>
+            </nextTerm>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="class">
+        <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="petrinet">
+          <nextTerm xsi:type="mprologTermReference:QuotedAtom" text="Transition">
+            <nextTerm xsi:type="mprologTermReference:Functor" text="id7">
+              <nextTerm xsi:type="mprologTermReference:List">
+                <nextTerm xsi:type="mprologTermReference:List">
+                  <ownedHeadTerms xsi:type="mprologTermReference:Functor" text="p">
+                    <nextTerm xsi:type="mprologTermReference:Functor" text="p">
+                      <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="outArc">
+                        <nextTerm xsi:type="mprologTermReference:FunctorReference" idReference="//@ownedClause.0/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm"/>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="inArc">
+                      <nextTerm xsi:type="mprologTermReference:FunctorReference" idReference="//@ownedClause.5/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm"/>
+                    </ownedTerm>
+                  </ownedHeadTerms>
+                </nextTerm>
+                <ownedHeadTerms xsi:type="mprologTermReference:Functor" text="p">
+                  <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="name">
+                    <nextTerm xsi:type="mprologTermReference:QuotedAtom" text="t1"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </nextTerm>
+            </nextTerm>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="class">
+        <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="petrinet">
+          <nextTerm xsi:type="mprologTermReference:QuotedAtom" text="Transition">
+            <nextTerm xsi:type="mprologTermReference:Functor" text="id8">
+              <nextTerm xsi:type="mprologTermReference:List">
+                <nextTerm xsi:type="mprologTermReference:List">
+                  <ownedHeadTerms xsi:type="mprologTermReference:Functor" text="p">
+                    <nextTerm xsi:type="mprologTermReference:Functor" text="p">
+                      <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="outArc">
+                        <nextTerm xsi:type="mprologTermReference:FunctorReference" idReference="//@ownedClause.1/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm"/>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="inArc">
+                      <nextTerm xsi:type="mprologTermReference:FunctorReference" idReference="//@ownedClause.6/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm"/>
+                    </ownedTerm>
+                  </ownedHeadTerms>
+                </nextTerm>
+                <ownedHeadTerms xsi:type="mprologTermReference:Functor" text="p">
+                  <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="name">
+                    <nextTerm xsi:type="mprologTermReference:QuotedAtom" text="t2"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </nextTerm>
+            </nextTerm>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="class">
+        <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="petrinet">
+          <nextTerm xsi:type="mprologTermReference:QuotedAtom" text="PetriNet">
+            <nextTerm xsi:type="mprologTermReference:Functor" text="id9">
+              <nextTerm xsi:type="mprologTermReference:List">
+                <nextTerm xsi:type="mprologTermReference:List">
+                  <ownedHeadTerms xsi:type="mprologTermReference:Functor" text="p">
+                    <nextTerm xsi:type="mprologTermReference:Functor" text="p">
+                      <nextTerm xsi:type="mprologTermReference:Functor" text="p">
+                        <nextTerm xsi:type="mprologTermReference:Functor" text="p">
+                          <nextTerm xsi:type="mprologTermReference:Functor" text="p">
+                            <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="transitions">
+                              <nextTerm xsi:type="mprologTermReference:FunctorReference" idReference="//@ownedClause.8/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm"/>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="transitions">
+                            <nextTerm xsi:type="mprologTermReference:FunctorReference" idReference="//@ownedClause.7/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm"/>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="places">
+                          <nextTerm xsi:type="mprologTermReference:FunctorReference" idReference="//@ownedClause.4/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm"/>
+                        </ownedTerm>
+                      </nextTerm>
+                      <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="places">
+                        <nextTerm xsi:type="mprologTermReference:FunctorReference" idReference="//@ownedClause.3/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm"/>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm xsi:type="mprologTermReference:QuotedAtom" text="places">
+                      <nextTerm xsi:type="mprologTermReference:FunctorReference" idReference="//@ownedClause.2/@ownedHead/@ownedFunctor/@ownedTerm/@nextTerm/@nextTerm"/>
+                    </ownedTerm>
+                  </ownedHeadTerms>
+                </nextTerm>
+              </nextTerm>
+            </nextTerm>
+          </nextTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+</mprologTermReference:Model>

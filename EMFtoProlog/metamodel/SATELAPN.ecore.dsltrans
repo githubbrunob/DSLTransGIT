@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsltrans:TransformationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsltrans="http://dsltrans/2.0">
+  <source xsi:type="dsltrans:FilePort" name="input" filePathURI="model/s.SATEL">
+    <metaModelId metaModelURI="metamodel/SATELAPN.ecore" metaModelName="SATEL.SATEL"/>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="Entities" description="Entities" previousSource="//@source.0" outputFilePathURI="">
+    <metaModelId metaModelURI="metamodel/SATELAPN.ecore" metaModelName="SATEL.SATEL"/>
+    <hasRule description="Model">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Model" packageName="SATEL"/>
+      </match>
+      <apply>
+        <class className="Model" packageName="SATEL">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Model"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="Model">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" description="" className="TestIntentionModule" packageName="SATEL">
+          <attribute attributeName="name"/>
+        </class>
+      </match>
+      <apply>
+        <class description="" className="TestIntentionModule" packageName="SATEL">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.1/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="TestIntentionModule"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="Entities" description="Entities" previousSource="//@source.1" outputFilePathURI="">
+    <metaModelId metaModelURI="metamodel/SATELAPN.ecore" metaModelName="SATEL.SATEL"/>
+    <hasRule description="ADT">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="ADT" packageName="SATEL.APN.adtmm">
+          <attribute attributeName="name"/>
+        </class>
+      </match>
+      <apply>
+        <class className="ADT" packageName="SATEL.APN.adtmm">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ADT"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.0/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="Entities" description="root elements" previousSource="//@source.2" outputFilePathURI="metamodel/result.xmi">
+    <metaModelId metaModelURI="metamodel/SATELAPN.ecore" metaModelName="SATEL.SATEL"/>
+    <hasRule description="Model">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Model" packageName="SATEL"/>
+        <class xsi:type="dsltrans:AnyMatchClass" description="" className="TestIntentionModule" packageName="SATEL"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="testIntentionModule" source="//@source.3/@hasRule.0/@match.0/@class.0" target="//@source.3/@hasRule.0/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class className="Model" packageName="SATEL">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Model"/>
+          </attribute>
+        </class>
+        <class description="" className="TestIntentionModule" packageName="SATEL">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="TestIntentionModule"/>
+          </attribute>
+        </class>
+        <association associationName="testIntentionModule" source="//@source.3/@hasRule.0/@apply/@class.0" target="//@source.3/@hasRule.0/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.0/@apply/@class.1" sourceClass="//@source.3/@hasRule.0/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.0/@apply/@class.0" sourceClass="//@source.3/@hasRule.0/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="Model">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="TestIntentionModule" packageName="SATEL"/>
+        <class xsi:type="dsltrans:AnyMatchClass" description="" className="ADT" packageName="SATEL.APN.adtmm"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="algebra" source="//@source.3/@hasRule.1/@match.0/@class.0" target="//@source.3/@hasRule.1/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class className="ADT" packageName="SATEL.APN.adtmm">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ADT"/>
+          </attribute>
+        </class>
+        <class description="" className="TestIntentionModule" packageName="SATEL">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="TestIntentionModule"/>
+          </attribute>
+        </class>
+        <association associationName="algebra" source="//@source.3/@hasRule.1/@apply/@class.1" target="//@source.3/@hasRule.1/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.1/@apply/@class.0" sourceClass="//@source.3/@hasRule.1/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.1/@apply/@class.1" sourceClass="//@source.3/@hasRule.1/@match.0/@class.0"/>
+    </hasRule>
+  </source>
+</dsltrans:TransformationModel>

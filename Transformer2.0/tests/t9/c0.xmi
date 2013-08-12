@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<swingwrapper:Model xmlns:swingwrapper="http://swingwrapper/1.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xsi:schemaLocation="http://swingwrapper/1.0 SwingWrapper.ecore">
+  <wrapps usageName="profileRegularUser" name="RegularUser">
+    <frame name="App" package="sectionApp">
+      <panels name="PanelMaster" package="sectionPanelMaster">
+        <panels name="PanelSlave" package="sectionPanelSlave">
+          <buttons name="Slave1Button" package="sectionSlave1Button">
+            <event xsi:type="swingwrapper:Click" usageName="Running2ErrorErrorOccuredClick"/>
+            <properties name="text" value="Ready"/>
+          </buttons>
+        </panels>
+        <buttons name="MasterButton" package="sectionMasterButton">
+          <event xsi:type="swingwrapper:Click" usageName="Error2ReadyResetClick"/>
+          <event xsi:type="swingwrapper:Click" usageName="Ready2RunningStartupClick"/>
+          <event xsi:type="swingwrapper:Click" usageName="Running2ReadyResetClick"/>
+          <properties name="text" value="Ready"/>
+        </buttons>
+      </panels>
+      <properties name="title" value="ControlPanel"/>
+    </frame>
+  </wrapps>
+</swingwrapper:Model>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.1 2011/09/27 18:59:52 domingues Exp $
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="SATEL"
+            class="SATEL.SATELPackage"
+            genModel="metamodel/SATELAPN.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="SATEL.HMLFormula"
+            class="SATEL.HMLFormula.HMLFormulaPackage"
+            genModel="metamodel/SATELAPN.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="SATEL.AlgebraicExpressions"
+            class="SATEL.AlgebraicExpressions.AlgebraicExpressionsPackage"
+            genModel="metamodel/SATELAPN.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="SATEL.AlgebraicExpressions.booleanterms"
+            class="SATEL.AlgebraicExpressions.booleanterms.BooleantermsPackage"
+            genModel="metamodel/SATELAPN.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="SATEL.AlgebraicExpressions.arithmeticterms"
+            class="SATEL.AlgebraicExpressions.arithmeticterms.ArithmetictermsPackage"
+            genModel="metamodel/SATELAPN.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="SATEL.AlgebraicExpressions.algterms"
+            class="SATEL.AlgebraicExpressions.algterms.AlgtermsPackage"
+            genModel="metamodel/SATELAPN.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="SATEL.VariableDeclarations"
+            class="SATEL.VariableDeclarations.VariableDeclarationsPackage"
+            genModel="metamodel/SATELAPN.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="SATEL.VariableDeclarations.Types"
+            class="SATEL.VariableDeclarations.Types.TypesPackage"
+            genModel="metamodel/SATELAPN.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="SATEL.APN.apnmm"
+            class="SATEL.APN.apnmm.ApnmmPackage"
+            genModel="metamodel/SATELAPN.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="SATEL.APN.environmentmm"
+            class="SATEL.APN.environmentmm.EnvironmentmmPackage"
+            genModel="metamodel/SATELAPN.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="SATEL.APN.guardmm"
+            class="SATEL.APN.guardmm.GuardmmPackage"
+            genModel="metamodel/SATELAPN.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="SATEL.APN.adtmm"
+            class="SATEL.APN.adtmm.AdtmmPackage"
+            genModel="metamodel/SATELAPN.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="SATEL.APN.multisetmm"
+            class="SATEL.APN.multisetmm.MultisetmmPackage"
+            genModel="metamodel/SATELAPN.genmodel"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="java5totext.contribution1"
+            objectClass="org.eclipse.jdt.core.IJavaElement">
+         <menu
+               id="java5totext.menu1"
+               label="%menu.label"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="java5totext.popup.actions.Action"
+               enablesFor="1"
+               id="java5totext.Action"
+               label="%action.label"
+               menubarPath="java5totext.menu1/group1">
+         </action>
+      </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="java5totext.contribution2"
+            nameFilter="*.java5"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="java5totext.menu2"
+               label="%menu.label">
+            <separator
+                  name="group2">
+            </separator>
+         </menu>
+         <action
+               class="java5totext.popup.actions.ToText"
+               enablesFor="1"
+               id="java5totext.ToText"
+               label="%action2.label"
+               menubarPath="java5totext.menu2/group2">
+         </action>
+         <action
+               class="java5totext.popup.actions.ToDSLTrans"
+               enablesFor="1"
+               id="java5totext.ToDSLTrans"
+               label="%action3.label"
+               menubarPath="java5totext.menu2/group2">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

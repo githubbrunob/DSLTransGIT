@@ -1,0 +1,1649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsltrans:TransformationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsltrans="http://dsltrans/2.0">
+  <source xsi:type="dsltrans:FilePort" name="input" filePathURI="">
+    <metaModelId metaModelURI="Ecore.ecore" metaModelName="ecore.Ecore"/>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="output1" description="root" previousSource="//@source.0" outputFilePathURI="">
+    <metaModelId metaModelURI="DSLTrans.ecore" metaModelName="dsltrans.Dsltrans"/>
+    <hasRule>
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EPackage"/>
+        <class xsi:type="dsltrans:NegativeMatchClass" packageName="ecore" className="EPackage"/>
+        <association xsi:type="dsltrans:NegativeMatchAssociation" associationName="eSubPackages" source="//@source.1/@hasRule.0/@match.0/@class.1" target="//@source.1/@hasRule.0/@match.0/@class.0"/>
+      </match>
+      <apply>
+        <class packageName="dsltrans" className="TransformationModel">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="TransformationModel"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="FilePort">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="FilePort"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="Sequential">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Entities"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Atom" value="Entities"/>
+          </attribute>
+          <attribute attributeName="description">
+            <attributeValue xsi:type="dsltrans:Atom" value="Entities"/>
+          </attribute>
+          <attribute attributeName="outputFilePathURI">
+            <attributeValue xsi:type="dsltrans:Atom" value="result.xmi"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="Sequential">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Atom" value="Associations"/>
+          </attribute>
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Associations"/>
+          </attribute>
+          <attribute attributeName="description">
+            <attributeValue xsi:type="dsltrans:Atom" value="Associations"/>
+          </attribute>
+          <attribute attributeName="outputFilePathURI">
+            <attributeValue xsi:type="dsltrans:Atom" value="result.xmi"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="MetaModelIdentifier">
+          <attribute attributeName="metaModelURI">
+            <attributeValue xsi:type="dsltrans:Atom" value="input.xmi"/>
+          </attribute>
+          <attribute attributeName="metaModelName">
+            <attributeValue xsi:type="dsltrans:Atom" value="package.Package"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="MetaModelIdentifier">
+          <attribute attributeName="metaModelName">
+            <attributeValue xsi:type="dsltrans:Atom" value="package.Package"/>
+          </attribute>
+          <attribute attributeName="metaModelURI">
+            <attributeValue xsi:type="dsltrans:Atom" value="input.xmi"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="MetaModelIdentifier">
+          <attribute attributeName="metaModelName">
+            <attributeValue xsi:type="dsltrans:Atom" value="package.Package"/>
+          </attribute>
+          <attribute attributeName="metaModelURI">
+            <attributeValue xsi:type="dsltrans:Atom" value="input.xmi"/>
+          </attribute>
+        </class>
+        <association associationName="metaModelId" source="//@source.1/@hasRule.0/@apply/@class.1" target="//@source.1/@hasRule.0/@apply/@class.4"/>
+        <association associationName="source" source="//@source.1/@hasRule.0/@apply/@class.0" target="//@source.1/@hasRule.0/@apply/@class.1"/>
+        <association associationName="source" source="//@source.1/@hasRule.0/@apply/@class.0" target="//@source.1/@hasRule.0/@apply/@class.2"/>
+        <association associationName="source" source="//@source.1/@hasRule.0/@apply/@class.0" target="//@source.1/@hasRule.0/@apply/@class.3"/>
+        <association associationName="previousSource" source="//@source.1/@hasRule.0/@apply/@class.3" target="//@source.1/@hasRule.0/@apply/@class.2"/>
+        <association associationName="previousSource" source="//@source.1/@hasRule.0/@apply/@class.2" target="//@source.1/@hasRule.0/@apply/@class.1"/>
+        <association associationName="metaModelId" source="//@source.1/@hasRule.0/@apply/@class.2" target="//@source.1/@hasRule.0/@apply/@class.5"/>
+        <association associationName="metaModelId" source="//@source.1/@hasRule.0/@apply/@class.3" target="//@source.1/@hasRule.0/@apply/@class.6"/>
+      </apply>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="output2" description="attributes" previousSource="//@source.1" outputFilePathURI="">
+    <metaModelId metaModelURI="DSLTrans.ecore" metaModelName="dsltrans.Dsltrans"/>
+    <hasRule>
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass">
+          <attribute attributeName="name"/>
+          <attribute attributeName="abstract">
+            <attributeValue xsi:type="dsltrans:Atom" value="false"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EPackage">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EPackage">
+          <attribute attributeName="nsPrefix"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ePackage" source="//@source.2/@hasRule.0/@match.0/@class.0" target="//@source.2/@hasRule.0/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.2/@hasRule.0/@match.0/@class.1" target="//@source.2/@hasRule.0/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="dsltrans" className="Sequential">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Entities"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="Rule">
+          <attribute attributeName="description">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.0/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="MatchModel">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="MatchModel"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyModel">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyModel"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClass"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.0/@match.0/@class.2/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.0/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClass"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.0/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:Atom" value="package"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyAttribute"/>
+        <class packageName="dsltrans" className="Atom">
+          <attribute attributeName="value">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.0/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <association associationName="hasRule" source="//@source.2/@hasRule.0/@apply/@class.0" target="//@source.2/@hasRule.0/@apply/@class.1"/>
+        <association associationName="match" source="//@source.2/@hasRule.0/@apply/@class.1" target="//@source.2/@hasRule.0/@apply/@class.2"/>
+        <association associationName="apply" source="//@source.2/@hasRule.0/@apply/@class.1" target="//@source.2/@hasRule.0/@apply/@class.3"/>
+        <association associationName="class" source="//@source.2/@hasRule.0/@apply/@class.2" target="//@source.2/@hasRule.0/@apply/@class.4"/>
+        <association associationName="class" source="//@source.2/@hasRule.0/@apply/@class.3" target="//@source.2/@hasRule.0/@apply/@class.5"/>
+        <association associationName="attribute" source="//@source.2/@hasRule.0/@apply/@class.5" target="//@source.2/@hasRule.0/@apply/@class.6"/>
+        <association associationName="attributeValue" source="//@source.2/@hasRule.0/@apply/@class.6" target="//@source.2/@hasRule.0/@apply/@class.7"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.0/@apply/@class.0" sourceClass="//@source.2/@hasRule.0/@match.0/@class.1"/>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="output3" description="rules" previousSource="//@source.2" outputFilePathURI="">
+    <metaModelId metaModelURI="DSLTrans.ecore" metaModelName="dsltrans.Dsltrans"/>
+    <hasRule description="Attributes from element">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EAttribute">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eStructuralFeatures" source="//@source.3/@hasRule.0/@match.0/@class.1" target="//@source.3/@hasRule.0/@match.0/@class.0"/>
+      </match>
+      <apply>
+        <class packageName="dsltrans" className="MatchAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="MatchAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.0/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.0/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AttributeRef"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.0/@apply/@class.2" target="//@source.3/@hasRule.0/@apply/@class.1"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.0/@apply/@class.3" target="//@source.3/@hasRule.0/@apply/@class.0"/>
+        <association associationName="attributeValue" source="//@source.3/@hasRule.0/@apply/@class.1" target="//@source.3/@hasRule.0/@apply/@class.4"/>
+        <association associationName="attributeRef" source="//@source.3/@hasRule.0/@apply/@class.4" target="//@source.3/@hasRule.0/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.0/@apply/@class.2" sourceClass="//@source.3/@hasRule.0/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.0/@apply/@class.3" sourceClass="//@source.3/@hasRule.0/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="Attributes from 1st level of hierarchy">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EAttribute">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eStructuralFeatures" source="//@source.3/@hasRule.1/@match.0/@class.2" target="//@source.3/@hasRule.1/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.1/@match.0/@class.1" target="//@source.3/@hasRule.1/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="dsltrans" className="MatchAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="MatchAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.1/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.1/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AttributeRef"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.1/@apply/@class.2" target="//@source.3/@hasRule.1/@apply/@class.1"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.1/@apply/@class.3" target="//@source.3/@hasRule.1/@apply/@class.0"/>
+        <association associationName="attributeValue" source="//@source.3/@hasRule.1/@apply/@class.1" target="//@source.3/@hasRule.1/@apply/@class.4"/>
+        <association associationName="attributeRef" source="//@source.3/@hasRule.1/@apply/@class.4" target="//@source.3/@hasRule.1/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.1/@apply/@class.2" sourceClass="//@source.3/@hasRule.1/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.1/@apply/@class.3" sourceClass="//@source.3/@hasRule.1/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="Attributes from 2nd level of hierarchy">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EAttribute">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eStructuralFeatures" source="//@source.3/@hasRule.2/@match.0/@class.2" target="//@source.3/@hasRule.2/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.2/@match.0/@class.1" target="//@source.3/@hasRule.2/@match.0/@class.3"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.2/@match.0/@class.3" target="//@source.3/@hasRule.2/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="dsltrans" className="MatchAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="MatchAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.2/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.2/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AttributeRef"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.2/@apply/@class.2" target="//@source.3/@hasRule.2/@apply/@class.1"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.2/@apply/@class.3" target="//@source.3/@hasRule.2/@apply/@class.0"/>
+        <association associationName="attributeValue" source="//@source.3/@hasRule.2/@apply/@class.1" target="//@source.3/@hasRule.2/@apply/@class.4"/>
+        <association associationName="attributeRef" source="//@source.3/@hasRule.2/@apply/@class.4" target="//@source.3/@hasRule.2/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.2/@apply/@class.2" sourceClass="//@source.3/@hasRule.2/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.2/@apply/@class.3" sourceClass="//@source.3/@hasRule.2/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="Attributes from 3rd level of hierarchy">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EAttribute">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eStructuralFeatures" source="//@source.3/@hasRule.3/@match.0/@class.2" target="//@source.3/@hasRule.3/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.3/@match.0/@class.1" target="//@source.3/@hasRule.3/@match.0/@class.3"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.3/@match.0/@class.3" target="//@source.3/@hasRule.3/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.3/@match.0/@class.4" target="//@source.3/@hasRule.3/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="dsltrans" className="MatchAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="MatchAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.3/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.3/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AttributeRef"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.3/@apply/@class.2" target="//@source.3/@hasRule.3/@apply/@class.1"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.3/@apply/@class.3" target="//@source.3/@hasRule.3/@apply/@class.0"/>
+        <association associationName="attributeValue" source="//@source.3/@hasRule.3/@apply/@class.1" target="//@source.3/@hasRule.3/@apply/@class.4"/>
+        <association associationName="attributeRef" source="//@source.3/@hasRule.3/@apply/@class.4" target="//@source.3/@hasRule.3/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.3/@apply/@class.2" sourceClass="//@source.3/@hasRule.3/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.3/@apply/@class.3" sourceClass="//@source.3/@hasRule.3/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="Attributes from 4th level of hierarchy">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EAttribute">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eStructuralFeatures" source="//@source.3/@hasRule.4/@match.0/@class.2" target="//@source.3/@hasRule.4/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.4/@match.0/@class.1" target="//@source.3/@hasRule.4/@match.0/@class.3"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.4/@match.0/@class.3" target="//@source.3/@hasRule.4/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.4/@match.0/@class.4" target="//@source.3/@hasRule.4/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.4/@match.0/@class.5" target="//@source.3/@hasRule.4/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="dsltrans" className="MatchAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="MatchAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.4/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.4/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AttributeRef"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.4/@apply/@class.2" target="//@source.3/@hasRule.4/@apply/@class.1"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.4/@apply/@class.3" target="//@source.3/@hasRule.4/@apply/@class.0"/>
+        <association associationName="attributeValue" source="//@source.3/@hasRule.4/@apply/@class.1" target="//@source.3/@hasRule.4/@apply/@class.4"/>
+        <association associationName="attributeRef" source="//@source.3/@hasRule.4/@apply/@class.4" target="//@source.3/@hasRule.4/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.4/@apply/@class.2" sourceClass="//@source.3/@hasRule.4/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.4/@apply/@class.3" sourceClass="//@source.3/@hasRule.4/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="Attributes from 5th level of hierarchy">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EAttribute">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eStructuralFeatures" source="//@source.3/@hasRule.5/@match.0/@class.2" target="//@source.3/@hasRule.5/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.5/@match.0/@class.1" target="//@source.3/@hasRule.5/@match.0/@class.3"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.5/@match.0/@class.3" target="//@source.3/@hasRule.5/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.5/@match.0/@class.4" target="//@source.3/@hasRule.5/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.5/@match.0/@class.5" target="//@source.3/@hasRule.5/@match.0/@class.6"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.5/@match.0/@class.6" target="//@source.3/@hasRule.5/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="dsltrans" className="MatchAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="MatchAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.5/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.5/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AttributeRef"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.5/@apply/@class.2" target="//@source.3/@hasRule.5/@apply/@class.1"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.5/@apply/@class.3" target="//@source.3/@hasRule.5/@apply/@class.0"/>
+        <association associationName="attributeValue" source="//@source.3/@hasRule.5/@apply/@class.1" target="//@source.3/@hasRule.5/@apply/@class.4"/>
+        <association associationName="attributeRef" source="//@source.3/@hasRule.5/@apply/@class.4" target="//@source.3/@hasRule.5/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.5/@apply/@class.2" sourceClass="//@source.3/@hasRule.5/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.5/@apply/@class.3" sourceClass="//@source.3/@hasRule.5/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="Attributes from 6th level of hierarchy">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EAttribute">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eStructuralFeatures" source="//@source.3/@hasRule.6/@match.0/@class.2" target="//@source.3/@hasRule.6/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.6/@match.0/@class.1" target="//@source.3/@hasRule.6/@match.0/@class.3"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.6/@match.0/@class.3" target="//@source.3/@hasRule.6/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.6/@match.0/@class.4" target="//@source.3/@hasRule.6/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.6/@match.0/@class.5" target="//@source.3/@hasRule.6/@match.0/@class.6"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.6/@match.0/@class.6" target="//@source.3/@hasRule.6/@match.0/@class.7"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.6/@match.0/@class.7" target="//@source.3/@hasRule.6/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="dsltrans" className="MatchAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="MatchAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.6/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.6/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AttributeRef"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.6/@apply/@class.2" target="//@source.3/@hasRule.6/@apply/@class.1"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.6/@apply/@class.3" target="//@source.3/@hasRule.6/@apply/@class.0"/>
+        <association associationName="attributeValue" source="//@source.3/@hasRule.6/@apply/@class.1" target="//@source.3/@hasRule.6/@apply/@class.4"/>
+        <association associationName="attributeRef" source="//@source.3/@hasRule.6/@apply/@class.4" target="//@source.3/@hasRule.6/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.6/@apply/@class.2" sourceClass="//@source.3/@hasRule.6/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.6/@apply/@class.3" sourceClass="//@source.3/@hasRule.6/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="Attributes from 6th level of hierarchy">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EAttribute">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eStructuralFeatures" source="//@source.3/@hasRule.7/@match.0/@class.2" target="//@source.3/@hasRule.7/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.7/@match.0/@class.1" target="//@source.3/@hasRule.7/@match.0/@class.3"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.7/@match.0/@class.3" target="//@source.3/@hasRule.7/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.7/@match.0/@class.4" target="//@source.3/@hasRule.7/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.7/@match.0/@class.5" target="//@source.3/@hasRule.7/@match.0/@class.6"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.7/@match.0/@class.6" target="//@source.3/@hasRule.7/@match.0/@class.7"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.7/@match.0/@class.7" target="//@source.3/@hasRule.7/@match.0/@class.8"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.7/@match.0/@class.8" target="//@source.3/@hasRule.7/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="dsltrans" className="MatchAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="MatchAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.7/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.7/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AttributeRef"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.7/@apply/@class.2" target="//@source.3/@hasRule.7/@apply/@class.1"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.7/@apply/@class.3" target="//@source.3/@hasRule.7/@apply/@class.0"/>
+        <association associationName="attributeValue" source="//@source.3/@hasRule.7/@apply/@class.1" target="//@source.3/@hasRule.7/@apply/@class.4"/>
+        <association associationName="attributeRef" source="//@source.3/@hasRule.7/@apply/@class.4" target="//@source.3/@hasRule.7/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.7/@apply/@class.2" sourceClass="//@source.3/@hasRule.7/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.7/@apply/@class.3" sourceClass="//@source.3/@hasRule.7/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="Attributes from 7th level of hierarchy">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EAttribute">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eStructuralFeatures" source="//@source.3/@hasRule.8/@match.0/@class.2" target="//@source.3/@hasRule.8/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.8/@match.0/@class.1" target="//@source.3/@hasRule.8/@match.0/@class.3"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.8/@match.0/@class.3" target="//@source.3/@hasRule.8/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.8/@match.0/@class.4" target="//@source.3/@hasRule.8/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.8/@match.0/@class.5" target="//@source.3/@hasRule.8/@match.0/@class.6"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.8/@match.0/@class.6" target="//@source.3/@hasRule.8/@match.0/@class.7"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.8/@match.0/@class.7" target="//@source.3/@hasRule.8/@match.0/@class.8"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.8/@match.0/@class.8" target="//@source.3/@hasRule.8/@match.0/@class.9"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.8/@match.0/@class.9" target="//@source.3/@hasRule.8/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="dsltrans" className="MatchAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="MatchAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.8/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.8/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AttributeRef"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.8/@apply/@class.2" target="//@source.3/@hasRule.8/@apply/@class.1"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.8/@apply/@class.3" target="//@source.3/@hasRule.8/@apply/@class.0"/>
+        <association associationName="attributeValue" source="//@source.3/@hasRule.8/@apply/@class.1" target="//@source.3/@hasRule.8/@apply/@class.4"/>
+        <association associationName="attributeRef" source="//@source.3/@hasRule.8/@apply/@class.4" target="//@source.3/@hasRule.8/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.8/@apply/@class.2" sourceClass="//@source.3/@hasRule.8/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.8/@apply/@class.3" sourceClass="//@source.3/@hasRule.8/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="Attributes from 8th level of hierarchy">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EAttribute">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eStructuralFeatures" source="//@source.3/@hasRule.9/@match.0/@class.2" target="//@source.3/@hasRule.9/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.9/@match.0/@class.1" target="//@source.3/@hasRule.9/@match.0/@class.3"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.9/@match.0/@class.3" target="//@source.3/@hasRule.9/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.9/@match.0/@class.4" target="//@source.3/@hasRule.9/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.9/@match.0/@class.5" target="//@source.3/@hasRule.9/@match.0/@class.6"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.9/@match.0/@class.6" target="//@source.3/@hasRule.9/@match.0/@class.7"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.9/@match.0/@class.7" target="//@source.3/@hasRule.9/@match.0/@class.8"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.9/@match.0/@class.8" target="//@source.3/@hasRule.9/@match.0/@class.9"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.9/@match.0/@class.9" target="//@source.3/@hasRule.9/@match.0/@class.10"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.9/@match.0/@class.10" target="//@source.3/@hasRule.9/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="dsltrans" className="MatchAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="MatchAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.9/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.9/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AttributeRef"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.9/@apply/@class.2" target="//@source.3/@hasRule.9/@apply/@class.1"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.9/@apply/@class.3" target="//@source.3/@hasRule.9/@apply/@class.0"/>
+        <association associationName="attributeValue" source="//@source.3/@hasRule.9/@apply/@class.1" target="//@source.3/@hasRule.9/@apply/@class.4"/>
+        <association associationName="attributeRef" source="//@source.3/@hasRule.9/@apply/@class.4" target="//@source.3/@hasRule.9/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.9/@apply/@class.2" sourceClass="//@source.3/@hasRule.9/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.9/@apply/@class.3" sourceClass="//@source.3/@hasRule.9/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="Attributes from 9th level of hierarchy">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EAttribute">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eStructuralFeatures" source="//@source.3/@hasRule.10/@match.0/@class.2" target="//@source.3/@hasRule.10/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.10/@match.0/@class.1" target="//@source.3/@hasRule.10/@match.0/@class.3"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.10/@match.0/@class.3" target="//@source.3/@hasRule.10/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.10/@match.0/@class.4" target="//@source.3/@hasRule.10/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.10/@match.0/@class.5" target="//@source.3/@hasRule.10/@match.0/@class.6"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.10/@match.0/@class.6" target="//@source.3/@hasRule.10/@match.0/@class.7"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.10/@match.0/@class.7" target="//@source.3/@hasRule.10/@match.0/@class.8"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.10/@match.0/@class.8" target="//@source.3/@hasRule.10/@match.0/@class.9"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.10/@match.0/@class.9" target="//@source.3/@hasRule.10/@match.0/@class.10"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.10/@match.0/@class.10" target="//@source.3/@hasRule.10/@match.0/@class.11"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.10/@match.0/@class.11" target="//@source.3/@hasRule.10/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="dsltrans" className="MatchAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="MatchAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.10/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.10/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AttributeRef"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.10/@apply/@class.2" target="//@source.3/@hasRule.10/@apply/@class.1"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.10/@apply/@class.3" target="//@source.3/@hasRule.10/@apply/@class.0"/>
+        <association associationName="attributeValue" source="//@source.3/@hasRule.10/@apply/@class.1" target="//@source.3/@hasRule.10/@apply/@class.4"/>
+        <association associationName="attributeRef" source="//@source.3/@hasRule.10/@apply/@class.4" target="//@source.3/@hasRule.10/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.10/@apply/@class.2" sourceClass="//@source.3/@hasRule.10/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.10/@apply/@class.3" sourceClass="//@source.3/@hasRule.10/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="Attributes from 10th level of hierarchy">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EAttribute">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eStructuralFeatures" source="//@source.3/@hasRule.11/@match.0/@class.2" target="//@source.3/@hasRule.11/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.11/@match.0/@class.1" target="//@source.3/@hasRule.11/@match.0/@class.3"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.11/@match.0/@class.3" target="//@source.3/@hasRule.11/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.11/@match.0/@class.4" target="//@source.3/@hasRule.11/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.11/@match.0/@class.5" target="//@source.3/@hasRule.11/@match.0/@class.6"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.11/@match.0/@class.6" target="//@source.3/@hasRule.11/@match.0/@class.7"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.11/@match.0/@class.7" target="//@source.3/@hasRule.11/@match.0/@class.8"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.11/@match.0/@class.8" target="//@source.3/@hasRule.11/@match.0/@class.9"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.11/@match.0/@class.9" target="//@source.3/@hasRule.11/@match.0/@class.10"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.11/@match.0/@class.10" target="//@source.3/@hasRule.11/@match.0/@class.11"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.11/@match.0/@class.11" target="//@source.3/@hasRule.11/@match.0/@class.12"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.3/@hasRule.11/@match.0/@class.12" target="//@source.3/@hasRule.11/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="dsltrans" className="MatchAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="MatchAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.11/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyAttribute">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyAttribute"/>
+          </attribute>
+          <attribute attributeName="attributeName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.11/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClass"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AttributeRef"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.11/@apply/@class.2" target="//@source.3/@hasRule.11/@apply/@class.1"/>
+        <association associationName="attribute" source="//@source.3/@hasRule.11/@apply/@class.3" target="//@source.3/@hasRule.11/@apply/@class.0"/>
+        <association associationName="attributeValue" source="//@source.3/@hasRule.11/@apply/@class.1" target="//@source.3/@hasRule.11/@apply/@class.4"/>
+        <association associationName="attributeRef" source="//@source.3/@hasRule.11/@apply/@class.4" target="//@source.3/@hasRule.11/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.11/@apply/@class.2" sourceClass="//@source.3/@hasRule.11/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.11/@apply/@class.3" sourceClass="//@source.3/@hasRule.11/@match.0/@class.1"/>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="output4" description="attributes" previousSource="//@source.3" outputFilePathURI="">
+    <metaModelId metaModelURI="DSLTrans.ecore" metaModelName="dsltrans.Dsltrans"/>
+    <hasRule description="Associations from level 0 class">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EPackage">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EPackage">
+          <attribute attributeName="nsPrefix"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass">
+          <attribute attributeName="name"/>
+          <attribute attributeName="abstract">
+            <attributeValue xsi:type="dsltrans:Atom" value="false"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EReference">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EPackage">
+          <attribute attributeName="nsPrefix"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ePackage" source="//@source.4/@hasRule.0/@match.0/@class.0" target="//@source.4/@hasRule.0/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eStructuralFeatures" source="//@source.4/@hasRule.0/@match.0/@class.0" target="//@source.4/@hasRule.0/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eType" source="//@source.4/@hasRule.0/@match.0/@class.4" target="//@source.4/@hasRule.0/@match.0/@class.3"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ePackage" source="//@source.4/@hasRule.0/@match.0/@class.3" target="//@source.4/@hasRule.0/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.0/@match.0/@class.1" target="//@source.4/@hasRule.0/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.0/@match.0/@class.1" target="//@source.4/@hasRule.0/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.0/@match.0/@class.0" target="//@source.4/@hasRule.0/@match.0/@class.3"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.0/@match.0/@class.5" target="//@source.4/@hasRule.0/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="dsltrans" className="Sequential">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Associations"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="Rule">
+          <attribute attributeName="description">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.0/@match.0/@class.4/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="MatchModel">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="MatchModel"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyModel">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyModel"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClassAssociations"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.0/@match.0/@class.2/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.0/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClassAssociations"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.0/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:Atom" value="package"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClassAssociations"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.0/@match.0/@class.5/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.0/@match.0/@class.3/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClassAssociations"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.0/@match.0/@class.3/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:Atom" value="package"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="PositiveMatchAssociation">
+          <attribute attributeName="associationName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.0/@match.0/@class.4/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyAssociation">
+          <attribute attributeName="associationName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.0/@match.0/@class.4/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="PositiveBackwardRestriction"/>
+        <class packageName="dsltrans" className="PositiveBackwardRestriction"/>
+        <association associationName="hasRule" source="//@source.4/@hasRule.0/@apply/@class.0" target="//@source.4/@hasRule.0/@apply/@class.1"/>
+        <association associationName="match" source="//@source.4/@hasRule.0/@apply/@class.1" target="//@source.4/@hasRule.0/@apply/@class.2"/>
+        <association associationName="apply" source="//@source.4/@hasRule.0/@apply/@class.1" target="//@source.4/@hasRule.0/@apply/@class.3"/>
+        <association associationName="class" source="//@source.4/@hasRule.0/@apply/@class.2" target="//@source.4/@hasRule.0/@apply/@class.4"/>
+        <association associationName="class" source="//@source.4/@hasRule.0/@apply/@class.3" target="//@source.4/@hasRule.0/@apply/@class.5"/>
+        <association associationName="class" source="//@source.4/@hasRule.0/@apply/@class.3" target="//@source.4/@hasRule.0/@apply/@class.7"/>
+        <association associationName="class" source="//@source.4/@hasRule.0/@apply/@class.2" target="//@source.4/@hasRule.0/@apply/@class.6"/>
+        <association associationName="association" source="//@source.4/@hasRule.0/@apply/@class.2" target="//@source.4/@hasRule.0/@apply/@class.8"/>
+        <association associationName="source" source="//@source.4/@hasRule.0/@apply/@class.8" target="//@source.4/@hasRule.0/@apply/@class.4"/>
+        <association associationName="target" source="//@source.4/@hasRule.0/@apply/@class.8" target="//@source.4/@hasRule.0/@apply/@class.6"/>
+        <association associationName="source" source="//@source.4/@hasRule.0/@apply/@class.9" target="//@source.4/@hasRule.0/@apply/@class.5"/>
+        <association associationName="target" source="//@source.4/@hasRule.0/@apply/@class.9" target="//@source.4/@hasRule.0/@apply/@class.7"/>
+        <association associationName="association" source="//@source.4/@hasRule.0/@apply/@class.3" target="//@source.4/@hasRule.0/@apply/@class.9"/>
+        <association associationName="backwards" source="//@source.4/@hasRule.0/@apply/@class.1" target="//@source.4/@hasRule.0/@apply/@class.10"/>
+        <association associationName="backwards" source="//@source.4/@hasRule.0/@apply/@class.1" target="//@source.4/@hasRule.0/@apply/@class.11"/>
+        <association associationName="sourceClass" source="//@source.4/@hasRule.0/@apply/@class.10" target="//@source.4/@hasRule.0/@apply/@class.4"/>
+        <association associationName="targetClass" source="//@source.4/@hasRule.0/@apply/@class.10" target="//@source.4/@hasRule.0/@apply/@class.5"/>
+        <association associationName="targetClass" source="//@source.4/@hasRule.0/@apply/@class.11" target="//@source.4/@hasRule.0/@apply/@class.7"/>
+        <association associationName="sourceClass" source="//@source.4/@hasRule.0/@apply/@class.11" target="//@source.4/@hasRule.0/@apply/@class.6"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.0/@apply/@class.0" sourceClass="//@source.4/@hasRule.0/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="Associations from level 1 class">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EPackage">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EPackage">
+          <attribute attributeName="nsPrefix"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass">
+          <attribute attributeName="name"/>
+          <attribute attributeName="abstract">
+            <attributeValue xsi:type="dsltrans:Atom" value="false"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EReference">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EPackage">
+          <attribute attributeName="nsPrefix"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ePackage" source="//@source.4/@hasRule.1/@match.0/@class.0" target="//@source.4/@hasRule.1/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eStructuralFeatures" source="//@source.4/@hasRule.1/@match.0/@class.0" target="//@source.4/@hasRule.1/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eType" source="//@source.4/@hasRule.1/@match.0/@class.4" target="//@source.4/@hasRule.1/@match.0/@class.6"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ePackage" source="//@source.4/@hasRule.1/@match.0/@class.3" target="//@source.4/@hasRule.1/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.4/@hasRule.1/@match.0/@class.3" target="//@source.4/@hasRule.1/@match.0/@class.6"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.1/@match.0/@class.1" target="//@source.4/@hasRule.1/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.1/@match.0/@class.1" target="//@source.4/@hasRule.1/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.1/@match.0/@class.6" target="//@source.4/@hasRule.1/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.1/@match.0/@class.5" target="//@source.4/@hasRule.1/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="dsltrans" className="Sequential">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Associations"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="Rule">
+          <attribute attributeName="description">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.1/@match.0/@class.4/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="MatchModel">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="MatchModel"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyModel">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyModel"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClassAssociations"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.1/@match.0/@class.2/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.1/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClassAssociations"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.1/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:Atom" value="package"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClassAssociations"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.1/@match.0/@class.5/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.1/@match.0/@class.3/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClassAssociations"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.1/@match.0/@class.3/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:Atom" value="package"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="PositiveMatchAssociation">
+          <attribute attributeName="associationName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.1/@match.0/@class.4/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyAssociation">
+          <attribute attributeName="associationName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.1/@match.0/@class.4/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="PositiveBackwardRestriction"/>
+        <class packageName="dsltrans" className="PositiveBackwardRestriction"/>
+        <association associationName="hasRule" source="//@source.4/@hasRule.1/@apply/@class.0" target="//@source.4/@hasRule.1/@apply/@class.1"/>
+        <association associationName="match" source="//@source.4/@hasRule.1/@apply/@class.1" target="//@source.4/@hasRule.1/@apply/@class.2"/>
+        <association associationName="apply" source="//@source.4/@hasRule.1/@apply/@class.1" target="//@source.4/@hasRule.1/@apply/@class.3"/>
+        <association associationName="class" source="//@source.4/@hasRule.1/@apply/@class.2" target="//@source.4/@hasRule.1/@apply/@class.4"/>
+        <association associationName="class" source="//@source.4/@hasRule.1/@apply/@class.3" target="//@source.4/@hasRule.1/@apply/@class.5"/>
+        <association associationName="class" source="//@source.4/@hasRule.1/@apply/@class.3" target="//@source.4/@hasRule.1/@apply/@class.7"/>
+        <association associationName="class" source="//@source.4/@hasRule.1/@apply/@class.2" target="//@source.4/@hasRule.1/@apply/@class.6"/>
+        <association associationName="association" source="//@source.4/@hasRule.1/@apply/@class.2" target="//@source.4/@hasRule.1/@apply/@class.8"/>
+        <association associationName="source" source="//@source.4/@hasRule.1/@apply/@class.8" target="//@source.4/@hasRule.1/@apply/@class.4"/>
+        <association associationName="target" source="//@source.4/@hasRule.1/@apply/@class.8" target="//@source.4/@hasRule.1/@apply/@class.6"/>
+        <association associationName="source" source="//@source.4/@hasRule.1/@apply/@class.9" target="//@source.4/@hasRule.1/@apply/@class.5"/>
+        <association associationName="target" source="//@source.4/@hasRule.1/@apply/@class.9" target="//@source.4/@hasRule.1/@apply/@class.7"/>
+        <association associationName="association" source="//@source.4/@hasRule.1/@apply/@class.3" target="//@source.4/@hasRule.1/@apply/@class.9"/>
+        <association associationName="backwards" source="//@source.4/@hasRule.1/@apply/@class.1" target="//@source.4/@hasRule.1/@apply/@class.10"/>
+        <association associationName="backwards" source="//@source.4/@hasRule.1/@apply/@class.1" target="//@source.4/@hasRule.1/@apply/@class.11"/>
+        <association associationName="sourceClass" source="//@source.4/@hasRule.1/@apply/@class.10" target="//@source.4/@hasRule.1/@apply/@class.4"/>
+        <association associationName="targetClass" source="//@source.4/@hasRule.1/@apply/@class.10" target="//@source.4/@hasRule.1/@apply/@class.5"/>
+        <association associationName="targetClass" source="//@source.4/@hasRule.1/@apply/@class.11" target="//@source.4/@hasRule.1/@apply/@class.7"/>
+        <association associationName="sourceClass" source="//@source.4/@hasRule.1/@apply/@class.11" target="//@source.4/@hasRule.1/@apply/@class.6"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.1/@apply/@class.0" sourceClass="//@source.4/@hasRule.1/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="Associations from level 2 class">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EPackage">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EPackage">
+          <attribute attributeName="nsPrefix"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass">
+          <attribute attributeName="name"/>
+          <attribute attributeName="abstract">
+            <attributeValue xsi:type="dsltrans:Atom" value="false"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EReference">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EPackage">
+          <attribute attributeName="nsPrefix"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ePackage" source="//@source.4/@hasRule.2/@match.0/@class.0" target="//@source.4/@hasRule.2/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eStructuralFeatures" source="//@source.4/@hasRule.2/@match.0/@class.0" target="//@source.4/@hasRule.2/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eType" source="//@source.4/@hasRule.2/@match.0/@class.4" target="//@source.4/@hasRule.2/@match.0/@class.7"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ePackage" source="//@source.4/@hasRule.2/@match.0/@class.3" target="//@source.4/@hasRule.2/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.4/@hasRule.2/@match.0/@class.3" target="//@source.4/@hasRule.2/@match.0/@class.6"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.4/@hasRule.2/@match.0/@class.6" target="//@source.4/@hasRule.2/@match.0/@class.7"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.2/@match.0/@class.1" target="//@source.4/@hasRule.2/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.2/@match.0/@class.1" target="//@source.4/@hasRule.2/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.2/@match.0/@class.0" target="//@source.4/@hasRule.2/@match.0/@class.7"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.2/@match.0/@class.2" target="//@source.4/@hasRule.2/@match.0/@class.5"/>
+      </match>
+      <apply>
+        <class packageName="dsltrans" className="Sequential">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Associations"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="Rule">
+          <attribute attributeName="description">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.2/@match.0/@class.4/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="MatchModel">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="MatchModel"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyModel">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyModel"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClassAssociations"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.2/@match.0/@class.2/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.2/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClassAssociations"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.2/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:Atom" value="package"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClassAssociations"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.2/@match.0/@class.5/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.2/@match.0/@class.3/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClassAssociations"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.2/@match.0/@class.3/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:Atom" value="package"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="PositiveMatchAssociation">
+          <attribute attributeName="associationName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.2/@match.0/@class.4/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyAssociation">
+          <attribute attributeName="associationName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.2/@match.0/@class.4/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="PositiveBackwardRestriction"/>
+        <class packageName="dsltrans" className="PositiveBackwardRestriction"/>
+        <association associationName="hasRule" source="//@source.4/@hasRule.2/@apply/@class.0" target="//@source.4/@hasRule.2/@apply/@class.1"/>
+        <association associationName="match" source="//@source.4/@hasRule.2/@apply/@class.1" target="//@source.4/@hasRule.2/@apply/@class.2"/>
+        <association associationName="apply" source="//@source.4/@hasRule.2/@apply/@class.1" target="//@source.4/@hasRule.2/@apply/@class.3"/>
+        <association associationName="class" source="//@source.4/@hasRule.2/@apply/@class.2" target="//@source.4/@hasRule.2/@apply/@class.4"/>
+        <association associationName="class" source="//@source.4/@hasRule.2/@apply/@class.3" target="//@source.4/@hasRule.2/@apply/@class.5"/>
+        <association associationName="class" source="//@source.4/@hasRule.2/@apply/@class.3" target="//@source.4/@hasRule.2/@apply/@class.7"/>
+        <association associationName="class" source="//@source.4/@hasRule.2/@apply/@class.2" target="//@source.4/@hasRule.2/@apply/@class.6"/>
+        <association associationName="association" source="//@source.4/@hasRule.2/@apply/@class.2" target="//@source.4/@hasRule.2/@apply/@class.8"/>
+        <association associationName="source" source="//@source.4/@hasRule.2/@apply/@class.8" target="//@source.4/@hasRule.2/@apply/@class.4"/>
+        <association associationName="target" source="//@source.4/@hasRule.2/@apply/@class.8" target="//@source.4/@hasRule.2/@apply/@class.6"/>
+        <association associationName="source" source="//@source.4/@hasRule.2/@apply/@class.9" target="//@source.4/@hasRule.2/@apply/@class.5"/>
+        <association associationName="target" source="//@source.4/@hasRule.2/@apply/@class.9" target="//@source.4/@hasRule.2/@apply/@class.7"/>
+        <association associationName="association" source="//@source.4/@hasRule.2/@apply/@class.3" target="//@source.4/@hasRule.2/@apply/@class.9"/>
+        <association associationName="backwards" source="//@source.4/@hasRule.2/@apply/@class.1" target="//@source.4/@hasRule.2/@apply/@class.10"/>
+        <association associationName="backwards" source="//@source.4/@hasRule.2/@apply/@class.1" target="//@source.4/@hasRule.2/@apply/@class.11"/>
+        <association associationName="sourceClass" source="//@source.4/@hasRule.2/@apply/@class.10" target="//@source.4/@hasRule.2/@apply/@class.4"/>
+        <association associationName="targetClass" source="//@source.4/@hasRule.2/@apply/@class.10" target="//@source.4/@hasRule.2/@apply/@class.5"/>
+        <association associationName="targetClass" source="//@source.4/@hasRule.2/@apply/@class.11" target="//@source.4/@hasRule.2/@apply/@class.7"/>
+        <association associationName="sourceClass" source="//@source.4/@hasRule.2/@apply/@class.11" target="//@source.4/@hasRule.2/@apply/@class.6"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.2/@apply/@class.0" sourceClass="//@source.4/@hasRule.2/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="Associations from level 3 class">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EPackage">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EPackage">
+          <attribute attributeName="nsPrefix"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass">
+          <attribute attributeName="name"/>
+          <attribute attributeName="abstract">
+            <attributeValue xsi:type="dsltrans:Atom" value="false"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EReference">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EPackage">
+          <attribute attributeName="nsPrefix"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ePackage" source="//@source.4/@hasRule.3/@match.0/@class.0" target="//@source.4/@hasRule.3/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eStructuralFeatures" source="//@source.4/@hasRule.3/@match.0/@class.0" target="//@source.4/@hasRule.3/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eType" source="//@source.4/@hasRule.3/@match.0/@class.4" target="//@source.4/@hasRule.3/@match.0/@class.7"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ePackage" source="//@source.4/@hasRule.3/@match.0/@class.3" target="//@source.4/@hasRule.3/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.4/@hasRule.3/@match.0/@class.3" target="//@source.4/@hasRule.3/@match.0/@class.6"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.4/@hasRule.3/@match.0/@class.6" target="//@source.4/@hasRule.3/@match.0/@class.8"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.4/@hasRule.3/@match.0/@class.8" target="//@source.4/@hasRule.3/@match.0/@class.7"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.3/@match.0/@class.1" target="//@source.4/@hasRule.3/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.3/@match.0/@class.1" target="//@source.4/@hasRule.3/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.3/@match.0/@class.0" target="//@source.4/@hasRule.3/@match.0/@class.7"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.3/@match.0/@class.2" target="//@source.4/@hasRule.3/@match.0/@class.5"/>
+      </match>
+      <apply>
+        <class packageName="dsltrans" className="Sequential">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Associations"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="Rule">
+          <attribute attributeName="description">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.3/@match.0/@class.4/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="MatchModel">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="MatchModel"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyModel">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyModel"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClassAssociations"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.3/@match.0/@class.2/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.3/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClassAssociations"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.3/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:Atom" value="package"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClassAssociations"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.3/@match.0/@class.5/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.3/@match.0/@class.3/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClassAssociations"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.3/@match.0/@class.3/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:Atom" value="package"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="PositiveMatchAssociation">
+          <attribute attributeName="associationName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.3/@match.0/@class.4/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyAssociation">
+          <attribute attributeName="associationName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.3/@match.0/@class.4/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="PositiveBackwardRestriction"/>
+        <class packageName="dsltrans" className="PositiveBackwardRestriction"/>
+        <association associationName="hasRule" source="//@source.4/@hasRule.3/@apply/@class.0" target="//@source.4/@hasRule.3/@apply/@class.1"/>
+        <association associationName="match" source="//@source.4/@hasRule.3/@apply/@class.1" target="//@source.4/@hasRule.3/@apply/@class.2"/>
+        <association associationName="apply" source="//@source.4/@hasRule.3/@apply/@class.1" target="//@source.4/@hasRule.3/@apply/@class.3"/>
+        <association associationName="class" source="//@source.4/@hasRule.3/@apply/@class.2" target="//@source.4/@hasRule.3/@apply/@class.4"/>
+        <association associationName="class" source="//@source.4/@hasRule.3/@apply/@class.3" target="//@source.4/@hasRule.3/@apply/@class.5"/>
+        <association associationName="class" source="//@source.4/@hasRule.3/@apply/@class.3" target="//@source.4/@hasRule.3/@apply/@class.7"/>
+        <association associationName="class" source="//@source.4/@hasRule.3/@apply/@class.2" target="//@source.4/@hasRule.3/@apply/@class.6"/>
+        <association associationName="association" source="//@source.4/@hasRule.3/@apply/@class.2" target="//@source.4/@hasRule.3/@apply/@class.8"/>
+        <association associationName="source" source="//@source.4/@hasRule.3/@apply/@class.8" target="//@source.4/@hasRule.3/@apply/@class.4"/>
+        <association associationName="target" source="//@source.4/@hasRule.3/@apply/@class.8" target="//@source.4/@hasRule.3/@apply/@class.6"/>
+        <association associationName="source" source="//@source.4/@hasRule.3/@apply/@class.9" target="//@source.4/@hasRule.3/@apply/@class.5"/>
+        <association associationName="target" source="//@source.4/@hasRule.3/@apply/@class.9" target="//@source.4/@hasRule.3/@apply/@class.7"/>
+        <association associationName="association" source="//@source.4/@hasRule.3/@apply/@class.3" target="//@source.4/@hasRule.3/@apply/@class.9"/>
+        <association associationName="backwards" source="//@source.4/@hasRule.3/@apply/@class.1" target="//@source.4/@hasRule.3/@apply/@class.10"/>
+        <association associationName="backwards" source="//@source.4/@hasRule.3/@apply/@class.1" target="//@source.4/@hasRule.3/@apply/@class.11"/>
+        <association associationName="sourceClass" source="//@source.4/@hasRule.3/@apply/@class.10" target="//@source.4/@hasRule.3/@apply/@class.4"/>
+        <association associationName="targetClass" source="//@source.4/@hasRule.3/@apply/@class.10" target="//@source.4/@hasRule.3/@apply/@class.5"/>
+        <association associationName="targetClass" source="//@source.4/@hasRule.3/@apply/@class.11" target="//@source.4/@hasRule.3/@apply/@class.7"/>
+        <association associationName="sourceClass" source="//@source.4/@hasRule.3/@apply/@class.11" target="//@source.4/@hasRule.3/@apply/@class.6"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.3/@apply/@class.0" sourceClass="//@source.4/@hasRule.3/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="Associations from level 4 class">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EPackage">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EPackage">
+          <attribute attributeName="nsPrefix"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass">
+          <attribute attributeName="name"/>
+          <attribute attributeName="abstract">
+            <attributeValue xsi:type="dsltrans:Atom" value="false"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EReference">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EPackage">
+          <attribute attributeName="nsPrefix"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ePackage" source="//@source.4/@hasRule.4/@match.0/@class.0" target="//@source.4/@hasRule.4/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eStructuralFeatures" source="//@source.4/@hasRule.4/@match.0/@class.0" target="//@source.4/@hasRule.4/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eType" source="//@source.4/@hasRule.4/@match.0/@class.4" target="//@source.4/@hasRule.4/@match.0/@class.7"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ePackage" source="//@source.4/@hasRule.4/@match.0/@class.3" target="//@source.4/@hasRule.4/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.4/@hasRule.4/@match.0/@class.3" target="//@source.4/@hasRule.4/@match.0/@class.6"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.4/@hasRule.4/@match.0/@class.6" target="//@source.4/@hasRule.4/@match.0/@class.9"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.4/@hasRule.4/@match.0/@class.8" target="//@source.4/@hasRule.4/@match.0/@class.7"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.4/@hasRule.4/@match.0/@class.9" target="//@source.4/@hasRule.4/@match.0/@class.8"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.4/@match.0/@class.1" target="//@source.4/@hasRule.4/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.4/@match.0/@class.7" target="//@source.4/@hasRule.4/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.4/@match.0/@class.1" target="//@source.4/@hasRule.4/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.4/@match.0/@class.2" target="//@source.4/@hasRule.4/@match.0/@class.5"/>
+      </match>
+      <apply>
+        <class packageName="dsltrans" className="Sequential">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Associations"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="Rule">
+          <attribute attributeName="description">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.4/@match.0/@class.4/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="MatchModel">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="MatchModel"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyModel">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyModel"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClassAssociations"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.4/@match.0/@class.2/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.4/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClassAssociations"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.4/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:Atom" value="package"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClassAssociations"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.4/@match.0/@class.5/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.4/@match.0/@class.3/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClassAssociations"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.4/@match.0/@class.3/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:Atom" value="package"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="PositiveMatchAssociation">
+          <attribute attributeName="associationName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.4/@match.0/@class.4/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyAssociation">
+          <attribute attributeName="associationName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.4/@match.0/@class.4/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="PositiveBackwardRestriction"/>
+        <class packageName="dsltrans" className="PositiveBackwardRestriction"/>
+        <association associationName="hasRule" source="//@source.4/@hasRule.4/@apply/@class.0" target="//@source.4/@hasRule.4/@apply/@class.1"/>
+        <association associationName="match" source="//@source.4/@hasRule.4/@apply/@class.1" target="//@source.4/@hasRule.4/@apply/@class.2"/>
+        <association associationName="apply" source="//@source.4/@hasRule.4/@apply/@class.1" target="//@source.4/@hasRule.4/@apply/@class.3"/>
+        <association associationName="class" source="//@source.4/@hasRule.4/@apply/@class.2" target="//@source.4/@hasRule.4/@apply/@class.4"/>
+        <association associationName="class" source="//@source.4/@hasRule.4/@apply/@class.3" target="//@source.4/@hasRule.4/@apply/@class.5"/>
+        <association associationName="class" source="//@source.4/@hasRule.4/@apply/@class.3" target="//@source.4/@hasRule.4/@apply/@class.7"/>
+        <association associationName="class" source="//@source.4/@hasRule.4/@apply/@class.2" target="//@source.4/@hasRule.4/@apply/@class.6"/>
+        <association associationName="association" source="//@source.4/@hasRule.4/@apply/@class.2" target="//@source.4/@hasRule.4/@apply/@class.8"/>
+        <association associationName="source" source="//@source.4/@hasRule.4/@apply/@class.8" target="//@source.4/@hasRule.4/@apply/@class.4"/>
+        <association associationName="target" source="//@source.4/@hasRule.4/@apply/@class.8" target="//@source.4/@hasRule.4/@apply/@class.6"/>
+        <association associationName="source" source="//@source.4/@hasRule.4/@apply/@class.9" target="//@source.4/@hasRule.4/@apply/@class.5"/>
+        <association associationName="target" source="//@source.4/@hasRule.4/@apply/@class.9" target="//@source.4/@hasRule.4/@apply/@class.7"/>
+        <association associationName="association" source="//@source.4/@hasRule.4/@apply/@class.3" target="//@source.4/@hasRule.4/@apply/@class.9"/>
+        <association associationName="backwards" source="//@source.4/@hasRule.4/@apply/@class.1" target="//@source.4/@hasRule.4/@apply/@class.10"/>
+        <association associationName="backwards" source="//@source.4/@hasRule.4/@apply/@class.1" target="//@source.4/@hasRule.4/@apply/@class.11"/>
+        <association associationName="sourceClass" source="//@source.4/@hasRule.4/@apply/@class.10" target="//@source.4/@hasRule.4/@apply/@class.4"/>
+        <association associationName="targetClass" source="//@source.4/@hasRule.4/@apply/@class.10" target="//@source.4/@hasRule.4/@apply/@class.5"/>
+        <association associationName="targetClass" source="//@source.4/@hasRule.4/@apply/@class.11" target="//@source.4/@hasRule.4/@apply/@class.7"/>
+        <association associationName="sourceClass" source="//@source.4/@hasRule.4/@apply/@class.11" target="//@source.4/@hasRule.4/@apply/@class.6"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.4/@apply/@class.0" sourceClass="//@source.4/@hasRule.4/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="Associations from level 5 class">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EPackage">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EPackage">
+          <attribute attributeName="nsPrefix"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass">
+          <attribute attributeName="name"/>
+          <attribute attributeName="abstract">
+            <attributeValue xsi:type="dsltrans:Atom" value="false"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EReference">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EPackage">
+          <attribute attributeName="nsPrefix"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="ecore" className="EClass"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ePackage" source="//@source.4/@hasRule.5/@match.0/@class.0" target="//@source.4/@hasRule.5/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eStructuralFeatures" source="//@source.4/@hasRule.5/@match.0/@class.0" target="//@source.4/@hasRule.5/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eType" source="//@source.4/@hasRule.5/@match.0/@class.4" target="//@source.4/@hasRule.5/@match.0/@class.7"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ePackage" source="//@source.4/@hasRule.5/@match.0/@class.3" target="//@source.4/@hasRule.5/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.4/@hasRule.5/@match.0/@class.3" target="//@source.4/@hasRule.5/@match.0/@class.6"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.4/@hasRule.5/@match.0/@class.6" target="//@source.4/@hasRule.5/@match.0/@class.10"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.4/@hasRule.5/@match.0/@class.8" target="//@source.4/@hasRule.5/@match.0/@class.7"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.4/@hasRule.5/@match.0/@class.9" target="//@source.4/@hasRule.5/@match.0/@class.8"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="eSuperTypes" source="//@source.4/@hasRule.5/@match.0/@class.10" target="//@source.4/@hasRule.5/@match.0/@class.9"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.5/@match.0/@class.1" target="//@source.4/@hasRule.5/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.5/@match.0/@class.7" target="//@source.4/@hasRule.5/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.5/@match.0/@class.1" target="//@source.4/@hasRule.5/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:MatchMayBeSameRelation" source="//@source.4/@hasRule.5/@match.0/@class.2" target="//@source.4/@hasRule.5/@match.0/@class.5"/>
+      </match>
+      <apply>
+        <class packageName="dsltrans" className="Sequential">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Associations"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="Rule">
+          <attribute attributeName="description">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.5/@match.0/@class.4/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="MatchModel">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="MatchModel"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyModel">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyModel"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClassAssociations"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.5/@match.0/@class.2/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.5/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClassAssociations"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.5/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:Atom" value="package"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="AnyMatchClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AnyMatchClassAssociations"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.5/@match.0/@class.5/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.5/@match.0/@class.3/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyClass">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ApplyClassAssociations"/>
+          </attribute>
+          <attribute attributeName="className">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.5/@match.0/@class.3/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="packageName">
+            <attributeValue xsi:type="dsltrans:Atom" value="package"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="PositiveMatchAssociation">
+          <attribute attributeName="associationName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.5/@match.0/@class.4/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="ApplyAssociation">
+          <attribute attributeName="associationName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.5/@match.0/@class.4/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="dsltrans" className="PositiveBackwardRestriction"/>
+        <class packageName="dsltrans" className="PositiveBackwardRestriction"/>
+        <association associationName="hasRule" source="//@source.4/@hasRule.5/@apply/@class.0" target="//@source.4/@hasRule.5/@apply/@class.1"/>
+        <association associationName="match" source="//@source.4/@hasRule.5/@apply/@class.1" target="//@source.4/@hasRule.5/@apply/@class.2"/>
+        <association associationName="apply" source="//@source.4/@hasRule.5/@apply/@class.1" target="//@source.4/@hasRule.5/@apply/@class.3"/>
+        <association associationName="class" source="//@source.4/@hasRule.5/@apply/@class.2" target="//@source.4/@hasRule.5/@apply/@class.4"/>
+        <association associationName="class" source="//@source.4/@hasRule.5/@apply/@class.3" target="//@source.4/@hasRule.5/@apply/@class.5"/>
+        <association associationName="class" source="//@source.4/@hasRule.5/@apply/@class.3" target="//@source.4/@hasRule.5/@apply/@class.7"/>
+        <association associationName="class" source="//@source.4/@hasRule.5/@apply/@class.2" target="//@source.4/@hasRule.5/@apply/@class.6"/>
+        <association associationName="association" source="//@source.4/@hasRule.5/@apply/@class.2" target="//@source.4/@hasRule.5/@apply/@class.8"/>
+        <association associationName="source" source="//@source.4/@hasRule.5/@apply/@class.8" target="//@source.4/@hasRule.5/@apply/@class.4"/>
+        <association associationName="target" source="//@source.4/@hasRule.5/@apply/@class.8" target="//@source.4/@hasRule.5/@apply/@class.6"/>
+        <association associationName="source" source="//@source.4/@hasRule.5/@apply/@class.9" target="//@source.4/@hasRule.5/@apply/@class.5"/>
+        <association associationName="target" source="//@source.4/@hasRule.5/@apply/@class.9" target="//@source.4/@hasRule.5/@apply/@class.7"/>
+        <association associationName="association" source="//@source.4/@hasRule.5/@apply/@class.3" target="//@source.4/@hasRule.5/@apply/@class.9"/>
+        <association associationName="backwards" source="//@source.4/@hasRule.5/@apply/@class.1" target="//@source.4/@hasRule.5/@apply/@class.10"/>
+        <association associationName="backwards" source="//@source.4/@hasRule.5/@apply/@class.1" target="//@source.4/@hasRule.5/@apply/@class.11"/>
+        <association associationName="sourceClass" source="//@source.4/@hasRule.5/@apply/@class.10" target="//@source.4/@hasRule.5/@apply/@class.4"/>
+        <association associationName="targetClass" source="//@source.4/@hasRule.5/@apply/@class.10" target="//@source.4/@hasRule.5/@apply/@class.5"/>
+        <association associationName="targetClass" source="//@source.4/@hasRule.5/@apply/@class.11" target="//@source.4/@hasRule.5/@apply/@class.7"/>
+        <association associationName="sourceClass" source="//@source.4/@hasRule.5/@apply/@class.11" target="//@source.4/@hasRule.5/@apply/@class.6"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.5/@apply/@class.0" sourceClass="//@source.4/@hasRule.5/@match.0/@class.1"/>
+    </hasRule>
+  </source>
+</dsltrans:TransformationModel>

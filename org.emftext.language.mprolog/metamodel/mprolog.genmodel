@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/mprolog/src"
+    modelPluginID="mprolog" modelName="Mprolog" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>mprolog.ecore</foreignModel>
+  <genPackages prefix="Mprolog" disposableProviderFactory="true" ecorePackage="mprolog.ecore#/">
+    <genClasses ecoreClass="mprolog.ecore#//Model">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mprolog.ecore#//Model/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mprolog.ecore#//Model/ownedClause"/>
+    </genClasses>
+    <genClasses ecoreClass="mprolog.ecore#//Clause">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mprolog.ecore#//Clause/ownedHead"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mprolog.ecore#//Clause/ownedBody"/>
+    </genClasses>
+    <genClasses ecoreClass="mprolog.ecore#//Head">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mprolog.ecore#//Head/ownedFunctor"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mprolog.ecore#//Term">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mprolog.ecore#//Term/nextTerm"/>
+    </genClasses>
+    <genClasses ecoreClass="mprolog.ecore#//Body">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mprolog.ecore#//Body/ownedTerm"/>
+    </genClasses>
+    <genClasses ecoreClass="mprolog.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mprolog.ecore#//Variable/name"/>
+    </genClasses>
+    <genClasses ecoreClass="mprolog.ecore#//Functor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mprolog.ecore#//Functor/text"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mprolog.ecore#//Functor/ownedTerm"/>
+    </genClasses>
+    <genClasses ecoreClass="mprolog.ecore#//QuotedAtom">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mprolog.ecore#//QuotedAtom/text"/>
+    </genClasses>
+    <genClasses ecoreClass="mprolog.ecore#//List">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mprolog.ecore#//List/ownedHeadTerms"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mprolog.ecore#//List/ownedTailTerms"/>
+    </genClasses>
+    <genClasses ecoreClass="mprolog.ecore#//InfixExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mprolog.ecore#//InfixExpression/leftTerm"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mprolog.ecore#//InfixExpression/rightTerm"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mprolog.ecore#//InfixExpression/ownedOperator"/>
+    </genClasses>
+    <genClasses ecoreClass="mprolog.ecore#//Operator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mprolog.ecore#//Operator/symbol"/>
+    </genClasses>
+    <genClasses ecoreClass="mprolog.ecore#//Parenthesis">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mprolog.ecore#//Parenthesis/ownedTerm"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

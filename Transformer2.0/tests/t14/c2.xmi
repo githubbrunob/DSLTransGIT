@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII" standalone="no"?>
+<word:Word xmlns:word="http://word/1.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xsi:schemaLocation="http://word/1.0 Word.ecore">
+  <symbols name="A (0)" next_symbol="//@symbols.1" token="0"/>
+  <symbols name="B (1)" next_symbol="//@symbols.2" token="1"/>
+  <symbols name="C (0)" next_symbol="//@symbols.3" token="0"/>
+  <symbols name="D (1)" token="1"/>
+  <next name="B (1)" symbol="//@symbols.1"/>
+</word:Word>

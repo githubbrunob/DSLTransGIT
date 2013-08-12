@@ -1,0 +1,8 @@
+digraph model_abc_xmi {
+	node0[label="marking(p(id4,suc(zero)),marking(p(id3,zero),marking(p(id2,zero),e)))"];
+	node1[label="marking(p(id2,suc(zero)),marking(p(id3,zero),marking(p(id4,zero),e)))"];
+	node2[label="marking(p(id3,suc(zero)),marking(p(id2,zero),marking(p(id4,zero),e)))"];
+	node2 -> node0[label="p(str(at,str(n2,end)),[id8])"];
+	node1 -> node2[label="p(str(at,str(n1,end)),[id7])"];
+
+}

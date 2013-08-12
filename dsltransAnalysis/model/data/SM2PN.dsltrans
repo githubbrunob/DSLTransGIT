@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsltrans:TransformationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsltrans="http://dsltrans/2.0" xsi:schemaLocation="http://dsltrans/2.0 DSLTrans.ecore">
+  <source xsi:type="dsltrans:FilePort" filePathURI="model/input.xmi">
+    <metaModelId metaModelURI="model/StateMachine.ecore" metaModelName="statemachine.Statemachine"/>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="Entities" description="Entities" previousSource="//@source.0" outputFilePathURI="">
+    <metaModelId metaModelURI="model/PetriNet.ecore" metaModelName="petrinet.Petrinet"/>
+    <hasRule description="Transition">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="statemachine" className="Transition">
+          <attribute attributeName="name"/>
+        </class>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="Transition">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.0/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Transition"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="State">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="statemachine" className="State">
+          <attribute attributeName="name"/>
+        </class>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="Place">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.1/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="token">
+            <attributeValue xsi:type="dsltrans:Atom" value="0"/>
+          </attribute>
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="State"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="StateMachine">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="statemachine" className="StateMachine"/>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="PetriNet">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="PetriNet"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="Initial">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="statemachine" className="Initial">
+          <attribute attributeName="name"/>
+        </class>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="Place">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.3/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="token">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Initial"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="Associations" description="Associations" previousSource="//@source.1" outputFilePathURI="model/output.xmi">
+    <metaModelId metaModelURI="model/PetriNet.ecore" metaModelName="petrinet.Petrinet"/>
+    <hasRule description="source State">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="statemachine" className="Transition"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="statemachine" className="State"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.2/@hasRule.0/@match.0/@class.0" target="//@source.2/@hasRule.0/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="Transition"/>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="OutArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <association associationName="outArc" source="//@source.2/@hasRule.0/@apply/@class.0" target="//@source.2/@hasRule.0/@apply/@class.2"/>
+        <association associationName="sourcePlace" source="//@source.2/@hasRule.0/@apply/@class.2" target="//@source.2/@hasRule.0/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.0/@apply/@class.0" sourceClass="//@source.2/@hasRule.0/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.0/@apply/@class.1" sourceClass="//@source.2/@hasRule.0/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="target State">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="statemachine" className="Transition"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="statemachine" className="State"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.2/@hasRule.1/@match.0/@class.0" target="//@source.2/@hasRule.1/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="Transition"/>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="InArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <association associationName="targetPlace" source="//@source.2/@hasRule.1/@apply/@class.2" target="//@source.2/@hasRule.1/@apply/@class.1"/>
+        <association associationName="inArc" source="//@source.2/@hasRule.1/@apply/@class.0" target="//@source.2/@hasRule.1/@apply/@class.2"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.1/@apply/@class.0" sourceClass="//@source.2/@hasRule.1/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.1/@apply/@class.1" sourceClass="//@source.2/@hasRule.1/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="states State">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="statemachine" className="StateMachine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="statemachine" className="State"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="states" source="//@source.2/@hasRule.2/@match.0/@class.0" target="//@source.2/@hasRule.2/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="PetriNet"/>
+        <class packageName="petrinet" className="Place"/>
+        <association associationName="places" source="//@source.2/@hasRule.2/@apply/@class.0" target="//@source.2/@hasRule.2/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.2/@apply/@class.0" sourceClass="//@source.2/@hasRule.2/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.2/@apply/@class.1" sourceClass="//@source.2/@hasRule.2/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="transitions">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="statemachine" className="StateMachine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="statemachine" className="Transition"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="transitions" source="//@source.2/@hasRule.3/@match.0/@class.0" target="//@source.2/@hasRule.3/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class description="" packageName="petrinet" className="PetriNet"/>
+        <class packageName="petrinet" className="Transition"/>
+        <association associationName="transitions" source="//@source.2/@hasRule.3/@apply/@class.0" target="//@source.2/@hasRule.3/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.3/@apply/@class.0" sourceClass="//@source.2/@hasRule.3/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.3/@apply/@class.1" sourceClass="//@source.2/@hasRule.3/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="source Initial">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="statemachine" className="Transition"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="statemachine" className="Initial"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.2/@hasRule.4/@match.0/@class.0" target="//@source.2/@hasRule.4/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="Transition"/>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="OutArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <association associationName="outArc" source="//@source.2/@hasRule.4/@apply/@class.0" target="//@source.2/@hasRule.4/@apply/@class.2"/>
+        <association associationName="sourcePlace" source="//@source.2/@hasRule.4/@apply/@class.2" target="//@source.2/@hasRule.4/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.4/@apply/@class.0" sourceClass="//@source.2/@hasRule.4/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.4/@apply/@class.1" sourceClass="//@source.2/@hasRule.4/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="target Initial">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="statemachine" className="Transition"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="statemachine" className="Initial"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.2/@hasRule.5/@match.0/@class.0" target="//@source.2/@hasRule.5/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="Transition"/>
+        <class packageName="petrinet" className="Place"/>
+        <class packageName="petrinet" className="InArc">
+          <attribute attributeName="weight">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <association associationName="targetPlace" source="//@source.2/@hasRule.5/@apply/@class.2" target="//@source.2/@hasRule.5/@apply/@class.1"/>
+        <association associationName="inArc" source="//@source.2/@hasRule.5/@apply/@class.0" target="//@source.2/@hasRule.5/@apply/@class.2"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.5/@apply/@class.0" sourceClass="//@source.2/@hasRule.5/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.5/@apply/@class.1" sourceClass="//@source.2/@hasRule.5/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="states Initial">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="statemachine" className="StateMachine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="statemachine" className="Initial"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="states" source="//@source.2/@hasRule.6/@match.0/@class.0" target="//@source.2/@hasRule.6/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="petrinet" className="PetriNet"/>
+        <class packageName="petrinet" className="Place"/>
+        <association associationName="places" source="//@source.2/@hasRule.6/@apply/@class.0" target="//@source.2/@hasRule.6/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.6/@apply/@class.0" sourceClass="//@source.2/@hasRule.6/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.6/@apply/@class.1" sourceClass="//@source.2/@hasRule.6/@match.0/@class.1"/>
+    </hasRule>
+  </source>
+</dsltrans:TransformationModel>

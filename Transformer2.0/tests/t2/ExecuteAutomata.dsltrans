@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsltrans:TransformationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsltrans="http://dsltrans/2.0">
+  <source xsi:type="dsltrans:FilePort" name="WordInput" filePathURI="tests/t2/Word.xmi">
+    <metaModelId metaModelURI="tests/t2/Word.ecore" metaModelName="word.Word"/>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="WordLayer1" description="WordLayer1" previousSource="//@source.0" outputFilePathURI="">
+    <metaModelId metaModelURI="tests/t2/Word.ecore" metaModelName="word.Word"/>
+    <hasRule description="">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="word" className="Word"/>
+      </match>
+      <apply>
+        <class packageName="word" className="Word">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Word"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="word" className="Symbol">
+          <attribute attributeName="token"/>
+          <attribute attributeName="name"/>
+        </class>
+      </match>
+      <apply>
+        <class packageName="word" className="Symbol">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Symbol"/>
+          </attribute>
+          <attribute attributeName="token">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.1/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.1/@match.0/@class.0/@attribute.1"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:FilePort" name="Automata Input" filePathURI="tests/t2/Automata.xmi">
+    <metaModelId metaModelURI="tests/t2/Automata.ecore" metaModelName="automata.Automata"/>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="AutomataLayer1" description="AutomataLayer1" previousSource="//@source.2" outputFilePathURI="">
+    <metaModelId metaModelURI="tests/t2/Automata.ecore" metaModelName="automata.Automata"/>
+    <hasRule description="">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Automata"/>
+      </match>
+      <apply>
+        <class packageName="automata" className="Automata">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Automata"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="transition between different states">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Transition">
+          <attribute attributeName="token"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="State">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="State">
+          <attribute attributeName="name"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.3/@hasRule.1/@match.0/@class.0" target="//@source.3/@hasRule.1/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.3/@hasRule.1/@match.0/@class.0" target="//@source.3/@hasRule.1/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="automata" className="Transition">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Transition"/>
+          </attribute>
+          <attribute attributeName="token">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.1/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.1/@match.0/@class.1/@attribute.0"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value="->"/>
+                <rightTerm xsi:type="dsltrans:Concat">
+                  <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.1/@match.0/@class.2/@attribute.0"/>
+                  <rightTerm xsi:type="dsltrans:Concat">
+                    <leftTerm xsi:type="dsltrans:Atom" value=" ("/>
+                    <rightTerm xsi:type="dsltrans:Concat">
+                      <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.1/@match.0/@class.0/@attribute.0"/>
+                      <rightTerm xsi:type="dsltrans:Atom" value=")"/>
+                    </rightTerm>
+                  </rightTerm>
+                </rightTerm>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="State">
+          <attribute attributeName="name"/>
+        </class>
+      </match>
+      <apply>
+        <class packageName="automata" className="State">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="State"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.2/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Initial">
+          <attribute attributeName="name"/>
+        </class>
+      </match>
+      <apply>
+        <class packageName="automata" className="Initial">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Initial"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.3/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Final">
+          <attribute attributeName="name"/>
+        </class>
+      </match>
+      <apply>
+        <class packageName="automata" className="Final">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Final"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.4/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="transition between different states">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Transition">
+          <attribute attributeName="token"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="State">
+          <attribute attributeName="name"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.3/@hasRule.5/@match.0/@class.0" target="//@source.3/@hasRule.5/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.3/@hasRule.5/@match.0/@class.0" target="//@source.3/@hasRule.5/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="automata" className="Transition">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Transition"/>
+          </attribute>
+          <attribute attributeName="token">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.5/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.5/@match.0/@class.1/@attribute.0"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value="->"/>
+                <rightTerm xsi:type="dsltrans:Concat">
+                  <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.5/@match.0/@class.1/@attribute.0"/>
+                  <rightTerm xsi:type="dsltrans:Concat">
+                    <leftTerm xsi:type="dsltrans:Atom" value=" ("/>
+                    <rightTerm xsi:type="dsltrans:Concat">
+                      <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.5/@match.0/@class.0/@attribute.0"/>
+                      <rightTerm xsi:type="dsltrans:Atom" value=")"/>
+                    </rightTerm>
+                  </rightTerm>
+                </rightTerm>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="AutomataLayer2" description="AutomataLayer2" previousSource="//@source.3" outputFilePathURI="tests/t2/o1.xmi" groupName="">
+    <metaModelId metaModelURI="tests/t2/Automata.ecore" metaModelName="automata.Automata"/>
+    <hasRule description="">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Automata"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="State"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="states" source="//@source.4/@hasRule.0/@match.0/@class.0" target="//@source.4/@hasRule.0/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="automata" className="Automata">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Automata"/>
+          </attribute>
+        </class>
+        <class packageName="automata" className="State">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="State"/>
+          </attribute>
+        </class>
+        <association associationName="states" source="//@source.4/@hasRule.0/@apply/@class.0" target="//@source.4/@hasRule.0/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.0/@apply/@class.1" sourceClass="//@source.4/@hasRule.0/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.0/@apply/@class.0" sourceClass="//@source.4/@hasRule.0/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Automata"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Transition"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="transitions" source="//@source.4/@hasRule.1/@match.0/@class.0" target="//@source.4/@hasRule.1/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="automata" className="Automata">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Automata"/>
+          </attribute>
+        </class>
+        <class packageName="automata" className="Transition">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Transition"/>
+          </attribute>
+        </class>
+        <association associationName="transitions" source="//@source.4/@hasRule.1/@apply/@class.0" target="//@source.4/@hasRule.1/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.1/@apply/@class.1" sourceClass="//@source.4/@hasRule.1/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.1/@apply/@class.0" sourceClass="//@source.4/@hasRule.1/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Transition"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="State"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.4/@hasRule.2/@match.0/@class.0" target="//@source.4/@hasRule.2/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="automata" className="Transition">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Transition"/>
+          </attribute>
+        </class>
+        <class packageName="automata" className="State">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="State"/>
+          </attribute>
+        </class>
+        <association associationName="source" source="//@source.4/@hasRule.2/@apply/@class.0" target="//@source.4/@hasRule.2/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.2/@apply/@class.1" sourceClass="//@source.4/@hasRule.2/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.2/@apply/@class.0" sourceClass="//@source.4/@hasRule.2/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Transition"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="State"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.4/@hasRule.3/@match.0/@class.0" target="//@source.4/@hasRule.3/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="automata" className="Transition">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Transition"/>
+          </attribute>
+        </class>
+        <class packageName="automata" className="State">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="State"/>
+          </attribute>
+        </class>
+        <association associationName="target" source="//@source.4/@hasRule.3/@apply/@class.0" target="//@source.4/@hasRule.3/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.3/@apply/@class.1" sourceClass="//@source.4/@hasRule.3/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.3/@apply/@class.0" sourceClass="//@source.4/@hasRule.3/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Initial"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="State"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.4/@hasRule.4/@match.0/@class.0" target="//@source.4/@hasRule.4/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="automata" className="Initial">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Initial"/>
+          </attribute>
+        </class>
+        <class packageName="automata" className="State">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="State"/>
+          </attribute>
+        </class>
+        <association associationName="state" source="//@source.4/@hasRule.4/@apply/@class.0" target="//@source.4/@hasRule.4/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.4/@apply/@class.1" sourceClass="//@source.4/@hasRule.4/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.4/@apply/@class.0" sourceClass="//@source.4/@hasRule.4/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Final"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="State"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.4/@hasRule.5/@match.0/@class.0" target="//@source.4/@hasRule.5/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="automata" className="Final">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Final"/>
+          </attribute>
+        </class>
+        <class packageName="automata" className="State">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="State"/>
+          </attribute>
+        </class>
+        <association associationName="state" source="//@source.4/@hasRule.5/@apply/@class.0" target="//@source.4/@hasRule.5/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.5/@apply/@class.1" sourceClass="//@source.4/@hasRule.5/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.5/@apply/@class.0" sourceClass="//@source.4/@hasRule.5/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Automata"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Initial"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="initial" source="//@source.4/@hasRule.6/@match.0/@class.0" target="//@source.4/@hasRule.6/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="automata" className="Automata">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Automata"/>
+          </attribute>
+        </class>
+        <class packageName="automata" className="Initial">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Initial"/>
+          </attribute>
+        </class>
+        <association associationName="initial" source="//@source.4/@hasRule.6/@apply/@class.0" target="//@source.4/@hasRule.6/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.6/@apply/@class.1" sourceClass="//@source.4/@hasRule.6/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.6/@apply/@class.0" sourceClass="//@source.4/@hasRule.6/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Automata"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Final"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="finals" source="//@source.4/@hasRule.7/@match.0/@class.0" target="//@source.4/@hasRule.7/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="automata" className="Automata">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Automata"/>
+          </attribute>
+        </class>
+        <class packageName="automata" className="Final">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Final"/>
+          </attribute>
+        </class>
+        <association associationName="finals" source="//@source.4/@hasRule.7/@apply/@class.0" target="//@source.4/@hasRule.7/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.7/@apply/@class.1" sourceClass="//@source.4/@hasRule.7/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.7/@apply/@class.0" sourceClass="//@source.4/@hasRule.7/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="Change state with transition between different states.">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Current"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="State"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Transition">
+          <attribute attributeName="token"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="State">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Automata"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.4/@hasRule.8/@match.0/@class.0" target="//@source.4/@hasRule.8/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.4/@hasRule.8/@match.0/@class.2" target="//@source.4/@hasRule.8/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.4/@hasRule.8/@match.0/@class.2" target="//@source.4/@hasRule.8/@match.0/@class.3"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="current" source="//@source.4/@hasRule.8/@match.0/@class.4" target="//@source.4/@hasRule.8/@match.0/@class.0"/>
+      </match>
+      <match explicitSource="//@source.0">
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="word" className="Next"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="word" className="Symbol">
+          <attribute attributeName="token"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="symbol" source="//@source.4/@hasRule.8/@match.1/@class.0" target="//@source.4/@hasRule.8/@match.1/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="automata" className="Current">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.8/@match.0/@class.3/@attribute.0"/>
+          </attribute>
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Current"/>
+          </attribute>
+        </class>
+        <class packageName="automata" className="State">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="State"/>
+          </attribute>
+        </class>
+        <class packageName="automata" className="Automata">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Automata"/>
+          </attribute>
+        </class>
+        <association associationName="state" source="//@source.4/@hasRule.8/@apply/@class.0" target="//@source.4/@hasRule.8/@apply/@class.1"/>
+        <association associationName="current" source="//@source.4/@hasRule.8/@apply/@class.2" target="//@source.4/@hasRule.8/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.8/@apply/@class.1" sourceClass="//@source.4/@hasRule.8/@match.0/@class.3"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.8/@apply/@class.2" sourceClass="//@source.4/@hasRule.8/@match.0/@class.4"/>
+      <attributeRelations xsi:type="dsltrans:AttributeEquality" sourceAttribute="//@source.4/@hasRule.8/@match.0/@class.2/@attribute.0" targetAttribute="//@source.4/@hasRule.8/@match.1/@class.1/@attribute.0"/>
+    </hasRule>
+    <hasRule description="Change state with transition between different states.">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Current"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Transition">
+          <attribute attributeName="token"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="State">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Automata"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.4/@hasRule.9/@match.0/@class.0" target="//@source.4/@hasRule.9/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.4/@hasRule.9/@match.0/@class.1" target="//@source.4/@hasRule.9/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.4/@hasRule.9/@match.0/@class.1" target="//@source.4/@hasRule.9/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="current" source="//@source.4/@hasRule.9/@match.0/@class.3" target="//@source.4/@hasRule.9/@match.0/@class.0"/>
+      </match>
+      <match explicitSource="//@source.0">
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="word" className="Next"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="word" className="Symbol">
+          <attribute attributeName="token"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="symbol" source="//@source.4/@hasRule.9/@match.1/@class.0" target="//@source.4/@hasRule.9/@match.1/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="automata" className="Current">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.9/@match.0/@class.2/@attribute.0"/>
+          </attribute>
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Current"/>
+          </attribute>
+        </class>
+        <class packageName="automata" className="State">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="State"/>
+          </attribute>
+        </class>
+        <class packageName="automata" className="Automata">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Automata"/>
+          </attribute>
+        </class>
+        <association associationName="state" source="//@source.4/@hasRule.9/@apply/@class.0" target="//@source.4/@hasRule.9/@apply/@class.1"/>
+        <association associationName="current" source="//@source.4/@hasRule.9/@apply/@class.2" target="//@source.4/@hasRule.9/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.9/@apply/@class.1" sourceClass="//@source.4/@hasRule.9/@match.0/@class.2"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.9/@apply/@class.2" sourceClass="//@source.4/@hasRule.9/@match.0/@class.3"/>
+      <attributeRelations xsi:type="dsltrans:AttributeEquality" sourceAttribute="//@source.4/@hasRule.9/@match.0/@class.1/@attribute.0" targetAttribute="//@source.4/@hasRule.9/@match.1/@class.1/@attribute.0"/>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="WordLayer2" description="WordLayer2" previousSource="//@source.1" outputFilePathURI="tests/t2/o2.xmi">
+    <metaModelId metaModelURI="tests/t2/Word.ecore" metaModelName="word.Word"/>
+    <hasRule description="">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="word" className="Word"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="word" className="Symbol"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="symbols" source="//@source.5/@hasRule.0/@match.0/@class.0" target="//@source.5/@hasRule.0/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="word" className="Word">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Word"/>
+          </attribute>
+        </class>
+        <class packageName="word" className="Symbol">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Symbol"/>
+          </attribute>
+        </class>
+        <association associationName="symbols" source="//@source.5/@hasRule.0/@apply/@class.0" target="//@source.5/@hasRule.0/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.5/@hasRule.0/@apply/@class.1" sourceClass="//@source.5/@hasRule.0/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.5/@hasRule.0/@apply/@class.0" sourceClass="//@source.5/@hasRule.0/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="word" className="Symbol"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="word" className="Symbol"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="next_symbol" source="//@source.5/@hasRule.1/@match.0/@class.0" target="//@source.5/@hasRule.1/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="word" className="Symbol">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Symbol"/>
+          </attribute>
+        </class>
+        <class packageName="word" className="Symbol">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Symbol"/>
+          </attribute>
+        </class>
+        <association associationName="next_symbol" source="//@source.5/@hasRule.1/@apply/@class.0" target="//@source.5/@hasRule.1/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.5/@hasRule.1/@apply/@class.1" sourceClass="//@source.5/@hasRule.1/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.5/@hasRule.1/@apply/@class.0" sourceClass="//@source.5/@hasRule.1/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="">
+      <match explicitSource="//@source.2">
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Current"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="State"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="automata" className="Transition">
+          <attribute attributeName="token"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.5/@hasRule.2/@match.0/@class.0" target="//@source.5/@hasRule.2/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.5/@hasRule.2/@match.0/@class.2" target="//@source.5/@hasRule.2/@match.0/@class.1"/>
+      </match>
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="word" className="Word"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="word" className="Symbol">
+          <attribute attributeName="token"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="word" className="Symbol">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="word" className="Next"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="symbol" source="//@source.5/@hasRule.2/@match.1/@class.3" target="//@source.5/@hasRule.2/@match.1/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="next_symbol" source="//@source.5/@hasRule.2/@match.1/@class.1" target="//@source.5/@hasRule.2/@match.1/@class.2"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="next" source="//@source.5/@hasRule.2/@match.1/@class.0" target="//@source.5/@hasRule.2/@match.1/@class.3"/>
+      </match>
+      <apply>
+        <class packageName="word" className="Word"/>
+        <class packageName="word" className="Symbol">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Symbol"/>
+          </attribute>
+        </class>
+        <class packageName="word" className="Next">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Next"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.5/@hasRule.2/@match.1/@class.2/@attribute.0"/>
+          </attribute>
+        </class>
+        <association associationName="symbol" source="//@source.5/@hasRule.2/@apply/@class.2" target="//@source.5/@hasRule.2/@apply/@class.1"/>
+        <association associationName="next" source="//@source.5/@hasRule.2/@apply/@class.0" target="//@source.5/@hasRule.2/@apply/@class.2"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.5/@hasRule.2/@apply/@class.0" sourceClass="//@source.5/@hasRule.2/@match.1/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.5/@hasRule.2/@apply/@class.1" sourceClass="//@source.5/@hasRule.2/@match.1/@class.2"/>
+      <attributeRelations xsi:type="dsltrans:AttributeEquality" sourceAttribute="//@source.5/@hasRule.2/@match.0/@class.2/@attribute.0" targetAttribute="//@source.5/@hasRule.2/@match.1/@class.1/@attribute.0"/>
+    </hasRule>
+  </source>
+</dsltrans:TransformationModel>

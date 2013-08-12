@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.1 2011/12/28 01:45:32 bfb Exp $
+-->
+
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="mprolog.contribution1"
+            nameFilter="*.mprolog"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="mprolog.menu1"
+               label="M-Prolog"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="mprolog.popup.actions.Serialize"
+               enablesFor="1"
+               id="mprolog.newAction"
+               label="Serialize to File"
+               menubarPath="mprolog.menu1/group1">
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="mprolog.contribution2"
+            nameFilter="*.mprologTR"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="mprolog.menu1"
+               label="M-Prolog Term Reference"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="mprolog.popup.actions.ToMProlog"
+               enablesFor="1"
+               id="mprolog.newAction1"
+               label="Transform To M-Prolog"
+               menubarPath="mprolog.menu1/group1">
+         </action>
+         <action
+               class="mprolog.popup.actions.ToDSLTrans"
+               enablesFor="1"
+               id="mprolog.newAction2"
+               label="Transform To DSLTrans Identity"
+               menubarPath="mprolog.menu1/group1">
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="mprolog.contribution3"
+            nameFilter="*.ecore"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="mprolog.menu1"
+               label="M-Prolog Term Reference"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="mprolog.popup.actions.ToMPrologDSLTrans"
+               enablesFor="1"
+               id="mprolog.newAction"
+               label="Build MPrologTermReference Serializer"
+               menubarPath="mprolog.menu1/group1">
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="mprolog.contribution3"
+            nameFilter="*.*"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="mprolog.menu1"
+               label="M-Prolog Term Reference"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="mprolog.popup.actions.ToMPrologTRSerialize"
+               enablesFor="1"
+               id="mprolog.newAction"
+               label="Serialize to MPrologTR"
+               menubarPath="mprolog.menu1/group1">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

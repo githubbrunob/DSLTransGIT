@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax">
+		<metaInformationProvider class="dsltrans.resource.dsltranstext.mopp.DsltranstextMetaInformation" id="dsltrans.resource.dsltranstext.mopp.DsltranstextMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension id="dsltrans.resource.dsltranstext.problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="org.eclipse.core.resources.problemmarker">
+		</super>
+		<super type="org.eclipse.core.resources.textmarker">
+		</super>
+		<super type="org.eclipse.emf.ecore.diagnostic">
+		</super>
+	</extension>
+	
+	<extension id="dsltrans.resource.dsltranstext.problem.syntax_error" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="dsltrans.resource.dsltranstext.problem">
+		</super>
+	</extension>
+	
+	<extension id="dsltrans.resource.dsltranstext.problem.print_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="dsltrans.resource.dsltranstext.problem">
+		</super>
+	</extension>
+	
+	<extension id="dsltrans.resource.dsltranstext.problem.unresolved_reference" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="dsltrans.resource.dsltranstext.problem">
+		</super>
+	</extension>
+	
+	<extension id="dsltrans.resource.dsltranstext.problem.analysis_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="dsltrans.resource.dsltranstext.problem">
+		</super>
+	</extension>
+	
+	<extension id="dsltrans.resource.dsltranstext.problem.builder_error" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="dsltrans.resource.dsltranstext.problem">
+		</super>
+	</extension>
+	
+	<extension id="dsltrans.resource.dsltranstext.nature" name="dsltranstext nature" point="org.eclipse.core.resources.natures">
+		<runtime>
+			<run class="dsltrans.resource.dsltranstext.mopp.DsltranstextNature">
+			</run>
+		</runtime>
+		<builder id="dsltrans.resource.dsltranstext.builder">
+		</builder>
+	</extension>
+	
+	<extension point="org.eclipse.core.resources.builders" id="dsltrans.resource.dsltranstext.builder" name="dsltranstext Builder">
+		<builder hasNature="true">
+			<run class="dsltrans.resource.dsltranstext.mopp.DsltranstextBuilderAdapter">
+			</run>
+		</builder>
+	</extension>
+	
+	<extension-point id="dsltrans.resource.dsltranstext.default_load_options" name="Default Load Options" schema="schema/default_load_options.exsd">
+	</extension-point>
+	
+	<extension point="org.eclipse.emf.ecore.extension_parser">
+		<parser class="dsltrans.resource.dsltranstext.mopp.DsltranstextResourceFactoryDelegator" type="dsltranstext">
+		</parser>
+	</extension>
+	
+	<extension-point id="dsltrans.resource.dsltranstext.additional_extension_parser" name="Additional Extension Parser" schema="schema/additional_extension_parser.exsd">
+	</extension-point>
+	
+	<extension point="org.eclipse.debug.core.breakpoints">
+		<breakpoint class="dsltrans.resource.dsltranstext.debug.DsltranstextLineBreakpoint" id="dsltrans.resource.dsltranstext.debug.breakpoint" markerType="dsltrans.resource.dsltranstext.debug.lineBreakpoint.marker" name="dsltranstext Breakpoint">
+		</breakpoint>
+	</extension>
+	
+	<extension id="dsltrans.resource.dsltranstext.debug.lineBreakpoint.marker" point="org.eclipse.core.resources.markers">
+		<super type="org.eclipse.debug.core.lineBreakpointMarker">
+		</super>
+		<super type="org.eclipse.core.resources.textmarker">
+		</super>
+		<persistent value="true">
+		</persistent>
+	</extension>
+	
+	<extension point="org.eclipse.debug.core.launchConfigurationTypes">
+		<launchConfigurationType id="dsltrans.resource.dsltranstext.ui.launchConfigurationType" delegate="dsltrans.resource.dsltranstext.launch.DsltranstextLaunchConfigurationDelegate" modes="run,debug" name="dsltranstext Application" sourceLocatorId="dsltrans.resource.dsltranstext.ui.sourceLocator" sourcePathComputerId="dsltrans.resource.dsltranstext.ui.sourcePathComputer" delegateName="dsltranstext Launch Tooling" delegateDescription="This will run or debug .dsltranstext files.">
+		</launchConfigurationType>
+	</extension>
+	
+	<extension point="org.eclipse.debug.core.sourcePathComputers">
+		<sourcePathComputer class="dsltrans.resource.dsltranstext.debug.DsltranstextSourcePathComputerDelegate" id="dsltrans.resource.dsltranstext.ui.sourcePathComputer">
+		</sourcePathComputer>
+	</extension>
+	
+	<extension point="org.eclipse.debug.core.sourceLocators">
+		<sourceLocator id="dsltrans.resource.dsltranstext.ui.sourceLocator" class="dsltrans.resource.dsltranstext.debug.DsltranstextSourceLocator" name="dsltranstext Source Locator">
+		</sourceLocator>
+	</extension>
+	
+</plugin>

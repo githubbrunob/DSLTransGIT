@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsltrans:TransformationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsltrans="http://dsltrans/2.0">
+  <source xsi:type="dsltrans:FilePort" name="swinghall" filePathURI="tests\t9\resultSwingHall.xmi">
+    <metaModelId metaModelURI="tests\t9\SwingHall.ecore" metaModelName="swinghall.Swinghall"/>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="l0" description="model" previousSource="//@source.0" outputFilePathURI="tests\t9\o0.xmi">
+    <metaModelId metaModelURI="tests\t9\SwingWrapper.ecore" metaModelName="swingwrapper.Swingwrapper"/>
+    <hasRule description="Model">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Model" packageName="swinghall"/>
+      </match>
+      <apply>
+        <class className="Model" packageName="swingwrapper">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Model"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="l0" description="mappings" previousSource="//@source.1" outputFilePathURI="tests\t9\o0.xmi">
+    <metaModelId metaModelURI="tests\t9\SwingWrapper.ecore" metaModelName="swingwrapper.Swingwrapper"/>
+    <hasRule description="Wrappers">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Wrapper" packageName="swinghall">
+          <attribute attributeName="name"/>
+          <attribute attributeName="usageName"/>
+        </class>
+      </match>
+      <apply>
+        <class className="Wrapper" packageName="swingwrapper">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.0/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="usageName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.0/@match.0/@class.0/@attribute.1"/>
+          </attribute>
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Wrapper"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="Frame">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Frame" packageName="swinghall">
+          <attribute attributeName="name"/>
+          <attribute attributeName="package"/>
+        </class>
+      </match>
+      <apply>
+        <class className="Frame" packageName="swingwrapper">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.1/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="package">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.1/@match.0/@class.0/@attribute.1"/>
+          </attribute>
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Frame"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="Panel">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Panel" packageName="swinghall">
+          <attribute attributeName="name"/>
+          <attribute attributeName="package"/>
+        </class>
+      </match>
+      <apply>
+        <class className="Panel" packageName="swingwrapper">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.2/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="package">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.2/@match.0/@class.0/@attribute.1"/>
+          </attribute>
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Panel"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="TextField">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="TextField" packageName="swinghall">
+          <attribute attributeName="name"/>
+          <attribute attributeName="package"/>
+        </class>
+      </match>
+      <apply>
+        <class className="TextField" packageName="swingwrapper">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.3/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="package">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.3/@match.0/@class.0/@attribute.1"/>
+          </attribute>
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="TextField"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="Button">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Button" packageName="swinghall">
+          <attribute attributeName="name"/>
+          <attribute attributeName="package"/>
+        </class>
+      </match>
+      <apply>
+        <class className="Button" packageName="swingwrapper">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.4/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="package">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.4/@match.0/@class.0/@attribute.1"/>
+          </attribute>
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Button"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="TextFieldMethod">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="TextFieldMethod" packageName="swinghall">
+          <attribute attributeName="name"/>
+          <attribute attributeName="usageName"/>
+        </class>
+      </match>
+      <apply>
+        <class className="TextFieldMethod" packageName="swingwrapper">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.5/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="usageName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.5/@match.0/@class.0/@attribute.1"/>
+          </attribute>
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="TextFieldMethod"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="ButtonClick">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Click" packageName="swinghall">
+          <attribute attributeName="usageName"/>
+        </class>
+      </match>
+      <apply>
+        <class className="Click" packageName="swingwrapper">
+          <attribute attributeName="usageName">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.6/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Click"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="Parameter">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Parameter" packageName="swinghall">
+          <attribute attributeName="name"/>
+        </class>
+      </match>
+      <apply>
+        <class className="Parameter" packageName="swingwrapper">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.7/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Parameter"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="Property">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Property" packageName="swinghall">
+          <attribute attributeName="name"/>
+          <attribute attributeName="value"/>
+        </class>
+      </match>
+      <apply>
+        <class className="Property" packageName="swingwrapper">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.8/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Property"/>
+          </attribute>
+          <attribute attributeName="value">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.8/@match.0/@class.0/@attribute.1"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="l0" description="relations" previousSource="//@source.2" outputFilePathURI="tests\t9\o0.xmi">
+    <metaModelId metaModelURI="tests\t9\SwingWrapper.ecore" metaModelName="swingwrapper.Swingwrapper"/>
+    <hasRule description="Model and Wrappers">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Model" packageName="swinghall"/>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Wrapper" packageName="swinghall"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="wrapps" source="//@source.3/@hasRule.0/@match.0/@class.0" target="//@source.3/@hasRule.0/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class className="Wrapper" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Wrapper"/>
+          </attribute>
+        </class>
+        <class className="Model" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Model"/>
+          </attribute>
+        </class>
+        <association associationName="wrapps" source="//@source.3/@hasRule.0/@apply/@class.1" target="//@source.3/@hasRule.0/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.0/@apply/@class.0" sourceClass="//@source.3/@hasRule.0/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.0/@apply/@class.1" sourceClass="//@source.3/@hasRule.0/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="Wrapper and Frame">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Frame" packageName="swinghall"/>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Wrapper" packageName="swinghall"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="frame" source="//@source.3/@hasRule.1/@match.0/@class.1" target="//@source.3/@hasRule.1/@match.0/@class.0"/>
+      </match>
+      <apply>
+        <class className="Wrapper" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Wrapper"/>
+          </attribute>
+        </class>
+        <class className="Frame" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Frame"/>
+          </attribute>
+        </class>
+        <association associationName="frame" source="//@source.3/@hasRule.1/@apply/@class.0" target="//@source.3/@hasRule.1/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.1/@apply/@class.0" sourceClass="//@source.3/@hasRule.1/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.1/@apply/@class.1" sourceClass="//@source.3/@hasRule.1/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="Frame and Panels">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Frame" packageName="swinghall"/>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Wrapper" packageName="swinghall"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="frame" source="//@source.3/@hasRule.2/@match.0/@class.1" target="//@source.3/@hasRule.2/@match.0/@class.0"/>
+      </match>
+      <apply>
+        <class className="Wrapper" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Wrapper"/>
+          </attribute>
+        </class>
+        <class className="Frame" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Frame"/>
+          </attribute>
+        </class>
+        <association associationName="frame" source="//@source.3/@hasRule.2/@apply/@class.0" target="//@source.3/@hasRule.2/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.2/@apply/@class.0" sourceClass="//@source.3/@hasRule.2/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.2/@apply/@class.1" sourceClass="//@source.3/@hasRule.2/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="Frame Panel">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Panel" packageName="swinghall"/>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Frame" packageName="swinghall"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="panels" source="//@source.3/@hasRule.3/@match.0/@class.1" target="//@source.3/@hasRule.3/@match.0/@class.0"/>
+      </match>
+      <apply>
+        <class className="Frame" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Frame"/>
+          </attribute>
+        </class>
+        <class className="Panel" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Panel"/>
+          </attribute>
+        </class>
+        <association associationName="panels" source="//@source.3/@hasRule.3/@apply/@class.0" target="//@source.3/@hasRule.3/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.3/@apply/@class.0" sourceClass="//@source.3/@hasRule.3/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.3/@apply/@class.1" sourceClass="//@source.3/@hasRule.3/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="Panel Panel">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Panel" packageName="swinghall"/>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Panel" packageName="swinghall"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="panels" source="//@source.3/@hasRule.4/@match.0/@class.1" target="//@source.3/@hasRule.4/@match.0/@class.0"/>
+      </match>
+      <apply>
+        <class className="Panel" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Panel"/>
+          </attribute>
+        </class>
+        <class className="Panel" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Panel"/>
+          </attribute>
+        </class>
+        <association associationName="panels" source="//@source.3/@hasRule.4/@apply/@class.0" target="//@source.3/@hasRule.4/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.4/@apply/@class.0" sourceClass="//@source.3/@hasRule.4/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.4/@apply/@class.1" sourceClass="//@source.3/@hasRule.4/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="Panel TextFields">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="TextField" packageName="swinghall"/>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Panel" packageName="swinghall"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="textFields" source="//@source.3/@hasRule.5/@match.0/@class.1" target="//@source.3/@hasRule.5/@match.0/@class.0"/>
+      </match>
+      <apply>
+        <class className="Panel" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Panel"/>
+          </attribute>
+        </class>
+        <class className="TextField" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="TextField"/>
+          </attribute>
+        </class>
+        <association associationName="textFields" source="//@source.3/@hasRule.5/@apply/@class.0" target="//@source.3/@hasRule.5/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.5/@apply/@class.0" sourceClass="//@source.3/@hasRule.5/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.5/@apply/@class.1" sourceClass="//@source.3/@hasRule.5/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="Panel Buttons">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Button" packageName="swinghall"/>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Panel" packageName="swinghall"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="buttons" source="//@source.3/@hasRule.6/@match.0/@class.1" target="//@source.3/@hasRule.6/@match.0/@class.0"/>
+      </match>
+      <apply>
+        <class className="Panel" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Panel"/>
+          </attribute>
+        </class>
+        <class className="Button" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Button"/>
+          </attribute>
+        </class>
+        <association associationName="buttons" source="//@source.3/@hasRule.6/@apply/@class.0" target="//@source.3/@hasRule.6/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.6/@apply/@class.0" sourceClass="//@source.3/@hasRule.6/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.6/@apply/@class.1" sourceClass="//@source.3/@hasRule.6/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="TextFieldMethods">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="TextFieldMethod" packageName="swinghall"/>
+        <class xsi:type="dsltrans:AnyMatchClass" className="TextField" packageName="swinghall"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="methods" source="//@source.3/@hasRule.7/@match.0/@class.1" target="//@source.3/@hasRule.7/@match.0/@class.0"/>
+      </match>
+      <apply>
+        <class className="TextField" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="TextField"/>
+          </attribute>
+        </class>
+        <class className="TextFieldMethod" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="TextFieldMethod"/>
+          </attribute>
+        </class>
+        <association associationName="methods" source="//@source.3/@hasRule.7/@apply/@class.0" target="//@source.3/@hasRule.7/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.7/@apply/@class.0" sourceClass="//@source.3/@hasRule.7/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.7/@apply/@class.1" sourceClass="//@source.3/@hasRule.7/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="Method Parameters">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="TextFieldMethod" packageName="swinghall"/>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Parameter" packageName="swinghall"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="parameters" source="//@source.3/@hasRule.8/@match.0/@class.0" target="//@source.3/@hasRule.8/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class className="Parameter" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Parameter"/>
+          </attribute>
+        </class>
+        <class className="TextFieldMethod" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="TextFieldMethod"/>
+          </attribute>
+        </class>
+        <association associationName="parameters" source="//@source.3/@hasRule.8/@apply/@class.1" target="//@source.3/@hasRule.8/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.8/@apply/@class.0" sourceClass="//@source.3/@hasRule.8/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.8/@apply/@class.1" sourceClass="//@source.3/@hasRule.8/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="Button Events">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Button" packageName="swinghall"/>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Click" packageName="swinghall"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="event" source="//@source.3/@hasRule.9/@match.0/@class.0" target="//@source.3/@hasRule.9/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class className="Click" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Click"/>
+          </attribute>
+        </class>
+        <class className="Button" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Button"/>
+          </attribute>
+        </class>
+        <association associationName="event" source="//@source.3/@hasRule.9/@apply/@class.1" target="//@source.3/@hasRule.9/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.9/@apply/@class.0" sourceClass="//@source.3/@hasRule.9/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.9/@apply/@class.1" sourceClass="//@source.3/@hasRule.9/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="Frame Properties">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Property" packageName="swinghall"/>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Frame" packageName="swinghall"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="properties" source="//@source.3/@hasRule.10/@match.0/@class.1" target="//@source.3/@hasRule.10/@match.0/@class.0"/>
+      </match>
+      <apply>
+        <class className="Frame" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Frame"/>
+          </attribute>
+        </class>
+        <class className="Property" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Property"/>
+          </attribute>
+        </class>
+        <association associationName="properties" source="//@source.3/@hasRule.10/@apply/@class.0" target="//@source.3/@hasRule.10/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.10/@apply/@class.0" sourceClass="//@source.3/@hasRule.10/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.10/@apply/@class.1" sourceClass="//@source.3/@hasRule.10/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="Button Properties">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Property" packageName="swinghall"/>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Button" packageName="swinghall"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="properties" source="//@source.3/@hasRule.11/@match.0/@class.1" target="//@source.3/@hasRule.11/@match.0/@class.0"/>
+      </match>
+      <apply>
+        <class className="Button" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Button"/>
+          </attribute>
+        </class>
+        <class className="Property" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Property"/>
+          </attribute>
+        </class>
+        <association associationName="properties" source="//@source.3/@hasRule.11/@apply/@class.0" target="//@source.3/@hasRule.11/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.11/@apply/@class.0" sourceClass="//@source.3/@hasRule.11/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.11/@apply/@class.1" sourceClass="//@source.3/@hasRule.11/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="TextField Properties">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Property" packageName="swinghall"/>
+        <class xsi:type="dsltrans:AnyMatchClass" className="TextField" packageName="swinghall"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="properties" source="//@source.3/@hasRule.12/@match.0/@class.1" target="//@source.3/@hasRule.12/@match.0/@class.0"/>
+      </match>
+      <apply>
+        <class className="TextField" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="TextField"/>
+          </attribute>
+        </class>
+        <class className="Property" packageName="swingwrapper">
+          <attribute attributeName="">
+            <attributeValue xsi:type="dsltrans:Atom" value="Property"/>
+          </attribute>
+        </class>
+        <association associationName="properties" source="//@source.3/@hasRule.12/@apply/@class.0" target="//@source.3/@hasRule.12/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.12/@apply/@class.0" sourceClass="//@source.3/@hasRule.12/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.12/@apply/@class.1" sourceClass="//@source.3/@hasRule.12/@match.0/@class.0"/>
+    </hasRule>
+  </source>
+</dsltrans:TransformationModel>

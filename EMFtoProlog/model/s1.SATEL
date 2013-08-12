@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="ASCII"?>
+<SATEL:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AlgebraicExpressions="SATEL.AlgebraicExpressions" xmlns:HMLFormula="SATEL.HMLFormula" xmlns:SATEL="SATEL" xmlns:VariableDeclarations="SATEL.VariableDeclarations" xmlns:adtmm="SATEL.APN.adtmm" xmlns:algterms="SATEL.AlgebraicExpressions.algterms" xmlns:arithmeticterms="SATEL.AlgebraicExpressions.arithmeticterms" xmlns:booleanterms="SATEL.AlgebraicExpressions.booleanterms" xmlns:multisetmm="SATEL.APN.multisetmm">
+  <testIntentionModule name="myText">
+    <testIntentionBody>
+      <axiomDeclaration>
+        <axiom>
+          <inclusion in="//@testIntentionModule.0/@testIntentionInterface/@intention.0">
+            <hmlTerm>
+              <hmlTerm>
+                <hmlFormulaContent xsi:type="HMLFormula:HMLTop"/>
+              </hmlTerm>
+            </hmlTerm>
+          </inclusion>
+        </axiom>
+        <axiom>
+          <condition>
+            <conditionBody>
+              <conditionAtom xsi:type="SATEL:Inclusion" in="//@testIntentionModule.0/@testIntentionInterface/@intention.0">
+                <hmlTerm>
+                  <hmlTerm hmlVariable="//@testIntentionModule.0/@testIntentionBody/@variableDeclaration/@variable.1"/>
+                </hmlTerm>
+              </conditionAtom>
+              <conditionAtom xsi:type="booleanterms:LT">
+                <arithmeticTermR xsi:type="arithmeticterms:IntegerValue" value="6"/>
+                <arithmeticTermL xsi:type="arithmeticterms:NBEvents">
+                  <hmlTerm>
+                    <hmlTerm hmlVariable="//@testIntentionModule.0/@testIntentionBody/@variableDeclaration/@variable.1"/>
+                  </hmlTerm>
+                </arithmeticTermL>
+              </conditionAtom>
+            </conditionBody>
+          </condition>
+          <inclusion in="//@testIntentionModule.0/@testIntentionInterface/@intention.0">
+            <hmlTerm>
+              <hmlTerm hmlVariable="//@testIntentionModule.0/@testIntentionBody/@variableDeclaration/@variable.1"/>
+              <hmlTerm>
+                <hmlFormulaContent xsi:type="HMLFormula:HMLNext">
+                  <hmlFormulaContent xsi:type="HMLFormula:HMLTop"/>
+                  <hmlEvent>
+                    <inputTerm event="//@testIntentionModule.0/@focus/@methods.0"/>
+                  </hmlEvent>
+                </hmlFormulaContent>
+              </hmlTerm>
+            </hmlTerm>
+          </inclusion>
+        </axiom>
+        <axiom>
+          <condition>
+            <conditionBody>
+              <conditionAtom xsi:type="AlgebraicExpressions:AlgEquality">
+                <algebraicTermL xsi:type="algterms:CompositeTerm" op="//@testIntentionModule.0/@algebra.0/@ownedOperations.3">
+                  <terms xsi:type="algterms:VariableRef" var="//@testIntentionModule.0/@testIntentionBody/@variableDeclaration/@variable.2"/>
+                  <terms xsi:type="algterms:CompositeTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.1" iter="6">
+                    <terms xsi:type="algterms:CompositeTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.0"/>
+                  </terms>
+                </algebraicTermL>
+                <algebraicTermR xsi:type="algterms:CompositeTerm" op="//@testIntentionModule.0/@algebra.1/@ownedGenerators.0"/>
+              </conditionAtom>
+              <conditionAtom xsi:type="SATEL:Inclusion" in="//@testIntentionModule.0/@testIntentionInterface/@intention.0">
+                <hmlTerm>
+                  <hmlTerm hmlVariable="//@testIntentionModule.0/@testIntentionBody/@variableDeclaration/@variable.0"/>
+                </hmlTerm>
+              </conditionAtom>
+            </conditionBody>
+          </condition>
+          <inclusion in="//@testIntentionModule.0/@testIntentionInterface/@intention.1">
+            <hmlTerm>
+              <hmlTerm hmlVariable="//@testIntentionModule.0/@testIntentionBody/@variableDeclaration/@variable.0"/>
+              <hmlTerm>
+                <hmlFormulaContent xsi:type="HMLFormula:HMLNext">
+                  <hmlFormulaContent xsi:type="HMLFormula:HMLTop"/>
+                  <hmlEvent>
+                    <inputTerm event="//@testIntentionModule.0/@focus/@methods.1">
+                      <parameters>
+                        <value xsi:type="algterms:VariableRef" var="//@testIntentionModule.0/@testIntentionBody/@variableDeclaration/@variable.2"/>
+                      </parameters>
+                    </inputTerm>
+                    <outputTerm event="//@testIntentionModule.0/@focus/@gates.0"/>
+                  </hmlEvent>
+                </hmlFormulaContent>
+              </hmlTerm>
+            </hmlTerm>
+          </inclusion>
+        </axiom>
+      </axiomDeclaration>
+      <variableDeclaration>
+        <variable xsi:type="VariableDeclarations:PrimitiveHMLVarDec" name="var"/>
+        <variable xsi:type="VariableDeclarations:PrimitiveHMLVarDec" name="t"/>
+        <variable xsi:type="VariableDeclarations:AlgebraicSortVarDec" name="Counter" type="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+        <variable xsi:type="VariableDeclarations:PrimitiveIntegerVarDec" name="x"/>
+      </variableDeclaration>
+    </testIntentionBody>
+    <testIntentionInterface>
+      <intention name="TickIntention"/>
+      <intention name="MarkIntention"/>
+    </testIntentionInterface>
+    <focus name="Counter">
+      <ownedPlaces name="A">
+        <ownedPlaceMultiset>
+          <ownedNumOfTerms card="4">
+            <ownedElement xsi:type="multisetmm:TermReference">
+              <termReferenced xsi:type="adtmm:CTerm" iter="3" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.1">
+                <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.0"/>
+              </termReferenced>
+            </ownedElement>
+          </ownedNumOfTerms>
+          <ownedVariables name="var">
+            <variableSort xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+          </ownedVariables>
+        </ownedPlaceMultiset>
+        <sort xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+      </ownedPlaces>
+      <ownedPlaces name="B">
+        <ownedPlaceMultiset>
+          <ownedNumOfTerms card="4">
+            <ownedElement xsi:type="multisetmm:TermReference">
+              <termReferenced xsi:type="adtmm:CTerm" iter="5" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.1">
+                <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.0"/>
+              </termReferenced>
+            </ownedElement>
+          </ownedNumOfTerms>
+          <ownedVariables name="var">
+            <variableSort xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+          </ownedVariables>
+        </ownedPlaceMultiset>
+        <sort xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+      </ownedPlaces>
+      <ownedArcs from="//@testIntentionModule.0/@focus/@ownedPlaces.0" to="//@testIntentionModule.0/@focus/@ownedPlaces.1" Name="arc1">
+        <ownedArcMultiset>
+          <ownedNumOfTerms card="2">
+            <ownedElement xsi:type="multisetmm:TermReference">
+              <termReferenced xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.0"/>
+            </ownedElement>
+          </ownedNumOfTerms>
+          <ownedVariables name="someName">
+            <variableSort xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+          </ownedVariables>
+        </ownedArcMultiset>
+      </ownedArcs>
+      <methods name="tick"/>
+      <methods name="mark"/>
+      <gates name="alarm"/>
+    </focus>
+    <algebra name="naturals">
+      <ownedSorts name="nat"/>
+      <ownedOperations name="plus">
+        <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+        <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+        <result xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+      </ownedOperations>
+      <ownedOperations name="sum">
+        <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+        <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+        <result xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+      </ownedOperations>
+      <ownedOperations name="eq">
+        <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+        <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+        <result xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.1/@ownedSorts.0"/>
+      </ownedOperations>
+      <ownedOperations name="lt">
+        <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+        <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+        <result xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.1/@ownedSorts.0"/>
+      </ownedOperations>
+      <ownedGenerators name="zero">
+        <result xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+      </ownedGenerators>
+      <ownedGenerators name="suc">
+        <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+        <result xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+      </ownedGenerators>
+      <ownedVariables name="X">
+        <variableSort xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+      </ownedVariables>
+      <ownedVariables name="Y">
+        <variableSort xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+      </ownedVariables>
+      <ownedAxioms>
+        <ownedEquation>
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.0"/>
+          <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedOperations.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.0/@ownedVariables.0"/>
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.0"/>
+          </ownedLeftTerm>
+        </ownedEquation>
+      </ownedAxioms>
+      <ownedAxioms>
+        <ownedEquation>
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedOperations.1">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.0/@ownedVariables.0"/>
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.0/@ownedVariables.1"/>
+            </ownedTerms>
+          </ownedRightTerm>
+          <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedOperations.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.0/@ownedVariables.0"/>
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.1">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.0/@ownedVariables.1"/>
+            </ownedTerms>
+          </ownedLeftTerm>
+        </ownedEquation>
+      </ownedAxioms>
+      <ownedAxioms>
+        <ownedEquation>
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.1/@ownedGenerators.0"/>
+          <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedOperations.2">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.2/@ownedGenerators.0"/>
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.1">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.0/@ownedVariables.0"/>
+            </ownedTerms>
+          </ownedLeftTerm>
+        </ownedEquation>
+      </ownedAxioms>
+      <ownedAxioms>
+        <ownedEquation>
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.1/@ownedGenerators.0"/>
+          <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedOperations.2">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.1">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.0/@ownedVariables.1"/>
+            </ownedTerms>
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.2/@ownedGenerators.0"/>
+          </ownedLeftTerm>
+        </ownedEquation>
+      </ownedAxioms>
+      <ownedAxioms>
+        <ownedEquation>
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.1/@ownedGenerators.1"/>
+          <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedOperations.2">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.2/@ownedGenerators.0"/>
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.2/@ownedGenerators.0"/>
+          </ownedLeftTerm>
+        </ownedEquation>
+      </ownedAxioms>
+      <ownedAxioms>
+        <ownedEquation>
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedOperations.2">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.0/@ownedVariables.0"/>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.0/@ownedVariables.1"/>
+          </ownedRightTerm>
+          <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedOperations.2">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.1">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.0/@ownedVariables.0"/>
+            </ownedTerms>
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.1">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.0/@ownedVariables.1"/>
+            </ownedTerms>
+          </ownedLeftTerm>
+        </ownedEquation>
+      </ownedAxioms>
+      <ownedAxioms>
+        <ownedEquation>
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.1/@ownedGenerators.1"/>
+          <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedOperations.3">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.0"/>
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.1">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.0/@ownedVariables.0"/>
+            </ownedTerms>
+          </ownedLeftTerm>
+        </ownedEquation>
+      </ownedAxioms>
+      <ownedAxioms>
+        <ownedEquation>
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.1/@ownedGenerators.0"/>
+          <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedOperations.3">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.1">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.0/@ownedVariables.0"/>
+            </ownedTerms>
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.0"/>
+          </ownedLeftTerm>
+        </ownedEquation>
+      </ownedAxioms>
+      <ownedAxioms>
+        <ownedEquation>
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedOperations.3">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.0/@ownedVariables.0"/>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.0/@ownedVariables.1"/>
+          </ownedRightTerm>
+          <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedOperations.3">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.1">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.0/@ownedVariables.0"/>
+            </ownedTerms>
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.1">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.0/@ownedVariables.1"/>
+            </ownedTerms>
+          </ownedLeftTerm>
+        </ownedEquation>
+      </ownedAxioms>
+    </algebra>
+    <algebra name="Boolean">
+      <ownedSorts name="bool"/>
+      <ownedOperations name="neg">
+        <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.1/@ownedSorts.0"/>
+        <result xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.1/@ownedSorts.0"/>
+      </ownedOperations>
+      <ownedGenerators name="false">
+        <result xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.1/@ownedSorts.0"/>
+      </ownedGenerators>
+      <ownedGenerators name="true">
+        <result xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.1/@ownedSorts.0"/>
+      </ownedGenerators>
+      <ownedVariables name="X">
+        <variableSort xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.1/@ownedSorts.0"/>
+      </ownedVariables>
+      <ownedAxioms>
+        <ownedEquation>
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.1/@ownedGenerators.1"/>
+          <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.1/@ownedOperations.0">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.1/@ownedGenerators.0"/>
+          </ownedLeftTerm>
+        </ownedEquation>
+      </ownedAxioms>
+      <ownedAxioms>
+        <ownedEquation>
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.1/@ownedGenerators.0"/>
+          <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.1/@ownedOperations.0">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.1/@ownedGenerators.1"/>
+          </ownedLeftTerm>
+        </ownedEquation>
+      </ownedAxioms>
+    </algebra>
+    <algebra name="List">
+      <ownedSorts name="list"/>
+      <ownedOperations name="size">
+        <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.2/@ownedSorts.0"/>
+        <result xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+      </ownedOperations>
+      <ownedOperations name="nbOcurr">
+        <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+        <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.2/@ownedSorts.0"/>
+        <result xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+      </ownedOperations>
+      <ownedGenerators name="nil">
+        <result xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.2/@ownedSorts.0"/>
+      </ownedGenerators>
+      <ownedGenerators name="cons">
+        <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+        <operationSorts xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.2/@ownedSorts.0"/>
+        <result xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.2/@ownedSorts.0"/>
+      </ownedGenerators>
+      <ownedVariables name="H">
+        <variableSort xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+      </ownedVariables>
+      <ownedVariables name="L">
+        <variableSort xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.2/@ownedSorts.0"/>
+      </ownedVariables>
+      <ownedVariables name="E">
+        <variableSort xsi:type="adtmm:AtomicSort" declaration="//@testIntentionModule.0/@algebra.0/@ownedSorts.0"/>
+      </ownedVariables>
+      <ownedAxioms>
+        <ownedConditions xsi:type="adtmm:Equation">
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.1/@ownedGenerators.1"/>
+          <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedOperations.2">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.2/@ownedVariables.2"/>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.2/@ownedVariables.0"/>
+          </ownedLeftTerm>
+        </ownedConditions>
+        <ownedEquation>
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.2/@ownedOperations.1">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.2/@ownedVariables.2"/>
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.2/@ownedVariables.1"/>
+            </ownedTerms>
+          </ownedRightTerm>
+          <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.2/@ownedOperations.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.2/@ownedVariables.2"/>
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.2/@ownedGenerators.1">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.2/@ownedVariables.0"/>
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.2/@ownedVariables.1"/>
+            </ownedTerms>
+          </ownedLeftTerm>
+        </ownedEquation>
+      </ownedAxioms>
+      <ownedAxioms>
+        <ownedConditions xsi:type="adtmm:Equation">
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.1/@ownedGenerators.0"/>
+          <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedOperations.2">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.2/@ownedVariables.2"/>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.2/@ownedVariables.0"/>
+          </ownedLeftTerm>
+        </ownedConditions>
+        <ownedEquation>
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.2/@ownedOperations.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.2/@ownedVariables.2"/>
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.2/@ownedVariables.1"/>
+          </ownedRightTerm>
+          <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.2/@ownedOperations.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.2/@ownedVariables.2"/>
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.2/@ownedGenerators.1">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.2/@ownedVariables.0"/>
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.2/@ownedVariables.1"/>
+            </ownedTerms>
+          </ownedLeftTerm>
+        </ownedEquation>
+      </ownedAxioms>
+      <ownedAxioms>
+        <ownedEquation>
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.0"/>
+          <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.2/@ownedOperations.0">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.2/@ownedGenerators.0"/>
+          </ownedLeftTerm>
+        </ownedEquation>
+      </ownedAxioms>
+      <ownedAxioms>
+        <ownedEquation>
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.1">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.2/@ownedOperations.0">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.2/@ownedVariables.1"/>
+            </ownedTerms>
+          </ownedRightTerm>
+          <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.2/@ownedOperations.0">
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.2/@ownedGenerators.1">
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.2/@ownedVariables.0"/>
+              <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.2/@ownedVariables.1"/>
+            </ownedTerms>
+          </ownedLeftTerm>
+        </ownedEquation>
+      </ownedAxioms>
+      <ownedAxioms>
+        <ownedEquation>
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.0/@ownedGenerators.0"/>
+          <ownedLeftTerm xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.2/@ownedOperations.1">
+            <ownedTerms xsi:type="adtmm:VariableRef" variable="//@testIntentionModule.0/@algebra.2/@ownedVariables.2"/>
+            <ownedTerms xsi:type="adtmm:CTerm" op="//@testIntentionModule.0/@algebra.2/@ownedGenerators.0"/>
+          </ownedLeftTerm>
+        </ownedEquation>
+      </ownedAxioms>
+    </algebra>
+  </testIntentionModule>
+</SATEL:Model>

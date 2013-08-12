@@ -1,0 +1,1397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsltrans:TransformationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsltrans="http://dsltrans/2.0">
+  <source xsi:type="dsltrans:FilePort" name="MachineModel" filePathURI="tests/t1/Machine.xmi">
+    <metaModelId metaModelURI="tests/t1/TuringMachine.ecore" metaModelName="machine.Machine"/>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="Entities" description="Entities" previousSource="//@source.0" outputFilePathURI="tests/t1/o0.xmi">
+    <metaModelId metaModelURI="tests/t1/TuringMachine.ecore" metaModelName="machine.Machine"/>
+    <hasRule description="Tape">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Tape"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Tape">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Tape"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="Symbol">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value"/>
+          <attribute attributeName="position"/>
+        </class>
+        <class xsi:type="dsltrans:NegativeMatchClass" packageName="machine" className="Head"/>
+        <association xsi:type="dsltrans:NegativeMatchAssociation" associationName="symbol" source="//@source.1/@hasRule.1/@match.0/@class.1" target="//@source.1/@hasRule.1/@match.0/@class.0"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Symbol">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="NonHeadSymbol"/>
+          </attribute>
+          <attribute attributeName="value">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.1/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="position">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.1/@match.0/@class.0/@attribute.1"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.1/@match.0/@class.0/@attribute.1"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value=","/>
+                <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.1/@match.0/@class.0/@attribute.0"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="Initial">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Initial"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State">
+          <attribute attributeName="name"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.1/@hasRule.2/@match.0/@class.0" target="//@source.1/@hasRule.2/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Initial">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Initial"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.2/@match.0/@class.1/@attribute.0"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="Transition to differente states">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Transition">
+          <attribute attributeName="read"/>
+          <attribute attributeName="write"/>
+          <attribute attributeName="moveTo"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State">
+          <attribute attributeName="name"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.1/@hasRule.3/@match.0/@class.0" target="//@source.1/@hasRule.3/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.1/@hasRule.3/@match.0/@class.0" target="//@source.1/@hasRule.3/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Transition">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Transition"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.3/@match.0/@class.1/@attribute.0"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value="->"/>
+                <rightTerm xsi:type="dsltrans:Concat">
+                  <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.3/@match.0/@class.2/@attribute.0"/>
+                  <rightTerm xsi:type="dsltrans:Concat">
+                    <leftTerm xsi:type="dsltrans:Atom" value=","/>
+                    <rightTerm xsi:type="dsltrans:Concat">
+                      <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.3/@match.0/@class.0/@attribute.0"/>
+                      <rightTerm xsi:type="dsltrans:Concat">
+                        <leftTerm xsi:type="dsltrans:Atom" value="/"/>
+                        <rightTerm xsi:type="dsltrans:Concat">
+                          <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.3/@match.0/@class.0/@attribute.1"/>
+                          <rightTerm xsi:type="dsltrans:Concat">
+                            <leftTerm xsi:type="dsltrans:Atom" value=","/>
+                            <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.3/@match.0/@class.0/@attribute.2"/>
+                          </rightTerm>
+                        </rightTerm>
+                      </rightTerm>
+                    </rightTerm>
+                  </rightTerm>
+                </rightTerm>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+          <attribute attributeName="read">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.3/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="write">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.3/@match.0/@class.0/@attribute.1"/>
+          </attribute>
+          <attribute attributeName="moveTo">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.3/@match.0/@class.0/@attribute.2"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="TuringMachine">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="TuringMachine"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="TuringMachine">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="TuringMachine"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="Machine">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Machine"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Machine">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Machine"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="Final">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Final"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State">
+          <attribute attributeName="name"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.1/@hasRule.6/@match.0/@class.0" target="//@source.1/@hasRule.6/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Final">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Final"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.6/@match.0/@class.1/@attribute.0"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="State">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State">
+          <attribute attributeName="name"/>
+        </class>
+      </match>
+      <apply>
+        <class packageName="machine" className="State">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="State"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.7/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="change current symbol data">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Current"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Head"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Machine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Transition">
+          <attribute attributeName="read">
+            <attributeValue xsi:type="dsltrans:Atom" value="B"/>
+          </attribute>
+          <attribute attributeName="write"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value">
+            <attributeValue xsi:type="dsltrans:Atom" value="B"/>
+          </attribute>
+          <attribute attributeName="position"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="current" source="//@source.1/@hasRule.8/@match.0/@class.2" target="//@source.1/@hasRule.8/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="head" source="//@source.1/@hasRule.8/@match.0/@class.2" target="//@source.1/@hasRule.8/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="symbol" source="//@source.1/@hasRule.8/@match.0/@class.1" target="//@source.1/@hasRule.8/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.1/@hasRule.8/@match.0/@class.0" target="//@source.1/@hasRule.8/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.1/@hasRule.8/@match.0/@class.3" target="//@source.1/@hasRule.8/@match.0/@class.5"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Symbol">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="HeadSymbol"/>
+          </attribute>
+          <attribute attributeName="position">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.8/@match.0/@class.4/@attribute.1"/>
+          </attribute>
+          <attribute attributeName="value">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.8/@match.0/@class.3/@attribute.1"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.8/@match.0/@class.4/@attribute.1"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value=","/>
+                <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.8/@match.0/@class.3/@attribute.1"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="change current symbol data">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Current"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Head"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Machine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Transition">
+          <attribute attributeName="read">
+            <attributeValue xsi:type="dsltrans:Atom" value="0"/>
+          </attribute>
+          <attribute attributeName="write"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value">
+            <attributeValue xsi:type="dsltrans:Atom" value="0"/>
+          </attribute>
+          <attribute attributeName="position"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="current" source="//@source.1/@hasRule.9/@match.0/@class.2" target="//@source.1/@hasRule.9/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="head" source="//@source.1/@hasRule.9/@match.0/@class.2" target="//@source.1/@hasRule.9/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="symbol" source="//@source.1/@hasRule.9/@match.0/@class.1" target="//@source.1/@hasRule.9/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.1/@hasRule.9/@match.0/@class.0" target="//@source.1/@hasRule.9/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.1/@hasRule.9/@match.0/@class.3" target="//@source.1/@hasRule.9/@match.0/@class.5"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Symbol">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="HeadSymbol"/>
+          </attribute>
+          <attribute attributeName="position">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.9/@match.0/@class.4/@attribute.1"/>
+          </attribute>
+          <attribute attributeName="value">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.9/@match.0/@class.3/@attribute.1"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.9/@match.0/@class.4/@attribute.1"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value=","/>
+                <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.9/@match.0/@class.3/@attribute.1"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="change current symbol data">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Current"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Head"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Machine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Transition">
+          <attribute attributeName="read">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+          <attribute attributeName="write"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+          <attribute attributeName="position"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="current" source="//@source.1/@hasRule.10/@match.0/@class.2" target="//@source.1/@hasRule.10/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="head" source="//@source.1/@hasRule.10/@match.0/@class.2" target="//@source.1/@hasRule.10/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="symbol" source="//@source.1/@hasRule.10/@match.0/@class.1" target="//@source.1/@hasRule.10/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.1/@hasRule.10/@match.0/@class.0" target="//@source.1/@hasRule.10/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.1/@hasRule.10/@match.0/@class.3" target="//@source.1/@hasRule.10/@match.0/@class.5"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Symbol">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="HeadSymbol"/>
+          </attribute>
+          <attribute attributeName="position">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.10/@match.0/@class.4/@attribute.1"/>
+          </attribute>
+          <attribute attributeName="value">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.10/@match.0/@class.3/@attribute.1"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.10/@match.0/@class.4/@attribute.1"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value=","/>
+                <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.10/@match.0/@class.3/@attribute.1"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="Transition to same state">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Transition">
+          <attribute attributeName="read"/>
+          <attribute attributeName="write"/>
+          <attribute attributeName="moveTo"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State">
+          <attribute attributeName="name"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.1/@hasRule.11/@match.0/@class.0" target="//@source.1/@hasRule.11/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.1/@hasRule.11/@match.0/@class.0" target="//@source.1/@hasRule.11/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Transition">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Transition"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.11/@match.0/@class.1/@attribute.0"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value="->"/>
+                <rightTerm xsi:type="dsltrans:Concat">
+                  <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.11/@match.0/@class.1/@attribute.0"/>
+                  <rightTerm xsi:type="dsltrans:Concat">
+                    <leftTerm xsi:type="dsltrans:Atom" value=","/>
+                    <rightTerm xsi:type="dsltrans:Concat">
+                      <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.11/@match.0/@class.0/@attribute.0"/>
+                      <rightTerm xsi:type="dsltrans:Concat">
+                        <leftTerm xsi:type="dsltrans:Atom" value="/"/>
+                        <rightTerm xsi:type="dsltrans:Concat">
+                          <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.11/@match.0/@class.0/@attribute.1"/>
+                          <rightTerm xsi:type="dsltrans:Concat">
+                            <leftTerm xsi:type="dsltrans:Atom" value=","/>
+                            <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.11/@match.0/@class.0/@attribute.2"/>
+                          </rightTerm>
+                        </rightTerm>
+                      </rightTerm>
+                    </rightTerm>
+                  </rightTerm>
+                </rightTerm>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+          <attribute attributeName="read">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.11/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+          <attribute attributeName="write">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.11/@match.0/@class.0/@attribute.1"/>
+          </attribute>
+          <attribute attributeName="moveTo">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.11/@match.0/@class.0/@attribute.2"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="Associations" description="Associations" previousSource="//@source.1" outputFilePathURI="tests/t1/o1.xmi">
+    <metaModelId metaModelURI="tests/t1/TuringMachine.ecore" metaModelName="machine.Machine"/>
+    <hasRule description="state">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Initial"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.2/@hasRule.0/@match.0/@class.0" target="//@source.2/@hasRule.0/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Initial"/>
+        <class packageName="machine" className="State"/>
+        <association associationName="state" source="//@source.2/@hasRule.0/@apply/@class.0" target="//@source.2/@hasRule.0/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.0/@apply/@class.0" sourceClass="//@source.2/@hasRule.0/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.0/@apply/@class.1" sourceClass="//@source.2/@hasRule.0/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="next">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="next" source="//@source.2/@hasRule.1/@match.0/@class.0" target="//@source.2/@hasRule.1/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Symbol"/>
+        <class packageName="machine" className="Symbol"/>
+        <association associationName="next" source="//@source.2/@hasRule.1/@apply/@class.0" target="//@source.2/@hasRule.1/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.1/@apply/@class.0" sourceClass="//@source.2/@hasRule.1/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.1/@apply/@class.1" sourceClass="//@source.2/@hasRule.1/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="source">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Transition"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.2/@hasRule.2/@match.0/@class.0" target="//@source.2/@hasRule.2/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Transition"/>
+        <class packageName="machine" className="State"/>
+        <association associationName="source" source="//@source.2/@hasRule.2/@apply/@class.0" target="//@source.2/@hasRule.2/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.2/@apply/@class.0" sourceClass="//@source.2/@hasRule.2/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.2/@apply/@class.1" sourceClass="//@source.2/@hasRule.2/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="target">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Transition"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.2/@hasRule.3/@match.0/@class.0" target="//@source.2/@hasRule.3/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Transition"/>
+        <class packageName="machine" className="State"/>
+        <association associationName="target" source="//@source.2/@hasRule.3/@apply/@class.0" target="//@source.2/@hasRule.3/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.3/@apply/@class.0" sourceClass="//@source.2/@hasRule.3/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.3/@apply/@class.1" sourceClass="//@source.2/@hasRule.3/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="symbols">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Tape"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="symbols" source="//@source.2/@hasRule.4/@match.0/@class.0" target="//@source.2/@hasRule.4/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Tape"/>
+        <class packageName="machine" className="Symbol"/>
+        <association associationName="symbols" source="//@source.2/@hasRule.4/@apply/@class.0" target="//@source.2/@hasRule.4/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.4/@apply/@class.0" sourceClass="//@source.2/@hasRule.4/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.4/@apply/@class.1" sourceClass="//@source.2/@hasRule.4/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="initial">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Machine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Initial"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="initial" source="//@source.2/@hasRule.5/@match.0/@class.0" target="//@source.2/@hasRule.5/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Machine"/>
+        <class packageName="machine" className="Initial"/>
+        <association associationName="initial" source="//@source.2/@hasRule.5/@apply/@class.0" target="//@source.2/@hasRule.5/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.5/@apply/@class.0" sourceClass="//@source.2/@hasRule.5/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.5/@apply/@class.1" sourceClass="//@source.2/@hasRule.5/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="transitions">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Machine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Transition"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="transitions" source="//@source.2/@hasRule.6/@match.0/@class.0" target="//@source.2/@hasRule.6/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Machine" groupName=""/>
+        <class packageName="machine" className="Transition"/>
+        <association associationName="transitions" source="//@source.2/@hasRule.6/@apply/@class.0" target="//@source.2/@hasRule.6/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.6/@apply/@class.0" sourceClass="//@source.2/@hasRule.6/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.6/@apply/@class.1" sourceClass="//@source.2/@hasRule.6/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="finals">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Machine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Final"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="finals" source="//@source.2/@hasRule.7/@match.0/@class.0" target="//@source.2/@hasRule.7/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Machine"/>
+        <class packageName="machine" className="Final"/>
+        <association associationName="finals" source="//@source.2/@hasRule.7/@apply/@class.0" target="//@source.2/@hasRule.7/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.7/@apply/@class.0" sourceClass="//@source.2/@hasRule.7/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.7/@apply/@class.1" sourceClass="//@source.2/@hasRule.7/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="states">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Machine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="states" source="//@source.2/@hasRule.8/@match.0/@class.0" target="//@source.2/@hasRule.8/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Machine"/>
+        <class packageName="machine" className="State"/>
+        <association associationName="states" source="//@source.2/@hasRule.8/@apply/@class.0" target="//@source.2/@hasRule.8/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.8/@apply/@class.0" sourceClass="//@source.2/@hasRule.8/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.8/@apply/@class.1" sourceClass="//@source.2/@hasRule.8/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="head">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Machine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Head"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="head" source="//@source.2/@hasRule.9/@match.0/@class.0" target="//@source.2/@hasRule.9/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Machine"/>
+        <class packageName="machine" className="Head"/>
+        <association associationName="head" source="//@source.2/@hasRule.9/@apply/@class.0" target="//@source.2/@hasRule.9/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.9/@apply/@class.0" sourceClass="//@source.2/@hasRule.9/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.9/@apply/@class.1" sourceClass="//@source.2/@hasRule.9/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="state">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Final"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.2/@hasRule.10/@match.0/@class.0" target="//@source.2/@hasRule.10/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Final"/>
+        <class packageName="machine" className="State"/>
+        <association associationName="state" source="//@source.2/@hasRule.10/@apply/@class.0" target="//@source.2/@hasRule.10/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.10/@apply/@class.0" sourceClass="//@source.2/@hasRule.10/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.10/@apply/@class.1" sourceClass="//@source.2/@hasRule.10/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="tape">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="TuringMachine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Tape"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="tape" source="//@source.2/@hasRule.11/@match.0/@class.0" target="//@source.2/@hasRule.11/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="TuringMachine"/>
+        <class packageName="machine" className="Tape"/>
+        <association associationName="tape" source="//@source.2/@hasRule.11/@apply/@class.0" target="//@source.2/@hasRule.11/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.11/@apply/@class.0" sourceClass="//@source.2/@hasRule.11/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.11/@apply/@class.1" sourceClass="//@source.2/@hasRule.11/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="machine">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="TuringMachine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Machine"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="machine" source="//@source.2/@hasRule.12/@match.0/@class.0" target="//@source.2/@hasRule.12/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="TuringMachine"/>
+        <class packageName="machine" className="Machine"/>
+        <association associationName="machine" source="//@source.2/@hasRule.12/@apply/@class.0" target="//@source.2/@hasRule.12/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.12/@apply/@class.0" sourceClass="//@source.2/@hasRule.12/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.12/@apply/@class.1" sourceClass="//@source.2/@hasRule.12/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="change current state and head (transition between different states)">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Current"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Head"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Machine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Transition">
+          <attribute attributeName="read">
+            <attributeValue xsi:type="dsltrans:Atom" value="B"/>
+          </attribute>
+          <attribute attributeName="moveTo">
+            <attributeValue xsi:type="dsltrans:Atom" value="L"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value">
+            <attributeValue xsi:type="dsltrans:Atom" value="B"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value"/>
+          <attribute attributeName="position"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="current" source="//@source.2/@hasRule.13/@match.0/@class.2" target="//@source.2/@hasRule.13/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="head" source="//@source.2/@hasRule.13/@match.0/@class.2" target="//@source.2/@hasRule.13/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="symbol" source="//@source.2/@hasRule.13/@match.0/@class.1" target="//@source.2/@hasRule.13/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.2/@hasRule.13/@match.0/@class.0" target="//@source.2/@hasRule.13/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.2/@hasRule.13/@match.0/@class.3" target="//@source.2/@hasRule.13/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.2/@hasRule.13/@match.0/@class.3" target="//@source.2/@hasRule.13/@match.0/@class.6"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="next" source="//@source.2/@hasRule.13/@match.0/@class.7" target="//@source.2/@hasRule.13/@match.0/@class.4"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Symbol"/>
+        <class packageName="machine" className="Machine"/>
+        <class packageName="machine" className="Current">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Current"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.13/@match.0/@class.6/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="machine" className="State"/>
+        <class packageName="machine" className="Head">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Head"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.13/@match.0/@class.7/@attribute.1"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value=","/>
+                <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.13/@match.0/@class.7/@attribute.0"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+        </class>
+        <association associationName="current" source="//@source.2/@hasRule.13/@apply/@class.1" target="//@source.2/@hasRule.13/@apply/@class.2"/>
+        <association associationName="state" source="//@source.2/@hasRule.13/@apply/@class.2" target="//@source.2/@hasRule.13/@apply/@class.3"/>
+        <association associationName="head" source="//@source.2/@hasRule.13/@apply/@class.1" target="//@source.2/@hasRule.13/@apply/@class.4"/>
+        <association associationName="symbol" source="//@source.2/@hasRule.13/@apply/@class.4" target="//@source.2/@hasRule.13/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.13/@apply/@class.1" sourceClass="//@source.2/@hasRule.13/@match.0/@class.2"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.13/@apply/@class.3" sourceClass="//@source.2/@hasRule.13/@match.0/@class.6"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.13/@apply/@class.0" sourceClass="//@source.2/@hasRule.13/@match.0/@class.7"/>
+    </hasRule>
+    <hasRule description="change current state and head (transition with different states)">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Current"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Head"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Machine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Transition">
+          <attribute attributeName="read">
+            <attributeValue xsi:type="dsltrans:Atom" value="B"/>
+          </attribute>
+          <attribute attributeName="moveTo">
+            <attributeValue xsi:type="dsltrans:Atom" value="R"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value">
+            <attributeValue xsi:type="dsltrans:Atom" value="B"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value"/>
+          <attribute attributeName="position"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="current" source="//@source.2/@hasRule.14/@match.0/@class.2" target="//@source.2/@hasRule.14/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="head" source="//@source.2/@hasRule.14/@match.0/@class.2" target="//@source.2/@hasRule.14/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="symbol" source="//@source.2/@hasRule.14/@match.0/@class.1" target="//@source.2/@hasRule.14/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.2/@hasRule.14/@match.0/@class.0" target="//@source.2/@hasRule.14/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.2/@hasRule.14/@match.0/@class.3" target="//@source.2/@hasRule.14/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.2/@hasRule.14/@match.0/@class.3" target="//@source.2/@hasRule.14/@match.0/@class.6"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="next" source="//@source.2/@hasRule.14/@match.0/@class.4" target="//@source.2/@hasRule.14/@match.0/@class.7"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Symbol"/>
+        <class packageName="machine" className="Machine"/>
+        <class packageName="machine" className="Current">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Current"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.14/@match.0/@class.6/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="machine" className="State"/>
+        <class packageName="machine" className="Head">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Head"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.14/@match.0/@class.7/@attribute.1"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value=","/>
+                <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.14/@match.0/@class.7/@attribute.0"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+        </class>
+        <association associationName="current" source="//@source.2/@hasRule.14/@apply/@class.1" target="//@source.2/@hasRule.14/@apply/@class.2"/>
+        <association associationName="state" source="//@source.2/@hasRule.14/@apply/@class.2" target="//@source.2/@hasRule.14/@apply/@class.3"/>
+        <association associationName="head" source="//@source.2/@hasRule.14/@apply/@class.1" target="//@source.2/@hasRule.14/@apply/@class.4"/>
+        <association associationName="symbol" source="//@source.2/@hasRule.14/@apply/@class.4" target="//@source.2/@hasRule.14/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.14/@apply/@class.1" sourceClass="//@source.2/@hasRule.14/@match.0/@class.2"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.14/@apply/@class.3" sourceClass="//@source.2/@hasRule.14/@match.0/@class.6"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.14/@apply/@class.0" sourceClass="//@source.2/@hasRule.14/@match.0/@class.7"/>
+    </hasRule>
+    <hasRule description="change current state and head (transition between different states)">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Current"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Head"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Machine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Transition">
+          <attribute attributeName="read">
+            <attributeValue xsi:type="dsltrans:Atom" value="0"/>
+          </attribute>
+          <attribute attributeName="moveTo">
+            <attributeValue xsi:type="dsltrans:Atom" value="R"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value">
+            <attributeValue xsi:type="dsltrans:Atom" value="0"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value"/>
+          <attribute attributeName="position"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="current" source="//@source.2/@hasRule.15/@match.0/@class.2" target="//@source.2/@hasRule.15/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="head" source="//@source.2/@hasRule.15/@match.0/@class.2" target="//@source.2/@hasRule.15/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="symbol" source="//@source.2/@hasRule.15/@match.0/@class.1" target="//@source.2/@hasRule.15/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.2/@hasRule.15/@match.0/@class.0" target="//@source.2/@hasRule.15/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.2/@hasRule.15/@match.0/@class.3" target="//@source.2/@hasRule.15/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.2/@hasRule.15/@match.0/@class.3" target="//@source.2/@hasRule.15/@match.0/@class.6"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="next" source="//@source.2/@hasRule.15/@match.0/@class.4" target="//@source.2/@hasRule.15/@match.0/@class.7"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Symbol"/>
+        <class packageName="machine" className="Machine"/>
+        <class packageName="machine" className="Current">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Current"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.15/@match.0/@class.6/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="machine" className="State"/>
+        <class packageName="machine" className="Head">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Head"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.15/@match.0/@class.7/@attribute.1"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value=","/>
+                <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.15/@match.0/@class.7/@attribute.0"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+        </class>
+        <association associationName="current" source="//@source.2/@hasRule.15/@apply/@class.1" target="//@source.2/@hasRule.15/@apply/@class.2"/>
+        <association associationName="state" source="//@source.2/@hasRule.15/@apply/@class.2" target="//@source.2/@hasRule.15/@apply/@class.3"/>
+        <association associationName="head" source="//@source.2/@hasRule.15/@apply/@class.1" target="//@source.2/@hasRule.15/@apply/@class.4"/>
+        <association associationName="symbol" source="//@source.2/@hasRule.15/@apply/@class.4" target="//@source.2/@hasRule.15/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.15/@apply/@class.1" sourceClass="//@source.2/@hasRule.15/@match.0/@class.2"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.15/@apply/@class.3" sourceClass="//@source.2/@hasRule.15/@match.0/@class.6"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.15/@apply/@class.0" sourceClass="//@source.2/@hasRule.15/@match.0/@class.7"/>
+    </hasRule>
+    <hasRule description="change current state and head (transition between differente states)">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Current"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Head"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Machine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Transition">
+          <attribute attributeName="read">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+          <attribute attributeName="moveTo">
+            <attributeValue xsi:type="dsltrans:Atom" value="R"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value"/>
+          <attribute attributeName="name"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="current" source="//@source.2/@hasRule.16/@match.0/@class.2" target="//@source.2/@hasRule.16/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="head" source="//@source.2/@hasRule.16/@match.0/@class.2" target="//@source.2/@hasRule.16/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="symbol" source="//@source.2/@hasRule.16/@match.0/@class.1" target="//@source.2/@hasRule.16/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.2/@hasRule.16/@match.0/@class.0" target="//@source.2/@hasRule.16/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.2/@hasRule.16/@match.0/@class.3" target="//@source.2/@hasRule.16/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.2/@hasRule.16/@match.0/@class.3" target="//@source.2/@hasRule.16/@match.0/@class.6"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="next" source="//@source.2/@hasRule.16/@match.0/@class.4" target="//@source.2/@hasRule.16/@match.0/@class.7"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Symbol"/>
+        <class packageName="machine" className="Machine"/>
+        <class packageName="machine" className="Current">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Current"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.16/@match.0/@class.6/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="machine" className="State"/>
+        <class packageName="machine" className="Head">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Head"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.16/@match.0/@class.7/@attribute.1"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value=","/>
+                <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.16/@match.0/@class.7/@attribute.0"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+        </class>
+        <association associationName="current" source="//@source.2/@hasRule.16/@apply/@class.1" target="//@source.2/@hasRule.16/@apply/@class.2"/>
+        <association associationName="state" source="//@source.2/@hasRule.16/@apply/@class.2" target="//@source.2/@hasRule.16/@apply/@class.3"/>
+        <association associationName="head" source="//@source.2/@hasRule.16/@apply/@class.1" target="//@source.2/@hasRule.16/@apply/@class.4"/>
+        <association associationName="symbol" source="//@source.2/@hasRule.16/@apply/@class.4" target="//@source.2/@hasRule.16/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.16/@apply/@class.1" sourceClass="//@source.2/@hasRule.16/@match.0/@class.2"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.16/@apply/@class.3" sourceClass="//@source.2/@hasRule.16/@match.0/@class.6"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.16/@apply/@class.0" sourceClass="//@source.2/@hasRule.16/@match.0/@class.7"/>
+    </hasRule>
+    <hasRule description="change current state and head (transition between different states)">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Current"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Head"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Machine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Transition">
+          <attribute attributeName="read">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+          <attribute attributeName="moveTo">
+            <attributeValue xsi:type="dsltrans:Atom" value="L"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value"/>
+          <attribute attributeName="position"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="current" source="//@source.2/@hasRule.17/@match.0/@class.2" target="//@source.2/@hasRule.17/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="head" source="//@source.2/@hasRule.17/@match.0/@class.2" target="//@source.2/@hasRule.17/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="symbol" source="//@source.2/@hasRule.17/@match.0/@class.1" target="//@source.2/@hasRule.17/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.2/@hasRule.17/@match.0/@class.0" target="//@source.2/@hasRule.17/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.2/@hasRule.17/@match.0/@class.3" target="//@source.2/@hasRule.17/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.2/@hasRule.17/@match.0/@class.3" target="//@source.2/@hasRule.17/@match.0/@class.6"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="next" source="//@source.2/@hasRule.17/@match.0/@class.7" target="//@source.2/@hasRule.17/@match.0/@class.4"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Symbol"/>
+        <class packageName="machine" className="Machine"/>
+        <class packageName="machine" className="Current">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Current"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.17/@match.0/@class.6/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="machine" className="State"/>
+        <class packageName="machine" className="Head">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Head"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.17/@match.0/@class.7/@attribute.1"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value=","/>
+                <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.17/@match.0/@class.7/@attribute.0"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+        </class>
+        <association associationName="current" source="//@source.2/@hasRule.17/@apply/@class.1" target="//@source.2/@hasRule.17/@apply/@class.2"/>
+        <association associationName="state" source="//@source.2/@hasRule.17/@apply/@class.2" target="//@source.2/@hasRule.17/@apply/@class.3"/>
+        <association associationName="head" source="//@source.2/@hasRule.17/@apply/@class.1" target="//@source.2/@hasRule.17/@apply/@class.4"/>
+        <association associationName="symbol" source="//@source.2/@hasRule.17/@apply/@class.4" target="//@source.2/@hasRule.17/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.17/@apply/@class.1" sourceClass="//@source.2/@hasRule.17/@match.0/@class.2"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.17/@apply/@class.3" sourceClass="//@source.2/@hasRule.17/@match.0/@class.6"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.17/@apply/@class.0" sourceClass="//@source.2/@hasRule.17/@match.0/@class.7"/>
+    </hasRule>
+    <hasRule description="change current state and head (transition between different states)">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Current"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Head"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Machine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Transition">
+          <attribute attributeName="read">
+            <attributeValue xsi:type="dsltrans:Atom" value="0"/>
+          </attribute>
+          <attribute attributeName="moveTo">
+            <attributeValue xsi:type="dsltrans:Atom" value="L"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value">
+            <attributeValue xsi:type="dsltrans:Atom" value="0"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value"/>
+          <attribute attributeName="position"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="current" source="//@source.2/@hasRule.18/@match.0/@class.2" target="//@source.2/@hasRule.18/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="head" source="//@source.2/@hasRule.18/@match.0/@class.2" target="//@source.2/@hasRule.18/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="symbol" source="//@source.2/@hasRule.18/@match.0/@class.1" target="//@source.2/@hasRule.18/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.2/@hasRule.18/@match.0/@class.0" target="//@source.2/@hasRule.18/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.2/@hasRule.18/@match.0/@class.3" target="//@source.2/@hasRule.18/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.2/@hasRule.18/@match.0/@class.3" target="//@source.2/@hasRule.18/@match.0/@class.6"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="next" source="//@source.2/@hasRule.18/@match.0/@class.7" target="//@source.2/@hasRule.18/@match.0/@class.4"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Symbol"/>
+        <class packageName="machine" className="Machine"/>
+        <class packageName="machine" className="Current">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Current"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.18/@match.0/@class.6/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="machine" className="State"/>
+        <class packageName="machine" className="Head">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Head"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.18/@match.0/@class.7/@attribute.1"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value=","/>
+                <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.18/@match.0/@class.7/@attribute.0"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+        </class>
+        <association associationName="current" source="//@source.2/@hasRule.18/@apply/@class.1" target="//@source.2/@hasRule.18/@apply/@class.2"/>
+        <association associationName="state" source="//@source.2/@hasRule.18/@apply/@class.2" target="//@source.2/@hasRule.18/@apply/@class.3"/>
+        <association associationName="head" source="//@source.2/@hasRule.18/@apply/@class.1" target="//@source.2/@hasRule.18/@apply/@class.4"/>
+        <association associationName="symbol" source="//@source.2/@hasRule.18/@apply/@class.4" target="//@source.2/@hasRule.18/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.18/@apply/@class.1" sourceClass="//@source.2/@hasRule.18/@match.0/@class.2"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.18/@apply/@class.3" sourceClass="//@source.2/@hasRule.18/@match.0/@class.6"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.18/@apply/@class.0" sourceClass="//@source.2/@hasRule.18/@match.0/@class.7"/>
+    </hasRule>
+    <hasRule description="change current state and head (transition between same state)">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Current"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Head"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Machine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Transition">
+          <attribute attributeName="read">
+            <attributeValue xsi:type="dsltrans:Atom" value="B"/>
+          </attribute>
+          <attribute attributeName="moveTo">
+            <attributeValue xsi:type="dsltrans:Atom" value="L"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value">
+            <attributeValue xsi:type="dsltrans:Atom" value="B"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value"/>
+          <attribute attributeName="position"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="current" source="//@source.2/@hasRule.19/@match.0/@class.2" target="//@source.2/@hasRule.19/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="head" source="//@source.2/@hasRule.19/@match.0/@class.2" target="//@source.2/@hasRule.19/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="symbol" source="//@source.2/@hasRule.19/@match.0/@class.1" target="//@source.2/@hasRule.19/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.2/@hasRule.19/@match.0/@class.0" target="//@source.2/@hasRule.19/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.2/@hasRule.19/@match.0/@class.3" target="//@source.2/@hasRule.19/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.2/@hasRule.19/@match.0/@class.3" target="//@source.2/@hasRule.19/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="next" source="//@source.2/@hasRule.19/@match.0/@class.6" target="//@source.2/@hasRule.19/@match.0/@class.4"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Symbol"/>
+        <class packageName="machine" className="Machine"/>
+        <class packageName="machine" className="Current">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Current"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.19/@match.0/@class.5/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="machine" className="State"/>
+        <class packageName="machine" className="Head">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Head"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.19/@match.0/@class.6/@attribute.1"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value=","/>
+                <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.19/@match.0/@class.6/@attribute.0"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+        </class>
+        <association associationName="current" source="//@source.2/@hasRule.19/@apply/@class.1" target="//@source.2/@hasRule.19/@apply/@class.2"/>
+        <association associationName="state" source="//@source.2/@hasRule.19/@apply/@class.2" target="//@source.2/@hasRule.19/@apply/@class.3"/>
+        <association associationName="head" source="//@source.2/@hasRule.19/@apply/@class.1" target="//@source.2/@hasRule.19/@apply/@class.4"/>
+        <association associationName="symbol" source="//@source.2/@hasRule.19/@apply/@class.4" target="//@source.2/@hasRule.19/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.19/@apply/@class.1" sourceClass="//@source.2/@hasRule.19/@match.0/@class.2"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.19/@apply/@class.3" sourceClass="//@source.2/@hasRule.19/@match.0/@class.5"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.19/@apply/@class.0" sourceClass="//@source.2/@hasRule.19/@match.0/@class.6"/>
+    </hasRule>
+    <hasRule description="change current state and head (transition same states)">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Current"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Head"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Machine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Transition">
+          <attribute attributeName="read">
+            <attributeValue xsi:type="dsltrans:Atom" value="B"/>
+          </attribute>
+          <attribute attributeName="moveTo">
+            <attributeValue xsi:type="dsltrans:Atom" value="R"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value">
+            <attributeValue xsi:type="dsltrans:Atom" value="B"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value"/>
+          <attribute attributeName="position"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="current" source="//@source.2/@hasRule.20/@match.0/@class.2" target="//@source.2/@hasRule.20/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="head" source="//@source.2/@hasRule.20/@match.0/@class.2" target="//@source.2/@hasRule.20/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="symbol" source="//@source.2/@hasRule.20/@match.0/@class.1" target="//@source.2/@hasRule.20/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.2/@hasRule.20/@match.0/@class.0" target="//@source.2/@hasRule.20/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.2/@hasRule.20/@match.0/@class.3" target="//@source.2/@hasRule.20/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.2/@hasRule.20/@match.0/@class.3" target="//@source.2/@hasRule.20/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="next" source="//@source.2/@hasRule.20/@match.0/@class.4" target="//@source.2/@hasRule.20/@match.0/@class.6"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Symbol"/>
+        <class packageName="machine" className="Machine"/>
+        <class packageName="machine" className="Current">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Current"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.20/@match.0/@class.5/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="machine" className="State"/>
+        <class packageName="machine" className="Head">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Head"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.20/@match.0/@class.6/@attribute.1"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value=","/>
+                <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.20/@match.0/@class.6/@attribute.0"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+        </class>
+        <association associationName="current" source="//@source.2/@hasRule.20/@apply/@class.1" target="//@source.2/@hasRule.20/@apply/@class.2"/>
+        <association associationName="state" source="//@source.2/@hasRule.20/@apply/@class.2" target="//@source.2/@hasRule.20/@apply/@class.3"/>
+        <association associationName="head" source="//@source.2/@hasRule.20/@apply/@class.1" target="//@source.2/@hasRule.20/@apply/@class.4"/>
+        <association associationName="symbol" source="//@source.2/@hasRule.20/@apply/@class.4" target="//@source.2/@hasRule.20/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.20/@apply/@class.1" sourceClass="//@source.2/@hasRule.20/@match.0/@class.2"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.20/@apply/@class.3" sourceClass="//@source.2/@hasRule.20/@match.0/@class.5"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.20/@apply/@class.0" sourceClass="//@source.2/@hasRule.20/@match.0/@class.6"/>
+    </hasRule>
+    <hasRule description="change current state and head (transition between same state)">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Current"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Head"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Machine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Transition">
+          <attribute attributeName="read">
+            <attributeValue xsi:type="dsltrans:Atom" value="0"/>
+          </attribute>
+          <attribute attributeName="moveTo">
+            <attributeValue xsi:type="dsltrans:Atom" value="R"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value">
+            <attributeValue xsi:type="dsltrans:Atom" value="0"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value"/>
+          <attribute attributeName="position"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="current" source="//@source.2/@hasRule.21/@match.0/@class.2" target="//@source.2/@hasRule.21/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="head" source="//@source.2/@hasRule.21/@match.0/@class.2" target="//@source.2/@hasRule.21/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="symbol" source="//@source.2/@hasRule.21/@match.0/@class.1" target="//@source.2/@hasRule.21/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.2/@hasRule.21/@match.0/@class.0" target="//@source.2/@hasRule.21/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.2/@hasRule.21/@match.0/@class.3" target="//@source.2/@hasRule.21/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.2/@hasRule.21/@match.0/@class.3" target="//@source.2/@hasRule.21/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="next" source="//@source.2/@hasRule.21/@match.0/@class.4" target="//@source.2/@hasRule.21/@match.0/@class.6"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Symbol"/>
+        <class packageName="machine" className="Machine"/>
+        <class packageName="machine" className="Current">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Current"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.21/@match.0/@class.5/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="machine" className="State"/>
+        <class packageName="machine" className="Head">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Head"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.21/@match.0/@class.6/@attribute.1"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value=","/>
+                <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.21/@match.0/@class.6/@attribute.0"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+        </class>
+        <association associationName="current" source="//@source.2/@hasRule.21/@apply/@class.1" target="//@source.2/@hasRule.21/@apply/@class.2"/>
+        <association associationName="state" source="//@source.2/@hasRule.21/@apply/@class.2" target="//@source.2/@hasRule.21/@apply/@class.3"/>
+        <association associationName="head" source="//@source.2/@hasRule.21/@apply/@class.1" target="//@source.2/@hasRule.21/@apply/@class.4"/>
+        <association associationName="symbol" source="//@source.2/@hasRule.21/@apply/@class.4" target="//@source.2/@hasRule.21/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.21/@apply/@class.1" sourceClass="//@source.2/@hasRule.21/@match.0/@class.2"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.21/@apply/@class.3" sourceClass="//@source.2/@hasRule.21/@match.0/@class.5"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.21/@apply/@class.0" sourceClass="//@source.2/@hasRule.21/@match.0/@class.6"/>
+    </hasRule>
+    <hasRule description="change current state and head (transition between same state)">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Current"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Head"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Machine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Transition">
+          <attribute attributeName="read">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+          <attribute attributeName="moveTo">
+            <attributeValue xsi:type="dsltrans:Atom" value="R"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value"/>
+          <attribute attributeName="name"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="current" source="//@source.2/@hasRule.22/@match.0/@class.2" target="//@source.2/@hasRule.22/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="head" source="//@source.2/@hasRule.22/@match.0/@class.2" target="//@source.2/@hasRule.22/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="symbol" source="//@source.2/@hasRule.22/@match.0/@class.1" target="//@source.2/@hasRule.22/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.2/@hasRule.22/@match.0/@class.0" target="//@source.2/@hasRule.22/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.2/@hasRule.22/@match.0/@class.3" target="//@source.2/@hasRule.22/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.2/@hasRule.22/@match.0/@class.3" target="//@source.2/@hasRule.22/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="next" source="//@source.2/@hasRule.22/@match.0/@class.4" target="//@source.2/@hasRule.22/@match.0/@class.6"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Symbol"/>
+        <class packageName="machine" className="Machine"/>
+        <class packageName="machine" className="Current">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Current"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.22/@match.0/@class.5/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="machine" className="State"/>
+        <class packageName="machine" className="Head">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Head"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.22/@match.0/@class.6/@attribute.1"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value=","/>
+                <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.22/@match.0/@class.6/@attribute.0"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+        </class>
+        <association associationName="current" source="//@source.2/@hasRule.22/@apply/@class.1" target="//@source.2/@hasRule.22/@apply/@class.2"/>
+        <association associationName="state" source="//@source.2/@hasRule.22/@apply/@class.2" target="//@source.2/@hasRule.22/@apply/@class.3"/>
+        <association associationName="head" source="//@source.2/@hasRule.22/@apply/@class.1" target="//@source.2/@hasRule.22/@apply/@class.4"/>
+        <association associationName="symbol" source="//@source.2/@hasRule.22/@apply/@class.4" target="//@source.2/@hasRule.22/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.22/@apply/@class.1" sourceClass="//@source.2/@hasRule.22/@match.0/@class.2"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.22/@apply/@class.3" sourceClass="//@source.2/@hasRule.22/@match.0/@class.5"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.22/@apply/@class.0" sourceClass="//@source.2/@hasRule.22/@match.0/@class.6"/>
+    </hasRule>
+    <hasRule description="change current state and head (transition between same state)">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Current"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Head"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Machine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Transition">
+          <attribute attributeName="read">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+          <attribute attributeName="moveTo">
+            <attributeValue xsi:type="dsltrans:Atom" value="L"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value">
+            <attributeValue xsi:type="dsltrans:Atom" value="1"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value"/>
+          <attribute attributeName="position"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="current" source="//@source.2/@hasRule.23/@match.0/@class.2" target="//@source.2/@hasRule.23/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="head" source="//@source.2/@hasRule.23/@match.0/@class.2" target="//@source.2/@hasRule.23/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="symbol" source="//@source.2/@hasRule.23/@match.0/@class.1" target="//@source.2/@hasRule.23/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.2/@hasRule.23/@match.0/@class.0" target="//@source.2/@hasRule.23/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.2/@hasRule.23/@match.0/@class.3" target="//@source.2/@hasRule.23/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.2/@hasRule.23/@match.0/@class.3" target="//@source.2/@hasRule.23/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="next" source="//@source.2/@hasRule.23/@match.0/@class.6" target="//@source.2/@hasRule.23/@match.0/@class.4"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Symbol"/>
+        <class packageName="machine" className="Machine"/>
+        <class packageName="machine" className="Current">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Current"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.23/@match.0/@class.5/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="machine" className="State"/>
+        <class packageName="machine" className="Head">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Head"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.23/@match.0/@class.6/@attribute.1"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value=","/>
+                <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.23/@match.0/@class.6/@attribute.0"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+        </class>
+        <association associationName="current" source="//@source.2/@hasRule.23/@apply/@class.1" target="//@source.2/@hasRule.23/@apply/@class.2"/>
+        <association associationName="state" source="//@source.2/@hasRule.23/@apply/@class.2" target="//@source.2/@hasRule.23/@apply/@class.3"/>
+        <association associationName="head" source="//@source.2/@hasRule.23/@apply/@class.1" target="//@source.2/@hasRule.23/@apply/@class.4"/>
+        <association associationName="symbol" source="//@source.2/@hasRule.23/@apply/@class.4" target="//@source.2/@hasRule.23/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.23/@apply/@class.1" sourceClass="//@source.2/@hasRule.23/@match.0/@class.2"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.23/@apply/@class.3" sourceClass="//@source.2/@hasRule.23/@match.0/@class.5"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.23/@apply/@class.0" sourceClass="//@source.2/@hasRule.23/@match.0/@class.6"/>
+    </hasRule>
+    <hasRule description="change current state and head (transition between same state)">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Current"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Head"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Machine"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Transition">
+          <attribute attributeName="read">
+            <attributeValue xsi:type="dsltrans:Atom" value="0"/>
+          </attribute>
+          <attribute attributeName="moveTo">
+            <attributeValue xsi:type="dsltrans:Atom" value="L"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value">
+            <attributeValue xsi:type="dsltrans:Atom" value="0"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="State">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="machine" className="Symbol">
+          <attribute attributeName="value"/>
+          <attribute attributeName="position"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="current" source="//@source.2/@hasRule.24/@match.0/@class.2" target="//@source.2/@hasRule.24/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="head" source="//@source.2/@hasRule.24/@match.0/@class.2" target="//@source.2/@hasRule.24/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="symbol" source="//@source.2/@hasRule.24/@match.0/@class.1" target="//@source.2/@hasRule.24/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="state" source="//@source.2/@hasRule.24/@match.0/@class.0" target="//@source.2/@hasRule.24/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.2/@hasRule.24/@match.0/@class.3" target="//@source.2/@hasRule.24/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.2/@hasRule.24/@match.0/@class.3" target="//@source.2/@hasRule.24/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="next" source="//@source.2/@hasRule.24/@match.0/@class.6" target="//@source.2/@hasRule.24/@match.0/@class.4"/>
+      </match>
+      <apply>
+        <class packageName="machine" className="Symbol"/>
+        <class packageName="machine" className="Machine"/>
+        <class packageName="machine" className="Current">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Current"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.24/@match.0/@class.5/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="machine" className="State"/>
+        <class packageName="machine" className="Head">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Head"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.24/@match.0/@class.6/@attribute.1"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value=","/>
+                <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.24/@match.0/@class.6/@attribute.0"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+        </class>
+        <association associationName="current" source="//@source.2/@hasRule.24/@apply/@class.1" target="//@source.2/@hasRule.24/@apply/@class.2"/>
+        <association associationName="state" source="//@source.2/@hasRule.24/@apply/@class.2" target="//@source.2/@hasRule.24/@apply/@class.3"/>
+        <association associationName="head" source="//@source.2/@hasRule.24/@apply/@class.1" target="//@source.2/@hasRule.24/@apply/@class.4"/>
+        <association associationName="symbol" source="//@source.2/@hasRule.24/@apply/@class.4" target="//@source.2/@hasRule.24/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.24/@apply/@class.1" sourceClass="//@source.2/@hasRule.24/@match.0/@class.2"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.24/@apply/@class.3" sourceClass="//@source.2/@hasRule.24/@match.0/@class.5"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.24/@apply/@class.0" sourceClass="//@source.2/@hasRule.24/@match.0/@class.6"/>
+    </hasRule>
+  </source>
+</dsltrans:TransformationModel>

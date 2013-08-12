@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.emftext.language.SOS/src"
+    modelPluginID="org.emftext.language.SOS" modelName="SOS" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>SOS.ecore</foreignModel>
+  <genPackages prefix="SOS" disposableProviderFactory="true" ecorePackage="SOS.ecore#/">
+    <genClasses ecoreClass="SOS.ecore#//Semantics">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//Semantics/rules"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//Semantics/signature"/>
+    </genClasses>
+    <genClasses ecoreClass="SOS.ecore#//Rule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//Rule/assumes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//Rule/concludes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//Rule/ownedVariables"/>
+    </genClasses>
+    <genClasses ecoreClass="SOS.ecore#//PremisseList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//PremisseList/has"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//PremisseList/next"/>
+    </genClasses>
+    <genClasses ecoreClass="SOS.ecore#//Conclusion">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//Conclusion/has"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SOS.ecore#//Condition"/>
+    <genClasses ecoreClass="SOS.ecore#//Transition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//Transition/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//Transition/preState"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//Transition/posState"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//Transition/environment"/>
+    </genClasses>
+    <genClasses ecoreClass="SOS.ecore#//TypeJudment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//TypeJudment/environment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//TypeJudment/leftHandSide"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//TypeJudment/rightHandSide"/>
+    </genClasses>
+    <genClasses ecoreClass="SOS.ecore#//AlgebraicCondition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//AlgebraicCondition/ownedConditions"/>
+    </genClasses>
+    <genClasses ecoreClass="SOS.ecore#//AlgebraicConditionList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//AlgebraicConditionList/has"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//AlgebraicConditionList/next"/>
+    </genClasses>
+    <nestedGenPackages prefix="Adtmm" basePackage="SOS" disposableProviderFactory="true"
+        ecorePackage="SOS.ecore#//adtmm">
+      <genClasses ecoreClass="SOS.ecore#//adtmm/ADT">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//adtmm/ADT/ownedSorts"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//adtmm/ADT/ownedOperations"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//adtmm/ADT/ownedGenerators"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//adtmm/ADT/ownedVariables"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//adtmm/ADT/ownedAxioms"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SOS.ecore#//adtmm/ADT/name"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SOS.ecore#//adtmm/Sort"/>
+      <genClasses ecoreClass="SOS.ecore#//adtmm/Operation">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//adtmm/Operation/operationSorts"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//adtmm/Operation/result"/>
+      </genClasses>
+      <genClasses ecoreClass="SOS.ecore#//adtmm/Variable">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//adtmm/Variable/variableSort"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SOS.ecore#//adtmm/Variable/name"/>
+      </genClasses>
+      <genClasses ecoreClass="SOS.ecore#//adtmm/CondEquation">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//adtmm/CondEquation/ownedConditions"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//adtmm/CondEquation/ownedEquation"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SOS.ecore#//adtmm/Term"/>
+      <genClasses ecoreClass="SOS.ecore#//adtmm/VariableRef">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SOS.ecore#//adtmm/VariableRef/variable"/>
+      </genClasses>
+      <genClasses ecoreClass="SOS.ecore#//adtmm/CTerm">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SOS.ecore#//adtmm/CTerm/iter"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//adtmm/CTerm/ownedTerms"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SOS.ecore#//adtmm/CTerm/op"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//adtmm/CTerm/iterTerm"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SOS.ecore#//adtmm/AbstractEquation">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//adtmm/AbstractEquation/ownedRightTerm"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//adtmm/AbstractEquation/ownedLeftTerm"/>
+      </genClasses>
+      <genClasses ecoreClass="SOS.ecore#//adtmm/Equation"/>
+      <genClasses ecoreClass="SOS.ecore#//adtmm/Inequation"/>
+      <genClasses image="false" ecoreClass="SOS.ecore#//adtmm/AbstractSort"/>
+      <genClasses ecoreClass="SOS.ecore#//adtmm/AtomicSort">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SOS.ecore#//adtmm/AtomicSort/declaration"/>
+      </genClasses>
+      <genClasses ecoreClass="SOS.ecore#//adtmm/SortDeclaration">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SOS.ecore#//adtmm/SortDeclaration/name"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SOS.ecore#//adtmm/AbstractOperation">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SOS.ecore#//adtmm/AbstractOperation/name"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SOS.ecore#//adtmm/AbstractGenericOp"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Set" basePackage="SOS" disposableProviderFactory="true"
+        ecorePackage="SOS.ecore#//set">
+      <genClasses ecoreClass="SOS.ecore#//set/ModelSort">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SOS.ecore#//set/ModelSort/className"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SOS.ecore#//set/ModelSort/packageName"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SOS.ecore#//set/SetMembership">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//set/SetMembership/leftHandSide"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//set/SetMembership/rightHandSide"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SOS.ecore#//set/SetTerm"/>
+      <genClasses ecoreClass="SOS.ecore#//set/ModelSet"/>
+      <genClasses image="false" ecoreClass="SOS.ecore#//set/SetOperator">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//set/SetOperator/leftHandSide"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//set/SetOperator/rightHandSide"/>
+      </genClasses>
+      <genClasses ecoreClass="SOS.ecore#//set/SetConstructor">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//set/SetConstructor/suchThat"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//set/SetConstructor/member"/>
+      </genClasses>
+      <genClasses ecoreClass="SOS.ecore#//set/Union"/>
+      <genClasses ecoreClass="SOS.ecore#//set/Excluding"/>
+      <genClasses ecoreClass="SOS.ecore#//set/Intersection"/>
+      <genClasses ecoreClass="SOS.ecore#//set/ModelRelation">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SOS.ecore#//set/ModelRelation/referenceName"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//set/ModelRelation/source"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//set/ModelRelation/target"/>
+      </genClasses>
+      <genClasses ecoreClass="SOS.ecore#//set/ModelClassAttribute">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//set/ModelClassAttribute/selector"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SOS.ecore#//set/ModelClassAttribute/attributeName"/>
+      </genClasses>
+      <genClasses ecoreClass="SOS.ecore#//set/Set">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SOS.ecore#//set/Set/sort"/>
+      </genClasses>
+      <genClasses ecoreClass="SOS.ecore#//set/ExistsIn"/>
+      <genClasses ecoreClass="SOS.ecore#//set/ForAllIn"/>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

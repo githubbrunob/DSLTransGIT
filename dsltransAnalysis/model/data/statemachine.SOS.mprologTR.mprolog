@@ -1,0 +1,2318 @@
+<?xml version="1.0" encoding="ASCII" standalone="no"?>
+<mprolog:Model xmlns:mprolog="mprolog" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="statemachine.SOS" xmi:version="2.0" xsi:schemaLocation="mprolog mprolog.ecore">
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aa" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ab" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ac" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ad" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ae" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="af" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ag" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ah" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ai" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aj" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ak" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="al" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="am" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="an" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ao" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ap" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aq" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ar" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="as" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="at" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="au" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="av" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aw" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ax" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="ay" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="az" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aA" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aB" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aC" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aD" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aE" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aF" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aG" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aH" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aI" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aJ" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aK" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aL" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aM" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aN" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aO" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aP" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aQ" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aR" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aS" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aT" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aU" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aV" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aW" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aX" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aY" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="aZ" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="n0" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="n1" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="n2" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="n3" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="n4" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="n5" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="n6" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="n7" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="n8" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="n9" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm text="buildString" xsi:type="mprolog:Functor">
+          <nextTerm text="str" xsi:type="mprolog:Functor">
+            <ownedTerm name="Xc" xsi:type="mprolog:Variable">
+              <nextTerm name="Id1" xsi:type="mprolog:Variable"/>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm name="Xs1" xsi:type="mprolog:Variable"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm xsi:type="mprolog:Parenthesis">
+        <nextTerm text="callReverseList" xsi:type="mprolog:Functor">
+          <ownedTerm xsi:type="mprolog:List">
+            <ownedHeadTerms text="op" xsi:type="mprolog:Functor">
+              <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                <ownedTerm text="excluding" xsi:type="mprolog:Functor">
+                  <nextTerm name="Id0" xsi:type="mprolog:Variable"/>
+                  <ownedTerm name="Xc" xsi:type="mprolog:Variable">
+                    <nextTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                  </ownedTerm>
+                </ownedTerm>
+              </nextTerm>
+              <ownedTerm text="buildString" xsi:type="mprolog:Functor">
+                <nextTerm name="Id1" xsi:type="mprolog:Variable"/>
+                <ownedTerm name="Id0" xsi:type="mprolog:Variable"/>
+              </ownedTerm>
+            </ownedHeadTerms>
+          </ownedTerm>
+        </nextTerm>
+        <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+          <ownedTerm xsi:type="mprolog:List">
+            <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+              <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                <ownedTerm text="member" xsi:type="mprolog:Functor">
+                  <nextTerm name="Id2" xsi:type="mprolog:Variable"/>
+                  <ownedTerm name="Xc" xsi:type="mprolog:Variable">
+                    <nextTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                  </ownedTerm>
+                </ownedTerm>
+              </nextTerm>
+              <ownedTerm name="Id2" xsi:type="mprolog:Variable">
+                <nextTerm text="true" xsi:type="mprolog:Functor"/>
+              </ownedTerm>
+            </ownedHeadTerms>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm text="buildString" xsi:type="mprolog:Functor">
+          <nextTerm text="end" xsi:type="mprolog:Functor"/>
+          <ownedTerm text="empty" xsi:type="mprolog:Functor"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+        <ownedTerm xsi:type="mprolog:List"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="buildString" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="end" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="str" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="true" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="false" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm text="equals" xsi:type="mprolog:Functor">
+          <nextTerm text="true" xsi:type="mprolog:Functor"/>
+          <ownedTerm name="Xx1" xsi:type="mprolog:Variable">
+            <nextTerm name="Xx1" xsi:type="mprolog:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+        <ownedTerm xsi:type="mprolog:List"/>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="op">
+        <ownedTerm text="equals" xsi:type="mprolog:Functor">
+          <nextTerm text="false" xsi:type="mprolog:Functor"/>
+          <ownedTerm name="Xx1" xsi:type="mprolog:Variable">
+            <nextTerm name="Xy1" xsi:type="mprolog:Variable"/>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+    <ownedBody>
+      <ownedTerm xsi:type="mprolog:Parenthesis">
+        <nextTerm text="callReverseList" xsi:type="mprolog:Functor">
+          <ownedTerm xsi:type="mprolog:List"/>
+        </nextTerm>
+        <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+          <ownedTerm xsi:type="mprolog:List">
+            <ownedHeadTerms text="not" xsi:type="mprolog:Functor">
+              <ownedTerm text="equals" xsi:type="mprolog:Functor">
+                <ownedTerm name="Xx1" xsi:type="mprolog:Variable">
+                  <nextTerm name="Xy1" xsi:type="mprolog:Variable"/>
+                </ownedTerm>
+              </ownedTerm>
+            </ownedHeadTerms>
+          </ownedTerm>
+        </ownedTerm>
+      </ownedTerm>
+    </ownedBody>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="opdef">
+        <ownedTerm text="equals" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="state" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="gendef">
+        <ownedTerm text="initial" xsi:type="mprolog:Functor"/>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="rule">
+        <ownedTerm text="knowing" xsi:type="mprolog:Functor">
+          <nextTerm text="pre" xsi:type="mprolog:Functor">
+            <nextTerm text="pos" xsi:type="mprolog:Functor">
+              <nextTerm text="know" xsi:type="mprolog:Functor">
+                <ownedTerm text="ts" xsi:type="mprolog:Functor">
+                  <ownedTerm text="initial" xsi:type="mprolog:Functor">
+                    <nextTerm name="Id4" xsi:type="mprolog:Variable">
+                      <nextTerm text="state" xsi:type="mprolog:Functor">
+                        <ownedTerm name="Xs0" xsi:type="mprolog:Variable"/>
+                      </nextTerm>
+                    </nextTerm>
+                    <ownedTerm name="Xi" xsi:type="mprolog:Variable"/>
+                  </ownedTerm>
+                </ownedTerm>
+              </nextTerm>
+              <ownedTerm xsi:type="mprolog:List">
+                <ownedHeadTerms xsi:type="mprolog:Parenthesis">
+                  <nextTerm xsi:type="mprolog:Parenthesis">
+                    <nextTerm xsi:type="mprolog:Parenthesis">
+                      <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                        <ownedTerm xsi:type="mprolog:List"/>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                      <ownedTerm xsi:type="mprolog:List">
+                        <ownedHeadTerms text="op" xsi:type="mprolog:Functor">
+                          <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                            <ownedTerm text="memberattModel" xsi:type="mprolog:Functor">
+                              <nextTerm name="Id3" xsi:type="mprolog:Variable"/>
+                              <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                <nextTerm text="name" xsi:type="mprolog:QuotedAtom"/>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm text="buildString" xsi:type="mprolog:Functor">
+                            <nextTerm name="Id4" xsi:type="mprolog:Variable"/>
+                            <ownedTerm name="Id3" xsi:type="mprolog:Variable"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                    <ownedTerm xsi:type="mprolog:List"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </ownedTerm>
+            </nextTerm>
+            <ownedTerm xsi:type="mprolog:List">
+              <ownedHeadTerms xsi:type="mprolog:Parenthesis">
+                <nextTerm xsi:type="mprolog:Parenthesis">
+                  <nextTerm xsi:type="mprolog:Parenthesis">
+                    <nextTerm xsi:type="mprolog:Parenthesis">
+                      <nextTerm xsi:type="mprolog:Parenthesis">
+                        <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                          <ownedTerm xsi:type="mprolog:List">
+                            <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                              <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                                <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                  <nextTerm name="Id5" xsi:type="mprolog:Variable"/>
+                                  <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                    <nextTerm text="target" xsi:type="mprolog:QuotedAtom">
+                                      <nextTerm name="Xs0" xsi:type="mprolog:Variable"/>
+                                    </nextTerm>
+                                  </ownedTerm>
+                                </ownedTerm>
+                              </nextTerm>
+                              <ownedTerm name="Id5" xsi:type="mprolog:Variable">
+                                <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                              </ownedTerm>
+                            </ownedHeadTerms>
+                          </ownedTerm>
+                        </ownedTerm>
+                      </nextTerm>
+                      <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                        <ownedTerm xsi:type="mprolog:List">
+                          <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                            <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                              <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                <nextTerm name="Id6" xsi:type="mprolog:Variable"/>
+                                <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                  <nextTerm text="source" xsi:type="mprolog:QuotedAtom">
+                                    <nextTerm name="Xi" xsi:type="mprolog:Variable"/>
+                                  </nextTerm>
+                                </ownedTerm>
+                              </ownedTerm>
+                            </nextTerm>
+                            <ownedTerm name="Id6" xsi:type="mprolog:Variable">
+                              <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                            </ownedTerm>
+                          </ownedHeadTerms>
+                        </ownedTerm>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                      <ownedTerm xsi:type="mprolog:List">
+                        <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                          <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                            <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                              <nextTerm name="Id7" xsi:type="mprolog:Variable"/>
+                              <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                                <nextTerm text="State" xsi:type="mprolog:QuotedAtom">
+                                  <nextTerm name="Xs0" xsi:type="mprolog:Variable">
+                                    <nextTerm name="Att_Xs0" xsi:type="mprolog:Variable">
+                                      <nextTerm name="Rel_Xs0" xsi:type="mprolog:Variable"/>
+                                    </nextTerm>
+                                  </nextTerm>
+                                </nextTerm>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm name="Id7" xsi:type="mprolog:Variable">
+                            <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                    <ownedTerm xsi:type="mprolog:List">
+                      <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                        <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                          <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                            <nextTerm name="Id8" xsi:type="mprolog:Variable"/>
+                            <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                              <nextTerm text="Initial" xsi:type="mprolog:QuotedAtom">
+                                <nextTerm name="Xi" xsi:type="mprolog:Variable">
+                                  <nextTerm name="Att_Xi" xsi:type="mprolog:Variable">
+                                    <nextTerm name="Rel_Xi" xsi:type="mprolog:Variable"/>
+                                  </nextTerm>
+                                </nextTerm>
+                              </nextTerm>
+                            </ownedTerm>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm name="Id8" xsi:type="mprolog:Variable">
+                          <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                        </ownedTerm>
+                      </ownedHeadTerms>
+                    </ownedTerm>
+                  </ownedTerm>
+                </nextTerm>
+                <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                  <ownedTerm xsi:type="mprolog:List">
+                    <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                      <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                        <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                          <nextTerm name="Id9" xsi:type="mprolog:Variable"/>
+                          <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                            <nextTerm text="Transition" xsi:type="mprolog:QuotedAtom">
+                              <nextTerm name="Xt" xsi:type="mprolog:Variable">
+                                <nextTerm name="Att_Xt" xsi:type="mprolog:Variable">
+                                  <nextTerm name="Rel_Xt" xsi:type="mprolog:Variable"/>
+                                </nextTerm>
+                              </nextTerm>
+                            </nextTerm>
+                          </ownedTerm>
+                        </ownedTerm>
+                      </nextTerm>
+                      <ownedTerm name="Id9" xsi:type="mprolog:Variable">
+                        <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                      </ownedTerm>
+                    </ownedHeadTerms>
+                  </ownedTerm>
+                </ownedTerm>
+              </ownedHeadTerms>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm name="Id10" xsi:type="mprolog:Variable"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="rule">
+        <ownedTerm text="knowing" xsi:type="mprolog:Functor">
+          <nextTerm text="pre" xsi:type="mprolog:Functor">
+            <nextTerm text="pos" xsi:type="mprolog:Functor">
+              <nextTerm text="know" xsi:type="mprolog:Functor">
+                <ownedTerm text="ts" xsi:type="mprolog:Functor">
+                  <ownedTerm text="initial" xsi:type="mprolog:Functor">
+                    <nextTerm name="Id12" xsi:type="mprolog:Variable">
+                      <nextTerm text="initial" xsi:type="mprolog:Functor">
+                        <ownedTerm name="Xs0" xsi:type="mprolog:Variable"/>
+                      </nextTerm>
+                    </nextTerm>
+                    <ownedTerm name="Xi" xsi:type="mprolog:Variable"/>
+                  </ownedTerm>
+                </ownedTerm>
+              </nextTerm>
+              <ownedTerm xsi:type="mprolog:List">
+                <ownedHeadTerms xsi:type="mprolog:Parenthesis">
+                  <nextTerm xsi:type="mprolog:Parenthesis">
+                    <nextTerm xsi:type="mprolog:Parenthesis">
+                      <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                        <ownedTerm xsi:type="mprolog:List"/>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                      <ownedTerm xsi:type="mprolog:List">
+                        <ownedHeadTerms text="op" xsi:type="mprolog:Functor">
+                          <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                            <ownedTerm text="memberattModel" xsi:type="mprolog:Functor">
+                              <nextTerm name="Id11" xsi:type="mprolog:Variable"/>
+                              <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                <nextTerm text="name" xsi:type="mprolog:QuotedAtom"/>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm text="buildString" xsi:type="mprolog:Functor">
+                            <nextTerm name="Id12" xsi:type="mprolog:Variable"/>
+                            <ownedTerm name="Id11" xsi:type="mprolog:Variable"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                    <ownedTerm xsi:type="mprolog:List"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </ownedTerm>
+            </nextTerm>
+            <ownedTerm xsi:type="mprolog:List">
+              <ownedHeadTerms xsi:type="mprolog:Parenthesis">
+                <nextTerm xsi:type="mprolog:Parenthesis">
+                  <nextTerm xsi:type="mprolog:Parenthesis">
+                    <nextTerm xsi:type="mprolog:Parenthesis">
+                      <nextTerm xsi:type="mprolog:Parenthesis">
+                        <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                          <ownedTerm xsi:type="mprolog:List">
+                            <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                              <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                                <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                  <nextTerm name="Id13" xsi:type="mprolog:Variable"/>
+                                  <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                    <nextTerm text="target" xsi:type="mprolog:QuotedAtom">
+                                      <nextTerm name="Xs0" xsi:type="mprolog:Variable"/>
+                                    </nextTerm>
+                                  </ownedTerm>
+                                </ownedTerm>
+                              </nextTerm>
+                              <ownedTerm name="Id13" xsi:type="mprolog:Variable">
+                                <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                              </ownedTerm>
+                            </ownedHeadTerms>
+                          </ownedTerm>
+                        </ownedTerm>
+                      </nextTerm>
+                      <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                        <ownedTerm xsi:type="mprolog:List">
+                          <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                            <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                              <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                <nextTerm name="Id14" xsi:type="mprolog:Variable"/>
+                                <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                  <nextTerm text="source" xsi:type="mprolog:QuotedAtom">
+                                    <nextTerm name="Xi" xsi:type="mprolog:Variable"/>
+                                  </nextTerm>
+                                </ownedTerm>
+                              </ownedTerm>
+                            </nextTerm>
+                            <ownedTerm name="Id14" xsi:type="mprolog:Variable">
+                              <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                            </ownedTerm>
+                          </ownedHeadTerms>
+                        </ownedTerm>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                      <ownedTerm xsi:type="mprolog:List">
+                        <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                          <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                            <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                              <nextTerm name="Id15" xsi:type="mprolog:Variable"/>
+                              <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                                <nextTerm text="Initial" xsi:type="mprolog:QuotedAtom">
+                                  <nextTerm name="Xs0" xsi:type="mprolog:Variable">
+                                    <nextTerm name="Att_Xs0" xsi:type="mprolog:Variable">
+                                      <nextTerm name="Rel_Xs0" xsi:type="mprolog:Variable"/>
+                                    </nextTerm>
+                                  </nextTerm>
+                                </nextTerm>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm name="Id15" xsi:type="mprolog:Variable">
+                            <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                    <ownedTerm xsi:type="mprolog:List">
+                      <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                        <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                          <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                            <nextTerm name="Id16" xsi:type="mprolog:Variable"/>
+                            <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                              <nextTerm text="Initial" xsi:type="mprolog:QuotedAtom">
+                                <nextTerm name="Xi" xsi:type="mprolog:Variable">
+                                  <nextTerm name="Att_Xi" xsi:type="mprolog:Variable">
+                                    <nextTerm name="Rel_Xi" xsi:type="mprolog:Variable"/>
+                                  </nextTerm>
+                                </nextTerm>
+                              </nextTerm>
+                            </ownedTerm>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm name="Id16" xsi:type="mprolog:Variable">
+                          <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                        </ownedTerm>
+                      </ownedHeadTerms>
+                    </ownedTerm>
+                  </ownedTerm>
+                </nextTerm>
+                <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                  <ownedTerm xsi:type="mprolog:List">
+                    <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                      <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                        <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                          <nextTerm name="Id17" xsi:type="mprolog:Variable"/>
+                          <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                            <nextTerm text="Transition" xsi:type="mprolog:QuotedAtom">
+                              <nextTerm name="Xt" xsi:type="mprolog:Variable">
+                                <nextTerm name="Att_Xt" xsi:type="mprolog:Variable">
+                                  <nextTerm name="Rel_Xt" xsi:type="mprolog:Variable"/>
+                                </nextTerm>
+                              </nextTerm>
+                            </nextTerm>
+                          </ownedTerm>
+                        </ownedTerm>
+                      </nextTerm>
+                      <ownedTerm name="Id17" xsi:type="mprolog:Variable">
+                        <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                      </ownedTerm>
+                    </ownedHeadTerms>
+                  </ownedTerm>
+                </ownedTerm>
+              </ownedHeadTerms>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm name="Id18" xsi:type="mprolog:Variable"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="rule">
+        <ownedTerm text="knowing" xsi:type="mprolog:Functor">
+          <nextTerm text="pre" xsi:type="mprolog:Functor">
+            <nextTerm text="pos" xsi:type="mprolog:Functor">
+              <nextTerm text="know" xsi:type="mprolog:Functor">
+                <ownedTerm text="ts" xsi:type="mprolog:Functor">
+                  <ownedTerm text="state" xsi:type="mprolog:Functor">
+                    <nextTerm name="Id20" xsi:type="mprolog:Variable">
+                      <nextTerm text="state" xsi:type="mprolog:Functor">
+                        <ownedTerm name="Xs2" xsi:type="mprolog:Variable"/>
+                      </nextTerm>
+                    </nextTerm>
+                    <ownedTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                  </ownedTerm>
+                </ownedTerm>
+              </nextTerm>
+              <ownedTerm xsi:type="mprolog:List">
+                <ownedHeadTerms xsi:type="mprolog:Parenthesis">
+                  <nextTerm xsi:type="mprolog:Parenthesis">
+                    <nextTerm xsi:type="mprolog:Parenthesis">
+                      <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                        <ownedTerm xsi:type="mprolog:List"/>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                      <ownedTerm xsi:type="mprolog:List">
+                        <ownedHeadTerms text="op" xsi:type="mprolog:Functor">
+                          <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                            <ownedTerm text="memberattModel" xsi:type="mprolog:Functor">
+                              <nextTerm name="Id19" xsi:type="mprolog:Variable"/>
+                              <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                <nextTerm text="name" xsi:type="mprolog:QuotedAtom"/>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm text="buildString" xsi:type="mprolog:Functor">
+                            <nextTerm name="Id20" xsi:type="mprolog:Variable"/>
+                            <ownedTerm name="Id19" xsi:type="mprolog:Variable"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                    <ownedTerm xsi:type="mprolog:List"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </ownedTerm>
+            </nextTerm>
+            <ownedTerm xsi:type="mprolog:List">
+              <ownedHeadTerms xsi:type="mprolog:Parenthesis">
+                <nextTerm xsi:type="mprolog:Parenthesis">
+                  <nextTerm xsi:type="mprolog:Parenthesis">
+                    <nextTerm xsi:type="mprolog:Parenthesis">
+                      <nextTerm xsi:type="mprolog:Parenthesis">
+                        <nextTerm xsi:type="mprolog:Parenthesis">
+                          <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                            <ownedTerm xsi:type="mprolog:List">
+                              <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                                <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                                  <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                    <nextTerm name="Id21" xsi:type="mprolog:Variable"/>
+                                    <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                      <nextTerm text="target" xsi:type="mprolog:QuotedAtom">
+                                        <nextTerm name="Xs2" xsi:type="mprolog:Variable"/>
+                                      </nextTerm>
+                                    </ownedTerm>
+                                  </ownedTerm>
+                                </nextTerm>
+                                <ownedTerm name="Id21" xsi:type="mprolog:Variable">
+                                  <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                                </ownedTerm>
+                              </ownedHeadTerms>
+                            </ownedTerm>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                          <ownedTerm xsi:type="mprolog:List">
+                            <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                              <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                                <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                  <nextTerm name="Id22" xsi:type="mprolog:Variable"/>
+                                  <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                    <nextTerm text="source" xsi:type="mprolog:QuotedAtom">
+                                      <nextTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                                    </nextTerm>
+                                  </ownedTerm>
+                                </ownedTerm>
+                              </nextTerm>
+                              <ownedTerm name="Id22" xsi:type="mprolog:Variable">
+                                <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                              </ownedTerm>
+                            </ownedHeadTerms>
+                          </ownedTerm>
+                        </ownedTerm>
+                      </nextTerm>
+                      <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                        <ownedTerm xsi:type="mprolog:List">
+                          <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                            <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                              <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                <nextTerm name="Id23" xsi:type="mprolog:Variable"/>
+                                <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                                  <nextTerm text="State" xsi:type="mprolog:QuotedAtom">
+                                    <nextTerm name="Xs2" xsi:type="mprolog:Variable">
+                                      <nextTerm name="Att_Xs2" xsi:type="mprolog:Variable">
+                                        <nextTerm name="Rel_Xs2" xsi:type="mprolog:Variable"/>
+                                      </nextTerm>
+                                    </nextTerm>
+                                  </nextTerm>
+                                </ownedTerm>
+                              </ownedTerm>
+                            </nextTerm>
+                            <ownedTerm name="Id23" xsi:type="mprolog:Variable">
+                              <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                            </ownedTerm>
+                          </ownedHeadTerms>
+                        </ownedTerm>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                      <ownedTerm xsi:type="mprolog:List">
+                        <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                          <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                            <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                              <nextTerm name="Id24" xsi:type="mprolog:Variable"/>
+                              <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                                <nextTerm text="State" xsi:type="mprolog:QuotedAtom">
+                                  <nextTerm name="Xs1" xsi:type="mprolog:Variable">
+                                    <nextTerm name="Att_Xs1" xsi:type="mprolog:Variable">
+                                      <nextTerm name="Rel_Xs1" xsi:type="mprolog:Variable"/>
+                                    </nextTerm>
+                                  </nextTerm>
+                                </nextTerm>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm name="Id24" xsi:type="mprolog:Variable">
+                            <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                    <ownedTerm xsi:type="mprolog:List">
+                      <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                        <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                          <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                            <nextTerm name="Id25" xsi:type="mprolog:Variable"/>
+                            <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                              <nextTerm text="Transition" xsi:type="mprolog:QuotedAtom">
+                                <nextTerm name="Xt" xsi:type="mprolog:Variable">
+                                  <nextTerm name="Att_Xt" xsi:type="mprolog:Variable">
+                                    <nextTerm name="Rel_Xt" xsi:type="mprolog:Variable"/>
+                                  </nextTerm>
+                                </nextTerm>
+                              </nextTerm>
+                            </ownedTerm>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm name="Id25" xsi:type="mprolog:Variable">
+                          <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                        </ownedTerm>
+                      </ownedHeadTerms>
+                    </ownedTerm>
+                  </ownedTerm>
+                </nextTerm>
+                <ownedTerm text="opFundamental" xsi:type="mprolog:Functor">
+                  <ownedTerm text="membergen" xsi:type="mprolog:Functor">
+                    <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                    <ownedTerm text="ts" xsi:type="mprolog:Functor">
+                      <nextTerm name="Id26" xsi:type="mprolog:Variable"/>
+                      <ownedTerm text="state" xsi:type="mprolog:Functor">
+                        <nextTerm name="XnameX" xsi:type="mprolog:Variable">
+                          <nextTerm text="state" xsi:type="mprolog:Functor">
+                            <ownedTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                          </nextTerm>
+                        </nextTerm>
+                        <ownedTerm name="Xs0" xsi:type="mprolog:Variable"/>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </ownedTerm>
+                </ownedTerm>
+              </ownedHeadTerms>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm name="Id26" xsi:type="mprolog:Variable"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="rule">
+        <ownedTerm text="knowing" xsi:type="mprolog:Functor">
+          <nextTerm text="pre" xsi:type="mprolog:Functor">
+            <nextTerm text="pos" xsi:type="mprolog:Functor">
+              <nextTerm text="know" xsi:type="mprolog:Functor">
+                <ownedTerm text="ts" xsi:type="mprolog:Functor">
+                  <ownedTerm text="state" xsi:type="mprolog:Functor">
+                    <nextTerm name="Id28" xsi:type="mprolog:Variable">
+                      <nextTerm text="state" xsi:type="mprolog:Functor">
+                        <ownedTerm name="Xs2" xsi:type="mprolog:Variable"/>
+                      </nextTerm>
+                    </nextTerm>
+                    <ownedTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                  </ownedTerm>
+                </ownedTerm>
+              </nextTerm>
+              <ownedTerm xsi:type="mprolog:List">
+                <ownedHeadTerms xsi:type="mprolog:Parenthesis">
+                  <nextTerm xsi:type="mprolog:Parenthesis">
+                    <nextTerm xsi:type="mprolog:Parenthesis">
+                      <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                        <ownedTerm xsi:type="mprolog:List"/>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                      <ownedTerm xsi:type="mprolog:List">
+                        <ownedHeadTerms text="op" xsi:type="mprolog:Functor">
+                          <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                            <ownedTerm text="memberattModel" xsi:type="mprolog:Functor">
+                              <nextTerm name="Id27" xsi:type="mprolog:Variable"/>
+                              <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                <nextTerm text="name" xsi:type="mprolog:QuotedAtom"/>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm text="buildString" xsi:type="mprolog:Functor">
+                            <nextTerm name="Id28" xsi:type="mprolog:Variable"/>
+                            <ownedTerm name="Id27" xsi:type="mprolog:Variable"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                    <ownedTerm xsi:type="mprolog:List"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </ownedTerm>
+            </nextTerm>
+            <ownedTerm xsi:type="mprolog:List">
+              <ownedHeadTerms xsi:type="mprolog:Parenthesis">
+                <nextTerm xsi:type="mprolog:Parenthesis">
+                  <nextTerm xsi:type="mprolog:Parenthesis">
+                    <nextTerm xsi:type="mprolog:Parenthesis">
+                      <nextTerm xsi:type="mprolog:Parenthesis">
+                        <nextTerm xsi:type="mprolog:Parenthesis">
+                          <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                            <ownedTerm xsi:type="mprolog:List">
+                              <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                                <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                                  <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                    <nextTerm name="Id29" xsi:type="mprolog:Variable"/>
+                                    <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                      <nextTerm text="target" xsi:type="mprolog:QuotedAtom">
+                                        <nextTerm name="Xs2" xsi:type="mprolog:Variable"/>
+                                      </nextTerm>
+                                    </ownedTerm>
+                                  </ownedTerm>
+                                </nextTerm>
+                                <ownedTerm name="Id29" xsi:type="mprolog:Variable">
+                                  <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                                </ownedTerm>
+                              </ownedHeadTerms>
+                            </ownedTerm>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                          <ownedTerm xsi:type="mprolog:List">
+                            <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                              <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                                <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                  <nextTerm name="Id30" xsi:type="mprolog:Variable"/>
+                                  <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                    <nextTerm text="source" xsi:type="mprolog:QuotedAtom">
+                                      <nextTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                                    </nextTerm>
+                                  </ownedTerm>
+                                </ownedTerm>
+                              </nextTerm>
+                              <ownedTerm name="Id30" xsi:type="mprolog:Variable">
+                                <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                              </ownedTerm>
+                            </ownedHeadTerms>
+                          </ownedTerm>
+                        </ownedTerm>
+                      </nextTerm>
+                      <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                        <ownedTerm xsi:type="mprolog:List">
+                          <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                            <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                              <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                <nextTerm name="Id31" xsi:type="mprolog:Variable"/>
+                                <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                                  <nextTerm text="State" xsi:type="mprolog:QuotedAtom">
+                                    <nextTerm name="Xs2" xsi:type="mprolog:Variable">
+                                      <nextTerm name="Att_Xs2" xsi:type="mprolog:Variable">
+                                        <nextTerm name="Rel_Xs2" xsi:type="mprolog:Variable"/>
+                                      </nextTerm>
+                                    </nextTerm>
+                                  </nextTerm>
+                                </ownedTerm>
+                              </ownedTerm>
+                            </nextTerm>
+                            <ownedTerm name="Id31" xsi:type="mprolog:Variable">
+                              <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                            </ownedTerm>
+                          </ownedHeadTerms>
+                        </ownedTerm>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                      <ownedTerm xsi:type="mprolog:List">
+                        <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                          <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                            <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                              <nextTerm name="Id32" xsi:type="mprolog:Variable"/>
+                              <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                                <nextTerm text="State" xsi:type="mprolog:QuotedAtom">
+                                  <nextTerm name="Xs1" xsi:type="mprolog:Variable">
+                                    <nextTerm name="Att_Xs1" xsi:type="mprolog:Variable">
+                                      <nextTerm name="Rel_Xs1" xsi:type="mprolog:Variable"/>
+                                    </nextTerm>
+                                  </nextTerm>
+                                </nextTerm>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm name="Id32" xsi:type="mprolog:Variable">
+                            <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                    <ownedTerm xsi:type="mprolog:List">
+                      <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                        <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                          <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                            <nextTerm name="Id33" xsi:type="mprolog:Variable"/>
+                            <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                              <nextTerm text="Transition" xsi:type="mprolog:QuotedAtom">
+                                <nextTerm name="Xt" xsi:type="mprolog:Variable">
+                                  <nextTerm name="Att_Xt" xsi:type="mprolog:Variable">
+                                    <nextTerm name="Rel_Xt" xsi:type="mprolog:Variable"/>
+                                  </nextTerm>
+                                </nextTerm>
+                              </nextTerm>
+                            </ownedTerm>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm name="Id33" xsi:type="mprolog:Variable">
+                          <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                        </ownedTerm>
+                      </ownedHeadTerms>
+                    </ownedTerm>
+                  </ownedTerm>
+                </nextTerm>
+                <ownedTerm text="opFundamental" xsi:type="mprolog:Functor">
+                  <ownedTerm text="membergen" xsi:type="mprolog:Functor">
+                    <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                    <ownedTerm text="ts" xsi:type="mprolog:Functor">
+                      <nextTerm name="Id34" xsi:type="mprolog:Variable"/>
+                      <ownedTerm text="initial" xsi:type="mprolog:Functor">
+                        <nextTerm name="XnameX" xsi:type="mprolog:Variable">
+                          <nextTerm text="state" xsi:type="mprolog:Functor">
+                            <ownedTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                          </nextTerm>
+                        </nextTerm>
+                        <ownedTerm name="Xs0" xsi:type="mprolog:Variable"/>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </ownedTerm>
+                </ownedTerm>
+              </ownedHeadTerms>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm name="Id34" xsi:type="mprolog:Variable"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="rule">
+        <ownedTerm text="knowing" xsi:type="mprolog:Functor">
+          <nextTerm text="pre" xsi:type="mprolog:Functor">
+            <nextTerm text="pos" xsi:type="mprolog:Functor">
+              <nextTerm text="know" xsi:type="mprolog:Functor">
+                <ownedTerm text="ts" xsi:type="mprolog:Functor">
+                  <ownedTerm text="initial" xsi:type="mprolog:Functor">
+                    <nextTerm name="Id36" xsi:type="mprolog:Variable">
+                      <nextTerm text="state" xsi:type="mprolog:Functor">
+                        <ownedTerm name="Xs2" xsi:type="mprolog:Variable"/>
+                      </nextTerm>
+                    </nextTerm>
+                    <ownedTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                  </ownedTerm>
+                </ownedTerm>
+              </nextTerm>
+              <ownedTerm xsi:type="mprolog:List">
+                <ownedHeadTerms xsi:type="mprolog:Parenthesis">
+                  <nextTerm xsi:type="mprolog:Parenthesis">
+                    <nextTerm xsi:type="mprolog:Parenthesis">
+                      <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                        <ownedTerm xsi:type="mprolog:List"/>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                      <ownedTerm xsi:type="mprolog:List">
+                        <ownedHeadTerms text="op" xsi:type="mprolog:Functor">
+                          <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                            <ownedTerm text="memberattModel" xsi:type="mprolog:Functor">
+                              <nextTerm name="Id35" xsi:type="mprolog:Variable"/>
+                              <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                <nextTerm text="name" xsi:type="mprolog:QuotedAtom"/>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm text="buildString" xsi:type="mprolog:Functor">
+                            <nextTerm name="Id36" xsi:type="mprolog:Variable"/>
+                            <ownedTerm name="Id35" xsi:type="mprolog:Variable"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                    <ownedTerm xsi:type="mprolog:List"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </ownedTerm>
+            </nextTerm>
+            <ownedTerm xsi:type="mprolog:List">
+              <ownedHeadTerms xsi:type="mprolog:Parenthesis">
+                <nextTerm xsi:type="mprolog:Parenthesis">
+                  <nextTerm xsi:type="mprolog:Parenthesis">
+                    <nextTerm xsi:type="mprolog:Parenthesis">
+                      <nextTerm xsi:type="mprolog:Parenthesis">
+                        <nextTerm xsi:type="mprolog:Parenthesis">
+                          <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                            <ownedTerm xsi:type="mprolog:List">
+                              <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                                <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                                  <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                    <nextTerm name="Id37" xsi:type="mprolog:Variable"/>
+                                    <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                      <nextTerm text="target" xsi:type="mprolog:QuotedAtom">
+                                        <nextTerm name="Xs2" xsi:type="mprolog:Variable"/>
+                                      </nextTerm>
+                                    </ownedTerm>
+                                  </ownedTerm>
+                                </nextTerm>
+                                <ownedTerm name="Id37" xsi:type="mprolog:Variable">
+                                  <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                                </ownedTerm>
+                              </ownedHeadTerms>
+                            </ownedTerm>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                          <ownedTerm xsi:type="mprolog:List">
+                            <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                              <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                                <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                  <nextTerm name="Id38" xsi:type="mprolog:Variable"/>
+                                  <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                    <nextTerm text="source" xsi:type="mprolog:QuotedAtom">
+                                      <nextTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                                    </nextTerm>
+                                  </ownedTerm>
+                                </ownedTerm>
+                              </nextTerm>
+                              <ownedTerm name="Id38" xsi:type="mprolog:Variable">
+                                <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                              </ownedTerm>
+                            </ownedHeadTerms>
+                          </ownedTerm>
+                        </ownedTerm>
+                      </nextTerm>
+                      <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                        <ownedTerm xsi:type="mprolog:List">
+                          <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                            <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                              <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                <nextTerm name="Id39" xsi:type="mprolog:Variable"/>
+                                <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                                  <nextTerm text="State" xsi:type="mprolog:QuotedAtom">
+                                    <nextTerm name="Xs2" xsi:type="mprolog:Variable">
+                                      <nextTerm name="Att_Xs2" xsi:type="mprolog:Variable">
+                                        <nextTerm name="Rel_Xs2" xsi:type="mprolog:Variable"/>
+                                      </nextTerm>
+                                    </nextTerm>
+                                  </nextTerm>
+                                </ownedTerm>
+                              </ownedTerm>
+                            </nextTerm>
+                            <ownedTerm name="Id39" xsi:type="mprolog:Variable">
+                              <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                            </ownedTerm>
+                          </ownedHeadTerms>
+                        </ownedTerm>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                      <ownedTerm xsi:type="mprolog:List">
+                        <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                          <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                            <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                              <nextTerm name="Id40" xsi:type="mprolog:Variable"/>
+                              <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                                <nextTerm text="Initial" xsi:type="mprolog:QuotedAtom">
+                                  <nextTerm name="Xs1" xsi:type="mprolog:Variable">
+                                    <nextTerm name="Att_Xs1" xsi:type="mprolog:Variable">
+                                      <nextTerm name="Rel_Xs1" xsi:type="mprolog:Variable"/>
+                                    </nextTerm>
+                                  </nextTerm>
+                                </nextTerm>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm name="Id40" xsi:type="mprolog:Variable">
+                            <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                    <ownedTerm xsi:type="mprolog:List">
+                      <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                        <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                          <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                            <nextTerm name="Id41" xsi:type="mprolog:Variable"/>
+                            <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                              <nextTerm text="Transition" xsi:type="mprolog:QuotedAtom">
+                                <nextTerm name="Xt" xsi:type="mprolog:Variable">
+                                  <nextTerm name="Att_Xt" xsi:type="mprolog:Variable">
+                                    <nextTerm name="Rel_Xt" xsi:type="mprolog:Variable"/>
+                                  </nextTerm>
+                                </nextTerm>
+                              </nextTerm>
+                            </ownedTerm>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm name="Id41" xsi:type="mprolog:Variable">
+                          <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                        </ownedTerm>
+                      </ownedHeadTerms>
+                    </ownedTerm>
+                  </ownedTerm>
+                </nextTerm>
+                <ownedTerm text="opFundamental" xsi:type="mprolog:Functor">
+                  <ownedTerm text="membergen" xsi:type="mprolog:Functor">
+                    <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                    <ownedTerm text="ts" xsi:type="mprolog:Functor">
+                      <nextTerm name="Id42" xsi:type="mprolog:Variable"/>
+                      <ownedTerm text="state" xsi:type="mprolog:Functor">
+                        <nextTerm name="XnameX" xsi:type="mprolog:Variable">
+                          <nextTerm text="initial" xsi:type="mprolog:Functor">
+                            <ownedTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                          </nextTerm>
+                        </nextTerm>
+                        <ownedTerm name="Xs0" xsi:type="mprolog:Variable"/>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </ownedTerm>
+                </ownedTerm>
+              </ownedHeadTerms>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm name="Id42" xsi:type="mprolog:Variable"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="rule">
+        <ownedTerm text="knowing" xsi:type="mprolog:Functor">
+          <nextTerm text="pre" xsi:type="mprolog:Functor">
+            <nextTerm text="pos" xsi:type="mprolog:Functor">
+              <nextTerm text="know" xsi:type="mprolog:Functor">
+                <ownedTerm text="ts" xsi:type="mprolog:Functor">
+                  <ownedTerm text="state" xsi:type="mprolog:Functor">
+                    <nextTerm name="Id44" xsi:type="mprolog:Variable">
+                      <nextTerm text="initial" xsi:type="mprolog:Functor">
+                        <ownedTerm name="Xs2" xsi:type="mprolog:Variable"/>
+                      </nextTerm>
+                    </nextTerm>
+                    <ownedTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                  </ownedTerm>
+                </ownedTerm>
+              </nextTerm>
+              <ownedTerm xsi:type="mprolog:List">
+                <ownedHeadTerms xsi:type="mprolog:Parenthesis">
+                  <nextTerm xsi:type="mprolog:Parenthesis">
+                    <nextTerm xsi:type="mprolog:Parenthesis">
+                      <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                        <ownedTerm xsi:type="mprolog:List"/>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                      <ownedTerm xsi:type="mprolog:List">
+                        <ownedHeadTerms text="op" xsi:type="mprolog:Functor">
+                          <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                            <ownedTerm text="memberattModel" xsi:type="mprolog:Functor">
+                              <nextTerm name="Id43" xsi:type="mprolog:Variable"/>
+                              <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                <nextTerm text="name" xsi:type="mprolog:QuotedAtom"/>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm text="buildString" xsi:type="mprolog:Functor">
+                            <nextTerm name="Id44" xsi:type="mprolog:Variable"/>
+                            <ownedTerm name="Id43" xsi:type="mprolog:Variable"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                    <ownedTerm xsi:type="mprolog:List"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </ownedTerm>
+            </nextTerm>
+            <ownedTerm xsi:type="mprolog:List">
+              <ownedHeadTerms xsi:type="mprolog:Parenthesis">
+                <nextTerm xsi:type="mprolog:Parenthesis">
+                  <nextTerm xsi:type="mprolog:Parenthesis">
+                    <nextTerm xsi:type="mprolog:Parenthesis">
+                      <nextTerm xsi:type="mprolog:Parenthesis">
+                        <nextTerm xsi:type="mprolog:Parenthesis">
+                          <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                            <ownedTerm xsi:type="mprolog:List">
+                              <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                                <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                                  <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                    <nextTerm name="Id45" xsi:type="mprolog:Variable"/>
+                                    <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                      <nextTerm text="target" xsi:type="mprolog:QuotedAtom">
+                                        <nextTerm name="Xs2" xsi:type="mprolog:Variable"/>
+                                      </nextTerm>
+                                    </ownedTerm>
+                                  </ownedTerm>
+                                </nextTerm>
+                                <ownedTerm name="Id45" xsi:type="mprolog:Variable">
+                                  <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                                </ownedTerm>
+                              </ownedHeadTerms>
+                            </ownedTerm>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                          <ownedTerm xsi:type="mprolog:List">
+                            <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                              <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                                <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                  <nextTerm name="Id46" xsi:type="mprolog:Variable"/>
+                                  <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                    <nextTerm text="source" xsi:type="mprolog:QuotedAtom">
+                                      <nextTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                                    </nextTerm>
+                                  </ownedTerm>
+                                </ownedTerm>
+                              </nextTerm>
+                              <ownedTerm name="Id46" xsi:type="mprolog:Variable">
+                                <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                              </ownedTerm>
+                            </ownedHeadTerms>
+                          </ownedTerm>
+                        </ownedTerm>
+                      </nextTerm>
+                      <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                        <ownedTerm xsi:type="mprolog:List">
+                          <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                            <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                              <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                <nextTerm name="Id47" xsi:type="mprolog:Variable"/>
+                                <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                                  <nextTerm text="Initial" xsi:type="mprolog:QuotedAtom">
+                                    <nextTerm name="Xs2" xsi:type="mprolog:Variable">
+                                      <nextTerm name="Att_Xs2" xsi:type="mprolog:Variable">
+                                        <nextTerm name="Rel_Xs2" xsi:type="mprolog:Variable"/>
+                                      </nextTerm>
+                                    </nextTerm>
+                                  </nextTerm>
+                                </ownedTerm>
+                              </ownedTerm>
+                            </nextTerm>
+                            <ownedTerm name="Id47" xsi:type="mprolog:Variable">
+                              <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                            </ownedTerm>
+                          </ownedHeadTerms>
+                        </ownedTerm>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                      <ownedTerm xsi:type="mprolog:List">
+                        <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                          <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                            <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                              <nextTerm name="Id48" xsi:type="mprolog:Variable"/>
+                              <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                                <nextTerm text="State" xsi:type="mprolog:QuotedAtom">
+                                  <nextTerm name="Xs1" xsi:type="mprolog:Variable">
+                                    <nextTerm name="Att_Xs1" xsi:type="mprolog:Variable">
+                                      <nextTerm name="Rel_Xs1" xsi:type="mprolog:Variable"/>
+                                    </nextTerm>
+                                  </nextTerm>
+                                </nextTerm>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm name="Id48" xsi:type="mprolog:Variable">
+                            <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                    <ownedTerm xsi:type="mprolog:List">
+                      <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                        <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                          <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                            <nextTerm name="Id49" xsi:type="mprolog:Variable"/>
+                            <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                              <nextTerm text="Transition" xsi:type="mprolog:QuotedAtom">
+                                <nextTerm name="Xt" xsi:type="mprolog:Variable">
+                                  <nextTerm name="Att_Xt" xsi:type="mprolog:Variable">
+                                    <nextTerm name="Rel_Xt" xsi:type="mprolog:Variable"/>
+                                  </nextTerm>
+                                </nextTerm>
+                              </nextTerm>
+                            </ownedTerm>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm name="Id49" xsi:type="mprolog:Variable">
+                          <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                        </ownedTerm>
+                      </ownedHeadTerms>
+                    </ownedTerm>
+                  </ownedTerm>
+                </nextTerm>
+                <ownedTerm text="opFundamental" xsi:type="mprolog:Functor">
+                  <ownedTerm text="membergen" xsi:type="mprolog:Functor">
+                    <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                    <ownedTerm text="ts" xsi:type="mprolog:Functor">
+                      <nextTerm name="Id50" xsi:type="mprolog:Variable"/>
+                      <ownedTerm text="state" xsi:type="mprolog:Functor">
+                        <nextTerm name="XnameX" xsi:type="mprolog:Variable">
+                          <nextTerm text="state" xsi:type="mprolog:Functor">
+                            <ownedTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                          </nextTerm>
+                        </nextTerm>
+                        <ownedTerm name="Xs0" xsi:type="mprolog:Variable"/>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </ownedTerm>
+                </ownedTerm>
+              </ownedHeadTerms>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm name="Id50" xsi:type="mprolog:Variable"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="rule">
+        <ownedTerm text="knowing" xsi:type="mprolog:Functor">
+          <nextTerm text="pre" xsi:type="mprolog:Functor">
+            <nextTerm text="pos" xsi:type="mprolog:Functor">
+              <nextTerm text="know" xsi:type="mprolog:Functor">
+                <ownedTerm text="ts" xsi:type="mprolog:Functor">
+                  <ownedTerm text="initial" xsi:type="mprolog:Functor">
+                    <nextTerm name="Id52" xsi:type="mprolog:Variable">
+                      <nextTerm text="state" xsi:type="mprolog:Functor">
+                        <ownedTerm name="Xs2" xsi:type="mprolog:Variable"/>
+                      </nextTerm>
+                    </nextTerm>
+                    <ownedTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                  </ownedTerm>
+                </ownedTerm>
+              </nextTerm>
+              <ownedTerm xsi:type="mprolog:List">
+                <ownedHeadTerms xsi:type="mprolog:Parenthesis">
+                  <nextTerm xsi:type="mprolog:Parenthesis">
+                    <nextTerm xsi:type="mprolog:Parenthesis">
+                      <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                        <ownedTerm xsi:type="mprolog:List"/>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                      <ownedTerm xsi:type="mprolog:List">
+                        <ownedHeadTerms text="op" xsi:type="mprolog:Functor">
+                          <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                            <ownedTerm text="memberattModel" xsi:type="mprolog:Functor">
+                              <nextTerm name="Id51" xsi:type="mprolog:Variable"/>
+                              <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                <nextTerm text="name" xsi:type="mprolog:QuotedAtom"/>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm text="buildString" xsi:type="mprolog:Functor">
+                            <nextTerm name="Id52" xsi:type="mprolog:Variable"/>
+                            <ownedTerm name="Id51" xsi:type="mprolog:Variable"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                    <ownedTerm xsi:type="mprolog:List"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </ownedTerm>
+            </nextTerm>
+            <ownedTerm xsi:type="mprolog:List">
+              <ownedHeadTerms xsi:type="mprolog:Parenthesis">
+                <nextTerm xsi:type="mprolog:Parenthesis">
+                  <nextTerm xsi:type="mprolog:Parenthesis">
+                    <nextTerm xsi:type="mprolog:Parenthesis">
+                      <nextTerm xsi:type="mprolog:Parenthesis">
+                        <nextTerm xsi:type="mprolog:Parenthesis">
+                          <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                            <ownedTerm xsi:type="mprolog:List">
+                              <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                                <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                                  <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                    <nextTerm name="Id53" xsi:type="mprolog:Variable"/>
+                                    <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                      <nextTerm text="target" xsi:type="mprolog:QuotedAtom">
+                                        <nextTerm name="Xs2" xsi:type="mprolog:Variable"/>
+                                      </nextTerm>
+                                    </ownedTerm>
+                                  </ownedTerm>
+                                </nextTerm>
+                                <ownedTerm name="Id53" xsi:type="mprolog:Variable">
+                                  <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                                </ownedTerm>
+                              </ownedHeadTerms>
+                            </ownedTerm>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                          <ownedTerm xsi:type="mprolog:List">
+                            <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                              <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                                <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                  <nextTerm name="Id54" xsi:type="mprolog:Variable"/>
+                                  <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                    <nextTerm text="source" xsi:type="mprolog:QuotedAtom">
+                                      <nextTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                                    </nextTerm>
+                                  </ownedTerm>
+                                </ownedTerm>
+                              </nextTerm>
+                              <ownedTerm name="Id54" xsi:type="mprolog:Variable">
+                                <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                              </ownedTerm>
+                            </ownedHeadTerms>
+                          </ownedTerm>
+                        </ownedTerm>
+                      </nextTerm>
+                      <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                        <ownedTerm xsi:type="mprolog:List">
+                          <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                            <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                              <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                <nextTerm name="Id55" xsi:type="mprolog:Variable"/>
+                                <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                                  <nextTerm text="State" xsi:type="mprolog:QuotedAtom">
+                                    <nextTerm name="Xs2" xsi:type="mprolog:Variable">
+                                      <nextTerm name="Att_Xs2" xsi:type="mprolog:Variable">
+                                        <nextTerm name="Rel_Xs2" xsi:type="mprolog:Variable"/>
+                                      </nextTerm>
+                                    </nextTerm>
+                                  </nextTerm>
+                                </ownedTerm>
+                              </ownedTerm>
+                            </nextTerm>
+                            <ownedTerm name="Id55" xsi:type="mprolog:Variable">
+                              <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                            </ownedTerm>
+                          </ownedHeadTerms>
+                        </ownedTerm>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                      <ownedTerm xsi:type="mprolog:List">
+                        <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                          <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                            <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                              <nextTerm name="Id56" xsi:type="mprolog:Variable"/>
+                              <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                                <nextTerm text="Initial" xsi:type="mprolog:QuotedAtom">
+                                  <nextTerm name="Xs1" xsi:type="mprolog:Variable">
+                                    <nextTerm name="Att_Xs1" xsi:type="mprolog:Variable">
+                                      <nextTerm name="Rel_Xs1" xsi:type="mprolog:Variable"/>
+                                    </nextTerm>
+                                  </nextTerm>
+                                </nextTerm>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm name="Id56" xsi:type="mprolog:Variable">
+                            <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                    <ownedTerm xsi:type="mprolog:List">
+                      <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                        <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                          <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                            <nextTerm name="Id57" xsi:type="mprolog:Variable"/>
+                            <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                              <nextTerm text="Transition" xsi:type="mprolog:QuotedAtom">
+                                <nextTerm name="Xt" xsi:type="mprolog:Variable">
+                                  <nextTerm name="Att_Xt" xsi:type="mprolog:Variable">
+                                    <nextTerm name="Rel_Xt" xsi:type="mprolog:Variable"/>
+                                  </nextTerm>
+                                </nextTerm>
+                              </nextTerm>
+                            </ownedTerm>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm name="Id57" xsi:type="mprolog:Variable">
+                          <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                        </ownedTerm>
+                      </ownedHeadTerms>
+                    </ownedTerm>
+                  </ownedTerm>
+                </nextTerm>
+                <ownedTerm text="opFundamental" xsi:type="mprolog:Functor">
+                  <ownedTerm text="membergen" xsi:type="mprolog:Functor">
+                    <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                    <ownedTerm text="ts" xsi:type="mprolog:Functor">
+                      <nextTerm name="Id58" xsi:type="mprolog:Variable"/>
+                      <ownedTerm text="initial" xsi:type="mprolog:Functor">
+                        <nextTerm name="XnameX" xsi:type="mprolog:Variable">
+                          <nextTerm text="initial" xsi:type="mprolog:Functor">
+                            <ownedTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                          </nextTerm>
+                        </nextTerm>
+                        <ownedTerm name="Xs0" xsi:type="mprolog:Variable"/>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </ownedTerm>
+                </ownedTerm>
+              </ownedHeadTerms>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm name="Id58" xsi:type="mprolog:Variable"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="rule">
+        <ownedTerm text="knowing" xsi:type="mprolog:Functor">
+          <nextTerm text="pre" xsi:type="mprolog:Functor">
+            <nextTerm text="pos" xsi:type="mprolog:Functor">
+              <nextTerm text="know" xsi:type="mprolog:Functor">
+                <ownedTerm text="ts" xsi:type="mprolog:Functor">
+                  <ownedTerm text="state" xsi:type="mprolog:Functor">
+                    <nextTerm name="Id60" xsi:type="mprolog:Variable">
+                      <nextTerm text="initial" xsi:type="mprolog:Functor">
+                        <ownedTerm name="Xs2" xsi:type="mprolog:Variable"/>
+                      </nextTerm>
+                    </nextTerm>
+                    <ownedTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                  </ownedTerm>
+                </ownedTerm>
+              </nextTerm>
+              <ownedTerm xsi:type="mprolog:List">
+                <ownedHeadTerms xsi:type="mprolog:Parenthesis">
+                  <nextTerm xsi:type="mprolog:Parenthesis">
+                    <nextTerm xsi:type="mprolog:Parenthesis">
+                      <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                        <ownedTerm xsi:type="mprolog:List"/>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                      <ownedTerm xsi:type="mprolog:List">
+                        <ownedHeadTerms text="op" xsi:type="mprolog:Functor">
+                          <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                            <ownedTerm text="memberattModel" xsi:type="mprolog:Functor">
+                              <nextTerm name="Id59" xsi:type="mprolog:Variable"/>
+                              <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                <nextTerm text="name" xsi:type="mprolog:QuotedAtom"/>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm text="buildString" xsi:type="mprolog:Functor">
+                            <nextTerm name="Id60" xsi:type="mprolog:Variable"/>
+                            <ownedTerm name="Id59" xsi:type="mprolog:Variable"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                    <ownedTerm xsi:type="mprolog:List"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </ownedTerm>
+            </nextTerm>
+            <ownedTerm xsi:type="mprolog:List">
+              <ownedHeadTerms xsi:type="mprolog:Parenthesis">
+                <nextTerm xsi:type="mprolog:Parenthesis">
+                  <nextTerm xsi:type="mprolog:Parenthesis">
+                    <nextTerm xsi:type="mprolog:Parenthesis">
+                      <nextTerm xsi:type="mprolog:Parenthesis">
+                        <nextTerm xsi:type="mprolog:Parenthesis">
+                          <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                            <ownedTerm xsi:type="mprolog:List">
+                              <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                                <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                                  <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                    <nextTerm name="Id61" xsi:type="mprolog:Variable"/>
+                                    <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                      <nextTerm text="target" xsi:type="mprolog:QuotedAtom">
+                                        <nextTerm name="Xs2" xsi:type="mprolog:Variable"/>
+                                      </nextTerm>
+                                    </ownedTerm>
+                                  </ownedTerm>
+                                </nextTerm>
+                                <ownedTerm name="Id61" xsi:type="mprolog:Variable">
+                                  <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                                </ownedTerm>
+                              </ownedHeadTerms>
+                            </ownedTerm>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                          <ownedTerm xsi:type="mprolog:List">
+                            <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                              <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                                <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                  <nextTerm name="Id62" xsi:type="mprolog:Variable"/>
+                                  <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                    <nextTerm text="source" xsi:type="mprolog:QuotedAtom">
+                                      <nextTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                                    </nextTerm>
+                                  </ownedTerm>
+                                </ownedTerm>
+                              </nextTerm>
+                              <ownedTerm name="Id62" xsi:type="mprolog:Variable">
+                                <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                              </ownedTerm>
+                            </ownedHeadTerms>
+                          </ownedTerm>
+                        </ownedTerm>
+                      </nextTerm>
+                      <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                        <ownedTerm xsi:type="mprolog:List">
+                          <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                            <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                              <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                <nextTerm name="Id63" xsi:type="mprolog:Variable"/>
+                                <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                                  <nextTerm text="Initial" xsi:type="mprolog:QuotedAtom">
+                                    <nextTerm name="Xs2" xsi:type="mprolog:Variable">
+                                      <nextTerm name="Att_Xs2" xsi:type="mprolog:Variable">
+                                        <nextTerm name="Rel_Xs2" xsi:type="mprolog:Variable"/>
+                                      </nextTerm>
+                                    </nextTerm>
+                                  </nextTerm>
+                                </ownedTerm>
+                              </ownedTerm>
+                            </nextTerm>
+                            <ownedTerm name="Id63" xsi:type="mprolog:Variable">
+                              <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                            </ownedTerm>
+                          </ownedHeadTerms>
+                        </ownedTerm>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                      <ownedTerm xsi:type="mprolog:List">
+                        <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                          <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                            <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                              <nextTerm name="Id64" xsi:type="mprolog:Variable"/>
+                              <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                                <nextTerm text="State" xsi:type="mprolog:QuotedAtom">
+                                  <nextTerm name="Xs1" xsi:type="mprolog:Variable">
+                                    <nextTerm name="Att_Xs1" xsi:type="mprolog:Variable">
+                                      <nextTerm name="Rel_Xs1" xsi:type="mprolog:Variable"/>
+                                    </nextTerm>
+                                  </nextTerm>
+                                </nextTerm>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm name="Id64" xsi:type="mprolog:Variable">
+                            <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                    <ownedTerm xsi:type="mprolog:List">
+                      <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                        <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                          <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                            <nextTerm name="Id65" xsi:type="mprolog:Variable"/>
+                            <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                              <nextTerm text="Transition" xsi:type="mprolog:QuotedAtom">
+                                <nextTerm name="Xt" xsi:type="mprolog:Variable">
+                                  <nextTerm name="Att_Xt" xsi:type="mprolog:Variable">
+                                    <nextTerm name="Rel_Xt" xsi:type="mprolog:Variable"/>
+                                  </nextTerm>
+                                </nextTerm>
+                              </nextTerm>
+                            </ownedTerm>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm name="Id65" xsi:type="mprolog:Variable">
+                          <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                        </ownedTerm>
+                      </ownedHeadTerms>
+                    </ownedTerm>
+                  </ownedTerm>
+                </nextTerm>
+                <ownedTerm text="opFundamental" xsi:type="mprolog:Functor">
+                  <ownedTerm text="membergen" xsi:type="mprolog:Functor">
+                    <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                    <ownedTerm text="ts" xsi:type="mprolog:Functor">
+                      <nextTerm name="Id66" xsi:type="mprolog:Variable"/>
+                      <ownedTerm text="initial" xsi:type="mprolog:Functor">
+                        <nextTerm name="XnameX" xsi:type="mprolog:Variable">
+                          <nextTerm text="state" xsi:type="mprolog:Functor">
+                            <ownedTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                          </nextTerm>
+                        </nextTerm>
+                        <ownedTerm name="Xs0" xsi:type="mprolog:Variable"/>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </ownedTerm>
+                </ownedTerm>
+              </ownedHeadTerms>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm name="Id66" xsi:type="mprolog:Variable"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+  <ownedClause>
+    <ownedHead>
+      <ownedFunctor text="rule">
+        <ownedTerm text="knowing" xsi:type="mprolog:Functor">
+          <nextTerm text="pre" xsi:type="mprolog:Functor">
+            <nextTerm text="pos" xsi:type="mprolog:Functor">
+              <nextTerm text="know" xsi:type="mprolog:Functor">
+                <ownedTerm text="ts" xsi:type="mprolog:Functor">
+                  <ownedTerm text="initial" xsi:type="mprolog:Functor">
+                    <nextTerm name="Id68" xsi:type="mprolog:Variable">
+                      <nextTerm text="initial" xsi:type="mprolog:Functor">
+                        <ownedTerm name="Xs2" xsi:type="mprolog:Variable"/>
+                      </nextTerm>
+                    </nextTerm>
+                    <ownedTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                  </ownedTerm>
+                </ownedTerm>
+              </nextTerm>
+              <ownedTerm xsi:type="mprolog:List">
+                <ownedHeadTerms xsi:type="mprolog:Parenthesis">
+                  <nextTerm xsi:type="mprolog:Parenthesis">
+                    <nextTerm xsi:type="mprolog:Parenthesis">
+                      <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                        <ownedTerm xsi:type="mprolog:List"/>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                      <ownedTerm xsi:type="mprolog:List">
+                        <ownedHeadTerms text="op" xsi:type="mprolog:Functor">
+                          <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                            <ownedTerm text="memberattModel" xsi:type="mprolog:Functor">
+                              <nextTerm name="Id67" xsi:type="mprolog:Variable"/>
+                              <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                <nextTerm text="name" xsi:type="mprolog:QuotedAtom"/>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm text="buildString" xsi:type="mprolog:Functor">
+                            <nextTerm name="Id68" xsi:type="mprolog:Variable"/>
+                            <ownedTerm name="Id67" xsi:type="mprolog:Variable"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                    <ownedTerm xsi:type="mprolog:List"/>
+                  </ownedTerm>
+                </ownedHeadTerms>
+              </ownedTerm>
+            </nextTerm>
+            <ownedTerm xsi:type="mprolog:List">
+              <ownedHeadTerms xsi:type="mprolog:Parenthesis">
+                <nextTerm xsi:type="mprolog:Parenthesis">
+                  <nextTerm xsi:type="mprolog:Parenthesis">
+                    <nextTerm xsi:type="mprolog:Parenthesis">
+                      <nextTerm xsi:type="mprolog:Parenthesis">
+                        <nextTerm xsi:type="mprolog:Parenthesis">
+                          <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                            <ownedTerm xsi:type="mprolog:List">
+                              <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                                <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                                  <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                    <nextTerm name="Id69" xsi:type="mprolog:Variable"/>
+                                    <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                      <nextTerm text="target" xsi:type="mprolog:QuotedAtom">
+                                        <nextTerm name="Xs2" xsi:type="mprolog:Variable"/>
+                                      </nextTerm>
+                                    </ownedTerm>
+                                  </ownedTerm>
+                                </nextTerm>
+                                <ownedTerm name="Id69" xsi:type="mprolog:Variable">
+                                  <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                                </ownedTerm>
+                              </ownedHeadTerms>
+                            </ownedTerm>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                          <ownedTerm xsi:type="mprolog:List">
+                            <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                              <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                                <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                  <nextTerm name="Id70" xsi:type="mprolog:Variable"/>
+                                  <ownedTerm name="Xt" xsi:type="mprolog:Variable">
+                                    <nextTerm text="source" xsi:type="mprolog:QuotedAtom">
+                                      <nextTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                                    </nextTerm>
+                                  </ownedTerm>
+                                </ownedTerm>
+                              </nextTerm>
+                              <ownedTerm name="Id70" xsi:type="mprolog:Variable">
+                                <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                              </ownedTerm>
+                            </ownedHeadTerms>
+                          </ownedTerm>
+                        </ownedTerm>
+                      </nextTerm>
+                      <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                        <ownedTerm xsi:type="mprolog:List">
+                          <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                            <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                              <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                                <nextTerm name="Id71" xsi:type="mprolog:Variable"/>
+                                <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                                  <nextTerm text="Initial" xsi:type="mprolog:QuotedAtom">
+                                    <nextTerm name="Xs2" xsi:type="mprolog:Variable">
+                                      <nextTerm name="Att_Xs2" xsi:type="mprolog:Variable">
+                                        <nextTerm name="Rel_Xs2" xsi:type="mprolog:Variable"/>
+                                      </nextTerm>
+                                    </nextTerm>
+                                  </nextTerm>
+                                </ownedTerm>
+                              </ownedTerm>
+                            </nextTerm>
+                            <ownedTerm name="Id71" xsi:type="mprolog:Variable">
+                              <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                            </ownedTerm>
+                          </ownedHeadTerms>
+                        </ownedTerm>
+                      </ownedTerm>
+                    </nextTerm>
+                    <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                      <ownedTerm xsi:type="mprolog:List">
+                        <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                          <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                            <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                              <nextTerm name="Id72" xsi:type="mprolog:Variable"/>
+                              <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                                <nextTerm text="Initial" xsi:type="mprolog:QuotedAtom">
+                                  <nextTerm name="Xs1" xsi:type="mprolog:Variable">
+                                    <nextTerm name="Att_Xs1" xsi:type="mprolog:Variable">
+                                      <nextTerm name="Rel_Xs1" xsi:type="mprolog:Variable"/>
+                                    </nextTerm>
+                                  </nextTerm>
+                                </nextTerm>
+                              </ownedTerm>
+                            </ownedTerm>
+                          </nextTerm>
+                          <ownedTerm name="Id72" xsi:type="mprolog:Variable">
+                            <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                          </ownedTerm>
+                        </ownedHeadTerms>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </nextTerm>
+                  <ownedTerm text="callReverseList" xsi:type="mprolog:Functor">
+                    <ownedTerm xsi:type="mprolog:List">
+                      <ownedHeadTerms text="equals" xsi:type="mprolog:Functor">
+                        <nextTerm text="opFundamental" xsi:type="mprolog:Functor">
+                          <ownedTerm text="membergenModel" xsi:type="mprolog:Functor">
+                            <nextTerm name="Id73" xsi:type="mprolog:Variable"/>
+                            <ownedTerm text="statemachine" xsi:type="mprolog:QuotedAtom">
+                              <nextTerm text="Transition" xsi:type="mprolog:QuotedAtom">
+                                <nextTerm name="Xt" xsi:type="mprolog:Variable">
+                                  <nextTerm name="Att_Xt" xsi:type="mprolog:Variable">
+                                    <nextTerm name="Rel_Xt" xsi:type="mprolog:Variable"/>
+                                  </nextTerm>
+                                </nextTerm>
+                              </nextTerm>
+                            </ownedTerm>
+                          </ownedTerm>
+                        </nextTerm>
+                        <ownedTerm name="Id73" xsi:type="mprolog:Variable">
+                          <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                        </ownedTerm>
+                      </ownedHeadTerms>
+                    </ownedTerm>
+                  </ownedTerm>
+                </nextTerm>
+                <ownedTerm text="opFundamental" xsi:type="mprolog:Functor">
+                  <ownedTerm text="membergen" xsi:type="mprolog:Functor">
+                    <nextTerm text="true" xsi:type="mprolog:Functor"/>
+                    <ownedTerm text="ts" xsi:type="mprolog:Functor">
+                      <nextTerm name="Id74" xsi:type="mprolog:Variable"/>
+                      <ownedTerm text="state" xsi:type="mprolog:Functor">
+                        <nextTerm name="XnameX" xsi:type="mprolog:Variable">
+                          <nextTerm text="initial" xsi:type="mprolog:Functor">
+                            <ownedTerm name="Xs1" xsi:type="mprolog:Variable"/>
+                          </nextTerm>
+                        </nextTerm>
+                        <ownedTerm name="Xs0" xsi:type="mprolog:Variable"/>
+                      </ownedTerm>
+                    </ownedTerm>
+                  </ownedTerm>
+                </ownedTerm>
+              </ownedHeadTerms>
+            </ownedTerm>
+          </nextTerm>
+          <ownedTerm name="Id74" xsi:type="mprolog:Variable"/>
+        </ownedTerm>
+      </ownedFunctor>
+    </ownedHead>
+  </ownedClause>
+</mprolog:Model>

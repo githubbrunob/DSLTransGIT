@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="SOSBuilder.contribution1"
+            nameFilter="*.SOS"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="SOSBuilder.menu1"
+               label="SOS Builder"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="sosbuilder.popup.actions.BuildSemantics"
+               enablesFor="1"
+               id="SOSBuilder.newAction"
+               label="Compile to prolog"
+               menubarPath="SOSBuilder.menu1/group1">
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="SOSBuilder.contribution1"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="SOSBuilder.menu1"
+               label="SOS Builder"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="sosbuilder.popup.actions.GetTransitionSystem"
+               enablesFor="multiple"
+               id="SOSBuilder.newAction"
+               label="Get Transition System (.dot)"
+               menubarPath="SOSBuilder.menu1/group1">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

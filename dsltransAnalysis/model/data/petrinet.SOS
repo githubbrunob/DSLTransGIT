@@ -1,0 +1,255 @@
+Semantics
+
+	ADT Relatives
+		Sorts rel
+		Generators
+			zero: -> rel;
+			suc: rel -> rel;
+			pred: rel -> rel;
+		Operations
+			hplus: rel rel -> rel;
+			hminus: rel rel -> rel;
+			hleq: rel rel -> bool;
+
+			plus: rel rel -> rel;
+			minus: rel rel -> rel;
+			leq: rel rel -> bool;
+			flip: rel -> rel;
+			harmonypred: rel -> rel; 
+			harmonysuc: rel -> rel;
+			harmony: rel -> rel;
+		Axioms
+			flip(zero) = zero;
+			flip(pred(@x)) = suc(flip(@x));
+			flip(suc(@x)) = pred(flip(@x));			
+			
+			leq(zero zero) = true;
+			leq(zero pred(@x)) = false;
+			leq(zero suc(@x)) = true;
+			leq(pred(@x) zero) = true;
+			leq(suc(@x) zero) = false;			
+			leq(suc(@x) suc(@y)) = leq(@x @y);
+			leq(pred(@x) pred(@y)) = leq(@x @y);
+			leq(suc(@x) pred(@y)) = false;
+			leq(pred(@x) suc(@y)) = true;
+			
+			plus(zero @x) = @x;
+			(@x != zero) => plus(@x zero) = plus(zero @x);
+			plus(suc(@x) pred(@y)) = plus(@x @y);
+			plus(pred(@x) suc(@y)) = plus(pred(@x) suc(@y));			
+			plus(suc(@x) suc(@y)) = suc(suc(plus(@x @y)));
+			plus(pred(@x) pred(@y)) = pred(pred(plus(@x @y)));
+		
+			minus(@x @y) = plus(@x flip(@y));	
+			
+			harmonypred(zero) = zero;
+			harmonypred(suc(@x)) = harmonypred(@x);
+			harmonypred(pred(@x)) = pred(harmonypred(@x));
+			harmonysuc(zero) = zero;
+			harmonysuc(pred(@x)) = harmonysuc(@x);
+			harmonysuc(suc(@x)) = suc(harmonysuc(@x));
+			harmony(@x) = plus(harmonysuc(@x) harmonypred(@x));
+			
+			hleq(@x @y) = leq(harmony(@x) harmony(@y));
+			hplus(@x @y) = plus(harmony(@x) harmony(@y));
+			hminus(@x @y) = minus(harmony(@x) harmony(@y));
+		Where
+			x:rel;
+			y:rel;
+
+		
+	ADT Char
+		Sorts char
+		Generators
+			aa:->char;ab:->char;ac:->char;ad:->char;ae:->char;af:->char;ag:->char;ah:->char;ai:->char;aj:->char;ak:->char;al:->char;
+			am:->char;an:->char;ao:->char;ap:->char;aq:->char;ar:->char;as:->char;at:->char;au:->char;av:->char;aw:->char;ax:->char;
+			ay:->char;az:->char;
+			aA:->char;aB:->char;aC:->char;aD:->char;aE:->char;aF:->char;aG:->char;aH:->char;aI:->char;aJ:->char;aK:->char;aL:->char;
+			aM:->char;aN:->char;aO:->char;aP:->char;aQ:->char;aR:->char;aS:->char;aT:->char;aU:->char;aV:->char;aW:->char;aX:->char;
+			aY:->char;aZ:->char;
+			n0:->char;n1:->char;n2:->char;n3:->char;n4:->char;n5:->char;n6:->char;n7:->char;n8:->char;n9:->char;	
+	ADT String
+		Sorts string
+		Generators
+			end :-> string;
+			str : char string -> string;
+		Operations
+			buildString: Set(char) -> string;
+		Axioms
+///////////////////////////// buildString
+			(existsIn(@c, @s1) = true) => 
+				buildString(@s1) = 
+					str(@c buildString(Excluding(@s1, @c)));
+		
+			buildString({}) = end;
+		Where
+			c : char;
+			s1 : Set (char);
+		
+	ADT Boolean
+		Sorts bool
+		Generators
+			true:->bool;
+			false:->bool;
+
+	ADT Tokens
+		Sorts token
+		Generators
+			p : class("petrinet", "Place") rel -> token;
+		Operations
+			pre: class("petrinet","Transition") -> Set(token); 
+			pos: class("petrinet","Transition") -> Set(token);
+			initial: -> Set(token);
+		Axioms
+			pre(@t) = { p(@p1 suc^@outarc.weight(zero)) | 
+				in(@p1, Model)=true, 
+				in(@outarc, Model)=true,
+				in(@t -> outArc -> @outarc, Model)=true,
+				in(@outarc -> sourcePlace -> @p1, Model)=true
+			};
+			pos(@t) = { p(@p1 suc^@inarc.weight(zero)) | 
+				in(@p1, Model)=true, 
+				in(@inarc, Model)=true,
+				in(@t -> inArc -> @inarc, Model)=true,
+				in(@inarc -> targetPlace -> @p1, Model)=true
+			};
+			initial = { p(@p1 suc^@p1.token(zero)) | in(@p1,Model)=true };
+	Where
+		t : class("petrinet","Transition");
+		outarc : class("petrinet", "OutArc");
+		inarc : class("petrinet", "InArc");  
+		p1 : class("petrinet", "Place");
+
+	ADT Marking
+		Sorts markingsort
+		Generators
+			e:->markingsort;
+			marking: token markingsort -> markingsort;
+		Operations
+			build: Set(token) -> markingsort;
+			subtract: markingsort markingsort -> markingsort;
+			add: markingsort markingsort -> markingsort;
+			positive: markingsort -> bool;
+			member: token markingsort -> bool;
+			remove: token markingsort -> markingsort;
+			equals: markingsort markingsort -> bool;
+		Axioms
+///////////////////////////// build
+			(existsIn(@m, @s)=true) => build(@s) = marking(@m build(Excluding(@s, @m )));
+			build({}) = e;
+
+///////////////////////////// member			
+			member(@m e) = false;
+			member(@m marking(@m @mark1)) = true;
+			(@m != @m1) => member(@m marking(@m1 @mark1)) = member(@m @mark1);
+
+///////////////////////////// add			
+			(member(p(@p1 @n2) @mark2) = true) => 
+			add( 
+				marking( p(@p1 @n1) @mark1 )
+				@mark2
+			) = marking( p(@p1 plus(@n1 @n2) ) add(@mark1 remove(p(@p1 @n2) @mark2) ) );
+
+// element not found .. ignore
+			(member(p(@p1 @n2) @mark2) = false) => 
+			add( 
+				marking( p(@p1 @n1) @mark1 )
+				@mark2
+			) = marking( p(@p1 @n1) add(@mark1 @mark2) );
+
+// base case
+			add(e @mark1) = @mark1;
+
+///////////////////////////// subtract
+			(member(p(@p1 @n2) @mark2) = true) => 
+			subtract( 
+				marking( p(@p1 @n1) @mark1 )
+				@mark2
+			) = marking( p(@p1 minus(@n2 @n1) ) subtract(@mark1 remove(p(@p1 @n2) @mark2) ) );
+
+// element not found .. ignore
+			(member(p(@p1 @n2) @mark2) = false) => 
+			subtract( 
+				marking( p(@p1 @n1) @mark1 )
+				@mark2
+			) = marking( p(@p1 @n1) subtract(@mark1 @mark2) );
+
+// base case
+			subtract(e @mark1) = @mark1;
+	
+///////////////////////////// positive
+			positive(e) = true;
+			(leq(@n1 pred(zero)) = false) => positive(marking(p(@p1 @n1) @mark1)) = positive(@mark1);
+			(leq(@n1 pred(zero)) = true) => positive(marking(p(@p1 @n1) @mark1)) = false;
+			
+///////////////////////////// remove
+			remove(@m e) = e;
+			remove(@m marking(@m @mark1))=remove(@m @mark1);
+			(@m != @m1) => remove(@m marking(@m1 @mark1))=marking(@m1 remove(@m @mark1));
+
+///////////////////////////// equal
+			equals(e e) = true;
+			(member(@m @mark2) = true ) => 
+				equals(marking(@m @mark1) @mark2) =
+				equals(@mark1 remove(@m @mark2));
+			(member(@m @mark2) = false ) => 
+				equals(marking(@m @mark1) @mark2) = false;
+		Where
+			m : token;
+			m1 : token;
+			mark1: markingsort;
+			mark2: markingsort;
+			s : Set(token);
+			n1: rel;
+			n2: rel;
+			p1 : class("petrinet", "Place");
+
+
+
+	Assuming
+		in(@t,Model)=true, 
+		positive(subtract(build(pre(@t)) build(initial)))=true
+	Then
+		build(initial) ->> 
+							buildString(@t.name) ->> 
+		add(build(pos(@t)) subtract(build(pre(@t)) build(initial))) in Transition System
+	Where
+ 		t : class("petrinet","Transition");
+
+	Assuming
+		@oldmarking ->> @nameX ->> @newmarking in Transition System, 
+		in(@t,Model)=true, 
+		positive(subtract(build(pre(@t)) @newmarking))=true
+	Then
+		@newmarking ->> 
+						buildString(@t.name) ->> 
+		add(build(pos(@t)) subtract(build(pre(@t)) @newmarking)) in Transition System
+	Where
+		newmarking : markingsort;
+		oldmarking : markingsort;
+		t : class("petrinet","Transition");
+		nameX : string;
+	
+
+
+
+
+
+
+//	ADT ListNat
+//		Sorts listnat
+//		Generators
+//			empty:->listnat;
+//			listnat: nat listnat ->listnat;
+//		Operations
+//			member: nat listnat -> bool;
+//		Axioms
+//			member(@n empty) = false;		
+//			member(@n listnat(@n @l)) = true;
+//			( eq(@n @m) = false) => member(@n listnat(@m @l)) = member(@m @l);
+//			eval( member(N, listnat(N, L)), true ).
+//			eval( member(N, listnat(M, L)), R ):-  eval( eq(N,M), false), eval( member(M, L), R).
+//		Where
+//			n : nat;
+//			m : nat;
+//			l : listnat;

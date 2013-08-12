@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<statemachine:StateMachine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:statemachine="statemachine" xsi:schemaLocation="statemachine StateMachine.ecore">
+  <states xsi:type="statemachine:Initial" name="a"/>
+  <states xsi:type="statemachine:State" name="b"/>
+  <states xsi:type="statemachine:State" name="c"/>
+  <transitions name="t1" source="//@states.0" target="//@states.1"/>
+  <transitions name="t2" source="//@states.1" target="//@states.2"/>
+</statemachine:StateMachine>

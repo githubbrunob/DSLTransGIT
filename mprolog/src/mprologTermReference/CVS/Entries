@@ -1,0 +1,19 @@
+/Body.java/1.1/Wed Dec 28 01:45:32 2011//
+/Clause.java/1.1/Wed Dec 28 01:45:32 2011//
+/Functor.java/1.1/Wed Dec 28 01:45:32 2011//
+/FunctorReference.java/1.2/Sat Feb  4 22:47:13 2012//
+/Head.java/1.1/Wed Dec 28 01:45:32 2011//
+/InfixExpression.java/1.1/Wed Dec 28 01:45:32 2011//
+/List.java/1.1/Wed Dec 28 01:45:32 2011//
+/Model.java/1.1/Wed Dec 28 01:45:32 2011//
+/MprologTermReferenceFactory.java/1.1/Wed Dec 28 01:45:32 2011//
+/MprologTermReferencePackage.java/1.2/Sat Feb  4 22:47:13 2012//
+/Operator.java/1.1/Wed Dec 28 01:45:32 2011//
+/Parenthesis.java/1.1/Wed Dec 28 01:45:32 2011//
+/QuotedAtom.java/1.1/Wed Dec 28 01:45:32 2011//
+/Term.java/1.1/Wed Dec 28 01:45:32 2011//
+/TermReference.java/1.1/Wed Dec 28 01:45:32 2011//
+/Variable.java/1.1/Wed Dec 28 01:45:32 2011//
+/VariableReference.java/1.1/Wed Dec 28 01:45:32 2011//
+D/impl////
+D/util////

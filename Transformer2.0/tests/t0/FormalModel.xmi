@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<formalmetamodel:FormalModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:formalmetamodel="http://formalmetamodel/1.0">
+  <bs name="B1"/>
+  <bs name="B2"/>
+  <bs name="B3"/>
+  <as name="A1" ab="B1"/>
+  <as name="A2" ab="B2"/>
+  <as name="A3" ab="B3"/>
+</formalmetamodel:FormalModel>

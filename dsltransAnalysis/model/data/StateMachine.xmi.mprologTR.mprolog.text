@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="ASCII" standalone="no"?>
+<Text:Model xmlns:Text="http://www.eclipse.org/Text" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xsi:schemaLocation="http://www.eclipse.org/Text text.ecore">
+  <directory path=".">
+    <file path="StateMachine.xmi.pl">
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="class">
+            <content text="(">
+              <content>
+                <content text="'statemachine'"/>
+                <next text=", ">
+                  <next>
+                    <content text="'Transition'"/>
+                    <next text=", ">
+                      <next text="id0">
+                        <next text=", ">
+                          <next>
+                            <content text="[">
+                              <content>
+                                <content text="p">
+                                  <content text="(">
+                                    <content>
+                                      <content text="'name'"/>
+                                      <next text=", ">
+                                        <next>
+                                          <content text="'t1'"/>
+                                        </next>
+                                      </next>
+                                    </content>
+                                    <next text=")"/>
+                                  </content>
+                                </content>
+                              </content>
+                              <next text="]"/>
+                            </content>
+                            <next text=", ">
+                              <next>
+                                <content text="[">
+                                  <content>
+                                    <content text="p">
+                                      <content text="(">
+                                        <content>
+                                          <content text="'source'"/>
+                                          <next text=", ">
+                                            <next text="id2"/>
+                                          </next>
+                                        </content>
+                                        <next text=")"/>
+                                      </content>
+                                      <next text=", ">
+                                        <next text="p">
+                                          <content text="(">
+                                            <content>
+                                              <content text="'target'"/>
+                                              <next text=", ">
+                                                <next text="id3"/>
+                                              </next>
+                                            </content>
+                                            <next text=")"/>
+                                          </content>
+                                        </next>
+                                      </next>
+                                    </content>
+                                  </content>
+                                  <next text="]"/>
+                                </content>
+                              </next>
+                            </next>
+                          </next>
+                        </next>
+                      </next>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </preLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="class">
+            <content text="(">
+              <content>
+                <content text="'statemachine'"/>
+                <next text=", ">
+                  <next>
+                    <content text="'Transition'"/>
+                    <next text=", ">
+                      <next text="id1">
+                        <next text=", ">
+                          <next>
+                            <content text="[">
+                              <content>
+                                <content text="p">
+                                  <content text="(">
+                                    <content>
+                                      <content text="'name'"/>
+                                      <next text=", ">
+                                        <next>
+                                          <content text="'t2'"/>
+                                        </next>
+                                      </next>
+                                    </content>
+                                    <next text=")"/>
+                                  </content>
+                                </content>
+                              </content>
+                              <next text="]"/>
+                            </content>
+                            <next text=", ">
+                              <next>
+                                <content text="[">
+                                  <content>
+                                    <content text="p">
+                                      <content text="(">
+                                        <content>
+                                          <content text="'source'"/>
+                                          <next text=", ">
+                                            <next text="id3"/>
+                                          </next>
+                                        </content>
+                                        <next text=")"/>
+                                      </content>
+                                      <next text=", ">
+                                        <next text="p">
+                                          <content text="(">
+                                            <content>
+                                              <content text="'target'"/>
+                                              <next text=", ">
+                                                <next text="id4"/>
+                                              </next>
+                                            </content>
+                                            <next text=")"/>
+                                          </content>
+                                        </next>
+                                      </next>
+                                    </content>
+                                  </content>
+                                  <next text="]"/>
+                                </content>
+                              </next>
+                            </next>
+                          </next>
+                        </next>
+                      </next>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </preLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="class">
+            <content text="(">
+              <content>
+                <content text="'statemachine'"/>
+                <next text=", ">
+                  <next>
+                    <content text="'Initial'"/>
+                    <next text=", ">
+                      <next text="id2">
+                        <next text=", ">
+                          <next>
+                            <content text="[">
+                              <content>
+                                <content text="p">
+                                  <content text="(">
+                                    <content>
+                                      <content text="'name'"/>
+                                      <next text=", ">
+                                        <next>
+                                          <content text="'a'"/>
+                                        </next>
+                                      </next>
+                                    </content>
+                                    <next text=")"/>
+                                  </content>
+                                </content>
+                              </content>
+                              <next text="]"/>
+                            </content>
+                            <next text=", ">
+                              <next>
+                                <content text="[">
+                                  <content/>
+                                  <next text="]"/>
+                                </content>
+                              </next>
+                            </next>
+                          </next>
+                        </next>
+                      </next>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </preLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="class">
+            <content text="(">
+              <content>
+                <content text="'statemachine'"/>
+                <next text=", ">
+                  <next>
+                    <content text="'State'"/>
+                    <next text=", ">
+                      <next text="id3">
+                        <next text=", ">
+                          <next>
+                            <content text="[">
+                              <content>
+                                <content text="p">
+                                  <content text="(">
+                                    <content>
+                                      <content text="'name'"/>
+                                      <next text=", ">
+                                        <next>
+                                          <content text="'b'"/>
+                                        </next>
+                                      </next>
+                                    </content>
+                                    <next text=")"/>
+                                  </content>
+                                </content>
+                              </content>
+                              <next text="]"/>
+                            </content>
+                            <next text=", ">
+                              <next>
+                                <content text="[">
+                                  <content/>
+                                  <next text="]"/>
+                                </content>
+                              </next>
+                            </next>
+                          </next>
+                        </next>
+                      </next>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </preLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="class">
+            <content text="(">
+              <content>
+                <content text="'statemachine'"/>
+                <next text=", ">
+                  <next>
+                    <content text="'State'"/>
+                    <next text=", ">
+                      <next text="id4">
+                        <next text=", ">
+                          <next>
+                            <content text="[">
+                              <content>
+                                <content text="p">
+                                  <content text="(">
+                                    <content>
+                                      <content text="'name'"/>
+                                      <next text=", ">
+                                        <next>
+                                          <content text="'c'"/>
+                                        </next>
+                                      </next>
+                                    </content>
+                                    <next text=")"/>
+                                  </content>
+                                </content>
+                              </content>
+                              <next text="]"/>
+                            </content>
+                            <next text=", ">
+                              <next>
+                                <content text="[">
+                                  <content/>
+                                  <next text="]"/>
+                                </content>
+                              </next>
+                            </next>
+                          </next>
+                        </next>
+                      </next>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </preLine>
+      </innerBlock>
+      <innerBlock>
+        <preLine xsi:type="Text:Content">
+          <content text="class">
+            <content text="(">
+              <content>
+                <content text="'statemachine'"/>
+                <next text=", ">
+                  <next>
+                    <content text="'StateMachine'"/>
+                    <next text=", ">
+                      <next text="id5">
+                        <next text=", ">
+                          <next>
+                            <content text="[">
+                              <content/>
+                              <next text="]"/>
+                            </content>
+                            <next text=", ">
+                              <next>
+                                <content text="[">
+                                  <content>
+                                    <content text="p">
+                                      <content text="(">
+                                        <content>
+                                          <content text="'transitions'"/>
+                                          <next text=", ">
+                                            <next text="id0"/>
+                                          </next>
+                                        </content>
+                                        <next text=")"/>
+                                      </content>
+                                      <next text=", ">
+                                        <next text="p">
+                                          <content text="(">
+                                            <content>
+                                              <content text="'transitions'"/>
+                                              <next text=", ">
+                                                <next text="id1"/>
+                                              </next>
+                                            </content>
+                                            <next text=")"/>
+                                          </content>
+                                          <next text=", ">
+                                            <next text="p">
+                                              <content text="(">
+                                                <content>
+                                                  <content text="'states'"/>
+                                                  <next text=", ">
+                                                    <next text="id2"/>
+                                                  </next>
+                                                </content>
+                                                <next text=")"/>
+                                              </content>
+                                              <next text=", ">
+                                                <next text="p">
+                                                  <content text="(">
+                                                    <content>
+                                                      <content text="'states'"/>
+                                                      <next text=", ">
+                                                        <next text="id3"/>
+                                                      </next>
+                                                    </content>
+                                                    <next text=")"/>
+                                                  </content>
+                                                  <next text=", ">
+                                                    <next text="p">
+                                                      <content text="(">
+                                                        <content>
+                                                          <content text="'states'"/>
+                                                          <next text=", ">
+                                                            <next text="id4"/>
+                                                          </next>
+                                                        </content>
+                                                        <next text=")"/>
+                                                      </content>
+                                                    </next>
+                                                  </next>
+                                                </next>
+                                              </next>
+                                            </next>
+                                          </next>
+                                        </next>
+                                      </next>
+                                    </content>
+                                  </content>
+                                  <next text="]"/>
+                                </content>
+                              </next>
+                            </next>
+                          </next>
+                        </next>
+                      </next>
+                    </next>
+                  </next>
+                </next>
+              </content>
+              <next text=")"/>
+            </content>
+          </content>
+          <next text="."/>
+        </preLine>
+      </innerBlock>
+    </file>
+  </directory>
+</Text:Model>

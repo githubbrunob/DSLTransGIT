@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsltrans:TransformationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsltrans="http://dsltrans/2.0">
+  <source xsi:type="dsltrans:Sequential" name="Property" description="Property" outputFilePathURI="model\Model.text">
+    <hasRule description="head with two terms">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Functor" packageName="mprolog"/>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Head" packageName="mprolog"/>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Clause" packageName="mprolog"/>
+        <class xsi:type="dsltrans:AnyMatchClass" className="Body" packageName="mprolog"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ownedHead" source="//@source.0/@hasRule.0/@match.0/@class.2" target="//@source.0/@hasRule.0/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ownedBody" source="//@source.0/@hasRule.0/@match.0/@class.2" target="//@source.0/@hasRule.0/@match.0/@class.3"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="ownedFunctor" source="//@source.0/@hasRule.0/@match.0/@class.1" target="//@source.0/@hasRule.0/@match.0/@class.0"/>
+      </match>
+      <apply>
+        <class className="Content" packageName="Text">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Term"/>
+          </attribute>
+        </class>
+        <class className="Content" packageName="Text">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Head"/>
+          </attribute>
+        </class>
+        <class className="Content" packageName="Text">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Body"/>
+          </attribute>
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="    "/>
+          </attribute>
+        </class>
+        <class className="Block" packageName="Text">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Clause"/>
+          </attribute>
+        </class>
+        <class className="Content" packageName="Text">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value=" :- "/>
+          </attribute>
+        </class>
+        <class className="Content" packageName="Text">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="."/>
+          </attribute>
+        </class>
+        <association associationName="preLine" source="//@source.0/@hasRule.0/@apply/@class.3" target="//@source.0/@hasRule.0/@apply/@class.1"/>
+        <association associationName="next" source="//@source.0/@hasRule.0/@apply/@class.1" target="//@source.0/@hasRule.0/@apply/@class.4"/>
+        <association associationName="postLine" source="//@source.0/@hasRule.0/@apply/@class.3" target="//@source.0/@hasRule.0/@apply/@class.2"/>
+        <association associationName="content" source="//@source.0/@hasRule.0/@apply/@class.1" target="//@source.0/@hasRule.0/@apply/@class.0"/>
+        <association associationName="next" source="//@source.0/@hasRule.0/@apply/@class.2" target="//@source.0/@hasRule.0/@apply/@class.5"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.0/@hasRule.0/@apply/@class.0" sourceClass="//@source.0/@hasRule.0/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.0/@hasRule.0/@apply/@class.1" sourceClass="//@source.0/@hasRule.0/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.0/@hasRule.0/@apply/@class.2" sourceClass="//@source.0/@hasRule.0/@match.0/@class.3"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.0/@hasRule.0/@apply/@class.2" sourceClass="//@source.0/@hasRule.0/@match.0/@class.2"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.0/@hasRule.0/@apply/@class.2" sourceClass="//@source.0/@hasRule.0/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.0/@hasRule.0/@apply/@class.3" sourceClass="//@source.0/@hasRule.0/@match.0/@class.3"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.0/@hasRule.0/@apply/@class.3" sourceClass="//@source.0/@hasRule.0/@match.0/@class.2"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.0/@hasRule.0/@apply/@class.3" sourceClass="//@source.0/@hasRule.0/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.0/@hasRule.0/@apply/@class.5" sourceClass="//@source.0/@hasRule.0/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.0/@hasRule.0/@apply/@class.5" sourceClass="//@source.0/@hasRule.0/@match.0/@class.2"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.0/@hasRule.0/@apply/@class.5" sourceClass="//@source.0/@hasRule.0/@match.0/@class.3"/>
+    </hasRule>
+  </source>
+</dsltrans:TransformationModel>

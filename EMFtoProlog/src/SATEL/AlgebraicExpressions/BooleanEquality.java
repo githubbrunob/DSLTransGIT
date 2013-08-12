@@ -1,0 +1,81 @@
+/**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id: BooleanEquality.java,v 1.1 2011/09/27 18:59:52 domingues Exp $
+ */
+package SATEL.AlgebraicExpressions;
+
+import SATEL.AlgebraicExpressions.booleanterms.BooleanTerm;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Boolean Equality</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link SATEL.AlgebraicExpressions.BooleanEquality#getBooleanTermR <em>Boolean Term R</em>}</li>
+ *   <li>{@link SATEL.AlgebraicExpressions.BooleanEquality#getBooleanTermL <em>Boolean Term L</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see SATEL.AlgebraicExpressions.AlgebraicExpressionsPackage#getBooleanEquality()
+ * @model
+ * @generated
+ */
+public interface BooleanEquality extends AlgebraicEquality {
+	/**
+	 * Returns the value of the '<em><b>Boolean Term R</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Boolean Term R</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Boolean Term R</em>' containment reference.
+	 * @see #setBooleanTermR(BooleanTerm)
+	 * @see SATEL.AlgebraicExpressions.AlgebraicExpressionsPackage#getBooleanEquality_BooleanTermR()
+	 * @model containment="true" required="true" ordered="false"
+	 * @generated
+	 */
+	BooleanTerm getBooleanTermR();
+
+	/**
+	 * Sets the value of the '{@link SATEL.AlgebraicExpressions.BooleanEquality#getBooleanTermR <em>Boolean Term R</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Boolean Term R</em>' containment reference.
+	 * @see #getBooleanTermR()
+	 * @generated
+	 */
+	void setBooleanTermR(BooleanTerm value);
+
+	/**
+	 * Returns the value of the '<em><b>Boolean Term L</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Boolean Term L</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Boolean Term L</em>' containment reference.
+	 * @see #setBooleanTermL(BooleanTerm)
+	 * @see SATEL.AlgebraicExpressions.AlgebraicExpressionsPackage#getBooleanEquality_BooleanTermL()
+	 * @model containment="true" required="true" ordered="false"
+	 * @generated
+	 */
+	BooleanTerm getBooleanTermL();
+
+	/**
+	 * Sets the value of the '{@link SATEL.AlgebraicExpressions.BooleanEquality#getBooleanTermL <em>Boolean Term L</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Boolean Term L</em>' containment reference.
+	 * @see #getBooleanTermL()
+	 * @generated
+	 */
+	void setBooleanTermL(BooleanTerm value);
+
+} // BooleanEquality

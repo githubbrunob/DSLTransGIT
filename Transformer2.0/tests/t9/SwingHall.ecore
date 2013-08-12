@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="swinghall"
+    nsURI="http://swinghall/1.0" nsPrefix="swinghall">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="wrapps" upperBound="-1"
+        eType="#//Wrapper" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Wrapper" eSuperTypes="#//UsableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="frame" eType="#//Frame"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Button" eSuperTypes="#//NamedElement #//HierarchicalElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" upperBound="-1"
+        eType="#//ButtonEvent" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextField" eSuperTypes="#//NamedElement #//HierarchicalElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="methods" upperBound="-1"
+        eType="#//TextFieldMethod" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Frame" eSuperTypes="#//NamedElement #//HierarchicalElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="panels" upperBound="-1"
+        eType="#//Panel" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Panel" eSuperTypes="#//NamedElement #//HierarchicalElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="panels" upperBound="-1"
+        eType="#//Panel" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="textFields" upperBound="-1"
+        eType="#//TextField" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="buttons" upperBound="-1"
+        eType="#//Button" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ButtonEvent" abstract="true" eSuperTypes="#//UsableElement #//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Click" eSuperTypes="#//ButtonEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TextFieldMethod" eSuperTypes="#//UsableElement #//NamedElement #//Method">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//Parameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UsableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="usageName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HierarchicalElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="package" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="visualObject" eType="#//VisualObject"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VisualObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vtype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domainGets" upperBound="-1"
+        eType="#//DomainPropertyGet" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domainSets" upperBound="-1"
+        eType="#//DomainPropertySet" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domainEvents" upperBound="-1"
+        eType="#//DomainEventFired" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//Data"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DomainPropertyGet">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="swingMethod" eType="#//Method"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DomainPropertySet">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="swingMethod" eType="#//Method"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DomainEventFired">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="swingEvent" eType="#//Event"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Method" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Property">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Data">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

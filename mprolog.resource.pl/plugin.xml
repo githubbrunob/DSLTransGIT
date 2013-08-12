@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax">
+		<metaInformationProvider class="mprolog.resource.pl.mopp.PlMetaInformation" id="mprolog.resource.pl.mopp.PlMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension id="mprolog.resource.pl.problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="org.eclipse.core.resources.problemmarker">
+		</super>
+		<super type="org.eclipse.core.resources.textmarker">
+		</super>
+		<super type="org.eclipse.emf.ecore.diagnostic">
+		</super>
+	</extension>
+	
+	<extension id="mprolog.resource.pl.problem.syntax_error" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="mprolog.resource.pl.problem">
+		</super>
+	</extension>
+	
+	<extension id="mprolog.resource.pl.problem.print_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="mprolog.resource.pl.problem">
+		</super>
+	</extension>
+	
+	<extension id="mprolog.resource.pl.problem.unresolved_reference" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="mprolog.resource.pl.problem">
+		</super>
+	</extension>
+	
+	<extension id="mprolog.resource.pl.problem.analysis_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="mprolog.resource.pl.problem">
+		</super>
+	</extension>
+	
+	<extension id="mprolog.resource.pl.problem.builder_error" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="mprolog.resource.pl.problem">
+		</super>
+	</extension>
+	
+	<extension id="mprolog.resource.pl.nature" name="pl nature" point="org.eclipse.core.resources.natures">
+		<runtime>
+			<run class="mprolog.resource.pl.mopp.PlNature">
+			</run>
+		</runtime>
+		<builder id="mprolog.resource.pl.builder">
+		</builder>
+	</extension>
+	
+	<extension point="org.eclipse.core.resources.builders" id="mprolog.resource.pl.builder" name="pl Builder">
+		<builder hasNature="true">
+			<run class="mprolog.resource.pl.mopp.PlBuilderAdapter">
+			</run>
+		</builder>
+	</extension>
+	
+	<extension-point id="mprolog.resource.pl.default_load_options" name="Default Load Options" schema="schema/default_load_options.exsd">
+	</extension-point>
+	
+	<extension point="org.eclipse.emf.ecore.extension_parser">
+		<parser class="mprolog.resource.pl.mopp.PlResourceFactoryDelegator" type="pl">
+		</parser>
+	</extension>
+	
+	<extension-point id="mprolog.resource.pl.additional_extension_parser" name="Additional Extension Parser" schema="schema/additional_extension_parser.exsd">
+	</extension-point>
+	
+	<extension point="org.eclipse.debug.core.breakpoints">
+		<breakpoint class="mprolog.resource.pl.debug.PlLineBreakpoint" id="mprolog.resource.pl.debug.breakpoint" markerType="mprolog.resource.pl.debug.lineBreakpoint.marker" name="pl Breakpoint">
+		</breakpoint>
+	</extension>
+	
+	<extension id="mprolog.resource.pl.debug.lineBreakpoint.marker" point="org.eclipse.core.resources.markers">
+		<super type="org.eclipse.debug.core.lineBreakpointMarker">
+		</super>
+		<super type="org.eclipse.core.resources.textmarker">
+		</super>
+		<persistent value="true">
+		</persistent>
+	</extension>
+	
+	<extension point="org.eclipse.debug.core.launchConfigurationTypes">
+		<launchConfigurationType id="mprolog.resource.pl.ui.launchConfigurationType" delegate="mprolog.resource.pl.launch.PlLaunchConfigurationDelegate" modes="run,debug" name="pl Application" sourceLocatorId="mprolog.resource.pl.ui.sourceLocator" sourcePathComputerId="mprolog.resource.pl.ui.sourcePathComputer" delegateName="pl Launch Tooling" delegateDescription="This will run or debug .pl files.">
+		</launchConfigurationType>
+	</extension>
+	
+	<extension point="org.eclipse.debug.core.sourcePathComputers">
+		<sourcePathComputer class="mprolog.resource.pl.debug.PlSourcePathComputerDelegate" id="mprolog.resource.pl.ui.sourcePathComputer">
+		</sourcePathComputer>
+	</extension>
+	
+	<extension point="org.eclipse.debug.core.sourceLocators">
+		<sourceLocator id="mprolog.resource.pl.ui.sourceLocator" class="mprolog.resource.pl.debug.PlSourceLocator" name="pl Source Locator">
+		</sourceLocator>
+	</extension>
+	
+</plugin>

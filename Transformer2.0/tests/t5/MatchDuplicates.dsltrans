@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsltrans:TransformationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsltrans="http://dsltrans/2.0">
+  <source xsi:type="dsltrans:FilePort" name="Input" filePathURI="tests/t5/DuplicatesModel.xmi">
+    <metaModelId metaModelURI="tests/t5/FormalMetamodel.ecore" metaModelName="formalmetamodel.Formalmetamodel"/>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="Entities" description="Entities" previousSource="//@source.0" outputFilePathURI="tests/t5/o1.xmi">
+    <metaModelId metaModelURI="tests/t5/FormalMetamodel.ecore" metaModelName="formalmetamodel.Formalmetamodel"/>
+    <hasRule description="FormalModel">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="formalmetamodel" className="A">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="formalmetamodel" className="A">
+          <attribute attributeName="name"/>
+        </class>
+      </match>
+      <apply>
+        <class packageName="formalmetamodel" className="A">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="A"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.0/@match.0/@class.1/@attribute.0"/>
+          </attribute>
+        </class>
+      </apply>
+      <attributeRelations xsi:type="dsltrans:AttributeInequality" sourceAttribute="//@source.1/@hasRule.0/@match.0/@class.1/@attribute.0" targetAttribute="//@source.1/@hasRule.0/@match.0/@class.0/@attribute.0"/>
+    </hasRule>
+    <hasRule description="FormalModel">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="formalmetamodel" className="FormalModel"/>
+      </match>
+      <apply>
+        <class packageName="formalmetamodel" className="FormalModel">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="FormalModel"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="Relations" description="Relations" previousSource="//@source.1" outputFilePathURI="tests/t5/o1.xmi">
+    <metaModelId metaModelURI="tests/t5/FormalMetamodel.ecore" metaModelName="formalmetamodel.Formalmetamodel"/>
+    <hasRule description="FormalModel">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="formalmetamodel" className="A"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="formalmetamodel" className="FormalModel"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="as" source="//@source.2/@hasRule.0/@match.0/@class.1" target="//@source.2/@hasRule.0/@match.0/@class.0"/>
+      </match>
+      <apply>
+        <class packageName="formalmetamodel" className="A">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="A"/>
+          </attribute>
+        </class>
+        <class packageName="formalmetamodel" className="FormalModel">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="FormalModel"/>
+          </attribute>
+        </class>
+        <association associationName="as" source="//@source.2/@hasRule.0/@apply/@class.1" target="//@source.2/@hasRule.0/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.0/@apply/@class.0" sourceClass="//@source.2/@hasRule.0/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.0/@apply/@class.1" sourceClass="//@source.2/@hasRule.0/@match.0/@class.1"/>
+    </hasRule>
+  </source>
+</dsltrans:TransformationModel>

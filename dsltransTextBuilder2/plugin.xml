@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            id="dsltransTextBuilder.contribution1">
+         <menu
+               icon="icons/icon.gif"
+               id="dsltransTextBuilder.menu1"
+               label="DSLTrans Format"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="dsltranstextbuilder.popup.actions.TransformerToText"
+               enablesFor="1"
+               icon="icons/text.gif"
+               id="dsltransTextBuilder.newAction"
+               label="Transform into Textual Syntax"
+               menubarPath="dsltransTextBuilder.menu1/group1"
+               tooltip="Saves file in XMI format in Textual Syntax">
+               <selection
+                     class="org.eclipse.core.resources.IFile"
+                     name="*.dsltrans"
+                     >
+               </selection>
+         </action>
+         <action
+               class="dsltranstextbuilder.popup.actions.TransformerToEMF"
+               enablesFor="1"
+               icon="icons/diagram.gif"
+               id="dsltransTextBuilder.trans2XMI"
+               label="Transform into XMI"
+               menubarPath="dsltransTextBuilder.menu1/group1"
+               tooltip="Saves file in textual syntax in XMI format">
+               <selection
+                     class="org.eclipse.core.resources.IFile"
+                     name="*.dsltranstext"
+                     >
+                     </selection>
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

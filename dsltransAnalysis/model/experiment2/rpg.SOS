@@ -1,0 +1,251 @@
+Semantics
+
+	ADT Boolean
+		Sorts bool
+		Generators
+			true:->bool;
+			false:->bool;
+
+	ADT Char
+		Sorts char
+		Generators
+			aa:->char;ab:->char;ac:->char;ad:->char;ae:->char;af:->char;ag:->char;ah:->char;ai:->char;aj:->char;ak:->char;al:->char;
+			am:->char;an:->char;ao:->char;ap:->char;aq:->char;ar:->char;as:->char;at:->char;au:->char;av:->char;aw:->char;ax:->char;
+			ay:->char;az:->char;
+			aA:->char;aB:->char;aC:->char;aD:->char;aE:->char;aF:->char;aG:->char;aH:->char;aI:->char;aJ:->char;aK:->char;aL:->char;
+			aM:->char;aN:->char;aO:->char;aP:->char;aQ:->char;aR:->char;aS:->char;aT:->char;aU:->char;aV:->char;aW:->char;aX:->char;
+			aY:->char;aZ:->char;
+			n0:->char;n1:->char;n2:->char;n3:->char;n4:->char;n5:->char;n6:->char;n7:->char;n8:->char;n9:->char;	
+
+
+	ADT RGPState
+		Sorts rpgstate
+		Generators
+			hero: class("rpg","Cell") Set(class("rpg","Key")) -> rpgstate;
+		
+	
+Assuming
+	@state ->> @movement ->> hero(@c1 @keyset) in Transition System,
+	in(@c1,Model)=true,
+	in(@c1 -> left -> @c2,Model)=true,
+	in(@d,Model)=true,
+	in(@d -> occupies -> @c2,Model)=false
+Then
+	hero(@c1 @keyset) ->> al ->> hero(@c2 @keyset) in Transition System
+Where
+	state: rpgstate;
+	c1: class("rpg","Cell");
+	c2: class("rpg","Cell");
+	d: class("rpg","Door");
+	movement: char;
+	keyset: Set(class("rpg","Key"));
+
+Assuming
+	@state ->> @movement ->> hero(@c1 @keyset) in Transition System,
+	in(@c1,Model)=true,
+	in(@c1 -> top -> @c2,Model)=true,
+	in(@d,Model)=true,
+	in(@d -> occupies -> @c2,Model)=false
+Then
+	hero(@c1 @keyset) ->> at ->> hero(@c2 @keyset) in Transition System
+Where
+	state: rpgstate;
+	c1: class("rpg","Cell");
+	c2: class("rpg","Cell");
+	movement: char;
+	d: class("rpg","Door");
+	keyset: Set(class("rpg","Key"));
+
+Assuming
+	@state ->> @movement ->> hero(@c1 @keyset) in Transition System,
+	in(@c1,Model)=true,
+	in(@c1 -> bottom -> @c2,Model)=true,
+	in(@d,Model)=true,
+	in(@d -> occupies -> @c2,Model)=false
+Then
+	hero(@c1 @keyset) ->> ab ->> hero(@c2 @keyset) in Transition System
+Where
+	state: rpgstate;
+	c1: class("rpg","Cell");
+	c2: class("rpg","Cell");
+	movement: char;
+	d: class("rpg","Door");
+	keyset: Set(class("rpg","Key"));
+
+Assuming
+	@state ->> @movement ->> hero(@c1 @keyset) in Transition System,
+	in(@c1,Model)=true,
+	in(@c1 -> right -> @c2,Model)=true,
+	in(@d,Model)=true,
+	in(@d -> occupies -> @c2,Model)=false
+Then
+	hero(@c1 @keyset) ->> ar ->> hero(@c2 @keyset) in Transition System
+Where
+	state: rpgstate;
+	c1: class("rpg","Cell");
+	c2: class("rpg","Cell");
+	movement: char;
+	d: class("rpg","Door");
+	keyset: Set(class("rpg","Key"));
+
+Assuming
+	@state ->> @movement ->> hero(@c1 @keyset) in Transition System,
+	in(@k,@keyset)=true,
+	in(@k -> opens -> @d,Model)=true,
+	in(@c1 -> left -> @c2,Model)=true,
+	in(@d -> occupies -> @c2,Model)=true,
+	in(@d -> exits -> @c3,Model)=true	
+Then
+	hero(@c1 @keyset) ->> al ->> hero(@c3 @keyset) in Transition System
+Where
+	state: rpgstate;
+	c1: class("rpg","Cell");
+	c2: class("rpg","Cell");
+	c3: class("rpg","Cell");
+	movement: char;
+	d: class("rpg","Door");
+	k: class("rpg","Key");
+	keyset: Set(class("rpg","Key"));
+
+Assuming
+	@state ->> @movement ->> hero(@c1 @keyset) in Transition System,
+	in(@k,@keyset)=true,
+	in(@k -> opens -> @d,Model)=true,
+	in(@c1 -> top -> @c2,Model)=true,
+	in(@d -> occupies -> @c2,Model)=true,
+	in(@d -> exits -> @c3,Model)=true	
+Then
+	hero(@c1 @keyset) ->> at ->> hero(@c3 @keyset) in Transition System
+Where
+	state: rpgstate;
+	c1: class("rpg","Cell");
+	c2: class("rpg","Cell");
+	c3: class("rpg","Cell");
+	movement: char;
+	d: class("rpg","Door");
+	k: class("rpg","Key");
+	keyset: Set(class("rpg","Key"));
+
+Assuming
+	@state ->> @movement ->> hero(@c1 @keyset) in Transition System,
+	in(@k,@keyset)=true,
+	in(@k -> opens -> @d,Model)=true,
+	in(@c1 -> bottom -> @c2,Model)=true,
+	in(@d -> occupies -> @c2,Model)=true,
+	in(@d -> exits -> @c3,Model)=true	
+Then
+	hero(@c1 @keyset) ->> ab ->> hero(@c3 @keyset) in Transition System
+Where
+	state: rpgstate;
+	c1: class("rpg","Cell");
+	c2: class("rpg","Cell");
+	c3: class("rpg","Cell");
+	movement: char;
+	d: class("rpg","Door");
+	k: class("rpg","Key");
+	keyset: Set(class("rpg","Key"));
+
+Assuming
+	@state ->> @movement ->> hero(@c1 @keyset) in Transition System,
+	in(@k,@keyset)=true,
+	in(@k -> opens -> @d,Model)=true,
+	in(@c1 -> right -> @c2,Model)=true,
+	in(@d -> occupies -> @c2,Model)=true,
+	in(@d -> exits -> @c3,Model)=true	
+Then
+	hero(@c1 @keyset) ->> ar ->> hero(@c3 @keyset) in Transition System
+Where
+	state: rpgstate;
+	c1: class("rpg","Cell");
+	c2: class("rpg","Cell");
+	c3: class("rpg","Cell");
+	movement: char;
+	d: class("rpg","Door");
+	k: class("rpg","Key");
+	keyset: Set(class("rpg","Key"));
+	
+Assuming
+	@state ->> @movement ->> hero(@c1 @keyset) in Transition System,
+	in(@k,Model)=true,
+	in(@k -> occupies -> @c1,Model)=true
+Then
+	hero(@c1 @keyset) ->> ak ->> hero(@c1 Union({@k}, @keyset) ) in Transition System
+Where
+	state: rpgstate;
+	c1: class("rpg","Cell");
+	movement: char;
+	k: class("rpg","Key");
+	keyset: Set(class("rpg","Key"));
+	
+Assuming	
+	in(@hero,Model)=true,	
+	in(@c1,Model)=true,
+	in(@hero -> occupies -> @c1,Model)=true,
+	in(@c1 -> left -> @c2,Model)=true,
+	in(@d,Model)=true,
+	in(@d -> occupies -> @c2,Model)=false
+Then
+	hero(@c1 @keyset) ->> al ->> hero(@c2 @keyset) in Transition System
+Where
+	state: rpgstate;
+	hero: class("rpg","hero");
+	c1: class("rpg","Cell");
+	c2: class("rpg","Cell");
+	d: class("rpg","Door");
+	movement: char;
+	keyset: Set(class("rpg","Key"));
+
+Assuming
+	in(@hero,Model)=true,	
+	in(@c1,Model)=true,
+	in(@hero -> occupies -> @c1,Model)=true,
+	in(@c1 -> top -> @c2,Model)=true,
+	in(@d,Model)=true,
+	in(@d -> occupies -> @c2,Model)=false
+Then
+	hero(@c1 @keyset) ->> at ->> hero(@c2 @keyset) in Transition System
+Where
+	state: rpgstate;
+	hero: class("rpg","hero");
+	c1: class("rpg","Cell");
+	c2: class("rpg","Cell");
+	movement: char;
+	d: class("rpg","Door");
+	keyset: Set(class("rpg","Key"));
+
+Assuming
+	in(@hero,Model)=true,	
+	in(@c1,Model)=true,
+	in(@hero -> occupies -> @c1,Model)=true,
+	in(@c1 -> bottom -> @c2,Model)=true,
+	in(@d,Model)=true,
+	in(@d -> occupies -> @c2,Model)=false
+Then
+	hero(@c1 @keyset) ->> ab ->> hero(@c2 @keyset) in Transition System
+Where
+	state: rpgstate;
+	hero: class("rpg","hero");
+	c1: class("rpg","Cell");
+	c2: class("rpg","Cell");
+	movement: char;
+	d: class("rpg","Door");
+	keyset: Set(class("rpg","Key"));
+
+Assuming
+	in(@hero,Model)=true,	
+	in(@c1,Model)=true,
+	in(@hero -> occupies -> @c1,Model)=true,
+	in(@c1 -> right -> @c2,Model)=true,
+	in(@d,Model)=true,
+	in(@d -> occupies -> @c2,Model)=false
+Then
+	hero(@c1 @keyset) ->> ar ->> hero(@c2 @keyset) in Transition System
+Where
+	state: rpgstate;
+	hero: class("rpg","hero");
+	c1: class("rpg","Cell");
+	c2: class("rpg","Cell");
+	movement: char;
+	d: class("rpg","Door");
+	keyset: Set(class("rpg","Key"));
+

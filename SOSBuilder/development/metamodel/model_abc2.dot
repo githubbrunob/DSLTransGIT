@@ -1,0 +1,13 @@
+digraph model_abc2 {
+	node0[label="marking(p(id10,suc(suc(zero))),marking(p(id9,zero),marking(p(id8,zero),e)))"];
+	node1[label="marking(p(id8,suc(zero)),marking(p(id9,suc(zero)),marking(p(id10,zero),e)))"];
+	node2[label="marking(p(id10,suc(zero)),marking(p(id9,zero),marking(p(id8,suc(zero)),e)))"];
+	node3[label="marking(p(id9,suc(suc(zero))),marking(p(id8,zero),marking(p(id10,zero),e)))"];
+	node4[label="marking(p(id10,suc(zero)),marking(p(id9,suc(zero)),marking(p(id8,zero),e)))"];
+	node4 -> node0[label="str(at,str(n2,end))"];
+	node3 -> node4[label="str(at,str(n2,end))"];
+	node2 -> node4[label="str(at,str(n1,end))"];
+	node1 -> node2[label="str(at,str(n2,end))"];
+	node1 -> node3[label="str(at,str(n1,end))"];
+
+}

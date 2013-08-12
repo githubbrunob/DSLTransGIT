@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/EMFtoProlog/src"
+    modelPluginID="EMFtoProlog" modelName="SATELAPN" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>SATELAPN.ecore</foreignModel>
+  <genPackages prefix="SATEL" disposableProviderFactory="true" ecorePackage="SATELAPN.ecore#/">
+    <genClasses ecoreClass="SATELAPN.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//Model/testIntentionModule"/>
+    </genClasses>
+    <genClasses ecoreClass="SATELAPN.ecore#//TestIntentionModule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//TestIntentionModule/testIntentionBody"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//TestIntentionModule/testIntentionInterface"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SATELAPN.ecore#//TestIntentionModule/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//TestIntentionModule/focus"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//TestIntentionModule/algebra"/>
+    </genClasses>
+    <genClasses ecoreClass="SATELAPN.ecore#//TestIntentionInterface">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//TestIntentionInterface/intention"/>
+    </genClasses>
+    <genClasses ecoreClass="SATELAPN.ecore#//IntentionDec">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SATELAPN.ecore#//IntentionDec/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SATELAPN.ecore#//TestIntentionBody">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//TestIntentionBody/axiomDeclaration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//TestIntentionBody/variableDeclaration"/>
+    </genClasses>
+    <genClasses ecoreClass="SATELAPN.ecore#//AxiomDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AxiomDeclaration/axiom"/>
+    </genClasses>
+    <genClasses ecoreClass="SATELAPN.ecore#//Axiom">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//Axiom/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//Axiom/inclusion"/>
+    </genClasses>
+    <genClasses ecoreClass="SATELAPN.ecore#//Inclusion">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//Inclusion/hmlTerm"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//Inclusion/in"/>
+    </genClasses>
+    <genClasses ecoreClass="SATELAPN.ecore#//Condition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//Condition/domainQuantifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//Condition/conditionBody"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SATELAPN.ecore#//DomainQuantifier">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//DomainQuantifier/list"/>
+    </genClasses>
+    <genClasses ecoreClass="SATELAPN.ecore#//UniformityList"/>
+    <genClasses ecoreClass="SATELAPN.ecore#//SubuniformityList"/>
+    <genClasses ecoreClass="SATELAPN.ecore#//ConditionBody">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//ConditionBody/conditionAtom"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SATELAPN.ecore#//ConditionAtom"/>
+    <genClasses ecoreClass="SATELAPN.ecore#//NameList">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//NameList/nameRef"/>
+    </genClasses>
+    <nestedGenPackages prefix="HMLFormula" disposableProviderFactory="true" ecorePackage="SATELAPN.ecore#//HMLFormula">
+      <genClasses ecoreClass="SATELAPN.ecore#//HMLFormula/HMLTerm">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//HMLFormula/HMLTerm/hmlFormula"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SATELAPN.ecore#//HMLFormula/HMLFormula"/>
+      <genClasses ecoreClass="SATELAPN.ecore#//HMLFormula/HMLFormulaHMLFormulaContent">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//HMLFormula/HMLFormulaHMLFormulaContent/hmlFormulaContent"/>
+      </genClasses>
+      <genClasses ecoreClass="SATELAPN.ecore#//HMLFormula/HMLFormulaPrimitiveHMLVarDec">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SATELAPN.ecore#//HMLFormula/HMLFormulaPrimitiveHMLVarDec/primitiveHMLVarDec"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SATELAPN.ecore#//HMLFormula/HMLFormulaContent"/>
+      <genClasses ecoreClass="SATELAPN.ecore#//HMLFormula/HMLNext">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//HMLFormula/HMLNext/hmlFormulaContent"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//HMLFormula/HMLNext/hmlEvent"/>
+      </genClasses>
+      <genClasses ecoreClass="SATELAPN.ecore#//HMLFormula/HMLNot">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//HMLFormula/HMLNot/hmlFormulaContent"/>
+      </genClasses>
+      <genClasses ecoreClass="SATELAPN.ecore#//HMLFormula/HMLAnd">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//HMLFormula/HMLAnd/hmlFormulaContentL"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//HMLFormula/HMLAnd/hmlFormulaContentR"/>
+      </genClasses>
+      <genClasses ecoreClass="SATELAPN.ecore#//HMLFormula/HMLTop"/>
+      <genClasses ecoreClass="SATELAPN.ecore#//HMLFormula/HMLEvent">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//HMLFormula/HMLEvent/inputTerm"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//HMLFormula/HMLEvent/outputTerm"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SATELAPN.ecore#//HMLFormula/SynchronizationTerm"/>
+      <genClasses image="false" ecoreClass="SATELAPN.ecore#//HMLFormula/SynchronizationInputTerm"/>
+      <genClasses ecoreClass="SATELAPN.ecore#//HMLFormula/SynchronizationEventInputTerm">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SATELAPN.ecore#//HMLFormula/SynchronizationEventInputTerm/event"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//HMLFormula/SynchronizationEventInputTerm/parameters"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SATELAPN.ecore#//HMLFormula/SynchronizationOutputTerm"/>
+      <genClasses ecoreClass="SATELAPN.ecore#//HMLFormula/SynchronizationEventOutputTerm">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SATELAPN.ecore#//HMLFormula/SynchronizationEventOutputTerm/event"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//HMLFormula/SynchronizationEventOutputTerm/parameters"/>
+      </genClasses>
+      <genClasses ecoreClass="SATELAPN.ecore#//HMLFormula/WPrimitiveObservationVarDec">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SATELAPN.ecore#//HMLFormula/WPrimitiveObservationVarDec/primitiveObservation"/>
+      </genClasses>
+      <genClasses ecoreClass="SATELAPN.ecore#//HMLFormula/WPrimitiveStimulationVarDec">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SATELAPN.ecore#//HMLFormula/WPrimitiveStimulationVarDec/primitiveStimulation"/>
+      </genClasses>
+      <genClasses ecoreClass="SATELAPN.ecore#//HMLFormula/Parameter">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//HMLFormula/Parameter/value"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//HMLFormula/Parameter/next"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SATELAPN.ecore#//HMLFormula/InputEvent"/>
+      <genClasses image="false" ecoreClass="SATELAPN.ecore#//HMLFormula/OutputEvent"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="AlgebraicExpressions" disposableProviderFactory="true"
+        ecorePackage="SATELAPN.ecore#//AlgebraicExpressions">
+      <genClasses image="false" ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/AlgebraicEquality"/>
+      <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/AlgEquality">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/AlgEquality/algebraicTermL"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/AlgEquality/algebraicTermR"/>
+      </genClasses>
+      <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/SyncEquality">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/SyncEquality/synchronizationTermL"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/SyncEquality/synchronizationTermR"/>
+      </genClasses>
+      <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/HMLEquality">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/HMLEquality/hmlTermL"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/HMLEquality/hmlTermR"/>
+      </genClasses>
+      <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/BooleanEquality">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/BooleanEquality/booleanTermR"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/BooleanEquality/booleanTermL"/>
+      </genClasses>
+      <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/ArithmeticEquality">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/ArithmeticEquality/arithmeticTermL"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/ArithmeticEquality/arithmeticTermR"/>
+      </genClasses>
+      <nestedGenPackages prefix="Booleanterms" disposableProviderFactory="true" ecorePackage="SATELAPN.ecore#//AlgebraicExpressions/booleanterms">
+        <genClasses image="false" ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/booleanterms/BooleanTerm"/>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/booleanterms/Not">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/booleanterms/Not/booleanTerm"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/booleanterms/Sequence">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/booleanterms/Sequence/hmlTerm"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/booleanterms/Positive">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/booleanterms/Positive/hmlTerm"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/booleanterms/Trace">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/booleanterms/Trace/hmlTerm"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/booleanterms/BooleanVariable">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/booleanterms/BooleanVariable/booleanVariable"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/booleanterms/BooleanValue">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SATELAPN.ecore#//AlgebraicExpressions/booleanterms/BooleanValue/value"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/booleanterms/BOPAnd">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/booleanterms/BOPAnd/booleanTermL"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/booleanterms/BOPAnd/booleanTermR"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/booleanterms/BOPOr">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/booleanterms/BOPOr/booleanTermL"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/booleanterms/BOPOr/booleanTermR"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/booleanterms/Equals">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/booleanterms/Equals/arithmeticTermR"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/booleanterms/Equals/arithmeticTermL"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/booleanterms/NotEquals">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/booleanterms/NotEquals/arithmeticTermR"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/booleanterms/NotEquals/arithmeticTermL"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/booleanterms/GT">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/booleanterms/GT/arithmeticTermR"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/booleanterms/GT/arithmeticTermL"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/booleanterms/LT">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/booleanterms/LT/arithmeticTermR"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/booleanterms/LT/arithmeticTermL"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/booleanterms/GTE">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/booleanterms/GTE/arithmeticTermR"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/booleanterms/GTE/arithmeticTermL"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/booleanterms/LTE">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/booleanterms/LTE/arithmeticTermR"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/booleanterms/LTE/arithmeticTermL"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Arithmeticterms" disposableProviderFactory="true"
+          ecorePackage="SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms">
+        <genClasses image="false" ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/ArithmeticTerm"/>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/IntegerVariable">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/IntegerVariable/integerVariable"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/IntegerValue">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/IntegerValue/value"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/BOPPlus">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/BOPPlus/arithmeticTermL"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/BOPPlus/arithmeticTermR"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/BOPMinus">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/BOPMinus/arithmeticTermL"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/BOPMinus/arithmeticTermR"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/BOPTimes">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/BOPTimes/arithmeticTermR"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/BOPTimes/arithmeticTermL"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/BOPDiv">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/BOPDiv/arithmeticTermL"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/BOPDiv/arithmeticTermR"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/NBEvents">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/NBEvents/hmlTerm"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/Depth">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/Depth/hmlTerm"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/UOPMinus">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/arithmeticterms/UOPMinus/arithmeticTerm"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Algterms" disposableProviderFactory="true" ecorePackage="SATELAPN.ecore#//AlgebraicExpressions/algterms">
+        <genClasses image="false" ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/algterms/AlgebraicTerm"/>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/algterms/VariableRef">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/algterms/VariableRef/var"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/algterms/AbstractCompositeTerm">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/algterms/AbstractCompositeTerm/terms"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference SATELAPN.ecore#//AlgebraicExpressions/algterms/AbstractCompositeTerm/op"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SATELAPN.ecore#//AlgebraicExpressions/algterms/AbstractCompositeTerm/iter"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//AlgebraicExpressions/algterms/CompositeTerm"/>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="VariableDeclarations" disposableProviderFactory="true"
+        ecorePackage="SATELAPN.ecore#//VariableDeclarations">
+      <genClasses ecoreClass="SATELAPN.ecore#//VariableDeclarations/VariableDeclaration">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//VariableDeclarations/VariableDeclaration/variable"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SATELAPN.ecore#//VariableDeclarations/VariableDec">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SATELAPN.ecore#//VariableDeclarations/VariableDec/name"/>
+      </genClasses>
+      <genClasses ecoreClass="SATELAPN.ecore#//VariableDeclarations/PrimitiveHMLVarDec">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//VariableDeclarations/PrimitiveHMLVarDec/type"/>
+      </genClasses>
+      <genClasses ecoreClass="SATELAPN.ecore#//VariableDeclarations/PrimitiveStimulationVarDec">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//VariableDeclarations/PrimitiveStimulationVarDec/type"/>
+      </genClasses>
+      <genClasses ecoreClass="SATELAPN.ecore#//VariableDeclarations/PrimitiveObservationVarDec">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//VariableDeclarations/PrimitiveObservationVarDec/type"/>
+      </genClasses>
+      <genClasses ecoreClass="SATELAPN.ecore#//VariableDeclarations/PrimitiveIntegerVarDec">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//VariableDeclarations/PrimitiveIntegerVarDec/type"/>
+      </genClasses>
+      <genClasses ecoreClass="SATELAPN.ecore#//VariableDeclarations/PrimitiveBooleanVarDec">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//VariableDeclarations/PrimitiveBooleanVarDec/type"/>
+      </genClasses>
+      <genClasses ecoreClass="SATELAPN.ecore#//VariableDeclarations/AlgebraicSortVarDec">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SATELAPN.ecore#//VariableDeclarations/AlgebraicSortVarDec/type"/>
+      </genClasses>
+      <nestedGenPackages prefix="Types" disposableProviderFactory="true" ecorePackage="SATELAPN.ecore#//VariableDeclarations/Types">
+        <genClasses image="false" ecoreClass="SATELAPN.ecore#//VariableDeclarations/Types/VarDecType"/>
+        <genClasses ecoreClass="SATELAPN.ecore#//VariableDeclarations/Types/PrimitiveHML"/>
+        <genClasses ecoreClass="SATELAPN.ecore#//VariableDeclarations/Types/PrimitiveStimulation"/>
+        <genClasses ecoreClass="SATELAPN.ecore#//VariableDeclarations/Types/PrimitiveObservation"/>
+        <genClasses ecoreClass="SATELAPN.ecore#//VariableDeclarations/Types/PrimitiveInteger"/>
+        <genClasses ecoreClass="SATELAPN.ecore#//VariableDeclarations/Types/PrimitiveBoolean"/>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="APN" disposableProviderFactory="true" ecorePackage="SATELAPN.ecore#//APN">
+      <nestedGenPackages prefix="Apnmm" disposableProviderFactory="true" ecorePackage="SATELAPN.ecore#//APN/apnmm">
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/apnmm/APN">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/apnmm/APN/ownedPlaces"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/apnmm/APN/ownedArcs"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/apnmm/APN/ownedVariables"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SATELAPN.ecore#//APN/apnmm/APN/name"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/apnmm/APN/methods"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/apnmm/APN/gates"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/apnmm/APN/ownedTransitions"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="SATELAPN.ecore#//APN/apnmm/Node">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SATELAPN.ecore#//APN/apnmm/Node/name"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/apnmm/Arc">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/apnmm/Arc/from"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/apnmm/Arc/to"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/apnmm/Arc/ownedArcMultiset"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SATELAPN.ecore#//APN/apnmm/Arc/Name"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/apnmm/Place">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/apnmm/Place/ownedPlaceMultiset"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/apnmm/Place/sort"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/apnmm/Transition">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/apnmm/Transition/ownedGuard"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/apnmm/Transition/gateCalls"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/apnmm/Transition/methodCall"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/apnmm/Method">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SATELAPN.ecore#//APN/apnmm/Method/name"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/apnmm/Gate">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SATELAPN.ecore#//APN/apnmm/Gate/name"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/apnmm/GateCall">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/apnmm/GateCall/gate"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/apnmm/GateCall/params"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/apnmm/MethodCall">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/apnmm/MethodCall/method"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/apnmm/MethodCall/params"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Environmentmm" disposableProviderFactory="true" ecorePackage="SATELAPN.ecore#//APN/environmentmm">
+        <genClasses image="false" ecoreClass="SATELAPN.ecore#//APN/environmentmm/Environment"/>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Guardmm" disposableProviderFactory="true" ecorePackage="SATELAPN.ecore#//APN/guardmm">
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/guardmm/Guard">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/guardmm/Guard/ownedEquations"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/guardmm/Guard/ownedVariables"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Adtmm" disposableProviderFactory="true" ecorePackage="SATELAPN.ecore#//APN/adtmm">
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/adtmm/ADT">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/adtmm/ADT/ownedSorts"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/adtmm/ADT/ownedOperations"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/adtmm/ADT/ownedGenerators"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/adtmm/ADT/ownedVariables"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/adtmm/ADT/ownedAxioms"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SATELAPN.ecore#//APN/adtmm/ADT/name"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/adtmm/Sort"/>
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/adtmm/Operation">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/adtmm/Operation/operationSorts"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/adtmm/Operation/result"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/adtmm/Variable">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SATELAPN.ecore#//APN/adtmm/Variable/name"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/adtmm/Variable/variableSort"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/adtmm/CondEquation">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/adtmm/CondEquation/ownedConditions"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/adtmm/CondEquation/ownedEquation"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="SATELAPN.ecore#//APN/adtmm/Term"/>
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/adtmm/VariableRef">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/adtmm/VariableRef/variable"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/adtmm/CTerm">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SATELAPN.ecore#//APN/adtmm/CTerm/iter"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/adtmm/CTerm/ownedTerms"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/adtmm/CTerm/op"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="SATELAPN.ecore#//APN/adtmm/AbstractEquation">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/adtmm/AbstractEquation/ownedRightTerm"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/adtmm/AbstractEquation/ownedLeftTerm"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/adtmm/Equation"/>
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/adtmm/Inequation"/>
+        <genClasses image="false" ecoreClass="SATELAPN.ecore#//APN/adtmm/AbstractSort"/>
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/adtmm/Instantiation">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/adtmm/Instantiation/ownedParameters"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/adtmm/Instantiation/imported"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="SATELAPN.ecore#//APN/adtmm/Instantiable">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SATELAPN.ecore#//APN/adtmm/Instantiable/name"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/adtmm/AtomicSort">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/adtmm/AtomicSort/declaration"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/adtmm/SortDeclaration">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SATELAPN.ecore#//APN/adtmm/SortDeclaration/name"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="SATELAPN.ecore#//APN/adtmm/AbstractOperation">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SATELAPN.ecore#//APN/adtmm/AbstractOperation/name"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="SATELAPN.ecore#//APN/adtmm/AbstractGenericOp"/>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Multisetmm" disposableProviderFactory="true" ecorePackage="SATELAPN.ecore#//APN/multisetmm">
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/multisetmm/Multiset">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/multisetmm/Multiset/msSort"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/multisetmm/Multiset/ownedNumOfTerms"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/multisetmm/Multiset/ownedVariables"/>
+        </genClasses>
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/multisetmm/NumOfTerms">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SATELAPN.ecore#//APN/multisetmm/NumOfTerms/card"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/multisetmm/NumOfTerms/ownedElement"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="SATELAPN.ecore#//APN/multisetmm/MSElement"/>
+        <genClasses ecoreClass="SATELAPN.ecore#//APN/multisetmm/TermReference">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SATELAPN.ecore#//APN/multisetmm/TermReference/termReferenced"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

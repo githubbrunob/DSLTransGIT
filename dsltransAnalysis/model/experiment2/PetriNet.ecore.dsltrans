@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="ASCII"?>
+<dsltrans:TransformationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsltrans="http://dsltrans/2.0">
+  <source xsi:type="dsltrans:FilePort" name="input">
+    <metaModelId metaModelURI="input.xmi" metaModelName="petrinet.Petrinet"/>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="output2" description="Entities" previousSource="//@source.4">
+    <metaModelId metaModelName="mprologTermReference.MprologTermReference"/>
+    <hasRule description="OutArc">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="OutArc"/>
+      </match>
+      <apply>
+        <class packageName="mprologTermReference" className="Clause">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="OutArc"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Head"/>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="class"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="petrinet"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="OutArc"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="IDFunctor"/>
+          </attribute>
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="#ID#"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="List">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AttributeList"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="List">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="RelationList"/>
+          </attribute>
+        </class>
+        <association associationName="ownedHead" source="//@source.1/@hasRule.0/@apply/@class.0" target="//@source.1/@hasRule.0/@apply/@class.1"/>
+        <association associationName="ownedFunctor" source="//@source.1/@hasRule.0/@apply/@class.1" target="//@source.1/@hasRule.0/@apply/@class.2"/>
+        <association associationName="ownedTerm" source="//@source.1/@hasRule.0/@apply/@class.2" target="//@source.1/@hasRule.0/@apply/@class.3"/>
+        <association associationName="nextTerm" source="//@source.1/@hasRule.0/@apply/@class.3" target="//@source.1/@hasRule.0/@apply/@class.4"/>
+        <association associationName="nextTerm" source="//@source.1/@hasRule.0/@apply/@class.4" target="//@source.1/@hasRule.0/@apply/@class.5"/>
+        <association associationName="nextTerm" source="//@source.1/@hasRule.0/@apply/@class.5" target="//@source.1/@hasRule.0/@apply/@class.6"/>
+        <association associationName="nextTerm" source="//@source.1/@hasRule.0/@apply/@class.6" target="//@source.1/@hasRule.0/@apply/@class.7"/>
+      </apply>
+    </hasRule>
+    <hasRule description="Place">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="Place"/>
+      </match>
+      <apply>
+        <class packageName="mprologTermReference" className="Clause">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Place"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Head"/>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="class"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="petrinet"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="Place"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="IDFunctor"/>
+          </attribute>
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="#ID#"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="List">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AttributeList"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="List">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="RelationList"/>
+          </attribute>
+        </class>
+        <association associationName="ownedHead" source="//@source.1/@hasRule.1/@apply/@class.0" target="//@source.1/@hasRule.1/@apply/@class.1"/>
+        <association associationName="ownedFunctor" source="//@source.1/@hasRule.1/@apply/@class.1" target="//@source.1/@hasRule.1/@apply/@class.2"/>
+        <association associationName="ownedTerm" source="//@source.1/@hasRule.1/@apply/@class.2" target="//@source.1/@hasRule.1/@apply/@class.3"/>
+        <association associationName="nextTerm" source="//@source.1/@hasRule.1/@apply/@class.3" target="//@source.1/@hasRule.1/@apply/@class.4"/>
+        <association associationName="nextTerm" source="//@source.1/@hasRule.1/@apply/@class.4" target="//@source.1/@hasRule.1/@apply/@class.5"/>
+        <association associationName="nextTerm" source="//@source.1/@hasRule.1/@apply/@class.5" target="//@source.1/@hasRule.1/@apply/@class.6"/>
+        <association associationName="nextTerm" source="//@source.1/@hasRule.1/@apply/@class.6" target="//@source.1/@hasRule.1/@apply/@class.7"/>
+      </apply>
+    </hasRule>
+    <hasRule description="InArc">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="InArc"/>
+      </match>
+      <apply>
+        <class packageName="mprologTermReference" className="Clause">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="InArc"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Head"/>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="class"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="petrinet"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="InArc"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="IDFunctor"/>
+          </attribute>
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="#ID#"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="List">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AttributeList"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="List">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="RelationList"/>
+          </attribute>
+        </class>
+        <association associationName="ownedHead" source="//@source.1/@hasRule.2/@apply/@class.0" target="//@source.1/@hasRule.2/@apply/@class.1"/>
+        <association associationName="ownedFunctor" source="//@source.1/@hasRule.2/@apply/@class.1" target="//@source.1/@hasRule.2/@apply/@class.2"/>
+        <association associationName="ownedTerm" source="//@source.1/@hasRule.2/@apply/@class.2" target="//@source.1/@hasRule.2/@apply/@class.3"/>
+        <association associationName="nextTerm" source="//@source.1/@hasRule.2/@apply/@class.3" target="//@source.1/@hasRule.2/@apply/@class.4"/>
+        <association associationName="nextTerm" source="//@source.1/@hasRule.2/@apply/@class.4" target="//@source.1/@hasRule.2/@apply/@class.5"/>
+        <association associationName="nextTerm" source="//@source.1/@hasRule.2/@apply/@class.5" target="//@source.1/@hasRule.2/@apply/@class.6"/>
+        <association associationName="nextTerm" source="//@source.1/@hasRule.2/@apply/@class.6" target="//@source.1/@hasRule.2/@apply/@class.7"/>
+      </apply>
+    </hasRule>
+    <hasRule description="Transition">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="Transition"/>
+      </match>
+      <apply>
+        <class packageName="mprologTermReference" className="Clause">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Transition"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Head"/>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="class"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="petrinet"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="Transition"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="IDFunctor"/>
+          </attribute>
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="#ID#"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="List">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AttributeList"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="List">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="RelationList"/>
+          </attribute>
+        </class>
+        <association associationName="ownedHead" source="//@source.1/@hasRule.3/@apply/@class.0" target="//@source.1/@hasRule.3/@apply/@class.1"/>
+        <association associationName="ownedFunctor" source="//@source.1/@hasRule.3/@apply/@class.1" target="//@source.1/@hasRule.3/@apply/@class.2"/>
+        <association associationName="ownedTerm" source="//@source.1/@hasRule.3/@apply/@class.2" target="//@source.1/@hasRule.3/@apply/@class.3"/>
+        <association associationName="nextTerm" source="//@source.1/@hasRule.3/@apply/@class.3" target="//@source.1/@hasRule.3/@apply/@class.4"/>
+        <association associationName="nextTerm" source="//@source.1/@hasRule.3/@apply/@class.4" target="//@source.1/@hasRule.3/@apply/@class.5"/>
+        <association associationName="nextTerm" source="//@source.1/@hasRule.3/@apply/@class.5" target="//@source.1/@hasRule.3/@apply/@class.6"/>
+        <association associationName="nextTerm" source="//@source.1/@hasRule.3/@apply/@class.6" target="//@source.1/@hasRule.3/@apply/@class.7"/>
+      </apply>
+    </hasRule>
+    <hasRule description="PetriNet">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="PetriNet"/>
+      </match>
+      <apply>
+        <class packageName="mprologTermReference" className="Clause">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="PetriNet"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Head"/>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="class"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="petrinet"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="PetriNet"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="IDFunctor"/>
+          </attribute>
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="#ID#"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="List">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AttributeList"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="List">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="RelationList"/>
+          </attribute>
+        </class>
+        <association associationName="ownedHead" source="//@source.1/@hasRule.4/@apply/@class.0" target="//@source.1/@hasRule.4/@apply/@class.1"/>
+        <association associationName="ownedFunctor" source="//@source.1/@hasRule.4/@apply/@class.1" target="//@source.1/@hasRule.4/@apply/@class.2"/>
+        <association associationName="ownedTerm" source="//@source.1/@hasRule.4/@apply/@class.2" target="//@source.1/@hasRule.4/@apply/@class.3"/>
+        <association associationName="nextTerm" source="//@source.1/@hasRule.4/@apply/@class.3" target="//@source.1/@hasRule.4/@apply/@class.4"/>
+        <association associationName="nextTerm" source="//@source.1/@hasRule.4/@apply/@class.4" target="//@source.1/@hasRule.4/@apply/@class.5"/>
+        <association associationName="nextTerm" source="//@source.1/@hasRule.4/@apply/@class.5" target="//@source.1/@hasRule.4/@apply/@class.6"/>
+        <association associationName="nextTerm" source="//@source.1/@hasRule.4/@apply/@class.6" target="//@source.1/@hasRule.4/@apply/@class.7"/>
+      </apply>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="output4" description="Associations" previousSource="//@source.3">
+    <metaModelId metaModelURI="input.xmi" metaModelName="mprologTermReference.MprologTermReference"/>
+    <hasRule description="sourcePlace">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="OutArc"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="Place"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="sourcePlace" source="//@source.2/@hasRule.0/@match.0/@class.0" target="//@source.2/@hasRule.0/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="mprologTermReference" className="List">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="RelationList"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="IDFunctor"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="p"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="sourcePlace"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="FunctorReference"/>
+        <association associationName="ownedHeadTerms" source="//@source.2/@hasRule.0/@apply/@class.0" target="//@source.2/@hasRule.0/@apply/@class.2"/>
+        <association associationName="nextTerm" source="//@source.2/@hasRule.0/@apply/@class.2" target="//@source.2/@hasRule.0/@apply/@class.2"/>
+        <association associationName="ownedTerm" source="//@source.2/@hasRule.0/@apply/@class.2" target="//@source.2/@hasRule.0/@apply/@class.3"/>
+        <association associationName="nextTerm" source="//@source.2/@hasRule.0/@apply/@class.3" target="//@source.2/@hasRule.0/@apply/@class.4"/>
+        <association associationName="idReference" source="//@source.2/@hasRule.0/@apply/@class.4" target="//@source.2/@hasRule.0/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.0/@apply/@class.0" sourceClass="//@source.2/@hasRule.0/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.0/@apply/@class.1" sourceClass="//@source.2/@hasRule.0/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="targetPlace">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="InArc"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="Place"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="targetPlace" source="//@source.2/@hasRule.1/@match.0/@class.0" target="//@source.2/@hasRule.1/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="mprologTermReference" className="List">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="RelationList"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="IDFunctor"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="p"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="targetPlace"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="FunctorReference"/>
+        <association associationName="ownedHeadTerms" source="//@source.2/@hasRule.1/@apply/@class.0" target="//@source.2/@hasRule.1/@apply/@class.2"/>
+        <association associationName="nextTerm" source="//@source.2/@hasRule.1/@apply/@class.2" target="//@source.2/@hasRule.1/@apply/@class.2"/>
+        <association associationName="ownedTerm" source="//@source.2/@hasRule.1/@apply/@class.2" target="//@source.2/@hasRule.1/@apply/@class.3"/>
+        <association associationName="nextTerm" source="//@source.2/@hasRule.1/@apply/@class.3" target="//@source.2/@hasRule.1/@apply/@class.4"/>
+        <association associationName="idReference" source="//@source.2/@hasRule.1/@apply/@class.4" target="//@source.2/@hasRule.1/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.1/@apply/@class.0" sourceClass="//@source.2/@hasRule.1/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.1/@apply/@class.1" sourceClass="//@source.2/@hasRule.1/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="places">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="PetriNet"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="Place"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="places" source="//@source.2/@hasRule.2/@match.0/@class.0" target="//@source.2/@hasRule.2/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="mprologTermReference" className="List">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="RelationList"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="IDFunctor"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="p"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="places"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="FunctorReference"/>
+        <association associationName="ownedHeadTerms" source="//@source.2/@hasRule.2/@apply/@class.0" target="//@source.2/@hasRule.2/@apply/@class.2"/>
+        <association associationName="nextTerm" source="//@source.2/@hasRule.2/@apply/@class.2" target="//@source.2/@hasRule.2/@apply/@class.2"/>
+        <association associationName="ownedTerm" source="//@source.2/@hasRule.2/@apply/@class.2" target="//@source.2/@hasRule.2/@apply/@class.3"/>
+        <association associationName="nextTerm" source="//@source.2/@hasRule.2/@apply/@class.3" target="//@source.2/@hasRule.2/@apply/@class.4"/>
+        <association associationName="idReference" source="//@source.2/@hasRule.2/@apply/@class.4" target="//@source.2/@hasRule.2/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.2/@apply/@class.0" sourceClass="//@source.2/@hasRule.2/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.2/@apply/@class.1" sourceClass="//@source.2/@hasRule.2/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="transitions">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="PetriNet"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="Transition"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="transitions" source="//@source.2/@hasRule.3/@match.0/@class.0" target="//@source.2/@hasRule.3/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="mprologTermReference" className="List">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="RelationList"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="IDFunctor"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="p"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="transitions"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="FunctorReference"/>
+        <association associationName="ownedHeadTerms" source="//@source.2/@hasRule.3/@apply/@class.0" target="//@source.2/@hasRule.3/@apply/@class.2"/>
+        <association associationName="nextTerm" source="//@source.2/@hasRule.3/@apply/@class.2" target="//@source.2/@hasRule.3/@apply/@class.2"/>
+        <association associationName="ownedTerm" source="//@source.2/@hasRule.3/@apply/@class.2" target="//@source.2/@hasRule.3/@apply/@class.3"/>
+        <association associationName="nextTerm" source="//@source.2/@hasRule.3/@apply/@class.3" target="//@source.2/@hasRule.3/@apply/@class.4"/>
+        <association associationName="idReference" source="//@source.2/@hasRule.3/@apply/@class.4" target="//@source.2/@hasRule.3/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.3/@apply/@class.0" sourceClass="//@source.2/@hasRule.3/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.3/@apply/@class.1" sourceClass="//@source.2/@hasRule.3/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="inArc">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="Transition"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="InArc"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="inArc" source="//@source.2/@hasRule.4/@match.0/@class.0" target="//@source.2/@hasRule.4/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="mprologTermReference" className="List">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="RelationList"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="IDFunctor"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="p"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="inArc"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="FunctorReference"/>
+        <association associationName="ownedHeadTerms" source="//@source.2/@hasRule.4/@apply/@class.0" target="//@source.2/@hasRule.4/@apply/@class.2"/>
+        <association associationName="nextTerm" source="//@source.2/@hasRule.4/@apply/@class.2" target="//@source.2/@hasRule.4/@apply/@class.2"/>
+        <association associationName="ownedTerm" source="//@source.2/@hasRule.4/@apply/@class.2" target="//@source.2/@hasRule.4/@apply/@class.3"/>
+        <association associationName="nextTerm" source="//@source.2/@hasRule.4/@apply/@class.3" target="//@source.2/@hasRule.4/@apply/@class.4"/>
+        <association associationName="idReference" source="//@source.2/@hasRule.4/@apply/@class.4" target="//@source.2/@hasRule.4/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.4/@apply/@class.0" sourceClass="//@source.2/@hasRule.4/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.4/@apply/@class.1" sourceClass="//@source.2/@hasRule.4/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="outArc">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="Transition"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="OutArc"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="outArc" source="//@source.2/@hasRule.5/@match.0/@class.0" target="//@source.2/@hasRule.5/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="mprologTermReference" className="List">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="RelationList"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="IDFunctor"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="p"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="outArc"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="FunctorReference"/>
+        <association associationName="ownedHeadTerms" source="//@source.2/@hasRule.5/@apply/@class.0" target="//@source.2/@hasRule.5/@apply/@class.2"/>
+        <association associationName="nextTerm" source="//@source.2/@hasRule.5/@apply/@class.2" target="//@source.2/@hasRule.5/@apply/@class.2"/>
+        <association associationName="ownedTerm" source="//@source.2/@hasRule.5/@apply/@class.2" target="//@source.2/@hasRule.5/@apply/@class.3"/>
+        <association associationName="nextTerm" source="//@source.2/@hasRule.5/@apply/@class.3" target="//@source.2/@hasRule.5/@apply/@class.4"/>
+        <association associationName="idReference" source="//@source.2/@hasRule.5/@apply/@class.4" target="//@source.2/@hasRule.5/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.5/@apply/@class.0" sourceClass="//@source.2/@hasRule.5/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.2/@hasRule.5/@apply/@class.1" sourceClass="//@source.2/@hasRule.5/@match.0/@class.1"/>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="output3" description="Attributes" previousSource="//@source.1">
+    <metaModelId metaModelName="mprologTermReference.MprologTermReference"/>
+    <hasRule description="token">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="Place">
+          <attribute attributeName="token"/>
+        </class>
+      </match>
+      <apply>
+        <class packageName="mprologTermReference" className="List">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AttributeList"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.0/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="p"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="token"/>
+          </attribute>
+        </class>
+        <association associationName="ownedHeadTerms" source="//@source.3/@hasRule.0/@apply/@class.0" target="//@source.3/@hasRule.0/@apply/@class.2"/>
+        <association associationName="nextTerm" source="//@source.3/@hasRule.0/@apply/@class.2" target="//@source.3/@hasRule.0/@apply/@class.2"/>
+        <association associationName="ownedTerm" source="//@source.3/@hasRule.0/@apply/@class.2" target="//@source.3/@hasRule.0/@apply/@class.3"/>
+        <association associationName="nextTerm" source="//@source.3/@hasRule.0/@apply/@class.3" target="//@source.3/@hasRule.0/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.0/@apply/@class.0" sourceClass="//@source.3/@hasRule.0/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="name">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="Place">
+          <attribute attributeName="name"/>
+        </class>
+      </match>
+      <apply>
+        <class packageName="mprologTermReference" className="List">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AttributeList"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.1/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="p"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="name"/>
+          </attribute>
+        </class>
+        <association associationName="ownedHeadTerms" source="//@source.3/@hasRule.1/@apply/@class.0" target="//@source.3/@hasRule.1/@apply/@class.2"/>
+        <association associationName="nextTerm" source="//@source.3/@hasRule.1/@apply/@class.2" target="//@source.3/@hasRule.1/@apply/@class.2"/>
+        <association associationName="ownedTerm" source="//@source.3/@hasRule.1/@apply/@class.2" target="//@source.3/@hasRule.1/@apply/@class.3"/>
+        <association associationName="nextTerm" source="//@source.3/@hasRule.1/@apply/@class.3" target="//@source.3/@hasRule.1/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.1/@apply/@class.0" sourceClass="//@source.3/@hasRule.1/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="name">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="Transition">
+          <attribute attributeName="name"/>
+        </class>
+      </match>
+      <apply>
+        <class packageName="mprologTermReference" className="List">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AttributeList"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.2/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="p"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="name"/>
+          </attribute>
+        </class>
+        <association associationName="ownedHeadTerms" source="//@source.3/@hasRule.2/@apply/@class.0" target="//@source.3/@hasRule.2/@apply/@class.2"/>
+        <association associationName="nextTerm" source="//@source.3/@hasRule.2/@apply/@class.2" target="//@source.3/@hasRule.2/@apply/@class.2"/>
+        <association associationName="ownedTerm" source="//@source.3/@hasRule.2/@apply/@class.2" target="//@source.3/@hasRule.2/@apply/@class.3"/>
+        <association associationName="nextTerm" source="//@source.3/@hasRule.2/@apply/@class.3" target="//@source.3/@hasRule.2/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.2/@apply/@class.0" sourceClass="//@source.3/@hasRule.2/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="weight">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="OutArc">
+          <attribute attributeName="weight"/>
+        </class>
+      </match>
+      <apply>
+        <class packageName="mprologTermReference" className="List">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AttributeList"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.3/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="p"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="weight"/>
+          </attribute>
+        </class>
+        <association associationName="ownedHeadTerms" source="//@source.3/@hasRule.3/@apply/@class.0" target="//@source.3/@hasRule.3/@apply/@class.2"/>
+        <association associationName="nextTerm" source="//@source.3/@hasRule.3/@apply/@class.2" target="//@source.3/@hasRule.3/@apply/@class.2"/>
+        <association associationName="ownedTerm" source="//@source.3/@hasRule.3/@apply/@class.2" target="//@source.3/@hasRule.3/@apply/@class.3"/>
+        <association associationName="nextTerm" source="//@source.3/@hasRule.3/@apply/@class.3" target="//@source.3/@hasRule.3/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.3/@apply/@class.0" sourceClass="//@source.3/@hasRule.3/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="weight">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="InArc">
+          <attribute attributeName="weight"/>
+        </class>
+      </match>
+      <apply>
+        <class packageName="mprologTermReference" className="List">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="AttributeList"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.3/@hasRule.4/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Functor">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="p"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="QuotedAtom">
+          <attribute attributeName="text">
+            <attributeValue xsi:type="dsltrans:Atom" value="weight"/>
+          </attribute>
+        </class>
+        <association associationName="ownedHeadTerms" source="//@source.3/@hasRule.4/@apply/@class.0" target="//@source.3/@hasRule.4/@apply/@class.2"/>
+        <association associationName="nextTerm" source="//@source.3/@hasRule.4/@apply/@class.2" target="//@source.3/@hasRule.4/@apply/@class.2"/>
+        <association associationName="ownedTerm" source="//@source.3/@hasRule.4/@apply/@class.2" target="//@source.3/@hasRule.4/@apply/@class.3"/>
+        <association associationName="nextTerm" source="//@source.3/@hasRule.4/@apply/@class.3" target="//@source.3/@hasRule.4/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.4/@apply/@class.0" sourceClass="//@source.3/@hasRule.4/@match.0/@class.0"/>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="output1" description="Root" previousSource="//@source.0">
+    <metaModelId metaModelName="mprologTermReference.MprologTermReference"/>
+    <hasRule description="root rule - substitute the anymatchclass with your dsl's root meta class">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="PetriNet"/>
+      </match>
+      <apply>
+        <class packageName="mprologTermReference" className="Model">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="root"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Atom" value="model"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="output5" description="FixOwnedClauses" previousSource="//@source.2">
+    <metaModelId metaModelURI="input.xmi" metaModelName="mprologTermReference.MprologTermReference"/>
+    <hasRule description="OutArc">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="OutArc"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="PetriNet"/>
+      </match>
+      <apply>
+        <class packageName="mprologTermReference" className="Clause">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="OutArc"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Model">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="root"/>
+          </attribute>
+        </class>
+        <association associationName="ownedClause" source="//@source.5/@hasRule.0/@apply/@class.1" target="//@source.5/@hasRule.0/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.5/@hasRule.0/@apply/@class.1" sourceClass="//@source.5/@hasRule.0/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.5/@hasRule.0/@apply/@class.0" sourceClass="//@source.5/@hasRule.0/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="Place">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="Place"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="PetriNet"/>
+      </match>
+      <apply>
+        <class packageName="mprologTermReference" className="Clause">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Place"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Model">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="root"/>
+          </attribute>
+        </class>
+        <association associationName="ownedClause" source="//@source.5/@hasRule.1/@apply/@class.1" target="//@source.5/@hasRule.1/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.5/@hasRule.1/@apply/@class.1" sourceClass="//@source.5/@hasRule.1/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.5/@hasRule.1/@apply/@class.0" sourceClass="//@source.5/@hasRule.1/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="InArc">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="InArc"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="PetriNet"/>
+      </match>
+      <apply>
+        <class packageName="mprologTermReference" className="Clause">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="InArc"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Model">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="root"/>
+          </attribute>
+        </class>
+        <association associationName="ownedClause" source="//@source.5/@hasRule.2/@apply/@class.1" target="//@source.5/@hasRule.2/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.5/@hasRule.2/@apply/@class.1" sourceClass="//@source.5/@hasRule.2/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.5/@hasRule.2/@apply/@class.0" sourceClass="//@source.5/@hasRule.2/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="Transition">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="Transition"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="PetriNet"/>
+      </match>
+      <apply>
+        <class packageName="mprologTermReference" className="Clause">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Transition"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Model">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="root"/>
+          </attribute>
+        </class>
+        <association associationName="ownedClause" source="//@source.5/@hasRule.3/@apply/@class.1" target="//@source.5/@hasRule.3/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.5/@hasRule.3/@apply/@class.1" sourceClass="//@source.5/@hasRule.3/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.5/@hasRule.3/@apply/@class.0" sourceClass="//@source.5/@hasRule.3/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="PetriNet">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="petrinet" className="PetriNet"/>
+      </match>
+      <apply>
+        <class packageName="mprologTermReference" className="Clause">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="PetriNet"/>
+          </attribute>
+        </class>
+        <class packageName="mprologTermReference" className="Model">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="root"/>
+          </attribute>
+        </class>
+        <association associationName="ownedClause" source="//@source.5/@hasRule.4/@apply/@class.1" target="//@source.5/@hasRule.4/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.5/@hasRule.4/@apply/@class.1" sourceClass="//@source.5/@hasRule.4/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.5/@hasRule.4/@apply/@class.0" sourceClass="//@source.5/@hasRule.4/@match.0/@class.0"/>
+    </hasRule>
+  </source>
+</dsltrans:TransformationModel>

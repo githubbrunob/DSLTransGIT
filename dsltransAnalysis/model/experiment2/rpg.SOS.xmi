@@ -1,0 +1,1587 @@
+<?xml version="1.0" encoding="ASCII"?>
+<SOS:Semantics xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOS="http://www.emftext.org/language/SOS" xmlns:adtmm="SOS.adtmm" xmlns:set="SOS.set">
+  <rules>
+    <assumes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:VariableRef" variable="//@rules.0/@ownedVariables.4"/>
+        <preState xsi:type="adtmm:VariableRef" variable="//@rules.0/@ownedVariables.0"/>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.0/@ownedVariables.1"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.0/@ownedVariables.5"/>
+        </posState>
+      </has>
+      <next>
+        <has xsi:type="SOS:AlgebraicCondition">
+          <ownedConditions xsi:type="adtmm:Equation">
+            <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+            <ownedLeftTerm xsi:type="set:ForAllIn">
+              <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.0/@ownedVariables.1"/>
+              <rightHandSide xsi:type="set:ModelSet"/>
+            </ownedLeftTerm>
+          </ownedConditions>
+        </has>
+        <next>
+          <has xsi:type="SOS:AlgebraicCondition">
+            <ownedConditions xsi:type="adtmm:Equation">
+              <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+              <ownedLeftTerm xsi:type="set:ForAllIn">
+                <leftHandSide xsi:type="set:ModelRelation" referenceName="left">
+                  <source variable="//@rules.0/@ownedVariables.1"/>
+                  <target variable="//@rules.0/@ownedVariables.2"/>
+                </leftHandSide>
+                <rightHandSide xsi:type="set:ModelSet"/>
+              </ownedLeftTerm>
+            </ownedConditions>
+          </has>
+          <next>
+            <has xsi:type="SOS:AlgebraicCondition">
+              <ownedConditions xsi:type="adtmm:Equation">
+                <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                <ownedLeftTerm xsi:type="set:ForAllIn">
+                  <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.0/@ownedVariables.3"/>
+                  <rightHandSide xsi:type="set:ModelSet"/>
+                </ownedLeftTerm>
+              </ownedConditions>
+            </has>
+            <next>
+              <has xsi:type="SOS:AlgebraicCondition">
+                <ownedConditions xsi:type="adtmm:Equation">
+                  <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1"/>
+                  <ownedLeftTerm xsi:type="set:ForAllIn">
+                    <leftHandSide xsi:type="set:ModelRelation" referenceName="occupies">
+                      <source variable="//@rules.0/@ownedVariables.3"/>
+                      <target variable="//@rules.0/@ownedVariables.2"/>
+                    </leftHandSide>
+                    <rightHandSide xsi:type="set:ModelSet"/>
+                  </ownedLeftTerm>
+                </ownedConditions>
+              </has>
+            </next>
+          </next>
+        </next>
+      </next>
+    </assumes>
+    <concludes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:CTerm" op="//@signature.1/@ownedGenerators.11"/>
+        <preState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.0/@ownedVariables.1"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.0/@ownedVariables.5"/>
+        </preState>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.0/@ownedVariables.2"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.0/@ownedVariables.5"/>
+        </posState>
+      </has>
+    </concludes>
+    <ownedVariables name="state">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.2/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="c1">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="c2">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="d">
+      <variableSort xsi:type="set:ModelSort" className="Door" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="movement">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="keyset">
+      <variableSort xsi:type="set:Set">
+        <sort xsi:type="set:ModelSort" className="Key" packageName="rpg"/>
+      </variableSort>
+    </ownedVariables>
+  </rules>
+  <rules>
+    <assumes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:VariableRef" variable="//@rules.1/@ownedVariables.3"/>
+        <preState xsi:type="adtmm:VariableRef" variable="//@rules.1/@ownedVariables.0"/>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.1/@ownedVariables.1"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.1/@ownedVariables.5"/>
+        </posState>
+      </has>
+      <next>
+        <has xsi:type="SOS:AlgebraicCondition">
+          <ownedConditions xsi:type="adtmm:Equation">
+            <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+            <ownedLeftTerm xsi:type="set:ForAllIn">
+              <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.1/@ownedVariables.1"/>
+              <rightHandSide xsi:type="set:ModelSet"/>
+            </ownedLeftTerm>
+          </ownedConditions>
+        </has>
+        <next>
+          <has xsi:type="SOS:AlgebraicCondition">
+            <ownedConditions xsi:type="adtmm:Equation">
+              <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+              <ownedLeftTerm xsi:type="set:ForAllIn">
+                <leftHandSide xsi:type="set:ModelRelation" referenceName="top">
+                  <source variable="//@rules.1/@ownedVariables.1"/>
+                  <target variable="//@rules.1/@ownedVariables.2"/>
+                </leftHandSide>
+                <rightHandSide xsi:type="set:ModelSet"/>
+              </ownedLeftTerm>
+            </ownedConditions>
+          </has>
+          <next>
+            <has xsi:type="SOS:AlgebraicCondition">
+              <ownedConditions xsi:type="adtmm:Equation">
+                <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                <ownedLeftTerm xsi:type="set:ForAllIn">
+                  <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.1/@ownedVariables.4"/>
+                  <rightHandSide xsi:type="set:ModelSet"/>
+                </ownedLeftTerm>
+              </ownedConditions>
+            </has>
+            <next>
+              <has xsi:type="SOS:AlgebraicCondition">
+                <ownedConditions xsi:type="adtmm:Equation">
+                  <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1"/>
+                  <ownedLeftTerm xsi:type="set:ForAllIn">
+                    <leftHandSide xsi:type="set:ModelRelation" referenceName="occupies">
+                      <source variable="//@rules.1/@ownedVariables.4"/>
+                      <target variable="//@rules.1/@ownedVariables.2"/>
+                    </leftHandSide>
+                    <rightHandSide xsi:type="set:ModelSet"/>
+                  </ownedLeftTerm>
+                </ownedConditions>
+              </has>
+            </next>
+          </next>
+        </next>
+      </next>
+    </assumes>
+    <concludes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:CTerm" op="//@signature.1/@ownedGenerators.19"/>
+        <preState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.1/@ownedVariables.1"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.1/@ownedVariables.5"/>
+        </preState>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.1/@ownedVariables.2"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.1/@ownedVariables.5"/>
+        </posState>
+      </has>
+    </concludes>
+    <ownedVariables name="state">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.2/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="c1">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="c2">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="movement">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="d">
+      <variableSort xsi:type="set:ModelSort" className="Door" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="keyset">
+      <variableSort xsi:type="set:Set">
+        <sort xsi:type="set:ModelSort" className="Key" packageName="rpg"/>
+      </variableSort>
+    </ownedVariables>
+  </rules>
+  <rules>
+    <assumes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:VariableRef" variable="//@rules.2/@ownedVariables.3"/>
+        <preState xsi:type="adtmm:VariableRef" variable="//@rules.2/@ownedVariables.0"/>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.2/@ownedVariables.1"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.2/@ownedVariables.5"/>
+        </posState>
+      </has>
+      <next>
+        <has xsi:type="SOS:AlgebraicCondition">
+          <ownedConditions xsi:type="adtmm:Equation">
+            <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+            <ownedLeftTerm xsi:type="set:ForAllIn">
+              <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.2/@ownedVariables.1"/>
+              <rightHandSide xsi:type="set:ModelSet"/>
+            </ownedLeftTerm>
+          </ownedConditions>
+        </has>
+        <next>
+          <has xsi:type="SOS:AlgebraicCondition">
+            <ownedConditions xsi:type="adtmm:Equation">
+              <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+              <ownedLeftTerm xsi:type="set:ForAllIn">
+                <leftHandSide xsi:type="set:ModelRelation" referenceName="bottom">
+                  <source variable="//@rules.2/@ownedVariables.1"/>
+                  <target variable="//@rules.2/@ownedVariables.2"/>
+                </leftHandSide>
+                <rightHandSide xsi:type="set:ModelSet"/>
+              </ownedLeftTerm>
+            </ownedConditions>
+          </has>
+          <next>
+            <has xsi:type="SOS:AlgebraicCondition">
+              <ownedConditions xsi:type="adtmm:Equation">
+                <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                <ownedLeftTerm xsi:type="set:ForAllIn">
+                  <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.2/@ownedVariables.4"/>
+                  <rightHandSide xsi:type="set:ModelSet"/>
+                </ownedLeftTerm>
+              </ownedConditions>
+            </has>
+            <next>
+              <has xsi:type="SOS:AlgebraicCondition">
+                <ownedConditions xsi:type="adtmm:Equation">
+                  <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1"/>
+                  <ownedLeftTerm xsi:type="set:ForAllIn">
+                    <leftHandSide xsi:type="set:ModelRelation" referenceName="occupies">
+                      <source variable="//@rules.2/@ownedVariables.4"/>
+                      <target variable="//@rules.2/@ownedVariables.2"/>
+                    </leftHandSide>
+                    <rightHandSide xsi:type="set:ModelSet"/>
+                  </ownedLeftTerm>
+                </ownedConditions>
+              </has>
+            </next>
+          </next>
+        </next>
+      </next>
+    </assumes>
+    <concludes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:CTerm" op="//@signature.1/@ownedGenerators.1"/>
+        <preState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.2/@ownedVariables.1"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.2/@ownedVariables.5"/>
+        </preState>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.2/@ownedVariables.2"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.2/@ownedVariables.5"/>
+        </posState>
+      </has>
+    </concludes>
+    <ownedVariables name="state">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.2/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="c1">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="c2">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="movement">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="d">
+      <variableSort xsi:type="set:ModelSort" className="Door" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="keyset">
+      <variableSort xsi:type="set:Set">
+        <sort xsi:type="set:ModelSort" className="Key" packageName="rpg"/>
+      </variableSort>
+    </ownedVariables>
+  </rules>
+  <rules>
+    <assumes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:VariableRef" variable="//@rules.3/@ownedVariables.3"/>
+        <preState xsi:type="adtmm:VariableRef" variable="//@rules.3/@ownedVariables.0"/>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.3/@ownedVariables.1"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.3/@ownedVariables.5"/>
+        </posState>
+      </has>
+      <next>
+        <has xsi:type="SOS:AlgebraicCondition">
+          <ownedConditions xsi:type="adtmm:Equation">
+            <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+            <ownedLeftTerm xsi:type="set:ForAllIn">
+              <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.3/@ownedVariables.1"/>
+              <rightHandSide xsi:type="set:ModelSet"/>
+            </ownedLeftTerm>
+          </ownedConditions>
+        </has>
+        <next>
+          <has xsi:type="SOS:AlgebraicCondition">
+            <ownedConditions xsi:type="adtmm:Equation">
+              <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+              <ownedLeftTerm xsi:type="set:ForAllIn">
+                <leftHandSide xsi:type="set:ModelRelation" referenceName="right">
+                  <source variable="//@rules.3/@ownedVariables.1"/>
+                  <target variable="//@rules.3/@ownedVariables.2"/>
+                </leftHandSide>
+                <rightHandSide xsi:type="set:ModelSet"/>
+              </ownedLeftTerm>
+            </ownedConditions>
+          </has>
+          <next>
+            <has xsi:type="SOS:AlgebraicCondition">
+              <ownedConditions xsi:type="adtmm:Equation">
+                <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                <ownedLeftTerm xsi:type="set:ForAllIn">
+                  <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.3/@ownedVariables.4"/>
+                  <rightHandSide xsi:type="set:ModelSet"/>
+                </ownedLeftTerm>
+              </ownedConditions>
+            </has>
+            <next>
+              <has xsi:type="SOS:AlgebraicCondition">
+                <ownedConditions xsi:type="adtmm:Equation">
+                  <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1"/>
+                  <ownedLeftTerm xsi:type="set:ForAllIn">
+                    <leftHandSide xsi:type="set:ModelRelation" referenceName="occupies">
+                      <source variable="//@rules.3/@ownedVariables.4"/>
+                      <target variable="//@rules.3/@ownedVariables.2"/>
+                    </leftHandSide>
+                    <rightHandSide xsi:type="set:ModelSet"/>
+                  </ownedLeftTerm>
+                </ownedConditions>
+              </has>
+            </next>
+          </next>
+        </next>
+      </next>
+    </assumes>
+    <concludes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:CTerm" op="//@signature.1/@ownedGenerators.17"/>
+        <preState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.3/@ownedVariables.1"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.3/@ownedVariables.5"/>
+        </preState>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.3/@ownedVariables.2"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.3/@ownedVariables.5"/>
+        </posState>
+      </has>
+    </concludes>
+    <ownedVariables name="state">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.2/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="c1">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="c2">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="movement">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="d">
+      <variableSort xsi:type="set:ModelSort" className="Door" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="keyset">
+      <variableSort xsi:type="set:Set">
+        <sort xsi:type="set:ModelSort" className="Key" packageName="rpg"/>
+      </variableSort>
+    </ownedVariables>
+  </rules>
+  <rules>
+    <assumes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:VariableRef" variable="//@rules.4/@ownedVariables.4"/>
+        <preState xsi:type="adtmm:VariableRef" variable="//@rules.4/@ownedVariables.0"/>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.4/@ownedVariables.1"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.4/@ownedVariables.7"/>
+        </posState>
+      </has>
+      <next>
+        <has xsi:type="SOS:AlgebraicCondition">
+          <ownedConditions xsi:type="adtmm:Equation">
+            <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+            <ownedLeftTerm xsi:type="set:ForAllIn">
+              <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.4/@ownedVariables.6"/>
+              <rightHandSide xsi:type="adtmm:VariableRef" variable="//@rules.4/@ownedVariables.7"/>
+            </ownedLeftTerm>
+          </ownedConditions>
+        </has>
+        <next>
+          <has xsi:type="SOS:AlgebraicCondition">
+            <ownedConditions xsi:type="adtmm:Equation">
+              <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+              <ownedLeftTerm xsi:type="set:ForAllIn">
+                <leftHandSide xsi:type="set:ModelRelation" referenceName="opens">
+                  <source variable="//@rules.4/@ownedVariables.6"/>
+                  <target variable="//@rules.4/@ownedVariables.5"/>
+                </leftHandSide>
+                <rightHandSide xsi:type="set:ModelSet"/>
+              </ownedLeftTerm>
+            </ownedConditions>
+          </has>
+          <next>
+            <has xsi:type="SOS:AlgebraicCondition">
+              <ownedConditions xsi:type="adtmm:Equation">
+                <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                <ownedLeftTerm xsi:type="set:ForAllIn">
+                  <leftHandSide xsi:type="set:ModelRelation" referenceName="left">
+                    <source variable="//@rules.4/@ownedVariables.1"/>
+                    <target variable="//@rules.4/@ownedVariables.2"/>
+                  </leftHandSide>
+                  <rightHandSide xsi:type="set:ModelSet"/>
+                </ownedLeftTerm>
+              </ownedConditions>
+            </has>
+            <next>
+              <has xsi:type="SOS:AlgebraicCondition">
+                <ownedConditions xsi:type="adtmm:Equation">
+                  <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                  <ownedLeftTerm xsi:type="set:ForAllIn">
+                    <leftHandSide xsi:type="set:ModelRelation" referenceName="occupies">
+                      <source variable="//@rules.4/@ownedVariables.5"/>
+                      <target variable="//@rules.4/@ownedVariables.2"/>
+                    </leftHandSide>
+                    <rightHandSide xsi:type="set:ModelSet"/>
+                  </ownedLeftTerm>
+                </ownedConditions>
+              </has>
+              <next>
+                <has xsi:type="SOS:AlgebraicCondition">
+                  <ownedConditions xsi:type="adtmm:Equation">
+                    <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                    <ownedLeftTerm xsi:type="set:ForAllIn">
+                      <leftHandSide xsi:type="set:ModelRelation" referenceName="exits">
+                        <source variable="//@rules.4/@ownedVariables.5"/>
+                        <target variable="//@rules.4/@ownedVariables.3"/>
+                      </leftHandSide>
+                      <rightHandSide xsi:type="set:ModelSet"/>
+                    </ownedLeftTerm>
+                  </ownedConditions>
+                </has>
+              </next>
+            </next>
+          </next>
+        </next>
+      </next>
+    </assumes>
+    <concludes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:CTerm" op="//@signature.1/@ownedGenerators.11"/>
+        <preState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.4/@ownedVariables.1"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.4/@ownedVariables.7"/>
+        </preState>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.4/@ownedVariables.3"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.4/@ownedVariables.7"/>
+        </posState>
+      </has>
+    </concludes>
+    <ownedVariables name="state">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.2/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="c1">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="c2">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="c3">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="movement">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="d">
+      <variableSort xsi:type="set:ModelSort" className="Door" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="k">
+      <variableSort xsi:type="set:ModelSort" className="Key" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="keyset">
+      <variableSort xsi:type="set:Set">
+        <sort xsi:type="set:ModelSort" className="Key" packageName="rpg"/>
+      </variableSort>
+    </ownedVariables>
+  </rules>
+  <rules>
+    <assumes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:VariableRef" variable="//@rules.5/@ownedVariables.4"/>
+        <preState xsi:type="adtmm:VariableRef" variable="//@rules.5/@ownedVariables.0"/>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.5/@ownedVariables.1"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.5/@ownedVariables.7"/>
+        </posState>
+      </has>
+      <next>
+        <has xsi:type="SOS:AlgebraicCondition">
+          <ownedConditions xsi:type="adtmm:Equation">
+            <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+            <ownedLeftTerm xsi:type="set:ForAllIn">
+              <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.5/@ownedVariables.6"/>
+              <rightHandSide xsi:type="adtmm:VariableRef" variable="//@rules.5/@ownedVariables.7"/>
+            </ownedLeftTerm>
+          </ownedConditions>
+        </has>
+        <next>
+          <has xsi:type="SOS:AlgebraicCondition">
+            <ownedConditions xsi:type="adtmm:Equation">
+              <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+              <ownedLeftTerm xsi:type="set:ForAllIn">
+                <leftHandSide xsi:type="set:ModelRelation" referenceName="opens">
+                  <source variable="//@rules.5/@ownedVariables.6"/>
+                  <target variable="//@rules.5/@ownedVariables.5"/>
+                </leftHandSide>
+                <rightHandSide xsi:type="set:ModelSet"/>
+              </ownedLeftTerm>
+            </ownedConditions>
+          </has>
+          <next>
+            <has xsi:type="SOS:AlgebraicCondition">
+              <ownedConditions xsi:type="adtmm:Equation">
+                <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                <ownedLeftTerm xsi:type="set:ForAllIn">
+                  <leftHandSide xsi:type="set:ModelRelation" referenceName="top">
+                    <source variable="//@rules.5/@ownedVariables.1"/>
+                    <target variable="//@rules.5/@ownedVariables.2"/>
+                  </leftHandSide>
+                  <rightHandSide xsi:type="set:ModelSet"/>
+                </ownedLeftTerm>
+              </ownedConditions>
+            </has>
+            <next>
+              <has xsi:type="SOS:AlgebraicCondition">
+                <ownedConditions xsi:type="adtmm:Equation">
+                  <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                  <ownedLeftTerm xsi:type="set:ForAllIn">
+                    <leftHandSide xsi:type="set:ModelRelation" referenceName="occupies">
+                      <source variable="//@rules.5/@ownedVariables.5"/>
+                      <target variable="//@rules.5/@ownedVariables.2"/>
+                    </leftHandSide>
+                    <rightHandSide xsi:type="set:ModelSet"/>
+                  </ownedLeftTerm>
+                </ownedConditions>
+              </has>
+              <next>
+                <has xsi:type="SOS:AlgebraicCondition">
+                  <ownedConditions xsi:type="adtmm:Equation">
+                    <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                    <ownedLeftTerm xsi:type="set:ForAllIn">
+                      <leftHandSide xsi:type="set:ModelRelation" referenceName="exits">
+                        <source variable="//@rules.5/@ownedVariables.5"/>
+                        <target variable="//@rules.5/@ownedVariables.3"/>
+                      </leftHandSide>
+                      <rightHandSide xsi:type="set:ModelSet"/>
+                    </ownedLeftTerm>
+                  </ownedConditions>
+                </has>
+              </next>
+            </next>
+          </next>
+        </next>
+      </next>
+    </assumes>
+    <concludes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:CTerm" op="//@signature.1/@ownedGenerators.19"/>
+        <preState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.5/@ownedVariables.1"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.5/@ownedVariables.7"/>
+        </preState>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.5/@ownedVariables.3"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.5/@ownedVariables.7"/>
+        </posState>
+      </has>
+    </concludes>
+    <ownedVariables name="state">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.2/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="c1">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="c2">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="c3">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="movement">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="d">
+      <variableSort xsi:type="set:ModelSort" className="Door" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="k">
+      <variableSort xsi:type="set:ModelSort" className="Key" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="keyset">
+      <variableSort xsi:type="set:Set">
+        <sort xsi:type="set:ModelSort" className="Key" packageName="rpg"/>
+      </variableSort>
+    </ownedVariables>
+  </rules>
+  <rules>
+    <assumes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:VariableRef" variable="//@rules.6/@ownedVariables.4"/>
+        <preState xsi:type="adtmm:VariableRef" variable="//@rules.6/@ownedVariables.0"/>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.6/@ownedVariables.1"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.6/@ownedVariables.7"/>
+        </posState>
+      </has>
+      <next>
+        <has xsi:type="SOS:AlgebraicCondition">
+          <ownedConditions xsi:type="adtmm:Equation">
+            <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+            <ownedLeftTerm xsi:type="set:ForAllIn">
+              <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.6/@ownedVariables.6"/>
+              <rightHandSide xsi:type="adtmm:VariableRef" variable="//@rules.6/@ownedVariables.7"/>
+            </ownedLeftTerm>
+          </ownedConditions>
+        </has>
+        <next>
+          <has xsi:type="SOS:AlgebraicCondition">
+            <ownedConditions xsi:type="adtmm:Equation">
+              <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+              <ownedLeftTerm xsi:type="set:ForAllIn">
+                <leftHandSide xsi:type="set:ModelRelation" referenceName="opens">
+                  <source variable="//@rules.6/@ownedVariables.6"/>
+                  <target variable="//@rules.6/@ownedVariables.5"/>
+                </leftHandSide>
+                <rightHandSide xsi:type="set:ModelSet"/>
+              </ownedLeftTerm>
+            </ownedConditions>
+          </has>
+          <next>
+            <has xsi:type="SOS:AlgebraicCondition">
+              <ownedConditions xsi:type="adtmm:Equation">
+                <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                <ownedLeftTerm xsi:type="set:ForAllIn">
+                  <leftHandSide xsi:type="set:ModelRelation" referenceName="bottom">
+                    <source variable="//@rules.6/@ownedVariables.1"/>
+                    <target variable="//@rules.6/@ownedVariables.2"/>
+                  </leftHandSide>
+                  <rightHandSide xsi:type="set:ModelSet"/>
+                </ownedLeftTerm>
+              </ownedConditions>
+            </has>
+            <next>
+              <has xsi:type="SOS:AlgebraicCondition">
+                <ownedConditions xsi:type="adtmm:Equation">
+                  <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                  <ownedLeftTerm xsi:type="set:ForAllIn">
+                    <leftHandSide xsi:type="set:ModelRelation" referenceName="occupies">
+                      <source variable="//@rules.6/@ownedVariables.5"/>
+                      <target variable="//@rules.6/@ownedVariables.2"/>
+                    </leftHandSide>
+                    <rightHandSide xsi:type="set:ModelSet"/>
+                  </ownedLeftTerm>
+                </ownedConditions>
+              </has>
+              <next>
+                <has xsi:type="SOS:AlgebraicCondition">
+                  <ownedConditions xsi:type="adtmm:Equation">
+                    <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                    <ownedLeftTerm xsi:type="set:ForAllIn">
+                      <leftHandSide xsi:type="set:ModelRelation" referenceName="exits">
+                        <source variable="//@rules.6/@ownedVariables.5"/>
+                        <target variable="//@rules.6/@ownedVariables.3"/>
+                      </leftHandSide>
+                      <rightHandSide xsi:type="set:ModelSet"/>
+                    </ownedLeftTerm>
+                  </ownedConditions>
+                </has>
+              </next>
+            </next>
+          </next>
+        </next>
+      </next>
+    </assumes>
+    <concludes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:CTerm" op="//@signature.1/@ownedGenerators.1"/>
+        <preState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.6/@ownedVariables.1"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.6/@ownedVariables.7"/>
+        </preState>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.6/@ownedVariables.3"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.6/@ownedVariables.7"/>
+        </posState>
+      </has>
+    </concludes>
+    <ownedVariables name="state">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.2/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="c1">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="c2">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="c3">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="movement">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="d">
+      <variableSort xsi:type="set:ModelSort" className="Door" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="k">
+      <variableSort xsi:type="set:ModelSort" className="Key" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="keyset">
+      <variableSort xsi:type="set:Set">
+        <sort xsi:type="set:ModelSort" className="Key" packageName="rpg"/>
+      </variableSort>
+    </ownedVariables>
+  </rules>
+  <rules>
+    <assumes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:VariableRef" variable="//@rules.7/@ownedVariables.4"/>
+        <preState xsi:type="adtmm:VariableRef" variable="//@rules.7/@ownedVariables.0"/>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.7/@ownedVariables.1"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.7/@ownedVariables.7"/>
+        </posState>
+      </has>
+      <next>
+        <has xsi:type="SOS:AlgebraicCondition">
+          <ownedConditions xsi:type="adtmm:Equation">
+            <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+            <ownedLeftTerm xsi:type="set:ForAllIn">
+              <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.7/@ownedVariables.6"/>
+              <rightHandSide xsi:type="adtmm:VariableRef" variable="//@rules.7/@ownedVariables.7"/>
+            </ownedLeftTerm>
+          </ownedConditions>
+        </has>
+        <next>
+          <has xsi:type="SOS:AlgebraicCondition">
+            <ownedConditions xsi:type="adtmm:Equation">
+              <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+              <ownedLeftTerm xsi:type="set:ForAllIn">
+                <leftHandSide xsi:type="set:ModelRelation" referenceName="opens">
+                  <source variable="//@rules.7/@ownedVariables.6"/>
+                  <target variable="//@rules.7/@ownedVariables.5"/>
+                </leftHandSide>
+                <rightHandSide xsi:type="set:ModelSet"/>
+              </ownedLeftTerm>
+            </ownedConditions>
+          </has>
+          <next>
+            <has xsi:type="SOS:AlgebraicCondition">
+              <ownedConditions xsi:type="adtmm:Equation">
+                <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                <ownedLeftTerm xsi:type="set:ForAllIn">
+                  <leftHandSide xsi:type="set:ModelRelation" referenceName="right">
+                    <source variable="//@rules.7/@ownedVariables.1"/>
+                    <target variable="//@rules.7/@ownedVariables.2"/>
+                  </leftHandSide>
+                  <rightHandSide xsi:type="set:ModelSet"/>
+                </ownedLeftTerm>
+              </ownedConditions>
+            </has>
+            <next>
+              <has xsi:type="SOS:AlgebraicCondition">
+                <ownedConditions xsi:type="adtmm:Equation">
+                  <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                  <ownedLeftTerm xsi:type="set:ForAllIn">
+                    <leftHandSide xsi:type="set:ModelRelation" referenceName="occupies">
+                      <source variable="//@rules.7/@ownedVariables.5"/>
+                      <target variable="//@rules.7/@ownedVariables.2"/>
+                    </leftHandSide>
+                    <rightHandSide xsi:type="set:ModelSet"/>
+                  </ownedLeftTerm>
+                </ownedConditions>
+              </has>
+              <next>
+                <has xsi:type="SOS:AlgebraicCondition">
+                  <ownedConditions xsi:type="adtmm:Equation">
+                    <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                    <ownedLeftTerm xsi:type="set:ForAllIn">
+                      <leftHandSide xsi:type="set:ModelRelation" referenceName="exits">
+                        <source variable="//@rules.7/@ownedVariables.5"/>
+                        <target variable="//@rules.7/@ownedVariables.3"/>
+                      </leftHandSide>
+                      <rightHandSide xsi:type="set:ModelSet"/>
+                    </ownedLeftTerm>
+                  </ownedConditions>
+                </has>
+              </next>
+            </next>
+          </next>
+        </next>
+      </next>
+    </assumes>
+    <concludes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:CTerm" op="//@signature.1/@ownedGenerators.17"/>
+        <preState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.7/@ownedVariables.1"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.7/@ownedVariables.7"/>
+        </preState>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.7/@ownedVariables.3"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.7/@ownedVariables.7"/>
+        </posState>
+      </has>
+    </concludes>
+    <ownedVariables name="state">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.2/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="c1">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="c2">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="c3">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="movement">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="d">
+      <variableSort xsi:type="set:ModelSort" className="Door" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="k">
+      <variableSort xsi:type="set:ModelSort" className="Key" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="keyset">
+      <variableSort xsi:type="set:Set">
+        <sort xsi:type="set:ModelSort" className="Key" packageName="rpg"/>
+      </variableSort>
+    </ownedVariables>
+  </rules>
+  <rules>
+    <assumes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:VariableRef" variable="//@rules.8/@ownedVariables.2"/>
+        <preState xsi:type="adtmm:VariableRef" variable="//@rules.8/@ownedVariables.0"/>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.8/@ownedVariables.1"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.8/@ownedVariables.4"/>
+        </posState>
+      </has>
+      <next>
+        <has xsi:type="SOS:AlgebraicCondition">
+          <ownedConditions xsi:type="adtmm:Equation">
+            <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+            <ownedLeftTerm xsi:type="set:ForAllIn">
+              <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.8/@ownedVariables.3"/>
+              <rightHandSide xsi:type="set:ModelSet"/>
+            </ownedLeftTerm>
+          </ownedConditions>
+        </has>
+        <next>
+          <has xsi:type="SOS:AlgebraicCondition">
+            <ownedConditions xsi:type="adtmm:Equation">
+              <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+              <ownedLeftTerm xsi:type="set:ForAllIn">
+                <leftHandSide xsi:type="set:ModelRelation" referenceName="occupies">
+                  <source variable="//@rules.8/@ownedVariables.3"/>
+                  <target variable="//@rules.8/@ownedVariables.1"/>
+                </leftHandSide>
+                <rightHandSide xsi:type="set:ModelSet"/>
+              </ownedLeftTerm>
+            </ownedConditions>
+          </has>
+        </next>
+      </next>
+    </assumes>
+    <concludes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:CTerm" op="//@signature.1/@ownedGenerators.10"/>
+        <preState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.8/@ownedVariables.1"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.8/@ownedVariables.4"/>
+        </preState>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.8/@ownedVariables.1"/>
+          <ownedTerms xsi:type="set:Union">
+            <leftHandSide xsi:type="set:SetConstructor">
+              <member xsi:type="adtmm:VariableRef" variable="//@rules.8/@ownedVariables.3"/>
+            </leftHandSide>
+            <rightHandSide xsi:type="adtmm:VariableRef" variable="//@rules.8/@ownedVariables.4"/>
+          </ownedTerms>
+        </posState>
+      </has>
+    </concludes>
+    <ownedVariables name="state">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.2/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="c1">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="movement">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="k">
+      <variableSort xsi:type="set:ModelSort" className="Key" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="keyset">
+      <variableSort xsi:type="set:Set">
+        <sort xsi:type="set:ModelSort" className="Key" packageName="rpg"/>
+      </variableSort>
+    </ownedVariables>
+  </rules>
+  <rules>
+    <assumes>
+      <has xsi:type="SOS:AlgebraicCondition">
+        <ownedConditions xsi:type="adtmm:Equation">
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+          <ownedLeftTerm xsi:type="set:ForAllIn">
+            <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.9/@ownedVariables.1"/>
+            <rightHandSide xsi:type="set:ModelSet"/>
+          </ownedLeftTerm>
+        </ownedConditions>
+      </has>
+      <next>
+        <has xsi:type="SOS:AlgebraicCondition">
+          <ownedConditions xsi:type="adtmm:Equation">
+            <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+            <ownedLeftTerm xsi:type="set:ForAllIn">
+              <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.9/@ownedVariables.2"/>
+              <rightHandSide xsi:type="set:ModelSet"/>
+            </ownedLeftTerm>
+          </ownedConditions>
+        </has>
+        <next>
+          <has xsi:type="SOS:AlgebraicCondition">
+            <ownedConditions xsi:type="adtmm:Equation">
+              <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+              <ownedLeftTerm xsi:type="set:ForAllIn">
+                <leftHandSide xsi:type="set:ModelRelation" referenceName="occupies">
+                  <source variable="//@rules.9/@ownedVariables.1"/>
+                  <target variable="//@rules.9/@ownedVariables.2"/>
+                </leftHandSide>
+                <rightHandSide xsi:type="set:ModelSet"/>
+              </ownedLeftTerm>
+            </ownedConditions>
+          </has>
+          <next>
+            <has xsi:type="SOS:AlgebraicCondition">
+              <ownedConditions xsi:type="adtmm:Equation">
+                <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                <ownedLeftTerm xsi:type="set:ForAllIn">
+                  <leftHandSide xsi:type="set:ModelRelation" referenceName="left">
+                    <source variable="//@rules.9/@ownedVariables.2"/>
+                    <target variable="//@rules.9/@ownedVariables.3"/>
+                  </leftHandSide>
+                  <rightHandSide xsi:type="set:ModelSet"/>
+                </ownedLeftTerm>
+              </ownedConditions>
+            </has>
+            <next>
+              <has xsi:type="SOS:AlgebraicCondition">
+                <ownedConditions xsi:type="adtmm:Equation">
+                  <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                  <ownedLeftTerm xsi:type="set:ForAllIn">
+                    <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.9/@ownedVariables.4"/>
+                    <rightHandSide xsi:type="set:ModelSet"/>
+                  </ownedLeftTerm>
+                </ownedConditions>
+              </has>
+              <next>
+                <has xsi:type="SOS:AlgebraicCondition">
+                  <ownedConditions xsi:type="adtmm:Equation">
+                    <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1"/>
+                    <ownedLeftTerm xsi:type="set:ForAllIn">
+                      <leftHandSide xsi:type="set:ModelRelation" referenceName="occupies">
+                        <source variable="//@rules.9/@ownedVariables.4"/>
+                        <target variable="//@rules.9/@ownedVariables.3"/>
+                      </leftHandSide>
+                      <rightHandSide xsi:type="set:ModelSet"/>
+                    </ownedLeftTerm>
+                  </ownedConditions>
+                </has>
+              </next>
+            </next>
+          </next>
+        </next>
+      </next>
+    </assumes>
+    <concludes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:CTerm" op="//@signature.1/@ownedGenerators.11"/>
+        <preState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.9/@ownedVariables.2"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.9/@ownedVariables.6"/>
+        </preState>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.9/@ownedVariables.3"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.9/@ownedVariables.6"/>
+        </posState>
+      </has>
+    </concludes>
+    <ownedVariables name="state">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.2/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="hero">
+      <variableSort xsi:type="set:ModelSort" className="hero" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="c1">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="c2">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="d">
+      <variableSort xsi:type="set:ModelSort" className="Door" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="movement">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="keyset">
+      <variableSort xsi:type="set:Set">
+        <sort xsi:type="set:ModelSort" className="Key" packageName="rpg"/>
+      </variableSort>
+    </ownedVariables>
+  </rules>
+  <rules>
+    <assumes>
+      <has xsi:type="SOS:AlgebraicCondition">
+        <ownedConditions xsi:type="adtmm:Equation">
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+          <ownedLeftTerm xsi:type="set:ForAllIn">
+            <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.10/@ownedVariables.1"/>
+            <rightHandSide xsi:type="set:ModelSet"/>
+          </ownedLeftTerm>
+        </ownedConditions>
+      </has>
+      <next>
+        <has xsi:type="SOS:AlgebraicCondition">
+          <ownedConditions xsi:type="adtmm:Equation">
+            <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+            <ownedLeftTerm xsi:type="set:ForAllIn">
+              <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.10/@ownedVariables.2"/>
+              <rightHandSide xsi:type="set:ModelSet"/>
+            </ownedLeftTerm>
+          </ownedConditions>
+        </has>
+        <next>
+          <has xsi:type="SOS:AlgebraicCondition">
+            <ownedConditions xsi:type="adtmm:Equation">
+              <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+              <ownedLeftTerm xsi:type="set:ForAllIn">
+                <leftHandSide xsi:type="set:ModelRelation" referenceName="occupies">
+                  <source variable="//@rules.10/@ownedVariables.1"/>
+                  <target variable="//@rules.10/@ownedVariables.2"/>
+                </leftHandSide>
+                <rightHandSide xsi:type="set:ModelSet"/>
+              </ownedLeftTerm>
+            </ownedConditions>
+          </has>
+          <next>
+            <has xsi:type="SOS:AlgebraicCondition">
+              <ownedConditions xsi:type="adtmm:Equation">
+                <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                <ownedLeftTerm xsi:type="set:ForAllIn">
+                  <leftHandSide xsi:type="set:ModelRelation" referenceName="top">
+                    <source variable="//@rules.10/@ownedVariables.2"/>
+                    <target variable="//@rules.10/@ownedVariables.3"/>
+                  </leftHandSide>
+                  <rightHandSide xsi:type="set:ModelSet"/>
+                </ownedLeftTerm>
+              </ownedConditions>
+            </has>
+            <next>
+              <has xsi:type="SOS:AlgebraicCondition">
+                <ownedConditions xsi:type="adtmm:Equation">
+                  <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                  <ownedLeftTerm xsi:type="set:ForAllIn">
+                    <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.10/@ownedVariables.5"/>
+                    <rightHandSide xsi:type="set:ModelSet"/>
+                  </ownedLeftTerm>
+                </ownedConditions>
+              </has>
+              <next>
+                <has xsi:type="SOS:AlgebraicCondition">
+                  <ownedConditions xsi:type="adtmm:Equation">
+                    <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1"/>
+                    <ownedLeftTerm xsi:type="set:ForAllIn">
+                      <leftHandSide xsi:type="set:ModelRelation" referenceName="occupies">
+                        <source variable="//@rules.10/@ownedVariables.5"/>
+                        <target variable="//@rules.10/@ownedVariables.3"/>
+                      </leftHandSide>
+                      <rightHandSide xsi:type="set:ModelSet"/>
+                    </ownedLeftTerm>
+                  </ownedConditions>
+                </has>
+              </next>
+            </next>
+          </next>
+        </next>
+      </next>
+    </assumes>
+    <concludes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:CTerm" op="//@signature.1/@ownedGenerators.19"/>
+        <preState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.10/@ownedVariables.2"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.10/@ownedVariables.6"/>
+        </preState>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.10/@ownedVariables.3"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.10/@ownedVariables.6"/>
+        </posState>
+      </has>
+    </concludes>
+    <ownedVariables name="state">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.2/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="hero">
+      <variableSort xsi:type="set:ModelSort" className="hero" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="c1">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="c2">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="movement">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="d">
+      <variableSort xsi:type="set:ModelSort" className="Door" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="keyset">
+      <variableSort xsi:type="set:Set">
+        <sort xsi:type="set:ModelSort" className="Key" packageName="rpg"/>
+      </variableSort>
+    </ownedVariables>
+  </rules>
+  <rules>
+    <assumes>
+      <has xsi:type="SOS:AlgebraicCondition">
+        <ownedConditions xsi:type="adtmm:Equation">
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+          <ownedLeftTerm xsi:type="set:ForAllIn">
+            <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.11/@ownedVariables.1"/>
+            <rightHandSide xsi:type="set:ModelSet"/>
+          </ownedLeftTerm>
+        </ownedConditions>
+      </has>
+      <next>
+        <has xsi:type="SOS:AlgebraicCondition">
+          <ownedConditions xsi:type="adtmm:Equation">
+            <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+            <ownedLeftTerm xsi:type="set:ForAllIn">
+              <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.11/@ownedVariables.2"/>
+              <rightHandSide xsi:type="set:ModelSet"/>
+            </ownedLeftTerm>
+          </ownedConditions>
+        </has>
+        <next>
+          <has xsi:type="SOS:AlgebraicCondition">
+            <ownedConditions xsi:type="adtmm:Equation">
+              <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+              <ownedLeftTerm xsi:type="set:ForAllIn">
+                <leftHandSide xsi:type="set:ModelRelation" referenceName="occupies">
+                  <source variable="//@rules.11/@ownedVariables.1"/>
+                  <target variable="//@rules.11/@ownedVariables.2"/>
+                </leftHandSide>
+                <rightHandSide xsi:type="set:ModelSet"/>
+              </ownedLeftTerm>
+            </ownedConditions>
+          </has>
+          <next>
+            <has xsi:type="SOS:AlgebraicCondition">
+              <ownedConditions xsi:type="adtmm:Equation">
+                <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                <ownedLeftTerm xsi:type="set:ForAllIn">
+                  <leftHandSide xsi:type="set:ModelRelation" referenceName="bottom">
+                    <source variable="//@rules.11/@ownedVariables.2"/>
+                    <target variable="//@rules.11/@ownedVariables.3"/>
+                  </leftHandSide>
+                  <rightHandSide xsi:type="set:ModelSet"/>
+                </ownedLeftTerm>
+              </ownedConditions>
+            </has>
+            <next>
+              <has xsi:type="SOS:AlgebraicCondition">
+                <ownedConditions xsi:type="adtmm:Equation">
+                  <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                  <ownedLeftTerm xsi:type="set:ForAllIn">
+                    <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.11/@ownedVariables.5"/>
+                    <rightHandSide xsi:type="set:ModelSet"/>
+                  </ownedLeftTerm>
+                </ownedConditions>
+              </has>
+              <next>
+                <has xsi:type="SOS:AlgebraicCondition">
+                  <ownedConditions xsi:type="adtmm:Equation">
+                    <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1"/>
+                    <ownedLeftTerm xsi:type="set:ForAllIn">
+                      <leftHandSide xsi:type="set:ModelRelation" referenceName="occupies">
+                        <source variable="//@rules.11/@ownedVariables.5"/>
+                        <target variable="//@rules.11/@ownedVariables.3"/>
+                      </leftHandSide>
+                      <rightHandSide xsi:type="set:ModelSet"/>
+                    </ownedLeftTerm>
+                  </ownedConditions>
+                </has>
+              </next>
+            </next>
+          </next>
+        </next>
+      </next>
+    </assumes>
+    <concludes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:CTerm" op="//@signature.1/@ownedGenerators.1"/>
+        <preState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.11/@ownedVariables.2"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.11/@ownedVariables.6"/>
+        </preState>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.11/@ownedVariables.3"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.11/@ownedVariables.6"/>
+        </posState>
+      </has>
+    </concludes>
+    <ownedVariables name="state">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.2/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="hero">
+      <variableSort xsi:type="set:ModelSort" className="hero" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="c1">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="c2">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="movement">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="d">
+      <variableSort xsi:type="set:ModelSort" className="Door" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="keyset">
+      <variableSort xsi:type="set:Set">
+        <sort xsi:type="set:ModelSort" className="Key" packageName="rpg"/>
+      </variableSort>
+    </ownedVariables>
+  </rules>
+  <rules>
+    <assumes>
+      <has xsi:type="SOS:AlgebraicCondition">
+        <ownedConditions xsi:type="adtmm:Equation">
+          <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+          <ownedLeftTerm xsi:type="set:ForAllIn">
+            <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.12/@ownedVariables.1"/>
+            <rightHandSide xsi:type="set:ModelSet"/>
+          </ownedLeftTerm>
+        </ownedConditions>
+      </has>
+      <next>
+        <has xsi:type="SOS:AlgebraicCondition">
+          <ownedConditions xsi:type="adtmm:Equation">
+            <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+            <ownedLeftTerm xsi:type="set:ForAllIn">
+              <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.12/@ownedVariables.2"/>
+              <rightHandSide xsi:type="set:ModelSet"/>
+            </ownedLeftTerm>
+          </ownedConditions>
+        </has>
+        <next>
+          <has xsi:type="SOS:AlgebraicCondition">
+            <ownedConditions xsi:type="adtmm:Equation">
+              <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+              <ownedLeftTerm xsi:type="set:ForAllIn">
+                <leftHandSide xsi:type="set:ModelRelation" referenceName="occupies">
+                  <source variable="//@rules.12/@ownedVariables.1"/>
+                  <target variable="//@rules.12/@ownedVariables.2"/>
+                </leftHandSide>
+                <rightHandSide xsi:type="set:ModelSet"/>
+              </ownedLeftTerm>
+            </ownedConditions>
+          </has>
+          <next>
+            <has xsi:type="SOS:AlgebraicCondition">
+              <ownedConditions xsi:type="adtmm:Equation">
+                <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                <ownedLeftTerm xsi:type="set:ForAllIn">
+                  <leftHandSide xsi:type="set:ModelRelation" referenceName="right">
+                    <source variable="//@rules.12/@ownedVariables.2"/>
+                    <target variable="//@rules.12/@ownedVariables.3"/>
+                  </leftHandSide>
+                  <rightHandSide xsi:type="set:ModelSet"/>
+                </ownedLeftTerm>
+              </ownedConditions>
+            </has>
+            <next>
+              <has xsi:type="SOS:AlgebraicCondition">
+                <ownedConditions xsi:type="adtmm:Equation">
+                  <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.0"/>
+                  <ownedLeftTerm xsi:type="set:ForAllIn">
+                    <leftHandSide xsi:type="adtmm:VariableRef" variable="//@rules.12/@ownedVariables.5"/>
+                    <rightHandSide xsi:type="set:ModelSet"/>
+                  </ownedLeftTerm>
+                </ownedConditions>
+              </has>
+              <next>
+                <has xsi:type="SOS:AlgebraicCondition">
+                  <ownedConditions xsi:type="adtmm:Equation">
+                    <ownedRightTerm xsi:type="adtmm:CTerm" op="//@signature.0/@ownedGenerators.1"/>
+                    <ownedLeftTerm xsi:type="set:ForAllIn">
+                      <leftHandSide xsi:type="set:ModelRelation" referenceName="occupies">
+                        <source variable="//@rules.12/@ownedVariables.5"/>
+                        <target variable="//@rules.12/@ownedVariables.3"/>
+                      </leftHandSide>
+                      <rightHandSide xsi:type="set:ModelSet"/>
+                    </ownedLeftTerm>
+                  </ownedConditions>
+                </has>
+              </next>
+            </next>
+          </next>
+        </next>
+      </next>
+    </assumes>
+    <concludes>
+      <has xsi:type="SOS:Transition">
+        <label xsi:type="adtmm:CTerm" op="//@signature.1/@ownedGenerators.17"/>
+        <preState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.12/@ownedVariables.2"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.12/@ownedVariables.6"/>
+        </preState>
+        <posState xsi:type="adtmm:CTerm" op="//@signature.2/@ownedGenerators.0">
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.12/@ownedVariables.3"/>
+          <ownedTerms xsi:type="adtmm:VariableRef" variable="//@rules.12/@ownedVariables.6"/>
+        </posState>
+      </has>
+    </concludes>
+    <ownedVariables name="state">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.2/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="hero">
+      <variableSort xsi:type="set:ModelSort" className="hero" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="c1">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="c2">
+      <variableSort xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="movement">
+      <variableSort xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedVariables>
+    <ownedVariables name="d">
+      <variableSort xsi:type="set:ModelSort" className="Door" packageName="rpg"/>
+    </ownedVariables>
+    <ownedVariables name="keyset">
+      <variableSort xsi:type="set:Set">
+        <sort xsi:type="set:ModelSort" className="Key" packageName="rpg"/>
+      </variableSort>
+    </ownedVariables>
+  </rules>
+  <signature name="Boolean">
+    <ownedSorts name="bool"/>
+    <ownedGenerators name="true">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="false">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.0/@ownedSorts.0"/>
+    </ownedGenerators>
+  </signature>
+  <signature name="Char">
+    <ownedSorts name="char"/>
+    <ownedGenerators name="aa">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ab">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ac">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ad">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ae">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="af">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ag">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ah">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ai">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aj">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ak">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="al">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="am">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="an">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ao">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ap">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aq">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ar">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="as">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="at">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="au">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="av">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aw">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ax">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="ay">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="az">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aA">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aB">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aC">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aD">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aE">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aF">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aG">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aH">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aI">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aJ">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aK">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aL">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aM">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aN">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aO">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aP">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aQ">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aR">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aS">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aT">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aU">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aV">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aW">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aX">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aY">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="aZ">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="n0">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="n1">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="n2">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="n3">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="n4">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="n5">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="n6">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="n7">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="n8">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+    <ownedGenerators name="n9">
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.1/@ownedSorts.0"/>
+    </ownedGenerators>
+  </signature>
+  <signature name="RGPState">
+    <ownedSorts name="rpgstate"/>
+    <ownedGenerators name="hero">
+      <operationSorts xsi:type="set:ModelSort" className="Cell" packageName="rpg"/>
+      <operationSorts xsi:type="set:Set">
+        <sort xsi:type="set:ModelSort" className="Key" packageName="rpg"/>
+      </operationSorts>
+      <result xsi:type="adtmm:AtomicSort" declaration="//@signature.2/@ownedSorts.0"/>
+    </ownedGenerators>
+  </signature>
+</SOS:Semantics>

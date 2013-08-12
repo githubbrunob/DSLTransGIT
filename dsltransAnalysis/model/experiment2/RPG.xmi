@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ASCII"?>
+<rpg:RPG xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rpg="rpg">
+  <hasWorldMap>
+    <hasScene>
+      <hasCell name="0,0" y="0" right="//@hasWorldMap/@hasScene.0/@hasCell.2" top="//@hasWorldMap/@hasScene.0/@hasCell.1"/>
+      <hasCell name="0,1" y="1" top="//@hasWorldMap/@hasScene.0/@hasCell.4" bottom="//@hasWorldMap/@hasScene.0/@hasCell.0"/>
+      <hasCell name="1,0" x="1" y="0" left="//@hasWorldMap/@hasScene.0/@hasCell.0" right="//@hasWorldMap/@hasScene.0/@hasCell.5" top="//@hasWorldMap/@hasScene.0/@hasCell.3"/>
+      <hasCell name="1,1" x="1" y="1" bottom="//@hasWorldMap/@hasScene.0/@hasCell.2"/>
+      <hasCell name="0,2" y="2" bottom="//@hasWorldMap/@hasScene.0/@hasCell.1"/>
+      <hasCell name="2,0" x="2" y="0" left="//@hasWorldMap/@hasScene.0/@hasCell.2"/>
+    </hasScene>
+  </hasWorldMap>
+  <hasHero name="Zelda" occupies="//@hasWorldMap/@hasScene.0/@hasCell.0"/>
+  <hasObject xsi:type="rpg:Door" occupies="//@hasWorldMap/@hasScene.0/@hasCell.1" name="goal" exit="//@hasWorldMap/@hasScene.0/@hasCell.4"/>
+  <hasObject xsi:type="rpg:Key" occupies="//@hasWorldMap/@hasScene.0/@hasCell.5" name="keyGoal" opens="//@hasObject.0"/>
+</rpg:RPG>

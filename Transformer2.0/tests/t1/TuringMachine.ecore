@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="machine"
+    nsURI="http://machine/1.0" nsPrefix="machine">
+  <eClassifiers xsi:type="ecore:EClass" name="State">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="read" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="write" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="moveTo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//State"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Machine">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initial" eType="#//Initial"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="finals" upperBound="-1"
+        eType="#//Final" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="current" eType="#//Current"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
+        eType="#//State" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1"
+        eType="#//Transition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="head" eType="#//Head" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Current">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//State"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Initial">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//State"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tape">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="symbols" upperBound="-1"
+        eType="#//Symbol" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TuringMachine">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="machine" eType="#//Machine"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tape" eType="#//Tape" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Final">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//State"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Symbol">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="#//Symbol"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Head">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="symbol" eType="#//Symbol"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

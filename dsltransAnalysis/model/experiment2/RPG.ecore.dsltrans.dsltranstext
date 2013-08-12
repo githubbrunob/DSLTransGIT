@@ -1,0 +1,611 @@
+File
+	id = _
+	uri = 'models\\RPG.xmi'
+	metamodel(
+				mmname = rpg.Rpg
+				uri = 'models\\RPG.ecore'
+			)
+def 'Entities' : layer  'Entities'  
+	previous = ''
+	output = ''
+	metamodel(
+			mmname = petrinet.Petrinet
+			uri = 'models\\PetriNet.ecore'
+		)
+	rule'Cell Free'
+		match with
+	cl0:
+			any  rpg::Cell(  at0 :  name  at1 :  x  at2 :  y )
+	cl1:
+			any  rpg::Hero
+			subject to
+				cl1 !-(occupies)-> cl0
+		apply
+	cl2:
+			 petrinet::Place(
+						self = 'Cell'
+						name= concat(sameAs(at0)with concat(sameAs(at1)with sameAs(at2)))
+						token= '0'
+					)
+	end rule
+
+	rule'Key'
+		match with
+	cl3:
+			any  rpg::Key(  at3 :  name )
+		apply
+	cl4:
+			 petrinet::Place(
+						self = 'Key'
+						name= sameAs(at3)
+					) 
+	cl5: 
+			 petrinet::Transition(
+						self = 'Key'
+						name= sameAs(at3)
+					) 
+	cl6: 
+			 petrinet::InArc(
+						weight= '1'
+					)
+			subject to
+				cl6 --(targetPlace)-> cl4
+				cl5 --(inArc)-> cl6
+	end rule
+
+	rule'RPG'
+		match with
+	cl7:
+			any  rpg::RPG
+		apply
+	cl8:
+			 petrinet::PetriNet(
+						self = 'RPG'
+					)
+	end rule
+
+	rule'Cell Occupied'
+		match with
+	cl9:
+			any  rpg::Cell(  at4 :  name  at5 :  x  at6 :  y )
+	cl10:
+			any  rpg::Hero
+			subject to
+				cl10 --(occupies)-> cl9
+		apply
+	cl11:
+			 petrinet::Place(
+						self = 'Cell'
+						name= concat(sameAs(at4)with concat(sameAs(at5)with sameAs(at6)))
+						token= '1'
+					)
+	end rule
+
+end def
+def 'Associations' : layer  'Associations'  
+	previous = 'Entities'
+	output = 'models\\pn.xmi'
+	metamodel(
+			mmname = petrinet.Petrinet
+			uri = 'models\\PetriNet.ecore'
+		)
+	rule'hasCell'
+		match with
+	cl12:
+			any  rpg::RPG
+	cl13:
+			any  rpg::WorldMap
+	cl14:
+			any  rpg::Scene
+	cl15:
+			any  rpg::Cell
+			subject to
+				cl12 --(hasWorldMap)-> cl13
+				cl13 --(hasScene)-> cl14
+				cl14 --(hasCell)-> cl15
+		apply
+	cl16:
+			 petrinet::PetriNet 
+	cl17: 
+			 petrinet::Place
+			subject to
+				cl16 --(places)-> cl17
+		restrictions
+			cl16 derived from cl12
+			cl17 derived from cl15
+	end rule
+
+	rule'hasObject'
+		match with
+	cl18:
+			any  rpg::RPG
+	cl19:
+			any  rpg::Key
+			subject to
+				cl18 --(hasObject)-> cl19
+		apply
+	cl20:
+			 petrinet::PetriNet 
+	cl21: 
+			 petrinet::Transition 
+	cl22: 
+			 petrinet::Place
+			subject to
+				cl20 --(transitions)-> cl21
+				cl20 --(places)-> cl22
+		restrictions
+			cl20 derived from cl18
+			cl21 derived from cl19
+			cl22 derived from cl19
+	end rule
+
+	rule'left'
+		match with
+	cl23:
+			any  rpg::Cell
+	cl24:
+			any  rpg::Cell
+	cl25:
+			not rpg::Door
+	cl26:
+			any  rpg::RPG
+			subject to
+				cl23 --(left)-> cl24
+				cl25 !-(occupies)-> cl24
+		apply
+	cl27:
+			 petrinet::Place 
+	cl28: 
+			 petrinet::Place 
+	cl29: 
+			 petrinet::Transition(
+						name= 'moveLeft'
+					) 
+	cl30: 
+			 petrinet::InArc(
+						weight= '1'
+					) 
+	cl31: 
+			 petrinet::OutArc(
+						weight= '1'
+					) 
+	cl32: 
+			 petrinet::PetriNet
+			subject to
+				cl31 --(sourcePlace)-> cl27
+				cl30 --(targetPlace)-> cl28
+				cl29 --(inArc)-> cl30
+				cl29 --(outArc)-> cl31
+				cl32 --(transitions)-> cl29
+		restrictions
+			cl27 derived from cl23
+			cl28 derived from cl24
+			cl32 derived from cl26
+	end rule
+
+	rule'right'
+		match with
+	cl33:
+			any  rpg::Cell
+	cl34:
+			any  rpg::Cell
+	cl35:
+			not rpg::Door
+	cl36:
+			any  rpg::RPG
+			subject to
+				cl33 --(right)-> cl34
+				cl35 !-(occupies)-> cl34
+		apply
+	cl37:
+			 petrinet::Place 
+	cl38: 
+			 petrinet::Place 
+	cl39: 
+			 petrinet::Transition(
+						name= 'moveRight'
+					) 
+	cl40: 
+			 petrinet::InArc(
+						weight= '1'
+					) 
+	cl41: 
+			 petrinet::OutArc(
+						weight= '1'
+					) 
+	cl42: 
+			 petrinet::PetriNet
+			subject to
+				cl41 --(sourcePlace)-> cl37
+				cl40 --(targetPlace)-> cl38
+				cl39 --(inArc)-> cl40
+				cl39 --(outArc)-> cl41
+				cl42 --(transitions)-> cl39
+		restrictions
+			cl37 derived from cl33
+			cl38 derived from cl34
+			cl42 derived from cl36
+	end rule
+
+	rule'top'
+		match with
+	cl43:
+			any  rpg::Cell
+	cl44:
+			any  rpg::Cell
+	cl45:
+			not rpg::Door
+	cl46:
+			any  rpg::RPG
+			subject to
+				cl43 --(top)-> cl44
+				cl45 !-(occupies)-> cl44
+		apply
+	cl47:
+			 petrinet::Place 
+	cl48: 
+			 petrinet::Place 
+	cl49: 
+			 petrinet::Transition(
+						name= 'moveTop'
+					) 
+	cl50: 
+			 petrinet::InArc(
+						weight= '1'
+					) 
+	cl51: 
+			 petrinet::OutArc(
+						weight= '1'
+					) 
+	cl52: 
+			 petrinet::PetriNet
+			subject to
+				cl51 --(sourcePlace)-> cl47
+				cl50 --(targetPlace)-> cl48
+				cl49 --(inArc)-> cl50
+				cl49 --(outArc)-> cl51
+				cl52 --(transitions)-> cl49
+		restrictions
+			cl47 derived from cl43
+			cl48 derived from cl44
+			cl52 derived from cl46
+	end rule
+
+	rule'bottom'
+		match with
+	cl53:
+			any  rpg::Cell
+	cl54:
+			any  rpg::Cell
+	cl55:
+			not rpg::Door
+	cl56:
+			any  rpg::RPG
+			subject to
+				cl53 --(bottom)-> cl54
+				cl55 !-(occupies)-> cl54
+		apply
+	cl57:
+			 petrinet::Place 
+	cl58: 
+			 petrinet::Place 
+	cl59: 
+			 petrinet::Transition(
+						name= 'moveBottom'
+					) 
+	cl60: 
+			 petrinet::InArc(
+						weight= '1'
+					) 
+	cl61: 
+			 petrinet::OutArc(
+						weight= '1'
+					) 
+	cl62: 
+			 petrinet::PetriNet
+			subject to
+				cl61 --(sourcePlace)-> cl57
+				cl60 --(targetPlace)-> cl58
+				cl59 --(inArc)-> cl60
+				cl59 --(outArc)-> cl61
+				cl62 --(transitions)-> cl59
+		restrictions
+			cl57 derived from cl53
+			cl58 derived from cl54
+			cl62 derived from cl56
+	end rule
+
+	rule'leftDoor'
+		match with
+	cl63:
+			any  rpg::Cell
+	cl64:
+			any  rpg::Cell
+	cl65:
+			any  rpg::Door
+	cl66:
+			any  rpg::Cell
+	cl67:
+			any  rpg::Key
+	cl68:
+			any  rpg::RPG
+			subject to
+				cl63 --(left)-> cl64
+				cl65 --(occupies)-> cl64
+				cl65 --(exit)-> cl66
+				cl67 --(opens)-> cl65
+		apply
+	cl69:
+			 petrinet::Place 
+	cl70: 
+			 petrinet::Place 
+	cl71: 
+			 petrinet::Transition(
+						name= 'moveLeft'
+					) 
+	cl72: 
+			 petrinet::InArc(
+						weight= '1'
+					) 
+	cl73: 
+			 petrinet::OutArc(
+						weight= '1'
+					) 
+	cl74: 
+			 petrinet::Place 
+	cl75: 
+			 petrinet::OutArc(
+						weight= '1'
+					) 
+	cl76: 
+			 petrinet::InArc(
+						weight= '1'
+					) 
+	cl77: 
+			 petrinet::PetriNet
+			subject to
+				cl73 --(sourcePlace)-> cl69
+				cl72 --(targetPlace)-> cl70
+				cl71 --(inArc)-> cl72
+				cl71 --(outArc)-> cl73
+				cl76 --(targetPlace)-> cl74
+				cl75 --(sourcePlace)-> cl74
+				cl71 --(inArc)-> cl76
+				cl71 --(outArc)-> cl75
+				cl77 --(transitions)-> cl71
+		restrictions
+			cl69 derived from cl63
+			cl70 derived from cl66
+			cl74 derived from cl67
+			cl77 derived from cl68
+	end rule
+
+	rule'rightDoor'
+		match with
+	cl78:
+			any  rpg::Cell
+	cl79:
+			any  rpg::Cell
+	cl80:
+			any  rpg::Door
+	cl81:
+			any  rpg::Cell
+	cl82:
+			any  rpg::Key
+	cl83:
+			any  rpg::RPG
+			subject to
+				cl78 --(right)-> cl79
+				cl80 --(occupies)-> cl79
+				cl80 --(exit)-> cl81
+				cl82 --(opens)-> cl80
+		apply
+	cl84:
+			 petrinet::Place 
+	cl85: 
+			 petrinet::Place 
+	cl86: 
+			 petrinet::Transition(
+						name= 'moveRight'
+					) 
+	cl87: 
+			 petrinet::InArc(
+						weight= '1'
+					) 
+	cl88: 
+			 petrinet::OutArc(
+						weight= '1'
+					) 
+	cl89: 
+			 petrinet::Place 
+	cl90: 
+			 petrinet::OutArc(
+						weight= '1'
+					) 
+	cl91: 
+			 petrinet::InArc(
+						weight= '1'
+					) 
+	cl92: 
+			 petrinet::PetriNet
+			subject to
+				cl88 --(sourcePlace)-> cl84
+				cl87 --(targetPlace)-> cl85
+				cl86 --(inArc)-> cl87
+				cl86 --(outArc)-> cl88
+				cl91 --(targetPlace)-> cl89
+				cl90 --(sourcePlace)-> cl89
+				cl86 --(inArc)-> cl91
+				cl86 --(outArc)-> cl90
+				cl92 --(transitions)-> cl86
+		restrictions
+			cl84 derived from cl78
+			cl85 derived from cl81
+			cl86 derived from cl80
+			cl89 derived from cl82
+			cl92 derived from cl83
+	end rule
+
+	rule'topDoor'
+		match with
+	cl93:
+			any  rpg::Cell
+	cl94:
+			any  rpg::Cell
+	cl95:
+			any  rpg::Door
+	cl96:
+			any  rpg::Cell
+	cl97:
+			any  rpg::Key
+	cl98:
+			any  rpg::RPG
+			subject to
+				cl93 --(top)-> cl94
+				cl95 --(occupies)-> cl94
+				cl95 --(exit)-> cl96
+				cl97 --(opens)-> cl95
+		apply
+	cl99:
+			 petrinet::Place 
+	cl100: 
+			 petrinet::Place 
+	cl101: 
+			 petrinet::Transition(
+						name= 'moveTop'
+					) 
+	cl102: 
+			 petrinet::InArc(
+						weight= '1'
+					) 
+	cl103: 
+			 petrinet::OutArc(
+						weight= '1'
+					) 
+	cl104: 
+			 petrinet::Place 
+	cl105: 
+			 petrinet::OutArc(
+						weight= '1'
+					) 
+	cl106: 
+			 petrinet::InArc(
+						weight= '1'
+					) 
+	cl107: 
+			 petrinet::PetriNet
+			subject to
+				cl103 --(sourcePlace)-> cl99
+				cl102 --(targetPlace)-> cl100
+				cl101 --(inArc)-> cl102
+				cl101 --(outArc)-> cl103
+				cl106 --(targetPlace)-> cl104
+				cl105 --(sourcePlace)-> cl104
+				cl101 --(inArc)-> cl106
+				cl101 --(outArc)-> cl105
+				cl107 --(transitions)-> cl101
+		restrictions
+			cl99 derived from cl93
+			cl100 derived from cl96
+			cl101 derived from cl95
+			cl104 derived from cl97
+			cl107 derived from cl98
+	end rule
+
+	rule'bottomDoor'
+		match with
+	cl108:
+			any  rpg::Cell
+	cl109:
+			any  rpg::Cell
+	cl110:
+			any  rpg::Door
+	cl111:
+			any  rpg::Cell
+	cl112:
+			any  rpg::Key
+	cl113:
+			any  rpg::RPG
+			subject to
+				cl108 --(bottom)-> cl109
+				cl110 --(occupies)-> cl109
+				cl110 --(exit)-> cl111
+				cl112 --(opens)-> cl110
+		apply
+	cl114:
+			 petrinet::Place 
+	cl115: 
+			 petrinet::Place 
+	cl116: 
+			 petrinet::Transition(
+						name= 'moveBottom'
+					) 
+	cl117: 
+			 petrinet::InArc(
+						weight= '1'
+					) 
+	cl118: 
+			 petrinet::OutArc(
+						weight= '1'
+					) 
+	cl119: 
+			 petrinet::Place 
+	cl120: 
+			 petrinet::OutArc(
+						weight= '1'
+					) 
+	cl121: 
+			 petrinet::InArc(
+						weight= '1'
+					) 
+	cl122: 
+			 petrinet::PetriNet
+			subject to
+				cl118 --(sourcePlace)-> cl114
+				cl117 --(targetPlace)-> cl115
+				cl116 --(inArc)-> cl117
+				cl116 --(outArc)-> cl118
+				cl121 --(targetPlace)-> cl119
+				cl120 --(sourcePlace)-> cl119
+				cl116 --(inArc)-> cl121
+				cl116 --(outArc)-> cl120
+				cl122 --(transitions)-> cl116
+		restrictions
+			cl114 derived from cl108
+			cl115 derived from cl111
+			cl119 derived from cl112
+			cl122 derived from cl113
+	end rule
+
+	rule'getKey'
+		match with
+	cl123:
+			any  rpg::Cell
+	cl124:
+			any  rpg::Key
+			subject to
+				cl124 --(occupies)-> cl123
+		apply
+	cl125:
+			 petrinet::Place 
+	cl126: 
+			 petrinet::Transition 
+	cl127: 
+			 petrinet::InArc(
+						weight= '1'
+					) 
+	cl128: 
+			 petrinet::OutArc(
+						weight= '1'
+					)
+			subject to
+				cl128 --(sourcePlace)-> cl125
+				cl127 --(targetPlace)-> cl125
+				cl126 --(inArc)-> cl127
+				cl126 --(outArc)-> cl128
+		restrictions
+			cl125 derived from cl123
+			cl126 derived from cl124
+	end rule
+
+end def

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/DSLTransEditor2.0/src"
+    modelPluginID="DSLTransEditor2.0" modelName="Dsltrans" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>DSLTrans.emf</foreignModel>
+  <genPackages prefix="Dsltrans" disposableProviderFactory="true" ecorePackage="DSLTrans.ecore#/">
+    <genClasses ecoreClass="DSLTrans.ecore#//TransformationModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//TransformationModel/source"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DSLTrans.ecore#//Layer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSLTrans.ecore#//Layer/description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//Layer/previousSource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSLTrans.ecore#//Layer/outputFilePathURI"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//Layer/hasRule"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSLTrans.ecore#//Layer/groupName"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DSLTrans.ecore#//MatchClass">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//MatchClass/attribute"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DSLTrans.ecore#//PositiveMatchClass"/>
+    <genClasses ecoreClass="DSLTrans.ecore#//AnyMatchClass"/>
+    <genClasses ecoreClass="DSLTrans.ecore#//ExistsMatchClass"/>
+    <genClasses ecoreClass="DSLTrans.ecore#//NegativeMatchClass"/>
+    <genClasses ecoreClass="DSLTrans.ecore#//MatchModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//MatchModel/class"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//MatchModel/association"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//MatchModel/explicitSource"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DSLTrans.ecore#//MatchAssociation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//MatchAssociation/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//MatchAssociation/target"/>
+    </genClasses>
+    <genClasses ecoreClass="DSLTrans.ecore#//PositiveIndirectAssociation"/>
+    <genClasses ecoreClass="DSLTrans.ecore#//NegativeIndirectAssociation"/>
+    <genClasses ecoreClass="DSLTrans.ecore#//PositiveMatchAssociation"/>
+    <genClasses ecoreClass="DSLTrans.ecore#//NegativeMatchAssociation"/>
+    <genClasses ecoreClass="DSLTrans.ecore#//ApplyClass">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//ApplyClass/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSLTrans.ecore#//ApplyClass/groupName"/>
+    </genClasses>
+    <genClasses ecoreClass="DSLTrans.ecore#//ApplyModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//ApplyModel/class"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//ApplyModel/association"/>
+    </genClasses>
+    <genClasses ecoreClass="DSLTrans.ecore#//ApplyAssociation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//ApplyAssociation/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//ApplyAssociation/target"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DSLTrans.ecore#//AbstractClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSLTrans.ecore#//AbstractClass/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSLTrans.ecore#//AbstractClass/packageName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSLTrans.ecore#//AbstractClass/className"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSLTrans.ecore#//AbstractClass/allowInheritance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSLTrans.ecore#//AbstractClass/id"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DSLTrans.ecore#//Association">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSLTrans.ecore#//Association/associationName"/>
+    </genClasses>
+    <genClasses ecoreClass="DSLTrans.ecore#//MatchAttribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//MatchAttribute/attributeValue"/>
+    </genClasses>
+    <genClasses ecoreClass="DSLTrans.ecore#//ApplyAttribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//ApplyAttribute/attributeValue"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DSLTrans.ecore#//AbstractSource">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//AbstractSource/metaModelId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSLTrans.ecore#//AbstractSource/name"/>
+    </genClasses>
+    <genClasses ecoreClass="DSLTrans.ecore#//FilePort">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSLTrans.ecore#//FilePort/filePathURI"/>
+    </genClasses>
+    <genClasses ecoreClass="DSLTrans.ecore#//Rule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSLTrans.ecore#//Rule/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//Rule/match"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//Rule/apply"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//Rule/backwards"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//Rule/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//Rule/attributeRelations"/>
+    </genClasses>
+    <genClasses ecoreClass="DSLTrans.ecore#//MetaModelIdentifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSLTrans.ecore#//MetaModelIdentifier/metaModelURI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSLTrans.ecore#//MetaModelIdentifier/metaModelName"/>
+    </genClasses>
+    <genClasses ecoreClass="DSLTrans.ecore#//PositiveBackwardRestriction"/>
+    <genClasses ecoreClass="DSLTrans.ecore#//NegativeBackwardRestriction"/>
+    <genClasses ecoreClass="DSLTrans.ecore#//Import">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//Import/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//Import/source"/>
+    </genClasses>
+    <genClasses ecoreClass="DSLTrans.ecore#//Sequential"/>
+    <genClasses image="false" ecoreClass="DSLTrans.ecore#//Term"/>
+    <genClasses image="false" ecoreClass="DSLTrans.ecore#//Operator"/>
+    <genClasses ecoreClass="DSLTrans.ecore#//Atom">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSLTrans.ecore#//Atom/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DSLTrans.ecore#//Ref"/>
+    <genClasses ecoreClass="DSLTrans.ecore#//AttributeRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//AttributeRef/attributeRef"/>
+    </genClasses>
+    <genClasses ecoreClass="DSLTrans.ecore#//ClassRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//ClassRef/classRef"/>
+    </genClasses>
+    <genClasses ecoreClass="DSLTrans.ecore#//Concat">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//Concat/leftTerm"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//Concat/rightTerm"/>
+    </genClasses>
+    <genClasses ecoreClass="DSLTrans.ecore#//TypeOf"/>
+    <genClasses ecoreClass="DSLTrans.ecore#//Wildcard"/>
+    <genClasses image="false" ecoreClass="DSLTrans.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSLTrans.ecore#//Attribute/attributeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSLTrans.ecore#//Attribute/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSLTrans.ecore#//Attribute/id"/>
+    </genClasses>
+    <genClasses ecoreClass="DSLTrans.ecore#//isNull">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSLTrans.ecore#//isNull/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DSLTrans.ecore#//MatchAttributeValue"/>
+    <genClasses image="false" ecoreClass="DSLTrans.ecore#//AbstractTemporalRelation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//AbstractTemporalRelation/targetClass"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//AbstractTemporalRelation/sourceClass"/>
+    </genClasses>
+    <genClasses ecoreClass="DSLTrans.ecore#//Sequencer"/>
+    <genClasses image="false" ecoreClass="DSLTrans.ecore#//AbstractAttributeRelation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//AbstractAttributeRelation/sourceAttribute"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DSLTrans.ecore#//AbstractAttributeRelation/targetAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="DSLTrans.ecore#//AttributeEquality"/>
+    <genClasses ecoreClass="DSLTrans.ecore#//AttributeInequality"/>
+    <genClasses ecoreClass="DSLTrans.ecore#//MatchMayBeSameRelation"/>
+    <genClasses ecoreClass="DSLTrans.ecore#//ApplyMayBeSameRelation"/>
+  </genPackages>
+</genmodel:GenModel>

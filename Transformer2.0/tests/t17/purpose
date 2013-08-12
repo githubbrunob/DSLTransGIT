@@ -1,0 +1,3 @@
+Test weather the allowInheritance attribute is working in the apply class.
+
+In this test only AA elements can  be printed.

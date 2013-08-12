@@ -1,0 +1,65 @@
+Semantics
+
+	ADT Char
+		Sorts char
+		Generators
+			aa:->char;ab:->char;ac:->char;ad:->char;ae:->char;af:->char;ag:->char;ah:->char;ai:->char;aj:->char;ak:->char;al:->char;
+			am:->char;an:->char;ao:->char;ap:->char;aq:->char;ar:->char;as:->char;at:->char;au:->char;av:->char;aw:->char;ax:->char;
+			ay:->char;az:->char;
+			aA:->char;aB:->char;aC:->char;aD:->char;aE:->char;aF:->char;aG:->char;aH:->char;aI:->char;aJ:->char;aK:->char;aL:->char;
+			aM:->char;aN:->char;aO:->char;aP:->char;aQ:->char;aR:->char;aS:->char;aT:->char;aU:->char;aV:->char;aW:->char;aX:->char;
+			aY:->char;aZ:->char;
+			n0:->char;n1:->char;n2:->char;n3:->char;n4:->char;n5:->char;n6:->char;n7:->char;n8:->char;n9:->char;	
+	ADT String
+		Sorts string
+		Generators
+			end :-> string;
+			str : char string -> string;
+		Operations
+			buildString: Set(char) -> string;
+		Axioms
+///////////////////////////// buildString
+			(existsIn(@c, @str1) = true) => 
+				buildString(@str1) = 
+					str(@c buildString(Excluding(@str1, @c)));
+		
+			buildString({}) = end;
+		Where
+			c : char;
+			str1 : Set (char);
+		
+	ADT Boolean
+		Sorts bool
+		Generators
+			true:->bool;
+			false:->bool;
+
+	Assuming
+ 		in(@t,Model)=true,
+		in(@i,Model)=true,
+		in(@s0,Model)=true,
+		in(@t -> source -> @i, Model)=true,
+		in(@t -> target -> @s0, Model)=true
+	Then
+		@i ->>	buildString(@t.name) ->> @s0 in Transition System
+	Where
+		i : class("statemachine","Initial");
+		s0 : class("statemachine","AbstractState");
+		t : class("statemachine","Transition");
+
+	Assuming
+		@s0 ->> @nameX ->> @s1 in Transition System, 
+		in(@t,Model)=true,
+		in(@s1,Model)=true,
+		in(@s2,Model)=true,
+		in(@t -> source -> @s1, Model)=true,
+		in(@t -> target -> @s2, Model)=true
+	Then
+		@s1 ->>	buildString(@t.name) ->> @s2 in Transition System
+	Where
+		s0 : class("statemachine","AbstractState");
+		s1 : class("statemachine","AbstractState");
+		s2 : class("statemachine","AbstractState");		
+		t : class("statemachine","Transition");
+		nameX : string;
+			

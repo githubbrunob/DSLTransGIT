@@ -1,0 +1,17 @@
+/DsltranstextBooleanTerminal.java/1.1/Sun Feb  5 20:30:52 2012//
+/DsltranstextCardinality.java/1.1/Sun Feb  5 20:30:52 2012//
+/DsltranstextChoice.java/1.1/Sun Feb  5 20:30:52 2012//
+/DsltranstextCompound.java/1.1/Sun Feb  5 20:30:52 2012//
+/DsltranstextContainment.java/1.1/Sun Feb  5 20:30:52 2012//
+/DsltranstextEnumerationTerminal.java/1.1/Sun Feb  5 20:30:52 2012//
+/DsltranstextFollowSetProvider.java/1.2/Mon Feb  6 01:19:52 2012//
+/DsltranstextFormattingElement.java/1.1/Sun Feb  5 20:30:52 2012//
+/DsltranstextGrammarInformationProvider.java/1.3/Mon Feb  6 01:19:52 2012//
+/DsltranstextKeyword.java/1.1/Sun Feb  5 20:30:52 2012//
+/DsltranstextLineBreak.java/1.1/Sun Feb  5 20:30:52 2012//
+/DsltranstextPlaceholder.java/1.1/Sun Feb  5 20:30:52 2012//
+/DsltranstextRule.java/1.1/Sun Feb  5 20:30:52 2012//
+/DsltranstextSequence.java/1.1/Sun Feb  5 20:30:52 2012//
+/DsltranstextSyntaxElement.java/1.1/Sun Feb  5 20:30:52 2012//
+/DsltranstextTerminal.java/1.1/Sun Feb  5 20:30:52 2012//
+/DsltranstextWhiteSpace.java/1.1/Sun Feb  5 20:30:52 2012//

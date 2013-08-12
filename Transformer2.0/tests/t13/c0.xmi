@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="ASCII" standalone="no"?>
+<Text:Model xmlns:Text="http://www.eclipse.org/Text" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xsi:schemaLocation="http://www.eclipse.org/Text text.ecore">
+  <directory name="project" path="SimpleProject">
+    <directory path="aPackage">
+      <file path="AClass.java">
+        <innerBlock name="main">
+          <innerBlock name="importBlock">
+            <preLine xsi:type="Text:EmptyLine"/>
+            <postLine xsi:type="Text:EmptyLine"/>
+          </innerBlock>
+          <innerBlock name="typedef">
+            <innerBlock name="innerTypeDefinitionBlock" tabbed="true"/>
+            <innerBlock name="methodBlock" tabbed="true"/>
+            <innerBlock name="fieldBlock" tabbed="true"/>
+            <innerBlock name="enumConstBlock" tabbed="true"/>
+            <preLine name="modifierSet" xsi:type="Text:Content">
+              <content text="public "/>
+              <next name="typeDeclaration">
+                <content name="typeId" text="class AClass"/>
+                <next name="implementSet">
+                  <next text=" {"/>
+                </next>
+              </next>
+            </preLine>
+            <postLine text="}" xsi:type="Text:Content"/>
+          </innerBlock>
+          <preLine text="package " xsi:type="Text:Content">
+            <content name="packageName" text="aPackage"/>
+            <content text=";"/>
+          </preLine>
+        </innerBlock>
+      </file>
+    </directory>
+    <directory path="simple">
+      <file path="Main.java">
+        <innerBlock name="main">
+          <innerBlock name="importBlock">
+            <innerLine text="import " xsi:type="Text:Content">
+              <content name="expression">
+                <content name="Reference" text="aPackage">
+                  <content text=".">
+                    <content name="Reference" text="AClass"/>
+                  </content>
+                </content>
+              </content>
+              <content name="importTermination" text=";"/>
+            </innerLine>
+            <preLine xsi:type="Text:EmptyLine"/>
+            <postLine xsi:type="Text:EmptyLine"/>
+          </innerBlock>
+          <innerBlock name="typedef">
+            <innerBlock name="innerTypeDefinitionBlock" tabbed="true"/>
+            <innerBlock name="methodBlock" tabbed="true">
+              <innerBlock>
+                <innerLine name="methodDeclaration" xsi:type="Text:Content">
+                  <content name="modifierSet">
+                    <content text="public "/>
+                    <content text="static "/>
+                    <next name="methodReturnType">
+                      <content name="expression">
+                        <content name="Reference" text="void"/>
+                      </content>
+                      <next text=" main">
+                        <content name="parameterSet" text="(">
+                          <next name="parameterType">
+                            <content name="expression">
+                              <content name="Reference" text="String[]"/>
+                            </content>
+                            <next name="parameterNameStart" text=" args"/>
+                          </next>
+                        </content>
+                        <next name="parameterEnd" text=")"/>
+                      </next>
+                    </next>
+                  </content>
+                  <innerBlock>
+                    <content name="statement">
+                      <innerBlock>
+                        <innerBlock name="innerBlock" tabbed="true"/>
+                        <preLine text="{" xsi:type="Text:Content"/>
+                        <postLine text="}" xsi:type="Text:Content"/>
+                      </innerBlock>
+                    </content>
+                  </innerBlock>
+                </innerLine>
+                <preLine xsi:type="Text:EmptyLine"/>
+                <postLine xsi:type="Text:EmptyLine"/>
+              </innerBlock>
+            </innerBlock>
+            <innerBlock name="fieldBlock" tabbed="true"/>
+            <innerBlock name="enumConstBlock" tabbed="true"/>
+            <preLine name="modifierSet" xsi:type="Text:Content">
+              <content text="public "/>
+              <next name="typeDeclaration">
+                <content name="typeId" text="class Main">
+                  <content name="extends" text=" extends ">
+                    <content name="expression">
+                      <content name="Reference" text="AClass"/>
+                    </content>
+                  </content>
+                </content>
+                <next name="implementSet">
+                  <next text=" {"/>
+                </next>
+              </next>
+            </preLine>
+            <postLine text="}" xsi:type="Text:Content"/>
+          </innerBlock>
+          <preLine text="package " xsi:type="Text:Content">
+            <content name="packageName" text="simple"/>
+            <content text=";"/>
+          </preLine>
+        </innerBlock>
+      </file>
+    </directory>
+  </directory>
+</Text:Model>

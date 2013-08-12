@@ -1,0 +1,7 @@
+# Tracing options for the DSLTransEditor2.0.diagram plug-in
+
+# Common issues
+DSLTransEditor2.0.diagram/debug=false
+
+# Visual IDs
+DSLTransEditor2.0.diagram/debug/visualID=false

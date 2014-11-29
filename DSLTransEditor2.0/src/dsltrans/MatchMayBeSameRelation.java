@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: MatchMayBeSameRelation.java,v 1.1 2012/01/18 23:38:18 claudiogomes Exp $
  */
 package dsltrans;
 
@@ -14,9 +10,8 @@ package dsltrans;
  *
  *
  * @see dsltrans.DsltransPackage#getMatchMayBeSameRelation()
- * @model annotation="gmf.link label='' target.decoration='none' source.decoration='none' style='dash' color='181,215,255' width='2' tool.description='Match classes can have same binding.'"
+ * @model annotation="gmf.link label.text='' target.decoration='none' label.readOnly='true' source.decoration='none' style='dash' color='181,215,255' width='2' tool.description='Match classes can have same binding.'"
  * @generated
  */
-public interface MatchMayBeSameRelation extends MatchAssociation
-{
+public interface MatchMayBeSameRelation extends MatchAssociation {
 } // MatchMayBeSameRelation

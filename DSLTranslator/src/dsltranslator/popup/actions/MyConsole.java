@@ -1,6 +1,5 @@
 package dsltranslator.popup.actions;
 
-import java.io.OutputStream;
 import java.io.PrintStream;
 
 import org.eclipse.swt.graphics.Color;
@@ -14,7 +13,6 @@ public class MyConsole extends MessageConsole {
 	
 	public MyConsole(String name) {
 		super(name, null);
-		// TODO Auto-generated constructor stub
 	}
 
 	static final String CONSOLE_NAME = "DSLTrans Output";

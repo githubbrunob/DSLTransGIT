@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: PositiveMatchAssociationImpl.java,v 1.2 2012/01/18 23:38:18 claudiogomes Exp $
  */
 package dsltrans.impl;
 
@@ -20,27 +16,24 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class PositiveMatchAssociationImpl extends MatchAssociationImpl implements PositiveMatchAssociation
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected PositiveMatchAssociationImpl()
-  {
-    super();
-  }
+public class PositiveMatchAssociationImpl extends MatchAssociationImpl implements PositiveMatchAssociation {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PositiveMatchAssociationImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return DsltransPackage.Literals.POSITIVE_MATCH_ASSOCIATION;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DsltransPackage.Literals.POSITIVE_MATCH_ASSOCIATION;
+	}
 
 } //PositiveMatchAssociationImpl

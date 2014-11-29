@@ -10,7 +10,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
@@ -31,6 +30,7 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
 
 import dsltrans.DsltransPackage;
 import dsltrans.diagram.edit.parts.AnyMatchClassEditPart;
@@ -130,7 +130,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 	 */
 	protected boolean isOrphaned(Collection<EObject> semanticChildren,
 			final View view) {
-		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
+		if (isShortcut(view)) {
 			return DsltransDiagramUpdater.isShortcutOrphaned(view);
 		}
 		return isMyDiagramElement(view)
@@ -149,6 +149,13 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 	/**
 	 * @generated
 	 */
+	protected static boolean isShortcut(View view) {
+		return view.getEAnnotation("Shortcut") != null; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
 	protected void refreshSemantic() {
 		if (resolveSemanticElement() == null) {
 			return;
@@ -158,14 +165,17 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				.getTransformationModel_1000SemanticChildren((View) getHost()
 						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
-		// we care to check only views we recognize as ours
+		// we care to check only views we recognize as ours and not shortcuts
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
 		for (View v : getViewChildren()) {
+			if (isShortcut(v)) {
+				if (DsltransDiagramUpdater.isShortcutOrphaned(v)) {
+					orphaned.add(v);
+				}
+				continue;
+			}
 			if (isMyDiagramElement(v)) {
 				knownViewChildren.add(v);
-			}
-			if (v.getEAnnotation("Shortcut") != null && DsltransDiagramUpdater.isShortcutOrphaned(v)) { //$NON-NLS-1$
-				orphaned.add(v);
 			}
 		}
 		// alternative to #cleanCanonicalSemanticChildren(getViewChildren(), semanticChildren)
@@ -245,7 +255,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 	 * @generated
 	 */
 	private Collection<IAdaptable> refreshConnections() {
-		Map<EObject, View> domain2NotationMap = new HashMap<EObject, View>();
+		Domain2Notation domain2NotationMap = new Domain2Notation();
 		Collection<DsltransLinkDescriptor> linkDescriptors = collectAllLinks(
 				getDiagram(), domain2NotationMap);
 		Collection existingLinks = new LinkedList(getDiagram().getEdges());
@@ -288,7 +298,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 	 * @generated
 	 */
 	private Collection<DsltransLinkDescriptor> collectAllLinks(View view,
-			Map<EObject, View> domain2NotationMap) {
+			Domain2Notation domain2NotationMap) {
 		if (!TransformationModelEditPart.MODEL_ID
 				.equals(DsltransVisualIDRegistry.getModelID(view))) {
 			return Collections.emptyList();
@@ -300,10 +310,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getTransformationModel_1000ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case SequentialEditPart.VISUAL_ID: {
@@ -311,10 +318,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getSequential_2001ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case FilePortEditPart.VISUAL_ID: {
@@ -322,10 +326,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getFilePort_2002ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case MetaModelIdentifierEditPart.VISUAL_ID: {
@@ -333,10 +334,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getMetaModelIdentifier_3001ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case RuleEditPart.VISUAL_ID: {
@@ -344,10 +342,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getRule_3002ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case MatchModelEditPart.VISUAL_ID: {
@@ -355,10 +350,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getMatchModel_3003ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case AnyMatchClassEditPart.VISUAL_ID: {
@@ -366,10 +358,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getAnyMatchClass_3004ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case MatchAttributeEditPart.VISUAL_ID: {
@@ -377,10 +366,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getMatchAttribute_3005ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case AtomEditPart.VISUAL_ID: {
@@ -388,10 +374,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getAtom_3006ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case IsNullEditPart.VISUAL_ID: {
@@ -399,10 +382,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getIsNull_3007ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ExistsMatchClassEditPart.VISUAL_ID: {
@@ -410,10 +390,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getExistsMatchClass_3008ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case NegativeMatchClassEditPart.VISUAL_ID: {
@@ -421,10 +398,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getNegativeMatchClass_3009ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ApplyModelEditPart.VISUAL_ID: {
@@ -432,10 +406,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getApplyModel_3010ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ApplyClassEditPart.VISUAL_ID: {
@@ -443,10 +414,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getApplyClass_3011ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ApplyAttributeEditPart.VISUAL_ID: {
@@ -454,10 +422,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getApplyAttribute_3012ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case TypeOfEditPart.VISUAL_ID: {
@@ -465,10 +430,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getTypeOf_3013ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Atom2EditPart.VISUAL_ID: {
@@ -476,10 +438,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getAtom_3014ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case AttributeRefEditPart.VISUAL_ID: {
@@ -487,10 +446,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getAttributeRef_3015ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ClassRefEditPart.VISUAL_ID: {
@@ -498,10 +454,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getClassRef_3016ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ConcatEditPart.VISUAL_ID: {
@@ -509,10 +462,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getConcat_3017ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case TypeOf2EditPart.VISUAL_ID: {
@@ -520,10 +470,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getTypeOf_3018ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case TypeOf3EditPart.VISUAL_ID: {
@@ -531,10 +478,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getTypeOf_3019ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Atom3EditPart.VISUAL_ID: {
@@ -542,10 +486,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getAtom_3020ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case AttributeRef2EditPart.VISUAL_ID: {
@@ -553,10 +494,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getAttributeRef_3021ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ClassRef2EditPart.VISUAL_ID: {
@@ -564,10 +502,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getClassRef_3022ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Concat2EditPart.VISUAL_ID: {
@@ -575,10 +510,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getConcat_3023ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Atom4EditPart.VISUAL_ID: {
@@ -586,10 +518,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getAtom_3024ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case AttributeRef3EditPart.VISUAL_ID: {
@@ -597,10 +526,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getAttributeRef_3025ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ClassRef3EditPart.VISUAL_ID: {
@@ -608,10 +534,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getClassRef_3026ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Concat3EditPart.VISUAL_ID: {
@@ -619,10 +542,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getConcat_3027ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case WildcardEditPart.VISUAL_ID: {
@@ -630,10 +550,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getWildcard_3028ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case SequencerEditPart.VISUAL_ID: {
@@ -641,10 +558,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getSequencer_3029ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Wildcard2EditPart.VISUAL_ID: {
@@ -652,10 +566,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getWildcard_3030ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Sequencer2EditPart.VISUAL_ID: {
@@ -663,10 +574,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getSequencer_3031ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Wildcard3EditPart.VISUAL_ID: {
@@ -674,10 +582,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getWildcard_3032ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Sequencer3EditPart.VISUAL_ID: {
@@ -685,10 +590,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getSequencer_3033ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case PositiveIndirectAssociationEditPart.VISUAL_ID: {
@@ -696,10 +598,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getPositiveIndirectAssociation_4001ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case NegativeIndirectAssociationEditPart.VISUAL_ID: {
@@ -707,10 +606,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getNegativeIndirectAssociation_4002ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case PositiveMatchAssociationEditPart.VISUAL_ID: {
@@ -718,10 +614,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getPositiveMatchAssociation_4003ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case NegativeMatchAssociationEditPart.VISUAL_ID: {
@@ -729,10 +622,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getNegativeMatchAssociation_4004ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case MatchMayBeSameRelationEditPart.VISUAL_ID: {
@@ -740,10 +630,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getMatchMayBeSameRelation_4017ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ApplyMayBeSameRelationEditPart.VISUAL_ID: {
@@ -751,10 +638,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getApplyMayBeSameRelation_4018ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ApplyAssociationEditPart.VISUAL_ID: {
@@ -762,10 +646,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getApplyAssociation_4005ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case PositiveBackwardRestrictionEditPart.VISUAL_ID: {
@@ -773,10 +654,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getPositiveBackwardRestriction_4006ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case NegativeBackwardRestrictionEditPart.VISUAL_ID: {
@@ -784,10 +662,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getNegativeBackwardRestriction_4007ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case AttributeEqualityEditPart.VISUAL_ID: {
@@ -795,10 +670,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getAttributeEquality_4015ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case AttributeInequalityEditPart.VISUAL_ID: {
@@ -806,10 +678,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getAttributeInequality_4016ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ImportEditPart.VISUAL_ID: {
@@ -817,10 +686,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 				result.addAll(DsltransDiagramUpdater
 						.getImport_4010ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		}
@@ -841,13 +707,13 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 	 */
 	private Collection<IAdaptable> createConnections(
 			Collection<DsltransLinkDescriptor> linkDescriptors,
-			Map<EObject, View> domain2NotationMap) {
+			Domain2Notation domain2NotationMap) {
 		LinkedList<IAdaptable> adapters = new LinkedList<IAdaptable>();
 		for (DsltransLinkDescriptor nextLinkDescriptor : linkDescriptors) {
-			EditPart sourceEditPart = getEditPart(
-					nextLinkDescriptor.getSource(), domain2NotationMap);
-			EditPart targetEditPart = getEditPart(
-					nextLinkDescriptor.getDestination(), domain2NotationMap);
+			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor,
+					domain2NotationMap);
+			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor,
+					domain2NotationMap);
 			if (sourceEditPart == null || targetEditPart == null) {
 				continue;
 			}
@@ -880,7 +746,7 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 	 * @generated
 	 */
 	private EditPart getEditPart(EObject domainModelElement,
-			Map<EObject, View> domain2NotationMap) {
+			Domain2Notation domain2NotationMap) {
 		View view = (View) domain2NotationMap.get(domainModelElement);
 		if (view != null) {
 			return (EditPart) getHost().getViewer().getEditPartRegistry()
@@ -894,5 +760,65 @@ public class TransformationModelCanonicalEditPolicy extends CanonicalEditPolicy 
 	 */
 	private Diagram getDiagram() {
 		return ((View) getHost().getModel()).getDiagram();
+	}
+
+	/**
+	 * @generated
+	 */
+	private EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor,
+			Domain2Notation domain2NotationMap) {
+		return getEditPart(descriptor.getSource(), domain2NotationMap);
+	}
+
+	/**
+	 * @generated
+	 */
+	private EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor,
+			Domain2Notation domain2NotationMap) {
+		return getEditPart(descriptor.getDestination(), domain2NotationMap);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected final EditPart getHintedEditPart(EObject domainModelElement,
+			Domain2Notation domain2NotationMap, int hintVisualId) {
+		View view = (View) domain2NotationMap.getHinted(domainModelElement,
+				DsltransVisualIDRegistry.getType(hintVisualId));
+		if (view != null) {
+			return (EditPart) getHost().getViewer().getEditPartRegistry()
+					.get(view);
+		}
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	@SuppressWarnings("serial")
+	protected static class Domain2Notation extends HashMap<EObject, View> {
+		/**
+		 * @generated
+		 */
+		public boolean containsDomainElement(EObject domainElement) {
+			return this.containsKey(domainElement);
+		}
+
+		/**
+		 * @generated
+		 */
+		public View getHinted(EObject domainEObject, String hint) {
+			return this.get(domainEObject);
+		}
+
+		/**
+		 * @generated
+		 */
+		public void putView(EObject domainElement, View view) {
+			if (!containsKey(view.getElement()) || !isShortcut(view)) {
+				this.put(domainElement, view);
+			}
+		}
+
 	}
 }

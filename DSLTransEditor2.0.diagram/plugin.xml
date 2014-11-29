@@ -277,7 +277,7 @@
             <method name="getType()" value="4001,4002,4003,4004,4017,4018,4005,4006,4007,4015,4016,4010,4011,4012,4013,4014"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5034,5035,5001,5033,5008,5005,5004,5002,5003,5006,5007,5032,5031,5030,5009,5010,5011,5012,5027,5013,5014,5015,5016,5017,5026,5018,5019,5020,5025,5021,5022,5023,5024,5028,5029"/>
+            <method name="getType()" value="5034,5035,5001,5033,5005,5004,5002,5003,5006,5007,5031,5030,5010,5015,5018"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7001,7002,7003,7004,7005,7006,7007,7008,7009,7010,7011,7012,7013,7014,7015,7016,7017,7018,7019"/>
@@ -288,13 +288,187 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="dsltrans.diagram.providers.DsltransModelingAssistantProvider">
+      <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfTransformationModelEditPart">
          <Priority name="Lowest"/>
          <object class="dsltrans.diagram.edit.parts.TransformationModelEditPart" id="TransformationModel_1000"/>
-         <object class="dsltrans.diagram.edit.parts.SequentialEditPart" id="Sequential_2001"/>
-         <object class="dsltrans.diagram.edit.parts.FilePortEditPart" id="FilePort_2002"/>
-         <context elements="TransformationModel_1000,Sequential_2001,FilePort_2002"/>
+         <context elements="TransformationModel_1000"/>
       </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfSequentialEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.SequentialEditPart" id="Sequential_2001"/>
+         <context elements="Sequential_2001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfFilePortEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.FilePortEditPart" id="FilePort_2002"/>
+         <context elements="FilePort_2002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfMetaModelIdentifierEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.MetaModelIdentifierEditPart" id="MetaModelIdentifier_3001"/>
+         <context elements="MetaModelIdentifier_3001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfRuleEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.RuleEditPart" id="Rule_3002"/>
+         <context elements="Rule_3002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfMatchModelEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.MatchModelEditPart" id="MatchModel_3003"/>
+         <context elements="MatchModel_3003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfAnyMatchClassEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.AnyMatchClassEditPart" id="AnyMatchClass_3004"/>
+         <context elements="AnyMatchClass_3004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfMatchAttributeEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.MatchAttributeEditPart" id="MatchAttribute_3005"/>
+         <context elements="MatchAttribute_3005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfAtomEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.AtomEditPart" id="Atom_3006"/>
+         <context elements="Atom_3006"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfIsNullEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.IsNullEditPart" id="IsNull_3007"/>
+         <context elements="IsNull_3007"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfExistsMatchClassEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.ExistsMatchClassEditPart" id="ExistsMatchClass_3008"/>
+         <context elements="ExistsMatchClass_3008"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfNegativeMatchClassEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.NegativeMatchClassEditPart" id="NegativeMatchClass_3009"/>
+         <context elements="NegativeMatchClass_3009"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfApplyModelEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.ApplyModelEditPart" id="ApplyModel_3010"/>
+         <context elements="ApplyModel_3010"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfApplyClassEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.ApplyClassEditPart" id="ApplyClass_3011"/>
+         <context elements="ApplyClass_3011"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfApplyAttributeEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.ApplyAttributeEditPart" id="ApplyAttribute_3012"/>
+         <context elements="ApplyAttribute_3012"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfTypeOfEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.TypeOfEditPart" id="TypeOf_3013"/>
+         <context elements="TypeOf_3013"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfAtom2EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.Atom2EditPart" id="Atom_3014"/>
+         <context elements="Atom_3014"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfAttributeRefEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.AttributeRefEditPart" id="AttributeRef_3015"/>
+         <context elements="AttributeRef_3015"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfClassRefEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.ClassRefEditPart" id="ClassRef_3016"/>
+         <context elements="ClassRef_3016"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfConcatEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.ConcatEditPart" id="Concat_3017"/>
+         <context elements="Concat_3017"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfTypeOf2EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.TypeOf2EditPart" id="TypeOf_3018"/>
+         <context elements="TypeOf_3018"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfTypeOf3EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.TypeOf3EditPart" id="TypeOf_3019"/>
+         <context elements="TypeOf_3019"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfAtom3EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.Atom3EditPart" id="Atom_3020"/>
+         <context elements="Atom_3020"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfAttributeRef2EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.AttributeRef2EditPart" id="AttributeRef_3021"/>
+         <context elements="AttributeRef_3021"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfClassRef2EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.ClassRef2EditPart" id="ClassRef_3022"/>
+         <context elements="ClassRef_3022"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfConcat2EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.Concat2EditPart" id="Concat_3023"/>
+         <context elements="Concat_3023"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfAtom4EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.Atom4EditPart" id="Atom_3024"/>
+         <context elements="Atom_3024"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfAttributeRef3EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.AttributeRef3EditPart" id="AttributeRef_3025"/>
+         <context elements="AttributeRef_3025"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfClassRef3EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.ClassRef3EditPart" id="ClassRef_3026"/>
+         <context elements="ClassRef_3026"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfConcat3EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.Concat3EditPart" id="Concat_3027"/>
+         <context elements="Concat_3027"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfWildcardEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.WildcardEditPart" id="Wildcard_3028"/>
+         <context elements="Wildcard_3028"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfSequencerEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.SequencerEditPart" id="Sequencer_3029"/>
+         <context elements="Sequencer_3029"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfWildcard2EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.Wildcard2EditPart" id="Wildcard_3030"/>
+         <context elements="Wildcard_3030"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfSequencer2EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.Sequencer2EditPart" id="Sequencer_3031"/>
+         <context elements="Sequencer_3031"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfWildcard3EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.Wildcard3EditPart" id="Wildcard_3032"/>
+         <context elements="Wildcard_3032"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsltrans.diagram.providers.assistants.DsltransModelingAssistantProviderOfSequencer3EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsltrans.diagram.edit.parts.Sequencer3EditPart" id="Sequencer_3033"/>
+         <context elements="Sequencer_3033"/>
+      </modelingAssistantProvider>
+      
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">

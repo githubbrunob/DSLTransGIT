@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: Sequencer.java,v 1.1 2012/01/18 23:38:18 claudiogomes Exp $
  */
 package dsltrans;
 
@@ -14,9 +10,8 @@ package dsltrans;
  *
  *
  * @see dsltrans.DsltransPackage#getSequencer()
- * @model annotation="gmf.node label='Sequencer' label.readOnly='true' tool.description='Create a sequential number generator.'"
+ * @model annotation="gmf.node tool.description='Create a sequential number generator.' label.placement='none'"
  * @generated
  */
-public interface Sequencer extends Term
-{
+public interface Sequencer extends Term {
 } // Sequencer

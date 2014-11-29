@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: MatchMayBeSameRelationImpl.java,v 1.1 2012/01/18 23:38:18 claudiogomes Exp $
  */
 package dsltrans.impl;
 
@@ -20,27 +16,24 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class MatchMayBeSameRelationImpl extends MatchAssociationImpl implements MatchMayBeSameRelation
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected MatchMayBeSameRelationImpl()
-  {
-    super();
-  }
+public class MatchMayBeSameRelationImpl extends MatchAssociationImpl implements MatchMayBeSameRelation {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MatchMayBeSameRelationImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return DsltransPackage.Literals.MATCH_MAY_BE_SAME_RELATION;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DsltransPackage.Literals.MATCH_MAY_BE_SAME_RELATION;
+	}
 
 } //MatchMayBeSameRelationImpl

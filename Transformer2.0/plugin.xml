@@ -10,11 +10,5 @@
 
 <plugin>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <package
-            uri="http://solar.di.fct.unl.pt/dsltrans/2.0"
-            class="dsltrans.DSLTransPackage"
-            genModel="model/DSLTrans.genmodel"/>
-   </extension>
 
 </plugin>

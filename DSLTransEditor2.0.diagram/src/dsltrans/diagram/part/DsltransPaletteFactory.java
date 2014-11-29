@@ -5,16 +5,14 @@ package dsltrans.diagram.part;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
-import org.eclipse.gef.Tool;
 import org.eclipse.gef.palette.PaletteContainer;
 import org.eclipse.gef.palette.PaletteDrawer;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.ToolEntry;
-import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
-import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry;
+import org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry;
 
 import dsltrans.diagram.providers.DsltransElementTypes;
 
@@ -93,7 +91,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAnyMatchClass1CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.AnyMatchClass1CreationTool_title,
 				Messages.AnyMatchClass1CreationTool_desc,
 				Collections
@@ -109,7 +107,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createApplyAttribute2CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.ApplyAttribute2CreationTool_title,
 				Messages.ApplyAttribute2CreationTool_desc,
 				Collections
@@ -125,7 +123,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createApplyClass3CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.ApplyClass3CreationTool_title,
 				Messages.ApplyClass3CreationTool_desc,
 				Collections.singletonList(DsltransElementTypes.ApplyClass_3011));
@@ -140,7 +138,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createApplyModel4CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.ApplyModel4CreationTool_title,
 				Messages.ApplyModel4CreationTool_desc,
 				Collections.singletonList(DsltransElementTypes.ApplyModel_3010));
@@ -160,7 +158,7 @@ public class DsltransPaletteFactory {
 		types.add(DsltransElementTypes.Atom_3014);
 		types.add(DsltransElementTypes.Atom_3020);
 		types.add(DsltransElementTypes.Atom_3024);
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.Atom5CreationTool_title,
 				Messages.Atom5CreationTool_desc, types);
 		entry.setId("createAtom5CreationTool"); //$NON-NLS-1$
@@ -178,7 +176,7 @@ public class DsltransPaletteFactory {
 		types.add(DsltransElementTypes.AttributeRef_3015);
 		types.add(DsltransElementTypes.AttributeRef_3021);
 		types.add(DsltransElementTypes.AttributeRef_3025);
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.AttributeRef6CreationTool_title,
 				Messages.AttributeRef6CreationTool_desc, types);
 		entry.setId("createAttributeRef6CreationTool"); //$NON-NLS-1$
@@ -196,7 +194,7 @@ public class DsltransPaletteFactory {
 		types.add(DsltransElementTypes.ClassRef_3016);
 		types.add(DsltransElementTypes.ClassRef_3022);
 		types.add(DsltransElementTypes.ClassRef_3026);
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.ClassRef7CreationTool_title,
 				Messages.ClassRef7CreationTool_desc, types);
 		entry.setId("createClassRef7CreationTool"); //$NON-NLS-1$
@@ -214,7 +212,7 @@ public class DsltransPaletteFactory {
 		types.add(DsltransElementTypes.Concat_3017);
 		types.add(DsltransElementTypes.Concat_3023);
 		types.add(DsltransElementTypes.Concat_3027);
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.Concat8CreationTool_title,
 				Messages.Concat8CreationTool_desc, types);
 		entry.setId("createConcat8CreationTool"); //$NON-NLS-1$
@@ -228,7 +226,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createExistsMatchClass9CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.ExistsMatchClass9CreationTool_title,
 				Messages.ExistsMatchClass9CreationTool_desc,
 				Collections
@@ -244,7 +242,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createFilePort10CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.FilePort10CreationTool_title,
 				Messages.FilePort10CreationTool_desc,
 				Collections.singletonList(DsltransElementTypes.FilePort_2002));
@@ -259,7 +257,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createLayer11CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.Layer11CreationTool_title,
 				Messages.Layer11CreationTool_desc,
 				Collections.singletonList(DsltransElementTypes.Sequential_2001));
@@ -274,7 +272,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createMatchAttribute12CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.MatchAttribute12CreationTool_title,
 				Messages.MatchAttribute12CreationTool_desc,
 				Collections
@@ -290,7 +288,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createMatchModel13CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.MatchModel13CreationTool_title,
 				Messages.MatchModel13CreationTool_desc,
 				Collections.singletonList(DsltransElementTypes.MatchModel_3003));
@@ -305,7 +303,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createMetaModelIdentifier14CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.MetaModelIdentifier14CreationTool_title,
 				Messages.MetaModelIdentifier14CreationTool_desc,
 				Collections
@@ -321,7 +319,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createNegativeMatchClass15CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.NegativeMatchClass15CreationTool_title,
 				Messages.NegativeMatchClass15CreationTool_desc,
 				Collections
@@ -337,7 +335,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createRule16CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.Rule16CreationTool_title,
 				Messages.Rule16CreationTool_desc,
 				Collections.singletonList(DsltransElementTypes.Rule_3002));
@@ -356,7 +354,7 @@ public class DsltransPaletteFactory {
 		types.add(DsltransElementTypes.Sequencer_3029);
 		types.add(DsltransElementTypes.Sequencer_3031);
 		types.add(DsltransElementTypes.Sequencer_3033);
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.Sequencer17CreationTool_title,
 				Messages.Sequencer17CreationTool_desc, types);
 		entry.setId("createSequencer17CreationTool"); //$NON-NLS-1$
@@ -374,7 +372,7 @@ public class DsltransPaletteFactory {
 		types.add(DsltransElementTypes.TypeOf_3013);
 		types.add(DsltransElementTypes.TypeOf_3018);
 		types.add(DsltransElementTypes.TypeOf_3019);
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.TypeOf18CreationTool_title,
 				Messages.TypeOf18CreationTool_desc, types);
 		entry.setId("createTypeOf18CreationTool"); //$NON-NLS-1$
@@ -392,7 +390,7 @@ public class DsltransPaletteFactory {
 		types.add(DsltransElementTypes.Wildcard_3028);
 		types.add(DsltransElementTypes.Wildcard_3030);
 		types.add(DsltransElementTypes.Wildcard_3032);
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.Wildcard19CreationTool_title,
 				Messages.Wildcard19CreationTool_desc, types);
 		entry.setId("createWildcard19CreationTool"); //$NON-NLS-1$
@@ -406,7 +404,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createIsNull20CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.IsNull20CreationTool_title,
 				Messages.IsNull20CreationTool_desc,
 				Collections.singletonList(DsltransElementTypes.IsNull_3007));
@@ -421,7 +419,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createApplyAssociation1CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.ApplyAssociation1CreationTool_title,
 				Messages.ApplyAssociation1CreationTool_desc,
 				Collections
@@ -437,7 +435,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createApplyMayBeSameRelation2CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.ApplyMayBeSameRelation2CreationTool_title,
 				Messages.ApplyMayBeSameRelation2CreationTool_desc,
 				Collections
@@ -453,7 +451,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAttributeEquality3CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.AttributeEquality3CreationTool_title,
 				Messages.AttributeEquality3CreationTool_desc,
 				Collections
@@ -469,7 +467,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAttributeInequality4CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.AttributeInequality4CreationTool_title,
 				Messages.AttributeInequality4CreationTool_desc,
 				Collections
@@ -485,7 +483,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAttributeRef5CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.AttributeRef5CreationTool_title,
 				Messages.AttributeRef5CreationTool_desc,
 				Collections
@@ -501,7 +499,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createClassRef6CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.ClassRef6CreationTool_title,
 				Messages.ClassRef6CreationTool_desc,
 				Collections
@@ -517,7 +515,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createExplicitSource7CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.ExplicitSource7CreationTool_title,
 				Messages.ExplicitSource7CreationTool_desc,
 				Collections
@@ -533,7 +531,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createImport8CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.Import8CreationTool_title,
 				Messages.Import8CreationTool_desc,
 				Collections.singletonList(DsltransElementTypes.Import_4010));
@@ -548,7 +546,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createMatchMayBeSameRelation9CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.MatchMayBeSameRelation9CreationTool_title,
 				Messages.MatchMayBeSameRelation9CreationTool_desc,
 				Collections
@@ -564,7 +562,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createNegativeBackwardRestriction10CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.NegativeBackwardRestriction10CreationTool_title,
 				Messages.NegativeBackwardRestriction10CreationTool_desc,
 				Collections
@@ -580,7 +578,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createNegativeIndirectAssociation11CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.NegativeIndirectAssociation11CreationTool_title,
 				Messages.NegativeIndirectAssociation11CreationTool_desc,
 				Collections
@@ -596,7 +594,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createNegativeMatchAssociation12CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.NegativeMatchAssociation12CreationTool_title,
 				Messages.NegativeMatchAssociation12CreationTool_desc,
 				Collections
@@ -612,7 +610,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createPositiveBackwardRestriction13CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.PositiveBackwardRestriction13CreationTool_title,
 				Messages.PositiveBackwardRestriction13CreationTool_desc,
 				Collections
@@ -628,7 +626,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createPositiveIndirectAssociation14CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.PositiveIndirectAssociation14CreationTool_title,
 				Messages.PositiveIndirectAssociation14CreationTool_desc,
 				Collections
@@ -644,7 +642,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createPositiveMatchAssociation15CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.PositiveMatchAssociation15CreationTool_title,
 				Messages.PositiveMatchAssociation15CreationTool_desc,
 				Collections
@@ -660,7 +658,7 @@ public class DsltransPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createPreviousSource16CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				Messages.PreviousSource16CreationTool_title,
 				Messages.PreviousSource16CreationTool_desc,
 				Collections
@@ -672,61 +670,4 @@ public class DsltransPaletteFactory {
 		return entry;
 	}
 
-	/**
-	 * @generated
-	 */
-	private static class NodeToolEntry extends ToolEntry {
-
-		/**
-		 * @generated
-		 */
-		private final List<IElementType> elementTypes;
-
-		/**
-		 * @generated
-		 */
-		private NodeToolEntry(String title, String description,
-				List<IElementType> elementTypes) {
-			super(title, description, null, null);
-			this.elementTypes = elementTypes;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Tool createTool() {
-			Tool tool = new UnspecifiedTypeCreationTool(elementTypes);
-			tool.setProperties(getToolProperties());
-			return tool;
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class LinkToolEntry extends ToolEntry {
-
-		/**
-		 * @generated
-		 */
-		private final List<IElementType> relationshipTypes;
-
-		/**
-		 * @generated
-		 */
-		private LinkToolEntry(String title, String description,
-				List<IElementType> relationshipTypes) {
-			super(title, description, null, null);
-			this.relationshipTypes = relationshipTypes;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Tool createTool() {
-			Tool tool = new UnspecifiedTypeConnectionTool(relationshipTypes);
-			tool.setProperties(getToolProperties());
-			return tool;
-		}
-	}
 }

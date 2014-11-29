@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: NegativeMatchClass.java,v 1.2 2012/01/18 23:38:18 claudiogomes Exp $
  */
 package dsltrans;
 
@@ -17,6 +13,5 @@ package dsltrans;
  * @model annotation="gmf.node border.color='255,61,100' tool.description='Exclude class from pattern.'"
  * @generated
  */
-public interface NegativeMatchClass extends MatchClass
-{
+public interface NegativeMatchClass extends MatchClass {
 } // NegativeMatchClass

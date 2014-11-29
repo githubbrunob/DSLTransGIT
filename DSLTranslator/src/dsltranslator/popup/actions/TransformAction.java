@@ -24,7 +24,6 @@ import org.eclipse.ui.console.IConsole;
 import org.eclipse.ui.console.IConsoleConstants;
 import org.eclipse.ui.console.IConsoleManager;
 import org.eclipse.ui.console.IConsoleView;
-import org.eclipse.ui.console.MessageConsole;
 
 import transformerProcessor.TransformerProcessor;
 import transformerProcessor.exceptions.InvalidLayerRequirement;
@@ -127,10 +126,6 @@ public class TransformAction implements IObjectActionDelegate {
 		}
 		else
 			_selectedFile = null;
-	}
-
-	private void setConsole(MyConsole _myConsole) {
-		this._myConsole = _myConsole;
 	}
 
 	private MyConsole getConsole() {

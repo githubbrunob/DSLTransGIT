@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: AnyMatchClass.java,v 1.2 2012/01/18 23:38:18 claudiogomes Exp $
  */
 package dsltrans;
 
@@ -17,6 +13,5 @@ package dsltrans;
  * @model annotation="gmf.node tool.description='Match any class.'"
  * @generated
  */
-public interface AnyMatchClass extends PositiveMatchClass
-{
+public interface AnyMatchClass extends PositiveMatchClass {
 } // AnyMatchClass

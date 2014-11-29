@@ -25,14 +25,11 @@ public class PostProcessorUtils {
 		IPath outputPath = Path.fromOSString(fileURI.path());
 		System.out.println("OutputPath obtained...");
 		IFile outFile = root.getFile(outputPath);
-	
 		
 		System.out.println("OutFile obtained...");
 		outFile.refreshLocal(IResource.DEPTH_ZERO, null);
 		
 		System.out.println("Refresh done.");
-		
-		 
 	}
 	
 	

@@ -33,16 +33,12 @@ public class SequenceExpansionProcessor implements PostProcessor {
 	
 	private Hashtable<String, Integer> counters;
 	
-	
-	
 	public SequenceExpansionProcessor() {
 		super();
 		
 		counters = new Hashtable<String, Integer>();
 		
 	}
-
-
 
 	@Override
 	public void process(URI fileURI) {
@@ -96,8 +92,6 @@ public class SequenceExpansionProcessor implements PostProcessor {
 		
 	}
 
-
-
 	private void processNode(Node n) {
 		NamedNodeMap nodeAttributes = n.getAttributes();
 		if (nodeAttributes == null) {
@@ -110,8 +104,6 @@ public class SequenceExpansionProcessor implements PostProcessor {
 		}
 	}
 
-
-
 	private void processAttribute(Node attribute) {
 		assert attribute != null;
 		if ( !(attribute instanceof Attr)) {
@@ -120,8 +112,6 @@ public class SequenceExpansionProcessor implements PostProcessor {
 		Attr nodeAttr = (Attr) attribute;
 		processAttributeValue(attribute.getNodeValue(), nodeAttr);
 	}
-
-
 
 	private void processAttributeValue(String nodeValue, Attr nodeAttr) {
 		if (nodeValue.indexOf(SEQUENCER_STRING) == -1) {
@@ -144,13 +134,10 @@ public class SequenceExpansionProcessor implements PostProcessor {
 		counters.put(nodeValue, counters.get(nodeValue) + 1);
 	}
 
-
-
 	private String replaceAllOcurrences(String mainString,
 			String subStringToReplace, String newStringToInject) {
 		String regexp = "(?:" + subStringToReplace + ")";
 		return mainString.replaceAll(regexp, newStringToInject);
 	}
 	
-
 }

@@ -46,7 +46,102 @@ import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
 
-import dsltrans.diagram.edit.parts.*;
+import dsltrans.diagram.edit.parts.AnyMatchClassAnyMatchClassAttributeCompartmentEditPart;
+import dsltrans.diagram.edit.parts.AnyMatchClassClassNameEditPart;
+import dsltrans.diagram.edit.parts.AnyMatchClassEditPart;
+import dsltrans.diagram.edit.parts.ApplyAssociationAssociationNameEditPart;
+import dsltrans.diagram.edit.parts.ApplyAssociationEditPart;
+import dsltrans.diagram.edit.parts.ApplyAttributeApplyAttributeAttributeValueCompartmentEditPart;
+import dsltrans.diagram.edit.parts.ApplyAttributeAttributeNameEditPart;
+import dsltrans.diagram.edit.parts.ApplyAttributeEditPart;
+import dsltrans.diagram.edit.parts.ApplyClassApplyClassAttributeCompartmentEditPart;
+import dsltrans.diagram.edit.parts.ApplyClassClassNameEditPart;
+import dsltrans.diagram.edit.parts.ApplyClassEditPart;
+import dsltrans.diagram.edit.parts.ApplyMayBeSameRelationAssociationNameEditPart;
+import dsltrans.diagram.edit.parts.ApplyMayBeSameRelationEditPart;
+import dsltrans.diagram.edit.parts.ApplyModelApplyModelClassCompartmentEditPart;
+import dsltrans.diagram.edit.parts.ApplyModelEditPart;
+import dsltrans.diagram.edit.parts.Atom2EditPart;
+import dsltrans.diagram.edit.parts.Atom3EditPart;
+import dsltrans.diagram.edit.parts.Atom4EditPart;
+import dsltrans.diagram.edit.parts.AtomEditPart;
+import dsltrans.diagram.edit.parts.AtomValue2EditPart;
+import dsltrans.diagram.edit.parts.AtomValue3EditPart;
+import dsltrans.diagram.edit.parts.AtomValue4EditPart;
+import dsltrans.diagram.edit.parts.AtomValueEditPart;
+import dsltrans.diagram.edit.parts.AttributeEqualityEditPart;
+import dsltrans.diagram.edit.parts.AttributeInequalityEditPart;
+import dsltrans.diagram.edit.parts.AttributeRef2EditPart;
+import dsltrans.diagram.edit.parts.AttributeRef3EditPart;
+import dsltrans.diagram.edit.parts.AttributeRefAttributeRefEditPart;
+import dsltrans.diagram.edit.parts.AttributeRefEditPart;
+import dsltrans.diagram.edit.parts.ClassRef2EditPart;
+import dsltrans.diagram.edit.parts.ClassRef3EditPart;
+import dsltrans.diagram.edit.parts.ClassRefClassRefEditPart;
+import dsltrans.diagram.edit.parts.ClassRefEditPart;
+import dsltrans.diagram.edit.parts.Concat2EditPart;
+import dsltrans.diagram.edit.parts.Concat3EditPart;
+import dsltrans.diagram.edit.parts.ConcatConcatLeftTermCompartment2EditPart;
+import dsltrans.diagram.edit.parts.ConcatConcatLeftTermCompartment3EditPart;
+import dsltrans.diagram.edit.parts.ConcatConcatLeftTermCompartmentEditPart;
+import dsltrans.diagram.edit.parts.ConcatConcatRightTermCompartment2EditPart;
+import dsltrans.diagram.edit.parts.ConcatConcatRightTermCompartment3EditPart;
+import dsltrans.diagram.edit.parts.ConcatConcatRightTermCompartmentEditPart;
+import dsltrans.diagram.edit.parts.ConcatEditPart;
+import dsltrans.diagram.edit.parts.ExistsMatchClassClassNameEditPart;
+import dsltrans.diagram.edit.parts.ExistsMatchClassEditPart;
+import dsltrans.diagram.edit.parts.ExistsMatchClassExistsMatchClassAttributeCompartmentEditPart;
+import dsltrans.diagram.edit.parts.FilePortEditPart;
+import dsltrans.diagram.edit.parts.FilePortFilePathURIEditPart;
+import dsltrans.diagram.edit.parts.FilePortFilePortMetaModelIdCompartmentEditPart;
+import dsltrans.diagram.edit.parts.ImportEditPart;
+import dsltrans.diagram.edit.parts.IsNullEditPart;
+import dsltrans.diagram.edit.parts.IsNullValueEditPart;
+import dsltrans.diagram.edit.parts.LayerPreviousSourceEditPart;
+import dsltrans.diagram.edit.parts.MatchAttributeAttributeNameEditPart;
+import dsltrans.diagram.edit.parts.MatchAttributeEditPart;
+import dsltrans.diagram.edit.parts.MatchAttributeMatchAttributeAttributeValueCompartmentEditPart;
+import dsltrans.diagram.edit.parts.MatchMayBeSameRelationAssociationNameEditPart;
+import dsltrans.diagram.edit.parts.MatchMayBeSameRelationEditPart;
+import dsltrans.diagram.edit.parts.MatchModelEditPart;
+import dsltrans.diagram.edit.parts.MatchModelExplicitSourceEditPart;
+import dsltrans.diagram.edit.parts.MatchModelMatchModelClassCompartmentEditPart;
+import dsltrans.diagram.edit.parts.MetaModelIdentifierEditPart;
+import dsltrans.diagram.edit.parts.MetaModelIdentifierMetaModelNameEditPart;
+import dsltrans.diagram.edit.parts.NegativeBackwardRestrictionEditPart;
+import dsltrans.diagram.edit.parts.NegativeIndirectAssociationAssociationNameEditPart;
+import dsltrans.diagram.edit.parts.NegativeIndirectAssociationEditPart;
+import dsltrans.diagram.edit.parts.NegativeMatchAssociationAssociationNameEditPart;
+import dsltrans.diagram.edit.parts.NegativeMatchAssociationEditPart;
+import dsltrans.diagram.edit.parts.NegativeMatchClassClassNameEditPart;
+import dsltrans.diagram.edit.parts.NegativeMatchClassEditPart;
+import dsltrans.diagram.edit.parts.NegativeMatchClassNegativeMatchClassAttributeCompartmentEditPart;
+import dsltrans.diagram.edit.parts.PositiveBackwardRestrictionEditPart;
+import dsltrans.diagram.edit.parts.PositiveIndirectAssociationEditPart;
+import dsltrans.diagram.edit.parts.PositiveMatchAssociationAssociationNameEditPart;
+import dsltrans.diagram.edit.parts.PositiveMatchAssociationEditPart;
+import dsltrans.diagram.edit.parts.RuleDescriptionEditPart;
+import dsltrans.diagram.edit.parts.RuleEditPart;
+import dsltrans.diagram.edit.parts.RuleRuleApplyCompartmentEditPart;
+import dsltrans.diagram.edit.parts.RuleRuleMatchCompartmentEditPart;
+import dsltrans.diagram.edit.parts.Sequencer2EditPart;
+import dsltrans.diagram.edit.parts.Sequencer3EditPart;
+import dsltrans.diagram.edit.parts.SequencerEditPart;
+import dsltrans.diagram.edit.parts.SequentialDescriptionEditPart;
+import dsltrans.diagram.edit.parts.SequentialEditPart;
+import dsltrans.diagram.edit.parts.SequentialSequentialHasRuleCompartmentEditPart;
+import dsltrans.diagram.edit.parts.SequentialSequentialMetaModelIdCompartmentEditPart;
+import dsltrans.diagram.edit.parts.TransformationModelEditPart;
+import dsltrans.diagram.edit.parts.TypeOf2EditPart;
+import dsltrans.diagram.edit.parts.TypeOf3EditPart;
+import dsltrans.diagram.edit.parts.TypeOfEditPart;
+import dsltrans.diagram.edit.parts.Wildcard2EditPart;
+import dsltrans.diagram.edit.parts.Wildcard3EditPart;
+import dsltrans.diagram.edit.parts.WildcardEditPart;
+import dsltrans.diagram.edit.parts.WrappingLabel2EditPart;
+import dsltrans.diagram.edit.parts.WrappingLabel3EditPart;
+import dsltrans.diagram.edit.parts.WrappingLabel4EditPart;
+import dsltrans.diagram.edit.parts.WrappingLabelEditPart;
 import dsltrans.diagram.part.DsltransVisualIDRegistry;
 
 /**
@@ -718,9 +813,6 @@ public class DsltransViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5008 = createLabel(node,
-				DsltransVisualIDRegistry
-						.getType(WrappingLabelEditPart.VISUAL_ID));
 		createCompartment(
 				node,
 				DsltransVisualIDRegistry
@@ -1062,9 +1154,6 @@ public class DsltransViewProvider extends AbstractProvider implements
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
 					.intValue());
 		}
-		Node label5032 = createLabel(node,
-				DsltransVisualIDRegistry
-						.getType(WrappingLabel2EditPart.VISUAL_ID));
 		createCompartment(
 				node,
 				DsltransVisualIDRegistry
@@ -1217,9 +1306,6 @@ public class DsltransViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5009 = createLabel(node,
-				DsltransVisualIDRegistry
-						.getType(WrappingLabel3EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -1306,9 +1392,6 @@ public class DsltransViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5011 = createLabel(node,
-				DsltransVisualIDRegistry
-						.getType(WrappingLabel4EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -1351,9 +1434,6 @@ public class DsltransViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5012 = createLabel(node,
-				DsltransVisualIDRegistry
-						.getType(WrappingLabel5EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -1397,9 +1477,6 @@ public class DsltransViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5027 = createLabel(node,
-				DsltransVisualIDRegistry
-						.getType(WrappingLabel6EditPart.VISUAL_ID));
 		createCompartment(
 				node,
 				DsltransVisualIDRegistry
@@ -1452,9 +1529,6 @@ public class DsltransViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5013 = createLabel(node,
-				DsltransVisualIDRegistry
-						.getType(WrappingLabel7EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -1497,9 +1571,6 @@ public class DsltransViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5014 = createLabel(node,
-				DsltransVisualIDRegistry
-						.getType(WrappingLabel8EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -1586,9 +1657,6 @@ public class DsltransViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5016 = createLabel(node,
-				DsltransVisualIDRegistry
-						.getType(WrappingLabel9EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -1631,9 +1699,6 @@ public class DsltransViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5017 = createLabel(node,
-				DsltransVisualIDRegistry
-						.getType(WrappingLabel10EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -1678,9 +1743,6 @@ public class DsltransViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5026 = createLabel(node,
-				DsltransVisualIDRegistry
-						.getType(WrappingLabel11EditPart.VISUAL_ID));
 		createCompartment(
 				node,
 				DsltransVisualIDRegistry
@@ -1777,9 +1839,6 @@ public class DsltransViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5019 = createLabel(node,
-				DsltransVisualIDRegistry
-						.getType(WrappingLabel12EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -1822,9 +1881,6 @@ public class DsltransViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5020 = createLabel(node,
-				DsltransVisualIDRegistry
-						.getType(WrappingLabel13EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -1869,9 +1925,6 @@ public class DsltransViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5025 = createLabel(node,
-				DsltransVisualIDRegistry
-						.getType(WrappingLabel14EditPart.VISUAL_ID));
 		createCompartment(
 				node,
 				DsltransVisualIDRegistry
@@ -1924,9 +1977,6 @@ public class DsltransViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5021 = createLabel(node,
-				DsltransVisualIDRegistry
-						.getType(WrappingLabel15EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -1969,9 +2019,6 @@ public class DsltransViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5022 = createLabel(node,
-				DsltransVisualIDRegistry
-						.getType(WrappingLabel16EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -2014,9 +2061,6 @@ public class DsltransViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5023 = createLabel(node,
-				DsltransVisualIDRegistry
-						.getType(WrappingLabel17EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -2059,9 +2103,6 @@ public class DsltransViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5024 = createLabel(node,
-				DsltransVisualIDRegistry
-						.getType(WrappingLabel18EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -2104,9 +2145,6 @@ public class DsltransViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5028 = createLabel(node,
-				DsltransVisualIDRegistry
-						.getType(WrappingLabel19EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -2149,9 +2187,6 @@ public class DsltransViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5029 = createLabel(node,
-				DsltransVisualIDRegistry
-						.getType(WrappingLabel20EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -2424,6 +2459,15 @@ public class DsltransViewProvider extends AbstractProvider implements
 					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
 					routing);
 		}
+		Node label6013 = createLabel(
+				edge,
+				DsltransVisualIDRegistry
+						.getType(MatchMayBeSameRelationAssociationNameEditPart.VISUAL_ID));
+		label6013.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location6013 = (Location) label6013.getLayoutConstraint();
+		location6013.setX(0);
+		location6013.setY(40);
 		return edge;
 	}
 
@@ -2472,6 +2516,15 @@ public class DsltransViewProvider extends AbstractProvider implements
 					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
 					routing);
 		}
+		Node label6014 = createLabel(
+				edge,
+				DsltransVisualIDRegistry
+						.getType(ApplyMayBeSameRelationAssociationNameEditPart.VISUAL_ID));
+		label6014.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location6014 = (Location) label6014.getLayoutConstraint();
+		location6014.setX(0);
+		location6014.setY(40);
 		return edge;
 	}
 
@@ -2831,7 +2884,7 @@ public class DsltransViewProvider extends AbstractProvider implements
 		}
 		Node label6006 = createLabel(edge,
 				DsltransVisualIDRegistry
-						.getType(WrappingLabel21EditPart.VISUAL_ID));
+						.getType(WrappingLabelEditPart.VISUAL_ID));
 		label6006.getStyles().add(
 				NotationFactory.eINSTANCE.createDescriptionStyle());
 		label6006.setLayoutConstraint(NotationFactory.eINSTANCE
@@ -2893,7 +2946,7 @@ public class DsltransViewProvider extends AbstractProvider implements
 		}
 		Node label6007 = createLabel(edge,
 				DsltransVisualIDRegistry
-						.getType(WrappingLabel22EditPart.VISUAL_ID));
+						.getType(WrappingLabel2EditPart.VISUAL_ID));
 		label6007.getStyles().add(
 				NotationFactory.eINSTANCE.createDescriptionStyle());
 		label6007.setLayoutConstraint(NotationFactory.eINSTANCE
@@ -2955,7 +3008,7 @@ public class DsltransViewProvider extends AbstractProvider implements
 		}
 		Node label6008 = createLabel(edge,
 				DsltransVisualIDRegistry
-						.getType(WrappingLabel23EditPart.VISUAL_ID));
+						.getType(WrappingLabel3EditPart.VISUAL_ID));
 		label6008.getStyles().add(
 				NotationFactory.eINSTANCE.createDescriptionStyle());
 		label6008.setLayoutConstraint(NotationFactory.eINSTANCE
@@ -3017,7 +3070,7 @@ public class DsltransViewProvider extends AbstractProvider implements
 		}
 		Node label6009 = createLabel(edge,
 				DsltransVisualIDRegistry
-						.getType(WrappingLabel24EditPart.VISUAL_ID));
+						.getType(WrappingLabel4EditPart.VISUAL_ID));
 		label6009.getStyles().add(
 				NotationFactory.eINSTANCE.createDescriptionStyle());
 		label6009.setLayoutConstraint(NotationFactory.eINSTANCE

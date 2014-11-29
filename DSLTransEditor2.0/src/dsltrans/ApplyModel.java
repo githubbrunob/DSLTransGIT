@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: ApplyModel.java,v 1.2 2012/01/18 23:38:18 claudiogomes Exp $
  */
 package dsltrans;
 
@@ -24,42 +20,41 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see dsltrans.DsltransPackage#getApplyModel()
- * @model annotation="gmf.node color='255,255,163' tool.description='Apply pattern. Place inside Rule.' label.readOnly='true'"
+ * @model annotation="gmf.node color='255,255,163' tool.description='Apply pattern. Place inside Rule.' label.placement='none'"
  * @generated
  */
-public interface ApplyModel extends EObject
-{
-  /**
-   * Returns the value of the '<em><b>Class</b></em>' containment reference list.
-   * The list contents are of type {@link dsltrans.ApplyClass}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Class</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Class</em>' containment reference list.
-   * @see dsltrans.DsltransPackage#getApplyModel_Class()
-   * @model containment="true"
-   *        annotation="gmf.compartment foo='bar'"
-   * @generated
-   */
-  EList<ApplyClass> getClass_();
+public interface ApplyModel extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Class</b></em>' containment reference list.
+	 * The list contents are of type {@link dsltrans.ApplyClass}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Class</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Class</em>' containment reference list.
+	 * @see dsltrans.DsltransPackage#getApplyModel_Class()
+	 * @model containment="true"
+	 *        annotation="gmf.compartment foo='bar'"
+	 * @generated
+	 */
+	EList<ApplyClass> getClass_();
 
-  /**
-   * Returns the value of the '<em><b>Association</b></em>' containment reference list.
-   * The list contents are of type {@link dsltrans.ApplyAssociation}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Association</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Association</em>' containment reference list.
-   * @see dsltrans.DsltransPackage#getApplyModel_Association()
-   * @model containment="true"
-   * @generated
-   */
-  EList<ApplyAssociation> getAssociation();
+	/**
+	 * Returns the value of the '<em><b>Association</b></em>' containment reference list.
+	 * The list contents are of type {@link dsltrans.ApplyAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Association</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Association</em>' containment reference list.
+	 * @see dsltrans.DsltransPackage#getApplyModel_Association()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ApplyAssociation> getAssociation();
 
 } // ApplyModel

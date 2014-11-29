@@ -40,7 +40,7 @@
                class="dsltranslator.popup.actions.GenIdentityAction"
                enablesFor="1"
                id="DSLTranslator.GenIdentityAction"
-               label="%action.label"
+               label="%action.labelIdentity"
                menubarPath="DSLTranslator.menu1/group1">
          </action>
          <action

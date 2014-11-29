@@ -21,6 +21,7 @@ import dsltrans.diagram.edit.parts.AnyMatchClassClassNameEditPart;
 import dsltrans.diagram.edit.parts.ApplyAssociationAssociationNameEditPart;
 import dsltrans.diagram.edit.parts.ApplyAttributeAttributeNameEditPart;
 import dsltrans.diagram.edit.parts.ApplyClassClassNameEditPart;
+import dsltrans.diagram.edit.parts.ApplyMayBeSameRelationAssociationNameEditPart;
 import dsltrans.diagram.edit.parts.AtomValue2EditPart;
 import dsltrans.diagram.edit.parts.AtomValue3EditPart;
 import dsltrans.diagram.edit.parts.AtomValue4EditPart;
@@ -29,6 +30,7 @@ import dsltrans.diagram.edit.parts.ExistsMatchClassClassNameEditPart;
 import dsltrans.diagram.edit.parts.FilePortFilePathURIEditPart;
 import dsltrans.diagram.edit.parts.IsNullValueEditPart;
 import dsltrans.diagram.edit.parts.MatchAttributeAttributeNameEditPart;
+import dsltrans.diagram.edit.parts.MatchMayBeSameRelationAssociationNameEditPart;
 import dsltrans.diagram.edit.parts.MetaModelIdentifierMetaModelNameEditPart;
 import dsltrans.diagram.edit.parts.NegativeIndirectAssociationAssociationNameEditPart;
 import dsltrans.diagram.edit.parts.NegativeMatchAssociationAssociationNameEditPart;
@@ -36,26 +38,6 @@ import dsltrans.diagram.edit.parts.NegativeMatchClassClassNameEditPart;
 import dsltrans.diagram.edit.parts.PositiveMatchAssociationAssociationNameEditPart;
 import dsltrans.diagram.edit.parts.RuleDescriptionEditPart;
 import dsltrans.diagram.edit.parts.SequentialDescriptionEditPart;
-import dsltrans.diagram.edit.parts.WrappingLabel10EditPart;
-import dsltrans.diagram.edit.parts.WrappingLabel11EditPart;
-import dsltrans.diagram.edit.parts.WrappingLabel12EditPart;
-import dsltrans.diagram.edit.parts.WrappingLabel13EditPart;
-import dsltrans.diagram.edit.parts.WrappingLabel14EditPart;
-import dsltrans.diagram.edit.parts.WrappingLabel15EditPart;
-import dsltrans.diagram.edit.parts.WrappingLabel16EditPart;
-import dsltrans.diagram.edit.parts.WrappingLabel17EditPart;
-import dsltrans.diagram.edit.parts.WrappingLabel18EditPart;
-import dsltrans.diagram.edit.parts.WrappingLabel19EditPart;
-import dsltrans.diagram.edit.parts.WrappingLabel20EditPart;
-import dsltrans.diagram.edit.parts.WrappingLabel2EditPart;
-import dsltrans.diagram.edit.parts.WrappingLabel3EditPart;
-import dsltrans.diagram.edit.parts.WrappingLabel4EditPart;
-import dsltrans.diagram.edit.parts.WrappingLabel5EditPart;
-import dsltrans.diagram.edit.parts.WrappingLabel6EditPart;
-import dsltrans.diagram.edit.parts.WrappingLabel7EditPart;
-import dsltrans.diagram.edit.parts.WrappingLabel8EditPart;
-import dsltrans.diagram.edit.parts.WrappingLabel9EditPart;
-import dsltrans.diagram.edit.parts.WrappingLabelEditPart;
 import dsltrans.diagram.parsers.MessageFormatParser;
 import dsltrans.diagram.part.DsltransVisualIDRegistry;
 
@@ -135,25 +117,6 @@ public class DsltransParserProvider extends AbstractProvider implements
 			ruleDescription_5033Parser = parser;
 		}
 		return ruleDescription_5033Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser matchModelLabel_5008Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getMatchModelLabel_5008Parser() {
-		if (matchModelLabel_5008Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-
-			};
-			MessageFormatParser parser = new MessageFormatParser(features);
-			matchModelLabel_5008Parser = parser;
-		}
-		return matchModelLabel_5008Parser;
 	}
 
 	/**
@@ -267,25 +230,6 @@ public class DsltransParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser applyModelLabel_5032Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getApplyModelLabel_5032Parser() {
-		if (applyModelLabel_5032Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-
-			};
-			MessageFormatParser parser = new MessageFormatParser(features);
-			applyModelLabel_5032Parser = parser;
-		}
-		return applyModelLabel_5032Parser;
-	}
-
-	/**
-	 * @generated
-	 */
 	private IParser applyClassClassName_5031Parser;
 
 	/**
@@ -322,25 +266,6 @@ public class DsltransParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser typeOfLabel_5009Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getTypeOfLabel_5009Parser() {
-		if (typeOfLabel_5009Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-
-			};
-			MessageFormatParser parser = new MessageFormatParser(features);
-			typeOfLabel_5009Parser = parser;
-		}
-		return typeOfLabel_5009Parser;
-	}
-
-	/**
-	 * @generated
-	 */
 	private IParser atomValue_5010Parser;
 
 	/**
@@ -354,101 +279,6 @@ public class DsltransParserProvider extends AbstractProvider implements
 			atomValue_5010Parser = parser;
 		}
 		return atomValue_5010Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser attributeRefLabel_5011Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getAttributeRefLabel_5011Parser() {
-		if (attributeRefLabel_5011Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-
-			};
-			MessageFormatParser parser = new MessageFormatParser(features);
-			attributeRefLabel_5011Parser = parser;
-		}
-		return attributeRefLabel_5011Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser classRefLabel_5012Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getClassRefLabel_5012Parser() {
-		if (classRefLabel_5012Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-
-			};
-			MessageFormatParser parser = new MessageFormatParser(features);
-			classRefLabel_5012Parser = parser;
-		}
-		return classRefLabel_5012Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser concatLabel_5027Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getConcatLabel_5027Parser() {
-		if (concatLabel_5027Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-
-			};
-			MessageFormatParser parser = new MessageFormatParser(features);
-			concatLabel_5027Parser = parser;
-		}
-		return concatLabel_5027Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser typeOfLabel_5013Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getTypeOfLabel_5013Parser() {
-		if (typeOfLabel_5013Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-
-			};
-			MessageFormatParser parser = new MessageFormatParser(features);
-			typeOfLabel_5013Parser = parser;
-		}
-		return typeOfLabel_5013Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser typeOfLabel_5014Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getTypeOfLabel_5014Parser() {
-		if (typeOfLabel_5014Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-
-			};
-			MessageFormatParser parser = new MessageFormatParser(features);
-			typeOfLabel_5014Parser = parser;
-		}
-		return typeOfLabel_5014Parser;
 	}
 
 	/**
@@ -472,63 +302,6 @@ public class DsltransParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser attributeRefLabel_5016Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getAttributeRefLabel_5016Parser() {
-		if (attributeRefLabel_5016Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-
-			};
-			MessageFormatParser parser = new MessageFormatParser(features);
-			attributeRefLabel_5016Parser = parser;
-		}
-		return attributeRefLabel_5016Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser classRefLabel_5017Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getClassRefLabel_5017Parser() {
-		if (classRefLabel_5017Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-
-			};
-			MessageFormatParser parser = new MessageFormatParser(features);
-			classRefLabel_5017Parser = parser;
-		}
-		return classRefLabel_5017Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser concatLabel_5026Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getConcatLabel_5026Parser() {
-		if (concatLabel_5026Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-
-			};
-			MessageFormatParser parser = new MessageFormatParser(features);
-			concatLabel_5026Parser = parser;
-		}
-		return concatLabel_5026Parser;
-	}
-
-	/**
-	 * @generated
-	 */
 	private IParser atomValue_5018Parser;
 
 	/**
@@ -542,177 +315,6 @@ public class DsltransParserProvider extends AbstractProvider implements
 			atomValue_5018Parser = parser;
 		}
 		return atomValue_5018Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser attributeRefLabel_5019Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getAttributeRefLabel_5019Parser() {
-		if (attributeRefLabel_5019Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-
-			};
-			MessageFormatParser parser = new MessageFormatParser(features);
-			attributeRefLabel_5019Parser = parser;
-		}
-		return attributeRefLabel_5019Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser classRefLabel_5020Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getClassRefLabel_5020Parser() {
-		if (classRefLabel_5020Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-
-			};
-			MessageFormatParser parser = new MessageFormatParser(features);
-			classRefLabel_5020Parser = parser;
-		}
-		return classRefLabel_5020Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser concatLabel_5025Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getConcatLabel_5025Parser() {
-		if (concatLabel_5025Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-
-			};
-			MessageFormatParser parser = new MessageFormatParser(features);
-			concatLabel_5025Parser = parser;
-		}
-		return concatLabel_5025Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser wildcardLabel_5021Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getWildcardLabel_5021Parser() {
-		if (wildcardLabel_5021Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-
-			};
-			MessageFormatParser parser = new MessageFormatParser(features);
-			wildcardLabel_5021Parser = parser;
-		}
-		return wildcardLabel_5021Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser sequencerLabel_5022Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getSequencerLabel_5022Parser() {
-		if (sequencerLabel_5022Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-
-			};
-			MessageFormatParser parser = new MessageFormatParser(features);
-			sequencerLabel_5022Parser = parser;
-		}
-		return sequencerLabel_5022Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser wildcardLabel_5023Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getWildcardLabel_5023Parser() {
-		if (wildcardLabel_5023Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-
-			};
-			MessageFormatParser parser = new MessageFormatParser(features);
-			wildcardLabel_5023Parser = parser;
-		}
-		return wildcardLabel_5023Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser sequencerLabel_5024Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getSequencerLabel_5024Parser() {
-		if (sequencerLabel_5024Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-
-			};
-			MessageFormatParser parser = new MessageFormatParser(features);
-			sequencerLabel_5024Parser = parser;
-		}
-		return sequencerLabel_5024Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser wildcardLabel_5028Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getWildcardLabel_5028Parser() {
-		if (wildcardLabel_5028Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-
-			};
-			MessageFormatParser parser = new MessageFormatParser(features);
-			wildcardLabel_5028Parser = parser;
-		}
-		return wildcardLabel_5028Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser sequencerLabel_5029Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getSequencerLabel_5029Parser() {
-		if (sequencerLabel_5029Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-
-			};
-			MessageFormatParser parser = new MessageFormatParser(features);
-			sequencerLabel_5029Parser = parser;
-		}
-		return sequencerLabel_5029Parser;
 	}
 
 	/**
@@ -772,6 +374,42 @@ public class DsltransParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	private IParser matchMayBeSameRelationAssociationName_6013Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getMatchMayBeSameRelationAssociationName_6013Parser() {
+		if (matchMayBeSameRelationAssociationName_6013Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsltransPackage.eINSTANCE
+					.getAssociation_AssociationName() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			matchMayBeSameRelationAssociationName_6013Parser = parser;
+		}
+		return matchMayBeSameRelationAssociationName_6013Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser applyMayBeSameRelationAssociationName_6014Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getApplyMayBeSameRelationAssociationName_6014Parser() {
+		if (applyMayBeSameRelationAssociationName_6014Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsltransPackage.eINSTANCE
+					.getAssociation_AssociationName() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			applyMayBeSameRelationAssociationName_6014Parser = parser;
+		}
+		return applyMayBeSameRelationAssociationName_6014Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser applyAssociationAssociationName_6005Parser;
 
 	/**
@@ -800,8 +438,6 @@ public class DsltransParserProvider extends AbstractProvider implements
 			return getMetaModelIdentifierMetaModelName_5001Parser();
 		case RuleDescriptionEditPart.VISUAL_ID:
 			return getRuleDescription_5033Parser();
-		case WrappingLabelEditPart.VISUAL_ID:
-			return getMatchModelLabel_5008Parser();
 		case AnyMatchClassClassNameEditPart.VISUAL_ID:
 			return getAnyMatchClassClassName_5005Parser();
 		case MatchAttributeAttributeNameEditPart.VISUAL_ID:
@@ -814,60 +450,26 @@ public class DsltransParserProvider extends AbstractProvider implements
 			return getExistsMatchClassClassName_5006Parser();
 		case NegativeMatchClassClassNameEditPart.VISUAL_ID:
 			return getNegativeMatchClassClassName_5007Parser();
-		case WrappingLabel2EditPart.VISUAL_ID:
-			return getApplyModelLabel_5032Parser();
 		case ApplyClassClassNameEditPart.VISUAL_ID:
 			return getApplyClassClassName_5031Parser();
 		case ApplyAttributeAttributeNameEditPart.VISUAL_ID:
 			return getApplyAttributeAttributeName_5030Parser();
-		case WrappingLabel3EditPart.VISUAL_ID:
-			return getTypeOfLabel_5009Parser();
 		case AtomValue2EditPart.VISUAL_ID:
 			return getAtomValue_5010Parser();
-		case WrappingLabel4EditPart.VISUAL_ID:
-			return getAttributeRefLabel_5011Parser();
-		case WrappingLabel5EditPart.VISUAL_ID:
-			return getClassRefLabel_5012Parser();
-		case WrappingLabel6EditPart.VISUAL_ID:
-			return getConcatLabel_5027Parser();
-		case WrappingLabel7EditPart.VISUAL_ID:
-			return getTypeOfLabel_5013Parser();
-		case WrappingLabel8EditPart.VISUAL_ID:
-			return getTypeOfLabel_5014Parser();
 		case AtomValue3EditPart.VISUAL_ID:
 			return getAtomValue_5015Parser();
-		case WrappingLabel9EditPart.VISUAL_ID:
-			return getAttributeRefLabel_5016Parser();
-		case WrappingLabel10EditPart.VISUAL_ID:
-			return getClassRefLabel_5017Parser();
-		case WrappingLabel11EditPart.VISUAL_ID:
-			return getConcatLabel_5026Parser();
 		case AtomValue4EditPart.VISUAL_ID:
 			return getAtomValue_5018Parser();
-		case WrappingLabel12EditPart.VISUAL_ID:
-			return getAttributeRefLabel_5019Parser();
-		case WrappingLabel13EditPart.VISUAL_ID:
-			return getClassRefLabel_5020Parser();
-		case WrappingLabel14EditPart.VISUAL_ID:
-			return getConcatLabel_5025Parser();
-		case WrappingLabel15EditPart.VISUAL_ID:
-			return getWildcardLabel_5021Parser();
-		case WrappingLabel16EditPart.VISUAL_ID:
-			return getSequencerLabel_5022Parser();
-		case WrappingLabel17EditPart.VISUAL_ID:
-			return getWildcardLabel_5023Parser();
-		case WrappingLabel18EditPart.VISUAL_ID:
-			return getSequencerLabel_5024Parser();
-		case WrappingLabel19EditPart.VISUAL_ID:
-			return getWildcardLabel_5028Parser();
-		case WrappingLabel20EditPart.VISUAL_ID:
-			return getSequencerLabel_5029Parser();
 		case NegativeIndirectAssociationAssociationNameEditPart.VISUAL_ID:
 			return getNegativeIndirectAssociationAssociationName_6010Parser();
 		case PositiveMatchAssociationAssociationNameEditPart.VISUAL_ID:
 			return getPositiveMatchAssociationAssociationName_6011Parser();
 		case NegativeMatchAssociationAssociationNameEditPart.VISUAL_ID:
 			return getNegativeMatchAssociationAssociationName_6012Parser();
+		case MatchMayBeSameRelationAssociationNameEditPart.VISUAL_ID:
+			return getMatchMayBeSameRelationAssociationName_6013Parser();
+		case ApplyMayBeSameRelationAssociationNameEditPart.VISUAL_ID:
+			return getApplyMayBeSameRelationAssociationName_6014Parser();
 		case ApplyAssociationAssociationNameEditPart.VISUAL_ID:
 			return getApplyAssociationAssociationName_6005Parser();
 		}

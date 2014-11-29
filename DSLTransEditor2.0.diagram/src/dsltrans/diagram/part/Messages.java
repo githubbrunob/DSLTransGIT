@@ -716,142 +716,27 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_TypeOf_3018_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_AttributeRef_3021_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_NegativeMatchAssociation_4004_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_NegativeMatchAssociation_4004_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_NegativeMatchClass_3009_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_NegativeMatchClass_3009_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_NegativeBackwardRestriction_4007_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_NegativeBackwardRestriction_4007_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MatchMayBeSameRelation_4017_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MatchMayBeSameRelation_4017_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ClassRef_3016_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ClassRefClassRef_4014_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ClassRefClassRef_4014_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MatchModel_3003_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_NegativeIndirectAssociation_4002_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_NegativeIndirectAssociation_4002_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_PositiveIndirectAssociation_4001_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_PositiveIndirectAssociation_4001_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_AttributeRef_3025_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ClassRef_3022_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_LayerPreviousSource_4011_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_LayerPreviousSource_4011_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ClassRef_3026_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MatchModelExplicitSource_4012_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MatchModelExplicitSource_4012_source;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_TransformationModel_1000_links;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_PositiveMatchAssociation_4003_target;
+	public static String NavigatorGroupName_Sequential_2001_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_PositiveMatchAssociation_4003_source;
+	public static String NavigatorGroupName_Sequential_2001_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_FilePort_2002_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_MatchModel_3003_outgoinglinks;
 
 	/**
 	 * @generated
@@ -866,37 +751,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ApplyMayBeSameRelation_4018_target;
+	public static String NavigatorGroupName_MatchAttribute_3005_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ApplyMayBeSameRelation_4018_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Import_4010_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Import_4010_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ApplyClass_3011_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ApplyClass_3011_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_FilePort_2002_incominglinks;
+	public static String NavigatorGroupName_MatchAttribute_3005_outgoinglinks;
 
 	/**
 	 * @generated
@@ -911,17 +771,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_AttributeEquality_4015_target;
+	public static String NavigatorGroupName_NegativeMatchClass_3009_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_AttributeEquality_4015_source;
+	public static String NavigatorGroupName_NegativeMatchClass_3009_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_TypeOf_3013_outgoinglinks;
+	public static String NavigatorGroupName_ApplyClass_3011_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ApplyClass_3011_outgoinglinks;
 
 	/**
 	 * @generated
@@ -936,12 +801,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_AttributeRefAttributeRef_4013_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_AttributeRefAttributeRef_4013_source;
+	public static String NavigatorGroupName_TypeOf_3013_outgoinglinks;
 
 	/**
 	 * @generated
@@ -951,22 +811,77 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_AttributeInequality_4016_target;
+	public static String NavigatorGroupName_ClassRef_3016_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_AttributeInequality_4016_source;
+	public static String NavigatorGroupName_TypeOf_3018_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Sequential_2001_incominglinks;
+	public static String NavigatorGroupName_TypeOf_3019_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Sequential_2001_outgoinglinks;
+	public static String NavigatorGroupName_AttributeRef_3021_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ClassRef_3022_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_AttributeRef_3025_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ClassRef_3026_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PositiveIndirectAssociation_4001_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PositiveIndirectAssociation_4001_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_NegativeIndirectAssociation_4002_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_NegativeIndirectAssociation_4002_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PositiveMatchAssociation_4003_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PositiveMatchAssociation_4003_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_NegativeMatchAssociation_4004_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_NegativeMatchAssociation_4004_source;
 
 	/**
 	 * @generated
@@ -991,37 +906,107 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_MatchAttribute_3005_incominglinks;
+	public static String NavigatorGroupName_NegativeBackwardRestriction_4007_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_MatchAttribute_3005_outgoinglinks;
+	public static String NavigatorGroupName_NegativeBackwardRestriction_4007_source;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_TypeOf_3019_outgoinglinks;
+	public static String NavigatorGroupName_Import_4010_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Import_4010_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_LayerPreviousSource_4011_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_LayerPreviousSource_4011_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_MatchModelExplicitSource_4012_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_MatchModelExplicitSource_4012_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_AttributeRefAttributeRef_4013_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_AttributeRefAttributeRef_4013_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ClassRefClassRef_4014_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ClassRefClassRef_4014_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_AttributeEquality_4015_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_AttributeEquality_4015_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_AttributeInequality_4016_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_AttributeInequality_4016_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_MatchMayBeSameRelation_4017_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_MatchMayBeSameRelation_4017_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ApplyMayBeSameRelation_4018_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ApplyMayBeSameRelation_4018_source;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorActionProvider_OpenDiagramActionName;
-
-	/**
-	 * @generated
-	 */
-	public static String AbstractParser_UnexpectedValueType;
-
-	/**
-	 * @generated
-	 */
-	public static String AbstractParser_WrongStringConversion;
-
-	/**
-	 * @generated
-	 */
-	public static String AbstractParser_UnknownLiteral;
 
 	/**
 	 * @generated

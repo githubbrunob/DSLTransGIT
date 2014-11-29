@@ -8,10 +8,106 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 
 import dsltrans.DsltransPackage;
 import dsltrans.TransformationModel;
-import dsltrans.diagram.edit.parts.*;
+import dsltrans.diagram.edit.parts.AnyMatchClassAnyMatchClassAttributeCompartmentEditPart;
+import dsltrans.diagram.edit.parts.AnyMatchClassClassNameEditPart;
+import dsltrans.diagram.edit.parts.AnyMatchClassEditPart;
+import dsltrans.diagram.edit.parts.ApplyAssociationAssociationNameEditPart;
+import dsltrans.diagram.edit.parts.ApplyAssociationEditPart;
+import dsltrans.diagram.edit.parts.ApplyAttributeApplyAttributeAttributeValueCompartmentEditPart;
+import dsltrans.diagram.edit.parts.ApplyAttributeAttributeNameEditPart;
+import dsltrans.diagram.edit.parts.ApplyAttributeEditPart;
+import dsltrans.diagram.edit.parts.ApplyClassApplyClassAttributeCompartmentEditPart;
+import dsltrans.diagram.edit.parts.ApplyClassClassNameEditPart;
+import dsltrans.diagram.edit.parts.ApplyClassEditPart;
+import dsltrans.diagram.edit.parts.ApplyMayBeSameRelationAssociationNameEditPart;
+import dsltrans.diagram.edit.parts.ApplyMayBeSameRelationEditPart;
+import dsltrans.diagram.edit.parts.ApplyModelApplyModelClassCompartmentEditPart;
+import dsltrans.diagram.edit.parts.ApplyModelEditPart;
+import dsltrans.diagram.edit.parts.Atom2EditPart;
+import dsltrans.diagram.edit.parts.Atom3EditPart;
+import dsltrans.diagram.edit.parts.Atom4EditPart;
+import dsltrans.diagram.edit.parts.AtomEditPart;
+import dsltrans.diagram.edit.parts.AtomValue2EditPart;
+import dsltrans.diagram.edit.parts.AtomValue3EditPart;
+import dsltrans.diagram.edit.parts.AtomValue4EditPart;
+import dsltrans.diagram.edit.parts.AtomValueEditPart;
+import dsltrans.diagram.edit.parts.AttributeEqualityEditPart;
+import dsltrans.diagram.edit.parts.AttributeInequalityEditPart;
+import dsltrans.diagram.edit.parts.AttributeRef2EditPart;
+import dsltrans.diagram.edit.parts.AttributeRef3EditPart;
+import dsltrans.diagram.edit.parts.AttributeRefAttributeRefEditPart;
+import dsltrans.diagram.edit.parts.AttributeRefEditPart;
+import dsltrans.diagram.edit.parts.ClassRef2EditPart;
+import dsltrans.diagram.edit.parts.ClassRef3EditPart;
+import dsltrans.diagram.edit.parts.ClassRefClassRefEditPart;
+import dsltrans.diagram.edit.parts.ClassRefEditPart;
+import dsltrans.diagram.edit.parts.Concat2EditPart;
+import dsltrans.diagram.edit.parts.Concat3EditPart;
+import dsltrans.diagram.edit.parts.ConcatConcatLeftTermCompartment2EditPart;
+import dsltrans.diagram.edit.parts.ConcatConcatLeftTermCompartment3EditPart;
+import dsltrans.diagram.edit.parts.ConcatConcatLeftTermCompartmentEditPart;
+import dsltrans.diagram.edit.parts.ConcatConcatRightTermCompartment2EditPart;
+import dsltrans.diagram.edit.parts.ConcatConcatRightTermCompartment3EditPart;
+import dsltrans.diagram.edit.parts.ConcatConcatRightTermCompartmentEditPart;
+import dsltrans.diagram.edit.parts.ConcatEditPart;
+import dsltrans.diagram.edit.parts.ExistsMatchClassClassNameEditPart;
+import dsltrans.diagram.edit.parts.ExistsMatchClassEditPart;
+import dsltrans.diagram.edit.parts.ExistsMatchClassExistsMatchClassAttributeCompartmentEditPart;
+import dsltrans.diagram.edit.parts.FilePortEditPart;
+import dsltrans.diagram.edit.parts.FilePortFilePathURIEditPart;
+import dsltrans.diagram.edit.parts.FilePortFilePortMetaModelIdCompartmentEditPart;
+import dsltrans.diagram.edit.parts.ImportEditPart;
+import dsltrans.diagram.edit.parts.IsNullEditPart;
+import dsltrans.diagram.edit.parts.IsNullValueEditPart;
+import dsltrans.diagram.edit.parts.LayerPreviousSourceEditPart;
+import dsltrans.diagram.edit.parts.MatchAttributeAttributeNameEditPart;
+import dsltrans.diagram.edit.parts.MatchAttributeEditPart;
+import dsltrans.diagram.edit.parts.MatchAttributeMatchAttributeAttributeValueCompartmentEditPart;
+import dsltrans.diagram.edit.parts.MatchMayBeSameRelationAssociationNameEditPart;
+import dsltrans.diagram.edit.parts.MatchMayBeSameRelationEditPart;
+import dsltrans.diagram.edit.parts.MatchModelEditPart;
+import dsltrans.diagram.edit.parts.MatchModelExplicitSourceEditPart;
+import dsltrans.diagram.edit.parts.MatchModelMatchModelClassCompartmentEditPart;
+import dsltrans.diagram.edit.parts.MetaModelIdentifierEditPart;
+import dsltrans.diagram.edit.parts.MetaModelIdentifierMetaModelNameEditPart;
+import dsltrans.diagram.edit.parts.NegativeBackwardRestrictionEditPart;
+import dsltrans.diagram.edit.parts.NegativeIndirectAssociationAssociationNameEditPart;
+import dsltrans.diagram.edit.parts.NegativeIndirectAssociationEditPart;
+import dsltrans.diagram.edit.parts.NegativeMatchAssociationAssociationNameEditPart;
+import dsltrans.diagram.edit.parts.NegativeMatchAssociationEditPart;
+import dsltrans.diagram.edit.parts.NegativeMatchClassClassNameEditPart;
+import dsltrans.diagram.edit.parts.NegativeMatchClassEditPart;
+import dsltrans.diagram.edit.parts.NegativeMatchClassNegativeMatchClassAttributeCompartmentEditPart;
+import dsltrans.diagram.edit.parts.PositiveBackwardRestrictionEditPart;
+import dsltrans.diagram.edit.parts.PositiveIndirectAssociationEditPart;
+import dsltrans.diagram.edit.parts.PositiveMatchAssociationAssociationNameEditPart;
+import dsltrans.diagram.edit.parts.PositiveMatchAssociationEditPart;
+import dsltrans.diagram.edit.parts.RuleDescriptionEditPart;
+import dsltrans.diagram.edit.parts.RuleEditPart;
+import dsltrans.diagram.edit.parts.RuleRuleApplyCompartmentEditPart;
+import dsltrans.diagram.edit.parts.RuleRuleMatchCompartmentEditPart;
+import dsltrans.diagram.edit.parts.Sequencer2EditPart;
+import dsltrans.diagram.edit.parts.Sequencer3EditPart;
+import dsltrans.diagram.edit.parts.SequencerEditPart;
+import dsltrans.diagram.edit.parts.SequentialDescriptionEditPart;
+import dsltrans.diagram.edit.parts.SequentialEditPart;
+import dsltrans.diagram.edit.parts.SequentialSequentialHasRuleCompartmentEditPart;
+import dsltrans.diagram.edit.parts.SequentialSequentialMetaModelIdCompartmentEditPart;
+import dsltrans.diagram.edit.parts.TransformationModelEditPart;
+import dsltrans.diagram.edit.parts.TypeOf2EditPart;
+import dsltrans.diagram.edit.parts.TypeOf3EditPart;
+import dsltrans.diagram.edit.parts.TypeOfEditPart;
+import dsltrans.diagram.edit.parts.Wildcard2EditPart;
+import dsltrans.diagram.edit.parts.Wildcard3EditPart;
+import dsltrans.diagram.edit.parts.WildcardEditPart;
+import dsltrans.diagram.edit.parts.WrappingLabel2EditPart;
+import dsltrans.diagram.edit.parts.WrappingLabel3EditPart;
+import dsltrans.diagram.edit.parts.WrappingLabel4EditPart;
+import dsltrans.diagram.edit.parts.WrappingLabelEditPart;
 
 /**
  * This registry is used to determine which type of visual object should be
@@ -495,9 +591,6 @@ public class DsltransVisualIDRegistry {
 			}
 			break;
 		case MatchModelEditPart.VISUAL_ID:
-			if (WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			if (MatchModelMatchModelClassCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -545,9 +638,6 @@ public class DsltransVisualIDRegistry {
 			}
 			break;
 		case ApplyModelEditPart.VISUAL_ID:
-			if (WrappingLabel2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			if (ApplyModelApplyModelClassCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -568,44 +658,16 @@ public class DsltransVisualIDRegistry {
 				return true;
 			}
 			break;
-		case TypeOfEditPart.VISUAL_ID:
-			if (WrappingLabel3EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
 		case Atom2EditPart.VISUAL_ID:
 			if (AtomValue2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case AttributeRefEditPart.VISUAL_ID:
-			if (WrappingLabel4EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ClassRefEditPart.VISUAL_ID:
-			if (WrappingLabel5EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
 		case ConcatEditPart.VISUAL_ID:
-			if (WrappingLabel6EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			if (ConcatConcatLeftTermCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ConcatConcatRightTermCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case TypeOf2EditPart.VISUAL_ID:
-			if (WrappingLabel7EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case TypeOf3EditPart.VISUAL_ID:
-			if (WrappingLabel8EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -614,20 +676,7 @@ public class DsltransVisualIDRegistry {
 				return true;
 			}
 			break;
-		case AttributeRef2EditPart.VISUAL_ID:
-			if (WrappingLabel9EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ClassRef2EditPart.VISUAL_ID:
-			if (WrappingLabel10EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
 		case Concat2EditPart.VISUAL_ID:
-			if (WrappingLabel11EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			if (ConcatConcatLeftTermCompartment2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -640,54 +689,11 @@ public class DsltransVisualIDRegistry {
 				return true;
 			}
 			break;
-		case AttributeRef3EditPart.VISUAL_ID:
-			if (WrappingLabel12EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ClassRef3EditPart.VISUAL_ID:
-			if (WrappingLabel13EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
 		case Concat3EditPart.VISUAL_ID:
-			if (WrappingLabel14EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			if (ConcatConcatLeftTermCompartment3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ConcatConcatRightTermCompartment3EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case WildcardEditPart.VISUAL_ID:
-			if (WrappingLabel15EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case SequencerEditPart.VISUAL_ID:
-			if (WrappingLabel16EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case Wildcard2EditPart.VISUAL_ID:
-			if (WrappingLabel17EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case Sequencer2EditPart.VISUAL_ID:
-			if (WrappingLabel18EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case Wildcard3EditPart.VISUAL_ID:
-			if (WrappingLabel19EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case Sequencer3EditPart.VISUAL_ID:
-			if (WrappingLabel20EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -936,28 +942,38 @@ public class DsltransVisualIDRegistry {
 				return true;
 			}
 			break;
+		case MatchMayBeSameRelationEditPart.VISUAL_ID:
+			if (MatchMayBeSameRelationAssociationNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ApplyMayBeSameRelationEditPart.VISUAL_ID:
+			if (ApplyMayBeSameRelationAssociationNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case ApplyAssociationEditPart.VISUAL_ID:
 			if (ApplyAssociationAssociationNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case LayerPreviousSourceEditPart.VISUAL_ID:
-			if (WrappingLabel21EditPart.VISUAL_ID == nodeVisualID) {
+			if (WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case MatchModelExplicitSourceEditPart.VISUAL_ID:
-			if (WrappingLabel22EditPart.VISUAL_ID == nodeVisualID) {
+			if (WrappingLabel2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case AttributeRefAttributeRefEditPart.VISUAL_ID:
-			if (WrappingLabel23EditPart.VISUAL_ID == nodeVisualID) {
+			if (WrappingLabel3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case ClassRefClassRefEditPart.VISUAL_ID:
-			if (WrappingLabel24EditPart.VISUAL_ID == nodeVisualID) {
+			if (WrappingLabel4EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -1032,5 +1048,144 @@ public class DsltransVisualIDRegistry {
 	private static boolean isDiagram(TransformationModel element) {
 		return true;
 	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean checkNodeVisualID(View containerView,
+			EObject domainElement, int candidate) {
+		if (candidate == -1) {
+			//unrecognized id is always bad
+			return false;
+		}
+		int basic = getNodeVisualID(containerView, domainElement);
+		return basic == candidate;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean isCompartmentVisualID(int visualID) {
+		switch (visualID) {
+		case SequentialSequentialMetaModelIdCompartmentEditPart.VISUAL_ID:
+		case SequentialSequentialHasRuleCompartmentEditPart.VISUAL_ID:
+		case RuleRuleMatchCompartmentEditPart.VISUAL_ID:
+		case RuleRuleApplyCompartmentEditPart.VISUAL_ID:
+		case MatchModelMatchModelClassCompartmentEditPart.VISUAL_ID:
+		case AnyMatchClassAnyMatchClassAttributeCompartmentEditPart.VISUAL_ID:
+		case MatchAttributeMatchAttributeAttributeValueCompartmentEditPart.VISUAL_ID:
+		case ExistsMatchClassExistsMatchClassAttributeCompartmentEditPart.VISUAL_ID:
+		case NegativeMatchClassNegativeMatchClassAttributeCompartmentEditPart.VISUAL_ID:
+		case ApplyModelApplyModelClassCompartmentEditPart.VISUAL_ID:
+		case ApplyClassApplyClassAttributeCompartmentEditPart.VISUAL_ID:
+		case ApplyAttributeApplyAttributeAttributeValueCompartmentEditPart.VISUAL_ID:
+		case ConcatConcatLeftTermCompartmentEditPart.VISUAL_ID:
+		case ConcatConcatRightTermCompartmentEditPart.VISUAL_ID:
+		case ConcatConcatLeftTermCompartment2EditPart.VISUAL_ID:
+		case ConcatConcatRightTermCompartment2EditPart.VISUAL_ID:
+		case ConcatConcatLeftTermCompartment3EditPart.VISUAL_ID:
+		case ConcatConcatRightTermCompartment3EditPart.VISUAL_ID:
+		case FilePortFilePortMetaModelIdCompartmentEditPart.VISUAL_ID:
+			return true;
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean isSemanticLeafVisualID(int visualID) {
+		switch (visualID) {
+		case TransformationModelEditPart.VISUAL_ID:
+			return false;
+		case MetaModelIdentifierEditPart.VISUAL_ID:
+		case AtomEditPart.VISUAL_ID:
+		case IsNullEditPart.VISUAL_ID:
+		case TypeOfEditPart.VISUAL_ID:
+		case Atom2EditPart.VISUAL_ID:
+		case AttributeRefEditPart.VISUAL_ID:
+		case ClassRefEditPart.VISUAL_ID:
+		case TypeOf2EditPart.VISUAL_ID:
+		case TypeOf3EditPart.VISUAL_ID:
+		case Atom3EditPart.VISUAL_ID:
+		case AttributeRef2EditPart.VISUAL_ID:
+		case ClassRef2EditPart.VISUAL_ID:
+		case Atom4EditPart.VISUAL_ID:
+		case AttributeRef3EditPart.VISUAL_ID:
+		case ClassRef3EditPart.VISUAL_ID:
+		case WildcardEditPart.VISUAL_ID:
+		case SequencerEditPart.VISUAL_ID:
+		case Wildcard2EditPart.VISUAL_ID:
+		case Sequencer2EditPart.VISUAL_ID:
+		case Wildcard3EditPart.VISUAL_ID:
+		case Sequencer3EditPart.VISUAL_ID:
+			return true;
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static final DiagramStructure TYPED_INSTANCE = new DiagramStructure() {
+		/**
+		 * @generated
+		 */
+		@Override
+		public int getVisualID(View view) {
+			return dsltrans.diagram.part.DsltransVisualIDRegistry
+					.getVisualID(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public String getModelID(View view) {
+			return dsltrans.diagram.part.DsltransVisualIDRegistry
+					.getModelID(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public int getNodeVisualID(View containerView, EObject domainElement) {
+			return dsltrans.diagram.part.DsltransVisualIDRegistry
+					.getNodeVisualID(containerView, domainElement);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean checkNodeVisualID(View containerView,
+				EObject domainElement, int candidate) {
+			return dsltrans.diagram.part.DsltransVisualIDRegistry
+					.checkNodeVisualID(containerView, domainElement, candidate);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean isCompartmentVisualID(int visualID) {
+			return dsltrans.diagram.part.DsltransVisualIDRegistry
+					.isCompartmentVisualID(visualID);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean isSemanticLeafVisualID(int visualID) {
+			return dsltrans.diagram.part.DsltransVisualIDRegistry
+					.isSemanticLeafVisualID(visualID);
+		}
+	};
 
 }

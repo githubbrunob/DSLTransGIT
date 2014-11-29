@@ -6,27 +6,31 @@ import java.util.List;
 
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.osgi.framework.internal.core.BundleHost;
 import org.eclipse.osgi.service.resolver.BundleDescription;
+import org.eclipse.osgi.service.resolver.PlatformAdmin;
 
-@SuppressWarnings("restriction")
 public class ClassPathManager {
 	
+	private static final String TRANSFORMER_SYM_NAME = "Transformer2.0";
+	private static final String JAVA_CLASS_PATH = "java.class.path";
+	
 	public void update(){
-		String path = System.getProperty("java.class.path");		
+		String path = System.getProperty(JAVA_CLASS_PATH);		
 
-		BundleHost b = (BundleHost)Platform.getBundle("Transformer2.0");
-		System.out.println("BUNDLE: "+b.getSymbolicName());
+		PlatformAdmin pa = Platform.getPlatformAdmin();
+		BundleDescription transformerBundleDescription = pa.getState().getBundles(TRANSFORMER_SYM_NAME)[0];
+		
+		System.out.println("BUNDLE: "+transformerBundleDescription.getSymbolicName());
 		
 		List<String> slist = new LinkedList<String>();
-		resolveRequires(b.getBundleDescription(),slist);
+		resolveRequires(transformerBundleDescription,slist);
 		for(String s:slist){
 			if(Platform.getOS().equals(Platform.OS_LINUX))
 				path += ":"+s;
 			else
 				path += ";"+s;
 		}
-		System.setProperty("java.class.path", path);
+		System.setProperty(JAVA_CLASS_PATH, path);
 	}
 	
 	private void resolveRequires(BundleDescription b, List<String> slist) {

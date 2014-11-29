@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 
 import dsltrans.AbstractClass;
 import dsltrans.AbstractSource;
@@ -3815,5 +3816,42 @@ public class DsltransDiagramUpdater {
 				ClassRefClassRefEditPart.VISUAL_ID));
 		return result;
 	}
+
+	/**
+	 * @generated
+	 */
+	public static final DiagramUpdater TYPED_INSTANCE = new DiagramUpdater() {
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<DsltransNodeDescriptor> getSemanticChildren(View view) {
+			return DsltransDiagramUpdater.getSemanticChildren(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<DsltransLinkDescriptor> getContainedLinks(View view) {
+			return DsltransDiagramUpdater.getContainedLinks(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<DsltransLinkDescriptor> getIncomingLinks(View view) {
+			return DsltransDiagramUpdater.getIncomingLinks(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<DsltransLinkDescriptor> getOutgoingLinks(View view) {
+			return DsltransDiagramUpdater.getOutgoingLinks(view);
+		}
+	};
 
 }

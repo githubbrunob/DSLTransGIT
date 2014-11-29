@@ -2,7 +2,6 @@ package dsltranslator.popup.actions;
 
 import java.io.File;
 import java.io.PrintStream;
-import java.net.URISyntaxException;
 import java.net.URL;
 
 import org.eclipse.core.resources.IFile;

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
-<gmfmap:Mapping xmi:version="2.0"
+<gmfmap:Mapping
+    xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
@@ -58,12 +59,6 @@
                 relatedDiagrams="//@diagram">
               <domainMetaElement
                   href="DSLTrans.ecore#//MatchModel"/>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping"
-                  readOnly="true">
-                <diagramLabel
-                    href="DSLTrans.gmfgraph#MatchModelLabel"/>
-              </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
                   href="DSLTrans.gmftool#//@palette/@tools.0/@tools.12"/>
@@ -246,12 +241,6 @@
                 relatedDiagrams="//@diagram">
               <domainMetaElement
                   href="DSLTrans.ecore#//ApplyModel"/>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping"
-                  readOnly="true">
-                <diagramLabel
-                    href="DSLTrans.gmfgraph#ApplyModelLabel"/>
-              </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
                   href="DSLTrans.gmftool#//@palette/@tools.0/@tools.3"/>
@@ -304,11 +293,6 @@
                         <ownedChild>
                           <domainMetaElement
                               href="DSLTrans.ecore#//TypeOf"/>
-                          <labelMappings
-                              xsi:type="gmfmap:FeatureLabelMapping">
-                            <diagramLabel
-                                href="DSLTrans.gmfgraph#TypeOfLabel"/>
-                          </labelMappings>
                           <tool
                               xsi:type="gmftool:CreationTool"
                               href="DSLTrans.gmftool#//@palette/@tools.0/@tools.17"/>
@@ -329,11 +313,6 @@
                         <ownedChild>
                           <domainMetaElement
                               href="DSLTrans.ecore#//AttributeRef"/>
-                          <labelMappings
-                              xsi:type="gmfmap:FeatureLabelMapping">
-                            <diagramLabel
-                                href="DSLTrans.gmfgraph#AttributeRefLabel"/>
-                          </labelMappings>
                           <tool
                               xsi:type="gmftool:CreationTool"
                               href="DSLTrans.gmftool#//@palette/@tools.0/@tools.5"/>
@@ -348,11 +327,6 @@
                         <ownedChild>
                           <domainMetaElement
                               href="DSLTrans.ecore#//ClassRef"/>
-                          <labelMappings
-                              xsi:type="gmfmap:FeatureLabelMapping">
-                            <diagramLabel
-                                href="DSLTrans.gmfgraph#ClassRefLabel"/>
-                          </labelMappings>
                           <tool
                               xsi:type="gmftool:CreationTool"
                               href="DSLTrans.gmftool#//@palette/@tools.0/@tools.6"/>
@@ -368,11 +342,6 @@
                             relatedDiagrams="//@diagram">
                           <domainMetaElement
                               href="DSLTrans.ecore#//Concat"/>
-                          <labelMappings
-                              xsi:type="gmfmap:FeatureLabelMapping">
-                            <diagramLabel
-                                href="DSLTrans.gmfgraph#ConcatLabel"/>
-                          </labelMappings>
                           <tool
                               xsi:type="gmftool:CreationTool"
                               href="DSLTrans.gmftool#//@palette/@tools.0/@tools.7"/>
@@ -481,11 +450,6 @@
                         <ownedChild>
                           <domainMetaElement
                               href="DSLTrans.ecore#//Wildcard"/>
-                          <labelMappings
-                              xsi:type="gmfmap:FeatureLabelMapping">
-                            <diagramLabel
-                                href="DSLTrans.gmfgraph#WildcardLabel"/>
-                          </labelMappings>
                           <tool
                               xsi:type="gmftool:CreationTool"
                               href="DSLTrans.gmftool#//@palette/@tools.0/@tools.18"/>
@@ -500,12 +464,6 @@
                         <ownedChild>
                           <domainMetaElement
                               href="DSLTrans.ecore#//Sequencer"/>
-                          <labelMappings
-                              xsi:type="gmfmap:FeatureLabelMapping"
-                              readOnly="true">
-                            <diagramLabel
-                                href="DSLTrans.gmfgraph#SequencerLabel"/>
-                          </labelMappings>
                           <tool
                               xsi:type="gmftool:CreationTool"
                               href="DSLTrans.gmftool#//@palette/@tools.0/@tools.16"/>
@@ -697,6 +655,14 @@
   <links>
     <domainMetaElement
         href="DSLTrans.ecore#//MatchMayBeSameRelation"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="DSLTrans.gmfgraph#MatchMayBeSameRelationLabel"/>
+      <features
+          href="DSLTrans.ecore#//Association/associationName"/>
+    </labelMappings>
     <containmentFeature
         href="DSLTrans.ecore#//MatchModel/association"/>
     <tool
@@ -714,6 +680,14 @@
   <links>
     <domainMetaElement
         href="DSLTrans.ecore#//ApplyMayBeSameRelation"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="DSLTrans.gmfgraph#ApplyMayBeSameRelationLabel"/>
+      <features
+          href="DSLTrans.ecore#//Association/associationName"/>
+    </labelMappings>
     <containmentFeature
         href="DSLTrans.ecore#//ApplyModel/association"/>
     <tool

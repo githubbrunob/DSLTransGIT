@@ -1,5 +1,6 @@
 package transformerProcessor;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -37,7 +38,7 @@ public class TransformationController {
 		getSources().add(new TransformationSource(getClassdir(),source));
 	}
 
-	public void Execute() throws InvalidLayerRequirement, TransformationSourceException, TransformationLayerException {
+	public void Execute() throws Throwable {
 		while(canProcess()) {
 			for(TransformationLayer l:getUnits()) {
 				if(!l.isProcessed() && l.isValid()) {
@@ -98,7 +99,7 @@ public class TransformationController {
 		return false;
 	}
 	*/
-	private TransformationUnit resolve(AbstractSource requirement) throws InvalidLayerRequirement, TransformationSourceException {
+	private TransformationUnit resolve(AbstractSource requirement) throws InvalidLayerRequirement, TransformationSourceException, IOException {
 		for(TransformationLayer l:getUnits()) {
 			if(l.getLayer() == requirement && l.isValid())
 				return l;

@@ -9,11 +9,7 @@ Bundle-ClassPath: .,
  lib/diffutils-1.2.1.jar
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Require-Bundle: org.eclipse.emf.common,
- org.eclipse.emf.ecore,
- org.eclipse.emf.ecore.xmi,
- org.eclipse.emf.codegen.ecore,
- DSLTransEditor2.0
+Require-Bundle: DSLTransEditor2.0
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: 
  transformerProcessor;
@@ -30,4 +26,9 @@ Export-Package:
    emfInterpreter.instance"
 Import-Package: org.eclipse.core.resources,
  org.eclipse.core.runtime,
- org.eclipse.core.runtime.jobs
+ org.eclipse.emf.codegen.ecore.generator,
+ org.eclipse.emf.codegen.ecore.genmodel,
+ org.eclipse.emf.codegen.ecore.genmodel.generator,
+ org.eclipse.emf.codegen.merge.java,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.emf.ecore.xmi.impl

@@ -93,18 +93,9 @@ public class GenIdentityAction implements IObjectActionDelegate {
 					
 					tP.setFileURI("output4", filepath+".dsltrans");
 					tP.Execute();			
-				} catch (InvalidLayerRequirement e) {
+				} catch (Throwable e) {
 					e.printStackTrace();
 					System.err.println(e.getMessage());
-				} catch (TransformationSourceException e) {
-					e.printStackTrace();
-					System.err.println(e.getMessage());
-				} catch (TransformationLayerException e) {
-					e.printStackTrace();
-					System.err.println(e.getMessage());
-				} catch (Exception e) {
-					e.printStackTrace();
-					System.err.println(e.getMessage());						
 				}
 		        System.setOut(out);
 		        System.setErr(err);

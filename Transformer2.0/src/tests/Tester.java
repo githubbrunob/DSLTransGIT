@@ -8,7 +8,6 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import transformerProcessor.TransformerProcessor;
 import transformerProcessor.exceptions.InvalidLayerRequirement;
@@ -124,17 +123,8 @@ public class Tester {
 			TransformerProcessor tP = new TransformerProcessor(PROJECT_DIR);
 			tP.LoadModel(transformation.getAbsolutePath());
 			tP.Execute();
-			
-		} catch (InvalidLayerRequirement e) {
+		} catch (Throwable e) {
 			System.err.println("Error running transformation: " + transformation.getAbsolutePath());
-			e.printStackTrace();
-		} catch (TransformationSourceException e) {
-			System.err.println("Error running transformation: " + transformation.getAbsolutePath());
-			e.printStackTrace();
-		} catch (TransformationLayerException e) {
-			System.err.println("Error running transformation: " + transformation.getAbsolutePath());
-			e.printStackTrace();
-		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

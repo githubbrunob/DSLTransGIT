@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: NegativeBackwardRestrictionImpl.java,v 1.2 2012/01/18 23:38:18 claudiogomes Exp $
  */
 package dsltrans.impl;
 
@@ -20,27 +16,24 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class NegativeBackwardRestrictionImpl extends AbstractTemporalRelationImpl implements NegativeBackwardRestriction
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected NegativeBackwardRestrictionImpl()
-  {
-    super();
-  }
+public class NegativeBackwardRestrictionImpl extends AbstractTemporalRelationImpl implements NegativeBackwardRestriction {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NegativeBackwardRestrictionImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return DsltransPackage.Literals.NEGATIVE_BACKWARD_RESTRICTION;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DsltransPackage.Literals.NEGATIVE_BACKWARD_RESTRICTION;
+	}
 
 } //NegativeBackwardRestrictionImpl

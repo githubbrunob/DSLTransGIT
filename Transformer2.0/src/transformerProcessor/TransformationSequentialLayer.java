@@ -1,6 +1,7 @@
 package transformerProcessor;
 
 import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -30,7 +31,7 @@ public class TransformationSequentialLayer extends TransformationLayer{
 //		System.out.println("#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");		
 	}
 	
-	protected void prepareOutputModel(TransformationController control, String classpath) {
+	protected void prepareOutputModel(TransformationController control, String classpath) throws IOException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException {
 		Map<String, Object> factorys = control.getFactorys();
 		Map<String, Object> metamodels = control.getMetamodels();
 		String mmName = this.getMetamodelIdentifier();
@@ -74,7 +75,7 @@ public class TransformationSequentialLayer extends TransformationLayer{
 		URLClassLoader customLoader = new URLClassLoader(urlPath,this.getClass().getClassLoader());	
 		
 		for(MetaEntity me : loader.getMetaModelDatabase().getClasses()) {
-			try {
+			
 				String packageName = me.getCurrentPackage().substring(1);
 				packageName = Character.toUpperCase(me.getCurrentPackage().charAt(0)) + packageName;
 				String className = me.getNamespace()+"."+packageName+"Package";
@@ -98,17 +99,7 @@ public class TransformationSequentialLayer extends TransformationLayer{
 						getDatabase().getFactorys().put(factoryName, factory1);
 					}									
 				}
-			} catch (SecurityException e) {
-				e.printStackTrace();
-			} catch (IllegalArgumentException e) {
-				e.printStackTrace();
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
-			} catch (NoSuchFieldException e) {
-				e.printStackTrace();
-			} catch (IllegalAccessException e) {
-				e.printStackTrace();
-			}
+			
 		}
 		if (factorys != null)
 			factorys.putAll(getDatabase().getFactorys());

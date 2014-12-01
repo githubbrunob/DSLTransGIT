@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: PositiveMatchAssociation.java,v 1.2 2012/01/18 23:38:18 claudiogomes Exp $
  */
 package dsltrans;
 
@@ -17,6 +13,5 @@ package dsltrans;
  * @model annotation="gmf.link tool.description='Existing direct association.'"
  * @generated
  */
-public interface PositiveMatchAssociation extends MatchAssociation
-{
+public interface PositiveMatchAssociation extends MatchAssociation {
 } // PositiveMatchAssociation

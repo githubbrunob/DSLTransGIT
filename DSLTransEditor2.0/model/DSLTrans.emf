@@ -43,7 +43,7 @@ class ExistsMatchClass extends PositiveMatchClass {
 class NegativeMatchClass extends MatchClass {
 }
 
-@gmf.node(foo="bar", tool.description="Match pattern. Place inside Rule.", label.readOnly="true")
+@gmf.node(foo="bar", tool.description="Match pattern. Place inside Rule.", label.placement="none")
 class MatchModel {
 
   @gmf.compartment(foo="bar")
@@ -84,7 +84,7 @@ class ApplyClass extends AbstractClass {
   attr String groupName;
 }
 
-@gmf.node(color="255,255,163", tool.description="Apply pattern. Place inside Rule.", label.readOnly="true")
+@gmf.node(color="255,255,163", tool.description="Apply pattern. Place inside Rule.", label.placement="none")
 class ApplyModel {
 
   @gmf.compartment(foo="bar")
@@ -192,21 +192,21 @@ class Atom extends Term, MatchAttributeValue {
 abstract class Ref extends Term {
 }
 
-@gmf.node(tool.description="Copy attribute value.")
+@gmf.node(tool.description="Copy attribute value.", label.placement="none")
 class AttributeRef extends Ref {
 
   @gmf.link(target.decoration="arrow", width="2", tool.description="Specify source attribute.")
   ref Attribute[1] attributeRef;
 }
 
-@gmf.node(foo="bar")
+@gmf.node(foo="bar", label.placement="none")
 class ClassRef extends Ref {
 
   @gmf.link(target.decoration="arrow", width="2")
   ref AbstractClass[1] classRef;
 }
 
-@gmf.node(tool.description="Concatenate expressions.")
+@gmf.node(tool.description="Concatenate expressions.", label.placement="none")
 class Concat extends Operator {
 
   @gmf.compartment(foo="bar")
@@ -216,11 +216,11 @@ class Concat extends Operator {
   val Term[1] rightTerm;
 }
 
-@gmf.node(foo="bar")
+@gmf.node(foo="bar", label.placement="none")
 class TypeOf extends Operator, AttributeRef {
 }
 
-@gmf.node(tool.description="Match any literal.")
+@gmf.node(tool.description="Match any literal.", label.placement="none")
 class Wildcard extends Term {
 }
 
@@ -245,7 +245,7 @@ abstract class AbstractTemporalRelation {
   ref PositiveMatchClass[1] sourceClass;
 }
 
-@gmf.node(label="Sequencer", label.readOnly="true", tool.description="Create a sequential number generator.")
+@gmf.node(tool.description="Create a sequential number generator.", label.placement="none")
 class Sequencer extends Term {
 }
 
@@ -255,19 +255,19 @@ abstract class AbstractAttributeRelation {
   ref Attribute targetAttribute;
 }
 
-@gmf.link(label="=", color="145,147,255", tool.description="Create an equality constrain between attributes.")
+@gmf.link(label.text="=", color="145,147,255", label.readOnly="true" ,  tool.description="Create an equality constrain between attributes.")
 class AttributeEquality extends AbstractAttributeRelation {
 }
 
-@gmf.link(color="255,61,100", label="!=", tool.description="Create an inequality constrain between attributes")
+@gmf.link(color="255,61,100", label.readOnly="true" , label.text="!=", tool.description="Create an inequality constrain between attributes")
 class AttributeInequality extends AbstractAttributeRelation {
 }
 
-@gmf.link(label="",target.decoration="none", source.decoration="none", style="dash", color="181,215,255", width="2", tool.description="Match classes can have same binding.")
+@gmf.link(label.text="",target.decoration="none", label.readOnly="true" ,  source.decoration="none", style="dash", color="181,215,255", width="2", tool.description="Match classes can have same binding.")
 class MatchMayBeSameRelation extends MatchAssociation {
 }
 
-@gmf.link(label="",target.decoration="none", source.decoration="none", style="dash", color="181,215,255", width="2", tool.description="Apply classes can have same binding.")
+@gmf.link(label.text="",target.decoration="none", label.readOnly="true" ,  source.decoration="none", style="dash", color="181,215,255", width="2", tool.description="Apply classes can have same binding.")
 class ApplyMayBeSameRelation extends ApplyAssociation {
 }
 

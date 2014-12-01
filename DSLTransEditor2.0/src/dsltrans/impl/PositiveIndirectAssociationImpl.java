@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: PositiveIndirectAssociationImpl.java,v 1.2 2012/01/18 23:38:18 claudiogomes Exp $
  */
 package dsltrans.impl;
 
@@ -20,27 +16,24 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class PositiveIndirectAssociationImpl extends MatchAssociationImpl implements PositiveIndirectAssociation
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected PositiveIndirectAssociationImpl()
-  {
-    super();
-  }
+public class PositiveIndirectAssociationImpl extends MatchAssociationImpl implements PositiveIndirectAssociation {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PositiveIndirectAssociationImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return DsltransPackage.Literals.POSITIVE_INDIRECT_ASSOCIATION;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DsltransPackage.Literals.POSITIVE_INDIRECT_ASSOCIATION;
+	}
 
 } //PositiveIndirectAssociationImpl

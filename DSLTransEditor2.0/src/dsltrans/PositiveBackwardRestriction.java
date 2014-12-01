@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: PositiveBackwardRestriction.java,v 1.2 2012/01/18 23:38:18 claudiogomes Exp $
  */
 package dsltrans;
 
@@ -17,6 +13,5 @@ package dsltrans;
  * @model annotation="gmf.link foo='bar' tool.description='Create a generator-generated restriction.'"
  * @generated
  */
-public interface PositiveBackwardRestriction extends AbstractTemporalRelation
-{
+public interface PositiveBackwardRestriction extends AbstractTemporalRelation {
 } // PositiveBackwardRestriction

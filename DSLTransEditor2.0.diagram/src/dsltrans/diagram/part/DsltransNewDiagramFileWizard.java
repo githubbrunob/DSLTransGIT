@@ -184,7 +184,7 @@ public class DsltransNewDiagramFileWizard extends Wizard {
 		 * @generated
 		 */
 		protected boolean validatePage() {
-			if (selectedModelElement == null) {
+			if (getModelElement() == null) {
 				setErrorMessage(Messages.DsltransNewDiagramFileWizard_RootSelectionPageNoSelectionMessage);
 				return false;
 			}
@@ -192,7 +192,7 @@ public class DsltransNewDiagramFileWizard extends Wizard {
 					.getInstance()
 					.provides(
 							new CreateDiagramViewOperation(
-									new EObjectAdapter(selectedModelElement),
+									new EObjectAdapter(getModelElement()),
 									TransformationModelEditPart.MODEL_ID,
 									DsltransDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
 			setErrorMessage(result ? null

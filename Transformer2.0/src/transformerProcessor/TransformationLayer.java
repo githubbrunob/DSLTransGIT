@@ -97,7 +97,7 @@ public abstract class TransformationLayer  extends TransformationUnit {
 		
 	}
 
-	public void Execute(TransformationUnit preUnit) throws TransformationLayerException {
+	public void Execute(TransformationUnit preUnit) throws Throwable {
 		setProcessed(true);		
 		this.setPrecedingUnit(preUnit);
 		prepareInputModel();
@@ -131,13 +131,10 @@ public abstract class TransformationLayer  extends TransformationUnit {
 			throw new TransformationLayerException("IOException at:", this, e);
 		} catch (InvalidAttributeRelationException e) {
 			throw new TransformationLayerException("InvalidAttributeRelationException at:", this, e);
-		} catch (Throwable e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 	}
 
-	protected abstract void prepareOutputModel(TransformationController control, String classdir) throws TransformationRefinementLayerException;
+	protected abstract void prepareOutputModel(TransformationController control, String classdir) throws TransformationRefinementLayerException, IOException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException;
 
 	protected abstract void prepareInputModel();
 

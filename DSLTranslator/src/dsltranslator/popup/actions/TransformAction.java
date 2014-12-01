@@ -24,7 +24,6 @@ import org.eclipse.ui.console.IConsole;
 import org.eclipse.ui.console.IConsoleConstants;
 import org.eclipse.ui.console.IConsoleManager;
 import org.eclipse.ui.console.IConsoleView;
-import org.eclipse.ui.console.MessageConsole;
 
 import transformerProcessor.TransformerProcessor;
 import transformerProcessor.exceptions.InvalidLayerRequirement;
@@ -70,10 +69,9 @@ public class TransformAction implements IObjectActionDelegate {
 //		System.out.println("projectpath: "+projectPath);
 		final String filepath=_selectedFile.getFullPath().toString();
 //		System.out.println("filepath: "+filepath);
-		final File tempdir = new File(projectPath+"/tempClasses");
-		tempdir.mkdir();
+		//final File tempdir = new File(projectPath+"/tempClasses");
+		//tempdir.mkdir();
 
-		
 		final Job job = new Job("Transforming Model with DSLTranslator") {
 			
 			@Override
@@ -87,18 +85,9 @@ public class TransformAction implements IObjectActionDelegate {
 				try {
 					tP.LoadModel(filepath);
 					tP.Execute();
-					} catch (InvalidLayerRequirement e) {
+					} catch (Throwable e) {
 						e.printStackTrace();
 						System.err.println(e.getMessage());
-					} catch (TransformationSourceException e) {
-						e.printStackTrace();
-						System.err.println(e.getMessage());
-					} catch (TransformationLayerException e) {
-						e.printStackTrace();
-						System.err.println(e.getMessage());
-					} catch (Exception e) {
-						e.printStackTrace();
-						System.err.println(e.getMessage());						
 					}
 			        System.setOut(out);
 			        System.setErr(err);
@@ -127,10 +116,6 @@ public class TransformAction implements IObjectActionDelegate {
 		}
 		else
 			_selectedFile = null;
-	}
-
-	private void setConsole(MyConsole _myConsole) {
-		this._myConsole = _myConsole;
 	}
 
 	private MyConsole getConsole() {

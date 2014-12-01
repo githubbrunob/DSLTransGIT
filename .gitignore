@@ -3,7 +3,6 @@
 #################
 
 *.pydevproject
-.project
 .metadata
 bin/
 tmp/
@@ -15,6 +14,14 @@ local.properties
 .classpath
 .settings/
 .loadpath
+
+# Ignore generated files
+DSLTransEditor2.0/src/
+DSLTransEditor2.0.editor/src/
+DSLTransEditor2.0.diagram/src/
+DSLTransEditor2.0.edit/src/
+DSLTransEditor2.0.diagram/plugin.xml
+
 
 # External tool builders
 .externalToolBuilders/
@@ -212,4 +219,4 @@ pip-log.txt
 *.mo
 
 #Mr Developer
-.mr.developer.cfg
+.mr.developer.cfgx

@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: RefImpl.java,v 1.2 2012/01/18 23:38:18 claudiogomes Exp $
  */
 package dsltrans.impl;
 
@@ -20,27 +16,24 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class RefImpl extends TermImpl implements Ref
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected RefImpl()
-  {
-    super();
-  }
+public abstract class RefImpl extends TermImpl implements Ref {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RefImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return DsltransPackage.Literals.REF;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DsltransPackage.Literals.REF;
+	}
 
 } //RefImpl

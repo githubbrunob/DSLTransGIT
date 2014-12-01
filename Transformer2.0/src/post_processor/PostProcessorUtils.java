@@ -15,24 +15,30 @@ import org.eclipse.emf.common.util.URI;
 public class PostProcessorUtils {
 
 	public static void refreshOutputFile(URI fileURI) throws CoreException {
-				
 		System.out.println("Refreshing output...");
-		IWorkspace workspace = ResourcesPlugin.getWorkspace();
+		IWorkspace workspace = null;
 		
-		System.out.println("Workspace obtained...");
-		IWorkspaceRoot root = workspace.getRoot();
+		try {
+			workspace = ResourcesPlugin.getWorkspace();
+		} catch (IllegalStateException e) {
+			System.out.println("Workspace is closed.");
+		}
 		
-		IPath outputPath = Path.fromOSString(fileURI.path());
-		System.out.println("OutputPath obtained...");
-		IFile outFile = root.getFile(outputPath);
-	
-		
-		System.out.println("OutFile obtained...");
-		outFile.refreshLocal(IResource.DEPTH_ZERO, null);
+		if (workspace != null) {
+
+			System.out.println("Workspace obtained...");
+			IWorkspaceRoot root = workspace.getRoot();
+			
+			IPath outputPath = Path.fromOSString(fileURI.path());
+			System.out.println("OutputPath obtained...");
+			IFile outFile = root.getFile(outputPath);
+			
+			System.out.println("OutFile obtained...");
+			outFile.refreshLocal(IResource.DEPTH_ZERO, null);
+		}
 		
 		System.out.println("Refresh done.");
 		
-		 
 	}
 	
 	

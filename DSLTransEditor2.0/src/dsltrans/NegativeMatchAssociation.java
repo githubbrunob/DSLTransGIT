@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: NegativeMatchAssociation.java,v 1.2 2012/01/18 23:38:18 claudiogomes Exp $
  */
 package dsltrans;
 
@@ -17,6 +13,5 @@ package dsltrans;
  * @model annotation="gmf.link color='255,61,100' width='2' tool.description='Non-existing direct association.'"
  * @generated
  */
-public interface NegativeMatchAssociation extends MatchAssociation
-{
+public interface NegativeMatchAssociation extends MatchAssociation {
 } // NegativeMatchAssociation

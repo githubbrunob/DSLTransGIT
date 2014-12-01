@@ -26,12 +26,11 @@ public class Tester {
 	public static final String CORRECT_MODEL_PREFIX = "c";
 	public static final String MODEL_EXT = "xmi";
 	public static final String TRANSFORMATION_EXT = "dsltrans";
-	private static final String PROJECT_DIR = "D:\\phd\\workspaceTransformations\\Transformer2.0";
+	private static final String PROJECT_DIR = "C:\\Users\\Cláudio\\Documents\\GitHub\\DSLTransGIT\\Transformer2.0";
 	private static final Object CVS_DIR_NAME = "CVS";
 	
-	
 	private static final boolean BULK_TESTING = false;
-	private static final String TEST = "t23";
+	private static final String TEST = "t0";
 	private static final boolean COMPARE_RESULTS = false;
 	
 	public static void main(String[] args) {
@@ -114,18 +113,17 @@ public class Tester {
 }
 
 	private static void runTransformation(File transformation) {
-		TransformerProcessor tP = new TransformerProcessor(PROJECT_DIR);
-		tP.LoadModel(transformation.getAbsolutePath());
 		
 		try {
+			String prop = System.getenv("SWI_HOME_DIR");
+			if (prop == null){
+				throw new InstantiationError("SWI_HOME_DIR system environment variable must be set to the path of Swi Prolog instalation.");
+			}
+			
+			TransformerProcessor tP = new TransformerProcessor(PROJECT_DIR);
+			tP.LoadModel(transformation.getAbsolutePath());
 			tP.Execute();
-		} catch (InvalidLayerRequirement e) {
-			System.err.println("Error running transformation: " + transformation.getAbsolutePath());
-			e.printStackTrace();
-		} catch (TransformationSourceException e) {
-			System.err.println("Error running transformation: " + transformation.getAbsolutePath());
-			e.printStackTrace();
-		} catch (TransformationLayerException e) {
+		} catch (Throwable e) {
 			System.err.println("Error running transformation: " + transformation.getAbsolutePath());
 			e.printStackTrace();
 		}

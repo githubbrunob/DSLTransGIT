@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: Wildcard.java,v 1.2 2012/01/18 23:38:18 claudiogomes Exp $
  */
 package dsltrans;
 
@@ -14,9 +10,8 @@ package dsltrans;
  *
  *
  * @see dsltrans.DsltransPackage#getWildcard()
- * @model annotation="gmf.node tool.description='Match any literal.'"
+ * @model annotation="gmf.node tool.description='Match any literal.' label.placement='none'"
  * @generated
  */
-public interface Wildcard extends Term
-{
+public interface Wildcard extends Term {
 } // Wildcard

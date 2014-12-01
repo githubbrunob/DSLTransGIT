@@ -1,11 +1,11 @@
 package transformerProcessor;
 
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
 import dsltrans.FilePort;
 import dsltrans.MetaModelIdentifier;
-
 import transformerProcessor.exceptions.TransformationSourceException;
 import emfInterpreter.EMFLoader;
 import emfInterpreter.metamodel.MetaModelDatabase;
@@ -36,7 +36,7 @@ public class TransformationSource extends TransformationUnit {
 		setValid(true); // if passed all above conditions then it is valid
 	}
 
-	public void Load(Map<String, Object> factorys, Map<String, Object> metamodels) throws TransformationSourceException {
+	public void Load(Map<String, Object> factorys, Map<String, Object> metamodels) throws TransformationSourceException, IOException {
 		if(isProcessed()) return;
 		MetaModelIdentifier mmi = getPort().getMetaModelId();
 		

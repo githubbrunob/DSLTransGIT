@@ -264,6 +264,9 @@ public class DsltransNavigatorContentProvider implements ICommonContentProvider 
 					topViews.add((View) o);
 				}
 			}
+			result.addAll(createNavigatorItems(
+					selectViewsByType(topViews,
+							TransformationModelEditPart.MODEL_ID), file, false));
 			return result.toArray();
 		}
 
@@ -301,66 +304,243 @@ public class DsltransNavigatorContentProvider implements ICommonContentProvider 
 	private Object[] getViewChildren(View view, Object parentElement) {
 		switch (DsltransVisualIDRegistry.getVisualID(view)) {
 
-		case NegativeIndirectAssociationEditPart.VISUAL_ID: {
+		case TransformationModelEditPart.VISUAL_ID: {
 			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_NegativeIndirectAssociation_4002_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_NegativeIndirectAssociation_4002_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			result.addAll(getForeignShortcuts((Diagram) view, parentElement));
+			Diagram sv = (Diagram) view;
+			DsltransNavigatorGroup links = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_TransformationModel_1000_links,
+					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+			connectedViews = getChildrenByType(Collections.singleton(sv),
 					DsltransVisualIDRegistry
-							.getType(AnyMatchClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+							.getType(SequentialEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
 					DsltransVisualIDRegistry
-							.getType(ExistsMatchClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+							.getType(FilePortEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getDiagramLinksByType(
+					Collections.singleton(sv),
 					DsltransVisualIDRegistry
-							.getType(NegativeMatchClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+							.getType(PositiveIndirectAssociationEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(
+					Collections.singleton(sv),
 					DsltransVisualIDRegistry
-							.getType(AnyMatchClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+							.getType(NegativeIndirectAssociationEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(
+					Collections.singleton(sv),
 					DsltransVisualIDRegistry
-							.getType(ExistsMatchClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+							.getType(PositiveMatchAssociationEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(
+					Collections.singleton(sv),
 					DsltransVisualIDRegistry
-							.getType(NegativeMatchClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
+							.getType(NegativeMatchAssociationEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(MatchMayBeSameRelationEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ApplyMayBeSameRelationEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ApplyAssociationEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(PositiveBackwardRestrictionEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(NegativeBackwardRestrictionEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(AttributeEqualityEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(AttributeInequalityEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry.getType(ImportEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(LayerPreviousSourceEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(MatchModelExplicitSourceEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(AttributeRefAttributeRefEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ClassRefClassRefEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			if (!links.isEmpty()) {
+				result.add(links);
 			}
 			return result.toArray();
 		}
 
-		case AttributeRef2EditPart.VISUAL_ID: {
+		case SequentialEditPart.VISUAL_ID: {
+			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			DsltransNavigatorGroup incominglinks = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_Sequential_2001_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			DsltransNavigatorGroup outgoinglinks = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_Sequential_2001_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(SequentialSequentialMetaModelIdCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry
+							.getType(MetaModelIdentifierEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(SequentialSequentialHasRuleCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry.getType(RuleEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(LayerPreviousSourceEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(LayerPreviousSourceEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case FilePortEditPart.VISUAL_ID: {
+			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			DsltransNavigatorGroup incominglinks = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_FilePort_2002_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(FilePortFilePortMetaModelIdCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry
+							.getType(MetaModelIdentifierEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(LayerPreviousSourceEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(MatchModelExplicitSourceEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
+		case RuleEditPart.VISUAL_ID: {
+			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(RuleRuleMatchCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry
+							.getType(MatchModelEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(RuleRuleApplyCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry
+							.getType(ApplyModelEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			return result.toArray();
+		}
+
+		case MatchModelEditPart.VISUAL_ID: {
 			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			DsltransNavigatorGroup outgoinglinks = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_AttributeRef_3021_outgoinglinks,
+					Messages.NavigatorGroupName_MatchModel_3003_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(MatchModelMatchModelClassCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry
+							.getType(AnyMatchClassEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(MatchModelMatchModelClassCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry
+							.getType(ExistsMatchClassEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(MatchModelMatchModelClassCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry
+							.getType(NegativeMatchClassEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
 			connectedViews = getOutgoingLinksByType(
 					Collections.singleton(sv),
 					DsltransVisualIDRegistry
-							.getType(AttributeRefAttributeRefEditPart.VISUAL_ID));
+							.getType(MatchModelExplicitSourceEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
 					outgoinglinks, true));
 			if (!outgoinglinks.isEmpty()) {
@@ -369,18 +549,168 @@ public class DsltransNavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
-		case ClassRefEditPart.VISUAL_ID: {
+		case AnyMatchClassEditPart.VISUAL_ID: {
 			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
 			Node sv = (Node) view;
+			DsltransNavigatorGroup incominglinks = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_AnyMatchClass_3004_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			DsltransNavigatorGroup outgoinglinks = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_ClassRef_3016_outgoinglinks,
+					Messages.NavigatorGroupName_AnyMatchClass_3004_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
 					DsltransVisualIDRegistry
-							.getType(ClassRefClassRefEditPart.VISUAL_ID));
+							.getType(AnyMatchClassAnyMatchClassAttributeCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry
+							.getType(MatchAttributeEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(PositiveIndirectAssociationEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(PositiveIndirectAssociationEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
 					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(NegativeIndirectAssociationEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(NegativeIndirectAssociationEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(PositiveMatchAssociationEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(PositiveMatchAssociationEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(NegativeMatchAssociationEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(NegativeMatchAssociationEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(MatchMayBeSameRelationEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(MatchMayBeSameRelationEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(PositiveBackwardRestrictionEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(NegativeBackwardRestrictionEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry.getType(ImportEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ClassRefClassRefEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case MatchAttributeEditPart.VISUAL_ID: {
+			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			DsltransNavigatorGroup incominglinks = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_MatchAttribute_3005_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			DsltransNavigatorGroup outgoinglinks = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_MatchAttribute_3005_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(MatchAttributeMatchAttributeAttributeValueCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry.getType(AtomEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(MatchAttributeMatchAttributeAttributeValueCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry.getType(IsNullEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(AttributeEqualityEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(AttributeEqualityEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(AttributeInequalityEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(AttributeInequalityEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(AttributeRefAttributeRefEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
 			}
@@ -494,397 +824,91 @@ public class DsltransNavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
-		case MatchMayBeSameRelationEditPart.VISUAL_ID: {
-			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_MatchMayBeSameRelation_4017_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_MatchMayBeSameRelation_4017_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(AnyMatchClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ExistsMatchClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeMatchClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(AnyMatchClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ExistsMatchClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeMatchClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case AttributeEqualityEditPart.VISUAL_ID: {
-			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_AttributeEquality_4015_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_AttributeEquality_4015_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(MatchAttributeEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ApplyAttributeEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(MatchAttributeEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ApplyAttributeEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case RuleEditPart.VISUAL_ID: {
+		case NegativeMatchClassEditPart.VISUAL_ID: {
 			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
 			Node sv = (Node) view;
+			DsltransNavigatorGroup incominglinks = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_NegativeMatchClass_3009_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			DsltransNavigatorGroup outgoinglinks = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_NegativeMatchClass_3009_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(
 					Collections.singleton(sv),
 					DsltransVisualIDRegistry
-							.getType(RuleRuleMatchCompartmentEditPart.VISUAL_ID));
+							.getType(NegativeMatchClassNegativeMatchClassAttributeCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
 					DsltransVisualIDRegistry
-							.getType(MatchModelEditPart.VISUAL_ID));
+							.getType(MatchAttributeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(RuleRuleApplyCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry
-							.getType(ApplyModelEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			return result.toArray();
-		}
-
-		case PositiveIndirectAssociationEditPart.VISUAL_ID: {
-			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_PositiveIndirectAssociation_4001_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_PositiveIndirectAssociation_4001_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(AnyMatchClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ExistsMatchClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeMatchClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(AnyMatchClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ExistsMatchClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeMatchClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case AttributeRefEditPart.VISUAL_ID: {
-			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			DsltransNavigatorGroup outgoinglinks = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_AttributeRef_3015_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(AttributeRefAttributeRefEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case ApplyMayBeSameRelationEditPart.VISUAL_ID: {
-			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_ApplyMayBeSameRelation_4018_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_ApplyMayBeSameRelation_4018_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ApplyClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ApplyClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case AttributeRef3EditPart.VISUAL_ID: {
-			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			DsltransNavigatorGroup outgoinglinks = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_AttributeRef_3025_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(AttributeRefAttributeRefEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case TransformationModelEditPart.VISUAL_ID: {
-			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			result.addAll(getForeignShortcuts((Diagram) view, parentElement));
-			Diagram sv = (Diagram) view;
-			DsltransNavigatorGroup links = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_TransformationModel_1000_links,
-					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(SequentialEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(FilePortEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getDiagramLinksByType(
+			connectedViews = getIncomingLinksByType(
 					Collections.singleton(sv),
 					DsltransVisualIDRegistry
 							.getType(PositiveIndirectAssociationEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeIndirectAssociationEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(PositiveMatchAssociationEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeMatchAssociationEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(MatchMayBeSameRelationEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ApplyMayBeSameRelationEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ApplyAssociationEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(PositiveBackwardRestrictionEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeBackwardRestrictionEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(AttributeEqualityEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(AttributeInequalityEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry.getType(ImportEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(LayerPreviousSourceEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(MatchModelExplicitSourceEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(AttributeRefAttributeRefEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ClassRefClassRefEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			if (!links.isEmpty()) {
-				result.add(links);
-			}
-			return result.toArray();
-		}
-
-		case ClassRefClassRefEditPart.VISUAL_ID: {
-			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_ClassRefClassRef_4014_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_ClassRefClassRef_4014_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(AnyMatchClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ExistsMatchClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeMatchClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ApplyClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ClassRefEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ClassRef2EditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ClassRef3EditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case TypeOfEditPart.VISUAL_ID: {
-			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			DsltransNavigatorGroup outgoinglinks = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_TypeOf_3013_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
 			connectedViews = getOutgoingLinksByType(
 					Collections.singleton(sv),
 					DsltransVisualIDRegistry
-							.getType(AttributeRefAttributeRefEditPart.VISUAL_ID));
+							.getType(PositiveIndirectAssociationEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
 					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(NegativeIndirectAssociationEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(NegativeIndirectAssociationEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(PositiveMatchAssociationEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(PositiveMatchAssociationEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(NegativeMatchAssociationEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(NegativeMatchAssociationEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(MatchMayBeSameRelationEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(MatchMayBeSameRelationEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ClassRefClassRefEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
 			}
@@ -907,373 +931,72 @@ public class DsltransNavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
-		case ApplyAssociationEditPart.VISUAL_ID: {
-			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_ApplyAssociation_4005_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_ApplyAssociation_4005_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ApplyClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ApplyClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case SequentialEditPart.VISUAL_ID: {
+		case ApplyClassEditPart.VISUAL_ID: {
 			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			DsltransNavigatorGroup incominglinks = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_Sequential_2001_incominglinks,
+					Messages.NavigatorGroupName_ApplyClass_3011_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			DsltransNavigatorGroup outgoinglinks = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_Sequential_2001_outgoinglinks,
+					Messages.NavigatorGroupName_ApplyClass_3011_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(
 					Collections.singleton(sv),
 					DsltransVisualIDRegistry
-							.getType(SequentialSequentialMetaModelIdCompartmentEditPart.VISUAL_ID));
+							.getType(ApplyClassApplyClassAttributeCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
 					DsltransVisualIDRegistry
-							.getType(MetaModelIdentifierEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(SequentialSequentialHasRuleCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry.getType(RuleEditPart.VISUAL_ID));
+							.getType(ApplyAttributeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					DsltransVisualIDRegistry
-							.getType(LayerPreviousSourceEditPart.VISUAL_ID));
+							.getType(ApplyMayBeSameRelationEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews,
 					incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
 					DsltransVisualIDRegistry
-							.getType(LayerPreviousSourceEditPart.VISUAL_ID));
+							.getType(ApplyMayBeSameRelationEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
 					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ApplyAssociationEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ApplyAssociationEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(PositiveBackwardRestrictionEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(NegativeBackwardRestrictionEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry.getType(ImportEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ClassRefClassRefEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
 			}
-			return result.toArray();
-		}
-
-		case LayerPreviousSourceEditPart.VISUAL_ID: {
-			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_LayerPreviousSource_4011_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_LayerPreviousSource_4011_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(SequentialEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(FilePortEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(SequentialEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case AttributeInequalityEditPart.VISUAL_ID: {
-			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_AttributeInequality_4016_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_AttributeInequality_4016_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(MatchAttributeEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ApplyAttributeEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(MatchAttributeEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ApplyAttributeEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case MatchModelEditPart.VISUAL_ID: {
-			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			DsltransNavigatorGroup outgoinglinks = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_MatchModel_3003_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(MatchModelMatchModelClassCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry
-							.getType(AnyMatchClassEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(MatchModelMatchModelClassCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry
-							.getType(ExistsMatchClassEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(MatchModelMatchModelClassCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry
-							.getType(NegativeMatchClassEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(MatchModelExplicitSourceEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case PositiveMatchAssociationEditPart.VISUAL_ID: {
-			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_PositiveMatchAssociation_4003_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_PositiveMatchAssociation_4003_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(AnyMatchClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ExistsMatchClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeMatchClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(AnyMatchClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ExistsMatchClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeMatchClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case Concat2EditPart.VISUAL_ID: {
-			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ConcatConcatLeftTermCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry.getType(TypeOf2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ConcatConcatRightTermCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry.getType(TypeOf3EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ConcatConcatLeftTermCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry.getType(Atom3EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ConcatConcatLeftTermCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry
-							.getType(AttributeRef2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ConcatConcatLeftTermCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry
-							.getType(ClassRef2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ConcatConcatLeftTermCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry.getType(Concat2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ConcatConcatRightTermCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry.getType(Atom4EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ConcatConcatRightTermCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry
-							.getType(AttributeRef3EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ConcatConcatRightTermCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry
-							.getType(ClassRef3EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ConcatConcatRightTermCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry.getType(Concat3EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ConcatConcatLeftTermCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry
-							.getType(WildcardEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ConcatConcatLeftTermCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry
-							.getType(SequencerEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ConcatConcatRightTermCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry
-							.getType(Wildcard2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ConcatConcatRightTermCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry
-							.getType(Sequencer2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
 			return result.toArray();
 		}
 
@@ -1382,288 +1105,11 @@ public class DsltransNavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
-		case NegativeMatchAssociationEditPart.VISUAL_ID: {
-			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_NegativeMatchAssociation_4004_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_NegativeMatchAssociation_4004_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(AnyMatchClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ExistsMatchClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeMatchClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(AnyMatchClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ExistsMatchClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeMatchClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case ImportEditPart.VISUAL_ID: {
-			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_Import_4010_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_Import_4010_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ApplyClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(AnyMatchClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ExistsMatchClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case ApplyClassEditPart.VISUAL_ID: {
-			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			DsltransNavigatorGroup incominglinks = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_ApplyClass_3011_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			DsltransNavigatorGroup outgoinglinks = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_ApplyClass_3011_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ApplyClassApplyClassAttributeCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry
-							.getType(ApplyAttributeEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ApplyMayBeSameRelationEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ApplyMayBeSameRelationEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ApplyAssociationEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ApplyAssociationEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(PositiveBackwardRestrictionEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeBackwardRestrictionEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry.getType(ImportEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ClassRefClassRefEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case NegativeMatchClassEditPart.VISUAL_ID: {
-			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			DsltransNavigatorGroup incominglinks = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_NegativeMatchClass_3009_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			DsltransNavigatorGroup outgoinglinks = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_NegativeMatchClass_3009_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeMatchClassNegativeMatchClassAttributeCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry
-							.getType(MatchAttributeEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(PositiveIndirectAssociationEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(PositiveIndirectAssociationEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeIndirectAssociationEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeIndirectAssociationEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(PositiveMatchAssociationEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(PositiveMatchAssociationEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeMatchAssociationEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeMatchAssociationEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(MatchMayBeSameRelationEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(MatchMayBeSameRelationEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ClassRefClassRefEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case PositiveBackwardRestrictionEditPart.VISUAL_ID: {
-			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_PositiveBackwardRestriction_4006_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_PositiveBackwardRestriction_4006_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ApplyClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(AnyMatchClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ExistsMatchClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case TypeOf2EditPart.VISUAL_ID: {
+		case TypeOfEditPart.VISUAL_ID: {
 			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			DsltransNavigatorGroup outgoinglinks = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_TypeOf_3018_outgoinglinks,
+					Messages.NavigatorGroupName_TypeOf_3013_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getOutgoingLinksByType(
@@ -1678,61 +1124,37 @@ public class DsltransNavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
-		case MatchAttributeEditPart.VISUAL_ID: {
+		case AttributeRefEditPart.VISUAL_ID: {
 			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			DsltransNavigatorGroup incominglinks = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_MatchAttribute_3005_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			DsltransNavigatorGroup outgoinglinks = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_MatchAttribute_3005_outgoinglinks,
+					Messages.NavigatorGroupName_AttributeRef_3015_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(MatchAttributeMatchAttributeAttributeValueCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry.getType(AtomEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(MatchAttributeMatchAttributeAttributeValueCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry.getType(IsNullEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(AttributeEqualityEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(AttributeEqualityEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(AttributeInequalityEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(AttributeInequalityEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(
+			connectedViews = getOutgoingLinksByType(
 					Collections.singleton(sv),
 					DsltransVisualIDRegistry
 							.getType(AttributeRefAttributeRefEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
 			}
+			return result.toArray();
+		}
+
+		case ClassRefEditPart.VISUAL_ID: {
+			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			DsltransNavigatorGroup outgoinglinks = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_ClassRef_3016_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ClassRefClassRefEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
 			}
@@ -1866,152 +1288,17 @@ public class DsltransNavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
-		case AnyMatchClassEditPart.VISUAL_ID: {
-			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			DsltransNavigatorGroup incominglinks = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_AnyMatchClass_3004_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			DsltransNavigatorGroup outgoinglinks = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_AnyMatchClass_3004_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(AnyMatchClassAnyMatchClassAttributeCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					DsltransVisualIDRegistry
-							.getType(MatchAttributeEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(PositiveIndirectAssociationEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(PositiveIndirectAssociationEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeIndirectAssociationEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeIndirectAssociationEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(PositiveMatchAssociationEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(PositiveMatchAssociationEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeMatchAssociationEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeMatchAssociationEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(MatchMayBeSameRelationEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(MatchMayBeSameRelationEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(PositiveBackwardRestrictionEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(NegativeBackwardRestrictionEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry.getType(ImportEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ClassRefClassRefEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case MatchModelExplicitSourceEditPart.VISUAL_ID: {
-			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_MatchModelExplicitSource_4012_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_MatchModelExplicitSource_4012_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(FilePortEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(MatchModelEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case ClassRef3EditPart.VISUAL_ID: {
+		case TypeOf2EditPart.VISUAL_ID: {
 			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			DsltransNavigatorGroup outgoinglinks = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_ClassRef_3026_outgoinglinks,
+					Messages.NavigatorGroupName_TypeOf_3018_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
 					DsltransVisualIDRegistry
-							.getType(ClassRefClassRefEditPart.VISUAL_ID));
+							.getType(AttributeRefAttributeRefEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
 					outgoinglinks, true));
 			if (!outgoinglinks.isEmpty()) {
@@ -2039,36 +1326,203 @@ public class DsltransNavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
-		case NegativeBackwardRestrictionEditPart.VISUAL_ID: {
+		case AttributeRef2EditPart.VISUAL_ID: {
 			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_NegativeBackwardRestriction_4007_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_NegativeBackwardRestriction_4007_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Node sv = (Node) view;
+			DsltransNavigatorGroup outgoinglinks = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_AttributeRef_3021_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
 					DsltransVisualIDRegistry
-							.getType(ApplyClassEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(AnyMatchClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					DsltransVisualIDRegistry
-							.getType(ExistsMatchClassEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
+							.getType(AttributeRefAttributeRefEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
 			}
-			if (!source.isEmpty()) {
-				result.add(source);
+			return result.toArray();
+		}
+
+		case ClassRef2EditPart.VISUAL_ID: {
+			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			DsltransNavigatorGroup outgoinglinks = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_ClassRef_3022_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ClassRefClassRefEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case Concat2EditPart.VISUAL_ID: {
+			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ConcatConcatLeftTermCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry.getType(TypeOf2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ConcatConcatRightTermCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry.getType(TypeOf3EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ConcatConcatLeftTermCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry.getType(Atom3EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ConcatConcatLeftTermCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry
+							.getType(AttributeRef2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ConcatConcatLeftTermCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry
+							.getType(ClassRef2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ConcatConcatLeftTermCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry.getType(Concat2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ConcatConcatRightTermCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry.getType(Atom4EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ConcatConcatRightTermCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry
+							.getType(AttributeRef3EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ConcatConcatRightTermCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry
+							.getType(ClassRef3EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ConcatConcatRightTermCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry.getType(Concat3EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ConcatConcatLeftTermCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry
+							.getType(WildcardEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ConcatConcatLeftTermCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry
+							.getType(SequencerEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ConcatConcatRightTermCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry
+							.getType(Wildcard2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ConcatConcatRightTermCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					DsltransVisualIDRegistry
+							.getType(Sequencer2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			return result.toArray();
+		}
+
+		case AttributeRef3EditPart.VISUAL_ID: {
+			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			DsltransNavigatorGroup outgoinglinks = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_AttributeRef_3025_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(AttributeRefAttributeRefEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case ClassRef3EditPart.VISUAL_ID: {
+			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			DsltransNavigatorGroup outgoinglinks = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_ClassRef_3026_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ClassRefClassRefEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
 			}
 			return result.toArray();
 		}
@@ -2200,35 +1654,392 @@ public class DsltransNavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
-		case FilePortEditPart.VISUAL_ID: {
+		case PositiveIndirectAssociationEditPart.VISUAL_ID: {
 			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			DsltransNavigatorGroup incominglinks = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_FilePort_2002_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Edge sv = (Edge) view;
+			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_PositiveIndirectAssociation_4001_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_PositiveIndirectAssociation_4001_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					DsltransVisualIDRegistry
-							.getType(FilePortFilePortMetaModelIdCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
+							.getType(AnyMatchClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					DsltransVisualIDRegistry
-							.getType(MetaModelIdentifierEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+							.getType(ExistsMatchClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					DsltransVisualIDRegistry
-							.getType(LayerPreviousSourceEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
+							.getType(NegativeMatchClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					DsltransVisualIDRegistry
-							.getType(MatchModelExplicitSourceEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
+							.getType(AnyMatchClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ExistsMatchClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(NegativeMatchClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case NegativeIndirectAssociationEditPart.VISUAL_ID: {
+			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_NegativeIndirectAssociation_4002_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_NegativeIndirectAssociation_4002_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(AnyMatchClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ExistsMatchClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(NegativeMatchClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(AnyMatchClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ExistsMatchClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(NegativeMatchClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case PositiveMatchAssociationEditPart.VISUAL_ID: {
+			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_PositiveMatchAssociation_4003_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_PositiveMatchAssociation_4003_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(AnyMatchClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ExistsMatchClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(NegativeMatchClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(AnyMatchClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ExistsMatchClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(NegativeMatchClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case NegativeMatchAssociationEditPart.VISUAL_ID: {
+			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_NegativeMatchAssociation_4004_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_NegativeMatchAssociation_4004_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(AnyMatchClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ExistsMatchClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(NegativeMatchClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(AnyMatchClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ExistsMatchClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(NegativeMatchClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case ApplyAssociationEditPart.VISUAL_ID: {
+			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_ApplyAssociation_4005_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_ApplyAssociation_4005_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ApplyClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ApplyClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case PositiveBackwardRestrictionEditPart.VISUAL_ID: {
+			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_PositiveBackwardRestriction_4006_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_PositiveBackwardRestriction_4006_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ApplyClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(AnyMatchClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ExistsMatchClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case NegativeBackwardRestrictionEditPart.VISUAL_ID: {
+			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_NegativeBackwardRestriction_4007_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_NegativeBackwardRestriction_4007_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ApplyClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(AnyMatchClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ExistsMatchClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case ImportEditPart.VISUAL_ID: {
+			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_Import_4010_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_Import_4010_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ApplyClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(AnyMatchClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ExistsMatchClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case LayerPreviousSourceEditPart.VISUAL_ID: {
+			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_LayerPreviousSource_4011_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_LayerPreviousSource_4011_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(SequentialEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(FilePortEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(SequentialEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case MatchModelExplicitSourceEditPart.VISUAL_ID: {
+			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_MatchModelExplicitSource_4012_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_MatchModelExplicitSource_4012_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(FilePortEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(MatchModelEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
 			}
 			return result.toArray();
 		}
@@ -2289,20 +2100,212 @@ public class DsltransNavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
-		case ClassRef2EditPart.VISUAL_ID: {
+		case ClassRefClassRefEditPart.VISUAL_ID: {
 			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			DsltransNavigatorGroup outgoinglinks = new DsltransNavigatorGroup(
-					Messages.NavigatorGroupName_ClassRef_3022_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Edge sv = (Edge) view;
+			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_ClassRefClassRef_4014_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_ClassRefClassRef_4014_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					DsltransVisualIDRegistry
-							.getType(ClassRefClassRefEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
+							.getType(AnyMatchClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ExistsMatchClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(NegativeMatchClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ApplyClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ClassRefEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ClassRef2EditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ClassRef3EditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case AttributeEqualityEditPart.VISUAL_ID: {
+			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_AttributeEquality_4015_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_AttributeEquality_4015_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(MatchAttributeEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ApplyAttributeEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(MatchAttributeEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ApplyAttributeEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case AttributeInequalityEditPart.VISUAL_ID: {
+			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_AttributeInequality_4016_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_AttributeInequality_4016_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(MatchAttributeEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ApplyAttributeEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(MatchAttributeEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ApplyAttributeEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case MatchMayBeSameRelationEditPart.VISUAL_ID: {
+			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_MatchMayBeSameRelation_4017_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_MatchMayBeSameRelation_4017_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(AnyMatchClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ExistsMatchClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(NegativeMatchClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(AnyMatchClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ExistsMatchClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(NegativeMatchClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case ApplyMayBeSameRelationEditPart.VISUAL_ID: {
+			LinkedList<DsltransAbstractNavigatorItem> result = new LinkedList<DsltransAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			DsltransNavigatorGroup target = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_ApplyMayBeSameRelation_4018_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			DsltransNavigatorGroup source = new DsltransNavigatorGroup(
+					Messages.NavigatorGroupName_ApplyMayBeSameRelation_4018_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ApplyClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					DsltransVisualIDRegistry
+							.getType(ApplyClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
 			}
 			return result.toArray();
 		}

@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: PositiveMatchClass.java,v 1.2 2012/01/18 23:38:18 claudiogomes Exp $
  */
 package dsltrans;
 
@@ -18,6 +14,5 @@ package dsltrans;
  *        annotation="gmf.node border.color='204,255,153'"
  * @generated
  */
-public interface PositiveMatchClass extends MatchClass
-{
+public interface PositiveMatchClass extends MatchClass {
 } // PositiveMatchClass

@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: Ref.java,v 1.2 2012/01/18 23:38:18 claudiogomes Exp $
  */
 package dsltrans;
 
@@ -17,6 +13,5 @@ package dsltrans;
  * @model abstract="true"
  * @generated
  */
-public interface Ref extends Term
-{
+public interface Ref extends Term {
 } // Ref

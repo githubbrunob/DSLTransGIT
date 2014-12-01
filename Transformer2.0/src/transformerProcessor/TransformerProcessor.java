@@ -120,8 +120,6 @@ public class TransformerProcessor {
 		TransformerProcessor tP = new TransformerProcessor("C:\\Users\\clagms\\workspace\\Hall2JavaSwing_v2");
 		tP.LoadModel("C:\\Users\\clagms\\workspace\\Hall2JavaSwing_v2\\Hall2JavaCore.dsltrans");
 		
-
-		
 //		tP.setFileURI("inputModel", "Models\\Indy.xmi");
 //		tP.setMetaModelURI("inputModel", "Models\\java5.ecore");
 //		tP.setMetaModelURI("output1", "Models\\text.ecore");
@@ -145,19 +143,12 @@ public class TransformerProcessor {
 		
 			try {
 				tP.Execute();
-			} catch (InvalidLayerRequirement e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (TransformationSourceException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (TransformationLayerException e) {
-				// TODO Auto-generated catch block
+			} catch (Throwable e) {
 				e.printStackTrace();
 			}
 	}
 
-	public void Execute() throws InvalidLayerRequirement, TransformationSourceException, TransformationLayerException {
+	public void Execute() throws Throwable {
 		this.getController().Execute();
 	}
 

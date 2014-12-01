@@ -38,6 +38,7 @@ Require-Bundle: org.eclipse.core.runtime,
  DSLTransEditor2.0;visibility:=reexport,
  DSLTransEditor2.0.edit;visibility:=reexport,
  org.eclipse.emf.validation;visibility:=reexport,
- org.eclipse.gef;visibility:=reexport
+ org.eclipse.gef;visibility:=reexport,
+ org.eclipse.gmf.tooling.runtime;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

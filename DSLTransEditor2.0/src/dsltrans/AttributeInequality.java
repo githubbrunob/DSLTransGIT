@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: AttributeInequality.java,v 1.1 2012/01/18 23:38:18 claudiogomes Exp $
  */
 package dsltrans;
 
@@ -14,9 +10,8 @@ package dsltrans;
  *
  *
  * @see dsltrans.DsltransPackage#getAttributeInequality()
- * @model annotation="gmf.link color='255,61,100' label='!=' tool.description='Create an inequality constrain between attributes'"
+ * @model annotation="gmf.link color='255,61,100' label.readOnly='true' label.text='!=' tool.description='Create an inequality constrain between attributes'"
  * @generated
  */
-public interface AttributeInequality extends AbstractAttributeRelation
-{
+public interface AttributeInequality extends AbstractAttributeRelation {
 } // AttributeInequality

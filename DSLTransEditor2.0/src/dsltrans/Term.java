@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: Term.java,v 1.2 2012/01/18 23:38:18 claudiogomes Exp $
  */
 package dsltrans;
 
@@ -19,6 +15,5 @@ import org.eclipse.emf.ecore.EObject;
  *        annotation="gmf.node foo='bar'"
  * @generated
  */
-public interface Term extends EObject
-{
+public interface Term extends EObject {
 } // Term

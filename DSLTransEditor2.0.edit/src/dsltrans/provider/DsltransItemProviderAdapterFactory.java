@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package dsltrans.provider;
 
@@ -36,1016 +32,936 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DsltransItemProviderAdapterFactory extends DsltransAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable
-{
-  /**
-   * This keeps track of the root adapter factory that delegates to this adapter factory.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected ComposedAdapterFactory parentAdapterFactory;
-
-  /**
-   * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected IChangeNotifier changeNotifier = new ChangeNotifier();
-
-  /**
-   * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected Collection<Object> supportedTypes = new ArrayList<Object>();
-
-  /**
-   * This constructs an instance.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public DsltransItemProviderAdapterFactory()
-  {
-    supportedTypes.add(IEditingDomainItemProvider.class);
-    supportedTypes.add(IStructuredItemContentProvider.class);
-    supportedTypes.add(ITreeItemContentProvider.class);
-    supportedTypes.add(IItemLabelProvider.class);
-    supportedTypes.add(IItemPropertySource.class);
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.TransformationModel} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected TransformationModelItemProvider transformationModelItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.TransformationModel}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createTransformationModelAdapter()
-  {
-    if (transformationModelItemProvider == null)
-    {
-      transformationModelItemProvider = new TransformationModelItemProvider(this);
-    }
-
-    return transformationModelItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.AnyMatchClass} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected AnyMatchClassItemProvider anyMatchClassItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.AnyMatchClass}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createAnyMatchClassAdapter()
-  {
-    if (anyMatchClassItemProvider == null)
-    {
-      anyMatchClassItemProvider = new AnyMatchClassItemProvider(this);
-    }
-
-    return anyMatchClassItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.ExistsMatchClass} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected ExistsMatchClassItemProvider existsMatchClassItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.ExistsMatchClass}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createExistsMatchClassAdapter()
-  {
-    if (existsMatchClassItemProvider == null)
-    {
-      existsMatchClassItemProvider = new ExistsMatchClassItemProvider(this);
-    }
-
-    return existsMatchClassItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.NegativeMatchClass} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected NegativeMatchClassItemProvider negativeMatchClassItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.NegativeMatchClass}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createNegativeMatchClassAdapter()
-  {
-    if (negativeMatchClassItemProvider == null)
-    {
-      negativeMatchClassItemProvider = new NegativeMatchClassItemProvider(this);
-    }
-
-    return negativeMatchClassItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.MatchModel} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected MatchModelItemProvider matchModelItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.MatchModel}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createMatchModelAdapter()
-  {
-    if (matchModelItemProvider == null)
-    {
-      matchModelItemProvider = new MatchModelItemProvider(this);
-    }
-
-    return matchModelItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.PositiveIndirectAssociation} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected PositiveIndirectAssociationItemProvider positiveIndirectAssociationItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.PositiveIndirectAssociation}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createPositiveIndirectAssociationAdapter()
-  {
-    if (positiveIndirectAssociationItemProvider == null)
-    {
-      positiveIndirectAssociationItemProvider = new PositiveIndirectAssociationItemProvider(this);
-    }
-
-    return positiveIndirectAssociationItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.NegativeIndirectAssociation} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected NegativeIndirectAssociationItemProvider negativeIndirectAssociationItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.NegativeIndirectAssociation}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createNegativeIndirectAssociationAdapter()
-  {
-    if (negativeIndirectAssociationItemProvider == null)
-    {
-      negativeIndirectAssociationItemProvider = new NegativeIndirectAssociationItemProvider(this);
-    }
-
-    return negativeIndirectAssociationItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.PositiveMatchAssociation} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected PositiveMatchAssociationItemProvider positiveMatchAssociationItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.PositiveMatchAssociation}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createPositiveMatchAssociationAdapter()
-  {
-    if (positiveMatchAssociationItemProvider == null)
-    {
-      positiveMatchAssociationItemProvider = new PositiveMatchAssociationItemProvider(this);
-    }
-
-    return positiveMatchAssociationItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.NegativeMatchAssociation} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected NegativeMatchAssociationItemProvider negativeMatchAssociationItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.NegativeMatchAssociation}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createNegativeMatchAssociationAdapter()
-  {
-    if (negativeMatchAssociationItemProvider == null)
-    {
-      negativeMatchAssociationItemProvider = new NegativeMatchAssociationItemProvider(this);
-    }
-
-    return negativeMatchAssociationItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.ApplyClass} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected ApplyClassItemProvider applyClassItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.ApplyClass}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createApplyClassAdapter()
-  {
-    if (applyClassItemProvider == null)
-    {
-      applyClassItemProvider = new ApplyClassItemProvider(this);
-    }
-
-    return applyClassItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.ApplyModel} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected ApplyModelItemProvider applyModelItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.ApplyModel}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createApplyModelAdapter()
-  {
-    if (applyModelItemProvider == null)
-    {
-      applyModelItemProvider = new ApplyModelItemProvider(this);
-    }
-
-    return applyModelItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.ApplyAssociation} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected ApplyAssociationItemProvider applyAssociationItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.ApplyAssociation}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createApplyAssociationAdapter()
-  {
-    if (applyAssociationItemProvider == null)
-    {
-      applyAssociationItemProvider = new ApplyAssociationItemProvider(this);
-    }
-
-    return applyAssociationItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.MatchAttribute} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected MatchAttributeItemProvider matchAttributeItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.MatchAttribute}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createMatchAttributeAdapter()
-  {
-    if (matchAttributeItemProvider == null)
-    {
-      matchAttributeItemProvider = new MatchAttributeItemProvider(this);
-    }
-
-    return matchAttributeItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.ApplyAttribute} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected ApplyAttributeItemProvider applyAttributeItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.ApplyAttribute}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createApplyAttributeAdapter()
-  {
-    if (applyAttributeItemProvider == null)
-    {
-      applyAttributeItemProvider = new ApplyAttributeItemProvider(this);
-    }
-
-    return applyAttributeItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.FilePort} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected FilePortItemProvider filePortItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.FilePort}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createFilePortAdapter()
-  {
-    if (filePortItemProvider == null)
-    {
-      filePortItemProvider = new FilePortItemProvider(this);
-    }
-
-    return filePortItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.Rule} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected RuleItemProvider ruleItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.Rule}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createRuleAdapter()
-  {
-    if (ruleItemProvider == null)
-    {
-      ruleItemProvider = new RuleItemProvider(this);
-    }
-
-    return ruleItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.MetaModelIdentifier} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected MetaModelIdentifierItemProvider metaModelIdentifierItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.MetaModelIdentifier}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createMetaModelIdentifierAdapter()
-  {
-    if (metaModelIdentifierItemProvider == null)
-    {
-      metaModelIdentifierItemProvider = new MetaModelIdentifierItemProvider(this);
-    }
-
-    return metaModelIdentifierItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.PositiveBackwardRestriction} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected PositiveBackwardRestrictionItemProvider positiveBackwardRestrictionItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.PositiveBackwardRestriction}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createPositiveBackwardRestrictionAdapter()
-  {
-    if (positiveBackwardRestrictionItemProvider == null)
-    {
-      positiveBackwardRestrictionItemProvider = new PositiveBackwardRestrictionItemProvider(this);
-    }
-
-    return positiveBackwardRestrictionItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.NegativeBackwardRestriction} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected NegativeBackwardRestrictionItemProvider negativeBackwardRestrictionItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.NegativeBackwardRestriction}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createNegativeBackwardRestrictionAdapter()
-  {
-    if (negativeBackwardRestrictionItemProvider == null)
-    {
-      negativeBackwardRestrictionItemProvider = new NegativeBackwardRestrictionItemProvider(this);
-    }
-
-    return negativeBackwardRestrictionItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.Import} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected ImportItemProvider importItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.Import}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createImportAdapter()
-  {
-    if (importItemProvider == null)
-    {
-      importItemProvider = new ImportItemProvider(this);
-    }
-
-    return importItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.Sequential} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected SequentialItemProvider sequentialItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.Sequential}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createSequentialAdapter()
-  {
-    if (sequentialItemProvider == null)
-    {
-      sequentialItemProvider = new SequentialItemProvider(this);
-    }
-
-    return sequentialItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.Atom} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected AtomItemProvider atomItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.Atom}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createAtomAdapter()
-  {
-    if (atomItemProvider == null)
-    {
-      atomItemProvider = new AtomItemProvider(this);
-    }
-
-    return atomItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.AttributeRef} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected AttributeRefItemProvider attributeRefItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.AttributeRef}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createAttributeRefAdapter()
-  {
-    if (attributeRefItemProvider == null)
-    {
-      attributeRefItemProvider = new AttributeRefItemProvider(this);
-    }
-
-    return attributeRefItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.ClassRef} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected ClassRefItemProvider classRefItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.ClassRef}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createClassRefAdapter()
-  {
-    if (classRefItemProvider == null)
-    {
-      classRefItemProvider = new ClassRefItemProvider(this);
-    }
-
-    return classRefItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.Concat} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected ConcatItemProvider concatItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.Concat}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createConcatAdapter()
-  {
-    if (concatItemProvider == null)
-    {
-      concatItemProvider = new ConcatItemProvider(this);
-    }
-
-    return concatItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.TypeOf} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected TypeOfItemProvider typeOfItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.TypeOf}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createTypeOfAdapter()
-  {
-    if (typeOfItemProvider == null)
-    {
-      typeOfItemProvider = new TypeOfItemProvider(this);
-    }
-
-    return typeOfItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.Wildcard} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected WildcardItemProvider wildcardItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.Wildcard}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createWildcardAdapter()
-  {
-    if (wildcardItemProvider == null)
-    {
-      wildcardItemProvider = new WildcardItemProvider(this);
-    }
-
-    return wildcardItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.isNull} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected isNullItemProvider isNullItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.isNull}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createisNullAdapter()
-  {
-    if (isNullItemProvider == null)
-    {
-      isNullItemProvider = new isNullItemProvider(this);
-    }
-
-    return isNullItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.Sequencer} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected SequencerItemProvider sequencerItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.Sequencer}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createSequencerAdapter()
-  {
-    if (sequencerItemProvider == null)
-    {
-      sequencerItemProvider = new SequencerItemProvider(this);
-    }
-
-    return sequencerItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.AttributeEquality} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected AttributeEqualityItemProvider attributeEqualityItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.AttributeEquality}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createAttributeEqualityAdapter()
-  {
-    if (attributeEqualityItemProvider == null)
-    {
-      attributeEqualityItemProvider = new AttributeEqualityItemProvider(this);
-    }
-
-    return attributeEqualityItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.AttributeInequality} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected AttributeInequalityItemProvider attributeInequalityItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.AttributeInequality}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createAttributeInequalityAdapter()
-  {
-    if (attributeInequalityItemProvider == null)
-    {
-      attributeInequalityItemProvider = new AttributeInequalityItemProvider(this);
-    }
-
-    return attributeInequalityItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.MatchMayBeSameRelation} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected MatchMayBeSameRelationItemProvider matchMayBeSameRelationItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.MatchMayBeSameRelation}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createMatchMayBeSameRelationAdapter()
-  {
-    if (matchMayBeSameRelationItemProvider == null)
-    {
-      matchMayBeSameRelationItemProvider = new MatchMayBeSameRelationItemProvider(this);
-    }
-
-    return matchMayBeSameRelationItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link dsltrans.ApplyMayBeSameRelation} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected ApplyMayBeSameRelationItemProvider applyMayBeSameRelationItemProvider;
-
-  /**
-   * This creates an adapter for a {@link dsltrans.ApplyMayBeSameRelation}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createApplyMayBeSameRelationAdapter()
-  {
-    if (applyMayBeSameRelationItemProvider == null)
-    {
-      applyMayBeSameRelationItemProvider = new ApplyMayBeSameRelationItemProvider(this);
-    }
-
-    return applyMayBeSameRelationItemProvider;
-  }
-
-  /**
-   * This returns the root adapter factory that contains this factory.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ComposeableAdapterFactory getRootAdapterFactory()
-  {
-    return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
-  }
-
-  /**
-   * This sets the composed adapter factory that contains this factory.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory)
-  {
-    this.parentAdapterFactory = parentAdapterFactory;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public boolean isFactoryForType(Object type)
-  {
-    return supportedTypes.contains(type) || super.isFactoryForType(type);
-  }
-
-  /**
-   * This implementation substitutes the factory itself as the key for the adapter.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter adapt(Notifier notifier, Object type)
-  {
-    return super.adapt(notifier, this);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Object adapt(Object object, Object type)
-  {
-    if (isFactoryForType(type))
-    {
-      Object adapter = super.adapt(object, type);
-      if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
-      {
-        return adapter;
-      }
-    }
-
-    return null;
-  }
-
-  /**
-   * This adds a listener.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void addListener(INotifyChangedListener notifyChangedListener)
-  {
-    changeNotifier.addListener(notifyChangedListener);
-  }
-
-  /**
-   * This removes a listener.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void removeListener(INotifyChangedListener notifyChangedListener)
-  {
-    changeNotifier.removeListener(notifyChangedListener);
-  }
-
-  /**
-   * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void fireNotifyChanged(Notification notification)
-  {
-    changeNotifier.fireNotifyChanged(notification);
-
-    if (parentAdapterFactory != null)
-    {
-      parentAdapterFactory.fireNotifyChanged(notification);
-    }
-  }
-
-  /**
-   * This disposes all of the item providers created by this factory. 
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void dispose()
-  {
-    if (transformationModelItemProvider != null) transformationModelItemProvider.dispose();
-    if (anyMatchClassItemProvider != null) anyMatchClassItemProvider.dispose();
-    if (existsMatchClassItemProvider != null) existsMatchClassItemProvider.dispose();
-    if (negativeMatchClassItemProvider != null) negativeMatchClassItemProvider.dispose();
-    if (matchModelItemProvider != null) matchModelItemProvider.dispose();
-    if (positiveIndirectAssociationItemProvider != null) positiveIndirectAssociationItemProvider.dispose();
-    if (negativeIndirectAssociationItemProvider != null) negativeIndirectAssociationItemProvider.dispose();
-    if (positiveMatchAssociationItemProvider != null) positiveMatchAssociationItemProvider.dispose();
-    if (negativeMatchAssociationItemProvider != null) negativeMatchAssociationItemProvider.dispose();
-    if (applyClassItemProvider != null) applyClassItemProvider.dispose();
-    if (applyModelItemProvider != null) applyModelItemProvider.dispose();
-    if (applyAssociationItemProvider != null) applyAssociationItemProvider.dispose();
-    if (matchAttributeItemProvider != null) matchAttributeItemProvider.dispose();
-    if (applyAttributeItemProvider != null) applyAttributeItemProvider.dispose();
-    if (filePortItemProvider != null) filePortItemProvider.dispose();
-    if (ruleItemProvider != null) ruleItemProvider.dispose();
-    if (metaModelIdentifierItemProvider != null) metaModelIdentifierItemProvider.dispose();
-    if (positiveBackwardRestrictionItemProvider != null) positiveBackwardRestrictionItemProvider.dispose();
-    if (negativeBackwardRestrictionItemProvider != null) negativeBackwardRestrictionItemProvider.dispose();
-    if (importItemProvider != null) importItemProvider.dispose();
-    if (sequentialItemProvider != null) sequentialItemProvider.dispose();
-    if (atomItemProvider != null) atomItemProvider.dispose();
-    if (attributeRefItemProvider != null) attributeRefItemProvider.dispose();
-    if (classRefItemProvider != null) classRefItemProvider.dispose();
-    if (concatItemProvider != null) concatItemProvider.dispose();
-    if (typeOfItemProvider != null) typeOfItemProvider.dispose();
-    if (wildcardItemProvider != null) wildcardItemProvider.dispose();
-    if (isNullItemProvider != null) isNullItemProvider.dispose();
-    if (sequencerItemProvider != null) sequencerItemProvider.dispose();
-    if (attributeEqualityItemProvider != null) attributeEqualityItemProvider.dispose();
-    if (attributeInequalityItemProvider != null) attributeInequalityItemProvider.dispose();
-    if (matchMayBeSameRelationItemProvider != null) matchMayBeSameRelationItemProvider.dispose();
-    if (applyMayBeSameRelationItemProvider != null) applyMayBeSameRelationItemProvider.dispose();
-  }
+public class DsltransItemProviderAdapterFactory extends DsltransAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+	/**
+	 * This keeps track of the root adapter factory that delegates to this adapter factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComposedAdapterFactory parentAdapterFactory;
+
+	/**
+	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IChangeNotifier changeNotifier = new ChangeNotifier();
+
+	/**
+	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Collection<Object> supportedTypes = new ArrayList<Object>();
+
+	/**
+	 * This constructs an instance.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DsltransItemProviderAdapterFactory() {
+		supportedTypes.add(IEditingDomainItemProvider.class);
+		supportedTypes.add(IStructuredItemContentProvider.class);
+		supportedTypes.add(ITreeItemContentProvider.class);
+		supportedTypes.add(IItemLabelProvider.class);
+		supportedTypes.add(IItemPropertySource.class);
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.TransformationModel} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TransformationModelItemProvider transformationModelItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.TransformationModel}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTransformationModelAdapter() {
+		if (transformationModelItemProvider == null) {
+			transformationModelItemProvider = new TransformationModelItemProvider(this);
+		}
+
+		return transformationModelItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.AnyMatchClass} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AnyMatchClassItemProvider anyMatchClassItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.AnyMatchClass}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAnyMatchClassAdapter() {
+		if (anyMatchClassItemProvider == null) {
+			anyMatchClassItemProvider = new AnyMatchClassItemProvider(this);
+		}
+
+		return anyMatchClassItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.ExistsMatchClass} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ExistsMatchClassItemProvider existsMatchClassItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.ExistsMatchClass}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createExistsMatchClassAdapter() {
+		if (existsMatchClassItemProvider == null) {
+			existsMatchClassItemProvider = new ExistsMatchClassItemProvider(this);
+		}
+
+		return existsMatchClassItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.NegativeMatchClass} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NegativeMatchClassItemProvider negativeMatchClassItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.NegativeMatchClass}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNegativeMatchClassAdapter() {
+		if (negativeMatchClassItemProvider == null) {
+			negativeMatchClassItemProvider = new NegativeMatchClassItemProvider(this);
+		}
+
+		return negativeMatchClassItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.MatchModel} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MatchModelItemProvider matchModelItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.MatchModel}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMatchModelAdapter() {
+		if (matchModelItemProvider == null) {
+			matchModelItemProvider = new MatchModelItemProvider(this);
+		}
+
+		return matchModelItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.PositiveIndirectAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PositiveIndirectAssociationItemProvider positiveIndirectAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.PositiveIndirectAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPositiveIndirectAssociationAdapter() {
+		if (positiveIndirectAssociationItemProvider == null) {
+			positiveIndirectAssociationItemProvider = new PositiveIndirectAssociationItemProvider(this);
+		}
+
+		return positiveIndirectAssociationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.NegativeIndirectAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NegativeIndirectAssociationItemProvider negativeIndirectAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.NegativeIndirectAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNegativeIndirectAssociationAdapter() {
+		if (negativeIndirectAssociationItemProvider == null) {
+			negativeIndirectAssociationItemProvider = new NegativeIndirectAssociationItemProvider(this);
+		}
+
+		return negativeIndirectAssociationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.PositiveMatchAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PositiveMatchAssociationItemProvider positiveMatchAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.PositiveMatchAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPositiveMatchAssociationAdapter() {
+		if (positiveMatchAssociationItemProvider == null) {
+			positiveMatchAssociationItemProvider = new PositiveMatchAssociationItemProvider(this);
+		}
+
+		return positiveMatchAssociationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.NegativeMatchAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NegativeMatchAssociationItemProvider negativeMatchAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.NegativeMatchAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNegativeMatchAssociationAdapter() {
+		if (negativeMatchAssociationItemProvider == null) {
+			negativeMatchAssociationItemProvider = new NegativeMatchAssociationItemProvider(this);
+		}
+
+		return negativeMatchAssociationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.ApplyClass} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ApplyClassItemProvider applyClassItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.ApplyClass}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createApplyClassAdapter() {
+		if (applyClassItemProvider == null) {
+			applyClassItemProvider = new ApplyClassItemProvider(this);
+		}
+
+		return applyClassItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.ApplyModel} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ApplyModelItemProvider applyModelItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.ApplyModel}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createApplyModelAdapter() {
+		if (applyModelItemProvider == null) {
+			applyModelItemProvider = new ApplyModelItemProvider(this);
+		}
+
+		return applyModelItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.ApplyAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ApplyAssociationItemProvider applyAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.ApplyAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createApplyAssociationAdapter() {
+		if (applyAssociationItemProvider == null) {
+			applyAssociationItemProvider = new ApplyAssociationItemProvider(this);
+		}
+
+		return applyAssociationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.MatchAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MatchAttributeItemProvider matchAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.MatchAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMatchAttributeAdapter() {
+		if (matchAttributeItemProvider == null) {
+			matchAttributeItemProvider = new MatchAttributeItemProvider(this);
+		}
+
+		return matchAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.ApplyAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ApplyAttributeItemProvider applyAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.ApplyAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createApplyAttributeAdapter() {
+		if (applyAttributeItemProvider == null) {
+			applyAttributeItemProvider = new ApplyAttributeItemProvider(this);
+		}
+
+		return applyAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.FilePort} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FilePortItemProvider filePortItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.FilePort}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFilePortAdapter() {
+		if (filePortItemProvider == null) {
+			filePortItemProvider = new FilePortItemProvider(this);
+		}
+
+		return filePortItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.Rule} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RuleItemProvider ruleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.Rule}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRuleAdapter() {
+		if (ruleItemProvider == null) {
+			ruleItemProvider = new RuleItemProvider(this);
+		}
+
+		return ruleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.MetaModelIdentifier} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MetaModelIdentifierItemProvider metaModelIdentifierItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.MetaModelIdentifier}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMetaModelIdentifierAdapter() {
+		if (metaModelIdentifierItemProvider == null) {
+			metaModelIdentifierItemProvider = new MetaModelIdentifierItemProvider(this);
+		}
+
+		return metaModelIdentifierItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.PositiveBackwardRestriction} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PositiveBackwardRestrictionItemProvider positiveBackwardRestrictionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.PositiveBackwardRestriction}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPositiveBackwardRestrictionAdapter() {
+		if (positiveBackwardRestrictionItemProvider == null) {
+			positiveBackwardRestrictionItemProvider = new PositiveBackwardRestrictionItemProvider(this);
+		}
+
+		return positiveBackwardRestrictionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.NegativeBackwardRestriction} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NegativeBackwardRestrictionItemProvider negativeBackwardRestrictionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.NegativeBackwardRestriction}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNegativeBackwardRestrictionAdapter() {
+		if (negativeBackwardRestrictionItemProvider == null) {
+			negativeBackwardRestrictionItemProvider = new NegativeBackwardRestrictionItemProvider(this);
+		}
+
+		return negativeBackwardRestrictionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.Import} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ImportItemProvider importItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.Import}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createImportAdapter() {
+		if (importItemProvider == null) {
+			importItemProvider = new ImportItemProvider(this);
+		}
+
+		return importItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.Sequential} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SequentialItemProvider sequentialItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.Sequential}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSequentialAdapter() {
+		if (sequentialItemProvider == null) {
+			sequentialItemProvider = new SequentialItemProvider(this);
+		}
+
+		return sequentialItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.Atom} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AtomItemProvider atomItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.Atom}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAtomAdapter() {
+		if (atomItemProvider == null) {
+			atomItemProvider = new AtomItemProvider(this);
+		}
+
+		return atomItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.AttributeRef} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AttributeRefItemProvider attributeRefItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.AttributeRef}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAttributeRefAdapter() {
+		if (attributeRefItemProvider == null) {
+			attributeRefItemProvider = new AttributeRefItemProvider(this);
+		}
+
+		return attributeRefItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.ClassRef} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ClassRefItemProvider classRefItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.ClassRef}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createClassRefAdapter() {
+		if (classRefItemProvider == null) {
+			classRefItemProvider = new ClassRefItemProvider(this);
+		}
+
+		return classRefItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.Concat} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConcatItemProvider concatItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.Concat}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConcatAdapter() {
+		if (concatItemProvider == null) {
+			concatItemProvider = new ConcatItemProvider(this);
+		}
+
+		return concatItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.TypeOf} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TypeOfItemProvider typeOfItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.TypeOf}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTypeOfAdapter() {
+		if (typeOfItemProvider == null) {
+			typeOfItemProvider = new TypeOfItemProvider(this);
+		}
+
+		return typeOfItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.Wildcard} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected WildcardItemProvider wildcardItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.Wildcard}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createWildcardAdapter() {
+		if (wildcardItemProvider == null) {
+			wildcardItemProvider = new WildcardItemProvider(this);
+		}
+
+		return wildcardItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.isNull} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected isNullItemProvider isNullItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.isNull}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createisNullAdapter() {
+		if (isNullItemProvider == null) {
+			isNullItemProvider = new isNullItemProvider(this);
+		}
+
+		return isNullItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.Sequencer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SequencerItemProvider sequencerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.Sequencer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSequencerAdapter() {
+		if (sequencerItemProvider == null) {
+			sequencerItemProvider = new SequencerItemProvider(this);
+		}
+
+		return sequencerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.AttributeEquality} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AttributeEqualityItemProvider attributeEqualityItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.AttributeEquality}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAttributeEqualityAdapter() {
+		if (attributeEqualityItemProvider == null) {
+			attributeEqualityItemProvider = new AttributeEqualityItemProvider(this);
+		}
+
+		return attributeEqualityItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.AttributeInequality} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AttributeInequalityItemProvider attributeInequalityItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.AttributeInequality}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAttributeInequalityAdapter() {
+		if (attributeInequalityItemProvider == null) {
+			attributeInequalityItemProvider = new AttributeInequalityItemProvider(this);
+		}
+
+		return attributeInequalityItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.MatchMayBeSameRelation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MatchMayBeSameRelationItemProvider matchMayBeSameRelationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.MatchMayBeSameRelation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMatchMayBeSameRelationAdapter() {
+		if (matchMayBeSameRelationItemProvider == null) {
+			matchMayBeSameRelationItemProvider = new MatchMayBeSameRelationItemProvider(this);
+		}
+
+		return matchMayBeSameRelationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsltrans.ApplyMayBeSameRelation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ApplyMayBeSameRelationItemProvider applyMayBeSameRelationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsltrans.ApplyMayBeSameRelation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createApplyMayBeSameRelationAdapter() {
+		if (applyMayBeSameRelationItemProvider == null) {
+			applyMayBeSameRelationItemProvider = new ApplyMayBeSameRelationItemProvider(this);
+		}
+
+		return applyMayBeSameRelationItemProvider;
+	}
+
+	/**
+	 * This returns the root adapter factory that contains this factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComposeableAdapterFactory getRootAdapterFactory() {
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+	}
+
+	/**
+	 * This sets the composed adapter factory that contains this factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
+		this.parentAdapterFactory = parentAdapterFactory;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isFactoryForType(Object type) {
+		return supportedTypes.contains(type) || super.isFactoryForType(type);
+	}
+
+	/**
+	 * This implementation substitutes the factory itself as the key for the adapter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter adapt(Notifier notifier, Object type) {
+		return super.adapt(notifier, this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object adapt(Object object, Object type) {
+		if (isFactoryForType(type)) {
+			Object adapter = super.adapt(object, type);
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+				return adapter;
+			}
+		}
+
+		return null;
+	}
+
+	/**
+	 * This adds a listener.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addListener(INotifyChangedListener notifyChangedListener) {
+		changeNotifier.addListener(notifyChangedListener);
+	}
+
+	/**
+	 * This removes a listener.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void removeListener(INotifyChangedListener notifyChangedListener) {
+		changeNotifier.removeListener(notifyChangedListener);
+	}
+
+	/**
+	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void fireNotifyChanged(Notification notification) {
+		changeNotifier.fireNotifyChanged(notification);
+
+		if (parentAdapterFactory != null) {
+			parentAdapterFactory.fireNotifyChanged(notification);
+		}
+	}
+
+	/**
+	 * This disposes all of the item providers created by this factory. 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void dispose() {
+		if (transformationModelItemProvider != null) transformationModelItemProvider.dispose();
+		if (anyMatchClassItemProvider != null) anyMatchClassItemProvider.dispose();
+		if (existsMatchClassItemProvider != null) existsMatchClassItemProvider.dispose();
+		if (negativeMatchClassItemProvider != null) negativeMatchClassItemProvider.dispose();
+		if (matchModelItemProvider != null) matchModelItemProvider.dispose();
+		if (positiveIndirectAssociationItemProvider != null) positiveIndirectAssociationItemProvider.dispose();
+		if (negativeIndirectAssociationItemProvider != null) negativeIndirectAssociationItemProvider.dispose();
+		if (positiveMatchAssociationItemProvider != null) positiveMatchAssociationItemProvider.dispose();
+		if (negativeMatchAssociationItemProvider != null) negativeMatchAssociationItemProvider.dispose();
+		if (applyClassItemProvider != null) applyClassItemProvider.dispose();
+		if (applyModelItemProvider != null) applyModelItemProvider.dispose();
+		if (applyAssociationItemProvider != null) applyAssociationItemProvider.dispose();
+		if (matchAttributeItemProvider != null) matchAttributeItemProvider.dispose();
+		if (applyAttributeItemProvider != null) applyAttributeItemProvider.dispose();
+		if (filePortItemProvider != null) filePortItemProvider.dispose();
+		if (ruleItemProvider != null) ruleItemProvider.dispose();
+		if (metaModelIdentifierItemProvider != null) metaModelIdentifierItemProvider.dispose();
+		if (positiveBackwardRestrictionItemProvider != null) positiveBackwardRestrictionItemProvider.dispose();
+		if (negativeBackwardRestrictionItemProvider != null) negativeBackwardRestrictionItemProvider.dispose();
+		if (importItemProvider != null) importItemProvider.dispose();
+		if (sequentialItemProvider != null) sequentialItemProvider.dispose();
+		if (atomItemProvider != null) atomItemProvider.dispose();
+		if (attributeRefItemProvider != null) attributeRefItemProvider.dispose();
+		if (classRefItemProvider != null) classRefItemProvider.dispose();
+		if (concatItemProvider != null) concatItemProvider.dispose();
+		if (typeOfItemProvider != null) typeOfItemProvider.dispose();
+		if (wildcardItemProvider != null) wildcardItemProvider.dispose();
+		if (isNullItemProvider != null) isNullItemProvider.dispose();
+		if (sequencerItemProvider != null) sequencerItemProvider.dispose();
+		if (attributeEqualityItemProvider != null) attributeEqualityItemProvider.dispose();
+		if (attributeInequalityItemProvider != null) attributeInequalityItemProvider.dispose();
+		if (matchMayBeSameRelationItemProvider != null) matchMayBeSameRelationItemProvider.dispose();
+		if (applyMayBeSameRelationItemProvider != null) applyMayBeSameRelationItemProvider.dispose();
+	}
 
 }

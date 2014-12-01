@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: AttributeEqualityImpl.java,v 1.1 2012/01/18 23:38:18 claudiogomes Exp $
  */
 package dsltrans.impl;
 
@@ -20,27 +16,24 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class AttributeEqualityImpl extends AbstractAttributeRelationImpl implements AttributeEquality
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected AttributeEqualityImpl()
-  {
-    super();
-  }
+public class AttributeEqualityImpl extends AbstractAttributeRelationImpl implements AttributeEquality {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AttributeEqualityImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return DsltransPackage.Literals.ATTRIBUTE_EQUALITY;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DsltransPackage.Literals.ATTRIBUTE_EQUALITY;
+	}
 
 } //AttributeEqualityImpl

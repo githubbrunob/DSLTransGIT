@@ -1,16 +1,16 @@
 ﻿\section{Installation}
+\label{sec:installation}
 
 \subsection{Windows7 \& Vista}
 
 In order to successfully follow the examples in this manual and use
 \emph{DSLTrans} you have to follow (carefully) these steps:
 
-Download and install SWI-Prolog version 5.10.4.
+Download and install SWI-Prolog version 5.10.2. You will find it along the DSLTrans release files.
 
-Download and extract Eclipse Modeling Tools, Helios Service Release 2.
+Download and extract Eclipse Modeling Tools, Luna Service Release 1.
 
-Set the environment variables shown in the figures \ref{fig:path_user}
-and \ref{fig:path_system} below.
+Set the environment variables shown in the figures \ref{fig:path_user}, \ref{fig:path_system} and \ref{fig:swi_pl_path} below.
 
 \begin{figure}[h]
 \begin{center}
@@ -20,7 +20,7 @@ and \ref{fig:path_system} below.
 \end{center}
 \end{figure}
 
-Note that you have to replace \verb=C:\Program Files\Java\jdk1.6.0_26\bin=
+Note that, figure \ref{fig:path_user} you have to replace \verb=C:\Program Files\Java\jdk1.6.0_26\bin=
 for your system's Java bin directory. Also, beware that the environment
 variable you have to edit is the \emph{user} Path variable.
 
@@ -32,9 +32,20 @@ variable you have to edit is the \emph{user} Path variable.
 \end{center}
 \end{figure}
 
-You have to replace \verb=C:\Program Files\pl\bin= for your prolog installation
+In figure \ref{fig:path_system}, you have to replace \verb=C:\Program Files\pl\bin= for your prolog installation
 bin directory too. This time the variable to edit is the \emph{System} Path
 variable.
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[width=0.6\linewidth]{imgs/swi_prolog_path.png}
+  \caption{Path to add to the \emph{system} \emph{SWI\_HOME\_DIR} variable.}
+  \label{fig:swi_pl_path}
+\end{center}
+\end{figure}
+
+In figure \ref{fig:path_system}, you have to replace \verb=C:\Program Files (x86)\pl= for your prolog installation
+directory.
 
 Now you have to copy the \verb=jpl.jar= file, in the 
 \verb=C:\Program Files\pl\lib= 

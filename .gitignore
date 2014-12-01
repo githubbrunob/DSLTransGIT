@@ -220,3 +220,9 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfgx
+DSLTransManual/document.blg
+DSLTransManual/document.bbl
+DSLTransManual/document.aux
+DSLTransManual/document.out
+DSLTransManual/document.synctex.gz
+DSLTransManual/custom.aux

@@ -1,6 +1,7 @@
 package dsltranslator.popup.actions;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.net.URL;
 
@@ -76,7 +77,11 @@ public class GenIdentityLiftAction implements IObjectActionDelegate {
 				PrintStream err = System.err;
 		        System.setOut(getConsole().getOutStream());
 		        System.setErr(getConsole().getErrStream());
-				new ClassPathManager().update();
+				try {
+					new ClassPathManager().update();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
 		
 				URL transformationurl = this.getClass().getResource("/model/GenIdentityLift.dsltrans");
 				URL sourceurl = this.getClass().getResource("/model/Ecore.ecore");

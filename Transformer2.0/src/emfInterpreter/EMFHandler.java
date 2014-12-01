@@ -28,6 +28,7 @@ import org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter
 import org.eclipse.emf.codegen.ecore.genmodel.generator.GenEnumGeneratorAdapter;
 import org.eclipse.emf.codegen.ecore.genmodel.generator.GenModelGeneratorAdapterFactory;
 import org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter;
+import org.eclipse.emf.codegen.merge.java.JMerger;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.URI;
@@ -78,7 +79,7 @@ public class EMFHandler {
 		genModel.setValidateModel(true);
 		genModel.setForceOverwrite(true);
 		genModel.setCanGenerate(true);
-		genModel.setFacadeHelperClass("null"); // we don't need merges.
+		genModel.setFacadeHelperClass(JMerger.DEFAULT_FACADE_HELPER_CLASS);
 		String modelname = genModelURI.trimFileExtension().lastSegment();
 		System.out.println("modelname: " + modelname);
 		genModel.setModelName(modelname);
@@ -164,7 +165,7 @@ public class EMFHandler {
 		tempModel.setValidateModel(true);
 		tempModel.setForceOverwrite(true);
 		tempModel.setCanGenerate(true);
-		tempModel.setFacadeHelperClass("null"); // we don't need merger
+		tempModel.setFacadeHelperClass(JMerger.DEFAULT_FACADE_HELPER_CLASS);
 		tempModel.setModelName(pack.getName());
 		tempModel.initialize(Collections.singleton(pack));
 

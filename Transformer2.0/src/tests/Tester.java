@@ -10,9 +10,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 import transformerProcessor.TransformerProcessor;
-import transformerProcessor.exceptions.InvalidLayerRequirement;
-import transformerProcessor.exceptions.TransformationLayerException;
-import transformerProcessor.exceptions.TransformationSourceException;
 import difflib.Delta;
 import difflib.DiffUtils;
 import difflib.Patch;
@@ -31,7 +28,7 @@ public class Tester {
 	
 	private static final boolean BULK_TESTING = false;
 	private static final String TEST = "t0";
-	private static final boolean COMPARE_RESULTS = false;
+	private static final boolean COMPARE_RESULTS = true;
 	
 	public static void main(String[] args) {
 		

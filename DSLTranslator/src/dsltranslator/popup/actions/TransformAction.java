@@ -1,6 +1,7 @@
 package dsltranslator.popup.actions;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.PrintStream;
 
 import org.eclipse.core.resources.IFile;
@@ -80,7 +81,11 @@ public class TransformAction implements IObjectActionDelegate {
 				PrintStream err = System.err;
 		        System.setOut(getConsole().getOutStream());
 		        System.setErr(getConsole().getErrStream());
-				new ClassPathManager().update();
+				try {
+					new ClassPathManager().update();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
 				TransformerProcessor tP = new TransformerProcessor(projectPath);
 				try {
 					tP.LoadModel(filepath);

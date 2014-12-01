@@ -31,4 +31,6 @@ Import-Package: org.eclipse.core.resources,
  org.eclipse.emf.codegen.ecore.genmodel.generator,
  org.eclipse.emf.codegen.merge.java,
  org.eclipse.emf.ecore.xmi,
- org.eclipse.emf.ecore.xmi.impl
+ org.eclipse.emf.ecore.xmi.impl,
+ org.eclipse.jdt.core.dom,
+ org.eclipse.text.edits

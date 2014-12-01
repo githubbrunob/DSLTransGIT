@@ -148,11 +148,11 @@ public class EMFHandler {
 		URI result = URI.createURI(fileRelativePath);
 
 		if (!result.isRelative()) {
-			throw new InvalidPathException(fileRelativePath, "Must be relative.");
+			return result;
 		}
 
 		if (fileRelativePath.contains(absolutePathDir)) {
-			throw new InvalidPathException(fileRelativePath, "Must be relative.");
+			throw new InvalidPathException(fileRelativePath, "The relative path must not contain the absolute path.");
 		}
 
 		result = URI.createURI("file://" + absolutePathDir + "/" + fileRelativePath);

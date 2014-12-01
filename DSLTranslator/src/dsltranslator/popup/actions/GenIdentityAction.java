@@ -1,12 +1,12 @@
 package dsltranslator.popup.actions;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.PrintStream;
 import java.net.URL;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
@@ -28,9 +28,6 @@ import org.eclipse.ui.console.IConsoleManager;
 import org.eclipse.ui.console.IConsoleView;
 
 import transformerProcessor.TransformerProcessor;
-import transformerProcessor.exceptions.InvalidLayerRequirement;
-import transformerProcessor.exceptions.TransformationLayerException;
-import transformerProcessor.exceptions.TransformationSourceException;
 
 public class GenIdentityAction implements IObjectActionDelegate {
 
@@ -66,9 +63,9 @@ public class GenIdentityAction implements IObjectActionDelegate {
 		final IProject project = _selectedFile.getProject();
 		final String projectPath = project.getLocation().toString();
 		final String filepath=_selectedFile.getLocation().toString();
+		
 //		System.out.println("filepath: "+filepath);
 		final File tempdir = new File(projectPath+"/tempClasses");
-		tempdir.mkdir();
 
 		Job job = new Job("Generate Identity Transformation") {
 			@Override
@@ -78,17 +75,16 @@ public class GenIdentityAction implements IObjectActionDelegate {
 		        System.setOut(getConsole().getOutStream());
 		        System.setErr(getConsole().getErrStream());
 				
+		        new ClassPathManager().update();
 		        try {
-					new ClassPathManager().update();
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}
+		        	
+			        // cgg must use FileLocation to resolve these paths because they are in the bundleresource protocol.
+					URL transformationurl = FileLocator.resolve(this.getClass().getResource("/model/GenIdentity.dsltrans"));
+					URL sourceurl = FileLocator.resolve(this.getClass().getResource("/model/Ecore.ecore"));
+					URL targeturl = FileLocator.resolve(this.getClass().getResource("/model/DSLTrans.ecore"));
+					
+					TransformerProcessor tP = new TransformerProcessor(projectPath);
 				
-				URL transformationurl = this.getClass().getResource("/model/GenIdentity.dsltrans");
-				URL sourceurl = this.getClass().getResource("/model/Ecore.ecore");
-				URL targeturl = this.getClass().getResource("/model/DSLTrans.ecore");				
-				TransformerProcessor tP = new TransformerProcessor(projectPath);
-				try {
 					tP.LoadModel(org.eclipse.emf.common.util.URI.createURI(transformationurl.toURI().toASCIIString()));
 					tP.setFileURI("input", filepath);
 					tP.setMetaModelURI("input", sourceurl.toURI().toASCIIString());
@@ -99,10 +95,12 @@ public class GenIdentityAction implements IObjectActionDelegate {
 					
 					tP.setFileURI("output4", filepath+".dsltrans");
 					tP.Execute();			
+					
 				} catch (Throwable e) {
 					e.printStackTrace();
 					System.err.println(e.getMessage());
 				}
+		        
 		        System.setOut(out);
 		        System.setErr(err);
 				return Status.OK_STATUS;

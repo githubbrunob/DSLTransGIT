@@ -1,12 +1,12 @@
 package dsltranslator.popup.actions;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.PrintStream;
 import java.net.URL;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
@@ -28,9 +28,6 @@ import org.eclipse.ui.console.IConsoleManager;
 import org.eclipse.ui.console.IConsoleView;
 
 import transformerProcessor.TransformerProcessor;
-import transformerProcessor.exceptions.InvalidLayerRequirement;
-import transformerProcessor.exceptions.TransformationLayerException;
-import transformerProcessor.exceptions.TransformationSourceException;
 
 public class GenIdentityLiftAction implements IObjectActionDelegate {
 
@@ -55,7 +52,6 @@ public class GenIdentityLiftAction implements IObjectActionDelegate {
 			_view = (IConsoleView) _page.showView(IConsoleConstants.ID_CONSOLE_VIEW);
 			_view.display(getConsole());			
 		} catch (PartInitException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -66,9 +62,7 @@ public class GenIdentityLiftAction implements IObjectActionDelegate {
 		final IProject project = _selectedFile.getProject();
 		final String projectPath = project.getLocation().toString();
 		final String filepath=_selectedFile.getLocation().toString();
-//		System.out.println("filepath: "+filepath);
 		final File tempdir = new File(projectPath+"/tempClasses");
-		tempdir.mkdir();
 
 		Job job = new Job("Generate Identity Lift Transformation") {
 			@Override
@@ -77,17 +71,16 @@ public class GenIdentityLiftAction implements IObjectActionDelegate {
 				PrintStream err = System.err;
 		        System.setOut(getConsole().getOutStream());
 		        System.setErr(getConsole().getErrStream());
-				try {
-					new ClassPathManager().update();
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}
+				
+		        new ClassPathManager().update();
 		
-				URL transformationurl = this.getClass().getResource("/model/GenIdentityLift.dsltrans");
-				URL sourceurl = this.getClass().getResource("/model/Ecore.ecore");
-				URL targeturl = this.getClass().getResource("/model/DSLTrans.ecore");				
-				TransformerProcessor tP = new TransformerProcessor(projectPath);
-				try {
+		        try {
+		        	
+					URL transformationurl = FileLocator.resolve(this.getClass().getResource("/model/GenIdentityLift.dsltrans"));
+					URL sourceurl = FileLocator.resolve(this.getClass().getResource("/model/Ecore.ecore"));
+					URL targeturl = FileLocator.resolve(this.getClass().getResource("/model/DSLTrans.ecore"));				
+					TransformerProcessor tP = new TransformerProcessor(projectPath);
+				
 					tP.LoadModel(org.eclipse.emf.common.util.URI.createURI(transformationurl.toURI().toASCIIString()));
 					tP.setFileURI("input", filepath);
 					tP.setMetaModelURI("input", sourceurl.toURI().toASCIIString());

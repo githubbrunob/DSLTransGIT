@@ -2,19 +2,14 @@ package dsltranslator.popup.actions;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.InvalidPathException;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.osgi.service.resolver.BundleDescription;
 import org.eclipse.osgi.service.resolver.BundleSpecification;
 import org.eclipse.osgi.service.resolver.ImportPackageSpecification;
-import org.eclipse.osgi.service.resolver.PlatformAdmin;
-import org.eclipse.osgi.service.resolver.State;
 import org.osgi.framework.Bundle;
 
 public class ClassPathManager {
@@ -22,14 +17,12 @@ public class ClassPathManager {
 	private static final String TRANSFORMER_SYM_NAME = "Transformer2.0";
 	public static final String JAVA_CLASS_PATH = "java.class.path";
 
-	public void update() throws IOException {
+	public void update() {
 		System.out.println("Updating java class path...");
 
 		String path = System.getProperty(JAVA_CLASS_PATH);
 
 		System.out.println("Old classpath: " + path);
-
-		PlatformAdmin pa = Platform.getPlatformAdmin();
 
 		Bundle transformerBundle = Platform.getBundle(TRANSFORMER_SYM_NAME);
 
@@ -58,7 +51,7 @@ public class ClassPathManager {
 		System.out.println("Updating java class path... DONE");
 	}
 
-	private void resolveRequires(Bundle bundle, BundleDescription bundleDescription, List<String> slist) throws IOException {
+	private void resolveRequires(Bundle bundle, BundleDescription bundleDescription, List<String> slist) {
 		System.out.println("Resolving dependencies...");
 
 		System.out.println("For bundle: " + bundle.getSymbolicName());
@@ -73,7 +66,7 @@ public class ClassPathManager {
 			
 			if (bd != null) {
 				BundleDescription bdDescription = Platform.getPlatformAdmin().getState().getBundle(bd.getBundleId());
-				System.out.println("Required bundle found: " + bd.getSymbolicName());
+				System.out.println("Required bundle found: " + bd.getSymbolicName() + " " + bd.getVersion().toString());
 				addBundlePath(bd, slist);
 				resolveRequires(bd, bdDescription, slist);
 			}
@@ -83,14 +76,14 @@ public class ClassPathManager {
 
 			String requiredBundleName = packageSpec.getBundleSymbolicName();
 
-			System.out.println("Required bundle name found (by package): " + requiredBundleName);
-
 			if (requiredBundleName != null) { // cgg requiredBundleName can be
 												// null for packages
+				System.out.println("Required bundle name found (by package): " + requiredBundleName);
+
 				Bundle bd = findUniqueBundle(requiredBundleName);
 				
 				if (bd != null) {
-					System.out.println("Required bundle found (by package): " + bd.getSymbolicName());
+					System.out.println("Required bundle found (by package): " + bd.getSymbolicName() + " " + bd.getVersion().toString());
 					BundleDescription bdDescription = Platform.getPlatformAdmin().getState().getBundle(bd.getBundleId());
 					addBundlePath(bd, slist);
 					resolveRequires(bd, bdDescription, slist);
@@ -100,11 +93,13 @@ public class ClassPathManager {
 
 		for (BundleDescription bdSpec : bundleDescription.getResolvedRequires()) {
 
-			System.out.println("Required bundle found (by getResolvedRequires): " + bdSpec.getSymbolicName());
 			Bundle bd = findUniqueBundle(bdSpec.getSymbolicName());
-			
-			addBundlePath(bd, slist);
-			resolveRequires(bd, bdSpec, slist);
+			if (bd != null) {
+				System.out.println("Required bundle found (by getResolvedRequires): " + bd.getSymbolicName() + " " + bd.getVersion().toString());
+				
+				addBundlePath(bd, slist);
+				resolveRequires(bd, bdSpec, slist);
+			}
 		}
 
 		System.out.println("Resolving dependencies... DONE");
@@ -115,17 +110,21 @@ public class ClassPathManager {
 		return result;
 	}
 
-	private void addBundlePath(Bundle bd, List<String> pathList) throws IOException {
-		if (bd != null) {
-			File bundleLocation = FileLocator.getBundleFile(bd);
-			String fs = bundleLocation.getAbsolutePath();
-			System.out.println("Bundle file path: " + fs);
+	private void addBundlePath(Bundle bd, List<String> pathList) {
+		try {
+			if (bd != null) {
+				File bundleLocation = FileLocator.getBundleFile(bd);
+				String fs = bundleLocation.getAbsolutePath();
+				System.out.println("Bundle file path: " + fs);
 
-			if (!hasFile(pathList, fs)) {
-				pathList.add(fs);
-			} else {
-				System.out.println("Already in file path.");
+				if (!hasFile(pathList, fs)) {
+					pathList.add(fs);
+				} else {
+					System.out.println("Already in file path.");
+				}
 			}
+		} catch (IOException e) {
+			// ignore.
 		}
 	}
 

@@ -1,7 +1,5 @@
 package dsltranslator.popup.actions;
 
-import java.io.File;
-import java.io.IOException;
 import java.io.PrintStream;
 
 import org.eclipse.core.resources.IFile;
@@ -27,9 +25,6 @@ import org.eclipse.ui.console.IConsoleManager;
 import org.eclipse.ui.console.IConsoleView;
 
 import transformerProcessor.TransformerProcessor;
-import transformerProcessor.exceptions.InvalidLayerRequirement;
-import transformerProcessor.exceptions.TransformationLayerException;
-import transformerProcessor.exceptions.TransformationSourceException;
 
 public class TransformAction implements IObjectActionDelegate {
 
@@ -67,11 +62,7 @@ public class TransformAction implements IObjectActionDelegate {
 			return;
 		final IProject project = _selectedFile.getProject();
 		final String projectPath = project.getLocation().toString();
-//		System.out.println("projectpath: "+projectPath);
 		final String filepath=_selectedFile.getFullPath().toString();
-//		System.out.println("filepath: "+filepath);
-		//final File tempdir = new File(projectPath+"/tempClasses");
-		//tempdir.mkdir();
 
 		final Job job = new Job("Transforming Model with DSLTranslator") {
 			
@@ -81,11 +72,9 @@ public class TransformAction implements IObjectActionDelegate {
 				PrintStream err = System.err;
 		        System.setOut(getConsole().getOutStream());
 		        System.setErr(getConsole().getErrStream());
-				try {
-					new ClassPathManager().update();
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}
+		        
+				new ClassPathManager().update();
+				
 				TransformerProcessor tP = new TransformerProcessor(projectPath);
 				try {
 					tP.LoadModel(filepath);

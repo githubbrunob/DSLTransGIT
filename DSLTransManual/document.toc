@@ -19,7 +19,7 @@
 \contentsline {subsubsection}{\numberline {1.4.1}Objectives}{18}{subsubsection.1.4.1}
 \contentsline {subsubsection}{\numberline {1.4.2}Structure}{18}{subsubsection.1.4.2}
 \contentsline {section}{\numberline {2}Installation}{21}{section.2}
-\contentsline {subsection}{\numberline {2.1}Windows7 \& Vista}{21}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.1}Windows}{21}{subsection.2.1}
 \contentsline {section}{\numberline {3}Quick Start}{25}{section.3}
 \contentsline {subsection}{\numberline {3.1}Metamodels}{25}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Example Model}{26}{subsection.3.2}

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dsltrans"
-    nsURI="http://dsltrans/2.0" nsPrefix="dsltrans">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dsltrans" nsURI="http://dsltrans/2.0" nsPrefix="dsltrans">
   <eAnnotations source="gmf">
     <details key="foo" value="bar"/>
   </eAnnotations>
@@ -73,7 +71,7 @@
     <eAnnotations source="gmf.node">
       <details key="foo" value="bar"/>
       <details key="tool.description" value="Match pattern. Place inside Rule."/>
-      <details key="label.readOnly" value="true"/>
+      <details key="label.placement" value="none"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="class" upperBound="-1"
         eType="#//MatchClass" containment="true">
@@ -91,7 +89,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MatchAssociation" abstract="true" eSuperTypes="#//Association">
     <eAnnotations source="gmf.link">
-      <details key="label" value=""/>
       <details key="source" value="source"/>
       <details key="target" value="target"/>
       <details key="target.decoration" value="arrow"/>
@@ -104,6 +101,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PositiveIndirectAssociation" eSuperTypes="#//MatchAssociation">
     <eAnnotations source="gmf.link">
+      <details key="label" value=""/>
       <details key="style" value="dash"/>
       <details key="color" value="204,255,153"/>
       <details key="width" value="2"/>
@@ -147,7 +145,7 @@
     <eAnnotations source="gmf.node">
       <details key="color" value="255,255,163"/>
       <details key="tool.description" value="Apply pattern. Place inside Rule."/>
-      <details key="label.readOnly" value="true"/>
+      <details key="label.placement" value="none"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="class" upperBound="-1"
         eType="#//ApplyClass" containment="true">
@@ -320,6 +318,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="AttributeRef" eSuperTypes="#//Ref">
     <eAnnotations source="gmf.node">
       <details key="tool.description" value="Copy attribute value."/>
+      <details key="label.placement" value="none"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributeRef" lowerBound="1"
         eType="#//Attribute">
@@ -333,6 +332,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ClassRef" eSuperTypes="#//Ref">
     <eAnnotations source="gmf.node">
       <details key="foo" value="bar"/>
+      <details key="label.placement" value="none"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="classRef" lowerBound="1"
         eType="#//AbstractClass">
@@ -345,6 +345,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Concat" eSuperTypes="#//Operator">
     <eAnnotations source="gmf.node">
       <details key="tool.description" value="Concatenate expressions."/>
+      <details key="label.placement" value="none"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="leftTerm" lowerBound="1"
         eType="#//Term" containment="true">
@@ -362,11 +363,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="TypeOf" eSuperTypes="#//Operator #//AttributeRef">
     <eAnnotations source="gmf.node">
       <details key="foo" value="bar"/>
+      <details key="label.placement" value="none"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Wildcard" eSuperTypes="#//Term">
     <eAnnotations source="gmf.node">
       <details key="tool.description" value="Match any literal."/>
+      <details key="label.placement" value="none"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute" abstract="true">
@@ -401,9 +404,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Sequencer" eSuperTypes="#//Term">
     <eAnnotations source="gmf.node">
-      <details key="label" value="Sequencer"/>
-      <details key="label.readOnly" value="true"/>
       <details key="tool.description" value="Create a sequential number generator."/>
+      <details key="label.placement" value="none"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractAttributeRelation" abstract="true">
@@ -420,22 +422,25 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeEquality" eSuperTypes="#//AbstractAttributeRelation">
     <eAnnotations source="gmf.link">
-      <details key="label" value="="/>
+      <details key="label.text" value="="/>
       <details key="color" value="145,147,255"/>
+      <details key="label.readOnly" value="true"/>
       <details key="tool.description" value="Create an equality constrain between attributes."/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeInequality" eSuperTypes="#//AbstractAttributeRelation">
     <eAnnotations source="gmf.link">
       <details key="color" value="255,61,100"/>
-      <details key="label" value="!="/>
+      <details key="label.readOnly" value="true"/>
+      <details key="label.text" value="!="/>
       <details key="tool.description" value="Create an inequality constrain between attributes"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MatchMayBeSameRelation" eSuperTypes="#//MatchAssociation">
     <eAnnotations source="gmf.link">
-      <details key="label" value=""/>
+      <details key="label.text" value=""/>
       <details key="target.decoration" value="none"/>
+      <details key="label.readOnly" value="true"/>
       <details key="source.decoration" value="none"/>
       <details key="style" value="dash"/>
       <details key="color" value="181,215,255"/>
@@ -445,8 +450,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ApplyMayBeSameRelation" eSuperTypes="#//ApplyAssociation">
     <eAnnotations source="gmf.link">
-      <details key="label" value=""/>
+      <details key="label.text" value=""/>
       <details key="target.decoration" value="none"/>
+      <details key="label.readOnly" value="true"/>
       <details key="source.decoration" value="none"/>
       <details key="style" value="dash"/>
       <details key="color" value="181,215,255"/>

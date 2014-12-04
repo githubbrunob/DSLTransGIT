@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="DSLTransTransformerFeature"
+      label="DSLTransTransformerFeature"
+      version="1.0.0.qualifier"
+      provider-name="solar.di.fct.unl.pt"
+      os="linux,macosx,win32">
+
+   <description url="https://github.com/githubbrunob/DSLTransGIT">
+      To be completed.
+   </description>
+
+   <copyright url="https://github.com/githubbrunob/DSLTransGIT">
+      to be completed.
+   </copyright>
+
+   <license url="https://github.com/githubbrunob/DSLTransGIT">
+      To be completed.
+   </license>
+
+   <requires>
+      <import plugin="Transformer2.0" version="1.0.2" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.workbench"/>
+      <import plugin="org.eclipse.ui.console"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.core.runtime" version="3.10.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.emf.common" version="2.10.0" match="greaterOrEqual"/>
+      <import plugin="DSLTransEditor2.0"/>
+      <import plugin="org.eclipse.emf.codegen.ecore"/>
+      <import plugin="org.eclipse.emf.codegen"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.eclipse.text"/>
+   </requires>
+
+   <plugin
+         id="DSLTranslator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="Transformer2.0"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

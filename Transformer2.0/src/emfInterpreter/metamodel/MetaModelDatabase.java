@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 import transformerProcessor.exceptions.InvalidLayerRequirement;
+import transformerProcessor.exceptions.UnsuportedMetamodelException;
 
 public class MetaModelDatabase {
 	// data information
@@ -107,26 +108,43 @@ public class MetaModelDatabase {
 		throw new InvalidLayerRequirement("Cannot resolve attribute name: " + name);
 	}
 	
-	public MetaEntity getRootEntity() {
+	public MetaEntity getRootEntity() throws UnsuportedMetamodelException {
+		System.out.println("Finding root entity in source metamodel... ");
 		// root entity is the one such that there are no relations which have it on target role
+		
 		// so search on MetaRelations and gather all target MetaEntities
 		Set<MetaEntity> targetEntities = Collections.synchronizedSet(new HashSet<MetaEntity>());
 		for(MetaRelation relation : getRelations()) {
-			if(relation.isContainment() && (relation.getSource() != relation.getTarget())) {
+			if(relation.isContainment() && (relation.getSource() != relation.getTarget())) { // notice that we only take into account these kind of relations
 				targetEntities.add(relation.getTarget());
 			}
 		}
+		
+		// And then select all Entities that do are not target Entities
 		MetaEntity chosen = null;
 		int counter = 0;
 		for(MetaEntity entity : getClasses()) {
-			if(!isContainedIn(entity,targetEntities) && !isSubTypeContainedIn(entity,targetEntities)) {
-				if(chosen == null)
+			if(!isContainedIn(entity,targetEntities) 
+					&& !isSubTypeContainedIn(entity,targetEntities) 
+					&& !entity.getObject().isAbstract()) {
+				if(chosen == null) {
 					chosen = entity;
-				System.out.println(" : " + entity.getQualifiedName());
+				}
+				System.out.println("Candidate root found: " + entity.getQualifiedName());
+				counter++;
 			}
 		}
-		if(counter > 1)
-			System.err.println("found n: " + counter + " roots!!");
+		
+		if(counter > 1) {
+			throw new UnsuportedMetamodelException("Found " + counter + " roots! Please create a simple root in the metamodel that contains entity " + chosen.getQualifiedName());
+		}
+		
+		if (counter == 0) {
+			throw new UnsuportedMetamodelException("All the metamodels must have a root EClass.");
+		}
+
+		System.out.println("Finding root entity in source metamodel... DONE");
+		
 		return chosen;
 	}
 	

@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import post_processor.PostProcessor;
 import post_processor.SequenceExpansionProcessor;
 import post_processor.XMISchemaLocationPostProcessor;
+import transformerProcessor.exceptions.UnsuportedMetamodelException;
 import emfInterpreter.instance.InstanceAttribute;
 import emfInterpreter.instance.InstanceDatabase;
 import emfInterpreter.instance.InstanceEntity;
@@ -54,7 +55,7 @@ public class EMFExporter extends EMFHandler {
 		return _metaModelDatabase;
 	}
 	
-	public void saveTo(String classname, String path) throws SecurityException, IllegalArgumentException, ClassNotFoundException, NoSuchFieldException, IllegalAccessException, IOException, InvocationTargetException, NoSuchMethodException {
+	public void saveTo(String classname, String path) throws SecurityException, IllegalArgumentException, ClassNotFoundException, NoSuchFieldException, IllegalAccessException, IOException, InvocationTargetException, NoSuchMethodException, UnsuportedMetamodelException {
 		if(getMetaModelDatabase() == null || getInstanceDatabase() == null)
 			System.err.println("cannot save output without information databases");
 	
@@ -62,7 +63,7 @@ public class EMFExporter extends EMFHandler {
 		exportTargetModel(outputfile);
 	}
 
-	private void exportTargetModel(File file) throws IOException, IllegalArgumentException, SecurityException, IllegalAccessException, InvocationTargetException, ClassNotFoundException, NoSuchMethodException{
+	private void exportTargetModel(File file) throws IOException, IllegalArgumentException, SecurityException, IllegalAccessException, InvocationTargetException, ClassNotFoundException, NoSuchMethodException, UnsuportedMetamodelException{
 		MetaEntity rootEntity = this.getMetaModelDatabase().getRootEntity();
 		System.out.println("ROOTENTITY: "+rootEntity.getQualifiedName());
 

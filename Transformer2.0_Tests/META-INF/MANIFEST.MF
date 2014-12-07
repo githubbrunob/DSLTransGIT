@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: 0_Tests
+Bundle-SymbolicName: Transformer2.0_Tests
+Bundle-Version: 1.0.0.qualifier
+Export-Package: emfInterpreter.metamodel.tests
+Require-Bundle: org.junit

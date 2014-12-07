@@ -7,6 +7,7 @@ import java.util.Map;
 import dsltrans.FilePort;
 import dsltrans.MetaModelIdentifier;
 import transformerProcessor.exceptions.TransformationSourceException;
+import transformerProcessor.exceptions.UnsuportedMetamodelException;
 import emfInterpreter.EMFLoader;
 import emfInterpreter.metamodel.MetaModelDatabase;
 
@@ -36,7 +37,7 @@ public class TransformationSource extends TransformationUnit {
 		setValid(true); // if passed all above conditions then it is valid
 	}
 
-	public void Load(Map<String, Object> factorys, Map<String, Object> metamodels) throws TransformationSourceException, IOException {
+	public void Load(Map<String, Object> factorys, Map<String, Object> metamodels) throws TransformationSourceException, IOException, UnsuportedMetamodelException {
 		if(isProcessed()) return;
 		MetaModelIdentifier mmi = getPort().getMetaModelId();
 		
@@ -47,7 +48,9 @@ public class TransformationSource extends TransformationUnit {
 		
 		EMFLoader loader = new EMFLoader();
 		if(!metamodels.containsKey(mmName)) {
-			loader.loadMetaModel(getClassdir(), mmPath);
+			String classDir = getClassdir();
+			loader.loadMetaModel(classDir, mmPath);
+			loader.generateMetaModelClasses(classDir, mmPath);
 			metamodels.put(mmName,loader.getMetaModelDatabase());
 		} else {
 			loader.setMetaModelDatabase((MetaModelDatabase) metamodels.get(mmName));

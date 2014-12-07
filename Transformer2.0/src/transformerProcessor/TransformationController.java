@@ -9,6 +9,7 @@ import java.util.Map;
 import transformerProcessor.exceptions.InvalidLayerRequirement;
 import transformerProcessor.exceptions.TransformationLayerException;
 import transformerProcessor.exceptions.TransformationSourceException;
+import transformerProcessor.exceptions.UnsuportedMetamodelException;
 import dsltrans.AbstractSource;
 import dsltrans.FilePort;
 import dsltrans.Layer;
@@ -99,7 +100,7 @@ public class TransformationController {
 		return false;
 	}
 	*/
-	private TransformationUnit resolve(AbstractSource requirement) throws InvalidLayerRequirement, TransformationSourceException, IOException {
+	private TransformationUnit resolve(AbstractSource requirement) throws InvalidLayerRequirement, TransformationSourceException, IOException, UnsuportedMetamodelException {
 		for(TransformationLayer l:getUnits()) {
 			if(l.getLayer() == requirement && l.isValid())
 				return l;

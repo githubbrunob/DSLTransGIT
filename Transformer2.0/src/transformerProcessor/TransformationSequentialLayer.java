@@ -52,7 +52,9 @@ public class TransformationSequentialLayer extends TransformationLayer{
 		String mmPath = this.getLayer().getMetaModelId().getMetaModelURI();
 		EMFLoader loader = new EMFLoader();
 		if(!metamodels.containsKey(mmName)) {
-			loader.loadMetaModel(getClassdir(), mmPath);
+			String classDir = getClassdir();
+			loader.loadMetaModel(classDir, mmPath);
+			loader.generateMetaModelClasses(classDir, mmPath);
 			metamodels.put(mmName,loader.getMetaModelDatabase());
 		} else {
 			loader.setMetaModelDatabase((MetaModelDatabase) metamodels.get(mmName));

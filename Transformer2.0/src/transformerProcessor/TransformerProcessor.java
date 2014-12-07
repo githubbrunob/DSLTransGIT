@@ -9,9 +9,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import transformerProcessor.exceptions.InvalidLayerRequirement;
-import transformerProcessor.exceptions.TransformationLayerException;
-import transformerProcessor.exceptions.TransformationSourceException;
 import dsltrans.AbstractSource;
 import dsltrans.DsltransPackage;
 import dsltrans.FilePort;

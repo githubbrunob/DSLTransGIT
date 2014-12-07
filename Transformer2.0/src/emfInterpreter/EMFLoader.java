@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
+import transformerProcessor.exceptions.UnsuportedMetamodelException;
 import emfInterpreter.instance.InstanceAttribute;
 import emfInterpreter.instance.InstanceDatabase;
 import emfInterpreter.instance.InstanceEntity;
@@ -120,7 +121,7 @@ public class EMFLoader extends EMFHandler {
 	}
 
 	public boolean loadDatabase(String singleclassname, String url, String classpath) throws ClassNotFoundException, SecurityException, NoSuchFieldException, IllegalArgumentException,
-			IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+			IllegalAccessException, NoSuchMethodException, InvocationTargetException, UnsuportedMetamodelException {
 		// debug
 		System.out.println("LOADING database");
 		boolean resultstatus = true;
@@ -309,59 +310,7 @@ public class EMFLoader extends EMFHandler {
 		}
 	}
 
-	// try {
-	// MetaEntity me = getMetaModelDatabase().getMetaEntityByName("ecore",
-	// "EPackage");
-	// InstanceEntity ie = new InstanceEntity(model,me);
-	// getDatabase().addEntity(ie);
-	// getDatabase().addAttribute(new InstanceAttribute(ie,
-	// getMetaModelDatabase().getAttributesFromEntityByName(me,"name"),obj.getName()));
-	// getDatabase().addAttribute(new InstanceAttribute(ie,
-	// getMetaModelDatabase().getAttributesFromEntityByName(me,"nsURI"),obj.getName()));
-	// getDatabase().addAttribute(new InstanceAttribute(ie,
-	// getMetaModelDatabase().getAttributesFromEntityByName(me,"nsPrefix"),obj.getName()));
-
-	// } catch (InvalidLayerRequirement e) {
-	// // TODO Auto-generated catch block
-	// e.printStackTrace();
-	// }
-
-	// EList<EObject> list = obj.eContents();
-	// Iterator<EObject> iterator = list.iterator();
-	// while(iterator.hasNext()) {
-	// EObject objnext = iterator.next();
-	// if(objnext instanceof EPackageImpl)
-	// processPackage((EPackageImpl)objnext);
-	// else if(objnext instanceof EClassImpl)
-	// processClass((EClassImpl)objnext);
-	// }
-	// }
-
-	// private void processClass(EModelImpl obj) {
-	// try {
-	// MetaEntity me = getMetaModelDatabase().getMetaEntityByName("ecore",
-	// "EClass");
-	// InstanceEntity ie = new InstanceEntity(obj,me);
-	// getDatabase().addEntity(ie);
-	// for(MetaAttribute ma:getMetaModelDatabase().getAttributesFromEntity(me))
-	// {
-	// ma.
-	// }
-	//
-	// getDatabase().addAttribute(new
-	// InstanceAttribute(ie,getMetaModelDatabase().getAttributesFromEntityByName(me,"name"),obj.getName()));
-	// getDatabase().addAttribute(new
-	// InstanceAttribute(ie,getMetaModelDatabase().getAttributesFromEntityByName(me,"abstract"),obj.isAbstract()));
-	// getDatabase().addAttribute(new
-	// InstanceAttribute(ie,getMetaModelDatabase().getAttributesFromEntityByName(me,"interface"),obj.isInterface()));
-	//
-	// } catch (InvalidLayerRequirement e) {
-	// // TODO Auto-generated catch block
-	// e.printStackTrace();
-	// }
-	// }
-
-	public void processRootElement() {
+	public void processRootElement() throws UnsuportedMetamodelException {
 		MetaEntity rootEntity = this.getMetaModelDatabase().getRootEntity();
 		List<InstanceEntity> ielist = this.getDatabase().getElementsByMetaEntity(rootEntity);
 
@@ -589,17 +538,18 @@ public class EMFLoader extends EMFHandler {
 	}
 
 	public void loadMetaModel(String classdir, String path) throws IOException {
-		ResourceSet resourceSet1 = new ResourceSetImpl();
+		ResourceSet resourceSet = new ResourceSetImpl();
 
 		// Register the appropriate resource factory to handle all file
 		// extensions.
 		//
 		// Register the Ecore resource Factory
-		resourceSet1.getResourceFactoryRegistry().getExtensionToFactoryMap().put("ecore", new EcoreResourceFactoryImpl());
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("ecore", new EcoreResourceFactoryImpl());
 
-		URI metamodelURI = createAbsoluteURI(classdir, path);
-
-		Resource resource = resourceSet1.getResource(metamodelURI, true);
+		URI metamodelURI = createAbsoluteHierarchicalURI(classdir, path);
+		
+		
+		Resource resource = resourceSet.getResource(metamodelURI, true);
 		EList<EObject> list = resource.getContents();
 
 		if (list.get(0) instanceof EPackageImpl)
@@ -621,9 +571,7 @@ public class EMFLoader extends EMFHandler {
 			}
 		}
 
-		resourceSet1.getPackageRegistry().clear();
-
-		generateMetaModelClasses(classdir, path);
+		resourceSet.getPackageRegistry().clear();
 	}
 
 	public URI tryToFindModel(URI uri) {

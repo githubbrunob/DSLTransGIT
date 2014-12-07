@@ -11,6 +11,7 @@ import transformerProcessor.exceptions.InvalidAttributeRelationException;
 import transformerProcessor.exceptions.InvalidLayerRequirement;
 import transformerProcessor.exceptions.TransformationLayerException;
 import transformerProcessor.exceptions.TransformationRefinementLayerException;
+import transformerProcessor.exceptions.UnsuportedMetamodelException;
 import dsltrans.AbstractSource;
 import dsltrans.FilePort;
 import dsltrans.Layer;
@@ -163,7 +164,7 @@ public abstract class TransformationLayer  extends TransformationUnit {
 		return this.getLayer().getGroupName();
 	}
 	
-	private void output() throws SecurityException, IllegalArgumentException, ClassNotFoundException, NoSuchFieldException, IllegalAccessException, IOException, InvocationTargetException, NoSuchMethodException {
+	private void output() throws SecurityException, IllegalArgumentException, ClassNotFoundException, NoSuchFieldException, IllegalAccessException, IOException, InvocationTargetException, NoSuchMethodException, UnsuportedMetamodelException {
 //		System.out.println("#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
 //		this.getDatabase().dump();
 //		System.out.println("#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");	

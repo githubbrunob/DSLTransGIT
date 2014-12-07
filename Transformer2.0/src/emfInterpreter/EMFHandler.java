@@ -50,7 +50,7 @@ public class EMFHandler {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getURIConverter().getURIMap().putAll(EcorePlugin.computePlatformURIMap());
 
-		URI ecoreURI = createAbsoluteURI(absolutePathDir, metamodelFileName);
+		URI ecoreURI = createAbsoluteHierarchicalURI(absolutePathDir, metamodelFileName);
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("ecore", new EcoreResourceFactoryImpl());
 
 		Resource resource = resourceSet.getResource(ecoreURI, true);
@@ -144,19 +144,30 @@ public class EMFHandler {
 		return projectName;
 	}
 
-	public static URI createAbsoluteURI(String absolutePathDir, String fileRelativePath) {
-		URI result = URI.createURI(fileRelativePath);
-
+	public static URI createAbsoluteHierarchicalURI(String absolutePathDir, String filePath) {
+		URI result = URI.createURI(filePath);
+		
 		if (!result.isRelative()) {
-			return result;
+			if (result.scheme() != "file"){
+				// we only want hierarchical uri's
+				// this means that filePath is an absolute path but it has no schema.
+				// so we attempt to create a hierarchical url from it.
+				result = URI.createURI("file://" +filePath ); 
+				if (result.fileExtension() == null){
+					throw new InvalidPathException(filePath, "The path must be like this: C:/path/to/file.ecore");
+				}
+			}
+		} else {
+			if (filePath.contains(absolutePathDir)) {
+				throw new InvalidPathException(filePath, "The relative path must not contain the absolute path. It should be of the form C:/absolute/path/to/file.ecore or ./relative/path/to/file.ext");
+			}
+			result = URI.createURI("file://" + absolutePathDir + "/" + filePath);
 		}
-
-		if (fileRelativePath.contains(absolutePathDir)) {
-			throw new InvalidPathException(fileRelativePath, "The relative path must not contain the absolute path.");
+		
+		if (result.fileExtension() == null){
+			throw new InvalidPathException(result.toFileString(), "The path must be like this: file://c:/path/to/file.ext as oposed to " + result.toFileString());
 		}
-
-		result = URI.createURI("file://" + absolutePathDir + "/" + fileRelativePath);
-
+		
 		return result;
 	}
 

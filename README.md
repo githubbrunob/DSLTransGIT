@@ -25,6 +25,8 @@ All the necessary software, including third party dependencies, is under the [DS
 
 Check out the [manual](./DSLTransManual/document.pdf) that contains the installation instructions.
 
+If you want the most recent version of DSLTrans you can always download the eclipse update site in [UpdateSiteDSLTrans](./UpdateSiteDSLTrans) directory.
+
 
 Getting Started
 -------------------

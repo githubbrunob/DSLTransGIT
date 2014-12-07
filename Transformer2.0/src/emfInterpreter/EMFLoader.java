@@ -746,37 +746,6 @@ public class EMFLoader extends EMFHandler {
 		return result;
 	}
 
-	/**
-	 * test main
-	 * 
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		EMFLoader loader = new EMFLoader();
-		try {
-			loader.loadMetaModel(".", ".\\Metamodels\\RunHALL.ecore");
-			loader.loadDatabase("HALL.HALLPackage", ".\\Models\\ATLASDAQ.xmi", ".\tempClasses");
-		} catch (SecurityException e) {
-			e.printStackTrace();
-		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (NoSuchFieldException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (NoSuchMethodException e) {
-			e.printStackTrace();
-		} catch (InvocationTargetException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		// loader.loadModel("HALL.HALLPackage", ".\\model\\default.xmi");
-		loader.print();
-	}
-
 	public void setMetaModelDatabase(MetaModelDatabase _metamodeldatabase) {
 		this._metamodeldatabase = _metamodeldatabase;
 	}

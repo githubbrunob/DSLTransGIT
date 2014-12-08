@@ -1,6 +1,7 @@
 package dsltranstextbuilder.popup.actions;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
@@ -67,24 +68,39 @@ public class TransformerToText implements IObjectActionDelegate {
 	 * @see IActionDelegate#run(IAction)
 	 */
 	public void run(IAction action) {
+		
         System.setOut(getConsole().getOutStream());
         System.setErr(getConsole().getErrStream());
     	String projectPath = selection.getProject().getLocation().toString();
     	String fileName = selection.getName();
 		String tempPath = new util.PreProcessor(projectPath, fileName).perform();
-		String dsltranstextFileName = new util.TransformerToText(projectPath, tempPath, fileName).perform();
-		new util.PosProcessor(projectPath,dsltranstextFileName).perform();
-//		
-		new File(tempPath).delete();
+		
 		try {
-			selection.getProject().refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
-		} catch (CoreException e) {
-			System.err.println("Couldn't refresh the project. Refresh it manually, please.");
-		}	
-		MessageDialog.openInformation(
-			shell,
-			"DsltransTextBuilder",
-			"Transformation to Textual Syntax Concluded.");
+			
+			String dsltranstextFileName = new util.TransformerToText(projectPath, tempPath, fileName).perform();
+			new util.PosProcessor(projectPath,dsltranstextFileName).perform();
+			
+			new File(tempPath).delete();
+			
+			try {
+				selection.getProject().refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
+			} catch (CoreException e) {
+				System.err.println("Couldn't refresh the project. Refresh it manually, please.");
+			}	
+			
+			MessageDialog.openInformation(
+					shell,
+					"DsltransTextBuilder",
+					"Transformation to Textual Syntax Concluded.");
+			
+		} catch (IOException e) {
+			System.err.println("Fatal error.");
+		}
+		
+		System.out.flush();
+		System.err.flush();
+		
+		
 	}
 
 	/**
@@ -97,10 +113,6 @@ public class TransformerToText implements IObjectActionDelegate {
 				this.selection = (IFile)selectedObject;
 			else
 				this.selection = null;
-	}
-
-	private void setConsole(MyConsole _myConsole) {
-		this._myConsole = _myConsole;
 	}
 
 	private MyConsole getConsole() {

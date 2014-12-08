@@ -21,6 +21,18 @@ DSLTransEditor2.0.editor/src/
 DSLTransEditor2.0.diagram/src/
 DSLTransEditor2.0.edit/src/
 
+# dsltrans text generated files
+dsltrans.resource.dsltranstext.ui/src-gen/
+dsltrans.resource.dsltranstext/src-gen/
+
+%latex generated files
+DSLTransManual/document.blg
+DSLTransManual/document.bbl
+DSLTransManual/document.aux
+DSLTransManual/document.out
+DSLTransManual/document.synctex.gz
+DSLTransManual/custom.aux
+
 
 # External tool builders
 .externalToolBuilders/
@@ -219,9 +231,4 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfgx
-DSLTransManual/document.blg
-DSLTransManual/document.bbl
-DSLTransManual/document.aux
-DSLTransManual/document.out
-DSLTransManual/document.synctex.gz
-DSLTransManual/custom.aux
+

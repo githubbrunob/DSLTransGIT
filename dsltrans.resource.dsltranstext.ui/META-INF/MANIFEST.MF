@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: EMFText UI Plugin: dsltranstext
 Bundle-SymbolicName: dsltrans.resource.dsltranstext.ui;singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Software Technology Group - TU Dresden Germany
 Require-Bundle: org.eclipse.core.resources,
   org.emftext.access;resolution:=optional,
@@ -22,9 +22,10 @@ Require-Bundle: org.eclipse.core.resources,
   org.eclipse.ui.ide,
   org.eclipse.ui.views,
   dsltrans.resource.dsltranstext,
-  org.emftext.commons.antlr3_3_0,
+  org.emftext.commons.antlr3_4_0,
   DSLTransEditor2.0
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: dsltrans.resource.dsltranstext.ui
 Bundle-Activator: dsltrans.resource.dsltranstext.ui.DsltranstextUIPlugin
+Import-Package: org.eclipse.ui.texteditor.spelling

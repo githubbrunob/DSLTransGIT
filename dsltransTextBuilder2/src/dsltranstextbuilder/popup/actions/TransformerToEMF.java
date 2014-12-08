@@ -78,7 +78,11 @@ public class TransformerToEMF implements IObjectActionDelegate {
 			selection.getProject().refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 		} catch (CoreException e) {
 			System.err.println("Couldn't refresh the project. Refresh it manually, please.");
-		}	
+		}
+		
+		System.out.flush();
+		System.err.flush();
+		
 		MessageDialog.openInformation(
 			shell,
 			"DsltransTextBuilder",
@@ -95,10 +99,6 @@ public class TransformerToEMF implements IObjectActionDelegate {
 				this.selection = (IFile)selectedObject;
 			else
 				this.selection = null;
-	}
-
-	private void setConsole(MyConsole _myConsole) {
-		this._myConsole = _myConsole;
 	}
 
 	private MyConsole getConsole() {

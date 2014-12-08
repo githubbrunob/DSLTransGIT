@@ -26,7 +26,8 @@ public class TransformerToText {
 		this.fileName = fileName;
 	}
 	
-	public String perform() { 
+	public String perform() throws IOException {
+		System.out.println("Transforming to text...");
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap(
 		).put("dsltranstext", new DsltranstextResourceFactory());
 
@@ -52,13 +53,14 @@ public class TransformerToText {
 				URI.createFileURI(projectPath+"/"+finalFileName));
 		dslResource.getContents().addAll(xmiResource.getContents());
 
-		System.out.println("Writing file...");
-		try {
-			dslResource.save(null);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
+		System.out.println("Writing file " + finalFileName + "...");
+		
+		dslResource.save(null);
+		
+		System.out.println("Writing file " + finalFileName + "... DONE");
+
+		System.out.println("Transforming to text... DONE");
+		
 		return finalFileName;
 	}
 	

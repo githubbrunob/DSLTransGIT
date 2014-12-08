@@ -1,15 +1,14 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: DsltransTextBuilder
+Bundle-Name: DsltransTextBuilder2
 Bundle-SymbolicName: dsltransTextBuilder2;singleton:=true
 Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
 Bundle-Activator: dsltranstextbuilder.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
- DSLTransEditor2.0;bundle-version="1.0.0",
  dsltrans.resource.dsltranstext;bundle-version="1.0.0"
-Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: dsltrans,
  dsltrans.impl,
@@ -19,3 +18,4 @@ Import-Package: dsltrans,
  org.eclipse.emf.ecore.resource.impl,
  org.eclipse.emf.ecore.xmi.impl,
  org.eclipse.ui.console
+Bundle-ActivationPolicy: lazy

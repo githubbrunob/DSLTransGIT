@@ -110,12 +110,11 @@
          </ViewId>
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
-            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
+            class="dsltrans.diagram.providers.MyEditorGlobalActionHandlerProvider"
             id="DsltransRender">
          <Priority name="Lowest"/>
          <ViewId id="dsltrans.diagram.part.DsltransDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
-               <GlobalActionId actionId="cut"/>
                <GlobalActionId actionId="copy"/>
                <GlobalActionId actionId="paste"/>
             </ElementType>
@@ -1249,6 +1248,15 @@
 
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
+   </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.layoutProviders">
+      <layoutProvider
+            class="dsltrans.diagram.providers.MyCustomLayoutProvider">
+         <Priority
+               name="Highest">
+         </Priority>
+      </layoutProvider>
    </extension>
 
    <!-- optionally, specify keybindings -->

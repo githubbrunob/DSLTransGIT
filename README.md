@@ -21,11 +21,14 @@ Installation
 
 DSLTrans is distributed as an eclipse plugin and works in all major operating systems. You can download eclipse modelling tools from [https://eclipse.org/](https://eclipse.org/).
 
+The easiest way to install DSLTrans is trough the update site:
+http://tinyurl.com/dsltrans-updatesite  (This is just the [UpdateSiteDSLTrans](./UpdateSiteDSLTrans) directory contents)
+
+If you need to run the DSLTrans transformer, then you need to also install SWI-Prolog.
+
 All the necessary software, including third party dependencies, is under the [DSLTrans-Release](./DSLTrans-Release) directory.
 
 Check out the [manual](./DSLTransManual/document.pdf) that contains the installation instructions.
-
-If you want the most recent version of DSLTrans you can always download the eclipse update site in [UpdateSiteDSLTrans](./UpdateSiteDSLTrans) directory.
 
 
 Getting Started

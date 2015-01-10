@@ -109,7 +109,7 @@ public class MetaModelDatabase {
 	}
 	
 	public MetaEntity getRootEntity() throws UnsuportedMetamodelException {
-		System.out.println("Finding root entity in source metamodel... ");
+		System.out.println("Finding root entity in metamodel... ");
 		// root entity is the one such that there are no relations which have it on target role
 		
 		// so search on MetaRelations and gather all target MetaEntities
@@ -120,7 +120,7 @@ public class MetaModelDatabase {
 			}
 		}
 		
-		// And then select all Entities that do are not target Entities
+		// And then select all Entities that are not target Entities
 		MetaEntity chosen = null;
 		int counter = 0;
 		for(MetaEntity entity : getClasses()) {
@@ -143,7 +143,7 @@ public class MetaModelDatabase {
 			throw new UnsuportedMetamodelException("All the metamodels must have a root EClass.");
 		}
 
-		System.out.println("Finding root entity in source metamodel... DONE");
+		System.out.println("Finding root entity in metamodel... DONE");
 		
 		return chosen;
 	}

@@ -33,3 +33,37 @@ This error occurs when you one (or more) of the following steps in the section \
 \item Copy the jpl.jar file to the appropriate destination.
 \end{itemize}
 
+\subsection{UnsatisfiedLinkError: no jpl in java.library.path}
+
+This error can be caused by many things. One of then is an incorrect \emph{PATH} \textbf{system} environment variable.
+Make sure you have the following two items in your \textbf{system} \emph{PATH}:
+\begin{itemize}
+	\item \verb=C:\Program Files (x86)\pl\bin= (or your own path to prolog's bin
+	directory);
+	\item \verb=C:\Program Files (x86)\Java\jre1.8.0_25\bin= (or your own path
+	to java's bin directory);
+\end{itemize}
+
+You need to restart your computer after updating the environment variable.
+
+If this does not solve your problem, review the installation steps in the section \ref{sec:installation}.
+
+\subsection{Prolog fatal error: EXCEPTION\_ACCESS\_VIOLATION}
+
+We had this problem with the 64 bits version of Prolog.
+Uninstall your current prolog and install a newer version.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

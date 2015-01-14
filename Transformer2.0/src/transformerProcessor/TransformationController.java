@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 
 import transformerProcessor.exceptions.InvalidLayerRequirement;
-import transformerProcessor.exceptions.TransformationLayerException;
 import transformerProcessor.exceptions.TransformationSourceException;
 import transformerProcessor.exceptions.UnsuportedMetamodelException;
 import dsltrans.AbstractSource;

@@ -31,7 +31,7 @@ public class TransformAction implements IObjectActionDelegate {
 	private IFile _selectedFile;
 	private MyConsole _myConsole = new MyConsole(MyConsole.CONSOLE_NAME);
 	private IWorkbenchPage _page = null;
-	private IConsoleView _view=null;
+	private IConsoleView _view = null;
 
 	/**
 	 * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
@@ -40,20 +40,21 @@ public class TransformAction implements IObjectActionDelegate {
 		_page = targetPart.getSite().getPage();
 		ConsolePlugin plugin = ConsolePlugin.getDefault();
 		IConsoleManager conMan = plugin.getConsoleManager();
-		conMan.addConsoles(new IConsole[]{getConsole()});
+		conMan.addConsoles(new IConsole[] { getConsole() });
 		showConsole();
 	}
 
 	private void showConsole() {
 		try {
-			_view = (IConsoleView) _page.showView(IConsoleConstants.ID_CONSOLE_VIEW);
-			_view.display(getConsole());			
+			_view = (IConsoleView) _page
+					.showView(IConsoleConstants.ID_CONSOLE_VIEW);
+			_view.display(getConsole());
 		} catch (PartInitException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * @see IActionDelegate#run(IAction)
 	 */
@@ -62,36 +63,45 @@ public class TransformAction implements IObjectActionDelegate {
 			return;
 		final IProject project = _selectedFile.getProject();
 		final String projectPath = project.getLocation().toString();
-		final String filepath=_selectedFile.getFullPath().toString();
+		final String filepath = _selectedFile.getLocation().toString();
 
 		final Job job = new Job("Transforming Model with DSLTranslator") {
-			
+
 			@Override
 			protected IStatus run(IProgressMonitor monitor) {
 				PrintStream out = System.out;
 				PrintStream err = System.err;
-		        System.setOut(getConsole().getOutStream());
-		        System.setErr(getConsole().getErrStream());
-		        
-				new ClassPathManager().update();
+				System.setOut(getConsole().getOutStream());
+				System.setErr(getConsole().getErrStream());
+
+				System.out.println("DSLTranslator transforming...");
 				
+				System.out.println("projectPath: " + projectPath);
+				System.out.println("filepath: " + filepath);
+				
+				new ClassPathManager().update();
+
 				TransformerProcessor tP = new TransformerProcessor(projectPath);
 				try {
 					tP.LoadModel(filepath);
 					tP.Execute();
-					} catch (Throwable e) {
-						e.printStackTrace();
-						System.err.println(e.getMessage());
-					}
-			        System.setOut(out);
-			        System.setErr(err);
-					return Status.OK_STATUS;
+				} catch (Throwable e) {
+					e.printStackTrace();
+					System.err.println(e.getMessage());
+				}
+				System.setOut(out);
+				System.setErr(err);
+				
+				
+				System.out.println("DSLTranslator transforming... DONE");
+				
+				return Status.OK_STATUS;
 			}
 		};
 
 		job.addJobChangeListener(new JobChangeAdapter() {
 			public void done(IJobChangeEvent event) {
-				//tempdir.delete();
+				// tempdir.delete();
 			}
 		});
 		job.schedule();
@@ -102,13 +112,12 @@ public class TransformAction implements IObjectActionDelegate {
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
 		Object obj = ((IStructuredSelection) selection).getFirstElement();
-		if (obj instanceof IFile){
-			if (((IFile)obj).getName().endsWith(".dsltrans"))
-				_selectedFile = (IFile)obj;
+		if (obj instanceof IFile) {
+			if (((IFile) obj).getName().endsWith(".dsltrans"))
+				_selectedFile = (IFile) obj;
 			else
 				_selectedFile = null;
-		}
-		else
+		} else
 			_selectedFile = null;
 	}
 

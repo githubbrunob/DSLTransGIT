@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/DSLTransGraphicalEditorFeature_1.0.0.201412140927.jar" id="DSLTransGraphicalEditorFeature" version="1.0.0.201412140927" os="linux,macosx,win32">
+   <feature url="features/DSLTransGraphicalEditorFeature_1.0.0.201503261604.jar" id="DSLTransGraphicalEditorFeature" version="1.0.0.201503261604" os="linux,macosx,win32">
       <category name="dsltrans_category"/>
    </feature>
-   <feature url="features/DSLTransTransformerFeature_1.0.0.201412140927.jar" id="DSLTransTransformerFeature" version="1.0.0.201412140927" os="linux,macosx,win32">
+   <feature url="features/DSLTransTransformerFeature_1.0.0.201503261604.jar" id="DSLTransTransformerFeature" version="1.0.0.201503261604" os="linux,macosx,win32">
       <category name="dsltrans_category"/>
    </feature>
    <category-def name="dsltrans_category" label="DSLTrans"/>

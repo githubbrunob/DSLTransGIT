@@ -145,10 +145,19 @@ public class EMFHandler {
 	}
 
 	public static URI createAbsoluteHierarchicalURI(String absolutePathDir, String filePath) {
+		System.out.println("Creating absolute URI...");
+		
+		System.out.println("absolutePathDir: " + absolutePathDir);
+		System.out.println("filePath: " + filePath);
+		
 		URI result = URI.createURI(filePath);
 		
 		if (!result.isRelative()) {
+			System.out.println("Path is absolute.");
+			
 			if (result.scheme() != "file"){
+				System.out.println("But does not contain file: scheme.");
+				
 				// we only want hierarchical uri's
 				// this means that filePath is an absolute path but it has no schema.
 				// so we attempt to create a hierarchical url from it.
@@ -158,6 +167,8 @@ public class EMFHandler {
 				}
 			}
 		} else {
+			System.out.println("Path is relative. Creating absolute path.");
+			
 			if (filePath.contains(absolutePathDir)) {
 				throw new InvalidPathException(filePath, "The relative path must not contain the absolute path. It should be of the form C:/absolute/path/to/file.ecore or ./relative/path/to/file.ext");
 			}
@@ -168,6 +179,9 @@ public class EMFHandler {
 			throw new InvalidPathException(result.toFileString(), "The path must be like this: file://c:/path/to/file.ext as oposed to " + result.toFileString());
 		}
 		
+		System.out.println("Result: " + result);
+		
+		System.out.println("Creating absolute URI... DONE");
 		return result;
 	}
 

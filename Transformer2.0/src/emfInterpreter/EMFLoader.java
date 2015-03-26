@@ -538,6 +538,11 @@ public class EMFLoader extends EMFHandler {
 	}
 
 	public void loadMetaModel(String classdir, String path) throws IOException {
+		System.out.println("Loading metamodel...");
+		
+		System.out.println("classdir: " + classdir);
+		System.out.println("path: " + path);
+		
 		ResourceSet resourceSet = new ResourceSetImpl();
 
 		// Register the appropriate resource factory to handle all file
@@ -547,7 +552,6 @@ public class EMFLoader extends EMFHandler {
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("ecore", new EcoreResourceFactoryImpl());
 
 		URI metamodelURI = createAbsoluteHierarchicalURI(classdir, path);
-		
 		
 		Resource resource = resourceSet.getResource(metamodelURI, true);
 		EList<EObject> list = resource.getContents();
@@ -572,6 +576,8 @@ public class EMFLoader extends EMFHandler {
 		}
 
 		resourceSet.getPackageRegistry().clear();
+		
+		System.out.println("Loading metamodel... DONE");
 	}
 
 	public URI tryToFindModel(URI uri) {

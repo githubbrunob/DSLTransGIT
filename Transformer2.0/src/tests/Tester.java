@@ -23,7 +23,7 @@ public class Tester {
 	public static final String CORRECT_MODEL_PREFIX = "c";
 	public static final String MODEL_EXT = "xmi";
 	public static final String TRANSFORMATION_EXT = "dsltrans";
-	private static final String PROJECT_DIR = "C:\\Users\\Cláudio\\Documents\\GitHub\\DSLTransGIT\\Transformer2.0";
+	private static final String PROJECT_DIR = "C:\\Users\\clagms\\Source Control\\GitHub\\DSLTransGIT\\Transformer2.0";
 	private static final Object CVS_DIR_NAME = "CVS";
 	
 	private static final boolean BULK_TESTING = false;

@@ -233,3 +233,8 @@ pip-log.txt
 .mr.developer.cfgx
 
 *.aird
+DSLTransEditor2.0/model/DSLTrans.genmodel
+DSLTransEditor2.0/model/DSLTrans.gmfgen
+DSLTransEditor2.0/model/DSLTrans.gmfmap
+DSLTransEditor2.0/model/DSLTrans.gmfgraph
+DSLTransEditor2.0/model/DSLTrans.gmftool

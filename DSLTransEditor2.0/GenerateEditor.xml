@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="GenerateEditor" default="main" basedir=".">
+
+	<!-- Generate GMF Editor -->
+	<target name="main">
+
+		<!-- Remove previously generated files. -->
+
+		<delete quiet="true" includeEmptyDirs="true">
+			<fileset dir="../DSLTransEditor2.0.diagram/src" />
+		</delete>
+
+		<delete quiet="true" includeEmptyDirs="true">
+			<fileset dir="../DSLTransEditor2.0.tests/src" />
+		</delete>
+
+		<delete quiet="true" includeEmptyDirs="true">
+			<fileset dir="../DSLTransEditor2.0.editor/src" />
+		</delete>
+
+		<delete quiet="true" includeEmptyDirs="true">
+			<fileset dir="../DSLTransEditor2.0.edit/src" />
+		</delete>
+
+		<delete quiet="true" includeEmptyDirs="true">
+			<fileset dir="./src" />
+		</delete>
+
+		<delete file="./model/DSLTrans.ecore" />
+		<delete file="./model/DSLTrans.ecorediag" />
+		<delete file="./model/DSLTrans.genmodel" />
+		<delete file="./model/DSLTrans.gmfgen" />
+		<delete file="./model/DSLTrans.gmfgraph" />
+		<delete file="./model/DSLTrans.gmfmap" />
+		<delete file="./model/DSLTrans.gmftool" />
+		<delete file="./model/DSLTrans.trace" />
+
+		<eclipse.refreshLocal resource="DSLTransEditor2.0" depth="infinite" />
+		<eclipse.refreshLocal resource="DSLTransEditor2.0.diagram" depth="infinite" />
+		<eclipse.refreshLocal resource="DSLTransEditor2.0.edit" depth="infinite" />
+		<eclipse.refreshLocal resource="DSLTransEditor2.0.editor" depth="infinite" />
+		<eclipse.refreshLocal resource="DSLTransEditor2.0.tests" depth="infinite" />
+
+		<epsilon.eugenia src="model/DSLTrans.emf" />
+
+		<eclipse.refreshLocal resource="DSLTransEditor2.0" depth="infinite" />
+		<eclipse.refreshLocal resource="DSLTransEditor2.0.diagram" depth="infinite" />
+		<eclipse.refreshLocal resource="DSLTransEditor2.0.edit" depth="infinite" />
+		<eclipse.refreshLocal resource="DSLTransEditor2.0.editor" depth="infinite" />
+		<eclipse.refreshLocal resource="DSLTransEditor2.0.tests" depth="infinite" />
+
+		<!-- Inject Validation Code On Save 
+		<copy todir="../TrNetVisual.diagram/src/trnetvisual/diagram/part" file="injection/source/TrnetvisualDocumentProvider.java" overwrite="true">
+		</copy>-->
+		
+		<!-- Deploy diagram icon files 
+		<copy todir="../new/dir"  overwrite="true">
+			<fileset dir="src_dir" />
+		</copy>
+		-->
+
+	</target>
+
+
+
+</project>

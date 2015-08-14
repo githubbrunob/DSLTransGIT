@@ -1,6 +1,7 @@
 package transformerProcessor.filter;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Hashtable;
@@ -61,7 +62,8 @@ public class MatchFilter {
 	private String _positiveJoinBody = "";
 	private String _positiveJoinHead2 = "";
 	private String _positiveJoinBody2 = "";
-	private List<String> _negativeJoinPredicates = null;
+	private List<String> _negativeClassIds = null;
+	private String _negativeJoinPredicate = "";
 	private String _cutPredicate = "";	
 	private String _query;
 	private MatchModel _matchModel;
@@ -118,7 +120,8 @@ public class MatchFilter {
 		_matchrelationFilters = new LinkedList<MatchRelationFilter>();
 		_applyentityFilters = new LinkedList<ApplyEntityFilter>();
 		_temporalrelationFilters = new LinkedList<TemporalRelationFilter>();
-		_negativeJoinPredicates = new LinkedList<String>();
+		_negativeClassIds = new ArrayList<String>();
+		
 		_binding = new LinkedList<Hashtable>();
 		_transformationRule = tr;
 		setPositiveRelations(new LinkedList<QueryRelation>());
@@ -128,8 +131,14 @@ public class MatchFilter {
 			
 		int id = 0;
 		
-		for (MatchClass mc : mm.getClass_())
+		for (MatchClass mc : mm.getClass_()) {
 			getMatchEntityFilters().add(new MatchEntityFilter(tr,mc,"Id"+Integer.toString(id++)));
+			
+
+			if(isNegative(mc)) {
+				_negativeClassIds.add("Id" + Integer.toString(id - 1));
+			}
+		}	
 		List<ApplyClass> ac = new LinkedList<ApplyClass>();
 		for(AbstractTemporalRelation br : rule.getBackwards()) {
 			if(mm.getClass_().contains(br.getSourceClass()) // referent to this match model
@@ -241,9 +250,11 @@ public class MatchFilter {
 			System.out.println("choosing type 2 heuristics:" + _temporalCounter +", " + _applyCounter + ", " + ratio);
 			new Clause(getPositiveJoinHead2()+"("+orderedPositiveRelations+getPositiveJoinBody2()+")");
 		}
-		for(String predicate: getNegativeJoinPredicates()) {
-			new Clause(predicate);
+		
+		if(!getNegativeJoinPredicate().isEmpty()) {
+			new Clause(getNegativeJoinPredicate());
 		}
+		
 		new Clause(getCutPredicate());
 		
 		new Clause(getQueryDifferentEntitiesFact());
@@ -445,6 +456,10 @@ public class MatchFilter {
 	
 	private boolean isExistPositive(MatchClass target) {
 		return target instanceof ExistsMatchClass;
+	}
+	
+	private boolean isNegative(MatchClass matchClass) {
+		return matchClass instanceof dsltrans.impl.NegativeMatchClassImpl;
 	}
 		
 	public boolean updateFilters(@SuppressWarnings("rawtypes") Hashtable binding,InstanceDatabase matchModel, InstanceDatabase applyModel)
@@ -693,6 +708,8 @@ public class MatchFilter {
 		if(!cutclause.isEmpty()){
 			queryBody += "," + cutclause;
 		}	
+
+		generateDifferentEntitiesFactCall(positiveMatchAndApplyEntitiesIDList);
 		
 		String negativeclause = getNegativeClauses(getQueryHead(),true);
 		if(!negativeclause.isEmpty()){
@@ -701,7 +718,6 @@ public class MatchFilter {
 		
 		{
 			// Assure different id's match different entities.
-			generateDifferentEntitiesFactCall(positiveMatchAndApplyEntitiesIDList);
 			if (!getQueryDifferentEntitiesHead().isEmpty()) {
 				if(!first){
 					queryBody += ",";
@@ -864,6 +880,10 @@ public class MatchFilter {
 		setQueryDifferentEntitiesFact("");
 		
 		Set<String> usedIds = new HashSet<String>(idList.size());
+
+		if(!idList.containsAll(_negativeClassIds)) {
+			idList.addAll(_negativeClassIds);
+		}
 		
 		String queryBody = "";
 		assert queryBody.isEmpty();
@@ -1140,6 +1160,8 @@ public class MatchFilter {
 			queryBody += "," + cutclause;
 		}
 		
+		generateDifferentEntitiesFactCall(positiveMatchAndApplyEntitiesIDList);
+		
 		String negativeclause = getNegativeClauses(getQueryHead(),false);
 		if(!negativeclause.isEmpty()){
 			queryBody += ",not(" + negativeclause + ")";
@@ -1147,7 +1169,6 @@ public class MatchFilter {
 		
 		{
 			// Assure different id's match different entities.
-			generateDifferentEntitiesFactCall(positiveMatchAndApplyEntitiesIDList);
 			if (!getQueryDifferentEntitiesHead().isEmpty()) {
 				if(!first){
 					queryBody += ",";
@@ -1360,10 +1381,21 @@ public class MatchFilter {
 		queryClause = "nqueryjoin(" + positivequeryHead + ")";
 		if(!addToNegativeJoinPredicates) return queryClause;
 		String queryHead = "nqueryjoin(" + positivequeryHead + ") :- ";
-		for(String queryBody: queryBodyList) {
-			_negativeJoinPredicates.add(queryHead + "("+queryBody+")");
-			System.out.println("negativeJoinPredicates: " + queryHead + "("+queryBody+")");			
+		
+		boolean first = true;
+		String queryBody = "";
+		for(String body: queryBodyList) {
+			queryBody += ((first) ? "" : ",") + body;
+			first = false;
 		}
+		
+		if(!getQueryDifferentEntitiesHead().isEmpty()) {
+			queryBody += "," + getQueryDifferentEntitiesHead();
+		}
+		
+		setNegativeJoinPredicate(queryHead + "("+queryBody+")");
+		System.out.println("negativeJoinPredicates: " + queryHead + "("+queryBody+")");
+		
 		return queryClause;
 	}
 
@@ -1623,8 +1655,12 @@ public class MatchFilter {
 		return _positiveJoinBody2;
 	}	
 	
-	public List<String> getNegativeJoinPredicates() {
-		return _negativeJoinPredicates;
+	public String getNegativeJoinPredicate() {
+		return _negativeJoinPredicate;
+	}
+
+	public void setNegativeJoinPredicate(String s) {
+		_negativeJoinPredicate = s;
 	}
 	
 	public String getCutPredicate() {

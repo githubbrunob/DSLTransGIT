@@ -1,4 +1,0 @@
-The generated model o0.xmi is the same as the c0.xmi.
-
-The only differences are in the order of the associations and 
-that's EMF's fault.

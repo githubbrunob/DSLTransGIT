@@ -25,9 +25,9 @@
             <domainEvents name="Text" swingEvent="//@wrapps.0/@frame/@panels.0/@buttons.0/@event.2"/>
             <data initValue="Ready" name="text"/>
           </visualObject>
+          <event usageName="Error2ReadyResetClick" xsi:type="swinghall:Click"/>
           <event usageName="Running2ReadyResetClick" xsi:type="swinghall:Click"/>
           <event usageName="Ready2RunningStartupClick" xsi:type="swinghall:Click"/>
-          <event usageName="Error2ReadyResetClick" xsi:type="swinghall:Click"/>
           <properties name="text" value="Ready"/>
         </buttons>
       </panels>

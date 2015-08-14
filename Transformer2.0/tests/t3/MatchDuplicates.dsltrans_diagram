@@ -1,395 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsltrans="http://dsltrans/2.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_dPqNsDCAEeGUpcw8g_n6UA" type="Dsltrans" measurementUnit="Pixel">
-  <children xmi:type="notation:Shape" xmi:id="_dRA4kDCAEeGUpcw8g_n6UA" type="2002" fontName="Segoe UI">
-    <children xmi:type="notation:DecorationNode" xmi:id="_dRBfoDCAEeGUpcw8g_n6UA" type="5035"/>
-    <children xmi:type="notation:BasicCompartment" xmi:id="_dRBfoTCAEeGUpcw8g_n6UA" type="7019">
-      <children xmi:type="notation:Shape" xmi:id="_dREi8DCAEeGUpcw8g_n6UA" type="3001" fontName="Segoe UI">
-        <children xmi:type="notation:DecorationNode" xmi:id="_dREi8jCAEeGUpcw8g_n6UA" type="5001"/>
-        <element xmi:type="dsltrans:MetaModelIdentifier" href="MatchDuplicates.dsltrans#//@source.0/@metaModelId"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dREi8TCAEeGUpcw8g_n6UA" x="30" y="28"/>
-      </children>
-    </children>
-    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dRA4kTCAEeGUpcw8g_n6UA"/>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dsltrans="http://dsltrans/2.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_4p7iMEKSEeWb6ZsyjjfpAw" type="Dsltrans" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_4rC8gEKSEeWb6ZsyjjfpAw" type="2002" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_4rDjkEKSEeWb6ZsyjjfpAw" type="5035"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_4rDjkUKSEeWb6ZsyjjfpAw" type="7019"/>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_4rC8gUKSEeWb6ZsyjjfpAw"/>
     <element xmi:type="dsltrans:FilePort" href="MatchDuplicates.dsltrans#//@source.0"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dRA4kjCAEeGUpcw8g_n6UA" x="335" y="30"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4rC8gkKSEeWb6ZsyjjfpAw" x="90"/>
   </children>
-  <children xmi:type="notation:Node" xmi:id="_dRBfojCAEeGUpcw8g_n6UA" type="2001">
-    <children xmi:type="notation:DecorationNode" xmi:id="_dRCGsDCAEeGUpcw8g_n6UA" type="5034"/>
-    <children xmi:type="notation:BasicCompartment" xmi:id="_dRCGsTCAEeGUpcw8g_n6UA" type="7001">
-      <children xmi:type="notation:Shape" xmi:id="_dRKpkDCAEeGUpcw8g_n6UA" type="3001" fontName="Segoe UI">
-        <children xmi:type="notation:DecorationNode" xmi:id="_dRLQoDCAEeGUpcw8g_n6UA" type="5001"/>
-        <element xmi:type="dsltrans:MetaModelIdentifier" href="MatchDuplicates.dsltrans#//@source.1/@metaModelId"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dRKpkTCAEeGUpcw8g_n6UA" x="30" y="28"/>
-      </children>
-    </children>
-    <children xmi:type="notation:BasicCompartment" xmi:id="_dRCGsjCAEeGUpcw8g_n6UA" type="7002">
-      <children xmi:type="notation:Shape" xmi:id="_dROT8DCAEeGUpcw8g_n6UA" type="3002" fontName="Segoe UI">
-        <children xmi:type="notation:DecorationNode" xmi:id="_dRO7ADCAEeGUpcw8g_n6UA" type="5033"/>
-        <children xmi:type="notation:BasicCompartment" xmi:id="_dRO7ATCAEeGUpcw8g_n6UA" type="7003">
-          <children xmi:type="notation:Shape" xmi:id="_dRUakDCAEeGUpcw8g_n6UA" type="3003" fontName="Segoe UI">
-            <children xmi:type="notation:DecorationNode" xmi:id="_dRVBoDCAEeGUpcw8g_n6UA" type="5008"/>
-            <children xmi:type="notation:BasicCompartment" xmi:id="_dRVBoTCAEeGUpcw8g_n6UA" type="7005">
-              <children xmi:type="notation:Node" xmi:id="_dRZTEDCAEeGUpcw8g_n6UA" type="3004">
-                <children xmi:type="notation:DecorationNode" xmi:id="_dRZ6ITCAEeGUpcw8g_n6UA" type="5005"/>
-                <children xmi:type="notation:BasicCompartment" xmi:id="_dRZ6IjCAEeGUpcw8g_n6UA" type="7006">
-                  <children xmi:type="notation:Shape" xmi:id="_dRgAwDCAEeGUpcw8g_n6UA" type="3005" fontName="Segoe UI">
-                    <children xmi:type="notation:DecorationNode" xmi:id="_dRgn0DCAEeGUpcw8g_n6UA" type="5004"/>
-                    <children xmi:type="notation:BasicCompartment" xmi:id="_dRgn0TCAEeGUpcw8g_n6UA" type="7007"/>
-                    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dRgAwTCAEeGUpcw8g_n6UA"/>
-                    <element xmi:type="dsltrans:MatchAttribute" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.0/@match.0/@class.0/@attribute.0"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dRgAwjCAEeGUpcw8g_n6UA" x="30" y="32"/>
-                  </children>
-                </children>
-                <styles xmi:type="notation:DescriptionStyle" xmi:id="_dRZTETCAEeGUpcw8g_n6UA"/>
-                <styles xmi:type="notation:FontStyle" xmi:id="_dRZTEjCAEeGUpcw8g_n6UA" fontName="Segoe UI"/>
-                <styles xmi:type="notation:FillStyle" xmi:id="_dRZTEzCAEeGUpcw8g_n6UA"/>
-                <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dRZTFDCAEeGUpcw8g_n6UA"/>
-                <element xmi:type="dsltrans:AnyMatchClass" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.0/@match.0/@class.0"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dRZ6IDCAEeGUpcw8g_n6UA" x="30" y="32"/>
-              </children>
-              <children xmi:type="notation:Node" xmi:id="_dRahMDCAEeGUpcw8g_n6UA" type="3004">
-                <children xmi:type="notation:DecorationNode" xmi:id="_dRahNjCAEeGUpcw8g_n6UA" type="5005"/>
-                <children xmi:type="notation:BasicCompartment" xmi:id="_dRahNzCAEeGUpcw8g_n6UA" type="7006">
-                  <children xmi:type="notation:Shape" xmi:id="_dRnVgDCAEeGUpcw8g_n6UA" type="3005" fontName="Segoe UI">
-                    <children xmi:type="notation:DecorationNode" xmi:id="_dRnVgzCAEeGUpcw8g_n6UA" type="5004"/>
-                    <children xmi:type="notation:BasicCompartment" xmi:id="_dRnVhDCAEeGUpcw8g_n6UA" type="7007"/>
-                    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dRnVgTCAEeGUpcw8g_n6UA"/>
-                    <element xmi:type="dsltrans:MatchAttribute" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.0/@match.0/@class.1/@attribute.0"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dRnVgjCAEeGUpcw8g_n6UA" x="30" y="32"/>
-                  </children>
-                </children>
-                <styles xmi:type="notation:DescriptionStyle" xmi:id="_dRahMTCAEeGUpcw8g_n6UA"/>
-                <styles xmi:type="notation:FontStyle" xmi:id="_dRahMjCAEeGUpcw8g_n6UA" fontName="Segoe UI"/>
-                <styles xmi:type="notation:FillStyle" xmi:id="_dRahMzCAEeGUpcw8g_n6UA"/>
-                <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dRahNDCAEeGUpcw8g_n6UA"/>
-                <element xmi:type="dsltrans:AnyMatchClass" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.0/@match.0/@class.1"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dRahNTCAEeGUpcw8g_n6UA" x="200" y="32"/>
-              </children>
-              <children xmi:type="notation:Node" xmi:id="_dRbIQDCAEeGUpcw8g_n6UA" type="3004">
-                <children xmi:type="notation:DecorationNode" xmi:id="_dRbIRjCAEeGUpcw8g_n6UA" type="5005"/>
-                <children xmi:type="notation:BasicCompartment" xmi:id="_dRbvUDCAEeGUpcw8g_n6UA" type="7006">
-                  <children xmi:type="notation:Shape" xmi:id="_dR6QcDCAEeGUpcw8g_n6UA" type="3005" fontName="Segoe UI">
-                    <children xmi:type="notation:DecorationNode" xmi:id="_dR63gDCAEeGUpcw8g_n6UA" type="5004"/>
-                    <children xmi:type="notation:BasicCompartment" xmi:id="_dR63gTCAEeGUpcw8g_n6UA" type="7007"/>
-                    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dR6QcTCAEeGUpcw8g_n6UA"/>
-                    <element xmi:type="dsltrans:MatchAttribute" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.0/@match.0/@class.2/@attribute.0"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dR6QcjCAEeGUpcw8g_n6UA" x="30" y="32"/>
-                  </children>
-                </children>
-                <styles xmi:type="notation:DescriptionStyle" xmi:id="_dRbIQTCAEeGUpcw8g_n6UA"/>
-                <styles xmi:type="notation:FontStyle" xmi:id="_dRbIQjCAEeGUpcw8g_n6UA" fontName="Segoe UI"/>
-                <styles xmi:type="notation:FillStyle" xmi:id="_dRbIQzCAEeGUpcw8g_n6UA"/>
-                <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dRbIRDCAEeGUpcw8g_n6UA"/>
-                <element xmi:type="dsltrans:AnyMatchClass" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.0/@match.0/@class.2"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dRbIRTCAEeGUpcw8g_n6UA" x="370" y="32"/>
-              </children>
-            </children>
-            <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dRUakTCAEeGUpcw8g_n6UA"/>
-            <element xmi:type="dsltrans:MatchModel" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.0/@match.0"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dRUakjCAEeGUpcw8g_n6UA" x="30" y="30"/>
-          </children>
-        </children>
-        <children xmi:type="notation:BasicCompartment" xmi:id="_dRO7AjCAEeGUpcw8g_n6UA" type="7004">
-          <children xmi:type="notation:Node" xmi:id="_dSQOsDCAEeGUpcw8g_n6UA" type="3010">
-            <children xmi:type="notation:DecorationNode" xmi:id="_dSQ1wDCAEeGUpcw8g_n6UA" type="5032"/>
-            <children xmi:type="notation:BasicCompartment" xmi:id="_dSQ1wTCAEeGUpcw8g_n6UA" type="7010">
-              <children xmi:type="notation:Shape" xmi:id="_dSUgIDCAEeGUpcw8g_n6UA" type="3011" fontName="Segoe UI">
-                <children xmi:type="notation:DecorationNode" xmi:id="_dSUgIzCAEeGUpcw8g_n6UA" type="5031"/>
-                <children xmi:type="notation:BasicCompartment" xmi:id="_dSUgJDCAEeGUpcw8g_n6UA" type="7011">
-                  <children xmi:type="notation:Shape" xmi:id="_dSZYoDCAEeGUpcw8g_n6UA" type="3012" fontName="Segoe UI">
-                    <children xmi:type="notation:DecorationNode" xmi:id="_dSZ_sDCAEeGUpcw8g_n6UA" type="5030"/>
-                    <children xmi:type="notation:BasicCompartment" xmi:id="_dSZ_sTCAEeGUpcw8g_n6UA" type="7012">
-                      <children xmi:type="notation:Shape" xmi:id="_dSffQDCAEeGUpcw8g_n6UA" type="3014" fontName="Segoe UI">
-                        <children xmi:type="notation:DecorationNode" xmi:id="_dSgGUDCAEeGUpcw8g_n6UA" type="5010"/>
-                        <element xmi:type="dsltrans:Atom" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.0/@apply/@class.0/@attribute.0/@attributeValue"/>
-                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dSffQTCAEeGUpcw8g_n6UA" x="30" y="31"/>
-                      </children>
-                    </children>
-                    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dSZYoTCAEeGUpcw8g_n6UA"/>
-                    <element xmi:type="dsltrans:ApplyAttribute" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.0/@apply/@class.0/@attribute.0"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dSZYojCAEeGUpcw8g_n6UA" x="30" y="30"/>
-                  </children>
-                  <children xmi:type="notation:Shape" xmi:id="_dSZ_sjCAEeGUpcw8g_n6UA" type="3012" fontName="Segoe UI">
-                    <children xmi:type="notation:DecorationNode" xmi:id="_dSamwTCAEeGUpcw8g_n6UA" type="5030"/>
-                    <children xmi:type="notation:BasicCompartment" xmi:id="_dSamwjCAEeGUpcw8g_n6UA" type="7012">
-                      <children xmi:type="notation:Shape" xmi:id="_dSmM8DCAEeGUpcw8g_n6UA" type="3015" fontName="Segoe UI">
-                        <children xmi:type="notation:DecorationNode" xmi:id="_dSm0ADCAEeGUpcw8g_n6UA" type="5011"/>
-                        <element xmi:type="dsltrans:AttributeRef" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.0/@apply/@class.0/@attribute.1/@attributeValue"/>
-                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dSmM8TCAEeGUpcw8g_n6UA" x="30" y="31"/>
-                      </children>
-                    </children>
-                    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dSZ_szCAEeGUpcw8g_n6UA"/>
-                    <element xmi:type="dsltrans:ApplyAttribute" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.0/@apply/@class.0/@attribute.1"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dSamwDCAEeGUpcw8g_n6UA" x="200" y="30"/>
-                  </children>
-                </children>
-                <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dSUgITCAEeGUpcw8g_n6UA"/>
-                <element xmi:type="dsltrans:ApplyClass" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.0/@apply/@class.0"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dSUgIjCAEeGUpcw8g_n6UA" x="30" y="28"/>
-              </children>
-            </children>
-            <styles xmi:type="notation:DescriptionStyle" xmi:id="_dSQOsTCAEeGUpcw8g_n6UA"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_dSQOsjCAEeGUpcw8g_n6UA" fontName="Segoe UI"/>
-            <styles xmi:type="notation:LineStyle" xmi:id="_dSQOszCAEeGUpcw8g_n6UA"/>
-            <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dSQOtDCAEeGUpcw8g_n6UA"/>
-            <element xmi:type="dsltrans:ApplyModel" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.0/@apply"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dSQOtTCAEeGUpcw8g_n6UA" x="30" y="32"/>
-          </children>
-        </children>
-        <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dROT8TCAEeGUpcw8g_n6UA"/>
+  <children xmi:type="notation:Node" xmi:id="_4rDjkkKSEeWb6ZsyjjfpAw" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_4rEKoEKSEeWb6ZsyjjfpAw" type="5034"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_4rEKoUKSEeWb6ZsyjjfpAw" type="7001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_4rEKokKSEeWb6ZsyjjfpAw" type="7002">
+      <children xmi:type="notation:Shape" xmi:id="_4rJqMEKSEeWb6ZsyjjfpAw" type="3002" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_4rJqM0KSEeWb6ZsyjjfpAw" type="5033"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_4rJqNEKSEeWb6ZsyjjfpAw" type="7003"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_4rJqNUKSEeWb6ZsyjjfpAw" type="7004"/>
+        <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_4rJqMUKSEeWb6ZsyjjfpAw"/>
         <element xmi:type="dsltrans:Rule" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.0"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dROT8jCAEeGUpcw8g_n6UA" x="30" y="28"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4rJqMkKSEeWb6ZsyjjfpAw"/>
       </children>
-      <children xmi:type="notation:Shape" xmi:id="_dRO7AzCAEeGUpcw8g_n6UA" type="3002" fontName="Segoe UI">
-        <children xmi:type="notation:DecorationNode" xmi:id="_dRPiEDCAEeGUpcw8g_n6UA" type="5033"/>
-        <children xmi:type="notation:BasicCompartment" xmi:id="_dRPiETCAEeGUpcw8g_n6UA" type="7003">
-          <children xmi:type="notation:Shape" xmi:id="_dTHxYDCAEeGUpcw8g_n6UA" type="3003" fontName="Segoe UI">
-            <children xmi:type="notation:DecorationNode" xmi:id="_dTIYcDCAEeGUpcw8g_n6UA" type="5008"/>
-            <children xmi:type="notation:BasicCompartment" xmi:id="_dTIYcTCAEeGUpcw8g_n6UA" type="7005">
-              <children xmi:type="notation:Node" xmi:id="_dTPtMDCAEeGUpcw8g_n6UA" type="3004">
-                <children xmi:type="notation:DecorationNode" xmi:id="_dTQUQDCAEeGUpcw8g_n6UA" type="5005"/>
-                <children xmi:type="notation:BasicCompartment" xmi:id="_dTQUQTCAEeGUpcw8g_n6UA" type="7006"/>
-                <styles xmi:type="notation:DescriptionStyle" xmi:id="_dTPtMTCAEeGUpcw8g_n6UA"/>
-                <styles xmi:type="notation:FontStyle" xmi:id="_dTPtMjCAEeGUpcw8g_n6UA" fontName="Segoe UI"/>
-                <styles xmi:type="notation:FillStyle" xmi:id="_dTPtMzCAEeGUpcw8g_n6UA"/>
-                <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dTPtNDCAEeGUpcw8g_n6UA"/>
-                <element xmi:type="dsltrans:AnyMatchClass" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.1/@match.0/@class.0"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dTPtNTCAEeGUpcw8g_n6UA" x="30" y="32"/>
-              </children>
-            </children>
-            <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dTHxYTCAEeGUpcw8g_n6UA"/>
-            <element xmi:type="dsltrans:MatchModel" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.1/@match.0"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dTHxYjCAEeGUpcw8g_n6UA" x="30" y="30"/>
-          </children>
-        </children>
-        <children xmi:type="notation:BasicCompartment" xmi:id="_dRPiEjCAEeGUpcw8g_n6UA" type="7004">
-          <children xmi:type="notation:Node" xmi:id="_dTT-oDCAEeGUpcw8g_n6UA" type="3010">
-            <children xmi:type="notation:DecorationNode" xmi:id="_dTUlsDCAEeGUpcw8g_n6UA" type="5032"/>
-            <children xmi:type="notation:BasicCompartment" xmi:id="_dTUlsTCAEeGUpcw8g_n6UA" type="7010">
-              <children xmi:type="notation:Shape" xmi:id="_dTY3IDCAEeGUpcw8g_n6UA" type="3011" fontName="Segoe UI">
-                <children xmi:type="notation:DecorationNode" xmi:id="_dTZeMDCAEeGUpcw8g_n6UA" type="5031"/>
-                <children xmi:type="notation:BasicCompartment" xmi:id="_dTZeMTCAEeGUpcw8g_n6UA" type="7011">
-                  <children xmi:type="notation:Shape" xmi:id="_dTfk0DCAEeGUpcw8g_n6UA" type="3012" fontName="Segoe UI">
-                    <children xmi:type="notation:DecorationNode" xmi:id="_dTgL4DCAEeGUpcw8g_n6UA" type="5030"/>
-                    <children xmi:type="notation:BasicCompartment" xmi:id="_dTgL4TCAEeGUpcw8g_n6UA" type="7012">
-                      <children xmi:type="notation:Shape" xmi:id="_dTngoDCAEeGUpcw8g_n6UA" type="3014" fontName="Segoe UI">
-                        <children xmi:type="notation:DecorationNode" xmi:id="_dToHsDCAEeGUpcw8g_n6UA" type="5010"/>
-                        <element xmi:type="dsltrans:Atom" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.1/@apply/@class.0/@attribute.0/@attributeValue"/>
-                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dTngoTCAEeGUpcw8g_n6UA" x="29" y="30"/>
-                      </children>
-                    </children>
-                    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dTfk0TCAEeGUpcw8g_n6UA"/>
-                    <element xmi:type="dsltrans:ApplyAttribute" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.1/@apply/@class.0/@attribute.0"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dTfk0jCAEeGUpcw8g_n6UA" x="28" y="28"/>
-                  </children>
-                </children>
-                <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dTY3ITCAEeGUpcw8g_n6UA"/>
-                <element xmi:type="dsltrans:ApplyClass" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.1/@apply/@class.0"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dTY3IjCAEeGUpcw8g_n6UA" x="30" y="28"/>
-              </children>
-            </children>
-            <styles xmi:type="notation:DescriptionStyle" xmi:id="_dTT-oTCAEeGUpcw8g_n6UA"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_dTT-ojCAEeGUpcw8g_n6UA" fontName="Segoe UI"/>
-            <styles xmi:type="notation:LineStyle" xmi:id="_dTT-ozCAEeGUpcw8g_n6UA"/>
-            <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dTT-pDCAEeGUpcw8g_n6UA"/>
-            <element xmi:type="dsltrans:ApplyModel" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.1/@apply"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dTT-pTCAEeGUpcw8g_n6UA" x="30" y="32"/>
-          </children>
-        </children>
-        <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dRO7BDCAEeGUpcw8g_n6UA"/>
+      <children xmi:type="notation:Shape" xmi:id="_4rJqNkKSEeWb6ZsyjjfpAw" type="3002" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_4rJqOUKSEeWb6ZsyjjfpAw" type="5033"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_4rJqOkKSEeWb6ZsyjjfpAw" type="7003"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_4rJqO0KSEeWb6ZsyjjfpAw" type="7004"/>
+        <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_4rJqN0KSEeWb6ZsyjjfpAw"/>
         <element xmi:type="dsltrans:Rule" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.1"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dRO7BTCAEeGUpcw8g_n6UA" x="645" y="28"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4rJqOEKSEeWb6ZsyjjfpAw" x="380" y="3"/>
       </children>
     </children>
-    <styles xmi:type="notation:DescriptionStyle" xmi:id="_dRBfozCAEeGUpcw8g_n6UA"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_dRBfpDCAEeGUpcw8g_n6UA" fontName="Segoe UI"/>
-    <styles xmi:type="notation:LineStyle" xmi:id="_dRBfpTCAEeGUpcw8g_n6UA"/>
-    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dRBfpjCAEeGUpcw8g_n6UA"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_4rDjk0KSEeWb6ZsyjjfpAw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_4rDjlEKSEeWb6ZsyjjfpAw" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_4rDjlUKSEeWb6ZsyjjfpAw"/>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_4rDjlkKSEeWb6ZsyjjfpAw"/>
     <element xmi:type="dsltrans:Sequential" href="MatchDuplicates.dsltrans#//@source.1"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dRBfpzCAEeGUpcw8g_n6UA" x="30" y="200"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4rDjl0KSEeWb6ZsyjjfpAw" y="143"/>
   </children>
-  <children xmi:type="notation:Node" xmi:id="_dRCGszCAEeGUpcw8g_n6UA" type="2001">
-    <children xmi:type="notation:DecorationNode" xmi:id="_dRCGuTCAEeGUpcw8g_n6UA" type="5034"/>
-    <children xmi:type="notation:BasicCompartment" xmi:id="_dRCGujCAEeGUpcw8g_n6UA" type="7001">
-      <children xmi:type="notation:Shape" xmi:id="_dUSPADCAEeGUpcw8g_n6UA" type="3001" fontName="Segoe UI">
-        <children xmi:type="notation:DecorationNode" xmi:id="_dUS2EDCAEeGUpcw8g_n6UA" type="5001"/>
-        <element xmi:type="dsltrans:MetaModelIdentifier" href="MatchDuplicates.dsltrans#//@source.2/@metaModelId"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dUSPATCAEeGUpcw8g_n6UA" x="30" y="28"/>
-      </children>
-    </children>
-    <children xmi:type="notation:BasicCompartment" xmi:id="_dRCGuzCAEeGUpcw8g_n6UA" type="7002">
-      <children xmi:type="notation:Shape" xmi:id="_dUUEMDCAEeGUpcw8g_n6UA" type="3002" fontName="Segoe UI">
-        <children xmi:type="notation:DecorationNode" xmi:id="_dUUrQDCAEeGUpcw8g_n6UA" type="5033"/>
-        <children xmi:type="notation:BasicCompartment" xmi:id="_dUUrQTCAEeGUpcw8g_n6UA" type="7003">
-          <children xmi:type="notation:Shape" xmi:id="_dUXukDCAEeGUpcw8g_n6UA" type="3003" fontName="Segoe UI">
-            <children xmi:type="notation:DecorationNode" xmi:id="_dUYVojCAEeGUpcw8g_n6UA" type="5008"/>
-            <children xmi:type="notation:BasicCompartment" xmi:id="_dUYVozCAEeGUpcw8g_n6UA" type="7005">
-              <children xmi:type="notation:Node" xmi:id="_dUax4DCAEeGUpcw8g_n6UA" type="3004">
-                <children xmi:type="notation:DecorationNode" xmi:id="_dUax5jCAEeGUpcw8g_n6UA" type="5005"/>
-                <children xmi:type="notation:BasicCompartment" xmi:id="_dUax5zCAEeGUpcw8g_n6UA" type="7006"/>
-                <styles xmi:type="notation:DescriptionStyle" xmi:id="_dUax4TCAEeGUpcw8g_n6UA"/>
-                <styles xmi:type="notation:FontStyle" xmi:id="_dUax4jCAEeGUpcw8g_n6UA" fontName="Segoe UI"/>
-                <styles xmi:type="notation:FillStyle" xmi:id="_dUax4zCAEeGUpcw8g_n6UA"/>
-                <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dUax5DCAEeGUpcw8g_n6UA"/>
-                <element xmi:type="dsltrans:AnyMatchClass" href="MatchDuplicates.dsltrans#//@source.2/@hasRule.0/@match.0/@class.0"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dUax5TCAEeGUpcw8g_n6UA" x="61" y="30"/>
-              </children>
-              <children xmi:type="notation:Node" xmi:id="_dUbY8DCAEeGUpcw8g_n6UA" type="3004">
-                <children xmi:type="notation:DecorationNode" xmi:id="_dUbY9jCAEeGUpcw8g_n6UA" type="5005"/>
-                <children xmi:type="notation:BasicCompartment" xmi:id="_dUbY9zCAEeGUpcw8g_n6UA" type="7006"/>
-                <styles xmi:type="notation:DescriptionStyle" xmi:id="_dUbY8TCAEeGUpcw8g_n6UA"/>
-                <styles xmi:type="notation:FontStyle" xmi:id="_dUbY8jCAEeGUpcw8g_n6UA" fontName="Segoe UI"/>
-                <styles xmi:type="notation:FillStyle" xmi:id="_dUbY8zCAEeGUpcw8g_n6UA"/>
-                <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dUbY9DCAEeGUpcw8g_n6UA"/>
-                <element xmi:type="dsltrans:AnyMatchClass" href="MatchDuplicates.dsltrans#//@source.2/@hasRule.0/@match.0/@class.1"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dUbY9TCAEeGUpcw8g_n6UA" x="31" y="135"/>
-              </children>
-            </children>
-            <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dUYVoDCAEeGUpcw8g_n6UA"/>
-            <element xmi:type="dsltrans:MatchModel" href="MatchDuplicates.dsltrans#//@source.2/@hasRule.0/@match.0"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dUYVoTCAEeGUpcw8g_n6UA" x="30" y="31"/>
-          </children>
-        </children>
-        <children xmi:type="notation:BasicCompartment" xmi:id="_dUUrQjCAEeGUpcw8g_n6UA" type="7004">
-          <children xmi:type="notation:Node" xmi:id="_dUiGoDCAEeGUpcw8g_n6UA" type="3010">
-            <children xmi:type="notation:DecorationNode" xmi:id="_dUitsDCAEeGUpcw8g_n6UA" type="5032"/>
-            <children xmi:type="notation:BasicCompartment" xmi:id="_dUitsTCAEeGUpcw8g_n6UA" type="7010">
-              <children xmi:type="notation:Shape" xmi:id="_dUki4DCAEeGUpcw8g_n6UA" type="3011" fontName="Segoe UI">
-                <children xmi:type="notation:DecorationNode" xmi:id="_dUki4zCAEeGUpcw8g_n6UA" type="5031"/>
-                <children xmi:type="notation:BasicCompartment" xmi:id="_dUki5DCAEeGUpcw8g_n6UA" type="7011">
-                  <children xmi:type="notation:Shape" xmi:id="_dUmYEDCAEeGUpcw8g_n6UA" type="3012" fontName="Segoe UI">
-                    <children xmi:type="notation:DecorationNode" xmi:id="_dUmYEzCAEeGUpcw8g_n6UA" type="5030"/>
-                    <children xmi:type="notation:BasicCompartment" xmi:id="_dUmYFDCAEeGUpcw8g_n6UA" type="7012">
-                      <children xmi:type="notation:Shape" xmi:id="_dUoNQDCAEeGUpcw8g_n6UA" type="3014" fontName="Segoe UI">
-                        <children xmi:type="notation:DecorationNode" xmi:id="_dUoNQjCAEeGUpcw8g_n6UA" type="5010"/>
-                        <element xmi:type="dsltrans:Atom" href="MatchDuplicates.dsltrans#//@source.2/@hasRule.0/@apply/@class.0/@attribute.0/@attributeValue"/>
-                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dUoNQTCAEeGUpcw8g_n6UA" x="31" y="31"/>
-                      </children>
-                    </children>
-                    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dUmYETCAEeGUpcw8g_n6UA"/>
-                    <element xmi:type="dsltrans:ApplyAttribute" href="MatchDuplicates.dsltrans#//@source.2/@hasRule.0/@apply/@class.0/@attribute.0"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dUmYEjCAEeGUpcw8g_n6UA" x="28" y="28"/>
-                  </children>
-                </children>
-                <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dUki4TCAEeGUpcw8g_n6UA"/>
-                <element xmi:type="dsltrans:ApplyClass" href="MatchDuplicates.dsltrans#//@source.2/@hasRule.0/@apply/@class.0"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dUki4jCAEeGUpcw8g_n6UA" x="41" y="28"/>
-              </children>
-              <children xmi:type="notation:Shape" xmi:id="_dUki5TCAEeGUpcw8g_n6UA" type="3011" fontName="Segoe UI">
-                <children xmi:type="notation:DecorationNode" xmi:id="_dUki6DCAEeGUpcw8g_n6UA" type="5031"/>
-                <children xmi:type="notation:BasicCompartment" xmi:id="_dUki6TCAEeGUpcw8g_n6UA" type="7011">
-                  <children xmi:type="notation:Shape" xmi:id="_dUpbYDCAEeGUpcw8g_n6UA" type="3012" fontName="Segoe UI">
-                    <children xmi:type="notation:DecorationNode" xmi:id="_dUqCcDCAEeGUpcw8g_n6UA" type="5030"/>
-                    <children xmi:type="notation:BasicCompartment" xmi:id="_dUqCcTCAEeGUpcw8g_n6UA" type="7012">
-                      <children xmi:type="notation:Shape" xmi:id="_dUrQkDCAEeGUpcw8g_n6UA" type="3014" fontName="Segoe UI">
-                        <children xmi:type="notation:DecorationNode" xmi:id="_dUrQkjCAEeGUpcw8g_n6UA" type="5010"/>
-                        <element xmi:type="dsltrans:Atom" href="MatchDuplicates.dsltrans#//@source.2/@hasRule.0/@apply/@class.1/@attribute.0/@attributeValue"/>
-                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dUrQkTCAEeGUpcw8g_n6UA" x="31" y="31"/>
-                      </children>
-                    </children>
-                    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dUpbYTCAEeGUpcw8g_n6UA"/>
-                    <element xmi:type="dsltrans:ApplyAttribute" href="MatchDuplicates.dsltrans#//@source.2/@hasRule.0/@apply/@class.1/@attribute.0"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dUpbYjCAEeGUpcw8g_n6UA" x="28" y="28"/>
-                  </children>
-                </children>
-                <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dUki5jCAEeGUpcw8g_n6UA"/>
-                <element xmi:type="dsltrans:ApplyClass" href="MatchDuplicates.dsltrans#//@source.2/@hasRule.0/@apply/@class.1"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dUki5zCAEeGUpcw8g_n6UA" x="31" y="273"/>
-              </children>
-            </children>
-            <styles xmi:type="notation:DescriptionStyle" xmi:id="_dUiGoTCAEeGUpcw8g_n6UA"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_dUiGojCAEeGUpcw8g_n6UA" fontName="Segoe UI"/>
-            <styles xmi:type="notation:LineStyle" xmi:id="_dUiGozCAEeGUpcw8g_n6UA"/>
-            <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dUiGpDCAEeGUpcw8g_n6UA"/>
-            <element xmi:type="dsltrans:ApplyModel" href="MatchDuplicates.dsltrans#//@source.2/@hasRule.0/@apply"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dUiGpTCAEeGUpcw8g_n6UA" x="30" y="28"/>
-          </children>
-        </children>
-        <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dUUEMTCAEeGUpcw8g_n6UA"/>
-        <element xmi:type="dsltrans:Rule" href="MatchDuplicates.dsltrans#//@source.2/@hasRule.0"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dUUEMjCAEeGUpcw8g_n6UA" x="30" y="28"/>
-      </children>
-    </children>
-    <styles xmi:type="notation:DescriptionStyle" xmi:id="_dRCGtDCAEeGUpcw8g_n6UA"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_dRCGtTCAEeGUpcw8g_n6UA" fontName="Segoe UI"/>
-    <styles xmi:type="notation:LineStyle" xmi:id="_dRCGtjCAEeGUpcw8g_n6UA"/>
-    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dRCGtzCAEeGUpcw8g_n6UA"/>
+  <children xmi:type="notation:Node" xmi:id="_4rEKo0KSEeWb6ZsyjjfpAw" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_4rExsEKSEeWb6ZsyjjfpAw" type="5034"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_4rExsUKSEeWb6ZsyjjfpAw" type="7001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_4rExskKSEeWb6ZsyjjfpAw" type="7002"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_4rEKpEKSEeWb6ZsyjjfpAw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_4rEKpUKSEeWb6ZsyjjfpAw" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_4rEKpkKSEeWb6ZsyjjfpAw"/>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_4rEKp0KSEeWb6ZsyjjfpAw"/>
     <element xmi:type="dsltrans:Sequential" href="MatchDuplicates.dsltrans#//@source.2"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dRCGuDCAEeGUpcw8g_n6UA" x="305" y="995"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4rEKqEKSEeWb6ZsyjjfpAw" x="23" y="620"/>
   </children>
-  <styles xmi:type="notation:DiagramStyle" xmi:id="_dPqNsTCAEeGUpcw8g_n6UA"/>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_4p7iMUKSEeWb6ZsyjjfpAw"/>
   <element xmi:type="dsltrans:TransformationModel" href="MatchDuplicates.dsltrans#/"/>
-  <edges xmi:type="notation:Connector" xmi:id="_dU56EDCAEeGUpcw8g_n6UA" type="4011" source="_dRBfojCAEeGUpcw8g_n6UA" target="_dRA4kDCAEeGUpcw8g_n6UA">
-    <children xmi:type="notation:DecorationNode" xmi:id="_dU6hIDCAEeGUpcw8g_n6UA" type="6006">
-      <styles xmi:type="notation:DescriptionStyle" xmi:id="_dU6hITCAEeGUpcw8g_n6UA"/>
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_dU6hIjCAEeGUpcw8g_n6UA" y="40"/>
-    </children>
-    <styles xmi:type="notation:FontStyle" xmi:id="_dU56ETCAEeGUpcw8g_n6UA" fontName="Segoe UI"/>
-    <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dU56EjCAEeGUpcw8g_n6UA" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dVVX4DCAEeGUpcw8g_n6UA" id="(0.5,0.0)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dVV-8DCAEeGUpcw8g_n6UA" id="(0.4981949458483754,1.0)"/>
-  </edges>
-  <edges xmi:type="notation:Edge" xmi:id="_dU8WUDCAEeGUpcw8g_n6UA" type="4015" source="_dRnVgDCAEeGUpcw8g_n6UA" target="_dR6QcDCAEeGUpcw8g_n6UA">
-    <styles xmi:type="notation:RoutingStyle" xmi:id="_dU8WUTCAEeGUpcw8g_n6UA"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_dU8WUjCAEeGUpcw8g_n6UA" fontName="Segoe UI"/>
-    <element xmi:type="dsltrans:AttributeEquality" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.0/@attributeRelations.1"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dU8WUzCAEeGUpcw8g_n6UA" points="[22, 22, 12, 12]$[-12, -12, -22, -22]"/>
-  </edges>
-  <edges xmi:type="notation:Edge" xmi:id="_dU9kcDCAEeGUpcw8g_n6UA" type="4016" source="_dRnVgDCAEeGUpcw8g_n6UA" target="_dRgAwDCAEeGUpcw8g_n6UA">
-    <styles xmi:type="notation:RoutingStyle" xmi:id="_dU9kcTCAEeGUpcw8g_n6UA"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_dU9kcjCAEeGUpcw8g_n6UA" fontName="Segoe UI"/>
-    <element xmi:type="dsltrans:AttributeInequality" href="MatchDuplicates.dsltrans#//@source.1/@hasRule.0/@attributeRelations.0"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dU9kczCAEeGUpcw8g_n6UA" points="[-22, -22, -12, -12]$[12, 12, 22, 22]"/>
-  </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_dU_ZoDCAEeGUpcw8g_n6UA" type="4013" source="_dSmM8DCAEeGUpcw8g_n6UA" target="_dRnVgDCAEeGUpcw8g_n6UA">
-    <children xmi:type="notation:DecorationNode" xmi:id="_dU_ZozCAEeGUpcw8g_n6UA" type="6008">
-      <styles xmi:type="notation:DescriptionStyle" xmi:id="_dU_ZpDCAEeGUpcw8g_n6UA"/>
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_dU_ZpTCAEeGUpcw8g_n6UA" y="40"/>
-    </children>
-    <styles xmi:type="notation:FontStyle" xmi:id="_dU_ZoTCAEeGUpcw8g_n6UA" fontName="Segoe UI"/>
-    <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dU_ZojCAEeGUpcw8g_n6UA" points="[-3, -20, 23, 177]$[-24, -175, 2, 22]"/>
-  </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_dVBO0DCAEeGUpcw8g_n6UA" type="4011" source="_dRCGszCAEeGUpcw8g_n6UA" target="_dRBfojCAEeGUpcw8g_n6UA">
-    <children xmi:type="notation:DecorationNode" xmi:id="_dVBO0zCAEeGUpcw8g_n6UA" type="6006">
-      <styles xmi:type="notation:DescriptionStyle" xmi:id="_dVBO1DCAEeGUpcw8g_n6UA"/>
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_dVB14DCAEeGUpcw8g_n6UA" y="40"/>
-    </children>
-    <styles xmi:type="notation:FontStyle" xmi:id="_dVBO0TCAEeGUpcw8g_n6UA" fontName="Segoe UI"/>
-    <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dVBO0jCAEeGUpcw8g_n6UA" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dVV-8TCAEeGUpcw8g_n6UA" id="(0.49850746268656715,0.0)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dVV-8jCAEeGUpcw8g_n6UA" id="(0.5,1.0)"/>
-  </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_dVDEADCAEeGUpcw8g_n6UA" type="4006" source="_dUax4DCAEeGUpcw8g_n6UA" target="_dUki4DCAEeGUpcw8g_n6UA">
-    <styles xmi:type="notation:FontStyle" xmi:id="_dVDEATCAEeGUpcw8g_n6UA" fontName="Segoe UI"/>
-    <element xmi:type="dsltrans:PositiveBackwardRestriction" href="MatchDuplicates.dsltrans#//@source.2/@hasRule.0/@backwards.0"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dVDEAjCAEeGUpcw8g_n6UA" points="[20, 18, -24, -23]$[-20, -19, -64, -60]"/>
-  </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_dVESIDCAEeGUpcw8g_n6UA" type="4006" source="_dUbY8DCAEeGUpcw8g_n6UA" target="_dUki5TCAEeGUpcw8g_n6UA">
-    <styles xmi:type="notation:FontStyle" xmi:id="_dVESITCAEeGUpcw8g_n6UA" fontName="Segoe UI"/>
-    <element xmi:type="dsltrans:PositiveBackwardRestriction" href="MatchDuplicates.dsltrans#//@source.2/@hasRule.0/@backwards.1"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dVESIjCAEeGUpcw8g_n6UA" points="[7, 22, -7, -19]$[-8, -22, -22, -63]"/>
-  </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_dVGHUDCAEeGUpcw8g_n6UA" type="4003" source="_dUbY8DCAEeGUpcw8g_n6UA" target="_dUax4DCAEeGUpcw8g_n6UA">
-    <children xmi:type="notation:DecorationNode" xmi:id="_dVGHUzCAEeGUpcw8g_n6UA" type="6003">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_dVGHVDCAEeGUpcw8g_n6UA" y="40"/>
-    </children>
-    <styles xmi:type="notation:FontStyle" xmi:id="_dVGHUTCAEeGUpcw8g_n6UA" fontName="Segoe UI"/>
-    <element xmi:type="dsltrans:PositiveMatchAssociation" href="MatchDuplicates.dsltrans#//@source.2/@hasRule.0/@match.0/@association.0"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dVGHUjCAEeGUpcw8g_n6UA" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_d168cDCAEeGUpcw8g_n6UA" id="(0.5,0.0)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_d168cTCAEeGUpcw8g_n6UA" id="(0.5,1.0)"/>
-  </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_dVH8gDCAEeGUpcw8g_n6UA" type="4005" source="_dUki5TCAEeGUpcw8g_n6UA" target="_dUki4DCAEeGUpcw8g_n6UA">
-    <children xmi:type="notation:DecorationNode" xmi:id="_dVIjkDCAEeGUpcw8g_n6UA" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_dVIjkTCAEeGUpcw8g_n6UA" y="40"/>
-    </children>
-    <styles xmi:type="notation:FontStyle" xmi:id="_dVH8gTCAEeGUpcw8g_n6UA" fontName="Segoe UI"/>
-    <element xmi:type="dsltrans:ApplyAssociation" href="MatchDuplicates.dsltrans#//@source.2/@hasRule.0/@apply/@association.0"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dVH8gjCAEeGUpcw8g_n6UA" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_d1CysDCAEeGUpcw8g_n6UA" id="(0.4972972972972973,0.0)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_d1DZwDCAEeGUpcw8g_n6UA" id="(0.4968944099378882,1.0)"/>
-  </edges>
 </notation:Diagram>

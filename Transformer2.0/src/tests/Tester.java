@@ -27,7 +27,7 @@ public class Tester {
 	private static final Object CVS_DIR_NAME = "CVS";
 	
 	private static final boolean BULK_TESTING = false;
-	private static final String TEST = "t9";
+	private static final String TEST = "t10";
 	private static final boolean COMPARE_RESULTS = false;
 	
 	public static void main(String[] args) {

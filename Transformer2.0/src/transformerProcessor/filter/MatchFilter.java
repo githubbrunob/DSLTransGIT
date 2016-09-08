@@ -97,7 +97,6 @@ public class MatchFilter {
 				JIPTerm term = prologParser.parseTerm("assert("+clause+")");
 				JIPQuery query = prologEngineSingleton.openSynchronousQuery(term);
 				query.nextSolution();
-				//new Query(Util.textToTerm("assert("+clause+")")).oneSolution();
 			}
 		}
 	};	
@@ -203,21 +202,6 @@ public class MatchFilter {
 
 	public void clean() {
 		
-		/*
-		new Query(Util.textToTerm("retractall(entity(_,_,_,_,_))")).allSolutions();
-		new Query(Util.textToTerm("retractall(relation(_,_))")).allSolutions();
-		if(!getQueryHead().isEmpty()) {
-			new Query(Util.textToTerm("retractall(queryjoin("+getQueryHead()+"))")).allSolutions();
-			new Query(Util.textToTerm("retractall(nqueryjoin("+getQueryHead()+"))")).allSolutions();
-		}
-		if(!getQueryCutHead().isEmpty()) {
-			new Query(Util.textToTerm("retractall(cutclause("+getQueryCutHead()+"))")).allSolutions();
-		}
-		if(!getQueryDifferentEntitiesHead().isEmpty()) {
-			new Query(Util.textToTerm("retractall("+ getQueryDifferentEntitiesHead() + ")")).allSolutions();
-		}
-		 */
-		
 		prologEngineSingleton.openSynchronousQuery(prologParser.parseTerm("retractall(entity(_,_,_,_,_))")).nextSolution();
 		prologEngineSingleton.openSynchronousQuery(prologParser.parseTerm("retractall(relation(_,_))")).nextSolution();
 		if(!getQueryHead().isEmpty()) {
@@ -311,16 +295,6 @@ public class MatchFilter {
 		}
 		
 		return atLeastOneSolution;
-		
-		/* Old code used for SWI Prolog
-		Query q = new Query(getQuery());
-		if(q.hasMoreSolutions()) {
-			do
-				getBindingList().add(q.nextSolution());
-			while(q.hasMoreSolutions());
-			return true;
-		}
-		 */
 		
 	}
 
@@ -520,8 +494,6 @@ public class MatchFilter {
 		for(MatchEntityFilter ef : getMatchEntityFilters()) {
 			if(isPositive(ef.getMatchClass())) {
 				String hashCode = getHashCode(binding, ef.getId());
-				//String hashCode = ((Atom)binding.get(ef.getId())).toString();
-				//hashCode = hashCode.substring(1,hashCode.length());
 				ef.setCurrentByHashId(getFilterDatabase(),Integer.parseInt(hashCode));
 				System.out.println("solution entity: " + hashCode + " " + ef.getCurrentEntity().getDotNotation());
 				for(MatchAttributeFilter maf : ef.getFilterAttributes()) {
@@ -551,8 +523,6 @@ public class MatchFilter {
 			if(!isIndirect(rf.getAssociation())) { // lets ignore indirect ones
 				if(isPositive(rf.getAssociation())) {
 					String hashCode = getHashCode(binding, rf.getId());
-					//String hashCode = ((Atom)binding.get(rf.getId())).toString();
-					//hashCode = hashCode.substring(1,hashCode.length());
 					System.out.println("solution relation: " + hashCode);
 					rf.setCurrentByHashId(getFilterDatabase(),Integer.parseInt(hashCode));
 				}
@@ -974,12 +944,6 @@ public class MatchFilter {
 			
 		}
 	}
-
-
-//	private boolean matchingSameClass(MatchEntityFilter fixedElement,
-//			MatchEntityFilter element) {
-//		return fixedElement.getDotNotation().equals(element.getDotNotation());
-//	}
 
 	private List<String> convertSetToList(Set<String> usedIds) {
 		

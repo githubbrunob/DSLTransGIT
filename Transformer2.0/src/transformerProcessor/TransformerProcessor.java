@@ -21,7 +21,7 @@ public class TransformerProcessor {
 	private final TransformationController _controller;
 	
 	public TransformerProcessor(String classdir){
-		jpl.JPL.init();
+		//jpl.JPL.init();
 		_controller = new TransformationController(classdir);
 	}
 	

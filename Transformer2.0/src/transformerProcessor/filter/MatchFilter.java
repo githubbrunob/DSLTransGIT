@@ -11,15 +11,22 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import jpl.Atom;
-import jpl.Query;
-import jpl.Util;
+
+import transformerProcessor.PrologEngineSingleton;
+//import jpl.Atom;
+//import jpl.Query;
+//import jpl.Util;
 import transformerProcessor.TermProcessor;
 import transformerProcessor.TransformationController;
 import transformerProcessor.TransformationRule;
 import transformerProcessor.exceptions.InvalidLayerRequirement;
 
 import com.sun.tools.javac.util.Pair;
+import com.ugos.jiprolog.engine.JIPEngine;
+import com.ugos.jiprolog.engine.JIPQuery;
+import com.ugos.jiprolog.engine.JIPTerm;
+import com.ugos.jiprolog.engine.JIPTermParser;
+import com.ugos.jiprolog.engine.JIPVariable;
 
 import dsltrans.AbstractAttributeRelation;
 import dsltrans.AbstractTemporalRelation;
@@ -47,7 +54,12 @@ import emfInterpreter.instance.InstanceEntity;
 import emfInterpreter.instance.InstanceRelation;
 import emfInterpreter.metamodel.MetaModelDatabase;
 
+/*
+ * All the Prolog related stuff is in this class.
+ */
 public class MatchFilter {
+	private JIPEngine prologEngineSingleton;
+	private JIPTermParser prologParser;
 	private final List<MatchEntityFilter> _matchentityFilters;
 	private final List<ApplyEntityFilter> _applyentityFilters;	
 	private final List<MatchRelationFilter> _matchrelationFilters;
@@ -82,7 +94,10 @@ public class MatchFilter {
 		Clause(String clause) {
 			if(!clause.isEmpty()) {
 				System.out.println(clause+".");
-				new Query(Util.textToTerm("assert("+clause+")")).oneSolution();
+				JIPTerm term = prologParser.parseTerm("assert("+clause+")");
+				JIPQuery query = prologEngineSingleton.openSynchronousQuery(term);
+				query.nextSolution();
+				//new Query(Util.textToTerm("assert("+clause+")")).oneSolution();
 			}
 		}
 	};	
@@ -115,6 +130,10 @@ public class MatchFilter {
 	
 	@SuppressWarnings("rawtypes")
 	public MatchFilter(TransformationRule tr, Rule rule, MatchModel mm) {
+		
+		prologEngineSingleton = PrologEngineSingleton.getEngineSingleton();
+		prologParser = prologEngineSingleton.getTermParser();
+		
 		_FilterDatabase = new InstanceDatabase();
 		_matchentityFilters = new LinkedList<MatchEntityFilter>();
 		_matchrelationFilters = new LinkedList<MatchRelationFilter>();
@@ -183,6 +202,8 @@ public class MatchFilter {
 	}
 
 	public void clean() {
+		
+		/*
 		new Query(Util.textToTerm("retractall(entity(_,_,_,_,_))")).allSolutions();
 		new Query(Util.textToTerm("retractall(relation(_,_))")).allSolutions();
 		if(!getQueryHead().isEmpty()) {
@@ -195,14 +216,26 @@ public class MatchFilter {
 		if(!getQueryDifferentEntitiesHead().isEmpty()) {
 			new Query(Util.textToTerm("retractall("+ getQueryDifferentEntitiesHead() + ")")).allSolutions();
 		}
+		 */
+		
+		prologEngineSingleton.openSynchronousQuery(prologParser.parseTerm("retractall(entity(_,_,_,_,_))")).nextSolution();
+		prologEngineSingleton.openSynchronousQuery(prologParser.parseTerm("retractall(relation(_,_))")).nextSolution();
+		if(!getQueryHead().isEmpty()) {
+			prologEngineSingleton.openSynchronousQuery(prologParser.parseTerm("retractall(queryjoin("+getQueryHead()+"))")).nextSolution();
+			prologEngineSingleton.openSynchronousQuery(prologParser.parseTerm("retractall(nqueryjoin("+getQueryHead()+"))")).nextSolution();
+		}
+		if(!getQueryCutHead().isEmpty()) {
+			prologEngineSingleton.openSynchronousQuery(prologParser.parseTerm("retractall(cutclause("+getQueryCutHead()+"))")).nextSolution();
+		}
+		if(!getQueryDifferentEntitiesHead().isEmpty()) {
+			prologEngineSingleton.openSynchronousQuery(prologParser.parseTerm("retractall("+ getQueryDifferentEntitiesHead() + ")")).nextSolution();
+		}
+		
 		setQueryHead("");
 		setQueryCutHead("");
 		
-		
-		String factString = entityFact + "(0,'',[],[0],[0])";						
-		new Clause(factString);
-		factString = relationFact + "(0,[])";
-		new Clause(factString);
+		new Clause(entityFact + "(0,'',[],[0],[0])");
+		new Clause(relationFact + "(0,[])");
 	}
 	
 	private void setQueryDifferentEntitiesFact(String string) {
@@ -261,6 +294,25 @@ public class MatchFilter {
 		
 		System.out.println("query: " + getQuery());
 		
+		JIPTerm ruleMatchTerm = prologParser.parseTerm(getQuery());
+		JIPQuery ruleQuery = prologEngineSingleton.openSynchronousQuery(ruleMatchTerm);
+		
+		JIPTerm matchSolutionTerm = ruleQuery.nextSolution();
+		
+		boolean atLeastOneSolution = matchSolutionTerm != null;
+		
+		if (atLeastOneSolution) {
+			do {
+				@SuppressWarnings("rawtypes")
+				Hashtable matchSolutionBinding = matchSolutionTerm.getVariablesTable();
+				getBindingList().add(matchSolutionBinding);
+				matchSolutionTerm = ruleQuery.nextSolution();
+			} while (matchSolutionTerm != null);
+		}
+		
+		return atLeastOneSolution;
+		
+		/* Old code used for SWI Prolog
 		Query q = new Query(getQuery());
 		if(q.hasMoreSolutions()) {
 			do
@@ -268,7 +320,8 @@ public class MatchFilter {
 			while(q.hasMoreSolutions());
 			return true;
 		}
-		return false;
+		 */
+		
 	}
 
 	private boolean CreateRelations(InstanceDatabase matchModel,MetaModelDatabase matchMetaModel
@@ -466,8 +519,9 @@ public class MatchFilter {
 	{		
 		for(MatchEntityFilter ef : getMatchEntityFilters()) {
 			if(isPositive(ef.getMatchClass())) {
-				String hashCode = ((Atom)binding.get(ef.getId())).toString();
-				hashCode = hashCode.substring(1,hashCode.length());
+				String hashCode = getHashCode(binding, ef.getId());
+				//String hashCode = ((Atom)binding.get(ef.getId())).toString();
+				//hashCode = hashCode.substring(1,hashCode.length());
 				ef.setCurrentByHashId(getFilterDatabase(),Integer.parseInt(hashCode));
 				System.out.println("solution entity: " + hashCode + " " + ef.getCurrentEntity().getDotNotation());
 				for(MatchAttributeFilter maf : ef.getFilterAttributes()) {
@@ -480,10 +534,10 @@ public class MatchFilter {
 		}
 		for(ApplyEntityFilter ef : getApplyEntityFilters()) {
 			if(!onlyNegativeTemporals(ef)) {
-				String hashCode = ((Atom)binding.get(ef.getId())).toString();
-				hashCode = hashCode.substring(1,hashCode.length());
-				if(!ef.setCurrentByHashId(getFilterDatabase(),Integer.parseInt(hashCode)))
+				String hashCode = getHashCode(binding, ef.getId());
+				if (!ef.setCurrentByHashId(getFilterDatabase(),Integer.parseInt(hashCode))){
 					return false;
+				}
 				System.out.println("solution entity: " + hashCode + " " + ef.getCurrentEntity().getDotNotation());
 				for(ApplyAttributeFilter aaf : ef.getFilterAttributes()) {
 					System.out.println("\twith attribute: " + aaf.getCurrentAttribute().getMetaAttribute().getName() + " with value: " + (aaf.getCurrentAttribute().getValue() == null? "null" : aaf.getCurrentAttribute().getValue().toString()));
@@ -496,8 +550,9 @@ public class MatchFilter {
 		for(MatchRelationFilter rf : getMatchRelationFilters()) {
 			if(!isIndirect(rf.getAssociation())) { // lets ignore indirect ones
 				if(isPositive(rf.getAssociation())) {
-					String hashCode = ((Atom)binding.get(rf.getId())).toString();
-					hashCode = hashCode.substring(1,hashCode.length());
+					String hashCode = getHashCode(binding, rf.getId());
+					//String hashCode = ((Atom)binding.get(rf.getId())).toString();
+					//hashCode = hashCode.substring(1,hashCode.length());
 					System.out.println("solution relation: " + hashCode);
 					rf.setCurrentByHashId(getFilterDatabase(),Integer.parseInt(hashCode));
 				}
@@ -1630,7 +1685,15 @@ public class MatchFilter {
 		}
 		return false;
 	}
-
+	
+	private String getHashCode(@SuppressWarnings("rawtypes") Hashtable binding, String entityId){
+		JIPVariable jipVar = (JIPVariable) binding.get(entityId);		
+		String varInstanceName = jipVar.getValue().toString();
+		String hashCode = varInstanceName.substring(1,varInstanceName.length());
+		return hashCode;
+		
+	}
+	
 	private String getIdFrom(MatchClass sourceClass) {
 		for(MatchEntityFilter ef : getMatchEntityFilters()) {
 			if(ef.getMatchClass() == sourceClass)

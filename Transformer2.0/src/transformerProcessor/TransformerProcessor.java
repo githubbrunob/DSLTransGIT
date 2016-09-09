@@ -21,7 +21,6 @@ public class TransformerProcessor {
 	private final TransformationController _controller;
 	
 	public TransformerProcessor(String classdir){
-		//jpl.JPL.init();
 		_controller = new TransformationController(classdir);
 	}
 	
@@ -110,41 +109,7 @@ public class TransformerProcessor {
 		if(source instanceof FilePort)
 			getController().add((FilePort) source);
 	}
-			
-	public static void main(String[] args) {
-		// initialize prolog engine
-
-		TransformerProcessor tP = new TransformerProcessor("C:\\Users\\clagms\\workspace\\Hall2JavaSwing_v2");
-		tP.LoadModel("C:\\Users\\clagms\\workspace\\Hall2JavaSwing_v2\\Hall2JavaCore.dsltrans");
-		
-//		tP.setFileURI("inputModel", "Models\\Indy.xmi");
-//		tP.setMetaModelURI("inputModel", "Models\\java5.ecore");
-//		tP.setMetaModelURI("output1", "Models\\text.ecore");
-//		tP.setMetaModelURI("output2", "Models\\text.ecore");
-//		tP.setMetaModelURI("output3", "Models\\text.ecore");
-//		tP.setMetaModelURI("output4", "Models\\text.ecore");
-//		tP.setMetaModelURI("output5", "Models\\text.ecore");	
-//		tP.setMetaModelURI("output6", "Models\\text.ecore");
-//		tP.setMetaModelURI("output7", "Models\\text.ecore");
-//		tP.setMetaModelURI("output8", "Models\\text.ecore");
-//		tP.setMetaModelURI("output9", "Models\\text.ecore");	
-//		tP.setFileURI("output1", "Models\\outputjava2text1.xmi");
-//		tP.setFileURI("output2", "Models\\outputjava2text2.xmi");
-//		tP.setFileURI("output3", "Models\\outputjava2text3.xmi");
-//		tP.setFileURI("output4", "Models\\outputjava2text4.xmi");
-//		tP.setFileURI("output5", "Models\\outputjava2text5.xmi");
-//		tP.setFileURI("output6", "Models\\outputjava2text6.xmi");
-//		tP.setFileURI("output7", "Models\\outputjava2text7.xmi");
-//		tP.setFileURI("output8", "Models\\outputjava2text8.xmi");
-//		tP.setFileURI("output9", "Models\\outputjava2text9.xmi");
-		
-			try {
-				tP.Execute();
-			} catch (Throwable e) {
-				e.printStackTrace();
-			}
-	}
-
+	
 	public void Execute() throws Throwable {
 		this.getController().Execute();
 	}

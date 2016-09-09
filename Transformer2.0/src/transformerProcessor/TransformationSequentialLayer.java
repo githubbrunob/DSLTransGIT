@@ -10,25 +10,23 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import persistence.PersistenceLayer;
 import dsltrans.Layer;
 import emfInterpreter.EMFLoader;
 import emfInterpreter.instance.InstanceDatabase;
 import emfInterpreter.metamodel.MetaEntity;
 import emfInterpreter.metamodel.MetaModelDatabase;
 
-public class TransformationSequentialLayer extends TransformationLayer{
+public class TransformationSequentialLayer extends TransformationLayer {
 
-	TransformationSequentialLayer(String classdir, TransformationController tc, Layer l) {
-			super(classdir, tc, l);
+	TransformationSequentialLayer(String classdir, TransformationController tc, Layer l, PersistenceLayer persistenceL) {
+			super(classdir, tc, l, persistenceL);
 	}
 
 	protected void prepareInputModel() {
 		TransformationSource ts = getTransformationSource(this.getPrecedingUnit());
 		setMatchMetaModel(ts.getMetaDatabase());
 		setMatchModel(ts.getDatabase());
-//		System.out.println("#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-//		getMatchModel().dump();
-//		System.out.println("#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");		
 	}
 	
 	protected void prepareOutputModel(TransformationController control, String classpath) throws IOException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException {
@@ -82,13 +80,8 @@ public class TransformationSequentialLayer extends TransformationLayer{
 				packageName = Character.toUpperCase(me.getCurrentPackage().charAt(0)) + packageName;
 				String className = me.getNamespace()+"."+packageName+"Package";
 				String factoryName = me.getNamespace()+"."+packageName+"Factory";
-//					System.out.println("Factory: "+factoryName);
-//					for(String fact : getDatabase().getFactorys().keySet()) {
-//						System.out.println("Factory: "+fact);
-//					}
 				if(!getDatabase().getFactorys().containsKey(className)) {
 					Object factory = null;
-					//Class<?> cc1 = Class.forName(me.getNamespace()+"."+packageName+"Package",true,customLoader);
 					Class<?> cc = Class.forName(className,false,customLoader);
 					Field f2 = cc.getField("eINSTANCE");
 					factory = (Object)f2.get(cc);
@@ -99,9 +92,8 @@ public class TransformationSequentialLayer extends TransformationLayer{
 						Field f21 = cc1.getField("eINSTANCE");
 						factory1 = (Object)f21.get(cc1);
 						getDatabase().getFactorys().put(factoryName, factory1);
-					}									
+					}
 				}
-			
 		}
 		if (factorys != null)
 			factorys.putAll(getDatabase().getFactorys());

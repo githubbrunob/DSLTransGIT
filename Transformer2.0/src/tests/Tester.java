@@ -14,6 +14,7 @@ import difflib.Delta;
 import difflib.DiffUtils;
 import difflib.Patch;
 import dsltrans.TransformationModel;
+import emfInterpreter.EMFPersistenceLayer;
 import emfInterpreter.EMFTransformationLoader;
 
 public class Tester {
@@ -28,7 +29,7 @@ public class Tester {
 	private static final String PROJECT_DIR = "C:\\Users\\clagms\\Source Control\\GitHub\\DSLTransGIT\\Transformer2.0";
 	private static final Object CVS_DIR_NAME = "CVS";
 	
-	private static final boolean BULK_TESTING = false;
+	private static final boolean BULK_TESTING = true;
 	private static final String TEST = "t8";
 	private static final boolean COMPARE_RESULTS = false;
 	
@@ -113,7 +114,7 @@ public class Tester {
 
 	private static void runTransformation(File transformation) {
 		try {
-			TransformerProcessor tP = new TransformerProcessor(PROJECT_DIR);
+			TransformerProcessor tP = new TransformerProcessor(PROJECT_DIR, new EMFPersistenceLayer());
 			TransformationModel transformationModel = EMFTransformationLoader.ReadModel(transformation.getAbsolutePath());
 			tP.LoadModel(transformationModel);
 			tP.Execute();

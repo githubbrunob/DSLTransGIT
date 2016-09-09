@@ -7,6 +7,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
 
+import persistence.ModelExporter;
+import persistence.PersistenceLayer;
 import transformerProcessor.exceptions.InvalidAttributeRelationException;
 import transformerProcessor.exceptions.InvalidLayerRequirement;
 import transformerProcessor.exceptions.TransformationLayerException;
@@ -18,7 +20,6 @@ import dsltrans.Layer;
 import dsltrans.MatchModel;
 import dsltrans.MetaModelIdentifier;
 import dsltrans.Rule;
-import emfInterpreter.EMFExporter;
 import emfInterpreter.instance.InstanceDatabase;
 import emfInterpreter.instance.InstanceEntity;
 import emfInterpreter.metamodel.MetaEntity;
@@ -31,9 +32,9 @@ public abstract class TransformationLayer  extends TransformationUnit {
 	private InstanceDatabase _matchModel;
 	private List<TransformationRule> _rules = null;
 	private final TransformationController _controller;
+	private final PersistenceLayer persistenceLayer;
 	
-	
-	TransformationLayer(String classdir, TransformationController tc, Layer l) {
+	TransformationLayer(String classdir, TransformationController tc, Layer l, PersistenceLayer persistenceL) {
 		super(classdir);
 		_layer = l;
 		setPrecedingUnit(null);
@@ -41,6 +42,7 @@ public abstract class TransformationLayer  extends TransformationUnit {
 		setMatchModel(null);
 		setRules(new LinkedList<TransformationRule>());
 		_controller = tc;
+		persistenceLayer = persistenceL;
 	}
 
 	public void setRules(LinkedList<TransformationRule> linkedList) {
@@ -190,7 +192,7 @@ public abstract class TransformationLayer  extends TransformationUnit {
 			} else
 				this.getDatabase().setRootElement(ielist.get(0));
 		}
-		EMFExporter exporter = new EMFExporter();
+		ModelExporter exporter = persistenceLayer.buildModelExporter();
 		exporter.setDatabases(this.getMetaDatabase(),this.getDatabase());
 		MetaModelIdentifier mmi = getLayer().getMetaModelId();
 		String mmName = mmi.getMetaModelName();

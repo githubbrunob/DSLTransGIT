@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import persistence.PersistenceLayer;
 import transformerProcessor.exceptions.InvalidLayerRequirement;
 import transformerProcessor.exceptions.TransformationSourceException;
 import transformerProcessor.exceptions.UnsuportedMetamodelException;
@@ -21,17 +22,19 @@ public class TransformationController {
 	private final Map<String, Object> _factorys;
 	private final Map<String, Object> _metamodels;
 	private final String _classdir;
+	private final PersistenceLayer persistenceLayer;
 	
-	TransformationController(String classdir) {
+	TransformationController(String classdir, PersistenceLayer persistenceL) {
 		_units = new LinkedList<TransformationLayer>();
 		_sources = new LinkedList<TransformationSource>();
 		_factorys = new HashMap<String, Object>();
 		_metamodels = new HashMap<String, Object>();		
 		_classdir = classdir;
+		persistenceLayer = persistenceL;
 	}
 	
 	public void add(Layer l) {
-		getUnits().add(new TransformationSequentialLayer(getClassdir(), this, l));
+		getUnits().add(new TransformationSequentialLayer(getClassdir(), this, l,persistenceLayer));
 	}
 
 	public void add(FilePort source) {

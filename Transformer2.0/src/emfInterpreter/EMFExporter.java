@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
+import persistence.ModelExporter;
 import transformerProcessor.exceptions.UnsuportedMetamodelException;
 import emfInterpreter.instance.InstanceAttribute;
 import emfInterpreter.instance.InstanceDatabase;
@@ -25,21 +26,24 @@ import emfInterpreter.metamodel.MetaEntity;
 import emfInterpreter.metamodel.MetaModelDatabase;
 import emfInterpreter.metamodel.MetaRelation;
 
-public class EMFExporter extends EMFHandler {
+public class EMFExporter extends EMFHandler implements ModelExporter {
 
 	private InstanceDatabase _instanceDatabase=null;
 	private MetaModelDatabase _metaModelDatabase=null;
 
+	@Override
 	public void setDatabases(MetaModelDatabase metaModelDatabase,
 			InstanceDatabase database) {
 		setInstanceDatabase(database);
 		setMetaModelDatabase(metaModelDatabase);
 	}
 
+	@Override
 	public void setInstanceDatabase(InstanceDatabase database) {
 		_instanceDatabase = database;
 	}
-	
+
+	@Override
 	public InstanceDatabase getInstanceDatabase() {
 		return _instanceDatabase;
 	}
@@ -48,10 +52,12 @@ public class EMFExporter extends EMFHandler {
 		this._metaModelDatabase = _metaModelDatabase;
 	}
 
+	@Override
 	public MetaModelDatabase getMetaModelDatabase() {
 		return _metaModelDatabase;
 	}
-	
+
+	@Override
 	public void saveTo(String classname, String path) throws SecurityException, IllegalArgumentException, ClassNotFoundException, NoSuchFieldException, IllegalAccessException, IOException, InvocationTargetException, NoSuchMethodException, UnsuportedMetamodelException {
 		if(getMetaModelDatabase() == null || getInstanceDatabase() == null)
 			System.err.println("cannot save output without information databases");
@@ -76,30 +82,14 @@ public class EMFExporter extends EMFHandler {
 		fillInAttributes(this.getInstanceDatabase());
 		fillInRelations(this.getInstanceDatabase());
 		
-		//this.getInstanceDatabase().dump();
-		
-//		InstanceEntity instanceEntity = getRootElement(this.getInstanceDatabase(),rootEntity);
-//		if(instanceEntity == null)
-//			return; // nothing to output
-//		EObject outputmodel = instanceEntity.getObject();
-
 		URI fileURI = URI.createFileURI(file.getAbsolutePath());
 		
 		Resource modelResource = resourceSet.createResource(fileURI);
 		
 		List<InstanceEntity> ielist = this.getInstanceDatabase().getElementsByMetaEntity(rootEntity);
-//		for (InstanceEntity ie:ielist) {
-//			if (ie.getMetaEntity().getName().equals("Inherit")) {
-//				for (InstanceAttribute ia:this.getInstanceDatabase().getAttributesByInstanceEntity(ie)) 
-//					if (ia.getMetaAttribute().getName().equals("description"))
-//						System.out.println("!#$%&/(/&%$#!#$%&/Inherits: "+ia.getValue().toString());
-//			}
-//		}
-		
-//		for(InstanceEntity ie : ielist) {
-//			EObject outputmodel = ie.getObject();
-			modelResource.getContents().add(ielist.get(ielist.size()-1).getObject());
-//		}
+
+		modelResource.getContents().add(ielist.get(ielist.size()-1).getObject());
+
 		
 		modelResource.save(null);
 		
@@ -142,16 +132,6 @@ public class EMFExporter extends EMFHandler {
 					classtype = Class.forName(type);
 				}
 				Method method = object.getClass().getMethod("set" + first.toUpperCase()+remainder,classtype);
-//				System.out.println("DEBUG: "+ia.getValue());
-//				System.out.println("DEBUG type: "+ia.getMetaAttribute().getType());
-//				System.out.println("DEBUG type: "+ma.getType());
-//				if (ia.getValue()!=null)
-//				System.out.println("DEBUG: "+ia.getValue().getClass().getCanonicalName());
-//				System.out.println("DEBUG: "+method.getName());
-//				System.out.println("DEBUG: "+classtype);
-//				for (Class<?> classt : method.getParameterTypes()) {
-//					System.out.println("DEBUG :"+classt.getCanonicalName());
-//				}
 				if (type.equals("boolean"))
 					method.invoke(object, Boolean.valueOf(ia.getValue().toString()));
 				else if (type.equals("int"))
@@ -178,27 +158,8 @@ public class EMFExporter extends EMFHandler {
 				String remainder = name.substring(1, name.length());
 				Class<?> sourceclasstype = sourceobject.getClass();
 				if(mr.isSet()) {
-//DEBUG
-//System.out.println("DEBUG METHODS :"+"get" + first.toUpperCase()+remainder);
-//System.out.println("--- " + sourceclasstype.getCanonicalName());
-//System.out.println(ie.getMetaEntity().getName());
-//for (Method m : sourceclasstype.getDeclaredMethods()) {
-//	System.out.println("DEBUG METHODS: "+m.getName());
-//}
-//if (sourceclasstype.getSuperclass() != null) {
-//	for (Method m : sourceclasstype.getSuperclass().getDeclaredMethods())
-//		System.out.println("DEBUG ENCLOSING METHODS: "+m.getName());
-//	System.out.println(sourceclasstype.getSuperclass().toString());
-//}
-//else
-//	System.out.println("ENCLOSING NULL");
 					String methodName = "get" + first.toUpperCase()+remainder+(((first.toUpperCase()+remainder).equals("Class"))?"_":"");
 					Method method=null;
-//					try {
-//						method = sourceclasstype.getDeclaredMethod(methodName);
-//					} catch(Exception e) {
-//						method = sourceclasstype.getSuperclass().getDeclaredMethod(methodName);
-//					}					
 					Method[] methods = sourceclasstype.getMethods();
 					for(Method meth:methods) {
 						if(meth.getName().equals(methodName)) {
@@ -226,7 +187,6 @@ public class EMFExporter extends EMFHandler {
 						}
 					}
 					
-					//getDeclaredMethod("set" + first.toUpperCase()+remainder,classtype);
 				}
 			}
 		}

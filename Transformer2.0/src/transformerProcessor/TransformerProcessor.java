@@ -2,6 +2,7 @@ package transformerProcessor;
 
 import java.util.List;
 
+import persistence.PersistenceLayer;
 import transformerProcessor.exceptions.MissingFeatureException;
 import dsltrans.AbstractSource;
 import dsltrans.FilePort;
@@ -13,8 +14,8 @@ public class TransformerProcessor {
 	
 	private final TransformationController _controller;
 	
-	public TransformerProcessor(String classdir){
-		_controller = new TransformationController(classdir);
+	public TransformerProcessor(String classdir, PersistenceLayer persistenceL){
+		_controller = new TransformationController(classdir, persistenceL);
 	}
 	
 	public void setFileURI(String Name, String URI) {

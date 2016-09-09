@@ -5,7 +5,8 @@ Bundle-SymbolicName: Transformer2.0;singleton:=true
 Bundle-Version: 1.0.2.qualifier
 Bundle-ClassPath: .,
  lib/tools.jar,
- lib/diffutils-1.2.1.jar
+ lib/diffutils-1.2.1.jar,
+ lib/jiprolog-4.1.5.1.jar
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Require-Bundle: DSLTransEditor2.0,

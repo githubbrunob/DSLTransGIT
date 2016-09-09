@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import persistence.InstanceDatabase;
+import persistence.InstanceDatabaseManager;
 import persistence.PersistenceLayer;
 import transformerProcessor.exceptions.InvalidLayerRequirement;
 import transformerProcessor.exceptions.TransformationSourceException;
@@ -14,23 +15,28 @@ import transformerProcessor.exceptions.UnsuportedMetamodelException;
 import dsltrans.AbstractSource;
 import dsltrans.FilePort;
 import dsltrans.Layer;
+import emfInterpreter.EclipseInstanceDatabaseManager;
 import emfInterpreter.metamodel.MetaModelDatabase;
 
 public class TransformationController {
 	private final List<TransformationLayer> _units;
 	private final List<TransformationSource> _sources;
-	private final Map<String, Object> _factorys;
 	private final Map<String, Object> _metamodels;
 	private final String _classdir;
 	private final PersistenceLayer persistenceLayer;
+	private final InstanceDatabaseManager instanceDatabaseManager;
 	
-	TransformationController(String classdir, PersistenceLayer persistenceL) {
+	TransformationController(String classdir, PersistenceLayer persistenceL, InstanceDatabaseManager databaseManager) {
 		_units = new LinkedList<TransformationLayer>();
 		_sources = new LinkedList<TransformationSource>();
-		_factorys = new HashMap<String, Object>();
 		_metamodels = new HashMap<String, Object>();		
 		_classdir = classdir;
 		persistenceLayer = persistenceL;
+		instanceDatabaseManager = databaseManager;
+	}
+	
+	public InstanceDatabaseManager getDatabaseManager(){
+		return instanceDatabaseManager;
 	}
 	
 	public void add(Layer l) {
@@ -63,45 +69,12 @@ public class TransformationController {
 							l.Execute( unit );
 						}
 						l.setRules(null);
-						//releaseDatabases(getUnits());		
 					}
 				}
 			}
 		}
 	}
 	
-	/*
-	private void releaseDatabases(List<TransformationLayer> list) {
-		for(TransformationLayer transformationLayer:list) {
-			if(transformationLayer.isProcessed() && transformationLayer.getGroupName().isEmpty()
-				&& !belongsToSomeRequirements(transformationLayer)) {
-				
-				transformationLayer.setMetaDatabase(null);
-				transformationLayer.setDatabase(null);
-			}
-		}
-	}
-	*/
-	/*
-	private boolean belongsToSomeRequirements(
-			TransformationLayer tl) {
-
-		for(TransformationLayer transformationLayer:getUnits()) {
-			if(tl != transformationLayer && 
-				!transformationLayer.isProcessed()) {
-		
-				for(AbstractSource as: transformationLayer.getRequirements()) {
-					for(TransformationLayer l:getUnits()) {
-						if(l.getLayer() == as && l == tl) {
-							return true;
-						}
-					}
-				}
-			}
-		}
-		return false;
-	}
-	*/
 	private TransformationUnit resolve(AbstractSource requirement) throws InvalidLayerRequirement, TransformationSourceException, IOException, UnsuportedMetamodelException {
 		for(TransformationLayer l:getUnits()) {
 			if(l.getLayer() == requirement && l.isValid())
@@ -109,7 +82,7 @@ public class TransformationController {
 		}
 		for(TransformationSource s:getSources()) {
 			if(s.getPort() == requirement) {
-				s.Load(_factorys,getMetamodels());
+				s.Load(((EclipseInstanceDatabaseManager)instanceDatabaseManager).getFactorys(),getMetamodels());
 				s.Check();
 				return s;
 			}
@@ -140,18 +113,6 @@ public class TransformationController {
 		return null;
 	}
 	
-//	public InstanceDatabase checkDatabase(String metaModelURI) {
-//		for (TransformationSource ts: getSources()) {
-//			if ((ts.getPort().getMetaModelId().getMetaModelURI().equals(metaModelURI)) && (ts.isProcessed()))
-//				return ts.getDatabase();
-//		}
-//		return null;
-//	}
-	
-	public Map<String, Object> getFactorys() {
-		return _factorys;
-	}
-
 	public String getClassdir() {
 		return _classdir;
 	}

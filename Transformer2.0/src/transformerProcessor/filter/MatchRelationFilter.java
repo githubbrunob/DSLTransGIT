@@ -52,7 +52,6 @@ public class MatchRelationFilter  extends AbstractFilter {
 				   (ir.getTarget().getMetaEntity().isSubTypeOf(tme))
 				)
 				{
-//					System.out.println(sme.getDotNotation()+" s | t "+tme.getDotNotation()+" added relation: " + ir.getRelation().getName() + " hashCode: " + ir.hashCode() + " source: " + ir.getSource().getMetaEntity().getDotNotation() + " hash: " + ir.getSource().hashCode() + " source: " + ir.getTarget().getMetaEntity().getDotNotation() + " hash: " + ir.getTarget().hashCode());					
 					getFilterDatabase().addRelation(ir);
 				}
 			}			

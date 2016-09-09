@@ -16,6 +16,7 @@ import difflib.Patch;
 import dsltrans.TransformationModel;
 import emfInterpreter.EMFPersistenceLayer;
 import emfInterpreter.EMFTransformationLoader;
+import emfInterpreter.EclipseInstanceDatabaseManager;
 
 public class Tester {
 
@@ -147,7 +148,7 @@ public class Tester {
 	private static void runTransformation(File transformation) {
 		try {
 			TransformerProcessor tP = new TransformerProcessor(PROJECT_DIR,
-					new EMFPersistenceLayer());
+					new EMFPersistenceLayer(), new EclipseInstanceDatabaseManager());
 			TransformationModel transformationModel = EMFTransformationLoader
 					.ReadModel(transformation.getAbsolutePath());
 			tP.LoadModel(transformationModel);

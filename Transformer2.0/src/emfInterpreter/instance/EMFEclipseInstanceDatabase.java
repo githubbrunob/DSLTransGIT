@@ -1,10 +1,14 @@
 package emfInterpreter.instance;
 
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.Enumeration;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
+
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import emfInterpreter.metamodel.MetaEntity;
 import emfInterpreter.metamodel.MetaRelation;
@@ -13,10 +17,28 @@ import persistence.InstanceDatabase;
 import persistence.InstanceEntity;
 import persistence.InstanceRelation;
 
-public class EMFEclipseInstanceDatabase extends InstanceDatabase{
+public class EMFEclipseInstanceDatabase extends InstanceDatabase {
 
+	private Map<String,Object> _factorys;
+	
 	public EMFEclipseInstanceDatabase() {
 		super();
+		setFactorys(new Hashtable<String,Object>());
+	}
+	
+	public void setFactorys(Map<String,Object> _factorys) {
+		this._factorys = _factorys;
+	}
+
+	public Map<String,Object> getFactorys() {
+		return _factorys;
+	}
+	
+	public Object getFactory(String classname) throws ClassNotFoundException, SecurityException, NoSuchFieldException, IllegalArgumentException, IllegalAccessException {
+		if(getFactorys().containsKey(classname)) {
+			return getFactorys().get(classname);
+		}
+		throw new ClassNotFoundException();
 	}
 	
 	@Override
@@ -103,4 +125,18 @@ public class EMFEclipseInstanceDatabase extends InstanceDatabase{
 		return createInstance(entity.getMetaEntity());
 	}
 	
+	@Override
+	public InstanceEntity createInstance(MetaEntity me) throws ClassNotFoundException, SecurityException, NoSuchFieldException, IllegalArgumentException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+		String namespace = me.getNamespace();
+		String currentPackage = me.getCurrentPackage().substring(1);
+		currentPackage= Character.toUpperCase(me.getCurrentPackage().charAt(0)) + currentPackage;
+		//String currentPackage = me.getCurrentPackage();
+		String methodname = "create"+me.getName();
+		String classname = namespace+"."+currentPackage+"Factory";
+
+		Object factory = getFactory(classname);
+		
+		Method method = factory.getClass().getMethod(methodname);
+		return new InstanceEntity((EObjectImpl)method.invoke(factory), me);
+	}
 }

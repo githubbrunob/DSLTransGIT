@@ -13,6 +13,7 @@ import persistence.InstanceDatabase;
 import persistence.PersistenceLayer;
 import dsltrans.Layer;
 import emfInterpreter.EMFLoader;
+import emfInterpreter.EclipseInstanceDatabaseManager;
 import emfInterpreter.instance.EMFEclipseInstanceDatabase;
 import emfInterpreter.metamodel.MetaEntity;
 import emfInterpreter.metamodel.MetaModelDatabase;
@@ -30,7 +31,8 @@ public class TransformationSequentialLayer extends TransformationLayer {
 	}
 	
 	protected void prepareOutputModel(TransformationController control, String classpath) throws IOException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException {
-		Map<String, Object> factorys = control.getFactorys();
+		// TODO This has to go somewhere else.
+		Map<String, Object> factorys = ((EclipseInstanceDatabaseManager)control.getDatabaseManager()).getFactorys();
 		Map<String, Object> metamodels = control.getMetamodels();
 		String mmName = this.getMetamodelIdentifier();
 
@@ -61,7 +63,7 @@ public class TransformationSequentialLayer extends TransformationLayer {
 		// TODO: This cannot be done here. It probably should be done inside the EMF Exporter and then this object gets the database.
 		this.setDatabase(new EMFEclipseInstanceDatabase());
 		if (factorys != null)
-			this.getDatabase().setFactorys(factorys);
+			((EMFEclipseInstanceDatabase)this.getDatabase()).setFactorys(factorys);
 		
 		URL[] urlPath = {};
 		List<URL> urlList = new LinkedList<URL>();
@@ -74,25 +76,25 @@ public class TransformationSequentialLayer extends TransformationLayer {
 			String packageName = me.getCurrentPackage().substring(1);
 			packageName = Character.toUpperCase(me.getCurrentPackage().charAt(0)) + packageName;
 			String className = me.getNamespace()+"."+packageName+"Package";
-			if(!getDatabase().getFactorys().containsKey(className)) {
+			if(!((EMFEclipseInstanceDatabase)this.getDatabase()).getFactorys().containsKey(className)) {
 				Object factory = null;
 				Class<?> cc = Class.forName(className,false,customLoader);
 				Field f2 = cc.getField("eINSTANCE");
 				factory = (Object)f2.get(cc);
-				getDatabase().getFactorys().put(className, factory);
+				((EMFEclipseInstanceDatabase)this.getDatabase()).getFactorys().put(className, factory);
 				
 				String factoryName = me.getNamespace()+"."+packageName+"Factory";
-				if (!getDatabase().getFactorys().containsKey(factoryName)) {
+				if (!((EMFEclipseInstanceDatabase)this.getDatabase()).getFactorys().containsKey(factoryName)) {
 					Object factory1 = null;
 					Class<?> cc1 = Class.forName(factoryName,false,customLoader);
 					Field f21 = cc1.getField("eINSTANCE");
 					factory1 = (Object)f21.get(cc1);
-					getDatabase().getFactorys().put(factoryName, factory1);
+					((EMFEclipseInstanceDatabase)this.getDatabase()).getFactorys().put(factoryName, factory1);
 				}
 			}
 		}
 		if (factorys != null)
-			factorys.putAll(getDatabase().getFactorys());
+			factorys.putAll(((EMFEclipseInstanceDatabase)this.getDatabase()).getFactorys());
 	}
 
 }

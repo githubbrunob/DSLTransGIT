@@ -1,4 +1,4 @@
-package emfInterpreter.instance;
+package persistence;
 
 import emfInterpreter.metamodel.AbstractRelation;
 

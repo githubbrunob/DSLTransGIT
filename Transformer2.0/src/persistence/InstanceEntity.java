@@ -1,4 +1,4 @@
-package emfInterpreter.instance;
+package persistence;
 
 import java.util.Enumeration;
 import java.util.Hashtable;
@@ -76,8 +76,6 @@ public class InstanceEntity {
 	}	
 	
 	public boolean hasLoadedRelation(MetaRelation mr) {
-		// TODO Auto-generated method stub
-		
 		Iterator<MetaRelation> iter = this._loadedmetarelations.iterator();
 		while(iter.hasNext())
 		{
@@ -176,7 +174,6 @@ public class InstanceEntity {
 	}
 
 	public Enumeration<MetaRelation> getLastRelations() {
-		// TODO Auto-generated method stub
 		return _lastPerRelation.keys();
 	}
 }

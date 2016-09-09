@@ -7,6 +7,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
 
+import persistence.InstanceDatabase;
+import persistence.InstanceEntity;
 import persistence.ModelExporter;
 import persistence.PersistenceLayer;
 import transformerProcessor.exceptions.InvalidAttributeRelationException;
@@ -20,8 +22,6 @@ import dsltrans.Layer;
 import dsltrans.MatchModel;
 import dsltrans.MetaModelIdentifier;
 import dsltrans.Rule;
-import emfInterpreter.instance.InstanceDatabase;
-import emfInterpreter.instance.InstanceEntity;
 import emfInterpreter.metamodel.MetaEntity;
 import emfInterpreter.metamodel.MetaModelDatabase;
 

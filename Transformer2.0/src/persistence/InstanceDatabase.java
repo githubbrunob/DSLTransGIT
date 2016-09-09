@@ -1,4 +1,4 @@
-package emfInterpreter.instance;
+package persistence;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -11,6 +11,9 @@ import java.util.Map;
 
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import persistence.InstanceAttribute;
+import persistence.InstanceEntity;
+import persistence.InstanceRelation;
 import emfInterpreter.metamodel.MetaEntity;
 import emfInterpreter.metamodel.MetaRelation;
 
@@ -21,7 +24,7 @@ public class InstanceDatabase {
 	private List<InstanceRelation> _loadedRelations;
 	private Map<String,Object> _factorys;
 	private InstanceEntity _rootElement = null;
-		
+
 	public InstanceDatabase() {
 		_loadedClasses = new LinkedList<InstanceEntity>();
 		_loadedAttributes = new LinkedList<InstanceAttribute>();
@@ -67,6 +70,7 @@ public class InstanceDatabase {
 		return elist;
 	} 
 	
+	//TODO: This has to be moved to the more EMF specific class.
 	public InstanceDatabase clone(){
 		InstanceDatabase id = new InstanceDatabase();
 		id.setFactorys(this.getFactorys()); // share factories
@@ -279,7 +283,7 @@ public class InstanceDatabase {
 		}
 	}
 
-	public void recurseTransitiveGraph(InstanceEntity current) {
+	private void recurseTransitiveGraph(InstanceEntity current) {
 		List<InstanceRelation> irList = getLoadedRelations();
 		for(InstanceRelation ir : irList) {
 			if(ir.getRelation().isContainment() && ir.getSource() == current) {

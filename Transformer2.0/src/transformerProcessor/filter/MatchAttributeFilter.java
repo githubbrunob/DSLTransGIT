@@ -1,13 +1,13 @@
 package transformerProcessor.filter;
 
+import persistence.InstanceAttribute;
+import persistence.InstanceDatabase;
+import persistence.InstanceEntity;
 import dsltrans.Atom;
 import dsltrans.Attribute;
 import dsltrans.MatchAttribute;
 import dsltrans.MatchAttributeValue;
 import dsltrans.isNull;
-import emfInterpreter.instance.InstanceAttribute;
-import emfInterpreter.instance.InstanceDatabase;
-import emfInterpreter.instance.InstanceEntity;
 import emfInterpreter.metamodel.MetaAttribute;
 import emfInterpreter.metamodel.MetaModelDatabase;
 

@@ -3,15 +3,15 @@ package transformerProcessor.filter;
 import java.util.LinkedList;
 import java.util.List;
 
+import persistence.InstanceAttribute;
+import persistence.InstanceDatabase;
+import persistence.InstanceEntity;
+import transformerProcessor.TransformationRule;
+import transformerProcessor.exceptions.InvalidLayerRequirement;
 import dsltrans.Attribute;
 import dsltrans.MatchAttribute;
 import dsltrans.MatchClass;
-
-import transformerProcessor.TransformationRule;
-import transformerProcessor.exceptions.InvalidLayerRequirement;
-import emfInterpreter.instance.InstanceAttribute;
-import emfInterpreter.instance.InstanceDatabase;
-import emfInterpreter.instance.InstanceEntity;
+import emfInterpreter.instance.EMFEclipseInstanceDatabase;
 import emfInterpreter.metamodel.MetaEntity;
 import emfInterpreter.metamodel.MetaModelDatabase;
 

@@ -32,17 +32,18 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
+import persistence.InstanceAttribute;
+import persistence.InstanceEntity;
+import persistence.InstanceRelation;
+import persistence.ModelLoader;
 import transformerProcessor.exceptions.UnsuportedMetamodelException;
-import emfInterpreter.instance.InstanceAttribute;
-import emfInterpreter.instance.InstanceDatabase;
-import emfInterpreter.instance.InstanceEntity;
-import emfInterpreter.instance.InstanceRelation;
+import emfInterpreter.instance.EMFEclipseInstanceDatabase;
 import emfInterpreter.metamodel.MetaAttribute;
 import emfInterpreter.metamodel.MetaEntity;
 import emfInterpreter.metamodel.MetaModelDatabase;
 import emfInterpreter.metamodel.MetaRelation;
 
-public class EMFLoader extends EMFHandler {
+public class EMFLoader extends EMFHandler implements ModelLoader {
 
 	// meta information
 	private MetaModelDatabase _metamodeldatabase;
@@ -50,19 +51,21 @@ public class EMFLoader extends EMFHandler {
 	private MetaEntity _currentEntity;
 
 	// instance model
-	private InstanceDatabase _database;
+	private EMFEclipseInstanceDatabase _database;
 
 	public EMFLoader() {
 		setMetaModelDatabase(new MetaModelDatabase());
 		_namespace = new Stack<String>();
 		_currentEntity = null;
-		_database = new InstanceDatabase();
+		_database = new EMFEclipseInstanceDatabase();
 	}
 
-	public InstanceDatabase getDatabase() {
+	
+	public EMFEclipseInstanceDatabase getDatabase() {
 		return _database;
 	}
 
+	
 	public void print() {
 		System.out.println();
 		{
@@ -119,12 +122,12 @@ public class EMFLoader extends EMFHandler {
 			}
 		}
 	}
-
-	public boolean loadDatabase(String singleclassname, String url, String classpath) throws ClassNotFoundException, SecurityException, NoSuchFieldException, IllegalArgumentException,
+	
+	@Override
+	public void loadDatabase(String singleclassname, String url, String classpath) throws ClassNotFoundException, SecurityException, NoSuchFieldException, IllegalArgumentException,
 			IllegalAccessException, NoSuchMethodException, InvocationTargetException, UnsuportedMetamodelException {
 		// debug
 		System.out.println("LOADING database");
-		boolean resultstatus = true;
 
 		if (singleclassname.equals("ecore.Ecore"))
 			singleclassname = "org.eclipse.emf.ecore.Ecore";
@@ -206,7 +209,6 @@ public class EMFLoader extends EMFHandler {
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().clear();
 		resourceSet.getPackageRegistry().clear();
 
-		return resultstatus;
 	}
 
 	private InstanceEntity processEModel(EModelElementImpl objinstance) throws SecurityException, IllegalArgumentException, NoSuchMethodException, IllegalAccessException, InvocationTargetException,

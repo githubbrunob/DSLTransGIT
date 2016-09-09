@@ -11,7 +11,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-
+import persistence.InstanceAttribute;
+import persistence.InstanceDatabase;
+import persistence.InstanceEntity;
+import persistence.InstanceRelation;
 import transformerProcessor.PrologEngineSingleton;
 //import jpl.Atom;
 //import jpl.Query;
@@ -48,10 +51,7 @@ import dsltrans.PositiveMatchClass;
 import dsltrans.Rule;
 import dsltrans.impl.AttributeEqualityImpl;
 import dsltrans.impl.AttributeInequalityImpl;
-import emfInterpreter.instance.InstanceAttribute;
-import emfInterpreter.instance.InstanceDatabase;
-import emfInterpreter.instance.InstanceEntity;
-import emfInterpreter.instance.InstanceRelation;
+import emfInterpreter.instance.EMFEclipseInstanceDatabase;
 import emfInterpreter.metamodel.MetaModelDatabase;
 
 /*
@@ -133,7 +133,8 @@ public class MatchFilter {
 		prologEngineSingleton = PrologEngineSingleton.getEngineSingleton();
 		prologParser = prologEngineSingleton.getTermParser();
 		
-		_FilterDatabase = new InstanceDatabase();
+		//TODO: This should not be done here. Either create the normal instance database, or ask someelse to create the EMF Specific one for you.
+		_FilterDatabase = new EMFEclipseInstanceDatabase();
 		_matchentityFilters = new LinkedList<MatchEntityFilter>();
 		_matchrelationFilters = new LinkedList<MatchRelationFilter>();
 		_applyentityFilters = new LinkedList<ApplyEntityFilter>();
@@ -242,7 +243,7 @@ public class MatchFilter {
 	 * Perform partial queries
 	 * and then join the results using a prolog engine
 	 * */
-	public boolean process(TransformationController control,InstanceDatabase matchModel, InstanceDatabase applyModel,
+	public boolean process(TransformationController control, InstanceDatabase matchModel, InstanceDatabase applyModel,
 			MetaModelDatabase matchMetaModel, MetaModelDatabase applyMetaModel,
 			TermProcessor tp) throws Throwable {
 		
@@ -299,7 +300,7 @@ public class MatchFilter {
 	}
 
 	private boolean CreateRelations(InstanceDatabase matchModel,MetaModelDatabase matchMetaModel
-	) throws InvalidLayerRequirement {
+	) throws InvalidLayerRequirement, SecurityException, IllegalArgumentException, ClassNotFoundException, NoSuchFieldException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
 		for(MatchRelationFilter rf : getMatchRelationFilters()) {
 			if ((get_explicitMatchMetaModel() != null) && (get_explicitMatchModel() != null))
 				rf.process(get_explicitMatchModel(), get_explicitMatchMetaModel());
@@ -314,7 +315,7 @@ public class MatchFilter {
 	
 	private boolean CreateMatchEntities(InstanceDatabase matchModel,
 			MetaModelDatabase matchMetaModel,Map<String,InstanceEntity> map) 
-					throws InvalidLayerRequirement {
+					throws InvalidLayerRequirement, SecurityException, IllegalArgumentException, ClassNotFoundException, NoSuchFieldException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
 			// first only process positives...
 			_temporalCounter = 0;
 			InstanceDatabase runningMatchModel = matchModel;
@@ -359,7 +360,7 @@ public class MatchFilter {
 	}
 
 	private String generateAttributeValues(InstanceEntity ie, 
-			InstanceDatabase database,MetaModelDatabase metaModel) {
+			InstanceDatabase database, MetaModelDatabase metaModel) {
 		
 		String entry = "[";
 
@@ -489,7 +490,7 @@ public class MatchFilter {
 		return matchClass instanceof dsltrans.impl.NegativeMatchClassImpl;
 	}
 		
-	public boolean updateFilters(@SuppressWarnings("rawtypes") Hashtable binding,InstanceDatabase matchModel, InstanceDatabase applyModel)
+	public boolean updateFilters(@SuppressWarnings("rawtypes") Hashtable binding, InstanceDatabase matchModel, InstanceDatabase applyModel)
 	{		
 		for(MatchEntityFilter ef : getMatchEntityFilters()) {
 			if(isPositive(ef.getMatchClass())) {

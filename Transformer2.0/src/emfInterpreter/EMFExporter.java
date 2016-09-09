@@ -15,12 +15,13 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
+import persistence.InstanceAttribute;
+import persistence.InstanceDatabase;
+import persistence.InstanceEntity;
+import persistence.InstanceRelation;
 import persistence.ModelExporter;
 import transformerProcessor.exceptions.UnsuportedMetamodelException;
-import emfInterpreter.instance.InstanceAttribute;
-import emfInterpreter.instance.InstanceDatabase;
-import emfInterpreter.instance.InstanceEntity;
-import emfInterpreter.instance.InstanceRelation;
+import emfInterpreter.instance.EMFEclipseInstanceDatabase;
 import emfInterpreter.metamodel.MetaAttribute;
 import emfInterpreter.metamodel.MetaEntity;
 import emfInterpreter.metamodel.MetaModelDatabase;
@@ -28,7 +29,7 @@ import emfInterpreter.metamodel.MetaRelation;
 
 public class EMFExporter extends EMFHandler implements ModelExporter {
 
-	private InstanceDatabase _instanceDatabase=null;
+	private EMFEclipseInstanceDatabase _instanceDatabase = null;
 	private MetaModelDatabase _metaModelDatabase=null;
 
 	@Override
@@ -40,7 +41,7 @@ public class EMFExporter extends EMFHandler implements ModelExporter {
 
 	@Override
 	public void setInstanceDatabase(InstanceDatabase database) {
-		_instanceDatabase = database;
+		_instanceDatabase = (EMFEclipseInstanceDatabase) database;
 	}
 
 	@Override
@@ -79,8 +80,8 @@ public class EMFExporter extends EMFHandler implements ModelExporter {
 		(Resource.Factory.Registry.DEFAULT_EXTENSION, 
 				new XMIResourceFactoryImpl());		
 		
-		fillInAttributes(this.getInstanceDatabase());
-		fillInRelations(this.getInstanceDatabase());
+		fillInAttributes(this._instanceDatabase);
+		fillInRelations(this._instanceDatabase);
 		
 		URI fileURI = URI.createFileURI(file.getAbsolutePath());
 		
@@ -111,7 +112,7 @@ public class EMFExporter extends EMFHandler implements ModelExporter {
 		postProcessor.process(fileURI);
 	}
 
-	private void fillInAttributes(InstanceDatabase instancedatabase) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, ClassNotFoundException, SecurityException, NoSuchMethodException {
+	private void fillInAttributes(EMFEclipseInstanceDatabase instancedatabase) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, ClassNotFoundException, SecurityException, NoSuchMethodException {
 		for(InstanceEntity ie: instancedatabase.getLoadedClasses()) {
 			for(InstanceAttribute ia : instancedatabase.getAttributesByInstanceEntity(ie)) {
 				MetaAttribute ma = ia.getMetaAttribute();
@@ -143,7 +144,7 @@ public class EMFExporter extends EMFHandler implements ModelExporter {
 	}
 	
 	@SuppressWarnings("unchecked")
-	private void fillInRelations(InstanceDatabase instancedatabase) throws SecurityException, NoSuchMethodException, IllegalArgumentException, IllegalAccessException, InvocationTargetException, ClassNotFoundException {
+	private void fillInRelations(EMFEclipseInstanceDatabase instancedatabase) throws SecurityException, NoSuchMethodException, IllegalArgumentException, IllegalAccessException, InvocationTargetException, ClassNotFoundException {
 		int i=0;
 		while (i++<2)
 		for(InstanceEntity ie: instancedatabase.getLoadedClasses()) {

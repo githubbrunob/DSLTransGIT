@@ -1,14 +1,14 @@
 package transformerProcessor.filter;
 
+import persistence.InstanceDatabase;
+import persistence.InstanceRelation;
+import transformerProcessor.exceptions.InvalidLayerRequirement;
 import dsltrans.MatchAssociation;
 import dsltrans.MatchClass;
 import dsltrans.NegativeIndirectAssociation;
 import dsltrans.NegativeMatchAssociation;
 import dsltrans.PositiveIndirectAssociation;
 import dsltrans.PositiveMatchAssociation;
-import transformerProcessor.exceptions.InvalidLayerRequirement;
-import emfInterpreter.instance.InstanceDatabase;
-import emfInterpreter.instance.InstanceRelation;
 import emfInterpreter.metamodel.MetaEntity;
 import emfInterpreter.metamodel.MetaModelDatabase;
 

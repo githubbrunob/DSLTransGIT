@@ -2,13 +2,13 @@ package transformerProcessor.filter;
 
 import java.lang.reflect.InvocationTargetException;
 
+import persistence.InstanceAttribute;
+import persistence.InstanceDatabase;
+import persistence.InstanceEntity;
 import transformerProcessor.TransformationRule;
 import transformerProcessor.exceptions.InvalidLayerRequirement;
 import dsltrans.ApplyAttribute;
 import dsltrans.ApplyClass;
-import emfInterpreter.instance.InstanceAttribute;
-import emfInterpreter.instance.InstanceDatabase;
-import emfInterpreter.instance.InstanceEntity;
 import emfInterpreter.metamodel.DSLTransAttribute;
 import emfInterpreter.metamodel.MetaAttribute;
 import emfInterpreter.metamodel.MetaEntity;

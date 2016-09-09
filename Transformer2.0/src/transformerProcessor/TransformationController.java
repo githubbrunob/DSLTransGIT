@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import persistence.InstanceDatabase;
 import persistence.PersistenceLayer;
 import transformerProcessor.exceptions.InvalidLayerRequirement;
 import transformerProcessor.exceptions.TransformationSourceException;
@@ -13,7 +14,6 @@ import transformerProcessor.exceptions.UnsuportedMetamodelException;
 import dsltrans.AbstractSource;
 import dsltrans.FilePort;
 import dsltrans.Layer;
-import emfInterpreter.instance.InstanceDatabase;
 import emfInterpreter.metamodel.MetaModelDatabase;
 
 public class TransformationController {

@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
 import transformerProcessor.exceptions.UnsuportedMetamodelException;
-import emfInterpreter.instance.InstanceDatabase;
 import emfInterpreter.metamodel.MetaModelDatabase;
 
 public interface ModelExporter {

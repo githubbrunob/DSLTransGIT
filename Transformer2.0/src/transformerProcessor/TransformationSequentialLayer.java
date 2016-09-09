@@ -9,10 +9,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import persistence.InstanceDatabase;
 import persistence.PersistenceLayer;
 import dsltrans.Layer;
 import emfInterpreter.EMFLoader;
-import emfInterpreter.instance.InstanceDatabase;
+import emfInterpreter.instance.EMFEclipseInstanceDatabase;
 import emfInterpreter.metamodel.MetaEntity;
 import emfInterpreter.metamodel.MetaModelDatabase;
 
@@ -57,7 +58,8 @@ public class TransformationSequentialLayer extends TransformationLayer {
 		}
 		
 		this.setMetaDatabase(loader.getMetaModelDatabase());
-		this.setDatabase(new InstanceDatabase());
+		// TODO: This cannot be done here. It probably should be done inside the EMF Exporter and then this object gets the database.
+		this.setDatabase(new EMFEclipseInstanceDatabase());
 		if (factorys != null)
 			this.getDatabase().setFactorys(factorys);
 		

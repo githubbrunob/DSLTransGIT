@@ -1,6 +1,6 @@
 package transformerProcessor;
 
-import emfInterpreter.instance.InstanceDatabase;
+import persistence.InstanceDatabase;
 import emfInterpreter.metamodel.MetaModelDatabase;
 
 public abstract class TransformationUnit {

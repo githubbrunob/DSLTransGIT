@@ -2,12 +2,12 @@ package transformerProcessor.filter;
 
 import java.lang.reflect.InvocationTargetException;
 
+import persistence.InstanceDatabase;
+import persistence.InstanceRelation;
 import transformerProcessor.exceptions.InvalidLayerRequirement;
 import dsltrans.AbstractTemporalRelation;
 import dsltrans.ApplyClass;
 import dsltrans.MatchClass;
-import emfInterpreter.instance.InstanceDatabase;
-import emfInterpreter.instance.InstanceRelation;
 import emfInterpreter.metamodel.MetaModelDatabase;
 
 public class TemporalRelationFilter  extends AbstractFilter {
@@ -57,7 +57,6 @@ public class TemporalRelationFilter  extends AbstractFilter {
 			NoSuchFieldException, IllegalAccessException,
 			NoSuchMethodException, InvocationTargetException,
 			InvalidLayerRequirement {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

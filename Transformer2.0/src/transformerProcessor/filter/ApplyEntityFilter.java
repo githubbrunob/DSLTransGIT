@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import persistence.InstanceDatabase;
+import persistence.InstanceEntity;
 import transformerProcessor.TermProcessor;
 import transformerProcessor.TransformationController;
 import transformerProcessor.TransformationRule;
@@ -15,8 +17,6 @@ import com.sun.tools.javac.util.Pair;
 import dsltrans.ApplyAttribute;
 import dsltrans.ApplyClass;
 import dsltrans.Attribute;
-import emfInterpreter.instance.InstanceDatabase;
-import emfInterpreter.instance.InstanceEntity;
 import emfInterpreter.metamodel.MetaEntity;
 import emfInterpreter.metamodel.MetaModelDatabase;
 

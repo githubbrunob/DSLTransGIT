@@ -50,7 +50,6 @@ public class TransformationSource extends TransformationUnit {
 		if(!metamodels.containsKey(mmName)) {
 			String classDir = getClassdir();
 			loader.loadMetaModel(classDir, mmPath);
-			loader.generateMetaModelClasses(classDir, mmPath);
 			metamodels.put(mmName,loader.getMetaModelDatabase());
 		} else {
 			loader.setMetaModelDatabase((MetaModelDatabase) metamodels.get(mmName));

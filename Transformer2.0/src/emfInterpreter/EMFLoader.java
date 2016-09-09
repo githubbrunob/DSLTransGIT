@@ -578,6 +578,8 @@ public class EMFLoader extends EMFHandler {
 		resourceSet.getPackageRegistry().clear();
 		
 		System.out.println("Loading metamodel... DONE");
+		
+		generateMetaModelClasses(classdir, path);
 	}
 
 	public URI tryToFindModel(URI uri) {

@@ -67,7 +67,7 @@ public class InstanceDatabase {
 		return elist;
 	} 
 	
-	public InstanceDatabase clone() {
+	public InstanceDatabase clone(){
 		InstanceDatabase id = new InstanceDatabase();
 		id.setFactorys(this.getFactorys()); // share factories
 		Map<InstanceEntity,InstanceEntity> entitymap = new HashMap<InstanceEntity,InstanceEntity>();
@@ -87,25 +87,18 @@ public class InstanceDatabase {
 					}
 					id.addEntity(cloned);
 				} catch (SecurityException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (IllegalArgumentException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (NoSuchMethodException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (IllegalAccessException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (InvocationTargetException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (NoSuchFieldException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 		}}{

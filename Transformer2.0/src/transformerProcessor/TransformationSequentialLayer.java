@@ -3,7 +3,6 @@ package transformerProcessor;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.LinkedList;
@@ -52,12 +51,11 @@ public class TransformationSequentialLayer extends TransformationLayer {
 		if(!metamodels.containsKey(mmName)) {
 			String classDir = getClassdir();
 			loader.loadMetaModel(classDir, mmPath);
-			loader.generateMetaModelClasses(classDir, mmPath);
 			metamodels.put(mmName,loader.getMetaModelDatabase());
 		} else {
 			loader.setMetaModelDatabase((MetaModelDatabase) metamodels.get(mmName));
 		}
-					
+		
 		this.setMetaDatabase(loader.getMetaModelDatabase());
 		this.setDatabase(new InstanceDatabase());
 		if (factorys != null)
@@ -65,35 +63,31 @@ public class TransformationSequentialLayer extends TransformationLayer {
 		
 		URL[] urlPath = {};
 		List<URL> urlList = new LinkedList<URL>();
-		try {
-			urlList.add(new File(classpath+"/tempClasses").toURI().toURL());
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
+		urlList.add(new File(classpath+"/tempClasses").toURI().toURL());
 		urlPath = urlList.toArray(urlPath);
 
 		URLClassLoader customLoader = new URLClassLoader(urlPath,this.getClass().getClassLoader());	
 		
-		for(MetaEntity me : loader.getMetaModelDatabase().getClasses()) {
-			
-				String packageName = me.getCurrentPackage().substring(1);
-				packageName = Character.toUpperCase(me.getCurrentPackage().charAt(0)) + packageName;
-				String className = me.getNamespace()+"."+packageName+"Package";
+		for (MetaEntity me : loader.getMetaModelDatabase().getClasses()) {
+			String packageName = me.getCurrentPackage().substring(1);
+			packageName = Character.toUpperCase(me.getCurrentPackage().charAt(0)) + packageName;
+			String className = me.getNamespace()+"."+packageName+"Package";
+			if(!getDatabase().getFactorys().containsKey(className)) {
+				Object factory = null;
+				Class<?> cc = Class.forName(className,false,customLoader);
+				Field f2 = cc.getField("eINSTANCE");
+				factory = (Object)f2.get(cc);
+				getDatabase().getFactorys().put(className, factory);
+				
 				String factoryName = me.getNamespace()+"."+packageName+"Factory";
-				if(!getDatabase().getFactorys().containsKey(className)) {
-					Object factory = null;
-					Class<?> cc = Class.forName(className,false,customLoader);
-					Field f2 = cc.getField("eINSTANCE");
-					factory = (Object)f2.get(cc);
-					getDatabase().getFactorys().put(className, factory);
-					if(!getDatabase().getFactorys().containsKey(factoryName)) {
-						Object factory1 = null;
-						Class<?> cc1 = Class.forName(factoryName,false,customLoader);
-						Field f21 = cc1.getField("eINSTANCE");
-						factory1 = (Object)f21.get(cc1);
-						getDatabase().getFactorys().put(factoryName, factory1);
-					}
+				if (!getDatabase().getFactorys().containsKey(factoryName)) {
+					Object factory1 = null;
+					Class<?> cc1 = Class.forName(factoryName,false,customLoader);
+					Field f21 = cc1.getField("eINSTANCE");
+					factory1 = (Object)f21.get(cc1);
+					getDatabase().getFactorys().put(factoryName, factory1);
 				}
+			}
 		}
 		if (factorys != null)
 			factorys.putAll(getDatabase().getFactorys());

@@ -104,6 +104,7 @@ public class Tester {
                 while ((line = in.readLine()) != null) {
                         lines.add(line);
                 }
+                in.close();
         } catch (IOException e) {
                 e.printStackTrace();
         }

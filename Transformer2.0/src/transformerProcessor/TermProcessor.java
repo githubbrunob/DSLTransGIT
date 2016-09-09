@@ -3,7 +3,6 @@ package transformerProcessor;
 import java.util.HashMap;
 import java.util.List;
 
-import post_processor.SequenceExpansionProcessor;
 import transformerProcessor.filter.AbstractFilter;
 import transformerProcessor.filter.ApplyAttributeFilter;
 import transformerProcessor.filter.ApplyEntityFilter;
@@ -26,6 +25,7 @@ import dsltrans.Sequencer;
 import dsltrans.Term;
 import dsltrans.TypeOf;
 import dsltrans.Wildcard;
+import emfInterpreter.EMFSequenceExpansionProcessor;
 
 
 public class TermProcessor {
@@ -52,7 +52,7 @@ public class TermProcessor {
 			result += ((Atom)t).getValue();
 		} else if (t instanceof Sequencer) {
 			// Add here the other base case considering the sequencer term.
-			result += SequenceExpansionProcessor.SEQUENCER_STRING;
+			result += EMFSequenceExpansionProcessor.SEQUENCER_STRING;
 		} else if (t instanceof Operator) {
 			if (t instanceof Concat) {
 				Concat cc = (Concat)t;

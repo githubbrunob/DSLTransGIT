@@ -1,4 +1,4 @@
-package post_processor;
+package emfInterpreter;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,12 +22,12 @@ import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
 
-public class XMISchemaLocationPostProcessor implements PostProcessor{
+public class EMFXMISchemaLocationPostProcessor implements EMFPostProcessor{
 	
 	protected String metaModelFileName;
 	protected URI rootNsUri;
 	
-	public XMISchemaLocationPostProcessor(URI metamodelURI, URI rootNsUri) {
+	public EMFXMISchemaLocationPostProcessor(URI metamodelURI, URI rootNsUri) {
 		System.out.println("Initializing XMISchemaLocationPostProcessor to " + metamodelURI.toString());
 		this.metaModelFileName = extractFileName(metamodelURI);
 		this.rootNsUri = rootNsUri;
@@ -77,7 +77,7 @@ public class XMISchemaLocationPostProcessor implements PostProcessor{
 			transformer.setOutputProperty("indent", "yes");
 			transformer.transform(source, result);
 			
-			PostProcessorUtils.refreshOutputFile(fileURI);
+			EMFPostProcessorUtils.refreshOutputFile(fileURI);
 			
 			System.out.println("Done.");
 			

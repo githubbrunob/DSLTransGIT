@@ -1,4 +1,4 @@
-package post_processor;
+package emfInterpreter;
 
 import org.eclipse.core.resources.IFile;
 
@@ -12,7 +12,7 @@ import org.eclipse.core.runtime.Path;
 
 import org.eclipse.emf.common.util.URI;
 
-public class PostProcessorUtils {
+public class EMFPostProcessorUtils {
 
 	public static void refreshOutputFile(URI fileURI) throws CoreException {
 		System.out.println("Refreshing output...");

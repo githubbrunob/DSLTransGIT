@@ -2,15 +2,8 @@ package transformerProcessor;
 
 import java.util.List;
 
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-
+import transformerProcessor.exceptions.MissingFeatureException;
 import dsltrans.AbstractSource;
-import dsltrans.DsltransPackage;
 import dsltrans.FilePort;
 import dsltrans.Layer;
 import dsltrans.MetaModelIdentifier;
@@ -54,60 +47,28 @@ public class TransformerProcessor {
 				return;
 			}
 		}		
-	}	
-	
-	public boolean LoadModel(URI uri){
-		//debug
-		System.out.println("LOADING TransformationModel");
-		System.out.println(uri.toString());
-
-		boolean resultstatus = false;
-		try {
-			ResourceSet resourceSet = new ResourceSetImpl();
-				
-			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put
-			(Resource.Factory.Registry.DEFAULT_EXTENSION, 
-			 new XMIResourceFactoryImpl());
-				
-			resourceSet.getPackageRegistry().put(DsltransPackage.eNS_URI, DsltransPackage.eINSTANCE);				
-			
-			Resource resource = resourceSet.getResource(uri,true);
-			
-			List<EObject> list = resource.getContents();
-			if(list.size()>0) {
-				EObject obj = list.get(0);
-				if(obj instanceof TransformationModel) {
-					TransformationModel tm = (TransformationModel) obj;
-					process(tm);
-				}				
-			}
-			resultstatus = true;
-		} catch (SecurityException e) {
-			//e.printStackTrace();
-			System.err.println(e.getMessage());
-		} catch (IllegalArgumentException e) {
-			//e.printStackTrace();
-			System.err.println(e.getMessage());
-		}
-		return resultstatus;
-	}
-
-	public boolean LoadModel(String url) {
-		return LoadModel(URI.createFileURI(url));
 	}
 	
-	private void process(TransformationModel tm) {
+	public void LoadModel(TransformationModel tm) throws MissingFeatureException {
+		System.out.println("Loading TransformationModel");
+		process(tm);
+	}
+	
+	private void process(TransformationModel tm) throws MissingFeatureException {
 		List<AbstractSource> sourceList = tm.getSource();
 		for(AbstractSource source:sourceList) {
 			process(source);
 		}
 	}
 	
-	private void process(AbstractSource source) {
-		if(source instanceof Layer)
+	private void process(AbstractSource source) throws MissingFeatureException {
+		if(source instanceof Layer){
 			getController().add((Layer) source);
-		if(source instanceof FilePort)
-			getController().add((FilePort) source);
+		} else if(source instanceof FilePort){
+			getController().add((FilePort) source);			
+		} else{
+			throw new MissingFeatureException("Unknown kind of source: " + source);
+		}
 	}
 	
 	public void Execute() throws Throwable {

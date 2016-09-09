@@ -15,9 +15,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import post_processor.PostProcessor;
-import post_processor.SequenceExpansionProcessor;
-import post_processor.XMISchemaLocationPostProcessor;
 import transformerProcessor.exceptions.UnsuportedMetamodelException;
 import emfInterpreter.instance.InstanceAttribute;
 import emfInterpreter.instance.InstanceDatabase;
@@ -111,7 +108,7 @@ public class EMFExporter extends EMFHandler {
 		Resource rootResource = rootPackage.eResource();
 		URI rootURI = rootResource.getURI();
 		URI rootNsUri = URI.createURI(rootPackage.getNsURI());
-		PostProcessor postProcessor = new XMISchemaLocationPostProcessor(rootURI, rootNsUri);
+		EMFPostProcessor postProcessor = new EMFXMISchemaLocationPostProcessor(rootURI, rootNsUri);
 		postProcessor.process(fileURI);
 		
 		
@@ -120,7 +117,7 @@ public class EMFExporter extends EMFHandler {
 	}
 
 	private void expandSequences(URI fileURI) {
-		PostProcessor postProcessor = new SequenceExpansionProcessor();
+		EMFPostProcessor postProcessor = new EMFSequenceExpansionProcessor();
 		postProcessor.process(fileURI);
 	}
 

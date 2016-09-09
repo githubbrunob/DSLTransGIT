@@ -13,6 +13,8 @@ import transformerProcessor.TransformerProcessor;
 import difflib.Delta;
 import difflib.DiffUtils;
 import difflib.Patch;
+import dsltrans.TransformationModel;
+import emfInterpreter.EMFTransformationLoader;
 
 public class Tester {
 
@@ -57,7 +59,6 @@ public class Tester {
 		if (shouldIgnoreDir(testDir)) {
 			return;
 		}
-		
 		
 		File transformation = getTransformationFile(testDir);
 		createOrCleanTempDir();
@@ -110,15 +111,10 @@ public class Tester {
 }
 
 	private static void runTransformation(File transformation) {
-		
 		try {
-			String prop = System.getenv("SWI_HOME_DIR");
-			if (prop == null){
-				throw new InstantiationError("SWI_HOME_DIR system environment variable must be set to the path of Swi Prolog instalation.");
-			}
-			
 			TransformerProcessor tP = new TransformerProcessor(PROJECT_DIR);
-			tP.LoadModel(transformation.getAbsolutePath());
+			TransformationModel transformationModel = EMFTransformationLoader.ReadModel(transformation.getAbsolutePath());
+			tP.LoadModel(transformationModel);
 			tP.Execute();
 		} catch (Throwable e) {
 			System.err.println("Error running transformation: " + transformation.getAbsolutePath());

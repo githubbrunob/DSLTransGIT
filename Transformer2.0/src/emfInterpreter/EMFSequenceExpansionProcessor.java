@@ -1,4 +1,4 @@
-package post_processor;
+package emfInterpreter;
 
 import java.io.IOException;
 import java.util.Hashtable;
@@ -27,13 +27,13 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class SequenceExpansionProcessor implements PostProcessor {
+public class EMFSequenceExpansionProcessor implements EMFPostProcessor {
 	
 	public static final String SEQUENCER_STRING = "#seq";
 	
 	private Hashtable<String, Integer> counters;
 	
-	public SequenceExpansionProcessor() {
+	public EMFSequenceExpansionProcessor() {
 		super();
 		
 		counters = new Hashtable<String, Integer>();
@@ -70,7 +70,7 @@ public class SequenceExpansionProcessor implements PostProcessor {
 			transformer.setOutputProperty("indent", "yes");
 			transformer.transform(source, result);
 			
-			PostProcessorUtils.refreshOutputFile(fileURI);
+			EMFPostProcessorUtils.refreshOutputFile(fileURI);
 			
 			System.out.println("Done.");
 			

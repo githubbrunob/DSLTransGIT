@@ -6,8 +6,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import dsltrans.exceptions.InvalidLayerRequirement;
-import dsltrans.exceptions.UnsuportedMetamodelException;
+import dsltrans.transformer.exceptions.InvalidLayerRequirement;
+import dsltrans.transformer.exceptions.UnsuportedMetamodelException;
 
 public class MetaModelDatabase {
 	// data information

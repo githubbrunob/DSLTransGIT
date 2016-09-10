@@ -3,9 +3,9 @@ package dsltrans.io;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
-import dsltrans.exceptions.UnsuportedMetamodelException;
 import dsltrans.metamodel.MetaModelDatabase;
 import dsltrans.model.InstanceDatabase;
+import dsltrans.transformer.exceptions.UnsuportedMetamodelException;
 
 public interface ModelLoader {
 	

@@ -4,9 +4,9 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.MalformedURLException;
 
-import dsltrans.exceptions.UnsuportedMetamodelException;
 import dsltrans.metamodel.MetaModelDatabase;
 import dsltrans.model.InstanceDatabase;
+import dsltrans.transformer.exceptions.UnsuportedMetamodelException;
 
 public interface ModelExporter {
 

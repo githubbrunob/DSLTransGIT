@@ -6,10 +6,10 @@ import java.util.Map;
 
 import dsltrans.FilePort;
 import dsltrans.MetaModelIdentifier;
-import dsltrans.exceptions.TransformationSourceException;
-import dsltrans.exceptions.UnsuportedMetamodelException;
 import dsltrans.io.ModelLoader;
 import dsltrans.metamodel.MetaModelDatabase;
+import dsltrans.transformer.exceptions.TransformationSourceException;
+import dsltrans.transformer.exceptions.UnsuportedMetamodelException;
 
 public class TransformationSource extends TransformationUnit {
 	private final FilePort _port;

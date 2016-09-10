@@ -5,11 +5,11 @@ import java.lang.reflect.InvocationTargetException;
 import dsltrans.AbstractTemporalRelation;
 import dsltrans.ApplyClass;
 import dsltrans.MatchClass;
-import dsltrans.exceptions.InvalidLayerRequirement;
 import dsltrans.metamodel.MetaModelDatabase;
 import dsltrans.model.InstanceDatabase;
 import dsltrans.model.InstanceDatabaseManager;
 import dsltrans.model.InstanceRelation;
+import dsltrans.transformer.exceptions.InvalidLayerRequirement;
 
 public class TemporalRelationFilter  extends AbstractFilter {
 	

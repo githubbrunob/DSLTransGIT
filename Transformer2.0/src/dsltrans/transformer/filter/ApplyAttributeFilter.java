@@ -7,13 +7,13 @@ import dsltrans.Atom;
 import dsltrans.Attribute;
 import dsltrans.Rule;
 import dsltrans.Term;
-import dsltrans.exceptions.InvalidLayerRequirement;
 import dsltrans.metamodel.DSLTransAttribute;
 import dsltrans.metamodel.MetaModelDatabase;
 import dsltrans.model.InstanceAttribute;
 import dsltrans.model.InstanceDatabase;
 import dsltrans.model.InstanceDatabaseManager;
 import dsltrans.model.InstanceEntity;
+import dsltrans.transformer.exceptions.InvalidLayerRequirement;
 
 public class ApplyAttributeFilter extends AbstractFilter {
 

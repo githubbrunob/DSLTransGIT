@@ -4,7 +4,6 @@ import java.lang.reflect.InvocationTargetException;
 
 import dsltrans.ApplyAttribute;
 import dsltrans.ApplyClass;
-import dsltrans.exceptions.InvalidLayerRequirement;
 import dsltrans.metamodel.DSLTransAttribute;
 import dsltrans.metamodel.MetaAttribute;
 import dsltrans.metamodel.MetaEntity;
@@ -14,6 +13,7 @@ import dsltrans.model.InstanceDatabase;
 import dsltrans.model.InstanceDatabaseManager;
 import dsltrans.model.InstanceEntity;
 import dsltrans.transformer.TransformationRule;
+import dsltrans.transformer.exceptions.InvalidLayerRequirement;
 
 public class ApplyEntity extends ApplyEntityFilter {
 

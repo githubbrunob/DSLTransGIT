@@ -2,10 +2,10 @@ package dsltrans.transformer.filter;
 
 import java.lang.reflect.InvocationTargetException;
 
-import dsltrans.exceptions.InvalidLayerRequirement;
 import dsltrans.metamodel.MetaModelDatabase;
 import dsltrans.model.InstanceDatabase;
 import dsltrans.model.InstanceDatabaseManager;
+import dsltrans.transformer.exceptions.InvalidLayerRequirement;
 
 public abstract class AbstractFilter {
 	private final String _id;

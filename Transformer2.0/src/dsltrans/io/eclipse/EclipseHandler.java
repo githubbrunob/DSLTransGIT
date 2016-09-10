@@ -50,8 +50,8 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import dsltrans.exceptions.UnsuportedMetamodelException;
 import dsltrans.model.InstanceEntity;
+import dsltrans.transformer.exceptions.UnsuportedMetamodelException;
 
 public class EclipseHandler {
 

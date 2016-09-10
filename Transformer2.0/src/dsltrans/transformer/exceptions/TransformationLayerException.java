@@ -1,4 +1,4 @@
-package dsltrans.exceptions;
+package dsltrans.transformer.exceptions;
 
 import dsltrans.transformer.TransformationLayer;
 

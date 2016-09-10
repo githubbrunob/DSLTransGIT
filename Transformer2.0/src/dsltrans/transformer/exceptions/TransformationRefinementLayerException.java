@@ -1,4 +1,4 @@
-package dsltrans.exceptions;
+package dsltrans.transformer.exceptions;
 
 public class TransformationRefinementLayerException extends Exception {
 

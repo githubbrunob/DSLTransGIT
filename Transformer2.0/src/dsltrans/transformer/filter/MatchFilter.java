@@ -15,6 +15,7 @@ import java.util.Set;
 //import jpl.Query;
 //import jpl.Util;
 
+
 import com.sun.tools.javac.util.Pair;
 import com.ugos.jiprolog.engine.JIPEngine;
 import com.ugos.jiprolog.engine.JIPQuery;
@@ -40,7 +41,6 @@ import dsltrans.PositiveIndirectAssociation;
 import dsltrans.PositiveMatchAssociation;
 import dsltrans.PositiveMatchClass;
 import dsltrans.Rule;
-import dsltrans.exceptions.InvalidLayerRequirement;
 import dsltrans.impl.AttributeEqualityImpl;
 import dsltrans.impl.AttributeInequalityImpl;
 import dsltrans.io.eclipse.EclipseInstanceDatabase;
@@ -54,6 +54,7 @@ import dsltrans.transformer.PrologEngineSingleton;
 import dsltrans.transformer.TermProcessor;
 import dsltrans.transformer.TransformationController;
 import dsltrans.transformer.TransformationRule;
+import dsltrans.transformer.exceptions.InvalidLayerRequirement;
 
 /*
  * All the Prolog related stuff is in this class.

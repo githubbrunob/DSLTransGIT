@@ -10,7 +10,6 @@ import com.sun.tools.javac.util.Pair;
 import dsltrans.ApplyAttribute;
 import dsltrans.ApplyClass;
 import dsltrans.Attribute;
-import dsltrans.exceptions.InvalidLayerRequirement;
 import dsltrans.metamodel.MetaEntity;
 import dsltrans.metamodel.MetaModelDatabase;
 import dsltrans.model.InstanceDatabase;
@@ -19,6 +18,7 @@ import dsltrans.model.InstanceEntity;
 import dsltrans.transformer.TermProcessor;
 import dsltrans.transformer.TransformationController;
 import dsltrans.transformer.TransformationRule;
+import dsltrans.transformer.exceptions.InvalidLayerRequirement;
 
 public class ApplyEntityFilter extends AbstractFilter {
 

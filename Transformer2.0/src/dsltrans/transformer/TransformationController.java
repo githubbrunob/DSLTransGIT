@@ -10,14 +10,14 @@ import java.util.Map;
 import dsltrans.AbstractSource;
 import dsltrans.FilePort;
 import dsltrans.Layer;
-import dsltrans.exceptions.InvalidLayerRequirement;
-import dsltrans.exceptions.TransformationSourceException;
-import dsltrans.exceptions.UnsuportedMetamodelException;
 import dsltrans.io.PersistenceLayer;
 import dsltrans.io.eclipse.EclipseInstanceDatabaseManager;
 import dsltrans.metamodel.MetaModelDatabase;
 import dsltrans.model.InstanceDatabase;
 import dsltrans.model.InstanceDatabaseManager;
+import dsltrans.transformer.exceptions.InvalidLayerRequirement;
+import dsltrans.transformer.exceptions.TransformationSourceException;
+import dsltrans.transformer.exceptions.UnsuportedMetamodelException;
 
 public class TransformationController {
 	private final List<TransformationLayer> _units;

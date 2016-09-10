@@ -6,7 +6,6 @@ import java.util.List;
 import dsltrans.Attribute;
 import dsltrans.MatchAttribute;
 import dsltrans.MatchClass;
-import dsltrans.exceptions.InvalidLayerRequirement;
 import dsltrans.metamodel.MetaEntity;
 import dsltrans.metamodel.MetaModelDatabase;
 import dsltrans.model.InstanceAttribute;
@@ -14,6 +13,7 @@ import dsltrans.model.InstanceDatabase;
 import dsltrans.model.InstanceDatabaseManager;
 import dsltrans.model.InstanceEntity;
 import dsltrans.transformer.TransformationRule;
+import dsltrans.transformer.exceptions.InvalidLayerRequirement;
 
 public class MatchEntityFilter extends AbstractFilter {
 

@@ -6,7 +6,6 @@ import java.util.List;
 
 import dsltrans.ApplyAssociation;
 import dsltrans.ApplyClass;
-import dsltrans.exceptions.InvalidLayerRequirement;
 import dsltrans.metamodel.MetaModelDatabase;
 import dsltrans.metamodel.MetaRelation;
 import dsltrans.model.InstanceDatabase;
@@ -14,6 +13,7 @@ import dsltrans.model.InstanceDatabaseManager;
 import dsltrans.model.InstanceEntity;
 import dsltrans.model.InstanceRelation;
 import dsltrans.transformer.TransformationRule;
+import dsltrans.transformer.exceptions.InvalidLayerRequirement;
 
 public class Applyer {
 	private final List<ApplyEntity> _entities;

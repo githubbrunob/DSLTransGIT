@@ -6,12 +6,12 @@ import dsltrans.NegativeIndirectAssociation;
 import dsltrans.NegativeMatchAssociation;
 import dsltrans.PositiveIndirectAssociation;
 import dsltrans.PositiveMatchAssociation;
-import dsltrans.exceptions.InvalidLayerRequirement;
 import dsltrans.metamodel.MetaEntity;
 import dsltrans.metamodel.MetaModelDatabase;
 import dsltrans.model.InstanceDatabase;
 import dsltrans.model.InstanceDatabaseManager;
 import dsltrans.model.InstanceRelation;
+import dsltrans.transformer.exceptions.InvalidLayerRequirement;
 
 public class MatchRelationFilter  extends AbstractFilter {
 	

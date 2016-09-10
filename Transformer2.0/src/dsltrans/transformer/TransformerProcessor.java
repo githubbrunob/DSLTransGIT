@@ -7,9 +7,9 @@ import dsltrans.FilePort;
 import dsltrans.Layer;
 import dsltrans.MetaModelIdentifier;
 import dsltrans.TransformationModel;
-import dsltrans.exceptions.MissingFeatureException;
 import dsltrans.io.PersistenceLayer;
 import dsltrans.model.InstanceDatabaseManager;
+import dsltrans.transformer.exceptions.MissingFeatureException;
 
 public class TransformerProcessor {
 	

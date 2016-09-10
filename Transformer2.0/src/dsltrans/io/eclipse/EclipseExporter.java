@@ -31,7 +31,6 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import dsltrans.exceptions.UnsuportedMetamodelException;
 import dsltrans.io.ModelExporter;
 import dsltrans.metamodel.MetaAttribute;
 import dsltrans.metamodel.MetaEntity;
@@ -41,6 +40,7 @@ import dsltrans.model.InstanceAttribute;
 import dsltrans.model.InstanceDatabase;
 import dsltrans.model.InstanceEntity;
 import dsltrans.model.InstanceRelation;
+import dsltrans.transformer.exceptions.UnsuportedMetamodelException;
 
 public class EclipseExporter extends EclipseHandler implements ModelExporter {
 

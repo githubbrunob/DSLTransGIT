@@ -13,17 +13,17 @@ import dsltrans.Layer;
 import dsltrans.MatchModel;
 import dsltrans.MetaModelIdentifier;
 import dsltrans.Rule;
-import dsltrans.exceptions.InvalidAttributeRelationException;
-import dsltrans.exceptions.InvalidLayerRequirement;
-import dsltrans.exceptions.TransformationLayerException;
-import dsltrans.exceptions.TransformationRefinementLayerException;
-import dsltrans.exceptions.UnsuportedMetamodelException;
 import dsltrans.io.ModelExporter;
 import dsltrans.io.PersistenceLayer;
 import dsltrans.metamodel.MetaEntity;
 import dsltrans.metamodel.MetaModelDatabase;
 import dsltrans.model.InstanceDatabase;
 import dsltrans.model.InstanceEntity;
+import dsltrans.transformer.exceptions.InvalidAttributeRelationException;
+import dsltrans.transformer.exceptions.InvalidLayerRequirement;
+import dsltrans.transformer.exceptions.TransformationLayerException;
+import dsltrans.transformer.exceptions.TransformationRefinementLayerException;
+import dsltrans.transformer.exceptions.UnsuportedMetamodelException;
 
 public abstract class TransformationLayer  extends TransformationUnit {
 	private final Layer _layer;

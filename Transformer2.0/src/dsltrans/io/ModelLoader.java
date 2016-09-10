@@ -2,6 +2,7 @@ package dsltrans.io;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.net.MalformedURLException;
 
 import dsltrans.metamodel.MetaModelDatabase;
 import dsltrans.model.InstanceDatabase;
@@ -19,5 +20,7 @@ public interface ModelLoader {
 	public void setMetaModelDatabase(MetaModelDatabase metaModelDatabase);
 
 	public InstanceDatabase getDatabase();
+	
+	public void prepareDatabase(String classpath) throws ClassNotFoundException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException, MalformedURLException;
 	
 }

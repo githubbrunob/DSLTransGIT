@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Map;
 
 import dsltrans.Layer;
-import dsltrans.io.ModelExporter;
+import dsltrans.io.ModelLoader;
 import dsltrans.io.PersistenceLayer;
 import dsltrans.metamodel.MetaModelDatabase;
 import dsltrans.model.InstanceDatabase;
@@ -42,25 +42,24 @@ public class TransformationSequentialLayer extends TransformationLayer {
 		InstanceDatabaseManager instanceDatabaseManager = control.getDatabaseManager();
 		
 		String mmPath = this.getLayer().getMetaModelId().getMetaModelURI();
-		// TODO A model loader should be created to replace this.
-		ModelExporter exporter = this.persistenceLayer.buildModelExporter(instanceDatabaseManager);
+		ModelLoader loader = this.persistenceLayer.buildModelLoader(instanceDatabaseManager);
+		MetaModelDatabase loadedMetamodelDatabase = null;
 		if(!metamodels.containsKey(mmName)) {
 			String classDir = getClassdir();
-			exporter.loadMetaModel(classDir, mmPath);
-			metamodels.put(mmName,exporter.getMetaModelDatabase());
+			loader.loadMetaModel(classDir, mmPath);
+			loadedMetamodelDatabase = loader.getMetaModelDatabase();
+			metamodels.put(mmName,loader.getMetaModelDatabase());
 		} else {
-			// TODO this case is artificial. 
-			// Instead of putting the metamodel in the exporter, just keep it at hand to save it later.
-			exporter.setMetaModelDatabase((MetaModelDatabase) metamodels.get(mmName));
+			// Optimization: avoid loading a metamodel database again.
+			loadedMetamodelDatabase = (MetaModelDatabase) metamodels.get(mmName);
+			loader.setMetaModelDatabase(loadedMetamodelDatabase);
 		}
 
-		// TODO This method call will be made to the loader.
-		exporter.prepareDatabase(classpath);
+		loader.prepareDatabase(classpath);
 		
-		// TODO The loader will load the database and then these methods are called.
-		this.setMetaDatabase(exporter.getMetaModelDatabase());
+		this.setMetaDatabase(loadedMetamodelDatabase);
 		
-		this.setOutputModelDatabase(exporter.getInstanceDatabase());
+		this.setOutputModelDatabase(loader.getDatabase());
 		
 		
 		/*URL[] urlPath = {};

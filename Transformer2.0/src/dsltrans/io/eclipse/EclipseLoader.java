@@ -39,7 +39,6 @@ import dsltrans.metamodel.MetaEntity;
 import dsltrans.metamodel.MetaModelDatabase;
 import dsltrans.metamodel.MetaRelation;
 import dsltrans.model.InstanceAttribute;
-import dsltrans.model.InstanceDatabaseManager;
 import dsltrans.model.InstanceEntity;
 import dsltrans.model.InstanceRelation;
 import dsltrans.transformer.exceptions.UnsuportedMetamodelException;
@@ -130,15 +129,12 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		// debug
 		System.out.println("LOADING database");
 		
-		this.getDatabase().synchFactories();
-		
 		if (singleclassname.equals("ecore.Ecore"))
 			singleclassname = "org.eclipse.emf.ecore.Ecore";
 		String classname = singleclassname + "Package";
 		String factoryname = singleclassname + "Factory";
 
 		ResourceSet resourceSet = new ResourceSetImpl();
-
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
 
 		URL[] urlPath = {};
@@ -155,7 +151,8 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		// for(String fact : getDatabase().getFactorys().keySet()) {
 		// System.out.println("Factory: "+fact);
 		// }
-		if (!getDatabase().getFactorys().containsKey(classname)) {
+		Map<String, Object> knownFactories = getDatabase().getFactorys();
+		if (!knownFactories.containsKey(classname)) {
 			this.getClass().getClassLoader().clearAssertionStatus();
 			ClassLoader customLoader = new URLClassLoader(urlPath, this.getClass().getClassLoader());
 			{
@@ -166,19 +163,19 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 				f2.getType().cast(f2.get(cc));
 				Object factory = f2.get(cc);
 				resourceSet.getPackageRegistry().put((String) f1.get(cc), factory);
-				getDatabase().getFactorys().put(classname, factory);
+				knownFactories.put(classname, factory);
 			}
 			{
 				Class<?> cc = Class.forName(factoryname, true, customLoader);
 				Field f2 = cc.getField("eINSTANCE");
 				Object factory = (Object) f2.get(cc);
-				getDatabase().getFactorys().put(factoryname, factory);
+				knownFactories.put(factoryname, factory);
 			}
 		} else {
-			Object factory = getDatabase().getFactorys().get(classname);
+			Object factory = knownFactories.get(classname);
 			resourceSet.getPackageRegistry().put(classname, factory);
 		}
-
+		
 		URI URIurl = URI.createURI(url);
 		Resource resource = null;
 		if (URIurl.isRelative())
@@ -714,4 +711,47 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 	public MetaModelDatabase getMetaModelDatabase() {
 		return _metamodeldatabase;
 	}
+	
+	private void prepareDatabase(MetaEntity me, String classpath) throws ClassNotFoundException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException, MalformedURLException {
+		this.getDatabase().synchFactories();
+		
+		String packageName = me.getCurrentPackage().substring(1);
+		packageName = Character.toUpperCase(me.getCurrentPackage().charAt(0)) + packageName;
+		String className = me.getNamespace()+"."+packageName+"Package";
+		
+		URL[] urlPath = {};
+		List<URL> urlList = new LinkedList<URL>();
+		urlList.add(new File(classpath+"/tempClasses").toURI().toURL());
+		urlPath = urlList.toArray(urlPath);
+
+		URLClassLoader customLoader = new URLClassLoader(urlPath,this.getClass().getClassLoader());	
+		Map<String, Object> knownFactories = ((EclipseInstanceDatabase)this.getDatabase()).getFactorys();
+		if(!knownFactories.containsKey(className)) {
+			Object factory = null;
+			Class<?> cc = Class.forName(className,false,customLoader);
+			Field f2 = cc.getField("eINSTANCE");
+			factory = (Object)f2.get(cc);
+			knownFactories.put(className, factory);
+			
+			String factoryName = me.getNamespace()+"."+packageName+"Factory";
+			if (!knownFactories.containsKey(factoryName)) {
+				Object factory1 = null;
+				Class<?> cc1 = Class.forName(factoryName,false,customLoader);
+				Field f21 = cc1.getField("eINSTANCE");
+				factory1 = (Object)f21.get(cc1);
+				knownFactories.put(factoryName, factory1);
+			}
+		}
+		
+	}
+	
+	@Override
+	public void prepareDatabase(String classpath) throws ClassNotFoundException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException, MalformedURLException {
+		for (MetaEntity me : this.getMetaModelDatabase().getClasses()) {	
+			this.prepareDatabase(me, classpath);
+		}
+	}
+
+
+	
 }

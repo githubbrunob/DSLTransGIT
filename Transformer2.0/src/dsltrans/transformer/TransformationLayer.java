@@ -192,7 +192,8 @@ public abstract class TransformationLayer  extends TransformationUnit {
 				this.getOutputModelDatabase().setRootElement(ielist.get(0));
 		}
 		ModelExporter exporter = persistenceLayer.buildModelExporter();
-		exporter.setDatabases(this.getMetaDatabase(),this.getOutputModelDatabase());
+		exporter.setMetaModelDatabase(this.getMetaDatabase());
+		exporter.setInstanceDatabase(this.getOutputModelDatabase());
 		MetaModelIdentifier mmi = getLayer().getMetaModelId();
 		String mmName = mmi.getMetaModelName();
 

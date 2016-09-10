@@ -6,7 +6,6 @@ import java.util.Map;
 import dsltrans.Layer;
 import dsltrans.io.ModelExporter;
 import dsltrans.io.PersistenceLayer;
-import dsltrans.metamodel.MetaEntity;
 import dsltrans.metamodel.MetaModelDatabase;
 import dsltrans.model.InstanceDatabase;
 import dsltrans.model.InstanceDatabaseManager;
@@ -43,20 +42,26 @@ public class TransformationSequentialLayer extends TransformationLayer {
 		InstanceDatabaseManager instanceDatabaseManager = control.getDatabaseManager();
 		
 		String mmPath = this.getLayer().getMetaModelId().getMetaModelURI();
+		// TODO A model loader should be created to replace this.
 		ModelExporter exporter = this.persistenceLayer.buildModelExporter(instanceDatabaseManager);
 		if(!metamodels.containsKey(mmName)) {
 			String classDir = getClassdir();
 			exporter.loadMetaModel(classDir, mmPath);
 			metamodels.put(mmName,exporter.getMetaModelDatabase());
 		} else {
+			// TODO this case is artificial. 
+			// Instead of putting the metamodel in the exporter, just keep it at hand to save it later.
 			exporter.setMetaModelDatabase((MetaModelDatabase) metamodels.get(mmName));
 		}
+
+		// TODO This method call will be made to the loader.
+		exporter.prepareDatabase(classpath);
 		
+		// TODO The loader will load the database and then these methods are called.
 		this.setMetaDatabase(exporter.getMetaModelDatabase());
 		
 		this.setOutputModelDatabase(exporter.getInstanceDatabase());
 		
-		exporter.prepareDatabase(classpath);
 		
 		/*URL[] urlPath = {};
 		List<URL> urlList = new LinkedList<URL>();

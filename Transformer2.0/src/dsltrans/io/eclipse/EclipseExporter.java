@@ -62,13 +62,6 @@ public class EclipseExporter extends EclipseHandler implements ModelExporter {
 	}
 
 	@Override
-	public void setDatabases(MetaModelDatabase metaModelDatabase,
-			InstanceDatabase database) {
-		setInstanceDatabase(database);
-		setMetaModelDatabase(metaModelDatabase);
-	}
-
-	@Override
 	public void setInstanceDatabase(InstanceDatabase database) {
 		_outputInstanceDatabase = (EclipseInstanceDatabase) database;
 	}

@@ -1,6 +1,7 @@
 package transformerProcessor.filter;
 
 import persistence.InstanceDatabase;
+import persistence.InstanceDatabaseManager;
 import persistence.InstanceRelation;
 import transformerProcessor.exceptions.InvalidLayerRequirement;
 import dsltrans.MatchAssociation;
@@ -17,8 +18,8 @@ public class MatchRelationFilter  extends AbstractFilter {
 	private final MatchAssociation _association;
 	private InstanceRelation _currentRelation;
 
-	public MatchRelationFilter(MatchAssociation ma, String id) {
-		super(id);
+	public MatchRelationFilter(MatchAssociation ma, String id, InstanceDatabaseManager instanceDatabaseManager) {
+		super(id, instanceDatabaseManager);
 		_association = ma;
 		setCurrentRelation(null);
 	}

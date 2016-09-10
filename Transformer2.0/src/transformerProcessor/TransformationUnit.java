@@ -7,7 +7,7 @@ public abstract class TransformationUnit {
 	private boolean _processed;
 	private boolean _valid;
 	private String _classdir;
-	private InstanceDatabase _idatabase;
+	private InstanceDatabase _outputModelDatabase;
 	private MetaModelDatabase _mdatabase;	
 	
 	
@@ -35,12 +35,12 @@ public abstract class TransformationUnit {
 
 	public abstract void Check();
 	
-	public void setDatabase(InstanceDatabase _idatabase) {
-		this._idatabase = _idatabase;
+	public void setOutputModelDatabase(InstanceDatabase _idatabase) {
+		this._outputModelDatabase = _idatabase;
 	}
 
-	public InstanceDatabase getDatabase() {
-		return _idatabase;
+	public InstanceDatabase getOutputModelDatabase() {
+		return _outputModelDatabase;
 	}
 
 	public void setMetaDatabase(MetaModelDatabase _mdatabase) {

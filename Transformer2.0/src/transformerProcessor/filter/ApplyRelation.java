@@ -3,6 +3,7 @@ package transformerProcessor.filter;
 import java.lang.reflect.InvocationTargetException;
 
 import persistence.InstanceDatabase;
+import persistence.InstanceDatabaseManager;
 import persistence.InstanceRelation;
 import transformerProcessor.exceptions.InvalidLayerRequirement;
 import dsltrans.ApplyAssociation;
@@ -14,8 +15,8 @@ public class ApplyRelation extends AbstractFilter {
 	private final ApplyAssociation _association;
 	private InstanceRelation _currentRelation;
 
-	public ApplyRelation(ApplyAssociation ma, String id) {
-		super(id);
+	public ApplyRelation(ApplyAssociation ma, String id, InstanceDatabaseManager instanceDatabaseManager) {
+		super(id, instanceDatabaseManager);
 		_association = ma;
 		setCurrentRelation(null);
 	}

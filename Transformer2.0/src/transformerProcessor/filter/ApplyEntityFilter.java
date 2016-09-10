@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import persistence.InstanceDatabase;
+import persistence.InstanceDatabaseManager;
 import persistence.InstanceEntity;
 import transformerProcessor.TermProcessor;
 import transformerProcessor.TransformationController;
@@ -28,8 +29,8 @@ public class ApplyEntityFilter extends AbstractFilter {
 	private TransformationRule _transformationRule;
 	private boolean _imported = false;
 	
-	public ApplyEntityFilter(TransformationRule tr,ApplyClass mc, String id) {
-		super(id);
+	public ApplyEntityFilter(TransformationRule tr,ApplyClass mc, String id, InstanceDatabaseManager instanceDatabaseManager) {
+		super(id, instanceDatabaseManager);
 		_class = mc;
 		setCurrentEntity(null);
 		setTransformationRule(tr);
@@ -38,7 +39,7 @@ public class ApplyEntityFilter extends AbstractFilter {
 		
 		
 		for(ApplyAttribute ma : getApplyClass().getAttribute()) {
-			getFilterAttributes().add(new ApplyAttributeFilter(ma,id,this, getTransformationRule().getRule()));
+			getFilterAttributes().add(new ApplyAttributeFilter(ma,id,this, getTransformationRule().getRule(), instanceDatabaseManager));
 		}
 	}	
 
@@ -128,7 +129,7 @@ public class ApplyEntityFilter extends AbstractFilter {
 		String key = this.getApplyClass().getPackageName()+"."+upperCase;
 		if(metamodels.containsKey(key)) {
 			pair = new Pair<InstanceDatabase,MetaModelDatabase>(
-					control.getLastDatabase(
+					control.getLastOutputModelDatabase(
 							(MetaModelDatabase)metamodels.get(key),
 							getTransformationRule().getLayer(),
 							groupName

@@ -7,6 +7,7 @@ import java.util.List;
 
 import persistence.InstanceAttribute;
 import persistence.InstanceDatabase;
+import persistence.InstanceDatabaseManager;
 import persistence.InstanceEntity;
 import persistence.InstanceRelation;
 import transformerProcessor.exceptions.InvalidAttributeRelationException;
@@ -38,7 +39,6 @@ import dsltrans.Rule;
 import dsltrans.Term;
 import dsltrans.impl.AttributeEqualityImpl;
 import dsltrans.impl.AttributeInequalityImpl;
-import emfInterpreter.instance.EMFEclipseInstanceDatabase;
 import emfInterpreter.metamodel.DSLTransAttribute;
 import emfInterpreter.metamodel.MetaEntity;
 import emfInterpreter.metamodel.MetaModelDatabase;
@@ -54,19 +54,19 @@ public class TransformationRule {
 	private List<List<Hashtable>> solutionSet;
 	private TransformationLayer _layer=null;
 
-	public TransformationRule(TransformationLayer tl, Rule rule) {
+	public TransformationRule(TransformationLayer tl, Rule rule, InstanceDatabaseManager instanceDatabaseManager) {
 		_rule = rule;
 		setLayer(tl);
 		_matchFilters = new LinkedList<MatchFilter>();
 		setTermProcessor(new TermProcessor(_matchFilters));
 				
 		for (MatchModel mm : rule.getMatch()) {
-			MatchFilter mf = new MatchFilter(this,rule, mm);
+			MatchFilter mf = new MatchFilter(this,rule, mm, instanceDatabaseManager);
 			if (mm.getExplicitSource() != null) {
 				TransformationSource tu = tl.getSource(mm.getExplicitSource());
 				if (tu != null) {
 					mf.set_explicitMatchMetaModel(tu.getMetaDatabase());
-					mf.set_explicitMatchModel(tu.getDatabase());
+					mf.set_explicitMatchModel(tu.getOutputModelDatabase());
 				}
 			}
 			
@@ -75,7 +75,7 @@ public class TransformationRule {
 		
 		
 		
-		setApplyFilter(new Applyer(this));	
+		setApplyFilter(new Applyer(this, instanceDatabaseManager));	
 		setProcessed(false);
 	}
 
@@ -369,11 +369,11 @@ public class TransformationRule {
 	}
 	
 	
-	public void performApply(InstanceDatabase instanceDatabase, MetaModelDatabase applyMetaModel, InstanceDatabase matchModel) throws InvalidLayerRequirement, SecurityException, IllegalArgumentException, ClassNotFoundException, NoSuchFieldException, IllegalAccessException, NoSuchMethodException, InvocationTargetException{
+	public void performApply(InstanceDatabase outputModelInstanceDatabase, MetaModelDatabase applyMetaModel, InstanceDatabase matchModel) throws InvalidLayerRequirement, SecurityException, IllegalArgumentException, ClassNotFoundException, NoSuchFieldException, IllegalAccessException, NoSuchMethodException, InvocationTargetException{
 		// apply the transformation
-		getApplyFilter().performApply(instanceDatabase, applyMetaModel, matchModel);
+		getApplyFilter().performApply(outputModelInstanceDatabase, applyMetaModel, matchModel);
 		processMappings();
-		instantiateTemporalRelations(instanceDatabase);
+		instantiateTemporalRelations(outputModelInstanceDatabase);
 		getApplyFilter().updateFilters();
 	}
 

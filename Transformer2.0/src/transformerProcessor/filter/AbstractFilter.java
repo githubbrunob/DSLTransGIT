@@ -3,18 +3,17 @@ package transformerProcessor.filter;
 import java.lang.reflect.InvocationTargetException;
 
 import persistence.InstanceDatabase;
+import persistence.InstanceDatabaseManager;
 import transformerProcessor.exceptions.InvalidLayerRequirement;
-import emfInterpreter.instance.EMFEclipseInstanceDatabase;
 import emfInterpreter.metamodel.MetaModelDatabase;
 
 public abstract class AbstractFilter {
 	private final String _id;
 	private final InstanceDatabase _FilterDatabase;
 	
-	public AbstractFilter(String id) {
+	public AbstractFilter(String id, InstanceDatabaseManager instanceDatabaseManager) {
 		_id = id;
-		// TODO: This cannot be done here. It should create either a normal instance database, without factories, or it should asks someone else to create it.
-		_FilterDatabase = new EMFEclipseInstanceDatabase();
+		_FilterDatabase = instanceDatabaseManager.createInstanceDatabase();
 	}
 
 	public String getId() {

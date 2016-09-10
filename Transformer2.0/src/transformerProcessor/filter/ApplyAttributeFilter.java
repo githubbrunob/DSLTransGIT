@@ -4,6 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import persistence.InstanceAttribute;
 import persistence.InstanceDatabase;
+import persistence.InstanceDatabaseManager;
 import persistence.InstanceEntity;
 import transformerProcessor.exceptions.InvalidLayerRequirement;
 import dsltrans.ApplyAttribute;
@@ -22,8 +23,8 @@ public class ApplyAttributeFilter extends AbstractFilter {
 	private ApplyEntityFilter _entity;
 	private Rule _rule;
 	
-	public ApplyAttributeFilter(ApplyAttribute ma, String id, ApplyEntityFilter aef, Rule r) {
-		super(id);
+	public ApplyAttributeFilter(ApplyAttribute ma, String id, ApplyEntityFilter aef, Rule r, InstanceDatabaseManager instanceDatabaseManager) {
+		super(id, instanceDatabaseManager);
 		_attribute = ma;
 		setCurrentAttribute(null);
 		setEntity(aef);

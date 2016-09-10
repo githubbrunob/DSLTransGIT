@@ -5,13 +5,13 @@ import java.util.LinkedList;
 import java.util.List;
 
 import persistence.InstanceDatabase;
+import persistence.InstanceDatabaseManager;
 import persistence.InstanceEntity;
 import persistence.InstanceRelation;
 import transformerProcessor.TransformationRule;
 import transformerProcessor.exceptions.InvalidLayerRequirement;
 import dsltrans.ApplyAssociation;
 import dsltrans.ApplyClass;
-import emfInterpreter.instance.EMFEclipseInstanceDatabase;
 import emfInterpreter.metamodel.MetaModelDatabase;
 import emfInterpreter.metamodel.MetaRelation;
 
@@ -19,17 +19,17 @@ public class Applyer {
 	private final List<ApplyEntity> _entities;
 	private final List<ApplyRelation> _relations;
 
-	public Applyer(TransformationRule tr) {
+	public Applyer(TransformationRule tr, InstanceDatabaseManager instanceDatabaseManager) {
 		super();
 		_entities = new LinkedList<ApplyEntity>();
 		_relations = new LinkedList<ApplyRelation>();
 		
 		int id = 0;
 		for(ApplyClass mc : tr.getRule().getApply().getClass_()) {
-			getEntities().add(new ApplyEntity(tr,mc,"Id"+Integer.toString(id++)));
+			getEntities().add(new ApplyEntity(tr,mc,"Id"+Integer.toString(id++), instanceDatabaseManager));
 		}
 		for(ApplyAssociation ma : tr.getRule().getApply().getAssociation()) {
-			getRelations().add(new ApplyRelation(ma,"Id"+Integer.toString(id++)));	
+			getRelations().add(new ApplyRelation(ma,"Id"+Integer.toString(id++), instanceDatabaseManager));	
 		}
 	}
 

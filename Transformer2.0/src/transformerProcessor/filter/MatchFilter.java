@@ -13,6 +13,7 @@ import java.util.Set;
 
 import persistence.InstanceAttribute;
 import persistence.InstanceDatabase;
+import persistence.InstanceDatabaseManager;
 import persistence.InstanceEntity;
 import persistence.InstanceRelation;
 import transformerProcessor.PrologEngineSingleton;
@@ -128,13 +129,12 @@ public class MatchFilter {
 	}
 	
 	@SuppressWarnings("rawtypes")
-	public MatchFilter(TransformationRule tr, Rule rule, MatchModel mm) {
+	public MatchFilter(TransformationRule tr, Rule rule, MatchModel mm, InstanceDatabaseManager instanceDatabaseManager) {
 		
 		prologEngineSingleton = PrologEngineSingleton.getEngineSingleton();
 		prologParser = prologEngineSingleton.getTermParser();
 		
-		//TODO: This should not be done here. Either create the normal instance database, or ask someelse to create the EMF Specific one for you.
-		_FilterDatabase = new EMFEclipseInstanceDatabase();
+		_FilterDatabase = instanceDatabaseManager.createInstanceDatabase();
 		_matchentityFilters = new LinkedList<MatchEntityFilter>();
 		_matchrelationFilters = new LinkedList<MatchRelationFilter>();
 		_applyentityFilters = new LinkedList<ApplyEntityFilter>();
@@ -151,7 +151,7 @@ public class MatchFilter {
 		int id = 0;
 		
 		for (MatchClass mc : mm.getClass_()) {
-			getMatchEntityFilters().add(new MatchEntityFilter(tr,mc,"Id"+Integer.toString(id++)));
+			getMatchEntityFilters().add(new MatchEntityFilter(tr,mc,"Id"+Integer.toString(id++), instanceDatabaseManager));
 			
 
 			if(isNegative(mc)) {
@@ -162,19 +162,19 @@ public class MatchFilter {
 		for(AbstractTemporalRelation br : rule.getBackwards()) {
 			if(mm.getClass_().contains(br.getSourceClass()) // referent to this match model
 					&& !ac.contains(br.getTargetClass())) { // gather unique apply class
-				getApplyEntityFilters().add(new ApplyEntityFilter(tr,br.getTargetClass(),"Id"+Integer.toString(id++)));
+				getApplyEntityFilters().add(new ApplyEntityFilter(tr,br.getTargetClass(),"Id"+Integer.toString(id++), instanceDatabaseManager));
 				ac.add(br.getTargetClass());
 			}
 		}
 		for (MatchAssociation ma : mm.getAssociation()) {
 			if ( shouldBeBinded(ma) ) {
-				getMatchRelationFilters().add(new MatchRelationFilter(ma,"Id"+Integer.toString(id++)));
+				getMatchRelationFilters().add(new MatchRelationFilter(ma,"Id"+Integer.toString(id++), instanceDatabaseManager));
 			}
 		}
 			
 		for(AbstractTemporalRelation br : rule.getBackwards()) {
 			if(mm.getClass_().contains(br.getSourceClass())) {// referent to this match model
-				getTemporalFilters().add(new TemporalRelationFilter(br,"Id"+Integer.toString(id++)));
+				getTemporalFilters().add(new TemporalRelationFilter(br,"Id"+Integer.toString(id++), instanceDatabaseManager));
 			}
 		}
 		buildJoinPredicates();

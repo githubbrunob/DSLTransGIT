@@ -5,13 +5,13 @@ import java.util.List;
 
 import persistence.InstanceAttribute;
 import persistence.InstanceDatabase;
+import persistence.InstanceDatabaseManager;
 import persistence.InstanceEntity;
 import transformerProcessor.TransformationRule;
 import transformerProcessor.exceptions.InvalidLayerRequirement;
 import dsltrans.Attribute;
 import dsltrans.MatchAttribute;
 import dsltrans.MatchClass;
-import emfInterpreter.instance.EMFEclipseInstanceDatabase;
 import emfInterpreter.metamodel.MetaEntity;
 import emfInterpreter.metamodel.MetaModelDatabase;
 
@@ -22,15 +22,15 @@ public class MatchEntityFilter extends AbstractFilter {
 	private List<MatchAttributeFilter> _filterAttributes;
 	private TransformationRule _transformationrule;
 	
-	public MatchEntityFilter(TransformationRule tr, MatchClass mc, String id) {
-		super(id);
+	public MatchEntityFilter(TransformationRule tr, MatchClass mc, String id, InstanceDatabaseManager instanceDatabaseManager) {
+		super(id, instanceDatabaseManager);
 		setTransformationRule(tr);
 		_class = mc;
 		setCurrentEntity(null);
 		setFilterAttributes(new LinkedList<MatchAttributeFilter>());
 		
 		for(MatchAttribute ma : getMatchClass().getAttribute()) {
-			getFilterAttributes().add(new MatchAttributeFilter(ma,id, this));
+			getFilterAttributes().add(new MatchAttributeFilter(ma,id, this, instanceDatabaseManager));
 		}
 	}
 

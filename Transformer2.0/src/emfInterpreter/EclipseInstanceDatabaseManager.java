@@ -22,7 +22,7 @@ public class EclipseInstanceDatabaseManager implements InstanceDatabaseManager {
 
 	@Override
 	public InstanceDatabase createInstanceDatabase() {
-		return new EMFEclipseInstanceDatabase();
+		return new EMFEclipseInstanceDatabase(this);
 	}
 
 }

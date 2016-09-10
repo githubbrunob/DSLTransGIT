@@ -32,7 +32,7 @@ public abstract class TransformationLayer  extends TransformationUnit {
 	private InstanceDatabase _matchModel;
 	private List<TransformationRule> _rules = null;
 	private final TransformationController _controller;
-	private final PersistenceLayer persistenceLayer;
+	protected final PersistenceLayer persistenceLayer;
 	
 	TransformationLayer(String classdir, TransformationController tc, Layer l, PersistenceLayer persistenceL) {
 		super(classdir);
@@ -78,20 +78,20 @@ public abstract class TransformationLayer  extends TransformationUnit {
 			while(hasmatch) {
 				hasmatch = rule.performMatch(_controller,
 								this.getMatchModel(),
-								this.getDatabase(),
+								this.getOutputModelDatabase(),
 								this.getMatchMetaModel(),
 								this.getMetaDatabase()
 							);
 				if(hasmatch) 
-					rule.performApply(this.getDatabase(), this.getMetaDatabase(), this.getMatchModel());
+					rule.performApply(this.getOutputModelDatabase(), this.getMetaDatabase(), this.getMatchModel());
 			}
 			rule.clean();
 		}
 		
 		for(TransformationRule rule : getTransformationRules()) {
-			rule.MarkTemporalRelations(this.getDatabase());
+			rule.MarkTemporalRelations(this.getOutputModelDatabase());
 		}
-		this.getDatabase().refreshTemporals();
+		this.getOutputModelDatabase().refreshTemporals();
 	}
 
 	@Override
@@ -144,7 +144,7 @@ public abstract class TransformationLayer  extends TransformationUnit {
 	private void buildRules() {
 		System.out.println("building rules from layer: " + this.getLayer().getDescription());
 		for(Rule rule : this.getLayer().getHasRule()) {
-			getTransformationRules().add(new TransformationRule(this, rule));
+			getTransformationRules().add(new TransformationRule(this, rule, this._controller.getDatabaseManager()));
 		}
 	}
 
@@ -183,17 +183,17 @@ public abstract class TransformationLayer  extends TransformationUnit {
 		if(mmPathURI.isRelative())
 				outputpath = getClassdir()+"/"+ outputpath;
 		
-		if(this.getDatabase().getRootElement() == null) {
+		if(this.getOutputModelDatabase().getRootElement() == null) {
 			MetaEntity rootEntity = this.getMetaDatabase().getRootEntity();
-			List<InstanceEntity> ielist = this.getDatabase().getElementsByMetaEntity(rootEntity);
+			List<InstanceEntity> ielist = this.getOutputModelDatabase().getElementsByMetaEntity(rootEntity);
 			if(ielist.isEmpty()) {
 				System.err.println("Oops! There is nothing to output?");
 				return;
 			} else
-				this.getDatabase().setRootElement(ielist.get(0));
+				this.getOutputModelDatabase().setRootElement(ielist.get(0));
 		}
 		ModelExporter exporter = persistenceLayer.buildModelExporter();
-		exporter.setDatabases(this.getMetaDatabase(),this.getDatabase());
+		exporter.setDatabases(this.getMetaDatabase(),this.getOutputModelDatabase());
 		MetaModelIdentifier mmi = getLayer().getMetaModelId();
 		String mmName = mmi.getMetaModelName();
 

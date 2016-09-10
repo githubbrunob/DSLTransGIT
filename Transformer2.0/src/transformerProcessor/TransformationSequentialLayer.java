@@ -1,20 +1,13 @@
 package transformerProcessor;
 
-import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Field;
-import java.net.URL;
-import java.net.URLClassLoader;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 
 import persistence.InstanceDatabase;
+import persistence.InstanceDatabaseManager;
+import persistence.ModelExporter;
 import persistence.PersistenceLayer;
 import dsltrans.Layer;
-import emfInterpreter.EMFLoader;
-import emfInterpreter.EclipseInstanceDatabaseManager;
-import emfInterpreter.instance.EMFEclipseInstanceDatabase;
 import emfInterpreter.metamodel.MetaEntity;
 import emfInterpreter.metamodel.MetaModelDatabase;
 
@@ -27,12 +20,10 @@ public class TransformationSequentialLayer extends TransformationLayer {
 	protected void prepareInputModel() {
 		TransformationSource ts = getTransformationSource(this.getPrecedingUnit());
 		setMatchMetaModel(ts.getMetaDatabase());
-		setMatchModel(ts.getDatabase());
+		setMatchModel(ts.getOutputModelDatabase());
 	}
 	
 	protected void prepareOutputModel(TransformationController control, String classpath) throws IOException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException {
-		// TODO This has to go somewhere else.
-		Map<String, Object> factorys = ((EclipseInstanceDatabaseManager)control.getDatabaseManager()).getFactorys();
 		Map<String, Object> metamodels = control.getMetamodels();
 		String mmName = this.getMetamodelIdentifier();
 
@@ -40,32 +31,34 @@ public class TransformationSequentialLayer extends TransformationLayer {
 				&& metamodels.containsKey(mmName)) {
 			
 			MetaModelDatabase mmd = (MetaModelDatabase) metamodels.get(mmName);
-			InstanceDatabase id = control.getLastDatabase(mmd,this,this.getGroupName());
-			if(id != this.getDatabase()) {
-				this.setDatabase(id.clone()); // this.getPrecedingUnit().getDatabase() forward the previous database
+			InstanceDatabase id = control.getLastOutputModelDatabase(mmd,this,this.getGroupName());
+			if(id != this.getOutputModelDatabase()) {
+				this.setOutputModelDatabase(id.clone()); // this.getPrecedingUnit().getDatabase() forward the previous database
 				this.setMetaDatabase(mmd);
-				return; // were set here...
+				return; // we're set here...
 			}
 		}
 		
 		// create a new one			
+		InstanceDatabaseManager instanceDatabaseManager = control.getDatabaseManager();
+		
 		String mmPath = this.getLayer().getMetaModelId().getMetaModelURI();
-		EMFLoader loader = new EMFLoader();
+		ModelExporter exporter = this.persistenceLayer.buildModelExporter(instanceDatabaseManager);
 		if(!metamodels.containsKey(mmName)) {
 			String classDir = getClassdir();
-			loader.loadMetaModel(classDir, mmPath);
-			metamodels.put(mmName,loader.getMetaModelDatabase());
+			exporter.loadMetaModel(classDir, mmPath);
+			metamodels.put(mmName,exporter.getMetaModelDatabase());
 		} else {
-			loader.setMetaModelDatabase((MetaModelDatabase) metamodels.get(mmName));
+			exporter.setMetaModelDatabase((MetaModelDatabase) metamodels.get(mmName));
 		}
 		
-		this.setMetaDatabase(loader.getMetaModelDatabase());
-		// TODO: This cannot be done here. It probably should be done inside the EMF Exporter and then this object gets the database.
-		this.setDatabase(new EMFEclipseInstanceDatabase());
-		if (factorys != null)
-			((EMFEclipseInstanceDatabase)this.getDatabase()).setFactorys(factorys);
+		this.setMetaDatabase(exporter.getMetaModelDatabase());
 		
-		URL[] urlPath = {};
+		this.setOutputModelDatabase(exporter.getInstanceDatabase());
+		
+		exporter.prepareDatabase(classpath);
+		
+		/*URL[] urlPath = {};
 		List<URL> urlList = new LinkedList<URL>();
 		urlList.add(new File(classpath+"/tempClasses").toURI().toURL());
 		urlPath = urlList.toArray(urlPath);
@@ -94,7 +87,7 @@ public class TransformationSequentialLayer extends TransformationLayer {
 			}
 		}
 		if (factorys != null)
-			factorys.putAll(((EMFEclipseInstanceDatabase)this.getDatabase()).getFactorys());
+			factorys.putAll(((EMFEclipseInstanceDatabase)this.getDatabase()).getFactorys());*/
 	}
 
 }

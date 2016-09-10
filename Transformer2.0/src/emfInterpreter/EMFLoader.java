@@ -11,6 +11,7 @@ import java.net.URLClassLoader;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Stack;
 
 import org.eclipse.emf.common.util.EList;
@@ -33,6 +34,7 @@ import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import persistence.InstanceAttribute;
+import persistence.InstanceDatabaseManager;
 import persistence.InstanceEntity;
 import persistence.InstanceRelation;
 import persistence.ModelLoader;
@@ -53,11 +55,11 @@ public class EMFLoader extends EMFHandler implements ModelLoader {
 	// instance model
 	private EMFEclipseInstanceDatabase _database;
 
-	public EMFLoader() {
+	public EMFLoader(EclipseInstanceDatabaseManager instanceDatabaseManager) {
 		setMetaModelDatabase(new MetaModelDatabase());
 		_namespace = new Stack<String>();
 		_currentEntity = null;
-		_database = new EMFEclipseInstanceDatabase();
+		_database = (EMFEclipseInstanceDatabase) instanceDatabaseManager.createInstanceDatabase();
 	}
 
 	
@@ -128,7 +130,9 @@ public class EMFLoader extends EMFHandler implements ModelLoader {
 			IllegalAccessException, NoSuchMethodException, InvocationTargetException, UnsuportedMetamodelException {
 		// debug
 		System.out.println("LOADING database");
-
+		
+		this.getDatabase().synchFactories();
+		
 		if (singleclassname.equals("ecore.Ecore"))
 			singleclassname = "org.eclipse.emf.ecore.Ecore";
 		String classname = singleclassname + "Package";

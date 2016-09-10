@@ -3,6 +3,7 @@ package transformerProcessor.filter;
 import java.lang.reflect.InvocationTargetException;
 
 import persistence.InstanceDatabase;
+import persistence.InstanceDatabaseManager;
 import persistence.InstanceRelation;
 import transformerProcessor.exceptions.InvalidLayerRequirement;
 import dsltrans.AbstractTemporalRelation;
@@ -15,8 +16,8 @@ public class TemporalRelationFilter  extends AbstractFilter {
 	private final AbstractTemporalRelation _association;
 	private InstanceRelation _currentRelation;
 
-	public TemporalRelationFilter(AbstractTemporalRelation ma, String id) {
-		super(id);
+	public TemporalRelationFilter(AbstractTemporalRelation ma, String id, InstanceDatabaseManager instanceDatabaseManager) {
+		super(id, instanceDatabaseManager);
 		_association = ma;
 		setCurrentRelation(null);
 	}

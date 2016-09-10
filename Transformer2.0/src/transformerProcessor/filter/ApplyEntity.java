@@ -4,6 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import persistence.InstanceAttribute;
 import persistence.InstanceDatabase;
+import persistence.InstanceDatabaseManager;
 import persistence.InstanceEntity;
 import transformerProcessor.TransformationRule;
 import transformerProcessor.exceptions.InvalidLayerRequirement;
@@ -18,8 +19,8 @@ public class ApplyEntity extends ApplyEntityFilter {
 
 	private boolean _pastEntity = false;
 	
-	public ApplyEntity(TransformationRule tr, ApplyClass mc, String id) {
-		super(tr, mc, id);
+	public ApplyEntity(TransformationRule tr, ApplyClass mc, String id, InstanceDatabaseManager instanceDatabaseManager) {
+		super(tr, mc, id, instanceDatabaseManager);
 	}
 
 	public boolean performApply(InstanceDatabase database,

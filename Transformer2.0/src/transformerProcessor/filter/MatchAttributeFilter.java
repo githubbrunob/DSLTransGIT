@@ -2,6 +2,7 @@ package transformerProcessor.filter;
 
 import persistence.InstanceAttribute;
 import persistence.InstanceDatabase;
+import persistence.InstanceDatabaseManager;
 import persistence.InstanceEntity;
 import dsltrans.Atom;
 import dsltrans.Attribute;
@@ -18,8 +19,8 @@ public class MatchAttributeFilter extends AbstractFilter {
 	private InstanceAttribute _currentAttribute;
 	private MatchEntityFilter _entity;
 	
-	public MatchAttributeFilter(MatchAttribute ma, String id, MatchEntityFilter mef) {
-		super(id);
+	public MatchAttributeFilter(MatchAttribute ma, String id, MatchEntityFilter mef, InstanceDatabaseManager instanceDatabaseManager) {
+		super(id, instanceDatabaseManager);
 		_attribute = ma;
 		setCurrentAttribute(null);
 		setEntity(mef);

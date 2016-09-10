@@ -1,6 +1,7 @@
 package transformerProcessor;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -40,7 +41,7 @@ public class TransformationController {
 	}
 	
 	public void add(Layer l) {
-		getUnits().add(new TransformationSequentialLayer(getClassdir(), this, l,persistenceLayer));
+		getUnits().add(new TransformationSequentialLayer(getClassdir(), this, l, persistenceLayer));
 	}
 
 	public void add(FilePort source) {
@@ -75,14 +76,14 @@ public class TransformationController {
 		}
 	}
 	
-	private TransformationUnit resolve(AbstractSource requirement) throws InvalidLayerRequirement, TransformationSourceException, IOException, UnsuportedMetamodelException {
+	private TransformationUnit resolve(AbstractSource requirement) throws InvalidLayerRequirement, TransformationSourceException, IOException, UnsuportedMetamodelException, ClassNotFoundException, SecurityException, NoSuchFieldException, IllegalArgumentException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
 		for(TransformationLayer l:getUnits()) {
 			if(l.getLayer() == requirement && l.isValid())
 				return l;
 		}
 		for(TransformationSource s:getSources()) {
 			if(s.getPort() == requirement) {
-				s.Load(((EclipseInstanceDatabaseManager)instanceDatabaseManager).getFactorys(),getMetamodels());
+				s.Load(persistenceLayer.buildModelLoader(instanceDatabaseManager), getMetamodels());
 				s.Check();
 				return s;
 			}
@@ -121,7 +122,7 @@ public class TransformationController {
 		return _metamodels;
 	}
 
-	public InstanceDatabase getLastDatabase(MetaModelDatabase mmd, 
+	public InstanceDatabase getLastOutputModelDatabase(MetaModelDatabase mmd, 
 			TransformationLayer layer, String groupName) {
 
 		{
@@ -129,13 +130,13 @@ public class TransformationController {
 			do {
 				if(ts.getMetaDatabase() == mmd &&
 						ts.getGroupName().equals(groupName))
-						return ts.getDatabase();
+						return ts.getOutputModelDatabase();
 				if(!(ts.getPrecedingUnit() instanceof TransformationLayer))
 					break;
 				ts = (TransformationLayer)ts.getPrecedingUnit();
 			}
 			while(ts instanceof TransformationLayer);
 		}
-		return layer.getDatabase();
+		return layer.getOutputModelDatabase();
 	}
 }

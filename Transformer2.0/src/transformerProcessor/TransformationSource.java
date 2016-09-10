@@ -4,11 +4,11 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
-import dsltrans.FilePort;
-import dsltrans.MetaModelIdentifier;
+import persistence.ModelLoader;
 import transformerProcessor.exceptions.TransformationSourceException;
 import transformerProcessor.exceptions.UnsuportedMetamodelException;
-import emfInterpreter.EMFLoader;
+import dsltrans.FilePort;
+import dsltrans.MetaModelIdentifier;
 import emfInterpreter.metamodel.MetaModelDatabase;
 
 public class TransformationSource extends TransformationUnit {
@@ -18,7 +18,7 @@ public class TransformationSource extends TransformationUnit {
 		super(classdir);
 		_port = p;
 		setMetaDatabase(null);
-		setDatabase(null);
+		setOutputModelDatabase(null);
 	}
 
 	public FilePort getPort() {
@@ -30,14 +30,14 @@ public class TransformationSource extends TransformationUnit {
 		setValid(false); // let's assume that it is not valid..
 		if(getMetaDatabase() == null)
 			return;
-		if(getDatabase() == null)
+		if(getOutputModelDatabase() == null)
 			return;
 		// TODO check if loaded model is compatible with loaded meta model
 		
 		setValid(true); // if passed all above conditions then it is valid
 	}
 
-	public void Load(Map<String, Object> factorys, Map<String, Object> metamodels) throws TransformationSourceException, IOException, UnsuportedMetamodelException {
+	public void Load(ModelLoader loader, Map<String, Object> metamodels) throws TransformationSourceException, IOException, UnsuportedMetamodelException, ClassNotFoundException, SecurityException, NoSuchFieldException, IllegalArgumentException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
 		if(isProcessed()) return;
 		MetaModelIdentifier mmi = getPort().getMetaModelId();
 		
@@ -46,7 +46,6 @@ public class TransformationSource extends TransformationUnit {
 		
 		String inputPath = getPort().getFilePathURI();
 		
-		EMFLoader loader = new EMFLoader();
 		if(!metamodels.containsKey(mmName)) {
 			String classDir = getClassdir();
 			loader.loadMetaModel(classDir, mmPath);
@@ -55,30 +54,13 @@ public class TransformationSource extends TransformationUnit {
 			loader.setMetaModelDatabase((MetaModelDatabase) metamodels.get(mmName));
 		}
 		
-		try {
-			System.out.println("metamodel: "+mmName);
-			loader.getDatabase().setFactorys(factorys);
-			
-			loader.loadDatabase(mmName, inputPath,getClassdir());
-			loader.getDatabase().createTransitiveGraph();
-			setDatabase(loader.getDatabase());
-			setMetaDatabase(loader.getMetaModelDatabase());
-			this.setProcessed(true);
-		} catch (SecurityException e) {
-			throw new TransformationSourceException("SecurityException at:", this, e);
-		} catch (IllegalArgumentException e) {
-			throw new TransformationSourceException("IllegalArgumentException at:", this, e);			
-		} catch (ClassNotFoundException e) {
-			throw new TransformationSourceException("ClassNotFoundException at:", this, e);
-		} catch (NoSuchFieldException e) {
-			throw new TransformationSourceException("NoSuchFieldException at:", this, e);
-		} catch (IllegalAccessException e) {
-			throw new TransformationSourceException("IllegalAccessException at:", this, e);
-		} catch (NoSuchMethodException e) {
-			throw new TransformationSourceException("NoSuchMethodException at:", this, e);
-		} catch (InvocationTargetException e) {
-			throw new TransformationSourceException("InvocationTargetException at:", this, e);
-		}
+		System.out.println("metamodel: "+mmName);
+		
+		loader.loadDatabase(mmName, inputPath, getClassdir());
+		loader.getDatabase().createTransitiveGraph();
+		setOutputModelDatabase(loader.getDatabase());
+		setMetaDatabase(loader.getMetaModelDatabase());
+		this.setProcessed(true);
 	}
 	
 	public String getMetamodelIdentifier()

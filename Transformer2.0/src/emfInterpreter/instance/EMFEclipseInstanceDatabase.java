@@ -10,20 +10,24 @@ import java.util.Map;
 
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import emfInterpreter.metamodel.MetaEntity;
-import emfInterpreter.metamodel.MetaRelation;
 import persistence.InstanceAttribute;
 import persistence.InstanceDatabase;
 import persistence.InstanceEntity;
 import persistence.InstanceRelation;
+import emfInterpreter.EclipseInstanceDatabaseManager;
+import emfInterpreter.metamodel.MetaEntity;
+import emfInterpreter.metamodel.MetaRelation;
 
 public class EMFEclipseInstanceDatabase extends InstanceDatabase {
 
 	private Map<String,Object> _factorys;
+	private EclipseInstanceDatabaseManager manager;
 	
-	public EMFEclipseInstanceDatabase() {
+	// TODO: This will be private and only created by the manager.
+	public EMFEclipseInstanceDatabase(EclipseInstanceDatabaseManager eclipseInstanceDatabaseManager) {
 		super();
 		setFactorys(new Hashtable<String,Object>());
+		this.manager = eclipseInstanceDatabaseManager;
 	}
 	
 	public void setFactorys(Map<String,Object> _factorys) {
@@ -43,7 +47,7 @@ public class EMFEclipseInstanceDatabase extends InstanceDatabase {
 	
 	@Override
 	public InstanceDatabase clone(){
-		EMFEclipseInstanceDatabase id = new EMFEclipseInstanceDatabase();
+		EMFEclipseInstanceDatabase id = new EMFEclipseInstanceDatabase(this.manager);
 		id.setFactorys(this.getFactorys()); // share factories
 		Map<InstanceEntity,InstanceEntity> entitymap = new HashMap<InstanceEntity,InstanceEntity>();
 		{{
@@ -138,5 +142,10 @@ public class EMFEclipseInstanceDatabase extends InstanceDatabase {
 		
 		Method method = factory.getClass().getMethod(methodname);
 		return new InstanceEntity((EObjectImpl)method.invoke(factory), me);
+	}
+
+	public void synchFactories() {
+		assert this.manager.getFactorys() != null;
+		this.setFactorys(this.manager.getFactorys());
 	}
 }

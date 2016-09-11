@@ -19,7 +19,6 @@ import dsltrans.Sequencer;
 import dsltrans.Term;
 import dsltrans.TypeOf;
 import dsltrans.Wildcard;
-import dsltrans.io.eclipse.EclipseSequenceExpansionProcessor;
 import dsltrans.transformer.filter.AbstractFilter;
 import dsltrans.transformer.filter.ApplyAttributeFilter;
 import dsltrans.transformer.filter.ApplyEntityFilter;
@@ -30,6 +29,7 @@ import dsltrans.transformer.filter.MatchFilter;
 
 public class TermProcessor {
 	
+	public static final String SEQUENCER_STRING = "#seq";
 	
 	public HashMap<Term, String> processedTerms;
 	private List<MatchFilter> _matchFilterList;
@@ -52,7 +52,7 @@ public class TermProcessor {
 			result += ((Atom)t).getValue();
 		} else if (t instanceof Sequencer) {
 			// Add here the other base case considering the sequencer term.
-			result += EclipseSequenceExpansionProcessor.SEQUENCER_STRING;
+			result += SEQUENCER_STRING;
 		} else if (t instanceof Operator) {
 			if (t instanceof Concat) {
 				Concat cc = (Concat)t;

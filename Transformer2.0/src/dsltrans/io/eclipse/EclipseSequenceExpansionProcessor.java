@@ -27,9 +27,9 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import dsltrans.transformer.TermProcessor;
+
 public class EclipseSequenceExpansionProcessor implements PostProcessor {
-	
-	public static final String SEQUENCER_STRING = "#seq";
 	
 	private Hashtable<String, Integer> counters;
 	
@@ -114,7 +114,7 @@ public class EclipseSequenceExpansionProcessor implements PostProcessor {
 	}
 
 	private void processAttributeValue(String nodeValue, Attr nodeAttr) {
-		if (nodeValue.indexOf(SEQUENCER_STRING) == -1) {
+		if (nodeValue.indexOf(TermProcessor.SEQUENCER_STRING) == -1) {
 			return;
 		}
 		
@@ -123,7 +123,7 @@ public class EclipseSequenceExpansionProcessor implements PostProcessor {
 		}
 		
 		
-		String newAttrValue = replaceAllOcurrences(nodeValue, SEQUENCER_STRING, (""+counters.get(nodeValue)));
+		String newAttrValue = replaceAllOcurrences(nodeValue, TermProcessor.SEQUENCER_STRING, (""+counters.get(nodeValue)));
 		System.out.println("String found: " + nodeValue + " -> " + newAttrValue);
 		
 		// Set the new attribute's value.

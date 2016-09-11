@@ -48,9 +48,6 @@ import dsltrans.transformer.TermProcessor;
 import dsltrans.transformer.TransformationController;
 import dsltrans.transformer.TransformationRule;
 import dsltrans.transformer.exceptions.InvalidLayerRequirement;
-//import jpl.Atom;
-//import jpl.Query;
-//import jpl.Util;
 import com.sun.tools.javac.util.Pair;
 
 /*

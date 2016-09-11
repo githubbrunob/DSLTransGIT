@@ -5,8 +5,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.eclipse.emf.common.util.URI;
-
 import dsltrans.AbstractSource;
 import dsltrans.FilePort;
 import dsltrans.Layer;

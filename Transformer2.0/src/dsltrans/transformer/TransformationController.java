@@ -11,7 +11,6 @@ import dsltrans.AbstractSource;
 import dsltrans.FilePort;
 import dsltrans.Layer;
 import dsltrans.io.PersistenceLayer;
-import dsltrans.io.eclipse.EclipseInstanceDatabaseManager;
 import dsltrans.metamodel.MetaModelDatabase;
 import dsltrans.model.InstanceDatabase;
 import dsltrans.model.InstanceDatabaseManager;

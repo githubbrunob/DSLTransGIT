@@ -15,8 +15,8 @@ public class TransformerProcessor {
 	
 	private final TransformationController _controller;
 	
-	public TransformerProcessor(String classdir, PersistenceLayer persistenceL, InstanceDatabaseManager databaseManager){
-		_controller = new TransformationController(classdir, persistenceL, databaseManager);
+	public TransformerProcessor(PersistenceLayer persistenceL, InstanceDatabaseManager databaseManager){
+		_controller = new TransformationController(persistenceL, databaseManager);
 	}
 	
 	public void setFileURI(String Name, String URI) {

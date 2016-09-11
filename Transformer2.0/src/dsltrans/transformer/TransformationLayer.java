@@ -34,8 +34,8 @@ public abstract class TransformationLayer  extends TransformationUnit {
 	private final TransformationController _controller;
 	protected final PersistenceLayer persistenceLayer;
 	
-	TransformationLayer(String classdir, TransformationController tc, Layer l, PersistenceLayer persistenceL) {
-		super(classdir);
+	TransformationLayer(TransformationController tc, Layer l, PersistenceLayer persistenceL) {
+		super();
 		_layer = l;
 		setPrecedingUnit(null);
 		setMatchMetaModel(null);
@@ -104,7 +104,7 @@ public abstract class TransformationLayer  extends TransformationUnit {
 		this.setPrecedingUnit(preUnit);
 		prepareInputModel();
 		try {
-			prepareOutputModel(_controller,getClassdir());
+			prepareOutputModel(_controller);
 		} catch (TransformationRefinementLayerException e) {
 			System.err.println("ERROR: RefinementLayer Output failed");
 		}
@@ -136,7 +136,7 @@ public abstract class TransformationLayer  extends TransformationUnit {
 		}
 	}
 
-	protected abstract void prepareOutputModel(TransformationController control, String classdir) throws TransformationRefinementLayerException, IOException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException;
+	protected abstract void prepareOutputModel(TransformationController control) throws TransformationRefinementLayerException, IOException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException;
 
 	protected abstract void prepareInputModel();
 
@@ -177,11 +177,6 @@ public abstract class TransformationLayer  extends TransformationUnit {
 		else
 			return;
 		
-		URI mmPathURI = URI.createURI(outputpath);
-		
-		if(mmPathURI.isRelative())
-				outputpath = getClassdir()+"/"+ outputpath;
-		
 		if(this.getOutputModelDatabase().getRootElement() == null) {
 			MetaEntity rootEntity = this.getMetaDatabase().getRootEntity();
 			List<InstanceEntity> ielist = this.getOutputModelDatabase().getElementsByMetaEntity(rootEntity);
@@ -194,10 +189,8 @@ public abstract class TransformationLayer  extends TransformationUnit {
 		ModelExporter exporter = persistenceLayer.buildModelExporter();
 		exporter.setMetaModelDatabase(this.getMetaDatabase());
 		exporter.setInstanceDatabase(this.getOutputModelDatabase());
-		MetaModelIdentifier mmi = getLayer().getMetaModelId();
-		String mmName = mmi.getMetaModelName();
 
-		exporter.saveTo(mmName + "Package", outputpath);
+		exporter.saveTo(outputpath);
 	}
 
 	public InstanceDatabase getMatchModel() {

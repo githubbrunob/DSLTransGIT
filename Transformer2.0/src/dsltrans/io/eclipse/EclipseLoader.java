@@ -49,23 +49,24 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 	private MetaModelDatabase _metamodeldatabase;
 	private Stack<String> _namespace;
 	private MetaEntity _currentEntity;
-
+	
+	private final String classDir;
+	
 	// instance model
 	private EclipseInstanceDatabase _database;
 
-	public EclipseLoader(EclipseInstanceDatabaseManager instanceDatabaseManager) {
+	public EclipseLoader(EclipseInstanceDatabaseManager instanceDatabaseManager, String classDir) {
+		this.classDir = classDir;
 		setMetaModelDatabase(new MetaModelDatabase());
 		_namespace = new Stack<String>();
 		_currentEntity = null;
 		_database = (EclipseInstanceDatabase) instanceDatabaseManager.createInstanceDatabase();
 	}
 
-	
 	public EclipseInstanceDatabase getDatabase() {
 		return _database;
 	}
 
-	
 	public void print() {
 		System.out.println();
 		{
@@ -124,7 +125,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 	}
 	
 	@Override
-	public void loadDatabase(String singleclassname, String url, String classpath) throws ClassNotFoundException, SecurityException, NoSuchFieldException, IllegalArgumentException,
+	public void loadDatabase(String singleclassname, String url) throws ClassNotFoundException, SecurityException, NoSuchFieldException, IllegalArgumentException,
 			IllegalAccessException, NoSuchMethodException, InvocationTargetException, UnsuportedMetamodelException {
 		// debug
 		System.out.println("LOADING database");
@@ -140,7 +141,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		URL[] urlPath = {};
 		List<URL> urlList = new LinkedList<URL>();
 		try {
-			urlList.add(new File(classpath + "/tempClasses").toURI().toURL());
+			urlList.add(new File(classDir + "/tempClasses").toURI().toURL());
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
@@ -179,7 +180,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		URI URIurl = URI.createURI(url);
 		Resource resource = null;
 		if (URIurl.isRelative())
-			resource = resourceSet.getResource(URI.createFileURI(classpath + "/" + url), true);
+			resource = resourceSet.getResource(URI.createFileURI(classDir + "/" + url), true);
 		else
 			resource = resourceSet.getResource(URI.createFileURI(url), true);
 		// Resource resource =
@@ -539,10 +540,10 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		}
 	}
 
-	public void loadMetaModel(String classdir, String path) throws IOException {
+	public void loadMetaModel(String path) throws IOException {
 		System.out.println("Loading metamodel...");
 		
-		System.out.println("classdir: " + classdir);
+		System.out.println("classdir: " + classDir);
 		System.out.println("path: " + path);
 		
 		ResourceSet resourceSet = new ResourceSetImpl();
@@ -553,7 +554,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		// Register the Ecore resource Factory
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("ecore", new EcoreResourceFactoryImpl());
 
-		URI metamodelURI = createAbsoluteHierarchicalURI(classdir, path);
+		URI metamodelURI = createAbsoluteHierarchicalURI(classDir, path);
 		
 		Resource resource = resourceSet.getResource(metamodelURI, true);
 		EList<EObject> list = resource.getContents();
@@ -581,7 +582,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		
 		System.out.println("Loading metamodel... DONE");
 		
-		generateMetaModelClasses(classdir, path);
+		generateMetaModelClasses(classDir, path);
 	}
 
 	public URI tryToFindModel(URI uri) {
@@ -712,7 +713,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		return _metamodeldatabase;
 	}
 	
-	private void prepareDatabase(MetaEntity me, String classpath) throws ClassNotFoundException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException, MalformedURLException {
+	private void prepareDatabase(MetaEntity me) throws ClassNotFoundException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException, MalformedURLException {
 		this.getDatabase().synchFactories();
 		
 		String packageName = me.getCurrentPackage().substring(1);
@@ -721,7 +722,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		
 		URL[] urlPath = {};
 		List<URL> urlList = new LinkedList<URL>();
-		urlList.add(new File(classpath+"/tempClasses").toURI().toURL());
+		urlList.add(new File(classDir+"/tempClasses").toURI().toURL());
 		urlPath = urlList.toArray(urlPath);
 
 		URLClassLoader customLoader = new URLClassLoader(urlPath,this.getClass().getClassLoader());	
@@ -746,9 +747,9 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 	}
 	
 	@Override
-	public void prepareDatabase(String classpath) throws ClassNotFoundException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException, MalformedURLException {
+	public void prepareDatabase() throws ClassNotFoundException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException, MalformedURLException {
 		for (MetaEntity me : this.getMetaModelDatabase().getClasses()) {	
-			this.prepareDatabase(me, classpath);
+			this.prepareDatabase(me);
 		}
 	}
 

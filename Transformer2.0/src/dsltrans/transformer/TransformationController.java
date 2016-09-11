@@ -23,15 +23,13 @@ public class TransformationController {
 	private final List<TransformationLayer> _units;
 	private final List<TransformationSource> _sources;
 	private final Map<String, Object> _metamodels;
-	private final String _classdir;
 	private final PersistenceLayer persistenceLayer;
 	private final InstanceDatabaseManager instanceDatabaseManager;
 	
-	TransformationController(String classdir, PersistenceLayer persistenceL, InstanceDatabaseManager databaseManager) {
+	TransformationController(PersistenceLayer persistenceL, InstanceDatabaseManager databaseManager) {
 		_units = new LinkedList<TransformationLayer>();
 		_sources = new LinkedList<TransformationSource>();
 		_metamodels = new HashMap<String, Object>();		
-		_classdir = classdir;
 		persistenceLayer = persistenceL;
 		instanceDatabaseManager = databaseManager;
 	}
@@ -41,11 +39,11 @@ public class TransformationController {
 	}
 	
 	public void add(Layer l) {
-		getUnits().add(new TransformationSequentialLayer(getClassdir(), this, l, persistenceLayer));
+		getUnits().add(new TransformationSequentialLayer(this, l, persistenceLayer));
 	}
 
 	public void add(FilePort source) {
-		getSources().add(new TransformationSource(getClassdir(),source));
+		getSources().add(new TransformationSource(source));
 	}
 
 	public void Execute() throws Throwable {
@@ -114,10 +112,6 @@ public class TransformationController {
 		return null;
 	}
 	
-	public String getClassdir() {
-		return _classdir;
-	}
-
 	public Map<String, Object> getMetamodels() {
 		return _metamodels;
 	}

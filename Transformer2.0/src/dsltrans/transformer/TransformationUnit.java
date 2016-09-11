@@ -6,13 +6,11 @@ import dsltrans.model.InstanceDatabase;
 public abstract class TransformationUnit {
 	private boolean _processed;
 	private boolean _valid;
-	private String _classdir;
 	private InstanceDatabase _outputModelDatabase;
 	private MetaModelDatabase _mdatabase;	
 	
 	
-	TransformationUnit(String classdir) {
-		setClassdir(classdir);
+	TransformationUnit() {
 		setProcessed(false);
 		setValid(true);
 	}
@@ -49,14 +47,6 @@ public abstract class TransformationUnit {
 
 	public MetaModelDatabase getMetaDatabase() {
 		return _mdatabase;
-	}
-
-	public void setClassdir(String _classdir) {
-		this._classdir = _classdir;
-	}
-
-	public String getClassdir() {
-		return _classdir;
 	}
 	
 	public abstract String getMetamodelIdentifier();

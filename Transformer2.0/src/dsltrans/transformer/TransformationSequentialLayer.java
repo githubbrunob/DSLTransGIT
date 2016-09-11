@@ -12,8 +12,8 @@ import dsltrans.model.InstanceDatabaseManager;
 
 public class TransformationSequentialLayer extends TransformationLayer {
 
-	TransformationSequentialLayer(String classdir, TransformationController tc, Layer l, PersistenceLayer persistenceL) {
-			super(classdir, tc, l, persistenceL);
+	TransformationSequentialLayer(TransformationController tc, Layer l, PersistenceLayer persistenceL) {
+			super(tc, l, persistenceL);
 	}
 
 	protected void prepareInputModel() {
@@ -22,7 +22,7 @@ public class TransformationSequentialLayer extends TransformationLayer {
 		setMatchModel(ts.getOutputModelDatabase());
 	}
 	
-	protected void prepareOutputModel(TransformationController control, String classpath) throws IOException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException {
+	protected void prepareOutputModel(TransformationController control) throws IOException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException {
 		Map<String, Object> metamodels = control.getMetamodels();
 		String mmName = this.getMetamodelIdentifier();
 
@@ -45,8 +45,7 @@ public class TransformationSequentialLayer extends TransformationLayer {
 		ModelLoader loader = this.persistenceLayer.buildModelLoader(instanceDatabaseManager);
 		MetaModelDatabase loadedMetamodelDatabase = null;
 		if(!metamodels.containsKey(mmName)) {
-			String classDir = getClassdir();
-			loader.loadMetaModel(classDir, mmPath);
+			loader.loadMetaModel(mmPath);
 			loadedMetamodelDatabase = loader.getMetaModelDatabase();
 			metamodels.put(mmName,loader.getMetaModelDatabase());
 		} else {
@@ -55,43 +54,12 @@ public class TransformationSequentialLayer extends TransformationLayer {
 			loader.setMetaModelDatabase(loadedMetamodelDatabase);
 		}
 
-		loader.prepareDatabase(classpath);
+		loader.prepareDatabase();
 		
 		this.setMetaDatabase(loadedMetamodelDatabase);
 		
 		this.setOutputModelDatabase(loader.getDatabase());
 		
-		
-		/*URL[] urlPath = {};
-		List<URL> urlList = new LinkedList<URL>();
-		urlList.add(new File(classpath+"/tempClasses").toURI().toURL());
-		urlPath = urlList.toArray(urlPath);
-
-		URLClassLoader customLoader = new URLClassLoader(urlPath,this.getClass().getClassLoader());	
-		
-		for (MetaEntity me : loader.getMetaModelDatabase().getClasses()) {
-			String packageName = me.getCurrentPackage().substring(1);
-			packageName = Character.toUpperCase(me.getCurrentPackage().charAt(0)) + packageName;
-			String className = me.getNamespace()+"."+packageName+"Package";
-			if(!((EMFEclipseInstanceDatabase)this.getDatabase()).getFactorys().containsKey(className)) {
-				Object factory = null;
-				Class<?> cc = Class.forName(className,false,customLoader);
-				Field f2 = cc.getField("eINSTANCE");
-				factory = (Object)f2.get(cc);
-				((EMFEclipseInstanceDatabase)this.getDatabase()).getFactorys().put(className, factory);
-				
-				String factoryName = me.getNamespace()+"."+packageName+"Factory";
-				if (!((EMFEclipseInstanceDatabase)this.getDatabase()).getFactorys().containsKey(factoryName)) {
-					Object factory1 = null;
-					Class<?> cc1 = Class.forName(factoryName,false,customLoader);
-					Field f21 = cc1.getField("eINSTANCE");
-					factory1 = (Object)f21.get(cc1);
-					((EMFEclipseInstanceDatabase)this.getDatabase()).getFactorys().put(factoryName, factory1);
-				}
-			}
-		}
-		if (factorys != null)
-			factorys.putAll(((EMFEclipseInstanceDatabase)this.getDatabase()).getFactorys());*/
 	}
 
 }

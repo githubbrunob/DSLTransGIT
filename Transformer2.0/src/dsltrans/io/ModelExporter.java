@@ -20,7 +20,7 @@ public interface ModelExporter {
 
 	public void setMetaModelDatabase(MetaModelDatabase _metaModelDatabase);
 
-	public void saveTo(String classname, String path) throws SecurityException,
+	public void saveTo(String path) throws SecurityException,
 			IllegalArgumentException, ClassNotFoundException,
 			NoSuchFieldException, IllegalAccessException, IOException,
 			InvocationTargetException, NoSuchMethodException,

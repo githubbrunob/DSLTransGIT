@@ -10,10 +10,10 @@ import dsltrans.transformer.exceptions.UnsuportedMetamodelException;
 
 public interface ModelLoader {
 	
-	public void loadDatabase(String singleclassname, String url, String classpath) throws ClassNotFoundException, SecurityException, NoSuchFieldException, IllegalArgumentException,
+	public void loadDatabase(String singleclassname, String url) throws ClassNotFoundException, SecurityException, NoSuchFieldException, IllegalArgumentException,
 	IllegalAccessException, NoSuchMethodException, InvocationTargetException, UnsuportedMetamodelException;
 
-	public void loadMetaModel(String classDir, String mmPath) throws IOException;
+	public void loadMetaModel(String mmPath) throws IOException;
 
 	public MetaModelDatabase getMetaModelDatabase();
 
@@ -21,6 +21,6 @@ public interface ModelLoader {
 
 	public InstanceDatabase getDatabase();
 	
-	public void prepareDatabase(String classpath) throws ClassNotFoundException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException, MalformedURLException;
+	public void prepareDatabase() throws ClassNotFoundException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException, MalformedURLException;
 	
 }

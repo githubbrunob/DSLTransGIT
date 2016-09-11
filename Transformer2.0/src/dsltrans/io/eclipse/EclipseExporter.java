@@ -30,13 +30,10 @@ public class EclipseExporter extends EclipseHandler implements ModelExporter {
 
 	private EclipseInstanceDatabase _outputInstanceDatabase = null;
 	private MetaModelDatabase _metaModelDatabase=null;
+	private final String classDir;
 	
-	public EclipseExporter(EclipseInstanceDatabaseManager instanceDatabaseManager) {
-		this();
-		_outputInstanceDatabase = (EclipseInstanceDatabase) instanceDatabaseManager.createInstanceDatabase();
-	}
-
-	public EclipseExporter() {
+	public EclipseExporter(String classDir) {
+		this.classDir = classDir;
 		setMetaModelDatabase(new MetaModelDatabase());
 	}
 
@@ -59,11 +56,16 @@ public class EclipseExporter extends EclipseHandler implements ModelExporter {
 	}
 	
 	@Override
-	public void saveTo(String classname, String path) throws SecurityException, IllegalArgumentException, ClassNotFoundException, NoSuchFieldException, IllegalAccessException, IOException, InvocationTargetException, NoSuchMethodException, UnsuportedMetamodelException {
+	public void saveTo(String outputpath) throws SecurityException, IllegalArgumentException, ClassNotFoundException, NoSuchFieldException, IllegalAccessException, IOException, InvocationTargetException, NoSuchMethodException, UnsuportedMetamodelException {
 		if(getMetaModelDatabase() == null || getInstanceDatabase() == null)
 			System.err.println("cannot save output without information databases");
-	
-		File outputfile = new File(path);
+		
+		URI mmPathURI = URI.createURI(outputpath);
+		
+		if(mmPathURI.isRelative())
+				outputpath = classDir +"/"+ outputpath;
+		
+		File outputfile = new File(outputpath);
 		exportTargetModel(outputfile);
 	}
 

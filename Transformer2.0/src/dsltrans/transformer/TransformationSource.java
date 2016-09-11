@@ -14,8 +14,8 @@ import dsltrans.transformer.exceptions.UnsuportedMetamodelException;
 public class TransformationSource extends TransformationUnit {
 	private final FilePort _port;
 	
-	public TransformationSource(String classdir, FilePort p) {
-		super(classdir);
+	public TransformationSource(FilePort p) {
+		super();
 		_port = p;
 		setMetaDatabase(null);
 		setOutputModelDatabase(null);
@@ -46,8 +46,7 @@ public class TransformationSource extends TransformationUnit {
 		String inputPath = getPort().getFilePathURI();
 		
 		if(!metamodels.containsKey(mmName)) {
-			String classDir = getClassdir();
-			loader.loadMetaModel(classDir, mmPath);
+			loader.loadMetaModel(mmPath);
 			metamodels.put(mmName,loader.getMetaModelDatabase());
 		} else {
 			loader.setMetaModelDatabase((MetaModelDatabase) metamodels.get(mmName));
@@ -55,7 +54,7 @@ public class TransformationSource extends TransformationUnit {
 		
 		System.out.println("metamodel: "+mmName);
 		
-		loader.loadDatabase(mmName, inputPath, getClassdir());
+		loader.loadDatabase(mmName, inputPath);
 		loader.getDatabase().createTransitiveGraph();
 		setOutputModelDatabase(loader.getDatabase());
 		setMetaDatabase(loader.getMetaModelDatabase());

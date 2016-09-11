@@ -147,8 +147,10 @@ public class Tester {
 
 	private static void runTransformation(File transformation) {
 		try {
-			TransformerProcessor tP = new TransformerProcessor(PROJECT_DIR,
-					new EclipsePersistenceLayer(), new EclipseInstanceDatabaseManager());
+			// TODO the Transformer processor does not get the PROJECT_DIR value.
+			// It is the EclipsePersistenceLayer that get's it.
+			TransformerProcessor tP = new TransformerProcessor(new EclipsePersistenceLayer(PROJECT_DIR), 
+													new EclipseInstanceDatabaseManager());
 			TransformationModel transformationModel = EclipseTransformationLoader
 					.ReadModel(transformation.getAbsolutePath());
 			tP.LoadModel(transformationModel);

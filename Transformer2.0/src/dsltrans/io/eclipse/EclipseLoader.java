@@ -70,7 +70,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 	public void print() {
 		System.out.println();
 		{
-			Iterator<MetaEntity> it = getMetaModelDatabase().getClasses().iterator();
+			Iterator<MetaEntity> it = getMetaModelDatabase().getMetaEntities().iterator();
 			System.out.println("printing meta entities: ");
 			while (it.hasNext()) {
 				MetaEntity me = it.next();
@@ -79,7 +79,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		}
 		System.out.println();
 		{
-			Iterator<MetaRelation> it = getMetaModelDatabase().getRelations().iterator();
+			Iterator<MetaRelation> it = getMetaModelDatabase().getMetaRelations().iterator();
 			System.out.println("printing meta relations: ");
 			while (it.hasNext()) {
 				MetaRelation me = it.next();
@@ -88,7 +88,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		}
 		System.out.println();
 		{
-			Iterator<MetaAttribute> it = getMetaModelDatabase().getAttributes().iterator();
+			Iterator<MetaAttribute> it = getMetaModelDatabase().getMetaAttributes().iterator();
 			System.out.println("printing meta attributes: ");
 			while (it.hasNext()) {
 				MetaAttribute me = it.next();
@@ -224,7 +224,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 			}
 		}
 		{ // ok now we can proceed
-			Iterator<MetaEntity> it = getMetaModelDatabase().getClasses().iterator();
+			Iterator<MetaEntity> it = getMetaModelDatabase().getMetaEntities().iterator();
 			while (it.hasNext()) {
 				MetaEntity me = it.next();
 				if (objinstance.getClass().getCanonicalName().equals("org.eclipse.emf." + me.getNamespace() + ".impl." + me.getName() + "Impl")) {
@@ -243,7 +243,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 			ClassNotFoundException {
 		MetaEntity me = instanceEntity.getMetaEntity();
 		EModelElementImpl obj = instanceEntity.getObjectMeta();
-		Iterator<MetaRelation> iter = getMetaModelDatabase().getRelations().iterator();
+		Iterator<MetaRelation> iter = getMetaModelDatabase().getMetaRelations().iterator();
 		while (iter.hasNext()) {
 			MetaRelation ma = iter.next();
 			if (ma.isContainment() && me.isSubTypeOf(ma.getSource()) && !instanceEntity.hasLoadedRelation(ma)) {
@@ -289,7 +289,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		MetaEntity me = instanceEntity.getMetaEntity();
 
 		EModelElementImpl obj = instanceEntity.getObjectMeta();
-		Iterator<MetaAttribute> iter = getMetaModelDatabase().getAttributes().iterator();
+		Iterator<MetaAttribute> iter = getMetaModelDatabase().getMetaAttributes().iterator();
 		while (iter.hasNext()) {
 			MetaAttribute ma = iter.next();
 			if (ma.isSubTypeOf(me) && !instanceEntity.hasLoadedAttribute(ma)) {
@@ -314,7 +314,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 	}
 
 	public void processRootElement() throws UnsuportedMetamodelException {
-		MetaEntity rootEntity = this.getMetaModelDatabase().getRootEntity();
+		MetaEntity rootEntity = this.getMetaModelDatabase().getRootMetaEntity();
 		List<InstanceEntity> ielist = this.getDatabase().getElementsByMetaEntity(rootEntity);
 
 		this.getDatabase().setRootElement(ielist.get(0));
@@ -337,7 +337,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 			InvocationTargetException, ClassNotFoundException {
 		MetaEntity me = instanceEntity.getMetaEntity();
 		EModelElementImpl obj = instanceEntity.getObjectMeta();
-		Iterator<MetaRelation> iter = getMetaModelDatabase().getRelations().iterator();
+		Iterator<MetaRelation> iter = getMetaModelDatabase().getMetaRelations().iterator();
 		while (iter.hasNext()) {
 			MetaRelation ma = iter.next();
 			if (!ma.isContainment() && me.isSubTypeOf(ma.getSource()) && !instanceEntity.hasLoadedRelation(ma)) {
@@ -383,7 +383,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 
 		MetaEntity me = instanceEntity.getMetaEntity();
 		EObjectImpl obj = instanceEntity.getObject();
-		Iterator<MetaRelation> iter = getMetaModelDatabase().getRelations().iterator();
+		Iterator<MetaRelation> iter = getMetaModelDatabase().getMetaRelations().iterator();
 		while (iter.hasNext()) {
 			MetaRelation ma = iter.next();
 			if (!ma.isContainment() && me.isSubTypeOf(ma.getSource()) && !instanceEntity.hasLoadedRelation(ma)) {
@@ -446,7 +446,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 
 		MetaEntity me = instanceEntity.getMetaEntity();
 		EObjectImpl obj = instanceEntity.getObject();
-		Iterator<MetaRelation> iter = getMetaModelDatabase().getRelations().iterator();
+		Iterator<MetaRelation> iter = getMetaModelDatabase().getMetaRelations().iterator();
 		while (iter.hasNext()) {
 			MetaRelation ma = iter.next();
 			if (ma.isContainment() && me.isSubTypeOf(ma.getSource()) && !instanceEntity.hasLoadedRelation(ma)) {
@@ -496,7 +496,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 			}
 		}
 		{ // ok now we can proceed
-			Iterator<MetaEntity> it = getMetaModelDatabase().getClasses().iterator();
+			Iterator<MetaEntity> it = getMetaModelDatabase().getMetaEntities().iterator();
 			while (it.hasNext()) {
 				EclipseMetaEntity me = (EclipseMetaEntity) it.next();
 				if (me.isMetaTypeOf(objinstance)) {
@@ -516,7 +516,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		MetaEntity me = instanceEntity.getMetaEntity();
 
 		EObjectImpl obj = instanceEntity.getObject();
-		Iterator<MetaAttribute> iter = getMetaModelDatabase().getAttributes().iterator();
+		Iterator<MetaAttribute> iter = getMetaModelDatabase().getMetaAttributes().iterator();
 		while (iter.hasNext()) {
 			MetaAttribute ma = iter.next();
 			if (ma.isSubTypeOf(me) && !instanceEntity.hasLoadedAttribute(ma)) {
@@ -564,14 +564,14 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 
 		metaProcessForeignClasses();
 		{// process relations
-			Iterator<MetaEntity> iter = getMetaModelDatabase().getClasses().iterator();
+			Iterator<MetaEntity> iter = getMetaModelDatabase().getMetaEntities().iterator();
 			while (iter.hasNext()) {
 				EclipseMetaEntity me = (EclipseMetaEntity) iter.next();
 				metaRelationProcess(me);
 			}
 		}
 		{// process class hierarchy
-			Iterator<MetaEntity> iter = getMetaModelDatabase().getClasses().iterator();
+			Iterator<MetaEntity> iter = getMetaModelDatabase().getMetaEntities().iterator();
 			while (iter.hasNext()) {
 				EclipseMetaEntity me = (EclipseMetaEntity) iter.next();
 				metaSuperProcess(me);
@@ -591,7 +591,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 
 	private void metaProcessForeignClasses() {
 		List<EPackage> packs = new LinkedList<EPackage>();
-		Iterator<MetaEntity> iter = getMetaModelDatabase().getClasses().iterator();
+		Iterator<MetaEntity> iter = getMetaModelDatabase().getMetaEntities().iterator();
 		while (iter.hasNext()) {
 			EclipseMetaEntity me = (EclipseMetaEntity) iter.next();
 			getPacks(me, packs);
@@ -605,7 +605,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		Iterator<EReference> iter = containments.iterator();
 		while (iter.hasNext()) {
 			EReference c = iter.next();
-			Iterator<MetaEntity> classiter = getMetaModelDatabase().getClasses().iterator();
+			Iterator<MetaEntity> classiter = getMetaModelDatabase().getMetaEntities().iterator();
 			boolean found = false;
 			while (classiter.hasNext()) {
 				EclipseMetaEntity mnext = (EclipseMetaEntity) classiter.next();
@@ -625,7 +625,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		Iterator<EReference> iter = containments.iterator();
 		while (iter.hasNext()) {
 			EReference c = iter.next();
-			Iterator<MetaEntity> classiter = getMetaModelDatabase().getClasses().iterator();
+			Iterator<MetaEntity> classiter = getMetaModelDatabase().getMetaEntities().iterator();
 			@SuppressWarnings("unused")
 			boolean found = false;
 			while (classiter.hasNext()) {
@@ -633,7 +633,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 				if (mnext.getObject() == c.getEType()) {
 					found = true;
 					MetaRelation mr = new MetaRelation(me, c, mnext);
-					getMetaModelDatabase().getRelations().add(mr);
+					getMetaModelDatabase().getMetaRelations().add(mr);
 				}
 			}
 		}
@@ -644,7 +644,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		Iterator<EClass> iter = superlist.iterator();
 		while (iter.hasNext()) {
 			EClass c = iter.next();
-			Iterator<MetaEntity> classiter = getMetaModelDatabase().getClasses().iterator();
+			Iterator<MetaEntity> classiter = getMetaModelDatabase().getMetaEntities().iterator();
 			while (classiter.hasNext()) {
 				EclipseMetaEntity mnext = (EclipseMetaEntity) classiter.next();
 				if (mnext.getObject() == c)
@@ -664,7 +664,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 			if (objnext instanceof EPackageImpl)
 				metaProcess((EPackageImpl) objnext);
 			else if (objnext instanceof EClassImpl)
-				metaProcess((EClassImpl) objnext, getMetaModelDatabase().getClasses());
+				metaProcess((EClassImpl) objnext, getMetaModelDatabase().getMetaEntities());
 		}
 		_namespace.pop();
 
@@ -690,8 +690,8 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 	}
 
 	private void metaProcess(EAttribute obj) {
-		MetaAttribute a = new MetaAttribute(_currentEntity, obj);
-		getMetaModelDatabase().getAttributes().add(a);
+		MetaAttribute a = new EclipseMetaAttribute(_currentEntity, obj);
+		getMetaModelDatabase().getMetaAttributes().add(a);
 	}
 
 	private String serialize(Stack<String> x) {
@@ -748,7 +748,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 	
 	@Override
 	public void prepareDatabase() throws ClassNotFoundException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException, MalformedURLException {
-		for (MetaEntity me : this.getMetaModelDatabase().getClasses()) {	
+		for (MetaEntity me : this.getMetaModelDatabase().getMetaEntities()) {	
 			this.prepareDatabase(me);
 		}
 	}

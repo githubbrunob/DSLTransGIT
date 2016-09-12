@@ -22,30 +22,30 @@ public class MetaModelDatabase {
 		_relations = new LinkedList<MetaRelation>();
 	}
 	
-	public List<MetaEntity> getClasses() {
+	public List<MetaEntity> getMetaEntities() {
 		return _classes;
 	}
 
-	public List<MetaAttribute> getAttributes() {
+	public List<MetaAttribute> getMetaAttributes() {
 		return _attributes;
 	}
 
-	public List<MetaRelation> getRelations() {
+	public List<MetaRelation> getMetaRelations() {
 		return _relations;
 	}
 	
-	public List<MetaAttribute> getAttributesFromEntity(MetaEntity me) {
+	public List<MetaAttribute> getMetaAttributesFromEntity(MetaEntity me) {
 		List<MetaAttribute> result = new LinkedList<MetaAttribute>();
 		
 		for(MetaEntity superme : me.getSuperEntities()) {
-			List<MetaAttribute> list = getAttributesFromEntity(superme);
+			List<MetaAttribute> list = getMetaAttributesFromEntity(superme);
 			for(MetaAttribute ma: list) {
 				if(!result.contains(ma))
 					result.add(ma);
 			}
 		}{
-			for(MetaAttribute ma : getAttributes()) {
-				if(ma.getObject() == me)
+			for(MetaAttribute ma : getMetaAttributes()) {
+				if(ma.getContainnerMetaEntity() == me)
 					if(!result.contains(ma))
 						result.add(ma);
 			}
@@ -53,8 +53,8 @@ public class MetaModelDatabase {
 		return result;
 	}
 
-	public MetaAttribute getAttributesFromEntityByName(MetaEntity me, String id) {
-		for(MetaAttribute ma: getAttributesFromEntity(me)) {
+	public MetaAttribute getMetaAttributesFromEntityByName(MetaEntity me, String id) {
+		for(MetaAttribute ma: getMetaAttributesFromEntity(me)) {
 			if(ma.getName().equals(id))
 				return ma;
 		}
@@ -66,7 +66,7 @@ public class MetaModelDatabase {
 //System.out.println("PACKAGENAME: "+packageName);
 //System.out.println("NAME: "+name);
 //System.out.println("SIZE: "+this.getClasses().size());
-		for(MetaEntity me: this.getClasses()) {
+		for(MetaEntity me: this.getMetaEntities()) {
 //DEBUG
 //if (me.getName().equals(name)) {
 //System.out.println("NameSpace: "+me.getNamespace());
@@ -80,7 +80,7 @@ public class MetaModelDatabase {
 	
 	public MetaRelation getMetaRelationByName(String name, MetaEntity source, MetaEntity target) throws InvalidLayerRequirement {
 //System.out.println("RELATIONNAME "+name);		
-		for(MetaRelation me: this.getRelations()) {
+		for(MetaRelation me: this.getMetaRelations()) {
 //			if (me.getName().equals("ownedModules"))
 //				System.out.println();
 //System.out.println("METANAME :"+me.getName());
@@ -101,20 +101,20 @@ public class MetaModelDatabase {
 	}
 
 	public MetaAttribute getMetaAttributeByName(String name) throws InvalidLayerRequirement {
-		for(MetaAttribute me: this.getAttributes()) {
+		for(MetaAttribute me: this.getMetaAttributes()) {
 			if(me.getName().equals(name))
 				return me;
 		}
 		throw new InvalidLayerRequirement("Cannot resolve attribute name: " + name);
 	}
 	
-	public MetaEntity getRootEntity() throws UnsuportedMetamodelException {
+	public MetaEntity getRootMetaEntity() throws UnsuportedMetamodelException {
 		System.out.println("Finding root entity in metamodel... ");
 		// root entity is the one such that there are no relations which have it on target role
 		
 		// so search on MetaRelations and gather all target MetaEntities
 		Set<MetaEntity> targetEntities = Collections.synchronizedSet(new HashSet<MetaEntity>());
-		for(MetaRelation relation : getRelations()) {
+		for(MetaRelation relation : getMetaRelations()) {
 			if(relation.isContainment() && (relation.getSource() != relation.getTarget())) { // notice that we only take into account these kind of relations
 				targetEntities.add(relation.getTarget());
 			}
@@ -123,7 +123,7 @@ public class MetaModelDatabase {
 		// And then select all Entities that are not target Entities
 		MetaEntity chosen = null;
 		int counter = 0;
-		for(MetaEntity entity : getClasses()) {
+		for(MetaEntity entity : getMetaEntities()) {
 			if(!isContainedIn(entity,targetEntities) 
 					&& !isSubTypeContainedIn(entity,targetEntities) 
 					&& !entity.isAbstract()) {
@@ -159,7 +159,7 @@ public class MetaModelDatabase {
 	
 	private List<MetaEntity> generateSubTypes(MetaEntity entity) {
 		List<MetaEntity> subtypes = new LinkedList<MetaEntity>();
-		for(MetaEntity candidate : getClasses()) {
+		for(MetaEntity candidate : getMetaEntities()) {
 			if(candidate.isSubTypeOf(entity) && candidate != entity) {
 				subtypes.add(candidate);
 			}

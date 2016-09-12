@@ -21,7 +21,8 @@ public class EclipseMetaEntity implements MetaEntity {
 		this._namespace = namespace;
 		_superEntities = new LinkedList<MetaEntity>();
 	}
-
+	
+	@Override
 	public String getNamespace() {
 		return _namespace;
 	}
@@ -30,18 +31,22 @@ public class EclipseMetaEntity implements MetaEntity {
 		return _object;
 	}
 	
+	@Override
 	public String getDotNotation() {
 		return "'"+getObject().getName()+"'";
 	}
 	
+	@Override
 	public String getQualifiedName() {
 		return getNamespace()+"."+getObject().getName();
 	}
 	
+	@Override
 	public String getName() {
 		return getObject().getName();
 	}
-
+	
+	@Override
 	public boolean isAbstract() {
 		return this.getObject().isAbstract();
 	}
@@ -54,6 +59,7 @@ public class EclipseMetaEntity implements MetaEntity {
 			) == 0;
 	}
 
+	@Override
 	public List<MetaEntity> getSuperEntities() {
 		return this._superEntities;
 	}
@@ -61,7 +67,18 @@ public class EclipseMetaEntity implements MetaEntity {
 	public void addSuperEntity(MetaEntity mnext) {
 		this._superEntities.add(mnext);
 	}
+	
+	@Override
+	public String print() {
+		return getQualifiedName();
+	}
+	
+	@Override
+	public String getCurrentPackage() {
+		return _currPackage;
+	}
 
+	@Override
 	public boolean isSubTypeOf(MetaEntity me) {
 		if(this == me) return true;
 		Iterator<MetaEntity> iter = this._superEntities.iterator();
@@ -72,13 +89,5 @@ public class EclipseMetaEntity implements MetaEntity {
 				return true;
 		}
 		return false;
-	}
-
-	public String print() {
-		return getQualifiedName();
-	}
-
-	public String getCurrentPackage() {
-		return _currPackage;
 	}
 }

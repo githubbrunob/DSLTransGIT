@@ -69,7 +69,7 @@ public class EclipseExporter extends EclipseHandler implements ModelExporter {
 	}
 
 	private void exportTargetModel(File file) throws IOException, IllegalArgumentException, SecurityException, IllegalAccessException, InvocationTargetException, ClassNotFoundException, NoSuchMethodException, UnsuportedMetamodelException{
-		EclipseMetaEntity rootEntity = (EclipseMetaEntity) this.getMetaModelDatabase().getRootEntity();
+		EclipseMetaEntity rootEntity = (EclipseMetaEntity) this.getMetaModelDatabase().getRootMetaEntity();
 		System.out.println("ROOTENTITY: "+rootEntity.getQualifiedName());
 
 		ResourceSet resourceSet = new ResourceSetImpl();

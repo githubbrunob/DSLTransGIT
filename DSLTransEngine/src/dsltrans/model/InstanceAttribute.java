@@ -17,7 +17,7 @@ public class InstanceAttribute {
 		System.out.println("creating attribute: " + ma.getName() + " on a " + ie.getDotNotation());
 		setEntity(ie);
 		setMetaAttribute(ma);
-		setValue(ma.getAttribute().getDefaultValue());
+		setValue(ma.getDefaultValue());
 	}
 
 	public void setEntity(InstanceEntity _object) {

@@ -77,7 +77,7 @@ public class MatchAttributeFilter extends AbstractFilter {
 			}
 		}
 		// not found.. so create a new one..
-		for(MetaAttribute ma : getMetaModel().getAttributesFromEntity(ie.getMetaEntity()))
+		for(MetaAttribute ma : getMetaModel().getMetaAttributesFromEntity(ie.getMetaEntity()))
 		{
 			System.out.println("creating a new attribute for the filter: " + ma.toString());
 			if(ma.getName().compareTo(getAttribute().getAttributeName())== 0) {

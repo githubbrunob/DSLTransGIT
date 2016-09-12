@@ -16,8 +16,6 @@ public interface MetaEntity {
 	
 	public List<MetaEntity> getSuperEntities();
 	
-	public void addSuperEntity(MetaEntity mnext);
-
 	public boolean isSubTypeOf(MetaEntity me);
 
 	public String print();

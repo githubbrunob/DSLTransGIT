@@ -176,7 +176,7 @@ public abstract class TransformationLayer  extends TransformationUnit {
 			return;
 		
 		if(this.getOutputModelDatabase().getRootElement() == null) {
-			MetaEntity rootEntity = this.getMetaDatabase().getRootEntity();
+			MetaEntity rootEntity = this.getMetaDatabase().getRootMetaEntity();
 			List<InstanceEntity> ielist = this.getOutputModelDatabase().getElementsByMetaEntity(rootEntity);
 			if(ielist.isEmpty()) {
 				System.err.println("Oops! There is nothing to output?");

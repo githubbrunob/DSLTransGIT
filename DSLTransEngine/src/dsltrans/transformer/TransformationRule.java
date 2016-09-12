@@ -421,7 +421,7 @@ public class TransformationRule {
 						if (ia == null)
 							break;
 						if (attributeValue.isEmpty())
-							attributeValue = ia.getMetaAttribute().getAttribute().getDefaultValueLiteral();
+							attributeValue = ia.getMetaAttribute().getDefaultValueString();
 						if (attributeValue != null) {
 							if (ia.getMetaAttribute().getType().equals("int"))
 								aaf.getCurrentAttribute().setValue(Integer.parseInt(attributeValue));

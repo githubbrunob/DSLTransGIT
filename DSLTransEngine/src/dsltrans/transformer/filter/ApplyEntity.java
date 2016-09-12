@@ -51,7 +51,7 @@ public class ApplyEntity extends ApplyEntityFilter {
 				}
 				
 				// create default attributes
-				for(MetaAttribute ma : metamodel.getAttributesFromEntity(me)) {			
+				for(MetaAttribute ma : metamodel.getMetaAttributesFromEntity(me)) {			
 					database.addAttribute(new InstanceAttribute(ie,ma));
 				}
 				

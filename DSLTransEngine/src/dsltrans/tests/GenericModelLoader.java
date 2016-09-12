@@ -21,12 +21,24 @@ public class GenericModelLoader implements ModelLoader {
 			NoSuchFieldException, IllegalArgumentException,
 			IllegalAccessException, NoSuchMethodException,
 			InvocationTargetException, UnsuportedMetamodelException {
-		
+		this.metamodelDatabase = new MetaModelDatabase();
 	}
 
 	@Override
 	public void loadMetaModel(String mmPath) throws IOException {
-
+		
+		GenericMetaEntity classA = new GenericMetaEntity("samplenamespace", "samplepackage", "ClassA", false);
+		GenericMetaEntity classB = new GenericMetaEntity("samplenamespace", "samplepackage", "ClassB", true);
+		GenericMetaEntity classC = new GenericMetaEntity("samplenamespace", "samplepackage", "ClassC", false);
+		GenericMetaEntity classD = new GenericMetaEntity("samplenamespace", "samplepackage", "ClassD", false);
+		
+		this.metamodelDatabase.getMetaEntities().add(classA);
+		this.metamodelDatabase.getMetaEntities().add(classB);
+		this.metamodelDatabase.getMetaEntities().add(classC);
+		this.metamodelDatabase.getMetaEntities().add(classD);
+		
+		
+		
 	}
 
 	@Override

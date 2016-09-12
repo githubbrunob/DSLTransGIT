@@ -125,15 +125,15 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 	}
 	
 	@Override
-	public void loadInstances(String singleclassname, String url) throws ClassNotFoundException, SecurityException, NoSuchFieldException, IllegalArgumentException,
+	public void loadInstances(String metamodelName, String url) throws ClassNotFoundException, SecurityException, NoSuchFieldException, IllegalArgumentException,
 			IllegalAccessException, NoSuchMethodException, InvocationTargetException, UnsuportedMetamodelException {
 		// debug
 		System.out.println("LOADING database");
 		
-		if (singleclassname.equals("ecore.Ecore"))
-			singleclassname = "org.eclipse.emf.ecore.Ecore";
-		String classname = singleclassname + "Package";
-		String factoryname = singleclassname + "Factory";
+		if (metamodelName.equals("ecore.Ecore"))
+			metamodelName = "org.eclipse.emf.ecore.Ecore";
+		String classname = metamodelName + "Package";
+		String factoryname = metamodelName + "Factory";
 
 		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());

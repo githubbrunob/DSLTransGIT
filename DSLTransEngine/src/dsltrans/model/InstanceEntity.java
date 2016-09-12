@@ -1,5 +1,6 @@
 package dsltrans.model;
 
+import java.util.Collection;
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Iterator;
@@ -27,29 +28,28 @@ public class InstanceEntity {
 	private Hashtable<MetaRelation,InstanceEntity> _lastPerRelation;
 	
 	public InstanceEntity(EModelElementImpl object, MetaEntity entity) {
-		setObject(object);
+		this._objectmeta = object;
 		setMetaEntity(entity);
 		_parents = new LinkedList<InstanceEntity>();
 		_temporalParents = new LinkedList<InstanceEntity>();		
 		_temporalChildren = new LinkedList<InstanceEntity>();		
 		_loadedmetarelations = new LinkedList<MetaRelation>();
 		_lastPerRelation = new Hashtable<MetaRelation,InstanceEntity>();
-		setLoadedMetaAttributes(new LinkedList<MetaAttribute>());
+		_loadedmetaattributes = new LinkedList<MetaAttribute>();
 		setDotNotation(getMetaEntity().getDotNotation());
 	}
 
 	public InstanceEntity(EObjectImpl object, MetaEntity entity) {
-		setObject(object);
+		this._object = object;
 		setMetaEntity(entity);
 		_parents = new LinkedList<InstanceEntity>();
 		_temporalParents = new LinkedList<InstanceEntity>();		
 		_temporalChildren = new LinkedList<InstanceEntity>();		
 		_loadedmetarelations = new LinkedList<MetaRelation>();
 		_lastPerRelation = new Hashtable<MetaRelation,InstanceEntity>();
-		setLoadedMetaAttributes(new LinkedList<MetaAttribute>());
+		_loadedmetaattributes = new LinkedList<MetaAttribute>();
 		setDotNotation(getMetaEntity().getDotNotation());
 	}
-	
 	
 	public void setMetaEntity(MetaEntity namespace) {
 		this._metaentity = namespace;
@@ -59,16 +59,8 @@ public class InstanceEntity {
 		return _metaentity;
 	}
 
-	public void setObject(EObjectImpl object) {
-		this._object = object;
-	}
-
 	public EObjectImpl getObject() {
 		return _object;
-	}
-
-	public void setObject(EModelElementImpl object) {
-		this._objectmeta = object;
 	}
 
 	public EModelElementImpl getObjectMeta() {
@@ -93,11 +85,11 @@ public class InstanceEntity {
 
 	public void addAttribute(MetaAttribute ma) {
 		if(hasLoadedAttribute(ma)) return;
-		getLoadedMetaAttributes().add(ma);
+		_loadedmetaattributes.add(ma);
 	}
 
 	public boolean hasLoadedAttribute(MetaAttribute ma) {
-		Iterator<MetaAttribute> iter = this.getLoadedMetaAttributes().iterator();
+		Iterator<MetaAttribute> iter = _loadedmetaattributes.iterator();
 		while(iter.hasNext())
 		{
 			MetaAttribute meta = iter.next();
@@ -140,11 +132,11 @@ public class InstanceEntity {
 		_temporalParents.add(imef);
 	}	
 	
-	public List<InstanceEntity> getTemporalParents() {
+	public Collection<InstanceEntity> getTemporalParents() {
 		return _temporalParents;
 	}
 
-	public List<InstanceEntity> getTemporalChildren() {
+	public Collection<InstanceEntity> getTemporalChildren() {
 		return _temporalChildren;
 	}
 	
@@ -155,14 +147,6 @@ public class InstanceEntity {
 
 	public boolean isFresh() {
 		return _fresh;
-	}
-
-	public void setLoadedMetaAttributes(List<MetaAttribute> _loadedmetaattributes) {
-		this._loadedmetaattributes = _loadedmetaattributes;
-	}
-
-	public List<MetaAttribute> getLoadedMetaAttributes() {
-		return _loadedmetaattributes;
 	}
 
 	public void setLast(MetaRelation mr, InstanceEntity target) {

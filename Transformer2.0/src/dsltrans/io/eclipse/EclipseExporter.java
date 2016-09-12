@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import dsltrans.io.ModelExporter;
 import dsltrans.metamodel.MetaAttribute;
-import dsltrans.metamodel.MetaEntity;
 import dsltrans.metamodel.MetaModelDatabase;
 import dsltrans.metamodel.MetaRelation;
 import dsltrans.model.InstanceAttribute;
@@ -70,7 +69,7 @@ public class EclipseExporter extends EclipseHandler implements ModelExporter {
 	}
 
 	private void exportTargetModel(File file) throws IOException, IllegalArgumentException, SecurityException, IllegalAccessException, InvocationTargetException, ClassNotFoundException, NoSuchMethodException, UnsuportedMetamodelException{
-		MetaEntity rootEntity = this.getMetaModelDatabase().getRootEntity();
+		EclipseMetaEntity rootEntity = (EclipseMetaEntity) this.getMetaModelDatabase().getRootEntity();
 		System.out.println("ROOTENTITY: "+rootEntity.getQualifiedName());
 
 		ResourceSet resourceSet = new ResourceSetImpl();

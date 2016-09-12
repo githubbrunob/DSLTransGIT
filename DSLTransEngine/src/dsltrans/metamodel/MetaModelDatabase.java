@@ -28,7 +28,7 @@ public class MetaModelDatabase {
 
 	public List<MetaAttribute> getAttributes() {
 		return _attributes;
-	}	
+	}
 
 	public List<MetaRelation> getRelations() {
 		return _relations;
@@ -126,7 +126,7 @@ public class MetaModelDatabase {
 		for(MetaEntity entity : getClasses()) {
 			if(!isContainedIn(entity,targetEntities) 
 					&& !isSubTypeContainedIn(entity,targetEntities) 
-					&& !entity.getObject().isAbstract()) {
+					&& !entity.isAbstract()) {
 				if(chosen == null) {
 					chosen = entity;
 				}

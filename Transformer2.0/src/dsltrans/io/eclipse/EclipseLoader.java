@@ -48,7 +48,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 	// meta information
 	private MetaModelDatabase _metamodeldatabase;
 	private Stack<String> _namespace;
-	private MetaEntity _currentEntity;
+	private EclipseMetaEntity _currentEntity;
 	
 	private final String classDir;
 	
@@ -498,7 +498,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		{ // ok now we can proceed
 			Iterator<MetaEntity> it = getMetaModelDatabase().getClasses().iterator();
 			while (it.hasNext()) {
-				MetaEntity me = it.next();
+				EclipseMetaEntity me = (EclipseMetaEntity) it.next();
 				if (me.isMetaTypeOf(objinstance)) {
 					InstanceEntity instanceEntity = new InstanceEntity(objinstance, me);
 					getDatabase().addEntity(instanceEntity);
@@ -566,14 +566,14 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		{// process relations
 			Iterator<MetaEntity> iter = getMetaModelDatabase().getClasses().iterator();
 			while (iter.hasNext()) {
-				MetaEntity me = iter.next();
+				EclipseMetaEntity me = (EclipseMetaEntity) iter.next();
 				metaRelationProcess(me);
 			}
 		}
 		{// process class hierarchy
 			Iterator<MetaEntity> iter = getMetaModelDatabase().getClasses().iterator();
 			while (iter.hasNext()) {
-				MetaEntity me = iter.next();
+				EclipseMetaEntity me = (EclipseMetaEntity) iter.next();
 				metaSuperProcess(me);
 			}
 		}
@@ -593,14 +593,14 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		List<EPackage> packs = new LinkedList<EPackage>();
 		Iterator<MetaEntity> iter = getMetaModelDatabase().getClasses().iterator();
 		while (iter.hasNext()) {
-			MetaEntity me = iter.next();
+			EclipseMetaEntity me = (EclipseMetaEntity) iter.next();
 			getPacks(me, packs);
 		}
 		for (EPackage pack : packs)
 			metaProcess((EPackageImpl) pack);
 	}
 
-	private void getPacks(MetaEntity me, List<EPackage> packs) {
+	private void getPacks(EclipseMetaEntity me, List<EPackage> packs) {
 		EList<EReference> containments = me.getObject().getEAllReferences();
 		Iterator<EReference> iter = containments.iterator();
 		while (iter.hasNext()) {
@@ -608,7 +608,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 			Iterator<MetaEntity> classiter = getMetaModelDatabase().getClasses().iterator();
 			boolean found = false;
 			while (classiter.hasNext()) {
-				MetaEntity mnext = classiter.next();
+				EclipseMetaEntity mnext = (EclipseMetaEntity) classiter.next();
 				if (mnext.getObject() == c.getEType()) {
 					found = true;
 				}
@@ -620,7 +620,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		}
 	}
 
-	private void metaRelationProcess(MetaEntity me) {
+	private void metaRelationProcess(EclipseMetaEntity me) {
 		EList<EReference> containments = me.getObject().getEAllReferences();
 		Iterator<EReference> iter = containments.iterator();
 		while (iter.hasNext()) {
@@ -629,7 +629,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 			@SuppressWarnings("unused")
 			boolean found = false;
 			while (classiter.hasNext()) {
-				MetaEntity mnext = classiter.next();
+				EclipseMetaEntity mnext = (EclipseMetaEntity) classiter.next();
 				if (mnext.getObject() == c.getEType()) {
 					found = true;
 					MetaRelation mr = new MetaRelation(me, c, mnext);
@@ -639,14 +639,14 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		}
 	}
 
-	private void metaSuperProcess(MetaEntity me) {
+	private void metaSuperProcess(EclipseMetaEntity me) {
 		EList<EClass> superlist = me.getObject().getEAllSuperTypes();
 		Iterator<EClass> iter = superlist.iterator();
 		while (iter.hasNext()) {
 			EClass c = iter.next();
 			Iterator<MetaEntity> classiter = getMetaModelDatabase().getClasses().iterator();
 			while (classiter.hasNext()) {
-				MetaEntity mnext = classiter.next();
+				EclipseMetaEntity mnext = (EclipseMetaEntity) classiter.next();
 				if (mnext.getObject() == c)
 					me.addSuperEntity(mnext);
 			}
@@ -673,7 +673,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 	}
 
 	private void metaProcess(EClassImpl obj, List<MetaEntity> classes) {
-		MetaEntity tempEntity = new MetaEntity(obj, _namespace.lastElement(), serialize(_namespace));
+		EclipseMetaEntity tempEntity = new EclipseMetaEntity(obj, _namespace.lastElement(), serialize(_namespace));
 
 		for (MetaEntity me : classes) {
 			if (me.getNamespace().equals(tempEntity.getNamespace()) && me.getName().equals(tempEntity.getName()))

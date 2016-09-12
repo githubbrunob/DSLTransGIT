@@ -8,7 +8,8 @@ Bundle-ClassPath: DSLTransEngine.jar,
  lib/tools.jar,
  lib/org.eclipse.emf.ecore_2.10.0.v20140514-1158.jar,
  lib/org.eclipse.emf.common_2.10.0.v20140514-1158.jar
-Require-Bundle: DSLTransEditor2.0;bundle-version="1.0.0"
+Require-Bundle: DSLTransEditor2.0;bundle-version="1.0.0",
+ org.junit
 Export-Package: com.sun.tools.javac,
  com.sun.tools.javac.api;
   uses:="com.sun.tools.javac.tree,

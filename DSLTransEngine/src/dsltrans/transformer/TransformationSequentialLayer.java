@@ -44,12 +44,13 @@ public class TransformationSequentialLayer extends TransformationLayer {
 		String mmPath = this.getLayer().getMetaModelId().getMetaModelURI();
 		ModelLoader loader = this.persistenceLayer.buildModelLoader(instanceDatabaseManager);
 		MetaModelDatabase loadedMetamodelDatabase = null;
+		
+		// Optimization: avoid loading a metamodel database again.
 		if(!metamodels.containsKey(mmName)) {
 			loader.loadMetaModel(mmPath);
 			loadedMetamodelDatabase = loader.getMetaModelDatabase();
 			metamodels.put(mmName,loader.getMetaModelDatabase());
 		} else {
-			// Optimization: avoid loading a metamodel database again.
 			loadedMetamodelDatabase = (MetaModelDatabase) metamodels.get(mmName);
 			loader.setMetaModelDatabase(loadedMetamodelDatabase);
 		}

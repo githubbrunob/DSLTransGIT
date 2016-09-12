@@ -15,7 +15,7 @@ public class MetaEntity {
 	private List<MetaEntity> _superEntities;
 	
 	public MetaEntity(EClassImpl object, String currpackage, String namespace) {
-		setObject(object);
+		this._object = object;
 		setCurrentPackage(currpackage);
 		setNamespace(namespace);
 		_superEntities = new LinkedList<MetaEntity>();
@@ -27,10 +27,6 @@ public class MetaEntity {
 
 	public String getNamespace() {
 		return _namespace;
-	}
-
-	public void setObject(EClassImpl object) {
-		this._object = object;
 	}
 
 	public EClassImpl getObject() {

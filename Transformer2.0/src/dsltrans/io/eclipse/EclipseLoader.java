@@ -553,7 +553,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		//
 		// Register the Ecore resource Factory
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("ecore", new EcoreResourceFactoryImpl());
-
+		
 		URI metamodelURI = createAbsoluteHierarchicalURI(classDir, path);
 		
 		Resource resource = resourceSet.getResource(metamodelURI, true);

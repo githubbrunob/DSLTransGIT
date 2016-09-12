@@ -9,13 +9,6 @@ import dsltrans.transformer.exceptions.UnsuportedMetamodelException;
 
 public interface ModelExporter {
 	
-	/*
-	 * Ideal API: 
-	 * 	Set Metamodel Database
-	 * 	Set Instance Database
-	 * 	SaveTo
-	 */
-	
 	public void setInstanceDatabase(InstanceDatabase database);
 
 	public void setMetaModelDatabase(MetaModelDatabase _metaModelDatabase);

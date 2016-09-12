@@ -6,7 +6,10 @@ import java.net.MalformedURLException;
 
 import dsltrans.io.ModelLoader;
 import dsltrans.metamodel.MetaModelDatabase;
+import dsltrans.model.InstanceAttribute;
 import dsltrans.model.InstanceDatabase;
+import dsltrans.model.InstanceRelation;
+import dsltrans.transformer.exceptions.InvalidLayerRequirement;
 import dsltrans.transformer.exceptions.UnsuportedMetamodelException;
 
 public class GenericModelLoader implements ModelLoader {
@@ -16,6 +19,7 @@ public class GenericModelLoader implements ModelLoader {
 	
 	public GenericModelLoader() {
 		this.metamodelDatabase = new MetaModelDatabase();
+		this.instanceDatabase = new GenericInstanceDatabase();
 	}
 	
 	@Override
@@ -23,10 +27,41 @@ public class GenericModelLoader implements ModelLoader {
 			throws ClassNotFoundException, SecurityException,
 			NoSuchFieldException, IllegalArgumentException,
 			IllegalAccessException, NoSuchMethodException,
-			InvocationTargetException, UnsuportedMetamodelException {
+			InvocationTargetException, UnsuportedMetamodelException, InvalidLayerRequirement {
 		
+		GenericMetaEntity classA = (GenericMetaEntity) this.metamodelDatabase.getMetaEntityByName("samplenamespace", "ClassA");
 		
+		GenericMetaAttribute attrA = (GenericMetaAttribute) metamodelDatabase.getMetaAttributesFromEntityByName(classA, "AttrA");
 		
+		GenericInstanceEntity obj_A =  (GenericInstanceEntity) instanceDatabase.createInstance(classA);
+		
+		InstanceAttribute instance_attrA = new InstanceAttribute(obj_A, attrA, "value_attr_A");
+		
+		GenericMetaEntity classC = (GenericMetaEntity) this.metamodelDatabase.getMetaEntityByName("samplenamespace", "ClassC");
+		
+		GenericMetaAttribute attrC = (GenericMetaAttribute) metamodelDatabase.getMetaAttributesFromEntityByName(classC, "AttrC");
+		
+		GenericInstanceEntity obj_C =  (GenericInstanceEntity) instanceDatabase.createInstance(classC);
+		
+		InstanceAttribute instance_attrC = new InstanceAttribute(obj_C, attrC, "value_attr_C");
+		
+		GenericMetaEntity classD = (GenericMetaEntity) this.metamodelDatabase.getMetaEntityByName("samplenamespace", "ClassD");
+		
+		GenericInstanceEntity obj_D = (GenericInstanceEntity) instanceDatabase.createInstance(classD);
+		
+		GenericMetaRelation A_contains_C = (GenericMetaRelation) metamodelDatabase.getMetaRelationByName("contains", classA, classC);
+		
+		InstanceRelation obj_A__connects__obj_C = new InstanceRelation(obj_A, A_contains_C, obj_C);
+		
+		instanceDatabase.getInstanceEntities().add(obj_A);
+		instanceDatabase.getInstanceEntities().add(obj_C);
+		instanceDatabase.getInstanceEntities().add(obj_D);
+		
+		instanceDatabase.getInstanceAttributes().add(instance_attrA);
+		instanceDatabase.getInstanceAttributes().add(instance_attrC);
+
+		instanceDatabase.getInstanceRelations().add(obj_A__connects__obj_C);
+
 	}
 
 	@Override

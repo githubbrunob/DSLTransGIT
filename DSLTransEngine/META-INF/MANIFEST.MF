@@ -43,3 +43,4 @@ Export-Package: com.sun.tools.javac,
    dsltrans.transformer,
    dsltrans,
    com.sun.tools.javac.util"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

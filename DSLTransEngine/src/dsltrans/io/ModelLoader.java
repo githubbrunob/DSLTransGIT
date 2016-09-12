@@ -6,12 +6,13 @@ import java.net.MalformedURLException;
 
 import dsltrans.metamodel.MetaModelDatabase;
 import dsltrans.model.InstanceDatabase;
+import dsltrans.transformer.exceptions.InvalidLayerRequirement;
 import dsltrans.transformer.exceptions.UnsuportedMetamodelException;
 
 public interface ModelLoader {
 	
 	public void loadInstances(String metamodelName, String url) throws ClassNotFoundException, SecurityException, NoSuchFieldException, IllegalArgumentException,
-	IllegalAccessException, NoSuchMethodException, InvocationTargetException, UnsuportedMetamodelException;
+	IllegalAccessException, NoSuchMethodException, InvocationTargetException, UnsuportedMetamodelException, InvalidLayerRequirement;
 
 	public void loadMetaModel(String mmURI) throws IOException;
 

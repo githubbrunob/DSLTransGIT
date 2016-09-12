@@ -8,6 +8,7 @@ import dsltrans.FilePort;
 import dsltrans.MetaModelIdentifier;
 import dsltrans.io.ModelLoader;
 import dsltrans.metamodel.MetaModelDatabase;
+import dsltrans.transformer.exceptions.InvalidLayerRequirement;
 import dsltrans.transformer.exceptions.TransformationSourceException;
 import dsltrans.transformer.exceptions.UnsuportedMetamodelException;
 
@@ -36,7 +37,7 @@ public class TransformationSource extends TransformationUnit {
 		setValid(true); // if passed all above conditions then it is valid
 	}
 
-	public void Load(ModelLoader loader, Map<String, Object> metamodels) throws TransformationSourceException, IOException, UnsuportedMetamodelException, ClassNotFoundException, SecurityException, NoSuchFieldException, IllegalArgumentException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+	public void Load(ModelLoader loader, Map<String, Object> metamodels) throws TransformationSourceException, IOException, UnsuportedMetamodelException, ClassNotFoundException, SecurityException, NoSuchFieldException, IllegalArgumentException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, InvalidLayerRequirement {
 		if(isProcessed()) return;
 		MetaModelIdentifier mmi = getPort().getMetaModelId();
 		

@@ -37,6 +37,8 @@ public class GenericModelLoader implements ModelLoader {
 		
 		GenericMetaEntity classD = new GenericMetaEntity("samplenamespace", "samplepackage", "ClassD", false);
 		
+		classA.getSuperEntities().add(classC);
+		
 		GenericMetaRelation A_contains_B = new GenericMetaRelation("contains", classA, classB, true, true);
 		GenericMetaRelation A_contains_C = new GenericMetaRelation("contains", classA, classC, true, true);
 		GenericMetaRelation B_connects_D = new GenericMetaRelation("connects", classB, classD, true, false);
@@ -55,7 +57,6 @@ public class GenericModelLoader implements ModelLoader {
 		this.metamodelDatabase.getMetaRelations().add(A_contains_C);
 		this.metamodelDatabase.getMetaRelations().add(B_connects_D);
 		this.metamodelDatabase.getMetaRelations().add(C_connects_B);
-		
 		
 	}
 

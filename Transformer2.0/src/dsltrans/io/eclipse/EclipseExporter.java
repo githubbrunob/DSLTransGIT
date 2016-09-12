@@ -89,9 +89,8 @@ public class EclipseExporter extends EclipseHandler implements ModelExporter {
 		
 		List<InstanceEntity> ielist = this.getInstanceDatabase().getAllInstancesOf(rootEntity);
 
-		modelResource.getContents().add(ielist.get(ielist.size()-1).getObject());
+		modelResource.getContents().add(((EclipseInstanceEntity) ielist.get(ielist.size()-1)).getObject());
 
-		
 		modelResource.save(null);
 		
 		// Add schemaLocationAttr
@@ -113,7 +112,8 @@ public class EclipseExporter extends EclipseHandler implements ModelExporter {
 	}
 
 	private void fillInAttributes(EclipseInstanceDatabase instancedatabase) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, ClassNotFoundException, SecurityException, NoSuchMethodException {
-		for(InstanceEntity ie: instancedatabase.getInstanceEntities()) {
+		for(InstanceEntity instanceEntity: instancedatabase.getInstanceEntities()) {
+			EclipseInstanceEntity ie = (EclipseInstanceEntity) instanceEntity;
 			for(InstanceAttribute ia : instancedatabase.getAllAttributesOf(ie)) {
 				MetaAttribute ma = ia.getMetaAttribute();
 				if(ma.isDSLTransType())
@@ -147,13 +147,14 @@ public class EclipseExporter extends EclipseHandler implements ModelExporter {
 	private void fillInRelations(EclipseInstanceDatabase instancedatabase) throws SecurityException, NoSuchMethodException, IllegalArgumentException, IllegalAccessException, InvocationTargetException, ClassNotFoundException {
 		int i=0;
 		while (i++<2)
-		for(InstanceEntity ie: instancedatabase.getInstanceEntities()) {
+		for(InstanceEntity instanceEntity: instancedatabase.getInstanceEntities()) {
+			EclipseInstanceEntity ie = (EclipseInstanceEntity) instanceEntity;
 			for(InstanceRelation ir : instancedatabase.getRelationsLeaving(ie)) {
 				EclipseMetaRelation mr = (EclipseMetaRelation)ir.getRelation();
 				if ((i==1 && !mr.isContainment()) || (i==2 && mr.isContainment()))
 					continue;
 				EObjectImpl sourceobject = ie.getObject();
-				EObjectImpl targetobject = ir.getTarget().getObject();
+				EObjectImpl targetobject = ((EclipseInstanceEntity) ir.getTarget()).getObject();
 				String name = mr.getName();
 				String first = name.substring(0, 1);
 				String remainder = name.substring(1, name.length());

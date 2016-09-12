@@ -7,16 +7,11 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.eclipse.emf.ecore.impl.EModelElementImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import dsltrans.metamodel.MetaAttribute;
 import dsltrans.metamodel.MetaEntity;
 import dsltrans.metamodel.MetaRelation;
 
-public class InstanceEntity {
-	private EObjectImpl _object=null;
-	private EModelElementImpl _objectmeta=null; // EClassImpl, EAttributeImpl, EReferenceImpl
+public abstract class InstanceEntity {
 	private MetaEntity _metaentity;
 	private List<MetaRelation> _loadedmetarelations;
 	private List<MetaAttribute> _loadedmetaattributes;
@@ -27,20 +22,7 @@ public class InstanceEntity {
 	private boolean _fresh = true;
 	private Hashtable<MetaRelation,InstanceEntity> _lastPerRelation;
 	
-	public InstanceEntity(EModelElementImpl object, MetaEntity entity) {
-		this._objectmeta = object;
-		setMetaEntity(entity);
-		_parents = new LinkedList<InstanceEntity>();
-		_temporalParents = new LinkedList<InstanceEntity>();		
-		_temporalChildren = new LinkedList<InstanceEntity>();		
-		_loadedmetarelations = new LinkedList<MetaRelation>();
-		_lastPerRelation = new Hashtable<MetaRelation,InstanceEntity>();
-		_loadedmetaattributes = new LinkedList<MetaAttribute>();
-		setDotNotation(getMetaEntity().getDotNotation());
-	}
-
-	public InstanceEntity(EObjectImpl object, MetaEntity entity) {
-		this._object = object;
+	public InstanceEntity(MetaEntity entity) {
 		setMetaEntity(entity);
 		_parents = new LinkedList<InstanceEntity>();
 		_temporalParents = new LinkedList<InstanceEntity>();		
@@ -59,14 +41,6 @@ public class InstanceEntity {
 		return _metaentity;
 	}
 
-	public EObjectImpl getObject() {
-		return _object;
-	}
-
-	public EModelElementImpl getObjectMeta() {
-		return _objectmeta;
-	}	
-	
 	public boolean hasLoadedRelation(MetaRelation mr) {
 		Iterator<MetaRelation> iter = this._loadedmetarelations.iterator();
 		while(iter.hasNext())
@@ -99,13 +73,9 @@ public class InstanceEntity {
 		return false;
 	}
 	
-	public String print() {
-		return getObject().toString()+"["+Integer.toString(this.hashCode())+"]";	
-	}
+	public abstract String print();
 
-	public boolean isEqual(InstanceEntity source) {
-		return this.getObject()==source.getObject();
-	}
+	public abstract boolean isEqual(InstanceEntity source);
 
 	public void setDotNotation(String _dotnotation) {
 		this._dotnotation = _dotnotation;

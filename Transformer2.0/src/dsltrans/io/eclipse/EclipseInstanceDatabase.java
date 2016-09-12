@@ -139,7 +139,7 @@ public class EclipseInstanceDatabase extends InstanceDatabase {
 		Object factory = getFactory(classname);
 		
 		Method method = factory.getClass().getMethod(methodname);
-		return new InstanceEntity((EObjectImpl)method.invoke(factory), me);
+		return new EclipseInstanceEntity((EObjectImpl)method.invoke(factory), me);
 	}
 
 	public void synchFactories() {

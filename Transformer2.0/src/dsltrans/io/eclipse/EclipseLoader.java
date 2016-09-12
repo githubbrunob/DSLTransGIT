@@ -200,7 +200,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		{// process relations
 			Iterator<InstanceEntity> iter = getInstanceDatabase().getInstanceEntities().iterator();
 			while (iter.hasNext()) {
-				InstanceEntity me = iter.next();
+				EclipseInstanceEntity me = (EclipseInstanceEntity) iter.next();
 				processNonContainments(me);
 			}
 		}
@@ -218,7 +218,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		{ // we do not want to process the same class two times
 			Iterator<InstanceEntity> it = getInstanceDatabase().getInstanceEntities().iterator();
 			while (it.hasNext()) {
-				InstanceEntity me = it.next();
+				EclipseInstanceEntity me = (EclipseInstanceEntity) it.next();
 				if (me.getObjectMeta() == objinstance)
 					return me;
 			}
@@ -228,7 +228,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 			while (it.hasNext()) {
 				MetaEntity me = it.next();
 				if (objinstance.getClass().getCanonicalName().equals("org.eclipse.emf." + me.getNamespace() + ".impl." + me.getName() + "Impl")) {
-					InstanceEntity instanceEntity = new InstanceEntity(objinstance, me);
+					EclipseInstanceEntity instanceEntity = new EclipseInstanceEntity(objinstance, me);
 					getInstanceDatabase().getInstanceEntities().add(instanceEntity);
 					processModelAttributes(instanceEntity);
 					processModelContainments(instanceEntity);
@@ -239,7 +239,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		return null;
 	}
 
-	private void processModelContainments(InstanceEntity instanceEntity) throws SecurityException, NoSuchMethodException, IllegalArgumentException, IllegalAccessException, InvocationTargetException,
+	private void processModelContainments(EclipseInstanceEntity instanceEntity) throws SecurityException, NoSuchMethodException, IllegalArgumentException, IllegalAccessException, InvocationTargetException,
 			ClassNotFoundException {
 		MetaEntity me = instanceEntity.getMetaEntity();
 		EModelElementImpl obj = instanceEntity.getObjectMeta();
@@ -284,7 +284,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		}
 	}
 
-	private void processModelAttributes(InstanceEntity instanceEntity) throws SecurityException, NoSuchMethodException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException,
+	private void processModelAttributes(EclipseInstanceEntity instanceEntity) throws SecurityException, NoSuchMethodException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException,
 			InvocationTargetException {
 		MetaEntity me = instanceEntity.getMetaEntity();
 
@@ -321,7 +321,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 
 	}
 
-	private void processNonContainments(InstanceEntity instanceEntity) throws SecurityException, NoSuchMethodException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException,
+	private void processNonContainments(EclipseInstanceEntity instanceEntity) throws SecurityException, NoSuchMethodException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException,
 			InvocationTargetException {
 		if (instanceEntity.getObject() != null) {
 			processRegularNonContainments(instanceEntity);
@@ -333,7 +333,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		}
 	}
 
-	private void processMetaNonContainments(InstanceEntity instanceEntity) throws SecurityException, NoSuchMethodException, IllegalArgumentException, IllegalAccessException,
+	private void processMetaNonContainments(EclipseInstanceEntity instanceEntity) throws SecurityException, NoSuchMethodException, IllegalArgumentException, IllegalAccessException,
 			InvocationTargetException, ClassNotFoundException {
 		MetaEntity me = instanceEntity.getMetaEntity();
 		EModelElementImpl obj = instanceEntity.getObjectMeta();
@@ -378,7 +378,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		}
 	}
 
-	private void processRegularNonContainments(InstanceEntity instanceEntity) throws SecurityException, NoSuchMethodException, ClassNotFoundException, IllegalArgumentException,
+	private void processRegularNonContainments(EclipseInstanceEntity instanceEntity) throws SecurityException, NoSuchMethodException, ClassNotFoundException, IllegalArgumentException,
 			IllegalAccessException, InvocationTargetException {
 
 		MetaEntity me = instanceEntity.getMetaEntity();
@@ -424,7 +424,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 	private InstanceEntity getInstanceEntity(EModelElementImpl value) {
 		Iterator<InstanceEntity> it = getInstanceDatabase().getInstanceEntities().iterator();
 		while (it.hasNext()) {
-			InstanceEntity me = it.next();
+			EclipseInstanceEntity me = (EclipseInstanceEntity) it.next();
 			if (me.getObjectMeta() == value)
 				return me;
 		}
@@ -434,14 +434,14 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 	private InstanceEntity getInstanceEntity(EObjectImpl value) {
 		Iterator<InstanceEntity> it = getInstanceDatabase().getInstanceEntities().iterator();
 		while (it.hasNext()) {
-			InstanceEntity me = it.next();
+			EclipseInstanceEntity me = (EclipseInstanceEntity) it.next();
 			if (me.getObject() == value)
 				return me;
 		}
 		return null;
 	}
 
-	private void processContainments(InstanceEntity instanceEntity) throws SecurityException, NoSuchMethodException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException,
+	private void processContainments(EclipseInstanceEntity instanceEntity) throws SecurityException, NoSuchMethodException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException,
 			InvocationTargetException {
 
 		MetaEntity me = instanceEntity.getMetaEntity();
@@ -490,7 +490,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		{ // we do not want to process the same class two times
 			Iterator<InstanceEntity> it = getInstanceDatabase().getInstanceEntities().iterator();
 			while (it.hasNext()) {
-				InstanceEntity me = it.next();
+				EclipseInstanceEntity me = (EclipseInstanceEntity) it.next();
 				if (me.getObject() == objinstance)
 					return me;
 			}
@@ -500,7 +500,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 			while (it.hasNext()) {
 				EclipseMetaEntity me = (EclipseMetaEntity) it.next();
 				if (me.isMetaTypeOf(objinstance)) {
-					InstanceEntity instanceEntity = new InstanceEntity(objinstance, me);
+					EclipseInstanceEntity instanceEntity = new EclipseInstanceEntity(objinstance, me);
 					getInstanceDatabase().getInstanceEntities().add(instanceEntity);
 					processAttributes(instanceEntity);
 					processContainments(instanceEntity);
@@ -511,7 +511,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		return null;
 	}
 
-	private void processAttributes(InstanceEntity instanceEntity) throws SecurityException, NoSuchMethodException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException,
+	private void processAttributes(EclipseInstanceEntity instanceEntity) throws SecurityException, NoSuchMethodException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException,
 			InvocationTargetException {
 		MetaEntity me = instanceEntity.getMetaEntity();
 

@@ -1,10 +1,14 @@
 package dsltrans.model;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import dsltrans.metamodel.MetaEntity;
+import dsltrans.metamodel.MetaRelation;
 
 public abstract class InstanceDatabase {
 	// data information
@@ -51,7 +55,84 @@ public abstract class InstanceDatabase {
 		return elist;
 	} 
 	
-	public abstract InstanceDatabase clone();
+	private InstanceEntity cloneEntity(InstanceEntity entity) throws ClassNotFoundException, SecurityException, NoSuchMethodException, IllegalArgumentException, IllegalAccessException, InvocationTargetException, NoSuchFieldException {
+		return createInstance(entity.getMetaEntity());
+	}
+	
+	public abstract InstanceDatabase createEmptyClone();
+	
+	public InstanceDatabase clone(){
+		InstanceDatabase id = createEmptyClone();
+		
+		Map<InstanceEntity, InstanceEntity> entitymap = new HashMap<InstanceEntity, InstanceEntity>();
+
+		for (InstanceEntity ie : getInstanceEntities()) {
+			InstanceEntity cloned;
+			try {
+				cloned = cloneEntity(ie);
+				entitymap.put(ie, cloned);
+				cloned.setFreshness(ie.isFresh());
+				for (InstanceEntity iepast : ie.getTemporalParents()) {
+					cloned.addTemporalParent(iepast);
+					if (iepast.getTemporalChildren().contains(ie))
+						iepast.getTemporalChildren().remove(ie);
+					iepast.getTemporalChildren().add(cloned);
+				}
+				id.getInstanceEntities().add(cloned);
+			} catch (SecurityException e) {
+				e.printStackTrace();
+			} catch (IllegalArgumentException e) {
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			} catch (NoSuchMethodException e) {
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+			} catch (InvocationTargetException e) {
+				e.printStackTrace();
+			} catch (NoSuchFieldException e) {
+				e.printStackTrace();
+			}
+		}
+
+		for (InstanceEntity ie : getInstanceEntities()) {
+			Enumeration<MetaRelation> mrelations = ie.getLastRelations();
+			while (mrelations.hasMoreElements()) {
+				MetaRelation mr = mrelations.nextElement();
+				InstanceEntity last = ie.getLast(mr);
+				((InstanceEntity) entitymap.get(ie)).setLast(mr,
+						(InstanceEntity) entitymap.get(last));
+			}
+		}
+
+		for (InstanceAttribute ia : getInstanceAttributes()) {
+			InstanceAttribute cloned = new InstanceAttribute(
+					(InstanceEntity) entitymap.get(ia.getEntity()),
+					ia.getMetaAttribute(), ia.getValue());
+			id.getInstanceAttributes().add(cloned);
+		}
+
+		for (InstanceRelation ir : getInstanceRelations()) {
+			InstanceEntity itarget = null;
+			if (ir.getTarget() != null
+					&& (InstanceEntity) entitymap.get(ir.getTarget()) == null)
+				itarget = ir.getTarget();
+			else
+				itarget = (InstanceEntity) entitymap.get(ir.getTarget());
+			InstanceRelation cloned = new InstanceRelation(
+					(InstanceEntity) entitymap.get(ir.getSource()),
+					ir.getRelation(), itarget);
+			id.getInstanceRelations().add(cloned);
+		}
+
+		if (this.getRootElement() != null) {
+			MetaEntity rootEntity = this.getRootElement().getMetaEntity();
+			List<InstanceEntity> ielist = id.getAllInstancesOf(rootEntity);
+			id.setRootElement(ielist.get(0));
+		}
+		return id;
+	}
 	
 	public abstract InstanceEntity createInstance(MetaEntity me) throws ClassNotFoundException, SecurityException, NoSuchFieldException, IllegalArgumentException, IllegalAccessException, NoSuchMethodException, InvocationTargetException;
 	

@@ -55,11 +55,11 @@ public class TransformationSequentialLayer extends TransformationLayer {
 			loader.setMetaModelDatabase(loadedMetamodelDatabase);
 		}
 
-		loader.prepareDatabase();
+		loader.prepareInstanceDatabase();
 		
 		this.setMetaDatabase(loadedMetamodelDatabase);
 		
-		this.setOutputModelDatabase(loader.getDatabase());
+		this.setOutputModelDatabase(loader.getInstanceDatabase());
 		
 	}
 

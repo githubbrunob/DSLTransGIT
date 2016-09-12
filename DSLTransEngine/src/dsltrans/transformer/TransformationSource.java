@@ -54,9 +54,9 @@ public class TransformationSource extends TransformationUnit {
 		
 		System.out.println("metamodel: "+mmName);
 		
-		loader.loadDatabase(mmName, inputPath);
-		loader.getDatabase().createTransitiveGraph();
-		setOutputModelDatabase(loader.getDatabase());
+		loader.loadInstances(mmName, inputPath);
+		loader.getInstanceDatabase().createTransitiveGraph();
+		setOutputModelDatabase(loader.getInstanceDatabase());
 		setMetaDatabase(loader.getMetaModelDatabase());
 		this.setProcessed(true);
 	}

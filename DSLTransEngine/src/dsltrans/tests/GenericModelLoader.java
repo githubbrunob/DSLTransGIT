@@ -15,7 +15,7 @@ public class GenericModelLoader implements ModelLoader {
 	private InstanceDatabase instanceDatabase;
 	
 	@Override
-	public void loadDatabase(String singleclassname, String url)
+	public void loadInstances(String singleclassname, String url)
 			throws ClassNotFoundException, SecurityException,
 			NoSuchFieldException, IllegalArgumentException,
 			IllegalAccessException, NoSuchMethodException,
@@ -62,21 +62,21 @@ public class GenericModelLoader implements ModelLoader {
 
 	@Override
 	public MetaModelDatabase getMetaModelDatabase() {
-		return null;
+		return metamodelDatabase;
 	}
 
 	@Override
 	public void setMetaModelDatabase(MetaModelDatabase metaModelDatabase) {
-		
+		this.metamodelDatabase = metaModelDatabase;
 	}
 
 	@Override
-	public InstanceDatabase getDatabase() {
+	public InstanceDatabase getInstanceDatabase() {
 		return null;
 	}
 
 	@Override
-	public void prepareDatabase() throws ClassNotFoundException,
+	public void prepareInstanceDatabase() throws ClassNotFoundException,
 			NoSuchFieldException, SecurityException, IllegalArgumentException,
 			IllegalAccessException, MalformedURLException {
 		

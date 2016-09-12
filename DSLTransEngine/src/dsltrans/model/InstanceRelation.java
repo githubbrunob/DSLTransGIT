@@ -1,13 +1,13 @@
 package dsltrans.model;
 
-import dsltrans.metamodel.AbstractRelation;
+import dsltrans.metamodel.MetaRelation;
 
 public class InstanceRelation {
 	private InstanceEntity _source;
 	private InstanceEntity _target;
-	private AbstractRelation _relation;
+	private MetaRelation _relation;
 	
-	public InstanceRelation(InstanceEntity source, AbstractRelation relation, InstanceEntity target) {
+	public InstanceRelation(InstanceEntity source, MetaRelation relation, InstanceEntity target) {
 		setSource(source);
 		setTarget(target);
 		setRelation(relation);
@@ -29,11 +29,11 @@ public class InstanceRelation {
 		return _target;
 	}	
 	
-	public void setRelation(AbstractRelation relation) {
+	public void setRelation(MetaRelation relation) {
 		this._relation = relation;
 	}
 
-	public AbstractRelation getRelation() {
+	public MetaRelation getRelation() {
 		return _relation;
 	}
 	

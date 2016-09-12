@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import dsltrans.io.ModelExporter;
 import dsltrans.metamodel.MetaAttribute;
 import dsltrans.metamodel.MetaModelDatabase;
-import dsltrans.metamodel.MetaRelation;
 import dsltrans.model.InstanceAttribute;
 import dsltrans.model.InstanceDatabase;
 import dsltrans.model.InstanceEntity;
@@ -150,7 +149,7 @@ public class EclipseExporter extends EclipseHandler implements ModelExporter {
 		while (i++<2)
 		for(InstanceEntity ie: instancedatabase.getLoadedClasses()) {
 			for(InstanceRelation ir : instancedatabase.getRelationsByInstanceEntity(ie)) {
-				MetaRelation mr = (MetaRelation)ir.getRelation();
+				EclipseMetaRelation mr = (EclipseMetaRelation)ir.getRelation();
 				if ((i==1 && !mr.isContainment()) || (i==2 && mr.isContainment()))
 					continue;
 				EObjectImpl sourceobject = ie.getObject();

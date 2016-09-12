@@ -37,7 +37,7 @@ public class EclipseMetaAttribute implements MetaAttribute {
 		return _attribute.getName();
 	}
 
-	public boolean isSubTypeOf(MetaEntity me) {
+	public boolean isInheritedFrom(MetaEntity me) {
 		if(me == this.getContainnerMetaEntity()) return true;		
 		return me.isSubTypeOf(this.getContainnerMetaEntity());
 	}

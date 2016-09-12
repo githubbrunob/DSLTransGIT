@@ -292,7 +292,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		Iterator<MetaAttribute> iter = getMetaModelDatabase().getMetaAttributes().iterator();
 		while (iter.hasNext()) {
 			MetaAttribute ma = iter.next();
-			if (ma.isSubTypeOf(me) && !instanceEntity.hasLoadedAttribute(ma)) {
+			if (ma.isInheritedFrom(me) && !instanceEntity.hasLoadedAttribute(ma)) {
 				String type = ma.getType();
 				String name = ma.getName();
 				String first = name.substring(0, 1);
@@ -519,7 +519,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		Iterator<MetaAttribute> iter = getMetaModelDatabase().getMetaAttributes().iterator();
 		while (iter.hasNext()) {
 			MetaAttribute ma = iter.next();
-			if (ma.isSubTypeOf(me) && !instanceEntity.hasLoadedAttribute(ma)) {
+			if (ma.isInheritedFrom(me) && !instanceEntity.hasLoadedAttribute(ma)) {
 				String type = ma.getType();
 				String name = ma.getName();
 				String first = name.substring(0, 1);
@@ -632,7 +632,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 				EclipseMetaEntity mnext = (EclipseMetaEntity) classiter.next();
 				if (mnext.getObject() == c.getEType()) {
 					found = true;
-					MetaRelation mr = new MetaRelation(me, c, mnext);
+					EclipseMetaRelation mr = new EclipseMetaRelation(me, c, mnext);
 					getMetaModelDatabase().getMetaRelations().add(mr);
 				}
 			}

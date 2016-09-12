@@ -13,7 +13,7 @@ public interface MetaAttribute {
 	
 	public String getName();
 
-	public boolean isSubTypeOf(MetaEntity me);
+	public boolean isInheritedFrom(MetaEntity me);
 	
 	public String print();
 	

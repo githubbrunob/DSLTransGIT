@@ -40,7 +40,7 @@ public class DSLTransAttribute implements MetaAttribute {
 	}
 
 	@Override
-	public boolean isSubTypeOf(MetaEntity me) {
+	public boolean isInheritedFrom(MetaEntity me) {
 		return false;
 	}
 

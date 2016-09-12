@@ -32,7 +32,7 @@ public class MatchAttributeFilter extends AbstractFilter {
 		boolean valueFound = false;
 		if((getAttribute()!=null) && (getAttribute().getAttributeValue()!=null)) {
 			MatchAttributeValue mav = getAttribute().getAttributeValue();
-			for (InstanceAttribute ia : database.getAttributesByInstanceEntity(getEntity().getCurrentEntity())) {
+			for (InstanceAttribute ia : database.getAllAttributesOf(getEntity().getCurrentEntity())) {
 				if (ia.getMetaAttribute().getName().equals(getAttribute().getAttributeName())) {
 					if (mav instanceof isNull && ((isNull)mav).isValue())
 						return false;					
@@ -70,7 +70,7 @@ public class MatchAttributeFilter extends AbstractFilter {
 	}
 
 	public void setCurrentByEntity(InstanceEntity ie) {
-		for(InstanceAttribute ia: this.getFilterDatabase().getLoadedAttributes()) {
+		for(InstanceAttribute ia: this.getFilterDatabase().getInstanceAttributes()) {
 			if(ia.getEntity().hashCode() == ie.hashCode()) {
 				setCurrentAttribute(ia);
 				return;

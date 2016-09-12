@@ -43,7 +43,7 @@ public class TemporalRelationFilter  extends AbstractFilter {
 	}
 
 	public void setCurrentByHashId(int parseInt) {
-		for(InstanceRelation ir : getFilterDatabase().getLoadedRelations()) {
+		for(InstanceRelation ir : getFilterDatabase().getInstanceRelations()) {
 			if(ir.hashCode() == parseInt) {
 				setCurrentRelation(ir);
 				return;
@@ -62,7 +62,7 @@ public class TemporalRelationFilter  extends AbstractFilter {
 	}
 
 	public void setCurrentByHashId(InstanceDatabase filterDatabase, int parseInt) {
-		for(InstanceRelation ir : filterDatabase.getLoadedRelations()) {
+		for(InstanceRelation ir : filterDatabase.getInstanceRelations()) {
 			if(ir.hashCode() == parseInt) {
 				setCurrentRelation(ir);
 				return;

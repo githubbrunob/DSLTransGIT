@@ -43,11 +43,11 @@ public class MatchEntityFilter extends AbstractFilter {
 		
 		MetaEntity me = metamodel.getMetaEntityByName(this.getMatchClass().getPackageName(), this.getMatchClass().getClassName());
 		
-		for(InstanceEntity ie : database.getLoadedClasses()) {
+		for(InstanceEntity ie : database.getInstanceEntities()) {
 			// Eh aqui que fica a implementacao do allowInheritance nas match classes.
 			if(( (me == ie.getMetaEntity()) || ( allowsInheritance() && ie.getMetaEntity().isSubTypeOf(me) ) )   && performMatchAttributes(ie,database,metamodel)) {
 				ie.setDotNotation(this.getDotNotation());
-				this.getFilterDatabase().addEntity(ie);
+				this.getFilterDatabase().getInstanceEntities().add(ie);
 			}
 		}
 		return !this.getFilterDatabase().isEmpty();
@@ -64,11 +64,11 @@ public class MatchEntityFilter extends AbstractFilter {
 			this.setCurrentEntity(ie);
 			if(!af.process(database, metamodel)) return false;
 			
-			for(InstanceAttribute ia : database.getLoadedAttributes()) {
+			for(InstanceAttribute ia : database.getInstanceAttributes()) {
 				if(ia.getMetaAttribute().getName().equals(af.getAttribute().getAttributeName()) &&
 					ia.getEntity().hashCode() == ie.hashCode())
 				{
-					af.getFilterDatabase().addAttribute(ia);
+					af.getFilterDatabase().getInstanceAttributes().add(ia);
 				}
 			}			
 		}
@@ -92,7 +92,7 @@ public class MatchEntityFilter extends AbstractFilter {
 	}
 
 	public void setCurrentByHashId(InstanceDatabase instanceDatabase, int parseInt) {
-		for(InstanceEntity ie : instanceDatabase.getLoadedClasses()) {
+		for(InstanceEntity ie : instanceDatabase.getInstanceEntities()) {
 			if(ie.hashCode() == parseInt) {
 				for(MatchAttributeFilter af:getFilterAttributes())
 					af.setCurrentByEntity(ie);

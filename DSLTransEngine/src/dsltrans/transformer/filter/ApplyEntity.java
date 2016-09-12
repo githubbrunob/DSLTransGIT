@@ -37,13 +37,13 @@ public class ApplyEntity extends ApplyEntityFilter {
 			} else {
 				InstanceEntity ie = database.createInstance(me);
 				setCurrentEntity(ie);
-				database.addEntity(ie);
+				database.getInstanceEntities().add(ie);
 				System.out.println(": "+"i"+Integer.toString(ie.hashCode()));
 				{
 					for(ApplyAttributeFilter aaf : getFilterAttributes()) {
 						if(aaf.getName().equals(DSLTransAttribute.DSLTRANS_DEFAULT)) {
 							InstanceAttribute ia = new InstanceAttribute(ie,metamodel.getMetaAttributeByName(DSLTransAttribute.DSLTRANS_DEFAULT));
-							database.addAttribute(ia);
+							database.getInstanceAttributes().add(ia);
 							aaf.setCurrentAttribute(ia);
 							break; // only one per instance
 						}
@@ -52,12 +52,12 @@ public class ApplyEntity extends ApplyEntityFilter {
 				
 				// create default attributes
 				for(MetaAttribute ma : metamodel.getMetaAttributesFromEntity(me)) {			
-					database.addAttribute(new InstanceAttribute(ie,ma));
+					database.getInstanceAttributes().add(new InstanceAttribute(ie,ma));
 				}
 				
 				for(ApplyAttributeFilter aaf: this.getFilterAttributes()) {
 					ApplyAttribute aa = aaf.getAttribute();
-					for(InstanceAttribute ia : database.getAttributesByInstanceEntity(ie)) {
+					for(InstanceAttribute ia : database.getAllAttributesOf(ie)) {
 						if(ia.getMetaAttribute().getName().equals(aa.getAttributeName()))
 							aaf.setCurrentAttribute(ia);
 					}

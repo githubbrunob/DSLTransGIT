@@ -34,12 +34,12 @@ public class ApplyRelation extends AbstractFilter {
 	}	
 	
 	public boolean performApply(InstanceDatabase database, MetaModelDatabase metamodel) {
-		for(InstanceRelation ir : database.getLoadedRelations()) {
+		for(InstanceRelation ir : database.getInstanceRelations()) {
 			if(ir.getRelation().getName().
 					equals(getAssociation().getAssociationName())
 			)
 			{
-				getFilterDatabase().addRelation(ir);
+				getFilterDatabase().getInstanceRelations().add(ir);
 			}
 		}			
 		return !this.getFilterDatabase().isEmpty();
@@ -54,7 +54,7 @@ public class ApplyRelation extends AbstractFilter {
 	}
 
 	public void setCurrentByHashId(int parseInt) {
-		for(InstanceRelation ir : getFilterDatabase().getLoadedRelations()) {
+		for(InstanceRelation ir : getFilterDatabase().getInstanceRelations()) {
 			if(ir.hashCode() == parseInt) {
 				setCurrentRelation(ir);
 				return;

@@ -83,14 +83,14 @@ public class ApplyEntityFilter extends AbstractFilter {
 		
 		MetaEntity me = mmodel.getMetaEntityByName(this.getApplyClass().getPackageName(), this.getApplyClass().getClassName());
 		
-		for(InstanceEntity ie : model.getLoadedClasses()) {
+		for(InstanceEntity ie : model.getInstanceEntities()) {
 			if(ie.isFresh()) continue;
 			// Fica aqui a implementacao do allow inheritance quando usado numa apply class.
 			if( (me == ie.getMetaEntity()) || ( allowsInheritance() && ie.getMetaEntity().isSubTypeOf(me) )) {
 				this.setCurrentEntity(ie);
 				if(processApplyAttributes(ie,model,mmodel)) {
 					ie.setDotNotation(this.getDotNotation());
-					this.getFilterDatabase().addEntity(ie);
+					this.getFilterDatabase().getInstanceEntities().add(ie);
 //					System.out.println("added: " + me.getDotNotation() + " hashCode: " + ie.hashCode());
 //					for(InstanceAttribute ia: model.getAttributesByInstanceEntity(ie)) {
 //						System.out.println("\twith attribute: " + ia.getMetaAttribute().getName() + " with value: " + (ia.getValue()== null? "null" : ia.getValue().toString()));
@@ -161,7 +161,7 @@ public class ApplyEntityFilter extends AbstractFilter {
 	}
 
 	public boolean setCurrentByHashId(InstanceDatabase instanceDatabase, int parseInt) {
-		for(InstanceEntity ie : instanceDatabase.getLoadedClasses()) {
+		for(InstanceEntity ie : instanceDatabase.getInstanceEntities()) {
 			if(ie.hashCode() == parseInt) {
 				for(ApplyAttributeFilter af:getFilterAttributes()) {
 					if(!af.setCurrentByEntity(ie))

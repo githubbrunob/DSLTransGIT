@@ -70,11 +70,11 @@ public class Applyer {
 			if(mr.isSet() || !mr.isContainment())
 			{
 				InstanceRelation ir = new InstanceRelation(source,mr,target);
-				outputModel.addRelation(ir);
+				outputModel.getInstanceRelations().add(ir);
 			} else if(!is_special_case(outputModel, applyTarget, source,
 					target, mr,applyMetaModel)) {
 				InstanceRelation ir = new InstanceRelation(source,mr,target);
-				outputModel.addRelation(ir);			
+				outputModel.getInstanceRelations().add(ir);			
 			}
 		}
 		
@@ -86,7 +86,7 @@ public class Applyer {
 			ApplyEntityFilter applyTarget, InstanceEntity source,
 			InstanceEntity target, MetaRelation mr, MetaModelDatabase applyMetaModel) {
 		for(InstanceRelation ir: 
-			outputModel.getRelationsByInstanceEntity(source))
+			outputModel.getRelationsLeaving(source))
 		{
 			if(ir.getRelation()==mr) {
 				System.out.println("preparing to solve special case: "+source.getDotNotation()+" ---"+mr.getName()+"---> "+target.getDotNotation());
@@ -118,7 +118,7 @@ public class Applyer {
 							System.out.println("applying list first time");
 						}
 						InstanceRelation nir = new InstanceRelation(last,mr,target);
-						outputModel.addRelation(nir);
+						outputModel.getInstanceRelations().add(nir);
 						return true;
 					}
 				}

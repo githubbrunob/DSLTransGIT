@@ -326,7 +326,7 @@ public class MatchFilter {
 				
 				if(ef.getFilterDatabase().isEmpty() && isPositive(ef.getMatchClass()))
 					return false;
-				for(InstanceEntity ie: ef.getFilterDatabase().getLoadedClasses()) {
+				for(InstanceEntity ie: ef.getFilterDatabase().getInstanceEntities()) {
 					final String id = "i"+Integer.toString(ie.hashCode());					
 					if(!mapString.containsKey(id+ie.getDotNotation())) {
 						String factString = entityFact + "(" + id + ", " + 
@@ -360,7 +360,7 @@ public class MatchFilter {
 		String entry = "[";
 
 		boolean first = true;
-		for(InstanceAttribute ia : database.getAttributesByInstanceEntity(ie)) {
+		for(InstanceAttribute ia : database.getAllAttributesOf(ie)) {
 			if(ia.getValue()!=null) {
 				if(!first)
 					entry+=", ";
@@ -388,7 +388,7 @@ public class MatchFilter {
 	
 				if(ef.getFilterDatabase().isEmpty())
 					return false;
-				for(InstanceEntity ie: ef.getFilterDatabase().getLoadedClasses()) {
+				for(InstanceEntity ie: ef.getFilterDatabase().getInstanceEntities()) {
 					final String id = "i"+Integer.toString(ie.hashCode());
 					if(!mapString.containsKey(id+ie.getDotNotation())) {
 						String factString = entityFact + "(" + id + ", " + ie.getDotNotation() + 
@@ -406,7 +406,7 @@ public class MatchFilter {
 
 	private String CreateOrderedRelations() {
 		Map<InstanceEntity,List<InstanceRelation>> ermap = new HashMap<InstanceEntity,List<InstanceRelation>>();
-		for(InstanceRelation ir: getFilterDatabase().getLoadedRelations()) {
+		for(InstanceRelation ir: getFilterDatabase().getInstanceRelations()) {
 			if(!ermap.containsKey(ir.getSource())) {
 				List<InstanceRelation> tempList = new LinkedList<InstanceRelation>();
 				tempList.add(ir);
@@ -495,7 +495,7 @@ public class MatchFilter {
 				for(MatchAttributeFilter maf : ef.getFilterAttributes()) {
 					System.out.println("\twith attribute: " + maf.getCurrentAttribute().getMetaAttribute().getName() + " with value: " + (maf.getCurrentAttribute().getValue() == null? "null" : maf.getCurrentAttribute().getValue().toString()));						
 				}
-				for(InstanceAttribute ia: matchModel.getAttributesByInstanceEntity(ef.getCurrentEntity())) {
+				for(InstanceAttribute ia: matchModel.getAllAttributesOf(ef.getCurrentEntity())) {
 					System.out.println("\twith attribute: " + ia.getMetaAttribute().getName() + " with value: " + (ia.getValue()== null? "null" : ia.getValue().toString()));
 				}
 			}
@@ -510,7 +510,7 @@ public class MatchFilter {
 				for(ApplyAttributeFilter aaf : ef.getFilterAttributes()) {
 					System.out.println("\twith attribute: " + aaf.getCurrentAttribute().getMetaAttribute().getName() + " with value: " + (aaf.getCurrentAttribute().getValue() == null? "null" : aaf.getCurrentAttribute().getValue().toString()));
 				}
-				for(InstanceAttribute ia: applyModel.getAttributesByInstanceEntity(ef.getCurrentEntity())) {
+				for(InstanceAttribute ia: applyModel.getAllAttributesOf(ef.getCurrentEntity())) {
 					System.out.println("\twith attribute: " + ia.getMetaAttribute().getName() + " with value: " + (ia.getValue()== null? "null" : ia.getValue().toString()));
 				}
 			}

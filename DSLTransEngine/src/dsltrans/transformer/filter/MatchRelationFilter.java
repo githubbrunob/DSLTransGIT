@@ -44,7 +44,7 @@ public class MatchRelationFilter  extends AbstractFilter {
 
 		if(isDirect()) {
 						
-			for(InstanceRelation ir : database.getLoadedRelations()) {
+			for(InstanceRelation ir : database.getInstanceRelations()) {
 				if(ir.getRelation().getName().
 						equals(getAssociation().getAssociationName())
 				   &&
@@ -53,7 +53,7 @@ public class MatchRelationFilter  extends AbstractFilter {
 				   (ir.getTarget().getMetaEntity().isSubTypeOf(tme))
 				)
 				{
-					getFilterDatabase().addRelation(ir);
+					getFilterDatabase().getInstanceRelations().add(ir);
 				}
 			}			
 		} else return !this.getFilterDatabase().isEmpty();
@@ -76,7 +76,7 @@ public class MatchRelationFilter  extends AbstractFilter {
 	}
 
 	public void setCurrentByHashId(InstanceDatabase instanceDatabase, int parseInt) {
-		for(InstanceRelation ir : instanceDatabase.getLoadedRelations()) {
+		for(InstanceRelation ir : instanceDatabase.getInstanceRelations()) {
 			if(ir.hashCode() == parseInt) {
 				setCurrentRelation(ir);
 				return;

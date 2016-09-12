@@ -14,13 +14,19 @@ public class GenericModelLoader implements ModelLoader {
 	private MetaModelDatabase metamodelDatabase;
 	private InstanceDatabase instanceDatabase;
 	
+	public GenericModelLoader() {
+		this.metamodelDatabase = new MetaModelDatabase();
+	}
+	
 	@Override
 	public void loadInstances(String singleclassname, String url)
 			throws ClassNotFoundException, SecurityException,
 			NoSuchFieldException, IllegalArgumentException,
 			IllegalAccessException, NoSuchMethodException,
 			InvocationTargetException, UnsuportedMetamodelException {
-		this.metamodelDatabase = new MetaModelDatabase();
+		
+		
+		
 	}
 
 	@Override
@@ -72,7 +78,7 @@ public class GenericModelLoader implements ModelLoader {
 
 	@Override
 	public InstanceDatabase getInstanceDatabase() {
-		return null;
+		return instanceDatabase;
 	}
 
 	@Override

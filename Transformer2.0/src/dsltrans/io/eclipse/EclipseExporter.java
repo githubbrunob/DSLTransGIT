@@ -87,7 +87,7 @@ public class EclipseExporter extends EclipseHandler implements ModelExporter {
 		
 		Resource modelResource = resourceSet.createResource(fileURI);
 		
-		List<InstanceEntity> ielist = this.getInstanceDatabase().getElementsByMetaEntity(rootEntity);
+		List<InstanceEntity> ielist = this.getInstanceDatabase().getAllInstancesOf(rootEntity);
 
 		modelResource.getContents().add(ielist.get(ielist.size()-1).getObject());
 
@@ -113,8 +113,8 @@ public class EclipseExporter extends EclipseHandler implements ModelExporter {
 	}
 
 	private void fillInAttributes(EclipseInstanceDatabase instancedatabase) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, ClassNotFoundException, SecurityException, NoSuchMethodException {
-		for(InstanceEntity ie: instancedatabase.getLoadedClasses()) {
-			for(InstanceAttribute ia : instancedatabase.getAttributesByInstanceEntity(ie)) {
+		for(InstanceEntity ie: instancedatabase.getInstanceEntities()) {
+			for(InstanceAttribute ia : instancedatabase.getAllAttributesOf(ie)) {
 				MetaAttribute ma = ia.getMetaAttribute();
 				if(ma.isDSLTransType())
 					continue; // lets just ignore
@@ -147,8 +147,8 @@ public class EclipseExporter extends EclipseHandler implements ModelExporter {
 	private void fillInRelations(EclipseInstanceDatabase instancedatabase) throws SecurityException, NoSuchMethodException, IllegalArgumentException, IllegalAccessException, InvocationTargetException, ClassNotFoundException {
 		int i=0;
 		while (i++<2)
-		for(InstanceEntity ie: instancedatabase.getLoadedClasses()) {
-			for(InstanceRelation ir : instancedatabase.getRelationsByInstanceEntity(ie)) {
+		for(InstanceEntity ie: instancedatabase.getInstanceEntities()) {
+			for(InstanceRelation ir : instancedatabase.getRelationsLeaving(ie)) {
 				EclipseMetaRelation mr = (EclipseMetaRelation)ir.getRelation();
 				if ((i==1 && !mr.isContainment()) || (i==2 && mr.isContainment()))
 					continue;

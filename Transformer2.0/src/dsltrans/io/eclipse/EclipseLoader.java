@@ -97,7 +97,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		}
 		System.out.println();
 		{
-			Iterator<InstanceEntity> it = getInstanceDatabase().getLoadedClasses().iterator();
+			Iterator<InstanceEntity> it = getInstanceDatabase().getInstanceEntities().iterator();
 			System.out.println("printing instance entities: ");
 			while (it.hasNext()) {
 				InstanceEntity me = it.next();
@@ -106,7 +106,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		}
 		System.out.println();
 		{
-			Iterator<InstanceRelation> it = getInstanceDatabase().getLoadedRelations().iterator();
+			Iterator<InstanceRelation> it = getInstanceDatabase().getInstanceRelations().iterator();
 			System.out.println("printing instance relations: ");
 			while (it.hasNext()) {
 				InstanceRelation me = it.next();
@@ -115,7 +115,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 		}
 		System.out.println();
 		{
-			Iterator<InstanceAttribute> it = getInstanceDatabase().getLoadedAttributes().iterator();
+			Iterator<InstanceAttribute> it = getInstanceDatabase().getInstanceAttributes().iterator();
 			System.out.println("printing instance attributes: ");
 			while (it.hasNext()) {
 				InstanceAttribute me = it.next();
@@ -198,7 +198,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 			}
 		}
 		{// process relations
-			Iterator<InstanceEntity> iter = getInstanceDatabase().getLoadedClasses().iterator();
+			Iterator<InstanceEntity> iter = getInstanceDatabase().getInstanceEntities().iterator();
 			while (iter.hasNext()) {
 				InstanceEntity me = iter.next();
 				processNonContainments(me);
@@ -216,7 +216,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 			ClassNotFoundException {
 
 		{ // we do not want to process the same class two times
-			Iterator<InstanceEntity> it = getInstanceDatabase().getLoadedClasses().iterator();
+			Iterator<InstanceEntity> it = getInstanceDatabase().getInstanceEntities().iterator();
 			while (it.hasNext()) {
 				InstanceEntity me = it.next();
 				if (me.getObjectMeta() == objinstance)
@@ -229,7 +229,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 				MetaEntity me = it.next();
 				if (objinstance.getClass().getCanonicalName().equals("org.eclipse.emf." + me.getNamespace() + ".impl." + me.getName() + "Impl")) {
 					InstanceEntity instanceEntity = new InstanceEntity(objinstance, me);
-					getInstanceDatabase().addEntity(instanceEntity);
+					getInstanceDatabase().getInstanceEntities().add(instanceEntity);
 					processModelAttributes(instanceEntity);
 					processModelContainments(instanceEntity);
 					return instanceEntity;
@@ -268,7 +268,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 							if (ie != null) {
 								InstanceRelation ir = new InstanceRelation(instanceEntity, ma, ie);
 								instanceEntity.addRelation(ma);
-								getInstanceDatabase().addRelation(ir);
+								getInstanceDatabase().getInstanceRelations().add(ir);
 							}
 						}
 					}
@@ -277,7 +277,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 					if (ie != null) {
 						InstanceRelation ir = new InstanceRelation(instanceEntity, ma, ie);
 						instanceEntity.addRelation(ma);
-						getInstanceDatabase().addRelation(ir);
+						getInstanceDatabase().getInstanceRelations().add(ir);
 					}
 				}
 			}
@@ -307,7 +307,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 				if (value != null) {
 					InstanceAttribute ia = new InstanceAttribute(instanceEntity, ma, value);
 					instanceEntity.addAttribute(ma);
-					getInstanceDatabase().addAttribute(ia);
+					getInstanceDatabase().getInstanceAttributes().add(ia);
 				}
 			}
 		}
@@ -315,7 +315,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 
 	public void processRootElement() throws UnsuportedMetamodelException {
 		MetaEntity rootEntity = this.getMetaModelDatabase().getRootMetaEntity();
-		List<InstanceEntity> ielist = this.getInstanceDatabase().getElementsByMetaEntity(rootEntity);
+		List<InstanceEntity> ielist = this.getInstanceDatabase().getAllInstancesOf(rootEntity);
 
 		this.getInstanceDatabase().setRootElement(ielist.get(0));
 
@@ -362,7 +362,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 							if (ie != null) {
 								InstanceRelation ir = new InstanceRelation(instanceEntity, ma, ie);
 								instanceEntity.addRelation(ma);
-								getInstanceDatabase().addRelation(ir);
+								getInstanceDatabase().getInstanceRelations().add(ir);
 							}
 						}
 					}
@@ -371,7 +371,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 					if (ie != null) {
 						InstanceRelation ir = new InstanceRelation(instanceEntity, ma, ie);
 						instanceEntity.addRelation(ma);
-						getInstanceDatabase().addRelation(ir);
+						getInstanceDatabase().getInstanceRelations().add(ir);
 					}
 				}
 			}
@@ -406,7 +406,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 						if (ie != null) {
 							InstanceRelation ir = new InstanceRelation(instanceEntity, ma, ie);
 							instanceEntity.addRelation(ma);
-							getInstanceDatabase().addRelation(ir);
+							getInstanceDatabase().getInstanceRelations().add(ir);
 						}
 					}
 				} else {
@@ -414,7 +414,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 					if (ie != null) {
 						InstanceRelation ir = new InstanceRelation(instanceEntity, ma, ie);
 						instanceEntity.addRelation(ma);
-						getInstanceDatabase().addRelation(ir);
+						getInstanceDatabase().getInstanceRelations().add(ir);
 					}
 				}
 			}
@@ -422,7 +422,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 	}
 
 	private InstanceEntity getInstanceEntity(EModelElementImpl value) {
-		Iterator<InstanceEntity> it = getInstanceDatabase().getLoadedClasses().iterator();
+		Iterator<InstanceEntity> it = getInstanceDatabase().getInstanceEntities().iterator();
 		while (it.hasNext()) {
 			InstanceEntity me = it.next();
 			if (me.getObjectMeta() == value)
@@ -432,7 +432,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 	}
 
 	private InstanceEntity getInstanceEntity(EObjectImpl value) {
-		Iterator<InstanceEntity> it = getInstanceDatabase().getLoadedClasses().iterator();
+		Iterator<InstanceEntity> it = getInstanceDatabase().getInstanceEntities().iterator();
 		while (it.hasNext()) {
 			InstanceEntity me = it.next();
 			if (me.getObject() == value)
@@ -469,7 +469,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 						if (ie != null) {
 							InstanceRelation ir = new InstanceRelation(instanceEntity, ma, ie);
 							instanceEntity.addRelation(ma);
-							getInstanceDatabase().addRelation(ir);
+							getInstanceDatabase().getInstanceRelations().add(ir);
 						}
 					}
 				} else {
@@ -477,7 +477,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 					if (ie != null) {
 						InstanceRelation ir = new InstanceRelation(instanceEntity, ma, ie);
 						instanceEntity.addRelation(ma);
-						getInstanceDatabase().addRelation(ir);
+						getInstanceDatabase().getInstanceRelations().add(ir);
 					}
 				}
 			}
@@ -488,7 +488,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 			InvocationTargetException {
 
 		{ // we do not want to process the same class two times
-			Iterator<InstanceEntity> it = getInstanceDatabase().getLoadedClasses().iterator();
+			Iterator<InstanceEntity> it = getInstanceDatabase().getInstanceEntities().iterator();
 			while (it.hasNext()) {
 				InstanceEntity me = it.next();
 				if (me.getObject() == objinstance)
@@ -501,7 +501,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 				EclipseMetaEntity me = (EclipseMetaEntity) it.next();
 				if (me.isMetaTypeOf(objinstance)) {
 					InstanceEntity instanceEntity = new InstanceEntity(objinstance, me);
-					getInstanceDatabase().addEntity(instanceEntity);
+					getInstanceDatabase().getInstanceEntities().add(instanceEntity);
 					processAttributes(instanceEntity);
 					processContainments(instanceEntity);
 					return instanceEntity;
@@ -534,7 +534,7 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 				if (value != null) {
 					InstanceAttribute ia = new InstanceAttribute(instanceEntity, ma, value);
 					instanceEntity.addAttribute(ma);
-					getInstanceDatabase().addAttribute(ia);
+					getInstanceDatabase().getInstanceAttributes().add(ia);
 				}
 			}
 		}

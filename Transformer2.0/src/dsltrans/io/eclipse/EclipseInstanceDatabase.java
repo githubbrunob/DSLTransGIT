@@ -49,7 +49,7 @@ public class EclipseInstanceDatabase extends InstanceDatabase {
 		id.setFactorys(this.getFactorys()); // share factories
 		Map<InstanceEntity,InstanceEntity> entitymap = new HashMap<InstanceEntity,InstanceEntity>();
 		{{
-			for(InstanceEntity ie : getLoadedClasses()) {
+			for(InstanceEntity ie : getInstanceEntities()) {
 				InstanceEntity cloned;
 				try {
 					cloned = cloneEntity(ie);
@@ -62,7 +62,7 @@ public class EclipseInstanceDatabase extends InstanceDatabase {
 							iepast.getTemporalChildren().remove(ie);
 						iepast.getTemporalChildren().add(cloned);
 					}
-					id.addEntity(cloned);
+					id.getInstanceEntities().add(cloned);
 				} catch (SecurityException e) {
 					e.printStackTrace();
 				} catch (IllegalArgumentException e) {
@@ -79,7 +79,7 @@ public class EclipseInstanceDatabase extends InstanceDatabase {
 					e.printStackTrace();
 				}
 		}}{
-			for(InstanceEntity ie : getLoadedClasses()) {
+			for(InstanceEntity ie : getInstanceEntities()) {
 				Enumeration<MetaRelation> mrelations = ie.getLastRelations();
 				while(mrelations.hasMoreElements()) {
 					MetaRelation mr=mrelations.nextElement();
@@ -88,16 +88,16 @@ public class EclipseInstanceDatabase extends InstanceDatabase {
 							(InstanceEntity)entitymap.get(last));
 				}
 		}}{
-			for(InstanceAttribute ia : getLoadedAttributes()) {
+			for(InstanceAttribute ia : getInstanceAttributes()) {
 				InstanceAttribute cloned = 
 					new InstanceAttribute(
 							(InstanceEntity)entitymap.get(ia.getEntity()),
 							ia.getMetaAttribute(),
 							ia.getValue()
 					);
-				id.addAttribute(cloned);
+				id.getInstanceAttributes().add(cloned);
 		}}{
-			for(InstanceRelation ir : getLoadedRelations()) {
+			for(InstanceRelation ir : getInstanceRelations()) {
 				InstanceEntity itarget = null;
 				if(ir.getTarget() != null &&
 				(InstanceEntity)entitymap.get(ir.getTarget()) == null)
@@ -110,12 +110,12 @@ public class EclipseInstanceDatabase extends InstanceDatabase {
 						ir.getRelation(),
 						itarget
 					);
-				id.addRelation(cloned);
+				id.getInstanceRelations().add(cloned);
 		}}}
 		{
 			if(this.getRootElement() != null) {
 				MetaEntity rootEntity = this.getRootElement().getMetaEntity();
-				List<InstanceEntity> ielist = id.getElementsByMetaEntity(rootEntity);
+				List<InstanceEntity> ielist = id.getAllInstancesOf(rootEntity);
 				id.setRootElement(ielist.get(0));
 				//id.createTransitiveGraph();
 			}

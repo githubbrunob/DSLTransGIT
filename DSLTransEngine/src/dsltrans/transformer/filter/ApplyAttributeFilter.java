@@ -56,13 +56,13 @@ public class ApplyAttributeFilter extends AbstractFilter {
 		
 		setMetaModel(metamodel);
 		if((getAttribute()!=null) && (getAttribute().getAttributeValue()!=null)) {
-			for (InstanceAttribute ia : database.getAttributesByInstanceEntity(_entity.getCurrentEntity())) {
+			for (InstanceAttribute ia : database.getAllAttributesOf(_entity.getCurrentEntity())) {
 				if (ia.getMetaAttribute().getName().equals(getAttribute().getAttributeName())) {
 					String attName = getAttribute().getAttributeName();
 					String condition = getEntity().getTermProcessor().processTerm(getAttribute().getAttributeValue(), _rule);
 					if (ia.getMetaAttribute().getName().equals(attName) && ia.getValue() != null) {
 						if(getEntity().getTermProcessor().parseCondition(condition, ia.getValue().toString())){
-							this.getFilterDatabase().addAttribute(ia);
+							this.getFilterDatabase().getInstanceAttributes().add(ia);
 							return true;
 						}
 					}
@@ -89,7 +89,7 @@ public class ApplyAttributeFilter extends AbstractFilter {
 	}
 
 	public boolean setCurrentByEntity(InstanceEntity ie) {
-		for(InstanceAttribute ia: this.getFilterDatabase().getLoadedAttributes()) {
+		for(InstanceAttribute ia: this.getFilterDatabase().getInstanceAttributes()) {
 			if(ia.getEntity().hashCode() == ie.hashCode()) {
 				setCurrentAttribute(ia);
 				return true;

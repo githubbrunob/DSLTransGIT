@@ -81,7 +81,7 @@ public class TransformationRule {
 
 	public void MarkTemporalRelations(InstanceDatabase instanceDatabase) {
 		// move time forward...
-		for(InstanceEntity ie : instanceDatabase.getLoadedClasses())
+		for(InstanceEntity ie : instanceDatabase.getInstanceEntities())
 			ie.setFreshness(false);
 	}
 	
@@ -332,16 +332,16 @@ public class TransformationRule {
 
 	private List<InstanceEntity> copyChildren(InstanceDatabase inputModel, InstanceDatabase outputModel, InstanceEntity rootIn, MetaModelDatabase applyMetaModel) {
 		List<InstanceEntity> entities = new LinkedList<InstanceEntity>();
-		outputModel.addEntity(rootIn);
+		outputModel.getInstanceEntities().add(rootIn);
 		outputModel.createTemporalRelation(rootIn,rootIn);
 		if(!rootIn.getTemporalChildren().contains(rootIn))
 			rootIn.getTemporalChildren().add(rootIn);
 		
 		entities.add(rootIn);
-		for (InstanceAttribute ia : inputModel.getAttributesByInstanceEntity(rootIn))
-			outputModel.addAttribute(ia);
+		for (InstanceAttribute ia : inputModel.getAllAttributesOf(rootIn))
+			outputModel.getInstanceAttributes().add(ia);
 		
-		for (InstanceRelation ir :inputModel.getRelationsByInstanceEntity(rootIn)) {
+		for (InstanceRelation ir :inputModel.getRelationsLeaving(rootIn)) {
 			if (ir.getRelation().isContainment()) {
 				MetaEntity me = ir.getTarget().getMetaEntity();
 				try {
@@ -350,7 +350,7 @@ public class TransformationRule {
 				} catch (InvalidLayerRequirement e) {
 					e.printStackTrace();
 				}
-				outputModel.addRelation(new InstanceRelation(rootIn, ir.getRelation(), ir.getTarget()));	
+				outputModel.getInstanceRelations().add(new InstanceRelation(rootIn, ir.getRelation(), ir.getTarget()));	
 				entities.addAll(copyChildren(inputModel, outputModel, ir.getTarget(), applyMetaModel));
 			}
 		}
@@ -359,10 +359,10 @@ public class TransformationRule {
 	
 	private void fillNonContainments(InstanceDatabase inputModel, InstanceDatabase outputModel, List<InstanceEntity> ies) {
 		for (InstanceEntity ie : ies) {
-			for (InstanceRelation ir : inputModel.getRelationsByInstanceEntity(ie)) {
+			for (InstanceRelation ir : inputModel.getRelationsLeaving(ie)) {
 				if (!ir.getRelation().isContainment()) {
 					if (ies.contains(ir.getSource()) && ies.contains(ir.getTarget()))
-						outputModel.addRelation(new InstanceRelation(ir.getSource(), ir.getRelation(), ir.getTarget()));
+						outputModel.getInstanceRelations().add(new InstanceRelation(ir.getSource(), ir.getRelation(), ir.getTarget()));
 				}
 			}
 		}
@@ -538,7 +538,7 @@ public class TransformationRule {
 						ia = new InstanceAttribute(newentity,applyMetaModel.getMetaAttributeByName(DSLTransAttribute.DSLTRANS_DEFAULT));
 						Term term = aaf.getAttribute().getAttributeValue();
 						ia.setValue(((Atom)term).getValue());
-						instanceDatabase.addAttribute(ia);
+						instanceDatabase.getInstanceAttributes().add(ia);
 						aaf.setCurrentAttribute(ia);
 					} catch (InvalidLayerRequirement e) {
 						e.printStackTrace();

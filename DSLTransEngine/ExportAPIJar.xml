@@ -2,6 +2,9 @@
 <project name="ExportAPIJar" default="main" basedir=".">
 	<!-- See http://stackoverflow.com/questions/1274879/ant-exclude-files-from-merged-jar-file -->
 	<target name="main">
+		<tstamp>
+	      <format property="timestamp" pattern="yyyyMMddHHmm" />
+	    </tstamp>
 		<jar destfile="exportedlib/dsltrans_engine_metainf.jar">
 			<fileset dir="../DSLTransEditor2.0/bin" />
 			<fileset dir="bin" />
@@ -9,7 +12,7 @@
 			</zipgroupfileset>
 		</jar>
 		<sleep seconds="1"/>
-		<jar destfile="exportedlib/dsltrans_engine.jar">
+		<jar destfile="exportedlib/dsltrans_engine_${timestamp}.jar">
 			<zipfileset src="exportedlib/dsltrans_engine_metainf.jar">
 				<exclude name="META-INF/*.SF" />
 				<exclude name="META-INF/*.DSA" />

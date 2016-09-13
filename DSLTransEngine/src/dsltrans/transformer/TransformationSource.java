@@ -37,7 +37,7 @@ public class TransformationSource extends TransformationUnit {
 		setValid(true); // if passed all above conditions then it is valid
 	}
 
-	public void Load(ModelLoader loader, Map<String, Object> metamodels) throws TransformationSourceException, IOException, UnsuportedMetamodelException, ClassNotFoundException, SecurityException, NoSuchFieldException, IllegalArgumentException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, InvalidLayerRequirement {
+	public void Load(ModelLoader loader, Map<String, Object> metamodels) throws Throwable {
 		if(isProcessed()) return;
 		MetaModelIdentifier mmi = getPort().getMetaModelId();
 		

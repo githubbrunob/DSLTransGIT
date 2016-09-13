@@ -22,7 +22,7 @@ public class TransformationSequentialLayer extends TransformationLayer {
 		setMatchModel(ts.getOutputModelDatabase());
 	}
 	
-	protected void prepareOutputModel(TransformationController control) throws IOException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException {
+	protected void prepareOutputModel(TransformationController control) throws Throwable {
 		Map<String, Object> metamodels = control.getMetamodels();
 		String mmName = this.getMetamodelIdentifier();
 

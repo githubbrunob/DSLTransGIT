@@ -73,7 +73,7 @@ public class TransformationController {
 		}
 	}
 	
-	private TransformationUnit resolve(AbstractSource requirement) throws InvalidLayerRequirement, TransformationSourceException, IOException, UnsuportedMetamodelException, ClassNotFoundException, SecurityException, NoSuchFieldException, IllegalArgumentException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+	private TransformationUnit resolve(AbstractSource requirement) throws Throwable {
 		for(TransformationLayer l:getUnits()) {
 			if(l.getLayer() == requirement && l.isValid())
 				return l;

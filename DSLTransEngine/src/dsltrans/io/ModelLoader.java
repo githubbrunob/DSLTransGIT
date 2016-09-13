@@ -1,20 +1,14 @@
 package dsltrans.io;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.net.MalformedURLException;
 
 import dsltrans.metamodel.MetaModelDatabase;
 import dsltrans.model.InstanceDatabase;
-import dsltrans.transformer.exceptions.InvalidLayerRequirement;
-import dsltrans.transformer.exceptions.UnsuportedMetamodelException;
 
 public interface ModelLoader {
 	
-	public void loadInstances(String metamodelName, String url) throws ClassNotFoundException, SecurityException, NoSuchFieldException, IllegalArgumentException,
-	IllegalAccessException, NoSuchMethodException, InvocationTargetException, UnsuportedMetamodelException, InvalidLayerRequirement;
-
-	public void loadMetaModel(String mmURI) throws IOException;
+	public void loadInstances(String metamodelName, String metamodelLocation) throws Throwable;
+	public void loadMetaModel(String metamodelLocation) throws IOException;
 
 	public MetaModelDatabase getMetaModelDatabase();
 
@@ -22,6 +16,6 @@ public interface ModelLoader {
 
 	public InstanceDatabase getInstanceDatabase();
 	
-	public void prepareInstanceDatabase() throws ClassNotFoundException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException, MalformedURLException;
+	public void prepareInstanceDatabase() throws Throwable;
 	
 }

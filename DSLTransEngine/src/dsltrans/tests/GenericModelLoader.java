@@ -65,7 +65,7 @@ public class GenericModelLoader implements ModelLoader {
 	}
 
 	@Override
-	public void loadMetaModel(String mmPath) throws IOException {
+	public void loadMetaModel(String metamodelLocation) throws IOException {
 		
 		GenericMetaEntity classA = new GenericMetaEntity("samplenamespace", "samplepackage", "ClassA", false);
 		GenericMetaAttribute attrA = new GenericMetaAttribute("AttrA", classA, "java.lang.String", "");

@@ -1,22 +1,14 @@
 package dsltrans.io;
 
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-
 import dsltrans.metamodel.MetaModelDatabase;
 import dsltrans.model.InstanceDatabase;
-import dsltrans.transformer.exceptions.UnsuportedMetamodelException;
 
 public interface ModelExporter {
 	
 	public void setInstanceDatabase(InstanceDatabase database);
 
-	public void setMetaModelDatabase(MetaModelDatabase _metaModelDatabase);
+	public void setMetaModelDatabase(MetaModelDatabase metamodelDatabase);
 
-	public void saveTo(String path) throws SecurityException,
-			IllegalArgumentException, ClassNotFoundException,
-			NoSuchFieldException, IllegalAccessException, IOException,
-			InvocationTargetException, NoSuchMethodException,
-			UnsuportedMetamodelException;
+	public void saveTo(String location) throws Throwable;
 	
 }

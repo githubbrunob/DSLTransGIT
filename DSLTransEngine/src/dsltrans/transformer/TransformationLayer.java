@@ -134,7 +134,7 @@ public abstract class TransformationLayer  extends TransformationUnit {
 		}
 	}
 
-	protected abstract void prepareOutputModel(TransformationController control) throws TransformationRefinementLayerException, IOException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException;
+	protected abstract void prepareOutputModel(TransformationController control) throws Throwable;
 
 	protected abstract void prepareInputModel();
 
@@ -163,7 +163,7 @@ public abstract class TransformationLayer  extends TransformationUnit {
 		return this.getLayer().getGroupName();
 	}
 	
-	private void output() throws SecurityException, IllegalArgumentException, ClassNotFoundException, NoSuchFieldException, IllegalAccessException, IOException, InvocationTargetException, NoSuchMethodException, UnsuportedMetamodelException {
+	private void output() throws Throwable {
 //		System.out.println("#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
 //		this.getDatabase().dump();
 //		System.out.println("#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");	

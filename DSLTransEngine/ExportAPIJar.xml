@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ExportAPIJar" default="main" basedir=".">
+	<!-- See http://stackoverflow.com/questions/1274879/ant-exclude-files-from-merged-jar-file -->
+	<target name="main">
+		<jar destfile="exportedlib/dsltrans_engine_metainf.jar">
+			<fileset dir="../DSLTransEditor2.0/bin" />
+			<fileset dir="bin" />
+			<zipgroupfileset dir="lib" includes="*.jar">
+			</zipgroupfileset>
+		</jar>
+		<sleep seconds="1"/>
+		<jar destfile="exportedlib/dsltrans_engine.jar">
+			<zipfileset src="exportedlib/dsltrans_engine_metainf.jar">
+				<exclude name="META-INF/*.SF" />
+				<exclude name="META-INF/*.DSA" />
+				<exclude name="META-INF/*.RSA" />
+			</zipfileset>
+		</jar>
+		<sleep seconds="1"/>
+		<delete file="exportedlib/dsltrans_engine_metainf.jar"/>
+	</target>
+</project>

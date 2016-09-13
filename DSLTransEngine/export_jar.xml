@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project default="plugin_export" name="build">
-	<target name="plugin_export">
-		<pde.exportPlugins destination="C:\Users\clagms\Desktop" exportSource="true" exportSourceBundle="false" exportType="directory" plugins="DSLTransEditor2.0,DSLTransEngine" useJARFormat="true"/>
-	</target>
-</project>

@@ -9,13 +9,13 @@ public class GenericPersistenceLayer implements PersistenceLayer {
 
 	@Override
 	public ModelExporter buildModelExporter() {
-		return null;
+		return new GenericModelExporter();
 	}
 
 	@Override
 	public ModelLoader buildModelLoader(
 			InstanceDatabaseManager instanceDatabaseManager) {
-		return null;
+		return new GenericModelLoader();
 	}
 
 }

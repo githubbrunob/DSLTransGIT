@@ -68,12 +68,12 @@ public class GenericMetaEntity implements MetaEntity {
 
 	@Override
 	public String print() {
-		return null;
+		return getQualifiedName();
 	}
 
 	@Override
-	public String getCurrentPackage() {
-		return null;
+	public String getPackage() {
+		return this.packageName;
 	}
 
 }

@@ -74,7 +74,7 @@ public class EclipseMetaEntity implements MetaEntity {
 	}
 	
 	@Override
-	public String getCurrentPackage() {
+	public String getPackage() {
 		return _currPackage;
 	}
 

@@ -1,22 +1,32 @@
 package dsltrans.tests;
 
-import static org.junit.Assert.fail;
-
 import org.junit.Test;
 
+import dsltrans.AnyMatchClass;
+import dsltrans.ApplyClass;
+import dsltrans.ApplyModel;
 import dsltrans.DsltransFactory;
 import dsltrans.FilePort;
+import dsltrans.MatchModel;
 import dsltrans.MetaModelIdentifier;
 import dsltrans.Rule;
 import dsltrans.Sequential;
 import dsltrans.TransformationModel;
 import dsltrans.impl.DsltransFactoryImpl;
+import dsltrans.transformer.TransformerProcessor;
 
 public class Test_Generic_IO_API {
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void test() throws Throwable {
+		
+		TransformationModel sampleTransformation = buildSampleTransformation();
+		
+		TransformerProcessor tP = new TransformerProcessor(new GenericPersistenceLayer(), 
+				new GenericInstanceDatabaseManager());
+		
+		tP.LoadModel(sampleTransformation);
+		tP.Execute();
 	}
 
 	public TransformationModel buildSampleTransformation(){
@@ -45,17 +55,34 @@ public class Test_Generic_IO_API {
 		
 		firstLayer.getPreviousSource().add(inputFilePort);
 		
-		
-		
 		transformation.getSource().add(inputFilePort);
 		transformation.getSource().add(firstLayer);
 		
 		Rule rule = factory.createRule();
 		rule.setDescription("First Rule");
 		
+		MatchModel matchModel = factory.createMatchModel();
+		
+		AnyMatchClass matchA = factory.createAnyMatchClass();
+		matchA.setClassName("ClassA");
+		matchA.setPackageName("samplenamespace");
+		
+		matchModel.getClass_().add(matchA);
+		
+		rule.getMatch().add(matchModel);
+		
+		ApplyModel applyModel = factory.createApplyModel();
+		
+		ApplyClass applyClass = factory.createApplyClass();
+		
+		applyClass.setClassName("ClassA");
+		applyClass.setPackageName("samplenamespace");
+		
+		applyModel.getClass_().add(applyClass);
+		
+		rule.setApply(applyModel);
 		
 		firstLayer.getHasRule().add(rule);
-		
 		
 		return transformation;
 	}

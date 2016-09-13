@@ -716,8 +716,8 @@ public class EclipseLoader extends EclipseHandler implements ModelLoader {
 	private void prepareDatabase(MetaEntity me) throws ClassNotFoundException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException, MalformedURLException {
 		this.getInstanceDatabase().synchFactories();
 		
-		String packageName = me.getCurrentPackage().substring(1);
-		packageName = Character.toUpperCase(me.getCurrentPackage().charAt(0)) + packageName;
+		String packageName = me.getPackage().substring(1);
+		packageName = Character.toUpperCase(me.getPackage().charAt(0)) + packageName;
 		String className = me.getNamespace()+"."+packageName+"Package";
 		
 		URL[] urlPath = {};

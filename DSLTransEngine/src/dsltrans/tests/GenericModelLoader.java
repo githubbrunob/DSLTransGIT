@@ -37,30 +37,26 @@ public class GenericModelLoader implements ModelLoader {
 		
 		InstanceAttribute instance_attrA = new InstanceAttribute(obj_A, attrA, "value_attr_A");
 		
+		GenericMetaEntity classD = (GenericMetaEntity) this.metamodelDatabase.getMetaEntityByName("samplenamespace", "ClassD");
 		GenericMetaEntity classC = (GenericMetaEntity) this.metamodelDatabase.getMetaEntityByName("samplenamespace", "ClassC");
 		
 		GenericMetaAttribute attrC = (GenericMetaAttribute) metamodelDatabase.getMetaAttributesFromEntityByName(classC, "AttrC");
 		
-		GenericInstanceEntity obj_C =  (GenericInstanceEntity) instanceDatabase.createInstance(classC);
+		GenericInstanceEntity obj_D =  (GenericInstanceEntity) instanceDatabase.createInstance(classD);
 		
-		InstanceAttribute instance_attrC = new InstanceAttribute(obj_C, attrC, "value_attr_C");
-		
-		GenericMetaEntity classD = (GenericMetaEntity) this.metamodelDatabase.getMetaEntityByName("samplenamespace", "ClassD");
-		
-		GenericInstanceEntity obj_D = (GenericInstanceEntity) instanceDatabase.createInstance(classD);
+		InstanceAttribute instance_attrC = new InstanceAttribute(obj_D, attrC, "value_attr_C");
 		
 		GenericMetaRelation A_contains_C = (GenericMetaRelation) metamodelDatabase.getMetaRelationByName("contains", classA, classC);
 		
-		InstanceRelation obj_A__connects__obj_C = new InstanceRelation(obj_A, A_contains_C, obj_C);
+		InstanceRelation obj_A__connects__obj_D = new InstanceRelation(obj_A, A_contains_C, obj_D);
 		
 		instanceDatabase.getInstanceEntities().add(obj_A);
-		instanceDatabase.getInstanceEntities().add(obj_C);
 		instanceDatabase.getInstanceEntities().add(obj_D);
 		
 		instanceDatabase.getInstanceAttributes().add(instance_attrA);
 		instanceDatabase.getInstanceAttributes().add(instance_attrC);
 
-		instanceDatabase.getInstanceRelations().add(obj_A__connects__obj_C);
+		instanceDatabase.getInstanceRelations().add(obj_A__connects__obj_D);
 
 	}
 
@@ -70,15 +66,15 @@ public class GenericModelLoader implements ModelLoader {
 		GenericMetaEntity classA = new GenericMetaEntity("samplenamespace", "samplepackage", "ClassA", false);
 		GenericMetaAttribute attrA = new GenericMetaAttribute("AttrA", classA, "java.lang.String", "");
 		
-		GenericMetaEntity classB = new GenericMetaEntity("samplenamespace", "samplepackage", "ClassB", true);
+		GenericMetaEntity classB = new GenericMetaEntity("samplenamespace", "samplepackage", "ClassB", false);
 		GenericMetaAttribute attrB = new GenericMetaAttribute("AttrB", classB, "java.lang.String", "");
 		
-		GenericMetaEntity classC = new GenericMetaEntity("samplenamespace", "samplepackage", "ClassC", false);
+		GenericMetaEntity classC = new GenericMetaEntity("samplenamespace", "samplepackage", "ClassC", true);
 		GenericMetaAttribute attrC = new GenericMetaAttribute("AttrC", classC, "java.lang.String", "");
 		
 		GenericMetaEntity classD = new GenericMetaEntity("samplenamespace", "samplepackage", "ClassD", false);
 		
-		classA.getSuperEntities().add(classC);
+		classD.getSuperEntities().add(classC);
 		
 		GenericMetaRelation A_contains_B = new GenericMetaRelation("contains", classA, classB, true, true);
 		GenericMetaRelation A_contains_C = new GenericMetaRelation("contains", classA, classC, true, true);

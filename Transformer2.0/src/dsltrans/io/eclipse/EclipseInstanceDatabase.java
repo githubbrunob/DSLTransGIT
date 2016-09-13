@@ -40,8 +40,8 @@ public class EclipseInstanceDatabase extends InstanceDatabase {
 	@Override
 	public InstanceEntity createInstance(MetaEntity me) throws ClassNotFoundException, SecurityException, NoSuchFieldException, IllegalArgumentException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
 		String namespace = me.getNamespace();
-		String currentPackage = me.getCurrentPackage().substring(1);
-		currentPackage= Character.toUpperCase(me.getCurrentPackage().charAt(0)) + currentPackage;
+		String currentPackage = me.getPackage().substring(1);
+		currentPackage= Character.toUpperCase(me.getPackage().charAt(0)) + currentPackage;
 		//String currentPackage = me.getCurrentPackage();
 		String methodname = "create"+me.getName();
 		String classname = namespace+"."+currentPackage+"Factory";

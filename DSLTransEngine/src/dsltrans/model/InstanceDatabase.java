@@ -39,7 +39,7 @@ public abstract class InstanceDatabase {
 	public List<InstanceEntity> getAllInstancesOf(MetaEntity me) {
 		List<InstanceEntity> list = new LinkedList<InstanceEntity>();
 		for(InstanceEntity ie : getInstanceEntities()) {
-			if(ie.getMetaEntity().getCurrentPackage().equals(me.getCurrentPackage()) && 
+			if(ie.getMetaEntity().getPackage().equals(me.getPackage()) && 
 					ie.getMetaEntity().getName().equals(me.getName()))
 				list.add(ie);
 		}

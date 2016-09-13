@@ -20,6 +20,6 @@ public interface MetaEntity {
 
 	public String print();
 
-	public String getCurrentPackage();
+	public String getPackage();
 
 }

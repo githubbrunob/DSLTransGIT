@@ -12,7 +12,12 @@ public class GenericModelExporter implements ModelExporter {
 	
 	private InstanceDatabase instanceDatabase;
 	private MetaModelDatabase metamodelDatabase;
+	private GenericPersistenceLayer persistenceLayer;
 	
+	public GenericModelExporter(GenericPersistenceLayer genericPersistenceLayer) {
+		persistenceLayer = genericPersistenceLayer;
+	}
+
 	@Override
 	public void setInstanceDatabase(InstanceDatabase database) {
 		instanceDatabase = database;
@@ -31,6 +36,8 @@ public class GenericModelExporter implements ModelExporter {
 			UnsuportedMetamodelException {
 		assert instanceDatabase != null;
 		assert metamodelDatabase != null;
+		persistenceLayer.outputModel = (GenericInstanceDatabase) instanceDatabase;
+		persistenceLayer.outputMetamodel = metamodelDatabase;
 	}
 
 }

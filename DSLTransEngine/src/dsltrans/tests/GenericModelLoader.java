@@ -15,11 +15,13 @@ import dsltrans.transformer.exceptions.UnsuportedMetamodelException;
 public class GenericModelLoader implements ModelLoader {
 	
 	private MetaModelDatabase metamodelDatabase;
-	private InstanceDatabase instanceDatabase;
+	private GenericInstanceDatabase instanceDatabase;
+	private GenericPersistenceLayer persistenceLayer;
 	
-	public GenericModelLoader() {
+	public GenericModelLoader(GenericPersistenceLayer genericPersistenceLayer) {
 		this.metamodelDatabase = new MetaModelDatabase();
 		this.instanceDatabase = new GenericInstanceDatabase();
+		this.persistenceLayer = genericPersistenceLayer;
 	}
 	
 	@Override
@@ -57,7 +59,9 @@ public class GenericModelLoader implements ModelLoader {
 		instanceDatabase.getInstanceAttributes().add(instance_attrC);
 
 		instanceDatabase.getInstanceRelations().add(obj_A__connects__obj_D);
-
+		
+		persistenceLayer.inputModel = instanceDatabase;
+		persistenceLayer.inputMetamodel = metamodelDatabase;
 	}
 
 	@Override

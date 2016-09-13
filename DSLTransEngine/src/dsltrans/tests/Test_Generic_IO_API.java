@@ -1,5 +1,6 @@
 package dsltrans.tests;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import dsltrans.AnyMatchClass;
@@ -13,6 +14,7 @@ import dsltrans.Rule;
 import dsltrans.Sequential;
 import dsltrans.TransformationModel;
 import dsltrans.impl.DsltransFactoryImpl;
+import dsltrans.metamodel.MetaEntity;
 import dsltrans.transformer.TransformerProcessor;
 
 public class Test_Generic_IO_API {
@@ -21,12 +23,15 @@ public class Test_Generic_IO_API {
 	public void test() throws Throwable {
 		
 		TransformationModel sampleTransformation = buildSampleTransformation();
-		
-		TransformerProcessor tP = new TransformerProcessor(new GenericPersistenceLayer(), 
+		GenericPersistenceLayer persistence = new GenericPersistenceLayer();
+		TransformerProcessor tP = new TransformerProcessor(persistence, 
 				new GenericInstanceDatabaseManager());
 		
 		tP.LoadModel(sampleTransformation);
 		tP.Execute();
+		
+		MetaEntity classA = persistence.outputMetamodel.getMetaEntityByName("samplenamespace", "ClassA");
+		Assert.assertTrue(persistence.outputModel.getAllInstancesOf(classA).size()==1);
 	}
 
 	public TransformationModel buildSampleTransformation(){

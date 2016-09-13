@@ -1,7 +1,5 @@
 package dsltrans.transformer;
 
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -15,8 +13,6 @@ import dsltrans.metamodel.MetaModelDatabase;
 import dsltrans.model.InstanceDatabase;
 import dsltrans.model.InstanceDatabaseManager;
 import dsltrans.transformer.exceptions.InvalidLayerRequirement;
-import dsltrans.transformer.exceptions.TransformationSourceException;
-import dsltrans.transformer.exceptions.UnsuportedMetamodelException;
 
 public class TransformationController {
 	private final List<TransformationLayer> _units;

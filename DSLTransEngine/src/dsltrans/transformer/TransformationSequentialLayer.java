@@ -1,6 +1,5 @@
 package dsltrans.transformer;
 
-import java.io.IOException;
 import java.util.Map;
 
 import dsltrans.Layer;

@@ -21,7 +21,6 @@ import dsltrans.transformer.exceptions.InvalidAttributeRelationException;
 import dsltrans.transformer.exceptions.InvalidLayerRequirement;
 import dsltrans.transformer.exceptions.TransformationLayerException;
 import dsltrans.transformer.exceptions.TransformationRefinementLayerException;
-import dsltrans.transformer.exceptions.UnsuportedMetamodelException;
 
 public abstract class TransformationLayer  extends TransformationUnit {
 	private final Layer _layer;

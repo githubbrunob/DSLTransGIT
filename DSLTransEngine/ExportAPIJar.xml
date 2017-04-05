@@ -8,7 +8,7 @@
 		<jar destfile="exportedlib/dsltrans_engine_metainf.jar">
 			<fileset dir="../DSLTransEditor2.0/bin" />
 			<fileset dir="bin" />
-			<zipgroupfileset dir="lib" includes="*.jar">
+			<zipgroupfileset dir="lib" includes="*.jar" excludes="org.eclipse.emf.*.jar">
 			</zipgroupfileset>
 		</jar>
 		<sleep seconds="1"/>

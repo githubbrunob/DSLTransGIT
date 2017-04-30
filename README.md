@@ -23,7 +23,7 @@ See [manual](./DSLTransManual/document.pdf) for the installation instructions.
 DSLTrans is distributed as an eclipse plugin and works in all major operating systems. You can download eclipse modelling tools from [https://eclipse.org/](https://eclipse.org/).
 
 The easiest way to install DSLTrans is trough the update site:
-https://github.com/githubbrunob/DSLTransGIT/raw/master/UpdateSiteDSLTrans/site.xml  (This is just the [UpdateSiteDSLTrans](./UpdateSiteDSLTrans) directory contents)
+http://msdl.cs.mcgill.ca/people/claudio/projs/dsltrans/site.xml  (This is just the [UpdateSiteDSLTrans](./UpdateSiteDSLTrans) directory contents)
 
 All the necessary software, including third party dependencies, is under the [DSLTrans-Release](./DSLTrans-Release) directory.
 

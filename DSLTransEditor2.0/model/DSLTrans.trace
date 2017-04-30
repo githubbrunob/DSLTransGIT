@@ -7,7 +7,7 @@
       visualID="2001"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'Sequential') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'TransformationModel') and _containmentMF_.name = 'source')">
     <nodeLabelTraces
-        visualID="5034"
+        visualID="5014"
         queryText="true"/>
     <compartmentTraces
         visualID="7001"
@@ -20,7 +20,7 @@
       visualID="2002"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'FilePort') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'TransformationModel') and _containmentMF_.name = 'source')">
     <nodeLabelTraces
-        visualID="5035"
+        visualID="5015"
         queryText="true"/>
     <compartmentTraces
         visualID="7019"
@@ -37,7 +37,7 @@
       visualID="3002"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'Rule') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'Layer') and _containmentMF_.name = 'hasRule')">
     <nodeLabelTraces
-        visualID="5033"
+        visualID="5013"
         queryText="true"/>
     <compartmentTraces
         visualID="7003"
@@ -118,7 +118,7 @@
       visualID="3011"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'ApplyClass') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'ApplyModel') and _containmentMF_.name = 'class')">
     <nodeLabelTraces
-        visualID="5031"
+        visualID="5012"
         queryText="true"/>
     <compartmentTraces
         visualID="7011"
@@ -128,7 +128,7 @@
       visualID="3012"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'ApplyAttribute') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'ApplyClass') and _containmentMF_.name = 'attribute')">
     <nodeLabelTraces
-        visualID="5030"
+        visualID="5011"
         queryText="true"/>
     <compartmentTraces
         visualID="7012"
@@ -141,7 +141,7 @@
       visualID="3014"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'Atom') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'ApplyAttribute') and _containmentMF_.name = 'attributeValue')">
     <nodeLabelTraces
-        visualID="5010"
+        visualID="5008"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
@@ -170,7 +170,7 @@
       visualID="3020"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'Atom') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'Concat') and _containmentMF_.name = 'leftTerm')">
     <nodeLabelTraces
-        visualID="5015"
+        visualID="5009"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
@@ -193,7 +193,7 @@
       visualID="3024"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'Atom') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'Concat') and _containmentMF_.name = 'rightTerm')">
     <nodeLabelTraces
-        visualID="5018"
+        visualID="5010"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
@@ -237,85 +237,85 @@
       visualID="4002"
       queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'NegativeIndirectAssociation')">
     <linkLabelTraces
-        visualID="6010"
+        visualID="6001"
         queryText="true"/>
   </linkTraces>
   <linkTraces
       visualID="4003"
       queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'PositiveMatchAssociation')">
     <linkLabelTraces
-        visualID="6011"
+        visualID="6002"
         queryText="true"/>
   </linkTraces>
   <linkTraces
       visualID="4004"
       queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'NegativeMatchAssociation')">
     <linkLabelTraces
-        visualID="6012"
+        visualID="6003"
         queryText="true"/>
   </linkTraces>
   <linkTraces
       visualID="4005"
-      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'ApplyAssociation')">
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'MatchMayBeSameRelation')">
+    <linkLabelTraces
+        visualID="6004"
+        queryText="true"/>
+  </linkTraces>
+  <linkTraces
+      visualID="4006"
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'ApplyMayBeSameRelation')">
     <linkLabelTraces
         visualID="6005"
         queryText="true"/>
   </linkTraces>
   <linkTraces
-      visualID="4006"
-      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'PositiveBackwardRestriction')"/>
-  <linkTraces
       visualID="4007"
-      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'NegativeBackwardRestriction')"/>
-  <linkTraces
-      visualID="4010"
-      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'Import')"/>
-  <linkTraces
-      visualID="4011"
-      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'Layer') and _feature_.name = 'previousSource')">
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'ApplyAssociation')">
     <linkLabelTraces
         visualID="6006"
         queryText="true"/>
   </linkTraces>
   <linkTraces
+      visualID="4008"
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'PositiveBackwardRestriction')"/>
+  <linkTraces
+      visualID="4009"
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'NegativeBackwardRestriction')"/>
+  <linkTraces
+      visualID="4010"
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'AttributeEquality')"/>
+  <linkTraces
+      visualID="4011"
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'AttributeInequality')"/>
+  <linkTraces
       visualID="4012"
-      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'MatchModel') and _feature_.name = 'explicitSource')">
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'Import')"/>
+  <linkTraces
+      visualID="4013"
+      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'Layer') and _feature_.name = 'previousSource')">
     <linkLabelTraces
         visualID="6007"
         queryText="true"/>
   </linkTraces>
   <linkTraces
-      visualID="4013"
-      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'AttributeRef') and _feature_.name = 'attributeRef')">
+      visualID="4014"
+      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'MatchModel') and _feature_.name = 'explicitSource')">
     <linkLabelTraces
         visualID="6008"
         queryText="true"/>
   </linkTraces>
   <linkTraces
-      visualID="4014"
-      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'ClassRef') and _feature_.name = 'classRef')">
+      visualID="4015"
+      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'AttributeRef') and _feature_.name = 'attributeRef')">
     <linkLabelTraces
         visualID="6009"
         queryText="true"/>
   </linkTraces>
   <linkTraces
-      visualID="4015"
-      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'AttributeEquality')"/>
-  <linkTraces
       visualID="4016"
-      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'AttributeInequality')"/>
-  <linkTraces
-      visualID="4017"
-      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'MatchMayBeSameRelation')">
+      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'ClassRef') and _feature_.name = 'classRef')">
     <linkLabelTraces
-        visualID="6013"
-        queryText="true"/>
-  </linkTraces>
-  <linkTraces
-      visualID="4018"
-      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://dsltrans/2.0' and _eClass_.name = 'ApplyMayBeSameRelation')">
-    <linkLabelTraces
-        visualID="6014"
+        visualID="6010"
         queryText="true"/>
   </linkTraces>
 </trace:TraceModel>

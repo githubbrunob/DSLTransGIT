@@ -27,7 +27,11 @@ import org.eclipse.ui.console.IConsoleConstants;
 import org.eclipse.ui.console.IConsoleManager;
 import org.eclipse.ui.console.IConsoleView;
 
-import transformerProcessor.TransformerProcessor;
+import dsltrans.TransformationModel;
+import dsltrans.io.eclipse.EclipseInstanceDatabaseManager;
+import dsltrans.io.eclipse.EclipsePersistenceLayer;
+import dsltrans.io.eclipse.EclipseTransformationLoader;
+import dsltrans.transformer.TransformerProcessor;
 
 public class GenIdentityLiftAction implements IObjectActionDelegate {
 
@@ -79,9 +83,14 @@ public class GenIdentityLiftAction implements IObjectActionDelegate {
 					URL transformationurl = FileLocator.resolve(this.getClass().getResource("/model/GenIdentityLift.dsltrans"));
 					URL sourceurl = FileLocator.resolve(this.getClass().getResource("/model/Ecore.ecore"));
 					URL targeturl = FileLocator.resolve(this.getClass().getResource("/model/DSLTrans.ecore"));				
-					TransformerProcessor tP = new TransformerProcessor(projectPath);
-				
-					tP.LoadModel(org.eclipse.emf.common.util.URI.createURI(transformationurl.toURI().toASCIIString()));
+					
+					TransformerProcessor tP = new TransformerProcessor(new EclipsePersistenceLayer(projectPath), 
+							new EclipseInstanceDatabaseManager());
+
+					TransformationModel transformationModel = EclipseTransformationLoader
+							.ReadModel(org.eclipse.emf.common.util.URI.createURI(transformationurl.toURI().toASCIIString()));
+					tP.LoadModel(transformationModel);
+					
 					tP.setFileURI("input", filepath);
 					tP.setMetaModelURI("input", sourceurl.toURI().toASCIIString());
 					tP.setFileURI("output1", "");

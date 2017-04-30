@@ -34,7 +34,7 @@
         <containmentMetaFeature href="DSLTrans.genmodel#//dsltrans/Layer/hasRule"/>
         <childMetaFeature href="DSLTrans.genmodel#//dsltrans/Layer/hasRule"/>
       </modelFacet>
-      <labels visualID="5033" editPartClassName="RuleDescriptionEditPart" itemSemanticEditPolicyClassName="RuleDescriptionItemSemanticEditPolicy" elementIcon="true">
+      <labels visualID="5013" editPartClassName="RuleDescriptionEditPart" itemSemanticEditPolicyClassName="RuleDescriptionItemSemanticEditPolicy" elementIcon="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureRuleLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
@@ -188,7 +188,7 @@
         <containmentMetaFeature href="DSLTrans.genmodel#//dsltrans/ApplyModel/class"/>
         <childMetaFeature href="DSLTrans.genmodel#//dsltrans/ApplyModel/class"/>
       </modelFacet>
-      <labels visualID="5031" editPartClassName="ApplyClassClassNameEditPart" itemSemanticEditPolicyClassName="ApplyClassClassNameItemSemanticEditPolicy" elementIcon="true">
+      <labels visualID="5012" editPartClassName="ApplyClassClassNameEditPart" itemSemanticEditPolicyClassName="ApplyClassClassNameItemSemanticEditPolicy" elementIcon="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureApplyClassLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
@@ -206,7 +206,7 @@
         <containmentMetaFeature href="DSLTrans.genmodel#//dsltrans/ApplyClass/attribute"/>
         <childMetaFeature href="DSLTrans.genmodel#//dsltrans/ApplyClass/attribute"/>
       </modelFacet>
-      <labels visualID="5030" editPartClassName="ApplyAttributeAttributeNameEditPart" itemSemanticEditPolicyClassName="ApplyAttributeAttributeNameItemSemanticEditPolicy" elementIcon="true">
+      <labels visualID="5011" editPartClassName="ApplyAttributeAttributeNameEditPart" itemSemanticEditPolicyClassName="ApplyAttributeAttributeNameItemSemanticEditPolicy" elementIcon="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureApplyAttributeLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
@@ -233,7 +233,7 @@
         <containmentMetaFeature href="DSLTrans.genmodel#//dsltrans/ApplyAttribute/attributeValue"/>
         <childMetaFeature href="DSLTrans.genmodel#//dsltrans/ApplyAttribute/attributeValue"/>
       </modelFacet>
-      <labels visualID="5010" editPartClassName="AtomValue2EditPart" itemSemanticEditPolicyClassName="AtomValue2ItemSemanticEditPolicy">
+      <labels visualID="5008" editPartClassName="AtomValue2EditPart" itemSemanticEditPolicyClassName="AtomValue2ItemSemanticEditPolicy">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureAtomLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
@@ -301,7 +301,7 @@
         <containmentMetaFeature href="DSLTrans.genmodel#//dsltrans/Concat/leftTerm"/>
         <childMetaFeature href="DSLTrans.genmodel#//dsltrans/Concat/leftTerm"/>
       </modelFacet>
-      <labels visualID="5015" editPartClassName="AtomValue3EditPart" itemSemanticEditPolicyClassName="AtomValue3ItemSemanticEditPolicy">
+      <labels visualID="5009" editPartClassName="AtomValue3EditPart" itemSemanticEditPolicyClassName="AtomValue3ItemSemanticEditPolicy">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureAtomLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
@@ -349,7 +349,7 @@
         <containmentMetaFeature href="DSLTrans.genmodel#//dsltrans/Concat/rightTerm"/>
         <childMetaFeature href="DSLTrans.genmodel#//dsltrans/Concat/rightTerm"/>
       </modelFacet>
-      <labels visualID="5018" editPartClassName="AtomValue4EditPart" itemSemanticEditPolicyClassName="AtomValue4ItemSemanticEditPolicy">
+      <labels visualID="5010" editPartClassName="AtomValue4EditPart" itemSemanticEditPolicyClassName="AtomValue4ItemSemanticEditPolicy">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureAtomLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
@@ -460,7 +460,7 @@
         <containmentMetaFeature href="DSLTrans.genmodel#//dsltrans/TransformationModel/source"/>
         <childMetaFeature href="DSLTrans.genmodel#//dsltrans/TransformationModel/source"/>
       </modelFacet>
-      <labels visualID="5034" editPartClassName="SequentialDescriptionEditPart" itemSemanticEditPolicyClassName="SequentialDescriptionItemSemanticEditPolicy" elementIcon="true">
+      <labels visualID="5014" editPartClassName="SequentialDescriptionEditPart" itemSemanticEditPolicyClassName="SequentialDescriptionItemSemanticEditPolicy" elementIcon="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureSequentialLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
@@ -478,7 +478,7 @@
         <containmentMetaFeature href="DSLTrans.genmodel#//dsltrans/TransformationModel/source"/>
         <childMetaFeature href="DSLTrans.genmodel#//dsltrans/TransformationModel/source"/>
       </modelFacet>
-      <labels visualID="5035" editPartClassName="FilePortFilePathURIEditPart" itemSemanticEditPolicyClassName="FilePortFilePathURIItemSemanticEditPolicy" elementIcon="true">
+      <labels visualID="5015" editPartClassName="FilePortFilePathURIEditPart" itemSemanticEditPolicyClassName="FilePortFilePathURIItemSemanticEditPolicy" elementIcon="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureFilePortLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
@@ -513,7 +513,7 @@
         <sourceMetaFeature href="DSLTrans.genmodel#//dsltrans/MatchAssociation/source"/>
         <targetMetaFeature href="DSLTrans.genmodel#//dsltrans/MatchAssociation/target"/>
       </modelFacet>
-      <labels visualID="6010" editPartClassName="NegativeIndirectAssociationAssociationNameEditPart" itemSemanticEditPolicyClassName="NegativeIndirectAssociationAssociationNameItemSemanticEditPolicy">
+      <labels visualID="6001" editPartClassName="NegativeIndirectAssociationAssociationNameEditPart" itemSemanticEditPolicyClassName="NegativeIndirectAssociationAssociationNameItemSemanticEditPolicy">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:InnerClassViewmap" className="NegativeIndirectAssociationLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class NegativeIndirectAssociationLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public NegativeIndirectAssociationLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;NegativeIndirectAssociation&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
           <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
@@ -534,7 +534,7 @@
         <sourceMetaFeature href="DSLTrans.genmodel#//dsltrans/MatchAssociation/source"/>
         <targetMetaFeature href="DSLTrans.genmodel#//dsltrans/MatchAssociation/target"/>
       </modelFacet>
-      <labels visualID="6011" editPartClassName="PositiveMatchAssociationAssociationNameEditPart" itemSemanticEditPolicyClassName="PositiveMatchAssociationAssociationNameItemSemanticEditPolicy">
+      <labels visualID="6002" editPartClassName="PositiveMatchAssociationAssociationNameEditPart" itemSemanticEditPolicyClassName="PositiveMatchAssociationAssociationNameItemSemanticEditPolicy">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:InnerClassViewmap" className="PositiveMatchAssociationLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PositiveMatchAssociationLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PositiveMatchAssociationLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;PositiveMatchAssociation&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
           <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
@@ -557,7 +557,7 @@
         <sourceMetaFeature href="DSLTrans.genmodel#//dsltrans/MatchAssociation/source"/>
         <targetMetaFeature href="DSLTrans.genmodel#//dsltrans/MatchAssociation/target"/>
       </modelFacet>
-      <labels visualID="6012" editPartClassName="NegativeMatchAssociationAssociationNameEditPart" itemSemanticEditPolicyClassName="NegativeMatchAssociationAssociationNameItemSemanticEditPolicy">
+      <labels visualID="6003" editPartClassName="NegativeMatchAssociationAssociationNameEditPart" itemSemanticEditPolicyClassName="NegativeMatchAssociationAssociationNameItemSemanticEditPolicy">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:InnerClassViewmap" className="NegativeMatchAssociationLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class NegativeMatchAssociationLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public NegativeMatchAssociationLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;NegativeMatchAssociation&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
           <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
@@ -567,7 +567,7 @@
         </modelFacet>
       </labels>
     </links>
-    <links visualID="4017" editPartClassName="MatchMayBeSameRelationEditPart" itemSemanticEditPolicyClassName="MatchMayBeSameRelationItemSemanticEditPolicy" createCommandClassName="MatchMayBeSameRelationCreateCommand" reorientCommandClassName="MatchMayBeSameRelationReorientCommand">
+    <links visualID="4005" editPartClassName="MatchMayBeSameRelationEditPart" itemSemanticEditPolicyClassName="MatchMayBeSameRelationItemSemanticEditPolicy" createCommandClassName="MatchMayBeSameRelationCreateCommand" reorientCommandClassName="MatchMayBeSameRelationReorientCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="MatchMayBeSameRelationEditHelper"/>
       <viewmap xsi:type="gmfgen:InnerClassViewmap" className="MatchMayBeSameRelationFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MatchMayBeSameRelationFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MatchMayBeSameRelationFigure() {&#xA;&#x9;&#x9;this.setLineWidth(2);&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 181, 215, 255);&#xA;&#xA;">
@@ -580,7 +580,7 @@
         <sourceMetaFeature href="DSLTrans.genmodel#//dsltrans/MatchAssociation/source"/>
         <targetMetaFeature href="DSLTrans.genmodel#//dsltrans/MatchAssociation/target"/>
       </modelFacet>
-      <labels visualID="6013" editPartClassName="MatchMayBeSameRelationAssociationNameEditPart" itemSemanticEditPolicyClassName="MatchMayBeSameRelationAssociationNameItemSemanticEditPolicy" readOnly="true">
+      <labels visualID="6004" editPartClassName="MatchMayBeSameRelationAssociationNameEditPart" itemSemanticEditPolicyClassName="MatchMayBeSameRelationAssociationNameItemSemanticEditPolicy" readOnly="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:InnerClassViewmap" className="MatchMayBeSameRelationLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MatchMayBeSameRelationLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MatchMayBeSameRelationLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;MatchMayBeSameRelation&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
           <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
@@ -590,7 +590,7 @@
         </modelFacet>
       </labels>
     </links>
-    <links visualID="4018" editPartClassName="ApplyMayBeSameRelationEditPart" itemSemanticEditPolicyClassName="ApplyMayBeSameRelationItemSemanticEditPolicy" createCommandClassName="ApplyMayBeSameRelationCreateCommand" reorientCommandClassName="ApplyMayBeSameRelationReorientCommand">
+    <links visualID="4006" editPartClassName="ApplyMayBeSameRelationEditPart" itemSemanticEditPolicyClassName="ApplyMayBeSameRelationItemSemanticEditPolicy" createCommandClassName="ApplyMayBeSameRelationCreateCommand" reorientCommandClassName="ApplyMayBeSameRelationReorientCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ApplyMayBeSameRelationEditHelper"/>
       <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ApplyMayBeSameRelationFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ApplyMayBeSameRelationFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ApplyMayBeSameRelationFigure() {&#xA;&#x9;&#x9;this.setLineWidth(2);&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 181, 215, 255);&#xA;&#xA;">
@@ -603,7 +603,7 @@
         <sourceMetaFeature href="DSLTrans.genmodel#//dsltrans/ApplyAssociation/source"/>
         <targetMetaFeature href="DSLTrans.genmodel#//dsltrans/ApplyAssociation/target"/>
       </modelFacet>
-      <labels visualID="6014" editPartClassName="ApplyMayBeSameRelationAssociationNameEditPart" itemSemanticEditPolicyClassName="ApplyMayBeSameRelationAssociationNameItemSemanticEditPolicy" readOnly="true">
+      <labels visualID="6005" editPartClassName="ApplyMayBeSameRelationAssociationNameEditPart" itemSemanticEditPolicyClassName="ApplyMayBeSameRelationAssociationNameItemSemanticEditPolicy" readOnly="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ApplyMayBeSameRelationLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ApplyMayBeSameRelationLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ApplyMayBeSameRelationLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;ApplyMayBeSameRelation&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
           <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
@@ -613,7 +613,7 @@
         </modelFacet>
       </labels>
     </links>
-    <links visualID="4005" editPartClassName="ApplyAssociationEditPart" itemSemanticEditPolicyClassName="ApplyAssociationItemSemanticEditPolicy" createCommandClassName="ApplyAssociationCreateCommand" reorientCommandClassName="ApplyAssociationReorientCommand">
+    <links visualID="4007" editPartClassName="ApplyAssociationEditPart" itemSemanticEditPolicyClassName="ApplyAssociationItemSemanticEditPolicy" createCommandClassName="ApplyAssociationCreateCommand" reorientCommandClassName="ApplyAssociationReorientCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ApplyAssociationEditHelper"/>
       <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ApplyAssociationFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ApplyAssociationFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ApplyAssociationFigure() {&#xA;&#x9;&#x9;this.setLineWidth(2);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
@@ -624,7 +624,7 @@
         <sourceMetaFeature href="DSLTrans.genmodel#//dsltrans/ApplyAssociation/source"/>
         <targetMetaFeature href="DSLTrans.genmodel#//dsltrans/ApplyAssociation/target"/>
       </modelFacet>
-      <labels visualID="6005" editPartClassName="ApplyAssociationAssociationNameEditPart" itemSemanticEditPolicyClassName="ApplyAssociationAssociationNameItemSemanticEditPolicy">
+      <labels visualID="6006" editPartClassName="ApplyAssociationAssociationNameEditPart" itemSemanticEditPolicyClassName="ApplyAssociationAssociationNameItemSemanticEditPolicy">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ApplyAssociationLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ApplyAssociationLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ApplyAssociationLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;ApplyAssociation&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
           <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
@@ -634,7 +634,7 @@
         </modelFacet>
       </labels>
     </links>
-    <links visualID="4006" editPartClassName="PositiveBackwardRestrictionEditPart" itemSemanticEditPolicyClassName="PositiveBackwardRestrictionItemSemanticEditPolicy" createCommandClassName="PositiveBackwardRestrictionCreateCommand" reorientCommandClassName="PositiveBackwardRestrictionReorientCommand">
+    <links visualID="4008" editPartClassName="PositiveBackwardRestrictionEditPart" itemSemanticEditPolicyClassName="PositiveBackwardRestrictionItemSemanticEditPolicy" createCommandClassName="PositiveBackwardRestrictionCreateCommand" reorientCommandClassName="PositiveBackwardRestrictionReorientCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="PositiveBackwardRestrictionEditHelper"/>
       <viewmap xsi:type="gmfgen:InnerClassViewmap" className="PositiveBackwardRestrictionFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PositiveBackwardRestrictionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PositiveBackwardRestrictionFigure() {&#xA;&#x9;&#x9;this.setLineWidth(2);&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DOT);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
@@ -646,7 +646,7 @@
         <targetMetaFeature href="DSLTrans.genmodel#//dsltrans/AbstractTemporalRelation/targetClass"/>
       </modelFacet>
     </links>
-    <links visualID="4007" editPartClassName="NegativeBackwardRestrictionEditPart" itemSemanticEditPolicyClassName="NegativeBackwardRestrictionItemSemanticEditPolicy" createCommandClassName="NegativeBackwardRestrictionCreateCommand" reorientCommandClassName="NegativeBackwardRestrictionReorientCommand">
+    <links visualID="4009" editPartClassName="NegativeBackwardRestrictionEditPart" itemSemanticEditPolicyClassName="NegativeBackwardRestrictionItemSemanticEditPolicy" createCommandClassName="NegativeBackwardRestrictionCreateCommand" reorientCommandClassName="NegativeBackwardRestrictionReorientCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="NegativeBackwardRestrictionEditHelper"/>
       <viewmap xsi:type="gmfgen:InnerClassViewmap" className="NegativeBackwardRestrictionFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class NegativeBackwardRestrictionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public NegativeBackwardRestrictionFigure() {&#xA;&#x9;&#x9;this.setLineWidth(2);&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DOT);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 255, 61, 100);&#xA;&#xA;">
@@ -660,7 +660,7 @@
         <targetMetaFeature href="DSLTrans.genmodel#//dsltrans/AbstractTemporalRelation/targetClass"/>
       </modelFacet>
     </links>
-    <links visualID="4015" editPartClassName="AttributeEqualityEditPart" itemSemanticEditPolicyClassName="AttributeEqualityItemSemanticEditPolicy" createCommandClassName="AttributeEqualityCreateCommand" reorientCommandClassName="AttributeEqualityReorientCommand">
+    <links visualID="4010" editPartClassName="AttributeEqualityEditPart" itemSemanticEditPolicyClassName="AttributeEqualityItemSemanticEditPolicy" createCommandClassName="AttributeEqualityCreateCommand" reorientCommandClassName="AttributeEqualityReorientCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="AttributeEqualityEditHelper"/>
       <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AttributeEqualityFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AttributeEqualityFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AttributeEqualityFigure() {&#xA;&#x9;&#x9;this.setLineWidth(2);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 145, 147, 255);&#xA;&#xA;">
@@ -674,7 +674,7 @@
         <targetMetaFeature href="DSLTrans.genmodel#//dsltrans/AbstractAttributeRelation/targetAttribute"/>
       </modelFacet>
     </links>
-    <links visualID="4016" editPartClassName="AttributeInequalityEditPart" itemSemanticEditPolicyClassName="AttributeInequalityItemSemanticEditPolicy" createCommandClassName="AttributeInequalityCreateCommand" reorientCommandClassName="AttributeInequalityReorientCommand">
+    <links visualID="4011" editPartClassName="AttributeInequalityEditPart" itemSemanticEditPolicyClassName="AttributeInequalityItemSemanticEditPolicy" createCommandClassName="AttributeInequalityCreateCommand" reorientCommandClassName="AttributeInequalityReorientCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="AttributeInequalityEditHelper"/>
       <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AttributeInequalityFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AttributeInequalityFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AttributeInequalityFigure() {&#xA;&#x9;&#x9;this.setLineWidth(2);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 255, 61, 100);&#xA;&#xA;">
@@ -688,7 +688,7 @@
         <targetMetaFeature href="DSLTrans.genmodel#//dsltrans/AbstractAttributeRelation/targetAttribute"/>
       </modelFacet>
     </links>
-    <links visualID="4010" editPartClassName="ImportEditPart" itemSemanticEditPolicyClassName="ImportItemSemanticEditPolicy" createCommandClassName="ImportCreateCommand" reorientCommandClassName="ImportReorientCommand">
+    <links visualID="4012" editPartClassName="ImportEditPart" itemSemanticEditPolicyClassName="ImportItemSemanticEditPolicy" createCommandClassName="ImportCreateCommand" reorientCommandClassName="ImportReorientCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ImportEditHelper"/>
       <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ImportFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ImportFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ImportFigure() {&#xA;&#x9;&#x9;this.setLineWidth(2);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 85, 64, 45);&#xA;&#xA;">
@@ -702,14 +702,14 @@
         <targetMetaFeature href="DSLTrans.genmodel#//dsltrans/Import/target"/>
       </modelFacet>
     </links>
-    <links visualID="4011" editPartClassName="LayerPreviousSourceEditPart" itemSemanticEditPolicyClassName="LayerPreviousSourceItemSemanticEditPolicy" createCommandClassName="LayerPreviousSourceCreateCommand" reorientCommandClassName="LayerPreviousSourceReorientCommand">
+    <links visualID="4013" editPartClassName="LayerPreviousSourceEditPart" itemSemanticEditPolicyClassName="LayerPreviousSourceItemSemanticEditPolicy" createCommandClassName="LayerPreviousSourceCreateCommand" reorientCommandClassName="LayerPreviousSourceReorientCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType xsi:type="gmfgen:SpecializationType"/>
       <viewmap xsi:type="gmfgen:InnerClassViewmap" className="LayerPreviousSourceFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class LayerPreviousSourceFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public LayerPreviousSourceFigure() {&#xA;&#x9;&#x9;this.setLineWidth(2);&#xA;&#xA;&#x9;&#x9;setSourceDecoration(createSourceDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createSourceDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
         <metaFeature href="DSLTrans.genmodel#//dsltrans/Layer/previousSource"/>
       </modelFacet>
-      <labels visualID="6006" editPartClassName="WrappingLabelEditPart" itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy" readOnly="true">
+      <labels visualID="6007" editPartClassName="WrappingLabelEditPart" itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy" readOnly="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
@@ -717,14 +717,14 @@
         <modelFacet xsi:type="gmfgen:DesignLabelModelFacet" parser="//@labelParsers/@implementations.1"/>
       </labels>
     </links>
-    <links visualID="4012" editPartClassName="MatchModelExplicitSourceEditPart" itemSemanticEditPolicyClassName="MatchModelExplicitSourceItemSemanticEditPolicy" createCommandClassName="MatchModelExplicitSourceCreateCommand" reorientCommandClassName="MatchModelExplicitSourceReorientCommand">
+    <links visualID="4014" editPartClassName="MatchModelExplicitSourceEditPart" itemSemanticEditPolicyClassName="MatchModelExplicitSourceItemSemanticEditPolicy" createCommandClassName="MatchModelExplicitSourceCreateCommand" reorientCommandClassName="MatchModelExplicitSourceReorientCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType xsi:type="gmfgen:SpecializationType"/>
       <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx"/>
       <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
         <metaFeature href="DSLTrans.genmodel#//dsltrans/MatchModel/explicitSource"/>
       </modelFacet>
-      <labels visualID="6007" editPartClassName="WrappingLabel2EditPart" itemSemanticEditPolicyClassName="WrappingLabel2ItemSemanticEditPolicy" readOnly="true">
+      <labels visualID="6008" editPartClassName="WrappingLabel2EditPart" itemSemanticEditPolicyClassName="WrappingLabel2ItemSemanticEditPolicy" readOnly="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
@@ -732,14 +732,14 @@
         <modelFacet xsi:type="gmfgen:DesignLabelModelFacet" parser="//@labelParsers/@implementations.1"/>
       </labels>
     </links>
-    <links visualID="4013" editPartClassName="AttributeRefAttributeRefEditPart" itemSemanticEditPolicyClassName="AttributeRefAttributeRefItemSemanticEditPolicy" createCommandClassName="AttributeRefAttributeRefCreateCommand" reorientCommandClassName="AttributeRefAttributeRefReorientCommand">
+    <links visualID="4015" editPartClassName="AttributeRefAttributeRefEditPart" itemSemanticEditPolicyClassName="AttributeRefAttributeRefItemSemanticEditPolicy" createCommandClassName="AttributeRefAttributeRefCreateCommand" reorientCommandClassName="AttributeRefAttributeRefReorientCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType xsi:type="gmfgen:SpecializationType"/>
       <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AttributeRefAttributeRefFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AttributeRefAttributeRefFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AttributeRefAttributeRefFigure() {&#xA;&#x9;&#x9;this.setLineWidth(2);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
         <metaFeature href="DSLTrans.genmodel#//dsltrans/AttributeRef/attributeRef"/>
       </modelFacet>
-      <labels visualID="6008" editPartClassName="WrappingLabel3EditPart" itemSemanticEditPolicyClassName="WrappingLabel3ItemSemanticEditPolicy" readOnly="true">
+      <labels visualID="6009" editPartClassName="WrappingLabel3EditPart" itemSemanticEditPolicyClassName="WrappingLabel3ItemSemanticEditPolicy" readOnly="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
@@ -747,14 +747,14 @@
         <modelFacet xsi:type="gmfgen:DesignLabelModelFacet" parser="//@labelParsers/@implementations.1"/>
       </labels>
     </links>
-    <links visualID="4014" editPartClassName="ClassRefClassRefEditPart" itemSemanticEditPolicyClassName="ClassRefClassRefItemSemanticEditPolicy" createCommandClassName="ClassRefClassRefCreateCommand" reorientCommandClassName="ClassRefClassRefReorientCommand">
+    <links visualID="4016" editPartClassName="ClassRefClassRefEditPart" itemSemanticEditPolicyClassName="ClassRefClassRefItemSemanticEditPolicy" createCommandClassName="ClassRefClassRefCreateCommand" reorientCommandClassName="ClassRefClassRefReorientCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType xsi:type="gmfgen:SpecializationType"/>
       <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ClassRefClassRefFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ClassRefClassRefFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ClassRefClassRefFigure() {&#xA;&#x9;&#x9;this.setLineWidth(2);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
         <metaFeature href="DSLTrans.genmodel#//dsltrans/ClassRef/classRef"/>
       </modelFacet>
-      <labels visualID="6009" editPartClassName="WrappingLabel4EditPart" itemSemanticEditPolicyClassName="WrappingLabel4ItemSemanticEditPolicy" readOnly="true">
+      <labels visualID="6010" editPartClassName="WrappingLabel4EditPart" itemSemanticEditPolicyClassName="WrappingLabel4ItemSemanticEditPolicy" readOnly="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>

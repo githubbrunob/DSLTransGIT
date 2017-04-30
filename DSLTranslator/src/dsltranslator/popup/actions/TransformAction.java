@@ -24,7 +24,12 @@ import org.eclipse.ui.console.IConsoleConstants;
 import org.eclipse.ui.console.IConsoleManager;
 import org.eclipse.ui.console.IConsoleView;
 
-import transformerProcessor.TransformerProcessor;
+import dsltrans.TransformationModel;
+import dsltrans.io.eclipse.EclipseInstanceDatabaseManager;
+import dsltrans.io.eclipse.EclipsePersistenceLayer;
+import dsltrans.io.eclipse.EclipseTransformationLoader;
+import dsltrans.transformer.TransformerProcessor;
+
 
 public class TransformAction implements IObjectActionDelegate {
 
@@ -81,9 +86,15 @@ public class TransformAction implements IObjectActionDelegate {
 				
 				new ClassPathManager().update();
 
-				TransformerProcessor tP = new TransformerProcessor(projectPath);
+				//TransformerProcessor tP = new TransformerProcessor(projectPath);
+				TransformerProcessor tP = new TransformerProcessor(new EclipsePersistenceLayer(projectPath), 
+						new EclipseInstanceDatabaseManager());
+				
 				try {
-					tP.LoadModel(filepath);
+					TransformationModel transformationModel = EclipseTransformationLoader
+							.ReadModel(org.eclipse.emf.common.util.URI.createURI(filepath));
+					tP.LoadModel(transformationModel);
+					//tP.LoadModel(filepath);
 					tP.Execute();
 				} catch (Throwable e) {
 					e.printStackTrace();

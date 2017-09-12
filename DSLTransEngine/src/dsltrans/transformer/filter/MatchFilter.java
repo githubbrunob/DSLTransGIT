@@ -727,7 +727,11 @@ public class MatchFilter {
 		
 		String cutclause = getCutClause();
 		if(!cutclause.isEmpty()){
-			queryBody += "," + cutclause;
+			if(!first){
++				queryBody += ",";
++			}
++			queryBody += cutclause;
+			first = false;
 		}	
 
 		generateDifferentEntitiesFactCall(positiveMatchAndApplyEntitiesIDList);
